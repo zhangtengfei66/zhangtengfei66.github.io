@@ -6,14 +6,16 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>我的第一篇博客文章！ | Hexo</title>
+  <title>Hexo博客的使用方法(1) | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="article">
-<meta property="og:title" content="我的第一篇博客文章！">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;16&#x2F;%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0%EF%BC%81&#x2F;index.html">
+  <meta name="description" content="1title:Hexo博客的使用方法（win10）">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo博客的使用方法(1)">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;16&#x2F;Hexo%E5%8D%9A%E5%AE%A2%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95(1)&#x2F;index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="1title:Hexo博客的使用方法（win10）">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-11-16T02:11:45.747Z">
+<meta property="og:updated_time" content="2019-11-16T12:24:29.064Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
@@ -150,27 +152,102 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-我的第一篇博客文章！" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Hexo博客的使用方法(1)" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      我的第一篇博客文章！
+      Hexo博客的使用方法(1)
     </h1>
   
 
         
-        <a href="/2019/11/16/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0%EF%BC%81/" class="archive-article-date">
-  	<time datetime="2019-11-16T02:11:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-16</time>
+        <a href="/2019/11/16/Hexo%E5%8D%9A%E5%AE%A2%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95(1)/" class="archive-article-date">
+  	<time datetime="2019-11-16T12:09:52.311Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-16</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">title:Hexo博客的使用方法（win10）</span><br></pre></td></tr></table></figure>
+
+<a id="more"></a> 
+
+<h1 id="本地安装"><a href="#本地安装" class="headerlink" title="本地安装"></a>本地安装</h1><ol>
+<li>安装Node.js<br>因为Hexo是通过Node.js生成的，所以首先需要根据自己的操作系统版本下载并安装Node.js。<br>根据步骤提示进行操作后，在item（Windows是cmd）中输入命令：</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node -v</span><br></pre></td></tr></table></figure>
+
+<p>如果能正确显示Node.js版本，则说明安装成功（本人使用的版本为v10.15.3）。</p>
+<ol start="2">
+<li>通过npm安装Hexo框架<br>Node.js安装成功后，同时会自动安装一个包管理器，称为npm（Node Package Manager）。</li>
+</ol>
+<p>什么是npm？<br>npm是一个包管理器，发布者将自己的代码发布（npm publish）到代码仓库（registry），使用者将自己需要的包写入package.json文件中，到代码仓库中把代码下载（npm install）下来。</p>
+<p>安装：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+
+<p>查看版本：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo -v（本人使用的Hexo版本为<span class="number">1.1</span><span class="number">.0</span>）</span><br></pre></td></tr></table></figure>
+
+<p>由于npm代码仓库的服务器在国外，由于Great Firewall的缘故，下载速度可能不尽如人意，这时你可以使用淘宝的npm代码仓库，通过npm安装cnpm：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g cnpm --registry=https:<span class="comment">//registry.npm.taobao.org</span></span><br></pre></td></tr></table></figure>
+
+<p>安装成功后，可以通过以下命令查看cnpm版本：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cnpm -v</span><br></pre></td></tr></table></figure>
+
+<p>通过cnpm来操作下载速度会得到很大提升，但包的版本不一定是最新的。</p>
+<h1 id="本地使用"><a href="#本地使用" class="headerlink" title="本地使用"></a>本地使用</h1><ol>
+<li><p>创建目录<br>Hexo的所有文章都是以文件的形式存储在目录下的，所以首先需要新建一个目录，我的是Hexo，在此目录下操作。</p>
+</li>
+<li><p>初始化博客</p>
+</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li><p>新建文章<br><code>hexo new &quot;BlogName&quot;</code>（BlogName是你的文章名称）<br>会在source/_posts目录下生成BlogName.md文件，可以vim或其他Markdown编辑器进行修改。</p>
+</li>
+<li><p>生成博客静态文件<br><code>hexo g</code>（g代表generate），生成博客静态文件<br>每次修改文章后，都需要通过hexo clean清理一下，<br>然后通过hexo g重新生成，<br>最后也不要忘了通过<code>hexo s</code>重新启动Hexo。</p>
+</li>
+<li><p>启动博客<br><code>hexo s</code>（s代表server，默认端口号是4000）</p>
+</li>
+<li><p>更换主题<br>将需要更换的主题下载并解压缩到theme/yourThemeName目录下，yourThemeName是你给主题取的名字，<br>如我用的主题是next，只需要解压缩到Hexo/themes/next目录下即可,<br>当然你也可以直接在Hexo目录下执行git clone <a href="https://github.com/theme-next/hexo-theme-next" target="_blank" rel="noopener">https://github.com/theme-next/hexo-theme-next</a> themes/next，<br>解压完成后，修改_config.yaml文件中的theme属性，默认是landscape，修改为next：</p>
+</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Extensions</span><br><span class="line">Plugins: https:<span class="comment">//hexo.io/plugins/</span></span><br><span class="line">Themes: https:<span class="comment">//hexo.io/themes/</span></span><br><span class="line">theme: next</span><br></pre></td></tr></table></figure>
+
+
+<p><strong>#注意：“theme:”后要带一个空格</strong><br>每次修改主题后，都需要通过hexo clean清理一下，<br>然后通过hexo g重新生成，<br>最后也不要忘了通过<code>hexo s</code>重新启动Hexo。</p>
+<p>《Hexo主题 —— NexT优化》</p>
+<ol start="7">
+<li>其他_config.yaml配置<br>_config.yaml文件是Hexo项目的全局配置文件，常用的属性有：</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"># Site</span><br><span class="line"># 站点标题</span><br><span class="line">title: DragonBaby308<span class="string">'s Blog</span></span><br><span class="line"><span class="string"># 站点副标题</span></span><br><span class="line"><span class="string">subtitle: Fighting for BAT!</span></span><br><span class="line"><span class="string"># 站点描述</span></span><br><span class="line"><span class="string">description: 记住迄今为止每一次失败时有心无力的感受，“为了更美好的明天而战”。</span></span><br><span class="line"><span class="string"># 作者</span></span><br><span class="line"><span class="string">author: DragonBaby308</span></span><br><span class="line"><span class="string"># 语言——  请注意，官方语言包不再支持简体中文zh-Hans，而是统一采用了zh-CN</span></span><br><span class="line"><span class="string">language: zh-CN</span></span><br><span class="line"><span class="string"># 时区——默认是本地时区</span></span><br><span class="line"><span class="string">timezone:</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"># URL</span></span><br><span class="line"><span class="string"># 站点地址</span></span><br><span class="line"><span class="string">url: http://106.14.153.30</span></span><br><span class="line"><span class="string"># 站点root，如果网站存在子目录中，url设置为'</span>http:<span class="comment">//yoursite.com/child'，root设置为'/child/'</span></span><br><span class="line">root: /</span><br><span class="line"># 生成固定链接的格式</span><br><span class="line">permalink: :title/</span><br><span class="line">permalink_defaults:</span><br><span class="line"></span><br><span class="line"># Pagination</span><br><span class="line"># 每页文章数——关闭分页：0</span><br><span class="line">per_page: <span class="number">10</span></span><br><span class="line"></span><br><span class="line"># Extensions</span><br><span class="line"># 主题</span><br><span class="line">theme: next</span><br><span class="line"></span><br><span class="line"># Deployment</span><br><span class="line"># 部署配置</span><br><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: git@<span class="number">106.14</span><span class="number">.153</span><span class="number">.30</span>:/usr/DragonBaby308/repo/blog.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
+
+<h1 id="服务器部署"><a href="#服务器部署" class="headerlink" title="服务器部署"></a>服务器部署</h1><p>（一） 本地 + github.io 白嫖部署</p>
+<ol>
+<li><p>生成github.io仓库<br>首先注册并登录GitHub，创建新public仓库，仓库名称一定要是：<br>YourGitHubName.github.io（YourGitHubName是你的GitHub昵称，大小写敏感！）</p>
+</li>
+<li><p>本地安装Hexo的git部署插件<br>在Hexo的目录下，输入<code>npm install --save hexo-deployer-git</code>，会报一个peerDependencies WARNING，可以忽略。</p>
+</li>
+<li><p>本地修改_config.yaml文件<br>在Hexo目录下，找到_config.yaml文件，在#Deployment做如下修改：</p>
+</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"># Deployment</span><br><span class="line">## Docs: https://hexo.io/docs/deployment.html</span><br><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: https:<span class="comment">//github.com/DragonBaby308/DragonBaby308.github.io.git        #你的github.io的网址</span></span><br><span class="line">  branch: master                                                            #“type:”、“repo:”和“branch:”后都要带一个空格</span><br><span class="line"><span class="number">4</span>. 部署</span><br><span class="line">hexo d</span><br><span class="line">部署成功后，浏览器输入YourGitHubName.github.io即可访问，其中YourGitHubName是你的GitHub昵称，且大小写敏感</span><br><span class="line"></span><br><span class="line"><span class="number">5</span>. 写文章 &amp; 发布</span><br><span class="line">和本地一致，都是hexo <span class="keyword">new</span> <span class="string">"yourArticle"</span>后hexo clean &amp;&amp; hexo d - g，不再赘述。</span><br></pre></td></tr></table></figure>
+
+<h1 id="更换主题"><a href="#更换主题" class="headerlink" title="更换主题"></a>更换主题</h1><p>Jacman主题是一个托管于GitHub上面的开源项目，可以在Git中从github上面克隆安装，下载地址：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>.git clone http:<span class="comment">//wuchong.me/blog/2014/11/20/how-to-use-jacman/</span></span><br></pre></td></tr></table></figure>
+<p>安装完成后，下载的Jacman主题的源文件将保存在博客根目录/themes/jacman文件夹中，可以到该路径下查看文件是否下载成功。</p>
+<p>修改博客根目录下_config.yml配置文件中的theme属性，将其设置为jacman。</p>
+<p>启用Jacman主题<br>清除缓存、重新编译、启动网站，就会发现网站已经更换为Jacman主题。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>.hexo clean</span><br><span class="line"><span class="number">2</span>.hexo g</span><br><span class="line"><span class="number">3</span>.hexo s</span><br></pre></td></tr></table></figure>
+
+
+
+
       
 
       
@@ -249,7 +326,7 @@
     <a class="close js-modal-close" href="javascript:;" target="_blank" rel="noopener"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/11/16/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0%EF%BC%81/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/11/16/Hexo%E5%8D%9A%E5%AE%A2%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95(1)/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -263,18 +340,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/11/16/Hexo%E5%8D%9A%E5%AE%A2%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95(1)/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Hexo博客的使用方法(1)
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/11/16/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Hello World</div>
+    <a href="/2019/11/16/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0%EF%BC%81/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">我的第一篇博客文章！</div>
       <i class="icon-circle-right"></i>
     </a>
   
