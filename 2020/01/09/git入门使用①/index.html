@@ -6,16 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>(●ˇ∀ˇ●)</title>
+  <title>git入门使用① | (●ˇ∀ˇ●)</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一个即将毕业的在校生">
+  <meta name="description" content="git基本命令">
 <meta name="keywords" content="腾飞的编程网站">
-<meta property="og:type" content="website">
-<meta property="og:title" content="(●ˇ∀ˇ●)">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;index.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="git入门使用①">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;01&#x2F;09&#x2F;git%E5%85%A5%E9%97%A8%E4%BD%BF%E7%94%A8%E2%91%A0&#x2F;index.html">
 <meta property="og:site_name" content="(●ˇ∀ˇ●)">
-<meta property="og:description" content="一个即将毕业的在校生">
+<meta property="og:description" content="git基本命令">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2020-01-09T13:19:30.376Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="(●ˇ∀ˇ●)" type="application/atom+xml">
@@ -152,16 +153,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-git入门使用①" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-git入门使用①" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/01/09/git%E5%85%A5%E9%97%A8%E4%BD%BF%E7%94%A8%E2%91%A0/">git入门使用①</a>
+    <h1 class="article-title" itemprop="name">
+      git入门使用①
     </h1>
   
 
@@ -174,12 +173,125 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="git基本命令"><a href="#git基本命令" class="headerlink" title="git基本命令"></a>git基本命令</h2>
-        
-          <a class="article-more-a" href="/2020/01/09/git%E5%85%A5%E9%97%A8%E4%BD%BF%E7%94%A8%E2%91%A0/#more">~more >></a>
-        
+        <h2 id="git基本命令"><a href="#git基本命令" class="headerlink" title="git基本命令"></a>git基本命令</h2><a id="more"></a>
+
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>git init</td>
+<td>添加版本控制</td>
+</tr>
+<tr>
+<td>git add 文件名</td>
+<td>添加到缓存区</td>
+</tr>
+<tr>
+<td>git add .</td>
+<td>添加全部到缓存区</td>
+</tr>
+<tr>
+<td>git commit -m “注释”</td>
+<td>提交缓存区到本地仓库</td>
+</tr>
+<tr>
+<td>git log –pretty==oneline</td>
+<td>查看历史版本(只显示之前)</td>
+</tr>
+<tr>
+<td>git reset –hard 版本号</td>
+<td>回退到之前的版本</td>
+</tr>
+<tr>
+<td>git reflog</td>
+<td>查看历史操作 (用于回退回退后无法查看之前)</td>
+</tr>
+<tr>
+<td>git colne gihub链接</td>
+<td>克隆到本地</td>
+</tr>
+<tr>
+<td>git push gihub链接</td>
+<td>上传到github仓库(下班第一件事)</td>
+</tr>
+<tr>
+<td>git pull</td>
+<td>上班第一件事拉取远端代码</td>
+</tr>
+<tr>
+<td>git branch</td>
+<td>查看分支</td>
+</tr>
+<tr>
+<td>git checkout 分支名</td>
+<td>切换分支</td>
+</tr>
+<tr>
+<td>git merge 分支名</td>
+<td>把分支名和当前分支合并</td>
+</tr>
+<tr>
+<td>git branch -d 分支名</td>
+<td>删除分支(前提当前不是该分支)</td>
+</tr>
+<tr>
+<td>touch .gitignore</td>
+<td>这个文件里,写了需要忽略提交的文件</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<p> push 出现403 未认证,需要到.git/config文件中修改</p>
+<h3 id="gitignore的写法"><a href="#gitignore的写法" class="headerlink" title=".gitignore的写法"></a>.gitignore的写法</h3><ul>
+<li><code>/文件夹/</code> :表示过滤这个文件夹</li>
+<li><code>*.zip</code> :表示过滤这个类型的文件</li>
+<li><code>/文件夹/xx.txt</code>:表示过滤具体的文件</li>
+<li><code>!xx.txt</code>:表示不过滤该文件</li>
+<li><code>#</code>:用于注释</li>
+</ul>
+
       
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" target="_blank" rel="noopener" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>感谢支持!<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/image/proceeds.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
       
     </div>
     <div class="article-info article-info-index">
@@ -188,16 +300,75 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/01/09/git%E5%85%A5%E9%97%A8%E4%BD%BF%E7%94%A8%E2%91%A0/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" target="_blank" rel="noopener" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" target="_blank" rel="noopener" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;" target="_blank" rel="noopener"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/01/09/git%E5%85%A5%E9%97%A8%E4%BD%BF%E7%94%A8%E2%91%A0/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2019/11/16/Hexo%E5%8D%9A%E5%AE%A2%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95(1)/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Hexo博客的使用方法(1)</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -217,135 +388,14 @@
 
 
 
-
   
-    <article id="post-Hexo博客的使用方法(1)" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/16/Hexo%E5%8D%9A%E5%AE%A2%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95(1)/">Hexo博客的使用方法(1)</a>
-    </h1>
   
 
-        
-        <a href="/2019/11/16/Hexo%E5%8D%9A%E5%AE%A2%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95(1)/" class="archive-article-date">
-  	<time datetime="2019-11-16T12:09:52.311Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-16</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">title:Hexo博客的使用方法（win10）</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">在cmd中：</span><br><span class="line">1、输入node回车即可进入Node.js运行环境。</span><br><span class="line"></span><br><span class="line">2、退出只需要连续按两次Ctrl+C或者输入“.exit”回车即可。</span><br></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2019/11/16/Hexo%E5%8D%9A%E5%AE%A2%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95(1)/#more">~more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/11/16/Hexo%E5%8D%9A%E5%AE%A2%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95(1)/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" target="_blank" rel="noopener" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-我的第一篇博客文章！" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/16/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0%EF%BC%81/">我的第一篇博客文章！</a>
-    </h1>
   
 
-        
-        <a href="/2019/11/16/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0%EF%BC%81/" class="archive-article-date">
-  	<time datetime="2019-11-16T02:11:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-16</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/11/16/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0%EF%BC%81/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" target="_blank" rel="noopener" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
+
   
 
 
@@ -368,8 +418,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
