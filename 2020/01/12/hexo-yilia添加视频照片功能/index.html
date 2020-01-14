@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>hexo-yilia添加视频照片功能 | (●ˇ∀ˇ●)</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="hexo+yilia添加相册视屏功能   主要是添加相册和视频功能，参考Hexo-Github实现相册功能 ，csdn博客：Hexo+Github实现相册功能，我看到网上好多人都是按照这个模板来实现的。效果图： 注：这个视频加载不出来应该是因为和视频链接有关系. 一、增加相册功能1. 原理两个github仓库，一个存放图片，一个存放hexo博客（当然你一个仓库两个分支也可以，我就是这样）。 2.修">
+  <meta name="description" content="hexo+yilia添加相册视屏功能">
 <meta name="keywords" content="博客">
 <meta property="og:type" content="article">
 <meta property="og:title" content="hexo-yilia添加视频照片功能">
 <meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;01&#x2F;12&#x2F;hexo-yilia%E6%B7%BB%E5%8A%A0%E8%A7%86%E9%A2%91%E7%85%A7%E7%89%87%E5%8A%9F%E8%83%BD&#x2F;index.html">
 <meta property="og:site_name" content="(●ˇ∀ˇ●)">
-<meta property="og:description" content="hexo+yilia添加相册视屏功能   主要是添加相册和视频功能，参考Hexo-Github实现相册功能 ，csdn博客：Hexo+Github实现相册功能，我看到网上好多人都是按照这个模板来实现的。效果图： 注：这个视频加载不出来应该是因为和视频链接有关系. 一、增加相册功能1. 原理两个github仓库，一个存放图片，一个存放hexo博客（当然你一个仓库两个分支也可以，我就是这样）。 2.修">
+<meta property="og:description" content="hexo+yilia添加相册视屏功能">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;01&#x2F;12&#x2F;hexo-yilia%E6%B7%BB%E5%8A%A0%E8%A7%86%E9%A2%91%E7%85%A7%E7%89%87%E5%8A%9F%E8%83%BD&#x2F;picture_1.jpg">
 <meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;01&#x2F;12&#x2F;hexo-yilia%E6%B7%BB%E5%8A%A0%E8%A7%86%E9%A2%91%E7%85%A7%E7%89%87%E5%8A%9F%E8%83%BD&#x2F;picture_2.jpg">
 <meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;01&#x2F;12&#x2F;hexo-yilia%E6%B7%BB%E5%8A%A0%E8%A7%86%E9%A2%91%E7%85%A7%E7%89%87%E5%8A%9F%E8%83%BD&#x2F;picture_3.jpg">
-<meta property="og:updated_time" content="2020-01-12T07:57:12.950Z">
+<meta property="og:updated_time" content="2020-01-14T02:51:40.204Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;01&#x2F;12&#x2F;hexo-yilia%E6%B7%BB%E5%8A%A0%E8%A7%86%E9%A2%91%E7%85%A7%E7%89%87%E5%8A%9F%E8%83%BD&#x2F;picture_1.jpg">
   
@@ -64,7 +64,7 @@
 			
 				<li><a href="/">主页</a></li>
 	        
-				<li><a href="/records/">个人随笔</a></li>
+				<li><a href="/tag/records/">个人随笔</a></li>
 	        
 				<li><a href="/archives/index.html">归档</a></li>
 	        
@@ -150,7 +150,7 @@
 				
 					<li style="width: 33.333333333333336%"><a href="/">主页</a></li>
 		        
-					<li style="width: 33.333333333333336%"><a href="/records/">个人随笔</a></li>
+					<li style="width: 33.333333333333336%"><a href="/tag/records/">个人随笔</a></li>
 		        
 					<li style="width: 33.333333333333336%"><a href="/archives/index.html">归档</a></li>
 		        
@@ -200,7 +200,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>hexo+yilia添加相册视屏功能</p>
-<!--meod-->
+<a id="more"></a>
 
 <p>主要是添加相册和视频功能，参考<a href="http://lawlite.me/2017/04/13/Hexo-Github%E5%AE%9E%E7%8E%B0%E7%9B%B8%E5%86%8C%E5%8A%9F%E8%83%BD/" target="_blank" rel="noopener">Hexo-Github实现相册功能</a> ，csdn博客：<a href="https://blog.csdn.net/u013082989/article/details/70162293" target="_blank" rel="noopener">Hexo+Github实现相册功能</a>，我看到网上好多人都是按照这个模板来实现的。<br>效果图：<br><img src="/2020/01/12/hexo-yilia%E6%B7%BB%E5%8A%A0%E8%A7%86%E9%A2%91%E7%85%A7%E7%89%87%E5%8A%9F%E8%83%BD/picture_1.jpg" alt="mV0P56.jpg"></p>
 <p>注：这个视频加载不出来应该是因为和视频链接有关系.<br><img src="/2020/01/12/hexo-yilia%E6%B7%BB%E5%8A%A0%E8%A7%86%E9%A2%91%E7%85%A7%E7%89%87%E5%8A%9F%E8%83%BD/picture_2.jpg" alt="mV0CUx.jpg"></p>
