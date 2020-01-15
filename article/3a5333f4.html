@@ -6,16 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>(●ˇ∀ˇ●)</title>
+  <title>Hexo博客使用Hexo Admin插件 | (●ˇ∀ˇ●)</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="腾飞的个人博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="(●ˇ∀ˇ●)">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;page&#x2F;2&#x2F;index.html">
+  <meta name="description" content="安装 hexo-admin">
+<meta name="keywords" content="Hexo,博客,Hexo_admin">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo博客使用Hexo Admin插件">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;article&#x2F;3a5333f4.html">
 <meta property="og:site_name" content="(●ˇ∀ˇ●)">
-<meta property="og:description" content="腾飞的个人博客">
-<meta property="og:locale" content="zh-CN">
+<meta property="og:description" content="安装 hexo-admin">
+<meta property="og:locale" content="Chinese">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;article&#x2F;%5Cimages%5Cpasted-4.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;article&#x2F;%5Cimages%5Cpasted-1.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;article&#x2F;%5Cimages%5Cpasted-2.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;article&#x2F;%5Cimages%5Cpasted-3.png">
+<meta property="og:updated_time" content="2020-01-15T08:16:46.103Z">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;article&#x2F;%5Cimages%5Cpasted-4.png">
   
     <link rel="alternative" href="/atom.xml" title="(●ˇ∀ˇ●)" type="application/atom+xml">
   
@@ -161,43 +168,106 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-hexo-yilia添加视频照片功能" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-exo博客使用Hexo-Admin插件-1" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/article/f72ba5d8.html">hexo-yilia添加视频照片功能</a>
+    <h1 class="article-title" itemprop="name">
+      Hexo博客使用Hexo Admin插件
     </h1>
   
 
         
         <!--显示阅读次数-->
         
+          <br/>
+          <a class="cloud-tie-join-count" href="javascript:void(0);" target="_blank" rel="noopener" style="color:gray;font-size:14px;">
+          <span class="icon-sort"></span>
+          <span id="busuanzi_container_page_pv" style="color:#ef7522;font-size:14px;">
+                    阅读数: <span id="busuanzi_value_page_pv"></span>次 &nbsp;&nbsp;
+          </span>
+          </a>
+        
 
         
-        <a href="/article/f72ba5d8.html" class="archive-article-date">
-  	<time datetime="2020-01-12T06:58:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-12</time>
+        <a href="/article/3a5333f4.html" class="archive-article-date">
+  	<time datetime="2020-01-15T01:47:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-15</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>hexo+yilia添加相册视屏功能</p>
-        
+        <p>安装 hexo-admin</p>
+<a id="more"></a>
+<p>cd hexo 目录</p>
+<p>1<br>npm install –save hexo-admin<br>启动 hexo</p>
+<p>1<br>hexo s<br>然后打开 <a href="http://localhost:4000/admin/" target="_blank" rel="noopener">http://localhost:4000/admin/</a> 就可以看到管理页面。</p>
+<p>在 hexo-admin 你可以</p>
+<p>Pages - 新加 page；<br>Posts - 新加或删除 post；双击一个 post，你可以编辑，预览，新增修改 tags、categories，选择发布或不发布；<br>Settings - 一些配置；<br>Deploy - 可以直接部署到 github。</p>
+<ol start="2">
+<li>Hexo Admin插件管理<br>可以看出，用原生的方法来管理博文十分的不便，因此便有了Hexo Admin这一插件来方便我们的操作。</li>
+</ol>
+<p>然后，Deploy之前，还需要编辑配置文件_config.yml。(否则会出现Error: Config value “admin.deployCommand” not found或者Error: spawn hexo ENOENT之类的报错。)<br>如果是Windows则在末尾加上</p>
+<p><img src="/article/%5Cimages%5Cpasted-4.png" alt="upload successful"></p>
+<p>然后在同级目录新建hexo-pubish.bat文件，文件内容如下：<br>hexo g -d<br>如果是Linux系统则参考Issues。<br>编辑完毕后，就可以点击Deploy，直接部署发布Github博客上。</p>
+<p><img src="/article/%5Cimages%5Cpasted-1.png" alt="upload successful"></p>
+<p>PS：关于Hexo Admin插入图片<br>Hexo Admin可以直接复制图片粘贴，然后自动下载到source/images目录并重命名。但在Windows中粘贴后会出现裂图。这时就需要手动把括号中的前后两个斜杠去掉，就能正常显示。</p>
+<p><img src="/article/%5Cimages%5Cpasted-2.png" alt="upload successful"></p>
+<p><img src="/article/%5Cimages%5Cpasted-3.png" alt="upload successful"></p>
+
       
 
 
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" target="_blank" rel="noopener" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>感谢支持!<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/proceeds.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
       
 <!--版权声明-->
       
       
-        <div class="declare" hidden="hidden"></div>
+        <div class="declare">
+        <ul>
+          <li><strong>本文作者：</strong>
+          
+            腾飞
+          
+          <br></li>
+          <li><strong>本文链接：</strong>
+          http://yoursite.com/article/3a5333f4.html
+          <br></li>
+          <li><strong>版权声明：</strong>
+          本作品采用
+          <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>
+          进行许可。转载请注明出处！
+          
+        </div>
       </li></ul>
 <!--版权声明--> 
          
@@ -211,324 +281,15 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color3">博客</a>
+        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color5">Hexo</a>
         		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/article/f72ba5d8.html">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" target="_blank" rel="noopener" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-<!-- 《utteranc评论：基于github issue的评论系统 -->
-<div>
-    <section id="comments" class="comments">
-      <style>
-        .utterances{max-width: 100%;}
-      </style>
-        <script src="https://utteranc.es/client.js"
-                repo="zhangtengfei66/zhangtengfei66.github.io"
-                issue-term="title"
-                theme="github-light"
-                crossorigin="anonymous"
-                async>
-        </script>
-    </section>
-</div>
-<!-- utteranc评论》 -->
-
-
-
-  
-    <article id="post-博客中写入数学公式" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/article/5f523cc.html">博客中写入数学公式</a>
-    </h1>
-  
-
-        
-        <!--显示阅读次数-->
-        
-
-        
-        <a href="/article/5f523cc.html" class="archive-article-date">
-  	<time datetime="2020-01-11T06:18:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-11</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>使用LaTex添加公式到Hexo博客里</p>
-        
-      
-
-
-
-      
-<!--版权声明-->
-      
-      
-        <div class="declare" hidden="hidden"></div>
-      </li></ul>
-<!--版权声明--> 
-         
-
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color3">博客</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/article/5f523cc.html">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" target="_blank" rel="noopener" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-<!-- 《utteranc评论：基于github issue的评论系统 -->
-<div>
-    <section id="comments" class="comments">
-      <style>
-        .utterances{max-width: 100%;}
-      </style>
-        <script src="https://utteranc.es/client.js"
-                repo="zhangtengfei66/zhangtengfei66.github.io"
-                issue-term="title"
-                theme="github-light"
-                crossorigin="anonymous"
-                async>
-        </script>
-    </section>
-</div>
-<!-- utteranc评论》 -->
-
-
-
-  
-    <article id="post-博客文章添加图片" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/article/50b8e0b4.html">博客文章添加图片</a>
-    </h1>
-  
-
-        
-        <!--显示阅读次数-->
-        
-
-        
-        <a href="/article/50b8e0b4.html" class="archive-article-date">
-  	<time datetime="2020-01-11T06:16:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-11</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>文章插入图片的问题</p>
-        
-      
-
-
-
-      
-<!--版权声明-->
-      
-      
-        <div class="declare" hidden="hidden"></div>
-      </li></ul>
-<!--版权声明--> 
-         
-
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color3">博客</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/article/50b8e0b4.html">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" target="_blank" rel="noopener" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-<!-- 《utteranc评论：基于github issue的评论系统 -->
-<div>
-    <section id="comments" class="comments">
-      <style>
-        .utterances{max-width: 100%;}
-      </style>
-        <script src="https://utteranc.es/client.js"
-                repo="zhangtengfei66/zhangtengfei66.github.io"
-                issue-term="title"
-                theme="github-light"
-                crossorigin="anonymous"
-                async>
-        </script>
-    </section>
-</div>
-<!-- utteranc评论》 -->
-
-
-
-  
-    <article id="post-博客绑定个人站点" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/article/326c8a69.html">博客绑定个人站点</a>
-    </h1>
-  
-
-        
-        <!--显示阅读次数-->
-        
-
-        
-        <a href="/article/326c8a69.html" class="archive-article-date">
-  	<time datetime="2020-01-11T06:08:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-11</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>如何让博客指向个人域名 ?</p>
-<p>个人域名怎么样绑定到自己的GitHub Pages站点呢?</p>
-        
-      
-
-
-
-      
-<!--版权声明-->
-      
-      
-        <div class="declare" hidden="hidden"></div>
-      </li></ul>
-<!--版权声明--> 
-         
-
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
+      		 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color3">博客</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color4">个人域</a>
+        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color1">Hexo_admin</a>
         		</li>
       		
 		</ul>
@@ -537,16 +298,84 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/article/326c8a69.html">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" target="_blank" rel="noopener" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" target="_blank" rel="noopener" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;" target="_blank" rel="noopener"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/article/3a5333f4.html" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/article/24caea6b.html" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Hexo常用命令
+        
+      </div>
+    </a>
+  
+  
+    <a href="/article/23017e25.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Hexo博客SEO_URL持久化</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -582,220 +411,42 @@
 <!-- utteranc评论》 -->
 
 
+<!--valine评论系统-->
 
-  
-    <article id="post-git入门使用①" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/article/9e564ab7.html">git入门使用①</a>
-    </h1>
-  
-
-        
-        <!--显示阅读次数-->
-        
-
-        
-        <a href="/article/9e564ab7.html" class="archive-article-date">
-  	<time datetime="2020-01-09T07:28:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-09</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>git的一些基本命令</p>
-        
-      
-
-
-
-      
-<!--版权声明-->
-      
-      
-        <div class="declare" hidden="hidden"></div>
-      </li></ul>
-<!--版权声明--> 
-         
-
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color4">git</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/article/9e564ab7.html">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" target="_blank" rel="noopener" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-<!-- 《utteranc评论：基于github issue的评论系统 -->
-<div>
     <section id="comments" class="comments">
       <style>
-        .utterances{max-width: 100%;}
+        .comments{margin:30px;padding:10px;background:#fff}
+        @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
       </style>
-        <script src="https://utteranc.es/client.js"
-                repo="zhangtengfei66/zhangtengfei66.github.io"
-                issue-term="title"
-                theme="github-light"
-                crossorigin="anonymous"
-                async>
-        </script>
-    </section>
-</div>
-<!-- utteranc评论》 -->
+      <div id="vcomment" class="comment"></div> 
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+   var notify = 'false' == true ? true : false;
+   var verify = 'false' == true ? true : false;
+    window.onload = function() {
+        new Valine({
+            el: '.comment',
+            notify: notify,
+            verify: verify,
+            app_id: "QtaKYgEltRAtkh7xqS2NpMvf-9Nh9j0Va",
+            app_key: "i84Q8UmWG0WiMyPGlUxEiREG",
+            placeholder: "ヾﾉ≧∀≦)o欢迎评论!",
+            avatar:"retro"
+        });
+    }
+</script>
+  </section>
 
-
-
-  
-    <article id="post-Hexo博客的使用方法-1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/article/3f807b94.html">Hexo博客的使用方法(1)</a>
-    </h1>
-  
-
-        
-        <!--显示阅读次数-->
-        
-
-        
-        <a href="/article/3f807b94.html" class="archive-article-date">
-  	<time datetime="2019-10-09T07:10:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-09</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">title:Hexo博客的使用方法（win10）</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">在cmd中：</span><br><span class="line">1、输入node回车即可进入Node.js运行环境。</span><br><span class="line"></span><br><span class="line">2、退出只需要连续按两次Ctrl+C或者输入“.exit”回车即可。</span><br></pre></td></tr></table></figure>
-        
-      
-
-
-
-      
-<!--版权声明-->
-      
-      
-        <div class="declare" hidden="hidden"></div>
-      </li></ul>
-<!--版权声明--> 
-         
-
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color3">博客</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/article/3f807b94.html">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" target="_blank" rel="noopener" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-<!-- 《utteranc评论：基于github issue的评论系统 -->
-<div>
-    <section id="comments" class="comments">
-      <style>
-        .utterances{max-width: 100%;}
-      </style>
-        <script src="https://utteranc.es/client.js"
-                repo="zhangtengfei66/zhangtengfei66.github.io"
-                issue-term="title"
-                theme="github-light"
-                crossorigin="anonymous"
-                async>
-        </script>
-    </section>
-</div>
-<!-- utteranc评论》 -->
-
-
-
+<!--valine评论系统-->
   
   
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">Next &amp;raquo;</a>
-    </nav>
+  
+
+  
+
+  
+
   
 
 
@@ -821,8 +472,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,

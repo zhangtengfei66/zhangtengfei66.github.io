@@ -20,7 +20,7 @@
     <link rel="alternative" href="/atom.xml" title="(●ˇ∀ˇ●)" type="application/atom+xml">
   
   
-    <link rel="icon" href="/image/favicon.png">
+    <link rel="icon" href="/img/favicon.png">
   
   <link rel="stylesheet" type="text/css" href="/./main.0cf68a.css">
   <style type="text/css">
@@ -44,7 +44,7 @@
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
-			<img src="/image/face.gif" class="js-avatar">
+			<img src="/img/face.gif" class="js-avatar">
 		</a>
 		<hgroup>
 		  <h1 class="header-author"><a href="/">腾飞</a></h1>
@@ -58,7 +58,7 @@
 			
 				<li><a href="/">主页</a></li>
 	        
-				<li><a href="/tag/records/">个人随笔</a></li>
+				<li><a href="/records/">个人随笔</a></li>
 	        
 				<li><a href="/archives/index.html">归档</a></li>
 	        
@@ -106,7 +106,7 @@
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src="/image/face.gif" class="js-avatar">
+				<img src="/img/face.gif" class="js-avatar">
 			</div>
 			<hgroup>
 			  <h1 class="header-author js-header-author">腾飞</h1>
@@ -144,7 +144,7 @@
 				
 					<li style="width: 33.333333333333336%"><a href="/">主页</a></li>
 		        
-					<li style="width: 33.333333333333336%"><a href="/tag/records/">个人随笔</a></li>
+					<li style="width: 33.333333333333336%"><a href="/records/">个人随笔</a></li>
 		        
 					<li style="width: 33.333333333333336%"><a href="/archives/index.html">归档</a></li>
 		        
@@ -163,14 +163,14 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-Hexo博客SEO-URL持久化" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Linux查看硬件信息" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/01/13/Hexo%E5%8D%9A%E5%AE%A2SEO-URL%E6%8C%81%E4%B9%85%E5%8C%96/">Hexo博客SEO_URL持久化</a>
+      <a class="article-title" href="/article/8fb1a3ba.html">Linux查看硬件信息</a>
     </h1>
   
 
@@ -179,7 +179,350 @@
         
 
         
-        <a href="/2020/01/13/Hexo%E5%8D%9A%E5%AE%A2SEO-URL%E6%8C%81%E4%B9%85%E5%8C%96/" class="archive-article-date">
+        <a href="/article/8fb1a3ba.html" class="archive-article-date">
+  	<time datetime="2020-01-15T05:36:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-15</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <a id="more"></a>
+
+<h5 id="系统"><a href="#系统" class="headerlink" title="系统"></a>系统</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># uname -a               # 查看内核/操作系统/CPU信息</span><br><span class="line"># head -n 1 /etc/issue   # 查看操作系统版本</span><br><span class="line"># cat /proc/cpuinfo      # 查看CPU信息</span><br><span class="line"># hostname               # 查看计算机名</span><br><span class="line"># lspci -tv              # 列出所有PCI设备（yum install pciutils）</span><br><span class="line"># lsusb -tv              # 列出所有USB设备</span><br><span class="line"># lsmod                  # 列出加载的内核模块</span><br><span class="line"># env                    # 查看环境变量</span><br></pre></td></tr></table></figure>
+
+<h5 id="资源"><a href="#资源" class="headerlink" title="资源"></a>资源</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># free -m                # 查看内存使用量和交换区使用量</span><br><span class="line"># df -h                  # 查看各分区使用情况</span><br><span class="line"># du -sh &lt;目录名&gt;        # 查看指定目录的大小</span><br><span class="line"># grep MemTotal /proc/meminfo   # 查看内存总量</span><br><span class="line"># grep MemFree /proc/meminfo    # 查看空闲内存量</span><br><span class="line"># uptime                 # 查看系统运行时间、用户数、负载</span><br><span class="line"># cat /proc/loadavg      # 查看系统负载</span><br></pre></td></tr></table></figure>
+
+<h5 id="磁盘和分区"><a href="#磁盘和分区" class="headerlink" title="磁盘和分区"></a>磁盘和分区</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># mount | column -t      # 查看挂接的分区状态</span><br><span class="line"># fdisk -l               # 查看所有分区</span><br><span class="line"># swapon -s              # 查看所有交换分区</span><br><span class="line"># hdparm -i /dev/hda     # 查看磁盘参数(仅适用于IDE设备)</span><br><span class="line"># dmesg | grep IDE       # 查看启动时IDE设备检测状况</span><br></pre></td></tr></table></figure>
+
+<h5 id="网络"><a href="#网络" class="headerlink" title="网络"></a>网络</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># ifconfig               # 查看所有网络接口的属性</span><br><span class="line"># iptables -L            # 查看防火墙设置</span><br><span class="line"># route -n               # 查看路由表</span><br><span class="line"># netstat -lntp          # 查看所有监听端口</span><br><span class="line"># netstat -antp          # 查看所有已经建立的连接</span><br><span class="line"># netstat -s             # 查看网络统计信息</span><br></pre></td></tr></table></figure>
+
+<h5 id="进程"><a href="#进程" class="headerlink" title="进程"></a>进程</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># ps -ef                 # 查看所有进程</span><br><span class="line"># top                    # 实时显示进程状态</span><br></pre></td></tr></table></figure>
+
+<h5 id="用户"><a href="#用户" class="headerlink" title="用户"></a>用户</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># w                      # 查看活动用户</span><br><span class="line"># id &lt;用户名&gt;            # 查看指定用户信息</span><br><span class="line"># last                   # 查看用户登录日志</span><br><span class="line"># cut -d: -f1 /etc/passwd   # 查看系统所有用户</span><br><span class="line"># cut -d: -f1 /etc/group    # 查看系统所有组</span><br><span class="line"># crontab -l             # 查看当前用户的计划任务</span><br></pre></td></tr></table></figure>
+
+<h5 id="服务"><a href="#服务" class="headerlink" title="服务"></a>服务</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># chkconfig --list       # 列出所有系统服务</span><br><span class="line"># chkconfig --list | grep on    # 列出所有启动的系统服务</span><br></pre></td></tr></table></figure>
+
+<h5 id="程序"><a href="#程序" class="headerlink" title="程序"></a>程序</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># rpm -qa                # 查看所有安装的软件包</span><br></pre></td></tr></table></figure>
+
+<h5 id="查看网卡型号"><a href="#查看网卡型号" class="headerlink" title="查看网卡型号"></a>查看网卡型号</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># lspci | grep Ethernet</span><br></pre></td></tr></table></figure>
+
+<h5 id="查看内存和cpu最直接最常用的命令"><a href="#查看内存和cpu最直接最常用的命令" class="headerlink" title="查看内存和cpu最直接最常用的命令"></a>查看内存和cpu最直接最常用的命令</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># free</span><br><span class="line"># cat /proc/cpuinfo</span><br></pre></td></tr></table></figure>
+
+<h5 id="查看硬盘信息（查看硬盘型号和硬盘序列号）"><a href="#查看硬盘信息（查看硬盘型号和硬盘序列号）" class="headerlink" title="查看硬盘信息（查看硬盘型号和硬盘序列号）"></a>查看硬盘信息（查看硬盘型号和硬盘序列号）</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># df -h</span><br></pre></td></tr></table></figure>
+      
+
+
+
+      
+<!--版权声明-->
+      
+      
+        <div class="declare" hidden="hidden"></div>
+      </li></ul>
+<!--版权声明--> 
+         
+
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color1">Linux</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/article/8fb1a3ba.html">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" target="_blank" rel="noopener" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+<!-- 《utteranc评论：基于github issue的评论系统 -->
+<div>
+    <section id="comments" class="comments">
+      <style>
+        .utterances{max-width: 100%;}
+      </style>
+        <script src="https://utteranc.es/client.js"
+                repo="zhangtengfei66/zhangtengfei66.github.io"
+                issue-term="title"
+                theme="github-light"
+                crossorigin="anonymous"
+                async>
+        </script>
+    </section>
+</div>
+<!-- utteranc评论》 -->
+
+
+
+  
+    <article id="post-Hexo常用命令" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/article/24caea6b.html">Hexo常用命令</a>
+    </h1>
+  
+
+        
+        <!--显示阅读次数-->
+        
+
+        
+        <a href="/article/24caea6b.html" class="archive-article-date">
+  	<time datetime="2020-01-15T02:05:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-15</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="https://segmentfault.com/a/1190000002632530" target="_blank" rel="noopener">hexo常用命令笔记</a></p>
+<p><a href="https://segmentfault.com/t/hexo" target="_blank" rel="noopener">hexo</a></p>
+<p><a href="https://github.com/jaywcjlove/hexoThemeKacper" target="_blank" rel="noopener">hexo 皮肤Github</a></p>
+        
+      
+
+
+
+      
+<!--版权声明-->
+      
+      
+        <div class="declare" hidden="hidden"></div>
+      </li></ul>
+<!--版权声明--> 
+         
+
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color5">Hexo</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/article/24caea6b.html">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" target="_blank" rel="noopener" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+<!-- 《utteranc评论：基于github issue的评论系统 -->
+<div>
+    <section id="comments" class="comments">
+      <style>
+        .utterances{max-width: 100%;}
+      </style>
+        <script src="https://utteranc.es/client.js"
+                repo="zhangtengfei66/zhangtengfei66.github.io"
+                issue-term="title"
+                theme="github-light"
+                crossorigin="anonymous"
+                async>
+        </script>
+    </section>
+</div>
+<!-- utteranc评论》 -->
+
+
+
+  
+    <article id="post-exo博客使用Hexo-Admin插件-1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/article/3a5333f4.html">Hexo博客使用Hexo Admin插件</a>
+    </h1>
+  
+
+        
+        <!--显示阅读次数-->
+        
+
+        
+        <a href="/article/3a5333f4.html" class="archive-article-date">
+  	<time datetime="2020-01-15T01:47:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-15</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>安装 hexo-admin</p>
+        
+      
+
+
+
+      
+<!--版权声明-->
+      
+      
+        <div class="declare" hidden="hidden"></div>
+      </li></ul>
+<!--版权声明--> 
+         
+
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color5">Hexo</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color3">博客</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color1">Hexo_admin</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/article/3a5333f4.html">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" target="_blank" rel="noopener" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+<!-- 《utteranc评论：基于github issue的评论系统 -->
+<div>
+    <section id="comments" class="comments">
+      <style>
+        .utterances{max-width: 100%;}
+      </style>
+        <script src="https://utteranc.es/client.js"
+                repo="zhangtengfei66/zhangtengfei66.github.io"
+                issue-term="title"
+                theme="github-light"
+                crossorigin="anonymous"
+                async>
+        </script>
+    </section>
+</div>
+<!-- utteranc评论》 -->
+
+
+
+  
+    <article id="post-Hexo博客SEO-URL持久化" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/article/23017e25.html">Hexo博客SEO_URL持久化</a>
+    </h1>
+  
+
+        
+        <!--显示阅读次数-->
+        
+
+        
+        <a href="/article/23017e25.html" class="archive-article-date">
   	<time datetime="2020-01-13T03:14:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-13</time>
 </a>
         
@@ -191,7 +534,17 @@
         
       
 
+
+
       
+<!--版权声明-->
+      
+      
+        <div class="declare" hidden="hidden"></div>
+      </li></ul>
+<!--版权声明--> 
+         
+
     </div>
     <div class="article-info article-info-index">
       
@@ -219,7 +572,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2020/01/13/Hexo%E5%8D%9A%E5%AE%A2SEO-URL%E6%8C%81%E4%B9%85%E5%8C%96/">展开全文 >></a>
+          <a class="article-more-a" href="/article/23017e25.html">展开全文 >></a>
         </p>
       
 
@@ -245,6 +598,22 @@
     </div>
 </aside>
 
+<!-- 《utteranc评论：基于github issue的评论系统 -->
+<div>
+    <section id="comments" class="comments">
+      <style>
+        .utterances{max-width: 100%;}
+      </style>
+        <script src="https://utteranc.es/client.js"
+                repo="zhangtengfei66/zhangtengfei66.github.io"
+                issue-term="title"
+                theme="github-light"
+                crossorigin="anonymous"
+                async>
+        </script>
+    </section>
+</div>
+<!-- utteranc评论》 -->
 
 
 
@@ -256,7 +625,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/01/12/Hexo%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A2%98%E7%BE%8E%E5%8C%96/">Hexo博客主题美化</a>
+      <a class="article-title" href="/article/3f8b11a6.html">Hexo博客主题美化</a>
     </h1>
   
 
@@ -265,7 +634,7 @@
         
 
         
-        <a href="/2020/01/12/Hexo%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A2%98%E7%BE%8E%E5%8C%96/" class="archive-article-date">
+        <a href="/article/3f8b11a6.html" class="archive-article-date">
   	<time datetime="2020-01-12T09:36:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-12</time>
 </a>
         
@@ -277,7 +646,17 @@
         
       
 
+
+
       
+<!--版权声明-->
+      
+      
+        <div class="declare" hidden="hidden"></div>
+      </li></ul>
+<!--版权声明--> 
+         
+
     </div>
     <div class="article-info article-info-index">
       
@@ -301,7 +680,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2020/01/12/Hexo%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A2%98%E7%BE%8E%E5%8C%96/">展开全文 >></a>
+          <a class="article-more-a" href="/article/3f8b11a6.html">展开全文 >></a>
         </p>
       
 
@@ -327,6 +706,22 @@
     </div>
 </aside>
 
+<!-- 《utteranc评论：基于github issue的评论系统 -->
+<div>
+    <section id="comments" class="comments">
+      <style>
+        .utterances{max-width: 100%;}
+      </style>
+        <script src="https://utteranc.es/client.js"
+                repo="zhangtengfei66/zhangtengfei66.github.io"
+                issue-term="title"
+                theme="github-light"
+                crossorigin="anonymous"
+                async>
+        </script>
+    </section>
+</div>
+<!-- utteranc评论》 -->
 
 
 
@@ -338,7 +733,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/01/12/Hexo%E5%8D%9A%E5%AE%A2%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95-2/">Hexo博客的使用方法(2)</a>
+      <a class="article-title" href="/article/14ad2857.html">Hexo博客的使用方法(2)</a>
     </h1>
   
 
@@ -347,7 +742,7 @@
         
 
         
-        <a href="/2020/01/12/Hexo%E5%8D%9A%E5%AE%A2%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95-2/" class="archive-article-date">
+        <a href="/article/14ad2857.html" class="archive-article-date">
   	<time datetime="2020-01-12T08:52:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-12</time>
 </a>
         
@@ -360,7 +755,17 @@
         
       
 
+
+
       
+<!--版权声明-->
+      
+      
+        <div class="declare" hidden="hidden"></div>
+      </li></ul>
+<!--版权声明--> 
+         
+
     </div>
     <div class="article-info article-info-index">
       
@@ -384,7 +789,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2020/01/12/Hexo%E5%8D%9A%E5%AE%A2%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95-2/">展开全文 >></a>
+          <a class="article-more-a" href="/article/14ad2857.html">展开全文 >></a>
         </p>
       
 
@@ -410,247 +815,29 @@
     </div>
 </aside>
 
-
-
-
-  
-    <article id="post-hexo-yilia添加视频照片功能" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/01/12/hexo-yilia%E6%B7%BB%E5%8A%A0%E8%A7%86%E9%A2%91%E7%85%A7%E7%89%87%E5%8A%9F%E8%83%BD/">hexo-yilia添加视频照片功能</a>
-    </h1>
-  
-
-        
-        <!--显示阅读次数-->
-        
-
-        
-        <a href="/2020/01/12/hexo-yilia%E6%B7%BB%E5%8A%A0%E8%A7%86%E9%A2%91%E7%85%A7%E7%89%87%E5%8A%9F%E8%83%BD/" class="archive-article-date">
-  	<time datetime="2020-01-12T06:58:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-12</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>hexo+yilia添加相册视屏功能</p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color3">博客</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/01/12/hexo-yilia%E6%B7%BB%E5%8A%A0%E8%A7%86%E9%A2%91%E7%85%A7%E7%89%87%E5%8A%9F%E8%83%BD/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" target="_blank" rel="noopener" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-博客中写入数学公式" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/01/11/%E5%8D%9A%E5%AE%A2%E4%B8%AD%E5%86%99%E5%85%A5%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/">博客中写入数学公式</a>
-    </h1>
-  
-
-        
-        <!--显示阅读次数-->
-        
-
-        
-        <a href="/2020/01/11/%E5%8D%9A%E5%AE%A2%E4%B8%AD%E5%86%99%E5%85%A5%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/" class="archive-article-date">
-  	<time datetime="2020-01-11T06:18:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-11</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>使用LaTex添加公式到Hexo博客里</p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color3">博客</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/01/11/%E5%8D%9A%E5%AE%A2%E4%B8%AD%E5%86%99%E5%85%A5%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" target="_blank" rel="noopener" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-博客文章添加图片" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/01/11/%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0%E6%B7%BB%E5%8A%A0%E5%9B%BE%E7%89%87/">博客文章添加图片</a>
-    </h1>
-  
-
-        
-        <!--显示阅读次数-->
-        
-
-        
-        <a href="/2020/01/11/%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0%E6%B7%BB%E5%8A%A0%E5%9B%BE%E7%89%87/" class="archive-article-date">
-  	<time datetime="2020-01-11T06:16:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-11</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>文章插入图片的问题</p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color3">博客</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/01/11/%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0%E6%B7%BB%E5%8A%A0%E5%9B%BE%E7%89%87/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" target="_blank" rel="noopener" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
+<!-- 《utteranc评论：基于github issue的评论系统 -->
+<div>
+    <section id="comments" class="comments">
+      <style>
+        .utterances{max-width: 100%;}
+      </style>
+        <script src="https://utteranc.es/client.js"
+                repo="zhangtengfei66/zhangtengfei66.github.io"
+                issue-term="title"
+                theme="github-light"
+                crossorigin="anonymous"
+                async>
+        </script>
+    </section>
+</div>
+<!-- utteranc评论》 -->
 
 
 
   
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
     </nav>
   
 
@@ -760,6 +947,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">SEO</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Hexo_admin</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -928,6 +1123,9 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
 
 </div>
   </div>
+  <!-- 标题栏动态变化 -->
   <script type="text/javascript" src="/js/crash_cheat.js"></script>
+  <!-- 页面点击小红心 -->
+  <script type="text/javascript" src="/js/click.js"></script>
 </body>
 </html>
