@@ -116,8 +116,8 @@
         var data = res.list[j].arr;
         var liTmpl = "";
         for (var i = 0, len = data.link.length; i < len; i++) {
-          var minSrc = '\\photos\\photos-source\\min_photos\\' + data.link[i];
-          var src = '\\photos\\photos-source\\photos\\' + data.link[i];
+          var minSrc = 'https://gitee.com/zhangtengfei66/zhangtengfei66/tree/master/photos/photos-source/min_photos/' + data.link[i];
+          var src = 'https://gitee.com/zhangtengfei66/zhangtengfei66/tree/master/photos/photos-source/photos/' + data.link[i];
           var type = data.type[i];
           var target = src + (type === 'video' ? '.mp4' : '.jpg');
           src += '';
