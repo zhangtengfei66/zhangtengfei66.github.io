@@ -17,9 +17,11 @@
 <meta property="og:description" content="hexo+yilia添加相册视屏功能">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;article&#x2F;picture_1.jpg">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;article&#x2F;picture_2.jpg">
 <meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;article&#x2F;picture_3.jpg">
-<meta property="og:updated_time" content="2020-01-15T08:16:46.123Z">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;article&#x2F;picture_2.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;article&#x2F;picture_4.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;article&#x2F;picture_5.jpg">
+<meta property="og:updated_time" content="2020-01-17T01:22:04.382Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;article&#x2F;picture_1.jpg">
   
@@ -46,7 +48,54 @@
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
     <div class="left-col" q-class="show:isShow">
       
-<div class="overlay" style="background: #ff3d00"></div>
+<div class="overlay" style="background: #ff3d00">
+
+<!-- 《添加“心知天气”-->
+
+<div id="tp-weather-widget"></div>
+<script>
+        (function(T, h, i, n, k, P, a, g, e) {
+            g = function() {
+                P = h.createElement(i);
+                a = h.getElementsByTagName(i)[0];
+                P.src = k;
+                P.charset = "utf-8";
+                P.async = 1;
+                a.parentNode.insertBefore(P, a)
+            };
+            T["ThinkPageWeatherWidgetObject"] = n;
+            T[n] || (T[n] = function() {
+                (T[n].q = T[n].q || []).push(arguments)
+            });
+            T[n].l = +new Date();
+            if (T.attachEvent) {
+                T.attachEvent("onload", g)
+            } else {
+                T.addEventListener("load", g, false)
+            }
+        }(window, document, "script", "tpwidget", "//widget.thinkpage.cn/widget/chameleon.js"))
+    </script>
+    <script>
+        tpwidget("init", {
+            "flavor": "slim",
+            "location": "WM6N2PM3WY2K",
+            "geolocation": "enabled",
+            "language": "zh-chs",
+            "unit": "c",
+            "theme": "chameleon",
+            "container": "tp-weather-widget",
+            "bubble": "enabled",
+            "alarmType": "badge",
+            "color": "#FFFFFF",
+            "uid": "U88B4B2797",
+            "hash": "c9d7cb43b80ffece52c9a1ebbfbca65f"
+        });
+        tpwidget("show");
+    </script>
+    
+<!-- 添加“心知天气”》-->
+
+</div>
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
@@ -63,8 +112,6 @@
 			<ul>
 			
 				<li><a href="/">主页</a></li>
-	        
-				<li><a href="/records/">个人随笔</a></li>
 	        
 				<li><a href="/photos/photos">美图分享</a></li>
 	        
@@ -130,8 +177,6 @@
 			
 				
 			
-				
-			
 			
 			
 			<nav class="header-nav">
@@ -152,13 +197,11 @@
 				<ul style="width: 70%">
 				
 				
-					<li style="width: 25%"><a href="/">主页</a></li>
+					<li style="width: 33.333333333333336%"><a href="/">主页</a></li>
 		        
-					<li style="width: 25%"><a href="/records/">个人随笔</a></li>
+					<li style="width: 33.333333333333336%"><a href="/photos/photos">美图分享</a></li>
 		        
-					<li style="width: 25%"><a href="/photos/photos">美图分享</a></li>
-		        
-					<li style="width: 25%"><a href="/archives/index.html">归档</a></li>
+					<li style="width: 33.333333333333336%"><a href="/archives/index.html">归档</a></li>
 		        
 				</ul>
 			</nav>
@@ -208,8 +251,7 @@
         <p>hexo+yilia添加相册视屏功能</p>
 <a id="more"></a>
 
-<p>主要是添加相册和视频功能，参考<a href="http://lawlite.me/2017/04/13/Hexo-Github%E5%AE%9E%E7%8E%B0%E7%9B%B8%E5%86%8C%E5%8A%9F%E8%83%BD/" target="_blank" rel="noopener">Hexo-Github实现相册功能</a> ，csdn博客：<a href="https://blog.csdn.net/u013082989/article/details/70162293" target="_blank" rel="noopener">Hexo+Github实现相册功能</a>，我看到网上好多人都是按照这个模板来实现的。<br>效果图：<br><img src="/article/picture_1.jpg" alt="mV0P56.jpg"></p>
-<p>注：这个视频加载不出来应该是因为和视频链接有关系.<br><img src="/article/picture_2.jpg" alt="mV0CUx.jpg"></p>
+<p>效果图：<br><img src="/article/picture_1.jpg" alt="mV0P56.jpg"></p>
 <h2 id="一、增加相册功能"><a href="#一、增加相册功能" class="headerlink" title="一、增加相册功能"></a>一、增加相册功能</h2><h3 id="1-原理"><a href="#1-原理" class="headerlink" title="1. 原理"></a>1. 原理</h3><p>两个github仓库，一个存放图片，一个存放hexo博客（当然你一个仓库两个分支也可以，我就是这样）。<br><img src="/article/picture_3.jpg" alt="mV0Yrj.jpg"></p>
 <h3 id="2-修改代码"><a href="#2-修改代码" class="headerlink" title="2.修改代码"></a>2.修改代码</h3><p>源代码到github去下：<a href="https://github.com/lawlite19/Blog-Back-Up" target="_blank" rel="noopener">https://github.com/lawlite19/Blog-Back-Up</a></p>
 <h4 id="2-1-新建博客的photos页面"><a href="#2-1-新建博客的photos页面" class="headerlink" title="2.1 新建博客的photos页面"></a>2.1 新建博客的photos页面</h4><ul>
@@ -225,18 +267,28 @@
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var minSrc = &apos;https://raw.githubusercontent.com/lawlite19/blog-back-up/master/min_photos/&apos; + data.link[i];</span><br><span class="line">var src = &apos;https://raw.githubusercontent.com/lawlite19/blog-back-up/master/photos/&apos; + data.link[i];</span><br></pre></td></tr></table></figure>
 
-<h4 id="2-2-新建本地图片库"><a href="#2-2-新建本地图片库" class="headerlink" title="2.2 新建本地图片库"></a>2.2 新建本地图片库</h4><p>新建一个文件夹存放图片，我的是<code>photos-source</code>，新建目录<code>photos</code>，<code>min_photos</code>，同时把<code>ImageProcess.py</code>,<code>ImageProcess.pyc</code>， <code>tool.py</code> 这三个文件放到该目录下。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">H:.photos-source</span><br><span class="line">│  ImageProcess.py</span><br><span class="line">│  ImageProcess.pyc</span><br><span class="line">│  tool.py</span><br><span class="line">│</span><br><span class="line">├─blog_photos_copy</span><br><span class="line">│      data.json</span><br><span class="line">│      index.ejs</span><br><span class="line">│      ins.css</span><br><span class="line">│      ins.js</span><br><span class="line">│      lazyload.min.js</span><br><span class="line">│</span><br><span class="line">├─min_photos</span><br><span class="line">│      2014-11-16_鞠婧祎1.jpg</span><br><span class="line">│</span><br><span class="line">├─photos</span><br><span class="line">│      2014-11-16_鞠婧祎1.jpg</span><br><span class="line">│      data.json</span><br><span class="line">│</span><br><span class="line">└─__pycache__</span><br><span class="line">        ImageProcess.cpython-37.pyc</span><br></pre></td></tr></table></figure>
+<p><strong>注意：</strong>本路径是不是你github保存路径，而是下载路径</p>
+<blockquote>
+<p>进入你github放图片的目录下点击Download</p>
+</blockquote>
+<p><img src="/article/picture_2.png" alt></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">被红色框框住的地址</span><br></pre></td></tr></table></figure>
+
+<p> <img src="/article/picture_4.png" alt></p>
+<h4 id="2-2-新建本地图片库"><a href="#2-2-新建本地图片库" class="headerlink" title="2.2 新建本地图片库"></a>2.2 新建本地图片库</h4><p>在photos中新建一个文件夹存放图片，我的是<code>photos-source</code>，再新建目录<code>photos</code>，<code>min_photos</code>，同时把<code>ImageProcess.py</code>,<code>ImageProcess.pyc</code>， <code>tool.py</code> 这三个文件放到该目录下。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">H:</span><br><span class="line">.photos</span><br><span class="line">│	data.json</span><br><span class="line">│   index.ejs</span><br><span class="line">│   ins.css</span><br><span class="line">│   ins.js</span><br><span class="line">│   lazyload.min.js</span><br><span class="line">│</span><br><span class="line">|---photos-source</span><br><span class="line">│		ImageProcess.py</span><br><span class="line">│		ImageProcess.pyc</span><br><span class="line">│		tool.py</span><br><span class="line">│</span><br><span class="line">├		─min_photos</span><br><span class="line">│      		2014-11-16_鞠婧祎1.jpg</span><br><span class="line">│</span><br><span class="line">├		─photos</span><br><span class="line">│      		2014-11-16_鞠婧祎1.jpg</span><br><span class="line">│      		data.json</span><br><span class="line">│</span><br><span class="line">└		─__pycache__</span><br><span class="line">        	ImageProcess.cpython-37.pyc</span><br></pre></td></tr></table></figure>
 
 <h4 id="2-3-修改tool-py中的路径"><a href="#2-3-修改tool-py中的路径" class="headerlink" title="2.3 修改tool.py中的路径"></a>2.3 修改<code>tool.py</code>中的路径</h4><p>修改这里的下面代码块的路径：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#路径换成自己的博客的图片文件夹的路径:H:\Hexo\source\photos</span><br><span class="line">    with open(&quot;H:\\Hexo\\source\\photos\\data.json&quot;,&quot;w&quot;) as fp:</span><br><span class="line">        json.dump(final_dict, fp)</span><br></pre></td></tr></table></figure>
 
-<p>注意：如果不是用两个仓库，可以注释git命令部分内容，然后需要自己先将图片上传到github上，要不然显示不了。</p>
+<p>注意：如果不是用两个仓库，可以注释git部署的方法，然后需要自己先将图片上传到github上，要不然显示不了。</p>
 <h4 id="2-4-每次上传照片都需要运行python脚本"><a href="#2-4-每次上传照片都需要运行python脚本" class="headerlink" title="2.4 每次上传照片都需要运行python脚本"></a>2.4 每次上传照片都需要运行python脚本</h4><p>需要安装python环境，在命令行运行<code>py tool.py</code>命令。</p>
 <h4 id="2-5-开启相册功能"><a href="#2-5-开启相册功能" class="headerlink" title="2.5 开启相册功能"></a>2.5 开启相册功能</h4><p><code>H:\Hexo\themes\yilia\_config.yml</code>取消注册相册行。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">menu:</span><br><span class="line">  主页: /</span><br><span class="line">  #随笔: /tags/随笔/</span><br><span class="line">  #分类: /categories</span><br><span class="line">  归档: /archives</span><br><span class="line">  相册: /photos</span><br><span class="line">  #标签: /tags</span><br></pre></td></tr></table></figure>
 
-<h3 id="3-存在问题"><a href="#3-存在问题" class="headerlink" title="3.存在问题"></a>3.存在问题</h3><p>众所周知，国内访问GitHub还有比较慢的，所以有时候图片会加载不出来。<br>替换方法：使用七牛云作为图库，存放图片，这种方式网上也很常见，可以自行修改。</p>
+<h3 id="3-存在问题"><a href="#3-存在问题" class="headerlink" title="3.存在问题"></a>3.存在问题</h3><p>如果你上面操作都没有问题，那么你就会发现点开图片可以显示，缩略图不显示。</p>
+<p>首先，去下载“empty.png” 这里这里<br>直接右键另存，保存为“empty.png”。名字也要一样。<br>在你博客的本地仓库source下新建一个文件夹命名为assets,再在assets下新建一个文件夹命名为img。最后把empty.png放到img里面。我的结果如下：</p>
+<p><img src="/article/picture_5.jpg" alt></p>
 <h2 id="二、添加（相册页的）视频功能"><a href="#二、添加（相册页的）视频功能" class="headerlink" title="二、添加（相册页的）视频功能"></a>二、添加（相册页的）视频功能</h2><p>视频功能基于相册功能，相当于在其旁边添加一个导航栏，导航到相册页。</p>
 <h3 id="1、添加视频样式css"><a href="#1、添加视频样式css" class="headerlink" title="1、添加视频样式css"></a>1、添加视频样式css</h3><ul>
 <li>打开<strong>当前博客</strong><code>source\photos</code>文件夹下的<code>ins.css</code>文件</li>
@@ -585,11 +637,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Linux</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Hexo_admin</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Hexo_admin</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
