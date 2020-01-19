@@ -2,7 +2,7 @@
 function snowFall(snow) {
     /* 可配置属性 */
     snow = snow || {};
-    this.maxFlake = snow.maxFlake || 200;   /* 最多片数 */
+    this.maxFlake = snow.maxFlake || 80;   /* 最多片数 */
     this.flakeSize = snow.flakeSize || 10;  /* 雪花形状 */
     this.fallSpeed = snow.fallSpeed || 1;   /* 坠落速度 */
 }
@@ -87,9 +87,9 @@ flakeMove.prototype.reset = function(width, height) {
 // 渲染雪花-随机形状（此处可修改雪花颜色！！！）
 flakeMove.prototype.render = function(ctx) {
     var snowFlake = ctx.createRadialGradient(this.x, this.y, 0, this.x, this.y, this.size);
-    snowFlake.addColorStop(0, "rgba(255, 102, 0, 0.9)");  /* 此处是雪花颜色，默认是白色 */
-    snowFlake.addColorStop(.5, "rgba(255, 153, 51, 0.5)"); /* 若要改为其他颜色，请自行查 */
-    snowFlake.addColorStop(1, "rgba(255, 204, 102, 0)");    /* 找16进制的RGB 颜色代码。 */
+    snowFlake.addColorStop(0, "rgba(204, 255, 255, 0.9)");  /* 此处是雪花颜色，默认是白色 */
+    snowFlake.addColorStop(.5, "rgba(255, 204, 255, 0.5)"); /* 若要改为其他颜色，请自行查 */
+    snowFlake.addColorStop(1, "rgba(255, 255, 153, 0)");    /* 找16进制的RGB 颜色代码。 */
     ctx.save();
     ctx.fillStyle = snowFlake;
     ctx.beginPath();
