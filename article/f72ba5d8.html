@@ -16,14 +16,14 @@
 <meta property="og:site_name" content="(●ˇ∀ˇ●)">
 <meta property="og:description" content="hexo+yilia添加相册视屏功能">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;article&#x2F;picture_1.jpg">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;article&#x2F;picture_3.jpg">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;article&#x2F;picture_2.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;article&#x2F;picture_4.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;article&#x2F;picture_5.jpg">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;article&#x2F;f72ba5d8&#x2F;picture_1.jpg">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;article&#x2F;f72ba5d8&#x2F;picture_3.jpg">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;article&#x2F;f72ba5d8&#x2F;picture_2.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;article&#x2F;f72ba5d8&#x2F;picture_4.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;article&#x2F;f72ba5d8&#x2F;picture_5.jpg">
 <meta property="og:updated_time" content="2020-01-17T01:22:04.382Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;article&#x2F;picture_1.jpg">
+<meta name="twitter:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;article&#x2F;f72ba5d8&#x2F;picture_1.jpg">
   
     <link rel="alternative" href="/atom.xml" title="(●ˇ∀ˇ●)" type="application/atom+xml">
   
@@ -251,8 +251,8 @@
         <p>hexo+yilia添加相册视屏功能</p>
 <a id="more"></a>
 
-<p>效果图：<br><img src="/article/picture_1.jpg" alt="mV0P56.jpg"></p>
-<h2 id="一、增加相册功能"><a href="#一、增加相册功能" class="headerlink" title="一、增加相册功能"></a>一、增加相册功能</h2><h3 id="1-原理"><a href="#1-原理" class="headerlink" title="1. 原理"></a>1. 原理</h3><p>两个github仓库，一个存放图片，一个存放hexo博客（当然你一个仓库两个分支也可以，我就是这样）。<br><img src="/article/picture_3.jpg" alt="mV0Yrj.jpg"></p>
+<p>效果图：<br><img src="/article/f72ba5d8/picture_1.jpg" alt="mV0P56.jpg"></p>
+<h2 id="一、增加相册功能"><a href="#一、增加相册功能" class="headerlink" title="一、增加相册功能"></a>一、增加相册功能</h2><h3 id="1-原理"><a href="#1-原理" class="headerlink" title="1. 原理"></a>1. 原理</h3><p>两个github仓库，一个存放图片，一个存放hexo博客（当然你一个仓库两个分支也可以，我就是这样）。<br><img src="/article/f72ba5d8/picture_3.jpg" alt="mV0Yrj.jpg"></p>
 <h3 id="2-修改代码"><a href="#2-修改代码" class="headerlink" title="2.修改代码"></a>2.修改代码</h3><p>源代码到github去下：<a href="https://github.com/lawlite19/Blog-Back-Up" target="_blank" rel="noopener">https://github.com/lawlite19/Blog-Back-Up</a></p>
 <h4 id="2-1-新建博客的photos页面"><a href="#2-1-新建博客的photos页面" class="headerlink" title="2.1 新建博客的photos页面"></a>2.1 新建博客的photos页面</h4><ul>
 <li><p>在<strong>博客</strong>的<code>source</code>文件夹下建立一个<code>photos</code>文件夹</p>
@@ -271,10 +271,10 @@
 <blockquote>
 <p>进入你github放图片的目录下点击Download</p>
 </blockquote>
-<p><img src="/article/picture_2.png" alt></p>
+<p><img src="/article/f72ba5d8/picture_2.png" alt></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">被红色框框住的地址</span><br></pre></td></tr></table></figure>
 
-<p> <img src="/article/picture_4.png" alt></p>
+<p> <img src="/article/f72ba5d8/picture_4.png" alt></p>
 <h4 id="2-2-新建本地图片库"><a href="#2-2-新建本地图片库" class="headerlink" title="2.2 新建本地图片库"></a>2.2 新建本地图片库</h4><p>在photos中新建一个文件夹存放图片，我的是<code>photos-source</code>，再新建目录<code>photos</code>，<code>min_photos</code>，同时把<code>ImageProcess.py</code>,<code>ImageProcess.pyc</code>， <code>tool.py</code> 这三个文件放到该目录下。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">H:</span><br><span class="line">.photos</span><br><span class="line">│	data.json</span><br><span class="line">│   index.ejs</span><br><span class="line">│   ins.css</span><br><span class="line">│   ins.js</span><br><span class="line">│   lazyload.min.js</span><br><span class="line">│</span><br><span class="line">|---photos-source</span><br><span class="line">│		ImageProcess.py</span><br><span class="line">│		ImageProcess.pyc</span><br><span class="line">│		tool.py</span><br><span class="line">│</span><br><span class="line">├		─min_photos</span><br><span class="line">│      		2014-11-16_鞠婧祎1.jpg</span><br><span class="line">│</span><br><span class="line">├		─photos</span><br><span class="line">│      		2014-11-16_鞠婧祎1.jpg</span><br><span class="line">│      		data.json</span><br><span class="line">│</span><br><span class="line">└		─__pycache__</span><br><span class="line">        	ImageProcess.cpython-37.pyc</span><br></pre></td></tr></table></figure>
 
@@ -288,7 +288,7 @@
 
 <h3 id="3-存在问题"><a href="#3-存在问题" class="headerlink" title="3.存在问题"></a>3.存在问题</h3><p>如果你上面操作都没有问题，那么你就会发现点开图片可以显示，缩略图不显示。</p>
 <p>首先，去下载“empty.png” 这里这里<br>直接右键另存，保存为“empty.png”。名字也要一样。<br>在你博客的本地仓库source下新建一个文件夹命名为assets,再在assets下新建一个文件夹命名为img。最后把empty.png放到img里面。我的结果如下：</p>
-<p><img src="/article/picture_5.jpg" alt></p>
+<p><img src="/article/f72ba5d8/picture_5.jpg" alt></p>
 <h2 id="二、添加（相册页的）视频功能"><a href="#二、添加（相册页的）视频功能" class="headerlink" title="二、添加（相册页的）视频功能"></a>二、添加（相册页的）视频功能</h2><p>视频功能基于相册功能，相当于在其旁边添加一个导航栏，导航到相册页。</p>
 <h3 id="1、添加视频样式css"><a href="#1、添加视频样式css" class="headerlink" title="1、添加视频样式css"></a>1、添加视频样式css</h3><ul>
 <li>打开<strong>当前博客</strong><code>source\photos</code>文件夹下的<code>ins.css</code>文件</li>
