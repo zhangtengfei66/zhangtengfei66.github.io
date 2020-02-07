@@ -116,7 +116,7 @@
         var data = res.list[j].arr;
         var liTmpl = "";
         for (var i = 0, len = data.link.length; i < len; i++) {
-          var minSrc = 'https://raw.githubusercontent.com/zhangtengfei66/zhangtengfei66.github.io/master/photos/photos-source/min_photos/' + data.link[i];
+          var minSrc = 'https://raw.githubusercontent.com/zhangtengfei66/zhangtengfei66.github.io/master/photos/photos-source/min_photos/' + data.link[i] + '.min.jpg';
 
           var src = 'https://raw.githubusercontent.com/zhangtengfei66/zhangtengfei66.github.io/master/photos/photos-source/photos/' + data.link[i];
 
