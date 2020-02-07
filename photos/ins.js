@@ -99,7 +99,7 @@
       
       // 修改blog12为myblog12，修改photos为raw_photos
 
-      var minSrc = 'https://raw.githubusercontent.com/zhangtengfei66/zhangtengfei66.github.io/master/photos-source/min_photos/'+data.link[i];
+      var minSrc = 'https://raw.githubusercontent.com/zhangtengfei66/zhangtengfei66.github.io/master/photos-source/min_photos/'+ data.link[i];
       var src = 'https://raw.githubusercontent.com/zhangtengfei66/zhangtengfei66.github.io/master/photos-source/photos/' + data.link[i];
           var type = data.type[i];
           var target = src + (type === 'video' ? '.mp4' : '.jpg');
