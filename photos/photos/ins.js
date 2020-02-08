@@ -1,39 +1,65 @@
 /******/
 (function(modules) { // webpackBootstrap
-  // The module cache
+  /******/ // The module cache
+  /******/
   var installedModules = {};
-  // The require function
+  /******/
+  /******/ // The require function
+  /******/
   function __webpack_require__(moduleId) {
-    // Check if module is in cache
+    /******/
+    /******/ // Check if module is in cache
+    /******/
     if (installedModules[moduleId])
+    /******/
       return installedModules[moduleId].exports;
-
-    // Create a new module (and put it into the cache)
+    /******/
+    /******/ // Create a new module (and put it into the cache)
+    /******/
     var module = installedModules[moduleId] = {
+      /******/
       exports: {},
+      /******/
       id: moduleId,
+      /******/
       loaded: false
+        /******/
     };
-   
-   // Execute the module function
+    /******/
+    /******/ // Execute the module function
+    /******/
     modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
-
-  // Flag the module as loaded
+    /******/
+    /******/ // Flag the module as loaded
+    /******/
     module.loaded = true;
-  // Return the exports of the module
+    /******/
+    /******/ // Return the exports of the module
+    /******/
     return module.exports;
+    /******/
   }
-  // expose the modules object (__webpack_modules__)
+  /******/
+  /******/
+  /******/ // expose the modules object (__webpack_modules__)
+  /******/
   __webpack_require__.m = modules;
-  // expose the module cache
+  /******/
+  /******/ // expose the module cache
+  /******/
   __webpack_require__.c = installedModules;
-  // __webpack_public_path__
+  /******/
+  /******/ // __webpack_public_path__
+  /******/
   __webpack_require__.p = "/dist/";
-  // Load entry module and return exports
+  /******/
+  /******/ // Load entry module and return exports
+  /******/
   return __webpack_require__(0);
+  /******/
 })
 /************************************************************************/
-
+/******/
 ([
   /* 0 */
   /***/
@@ -84,23 +110,14 @@
         addMask($videoImg[i]);
       }
     };
-
-  // 修改这里render()函数：修改图片的路径地址.minSrc 小图的路径. src 大图的路径.修改为自己的图片路径(github的路径)
-  // https://raw.githubusercontent.com/yansheng836/yansheng836.github.io/blog/photos-source/photos/
-  // https://raw.githubusercontent.com/yansheng836/yansheng836.github.io/blog/photos-source/min_photos/
     var render = function render(res) {
       var ulTmpl = "";
       for (var j = 0, len2 = res.list.length; j < len2; j++) {
         var data = res.list[j].arr;
         var liTmpl = "";
         for (var i = 0, len = data.link.length; i < len; i++) {
-          // var minSrc = 'https://raw.githubusercontent.com/yansheng836/yansheng836.github.io/blog/photos-source/min_photos/' + data.link[i];
-          // var src = 'https://raw.githubusercontent.com/yansheng836/yansheng836.github.io/blog/photos-source/photos/' + data.link[i];
-      
-      // 修改blog12为myblog12，修改photos为raw_photos
-
-      var minSrc = 'https://raw.githubusercontent.com/zhangtengfei66/zhangtengfei66.github.io/master/photos/photos-source/min_photos/'+ data.link[i];
-      var src = 'https://raw.githubusercontent.com/zhangtengfei66/zhangtengfei66.github.io/master/photos/photos-source/photos/' + data.link[i];
+          var minSrc = 'https://raw.githubusercontent.com/zhangtengfei66/zhangtengfei66.github.io/master/photos/photos-source/min_photos/' + data.link[i];
+          var src = 'https://raw.githubusercontent.com/zhangtengfei66/zhangtengfei66.github.io/master/photos/photos-source/photos/' + data.link[i];
           var type = data.type[i];
           var target = src + (type === 'video' ? '.mp4' : '.jpg');
           src += '';
@@ -186,8 +203,10 @@
 
     // export default impush;
 
+    /***/
   },
   /* 1 */
+  /***/
   function(module, exports, __webpack_require__) {
 
     /* WEBPACK VAR INJECTION */
