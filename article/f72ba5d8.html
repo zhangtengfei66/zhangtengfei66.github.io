@@ -21,7 +21,9 @@
 <meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;article&#x2F;f72ba5d8&#x2F;picture_2.png">
 <meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;article&#x2F;f72ba5d8&#x2F;picture_4.png">
 <meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;article&#x2F;f72ba5d8&#x2F;picture_5.jpg">
-<meta property="og:updated_time" content="2020-01-17T01:22:04.382Z">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;article&#x2F;f72ba5d8&#x2F;203458.jpg">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;article&#x2F;f72ba5d8&#x2F;210611.jpg">
+<meta property="og:updated_time" content="2020-02-08T13:10:25.860Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;article&#x2F;f72ba5d8&#x2F;picture_1.jpg">
   
@@ -289,6 +291,11 @@
 <h3 id="3-存在问题"><a href="#3-存在问题" class="headerlink" title="3.存在问题"></a>3.存在问题</h3><p>如果你上面操作都没有问题，那么你就会发现点开图片可以显示，缩略图不显示。</p>
 <p>首先，去下载“empty.png” 这里这里<br>直接右键另存，保存为“empty.png”。名字也要一样。<br>在你博客的本地仓库source下新建一个文件夹命名为assets,再在assets下新建一个文件夹命名为img。最后把empty.png放到img里面。我的结果如下：</p>
 <p><img src="/article/f72ba5d8/picture_5.jpg" alt></p>
+<h3 id="4-如果缩略图还是出不来"><a href="#4-如果缩略图还是出不来" class="headerlink" title="4.如果缩略图还是出不来"></a>4.如果缩略图还是出不来</h3><p>网页显示以下错误</p>
+<p><img src="/article/f72ba5d8/203458.jpg" alt="img"></p>
+<h3 id="那你可以试试这个方法"><a href="#那你可以试试这个方法" class="headerlink" title="那你可以试试这个方法"></a>那你可以试试这个方法</h3><h3 id="⬇-⬇-⬇-⬇-⬇-⬇-⬇-⬇-⬇-⬇-⬇-⬇"><a href="#⬇-⬇-⬇-⬇-⬇-⬇-⬇-⬇-⬇-⬇-⬇-⬇" class="headerlink" title="⬇ ⬇ ⬇ ⬇ ⬇ ⬇ ⬇ ⬇ ⬇ ⬇ ⬇ ⬇"></a>⬇ ⬇ ⬇ ⬇ ⬇ ⬇ ⬇ ⬇ ⬇ ⬇ ⬇ ⬇</h3><p>打开你的ins.js,找到这段代码</p>
+<p><img src="/article/f72ba5d8/210611.jpg" alt="img"></p>
+<p>根据选中路径来保存<code>empty.png</code>图片。</p>
 <h2 id="二、添加（相册页的）视频功能"><a href="#二、添加（相册页的）视频功能" class="headerlink" title="二、添加（相册页的）视频功能"></a>二、添加（相册页的）视频功能</h2><p>视频功能基于相册功能，相当于在其旁边添加一个导航栏，导航到相册页。</p>
 <h3 id="1、添加视频样式css"><a href="#1、添加视频样式css" class="headerlink" title="1、添加视频样式css"></a>1、添加视频样式css</h3><ul>
 <li>打开<strong>当前博客</strong><code>source\photos</code>文件夹下的<code>ins.css</code>文件</li>
