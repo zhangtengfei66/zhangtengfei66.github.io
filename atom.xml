@@ -5,9 +5,9 @@
   <subtitle>个人博客，总结一些编程知识的网站，希望可以帮到各位！</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://yoursite.com/"/>
+  <link href="http://zhangtengfei66.github.io/"/>
   <updated>2020-02-08T11:23:55.253Z</updated>
-  <id>http://yoursite.com/</id>
+  <id>http://zhangtengfei66.github.io/</id>
   
   <author>
     <name>腾飞</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>Maven的安装指南</title>
-    <link href="http://yoursite.com/article/34d62b77.html"/>
-    <id>http://yoursite.com/article/34d62b77.html</id>
+    <link href="http://zhangtengfei66.github.io/article/34d62b77.html"/>
+    <id>http://zhangtengfei66.github.io/article/34d62b77.html</id>
     <published>2020-02-06T08:51:56.000Z</published>
     <updated>2020-02-08T11:23:55.253Z</updated>
     
@@ -33,14 +33,14 @@
     
     
     
-      <category term="Maven" scheme="http://yoursite.com/tags/Maven/"/>
+      <category term="Maven" scheme="http://zhangtengfei66.github.io/tags/Maven/"/>
     
   </entry>
   
   <entry>
     <title>SpringBoot学习笔记(1)</title>
-    <link href="http://yoursite.com/article/e648fec4.html"/>
-    <id>http://yoursite.com/article/e648fec4.html</id>
+    <link href="http://zhangtengfei66.github.io/article/e648fec4.html"/>
+    <id>http://zhangtengfei66.github.io/article/e648fec4.html</id>
     <published>2020-02-05T08:50:47.000Z</published>
     <updated>2020-02-05T11:06:54.225Z</updated>
     
@@ -59,14 +59,14 @@
     
     
     
-      <category term="SpringBoot" scheme="http://yoursite.com/tags/SpringBoot/"/>
+      <category term="SpringBoot" scheme="http://zhangtengfei66.github.io/tags/SpringBoot/"/>
     
   </entry>
   
   <entry>
     <title>SpringBoot常用注解</title>
-    <link href="http://yoursite.com/article/e750a506.html"/>
-    <id>http://yoursite.com/article/e750a506.html</id>
+    <link href="http://zhangtengfei66.github.io/article/e750a506.html"/>
+    <id>http://zhangtengfei66.github.io/article/e750a506.html</id>
     <published>2020-02-05T08:50:05.000Z</published>
     <updated>2020-02-05T11:12:51.569Z</updated>
     
@@ -86,16 +86,16 @@
     
     
     
-      <category term="SpringBoot" scheme="http://yoursite.com/tags/SpringBoot/"/>
+      <category term="SpringBoot" scheme="http://zhangtengfei66.github.io/tags/SpringBoot/"/>
     
-      <category term="注解" scheme="http://yoursite.com/tags/%E6%B3%A8%E8%A7%A3/"/>
+      <category term="注解" scheme="http://zhangtengfei66.github.io/tags/%E6%B3%A8%E8%A7%A3/"/>
     
   </entry>
   
   <entry>
     <title>&#39;Java分页查询&#39;</title>
-    <link href="http://yoursite.com/article/3600463b.html"/>
-    <id>http://yoursite.com/article/3600463b.html</id>
+    <link href="http://zhangtengfei66.github.io/article/3600463b.html"/>
+    <id>http://zhangtengfei66.github.io/article/3600463b.html</id>
     <published>2020-02-01T03:40:52.000Z</published>
     <updated>2020-02-05T10:50:00.978Z</updated>
     
@@ -109,16 +109,16 @@
     
     
     
-      <category term="Java" scheme="http://yoursite.com/tags/Java/"/>
+      <category term="Java" scheme="http://zhangtengfei66.github.io/tags/Java/"/>
     
-      <category term="分页" scheme="http://yoursite.com/tags/%E5%88%86%E9%A1%B5/"/>
+      <category term="分页" scheme="http://zhangtengfei66.github.io/tags/%E5%88%86%E9%A1%B5/"/>
     
   </entry>
   
   <entry>
     <title>Hexo博客的使用方法(3)</title>
-    <link href="http://yoursite.com/article/db61916.html"/>
-    <id>http://yoursite.com/article/db61916.html</id>
+    <link href="http://zhangtengfei66.github.io/article/db61916.html"/>
+    <id>http://zhangtengfei66.github.io/article/db61916.html</id>
     <published>2020-01-17T02:03:31.000Z</published>
     <updated>2020-01-17T06:41:12.970Z</updated>
     
@@ -133,16 +133,16 @@
     
     
     
-      <category term="Hexo" scheme="http://yoursite.com/tags/Hexo/"/>
+      <category term="Hexo" scheme="http://zhangtengfei66.github.io/tags/Hexo/"/>
     
-      <category term="博客" scheme="http://yoursite.com/tags/%E5%8D%9A%E5%AE%A2/"/>
+      <category term="博客" scheme="http://zhangtengfei66.github.io/tags/%E5%8D%9A%E5%AE%A2/"/>
     
   </entry>
   
   <entry>
     <title>Linux查看硬件信息</title>
-    <link href="http://yoursite.com/article/8fb1a3ba.html"/>
-    <id>http://yoursite.com/article/8fb1a3ba.html</id>
+    <link href="http://zhangtengfei66.github.io/article/8fb1a3ba.html"/>
+    <id>http://zhangtengfei66.github.io/article/8fb1a3ba.html</id>
     <published>2020-01-15T05:36:55.000Z</published>
     <updated>2020-01-15T09:21:51.134Z</updated>
     
@@ -156,14 +156,14 @@
     
     
     
-      <category term="Linux" scheme="http://yoursite.com/tags/Linux/"/>
+      <category term="Linux" scheme="http://zhangtengfei66.github.io/tags/Linux/"/>
     
   </entry>
   
   <entry>
     <title>Hexo常用命令</title>
-    <link href="http://yoursite.com/article/24caea6b.html"/>
-    <id>http://yoursite.com/article/24caea6b.html</id>
+    <link href="http://zhangtengfei66.github.io/article/24caea6b.html"/>
+    <id>http://zhangtengfei66.github.io/article/24caea6b.html</id>
     <published>2020-01-15T02:05:10.000Z</published>
     <updated>2020-01-15T08:16:46.071Z</updated>
     
@@ -179,14 +179,14 @@
     
     
     
-      <category term="Hexo" scheme="http://yoursite.com/tags/Hexo/"/>
+      <category term="Hexo" scheme="http://zhangtengfei66.github.io/tags/Hexo/"/>
     
   </entry>
   
   <entry>
     <title>Hexo博客使用Hexo Admin插件</title>
-    <link href="http://yoursite.com/article/3a5333f4.html"/>
-    <id>http://yoursite.com/article/3a5333f4.html</id>
+    <link href="http://zhangtengfei66.github.io/article/3a5333f4.html"/>
+    <id>http://zhangtengfei66.github.io/article/3a5333f4.html</id>
     <published>2020-01-15T01:47:00.000Z</published>
     <updated>2020-02-06T12:14:03.871Z</updated>
     
@@ -200,18 +200,18 @@
     
     
     
-      <category term="Hexo" scheme="http://yoursite.com/tags/Hexo/"/>
+      <category term="Hexo" scheme="http://zhangtengfei66.github.io/tags/Hexo/"/>
     
-      <category term="博客" scheme="http://yoursite.com/tags/%E5%8D%9A%E5%AE%A2/"/>
+      <category term="博客" scheme="http://zhangtengfei66.github.io/tags/%E5%8D%9A%E5%AE%A2/"/>
     
-      <category term="Hexo_admin" scheme="http://yoursite.com/tags/Hexo-admin/"/>
+      <category term="Hexo_admin" scheme="http://zhangtengfei66.github.io/tags/Hexo-admin/"/>
     
   </entry>
   
   <entry>
     <title>Hexo博客SEO_URL持久化</title>
-    <link href="http://yoursite.com/article/23017e25.html"/>
-    <id>http://yoursite.com/article/23017e25.html</id>
+    <link href="http://zhangtengfei66.github.io/article/23017e25.html"/>
+    <id>http://zhangtengfei66.github.io/article/23017e25.html</id>
     <published>2020-01-13T03:14:34.000Z</published>
     <updated>2020-01-15T08:16:46.015Z</updated>
     
@@ -225,18 +225,18 @@
     
     
     
-      <category term="Hexo" scheme="http://yoursite.com/tags/Hexo/"/>
+      <category term="Hexo" scheme="http://zhangtengfei66.github.io/tags/Hexo/"/>
     
-      <category term="博客" scheme="http://yoursite.com/tags/%E5%8D%9A%E5%AE%A2/"/>
+      <category term="博客" scheme="http://zhangtengfei66.github.io/tags/%E5%8D%9A%E5%AE%A2/"/>
     
-      <category term="SEO" scheme="http://yoursite.com/tags/SEO/"/>
+      <category term="SEO" scheme="http://zhangtengfei66.github.io/tags/SEO/"/>
     
   </entry>
   
   <entry>
     <title>Hexo博客主题美化</title>
-    <link href="http://yoursite.com/article/3f8b11a6.html"/>
-    <id>http://yoursite.com/article/3f8b11a6.html</id>
+    <link href="http://zhangtengfei66.github.io/article/3f8b11a6.html"/>
+    <id>http://zhangtengfei66.github.io/article/3f8b11a6.html</id>
     <published>2020-01-12T09:36:49.000Z</published>
     <updated>2020-01-15T08:16:46.023Z</updated>
     
@@ -250,16 +250,16 @@
     
     
     
-      <category term="Hexo" scheme="http://yoursite.com/tags/Hexo/"/>
+      <category term="Hexo" scheme="http://zhangtengfei66.github.io/tags/Hexo/"/>
     
-      <category term="博客" scheme="http://yoursite.com/tags/%E5%8D%9A%E5%AE%A2/"/>
+      <category term="博客" scheme="http://zhangtengfei66.github.io/tags/%E5%8D%9A%E5%AE%A2/"/>
     
   </entry>
   
   <entry>
     <title>Hexo博客的使用方法(2)</title>
-    <link href="http://yoursite.com/article/14ad2857.html"/>
-    <id>http://yoursite.com/article/14ad2857.html</id>
+    <link href="http://zhangtengfei66.github.io/article/14ad2857.html"/>
+    <id>http://zhangtengfei66.github.io/article/14ad2857.html</id>
     <published>2020-01-12T08:52:55.000Z</published>
     <updated>2020-01-17T01:53:23.242Z</updated>
     
@@ -274,16 +274,16 @@
     
     
     
-      <category term="Hexo" scheme="http://yoursite.com/tags/Hexo/"/>
+      <category term="Hexo" scheme="http://zhangtengfei66.github.io/tags/Hexo/"/>
     
-      <category term="博客" scheme="http://yoursite.com/tags/%E5%8D%9A%E5%AE%A2/"/>
+      <category term="博客" scheme="http://zhangtengfei66.github.io/tags/%E5%8D%9A%E5%AE%A2/"/>
     
   </entry>
   
   <entry>
     <title>hexo-yilia添加视频照片功能</title>
-    <link href="http://yoursite.com/article/f72ba5d8.html"/>
-    <id>http://yoursite.com/article/f72ba5d8.html</id>
+    <link href="http://zhangtengfei66.github.io/article/f72ba5d8.html"/>
+    <id>http://zhangtengfei66.github.io/article/f72ba5d8.html</id>
     <published>2020-01-12T06:58:16.000Z</published>
     <updated>2020-02-08T13:10:25.860Z</updated>
     
@@ -297,14 +297,14 @@
     
     
     
-      <category term="博客" scheme="http://yoursite.com/tags/%E5%8D%9A%E5%AE%A2/"/>
+      <category term="博客" scheme="http://zhangtengfei66.github.io/tags/%E5%8D%9A%E5%AE%A2/"/>
     
   </entry>
   
   <entry>
     <title>博客中写入数学公式</title>
-    <link href="http://yoursite.com/article/5f523cc.html"/>
-    <id>http://yoursite.com/article/5f523cc.html</id>
+    <link href="http://zhangtengfei66.github.io/article/5f523cc.html"/>
+    <id>http://zhangtengfei66.github.io/article/5f523cc.html</id>
     <published>2020-01-11T06:18:08.000Z</published>
     <updated>2020-01-15T08:16:46.139Z</updated>
     
@@ -318,14 +318,14 @@
     
     
     
-      <category term="博客" scheme="http://yoursite.com/tags/%E5%8D%9A%E5%AE%A2/"/>
+      <category term="博客" scheme="http://zhangtengfei66.github.io/tags/%E5%8D%9A%E5%AE%A2/"/>
     
   </entry>
   
   <entry>
     <title>博客文章添加图片</title>
-    <link href="http://yoursite.com/article/50b8e0b4.html"/>
-    <id>http://yoursite.com/article/50b8e0b4.html</id>
+    <link href="http://zhangtengfei66.github.io/article/50b8e0b4.html"/>
+    <id>http://zhangtengfei66.github.io/article/50b8e0b4.html</id>
     <published>2020-01-11T06:16:49.000Z</published>
     <updated>2020-02-01T05:32:37.734Z</updated>
     
@@ -339,16 +339,16 @@
     
     
     
-      <category term="Hexo" scheme="http://yoursite.com/tags/Hexo/"/>
+      <category term="Hexo" scheme="http://zhangtengfei66.github.io/tags/Hexo/"/>
     
-      <category term="博客" scheme="http://yoursite.com/tags/%E5%8D%9A%E5%AE%A2/"/>
+      <category term="博客" scheme="http://zhangtengfei66.github.io/tags/%E5%8D%9A%E5%AE%A2/"/>
     
   </entry>
   
   <entry>
     <title>博客绑定个人站点</title>
-    <link href="http://yoursite.com/article/326c8a69.html"/>
-    <id>http://yoursite.com/article/326c8a69.html</id>
+    <link href="http://zhangtengfei66.github.io/article/326c8a69.html"/>
+    <id>http://zhangtengfei66.github.io/article/326c8a69.html</id>
     <published>2020-01-11T06:08:39.000Z</published>
     <updated>2020-01-15T08:16:46.163Z</updated>
     
@@ -363,16 +363,16 @@
     
     
     
-      <category term="博客" scheme="http://yoursite.com/tags/%E5%8D%9A%E5%AE%A2/"/>
+      <category term="博客" scheme="http://zhangtengfei66.github.io/tags/%E5%8D%9A%E5%AE%A2/"/>
     
-      <category term="个人域" scheme="http://yoursite.com/tags/%E4%B8%AA%E4%BA%BA%E5%9F%9F/"/>
+      <category term="个人域" scheme="http://zhangtengfei66.github.io/tags/%E4%B8%AA%E4%BA%BA%E5%9F%9F/"/>
     
   </entry>
   
   <entry>
     <title>git入门使用①</title>
-    <link href="http://yoursite.com/article/9e564ab7.html"/>
-    <id>http://yoursite.com/article/9e564ab7.html</id>
+    <link href="http://zhangtengfei66.github.io/article/9e564ab7.html"/>
+    <id>http://zhangtengfei66.github.io/article/9e564ab7.html</id>
     <published>2020-01-09T07:28:21.000Z</published>
     <updated>2020-01-15T08:16:46.111Z</updated>
     
@@ -386,14 +386,14 @@
     
     
     
-      <category term="git" scheme="http://yoursite.com/tags/git/"/>
+      <category term="git" scheme="http://zhangtengfei66.github.io/tags/git/"/>
     
   </entry>
   
   <entry>
     <title>Hexo博客的使用方法(1)</title>
-    <link href="http://yoursite.com/article/3f807b94.html"/>
-    <id>http://yoursite.com/article/3f807b94.html</id>
+    <link href="http://zhangtengfei66.github.io/article/3f807b94.html"/>
+    <id>http://zhangtengfei66.github.io/article/3f807b94.html</id>
     <published>2019-10-09T07:10:56.000Z</published>
     <updated>2020-01-17T02:43:55.609Z</updated>
     
@@ -407,16 +407,16 @@
     
     
     
-      <category term="Hexo" scheme="http://yoursite.com/tags/Hexo/"/>
+      <category term="Hexo" scheme="http://zhangtengfei66.github.io/tags/Hexo/"/>
     
-      <category term="博客" scheme="http://yoursite.com/tags/%E5%8D%9A%E5%AE%A2/"/>
+      <category term="博客" scheme="http://zhangtengfei66.github.io/tags/%E5%8D%9A%E5%AE%A2/"/>
     
   </entry>
   
   <entry>
     <title>我的第一篇博客文章！</title>
-    <link href="http://yoursite.com/article/589d2c8b.html"/>
-    <id>http://yoursite.com/article/589d2c8b.html</id>
+    <link href="http://zhangtengfei66.github.io/article/589d2c8b.html"/>
+    <id>http://zhangtengfei66.github.io/article/589d2c8b.html</id>
     <published>2019-09-12T02:31:32.000Z</published>
     <updated>2020-01-15T08:16:46.175Z</updated>
     
