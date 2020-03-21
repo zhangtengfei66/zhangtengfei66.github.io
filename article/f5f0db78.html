@@ -6,16 +6,24 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://zhangtengfei66.gitee.io">
-  <title>Archives: 2020 | (●ˇ∀ˇ●)</title>
+  <title>git学习笔记 | (●ˇ∀ˇ●)</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="腾飞的个人博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="(●ˇ∀ˇ●)">
-<meta property="og:url" content="http:&#x2F;&#x2F;zhangtengfei66.gitee.io&#x2F;archives&#x2F;2020&#x2F;page&#x2F;3&#x2F;index.html">
+  <meta name="description" content="git学习笔记 🌜 🌜 🌜 linux基础命令，git操作…">
+<meta name="keywords" content="git">
+<meta property="og:type" content="article">
+<meta property="og:title" content="git学习笔记">
+<meta property="og:url" content="http:&#x2F;&#x2F;zhangtengfei66.gitee.io&#x2F;article&#x2F;f5f0db78.html">
 <meta property="og:site_name" content="(●ˇ∀ˇ●)">
-<meta property="og:description" content="腾飞的个人博客">
+<meta property="og:description" content="git学习笔记 🌜 🌜 🌜 linux基础命令，git操作…">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http:&#x2F;&#x2F;zhangtengfei66.gitee.io&#x2F;article&#x2F;f5f0db78&#x2F;View.jpg">
+<meta property="og:image" content="http:&#x2F;&#x2F;zhangtengfei66.gitee.io&#x2F;article&#x2F;f5f0db78&#x2F;Branchdiagram.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;zhangtengfei66.gitee.io&#x2F;article&#x2F;f5f0db78&#x2F;Branchconflict.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;zhangtengfei66.gitee.io&#x2F;article&#x2F;f5f0db78&#x2F;github.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;zhangtengfei66.gitee.io&#x2F;article&#x2F;f5f0db78&#x2F;githubCrossteam.png">
+<meta property="og:updated_time" content="2020-03-21T09:51:44.002Z">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http:&#x2F;&#x2F;zhangtengfei66.gitee.io&#x2F;article&#x2F;f5f0db78&#x2F;View.jpg">
   
     <link rel="alternative" href="/atom.xml" title="(●ˇ∀ˇ●)" type="application/atom+xml">
   
@@ -208,277 +216,670 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-git学习笔记" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      git学习笔记
+    </h1>
+  
+
+        
+        <!--显示阅读次数-->
+        
+          <br/>
+          <a class="cloud-tie-join-count" href="javascript:void(0);" target="_blank" rel="noopener" style="color:gray;font-size:14px;">
+          <span class="icon-sort"></span>
+          <span style="color:#ef7522;font-size:14px;">
+                    <i class="icon-smile icon"></i> 阅读数: <span id="busuanzi_value_page_pv"></span>次 &nbsp;&nbsp;
+          </span>
+          </a>
+        
+        <!--显示阅读次数-->
+
+        
+        <a href="/article/f5f0db78.html" class="archive-article-date">
+  	<time datetime="2020-03-17T03:02:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-17</time>
+</a>
+        
+      </header>
     
+
+<!-- 添加目录内容结构 -->
+
+    <p class="show-toc-btn" id="show-toc-btn" onclick="showToc();">
+          <span class="btn-bg"></span>
+          <span class="btn-text">文章导航</span>
+          </p>
+  <div id="toc-article" class="toc-article" style="display:none">
+      <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
+    <strong class="toc-title">文章目录</strong>
+           <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Linux基础命令"><span class="toc-number">1.</span> <span class="toc-text">Linux基础命令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#一-目录命令"><span class="toc-number">1.1.</span> <span class="toc-text">一. 目录命令</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1、目录切换命令"><span class="toc-number">1.1.1.</span> <span class="toc-text">1、目录切换命令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2、目录操作命令"><span class="toc-number">1.1.2.</span> <span class="toc-text">2、目录操作命令</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二-文件命令"><span class="toc-number">1.2.</span> <span class="toc-text">二. 文件命令</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1、文件操作命令"><span class="toc-number">1.2.1.</span> <span class="toc-text">1、文件操作命令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2、vim文件操作命令"><span class="toc-number">1.2.2.</span> <span class="toc-text">2、vim文件操作命令</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Git命令行操作"><span class="toc-number">2.</span> <span class="toc-text">Git命令行操作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1本地库初始化"><span class="toc-number">2.1.</span> <span class="toc-text">1.1本地库初始化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2设置签名"><span class="toc-number">2.2.</span> <span class="toc-text">1.2设置签名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3基本操作"><span class="toc-number">2.3.</span> <span class="toc-text">1.3基本操作</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-3-1-状态查看"><span class="toc-number">2.3.1.</span> <span class="toc-text">1.3.1 状态查看</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-3-2-添加"><span class="toc-number">2.3.2.</span> <span class="toc-text">1.3.2 添加</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-3-3-提交"><span class="toc-number">2.3.3.</span> <span class="toc-text">1.3.3 提交</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-3-4-查看历史记录"><span class="toc-number">2.3.4.</span> <span class="toc-text">1.3.4 查看历史记录</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-3-5-前进后退"><span class="toc-number">2.3.5.</span> <span class="toc-text">1.3.5 前进后退</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-3-6-reset的三个参数比较"><span class="toc-number">2.3.6.</span> <span class="toc-text">1.3.6 reset的三个参数比较</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-3-7-删除文件并找回"><span class="toc-number">2.3.7.</span> <span class="toc-text">1.3.7　删除文件并找回</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-3-8-文件差异比较"><span class="toc-number">2.3.8.</span> <span class="toc-text">1.3.8 文件差异比较</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-分支管理"><span class="toc-number">2.4.</span> <span class="toc-text">2.2 分支管理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-1-什么是分支管理"><span class="toc-number">2.4.1.</span> <span class="toc-text">2.2.1 什么是分支管理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-2-分支的好处"><span class="toc-number">2.4.2.</span> <span class="toc-text">2.2.2 分支的好处</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-3-分支操作"><span class="toc-number">2.4.3.</span> <span class="toc-text">2.2.3 分支操作</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-4-解决冲突"><span class="toc-number">2.4.4.</span> <span class="toc-text">2.2.4 解决冲突</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Git-结合Github"><span class="toc-number">3.</span> <span class="toc-text">Git 结合Github</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-创建远程库地址别名"><span class="toc-number">3.0.1.</span> <span class="toc-text">1.1 创建远程库地址别名</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-推送"><span class="toc-number">3.0.2.</span> <span class="toc-text">1.2 推送</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-3-克隆"><span class="toc-number">3.0.3.</span> <span class="toc-text">1.3 克隆</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-4-拉取"><span class="toc-number">3.0.4.</span> <span class="toc-text">1.4 拉取</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-5-解决冲突"><span class="toc-number">3.0.5.</span> <span class="toc-text">1.5 解决冲突</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-6-rebase"><span class="toc-number">3.0.6.</span> <span class="toc-text">1.6 rebase</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-7-beyond-compare"><span class="toc-number">3.0.7.</span> <span class="toc-text">1.7 beyond compare</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-8-跨团队合作"><span class="toc-number">3.0.8.</span> <span class="toc-text">1.8 跨团队合作</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-9-Tag标签"><span class="toc-number">3.0.9.</span> <span class="toc-text">1.9 Tag标签</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-10-SSH-免密登录"><span class="toc-number">3.0.10.</span> <span class="toc-text">1.10 SSH 免密登录</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Git工作流"><span class="toc-number">4.</span> <span class="toc-text">Git工作流</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-概念"><span class="toc-number">4.0.1.</span> <span class="toc-text">1.1 概念</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-分类"><span class="toc-number">4.0.2.</span> <span class="toc-text">1.2 分类</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-2-1-集中式工作流"><span class="toc-number">4.0.2.1.</span> <span class="toc-text">1.2.1 集中式工作流</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#1-2-2-GitFlow工作流"><span class="toc-number">4.0.2.2.</span> <span class="toc-text">1.2.2 GitFlow工作流 *</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#1-2-3-Forking-工作流"><span class="toc-number">4.0.2.3.</span> <span class="toc-text">1.2.3 Forking 工作流</span></a></li></ol></li></ol></li></ol></li></ol>
+         </div>
+   <script type="text/javascript">
+   function showToc(){
+    var toc_article = document.getElementById("toc-article");
+    var show_toc_btn = document.getElementById("show-toc-btn");
+    toc_article.setAttribute("style","display:block");
+    show_toc_btn.setAttribute("style","display:none");
+    };
+   function showBtn(){
+    var toc_article = document.getElementById("toc-article");
+    var show_toc_btn = document.getElementById("show-toc-btn");
+    toc_article.setAttribute("style","display:none");
+    show_toc_btn.setAttribute("style","display:block");
+    };
+   </script>
+      
+<!-- 添加目录内容结束 -->
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>git学习笔记</p>
+<p>🌜 🌜 🌜</p>
+<p>linux基础命令，git操作…</p>
+<a id="more"></a>
+<h2 id="Linux基础命令">Linux基础命令</h2>
+<h3 id="一-目录命令">一. 目录命令</h3>
+<h4 id="1、目录切换命令">1、目录切换命令</h4>
+<ul>
+<li><code>cd usr</code>： 切换到该目录下usr目录</li>
+<li><code>cd ..（或cd../）</code>： 切换到上一层目录</li>
+<li><code>cd /</code>： 切换到系统根目录</li>
+<li><code>cd ~</code>： 切换到用户主目录 (root用户就是/root，普通用户就是/home)</li>
+<li><code>cd -</code>： 切换到上一个操作所在目录</li>
+<li><code>cd /tmp/test</code>： 使用绝对路径切换</li>
+<li><code>cd test</code>： 使用相对路径</li>
+</ul>
+<h4 id="2、目录操作命令">2、目录操作命令</h4>
+<p>1). <strong>mkdir 目录名称</strong>： 增加目录<br>
+示例：</p>
+<ul>
+<li>mkdir test</li>
+<li>mkdir-p test/a/b/c：创建多级目录（使用相对路径）</li>
+<li>mkdir-p/opt/test/aa/cc：创建多级目录（使用绝对路径）</li>
+</ul>
+<p>2). <strong>ls或者ll</strong>：（ll是ls -l的别名，ll命令可以看到该目录下的所有目录和文件的详细信息）：查看目录信息</p>
+<p>参数：</p>
+<ul>
+<li><code>-l</code> 以列表形式查看</li>
+<li><code>-h</code> 以一种人性化的方式查看，也是文件的大小以合适的单位显示</li>
+<li><code>-a</code> 查看所有文件，包括隐藏文件</li>
+<li><code>-i</code> 显示出文件的i节点号</li>
+</ul>
+<p>3). <strong>find 目录 参数</strong>： 寻找目录（查）</p>
+<p>4). <strong>pwd：</strong> 查看所在目录位置</p>
+<p>示例：</p>
+<ul>
+<li>列出当前目录及子目录下所有文件和文件夹: <code>find .</code></li>
+<li>在**/home**目录下查找以.txt结尾的文件名:<code>find /home -name &quot;*.txt&quot;</code></li>
+<li>同上，但忽略大小写: <code>find /home -iname &quot;*.txt&quot;</code></li>
+<li>当前目录及子目录下查找所有以.txt和.pdf结尾的文件:<code>find . \( -name &quot;*.txt&quot; -o -name &quot;*.pdf&quot; \)或find . -name &quot;*.txt&quot; -o -name &quot;*.pdf&quot;</code></li>
+</ul>
+<p>5). <strong>mv 目录名称 新目录名称</strong>： 修改目录的名称,或移动目录的位置—剪切（改）</p>
+<p>注意：mv语法不仅可以对目录进行剪切操作，对文件和压缩包等都可执行剪切操作。另外mv与cp的结果不同，mv好像文件“搬家”，文件个数并未增加。而cp对文件进行复制，文件个数增加了。</p>
+<p>参数说明：</p>
+<ul>
+<li>-i: 若指定目录已有同名文件，则先询问是否覆盖旧文件;</li>
+<li>-f: 在mv操作要覆盖某已有的目标文件时不给任何指示;</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>命令格式</th>
+<th>运行结果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>mv文件名 文件名</td>
+<td>将源文件名改为目标文件名</td>
+</tr>
+<tr>
+<td>mv 文件名 目录名</td>
+<td>将文件移动到目标目录</td>
+</tr>
+<tr>
+<td>mv 目录名 目录名</td>
+<td>目标目录已存在，将源目录移动到目标目录；目标目录不存在则改名</td>
+</tr>
+</tbody>
+</table>
+<p>将info目录放入logs目录中。注意，如果logs目录不存在，则该命令将info改名为logs。</p>
+<p><code>mv info/ logs</code><br>
+再如将/usr/student下的所有文件和目录移到当前目录下，命令行为：</p>
+<p><code>$ mv /usr/student/*  .</code></p>
+<p>7). <strong>cp -r 目录名称 目录拷贝的目标位置</strong>： 拷贝目录（改），-r代表递归拷贝</p>
+<p>注意：cp命令不仅可以拷贝目录还可以拷贝文件，压缩包等，拷贝文件和压缩包时不 用写-r递归<br>
+参数：</p>
+<ul>
+<li><code>-a</code> =-pdr</li>
+<li><code>-p</code> 同时复制文件属性，比如修改日期</li>
+<li><code>-d</code> 复制时保留文件链接</li>
+<li><code>-r</code> 复制文件夹时,递归复制子文件夹</li>
+<li><code>-l</code> 不复制，而是创建指向源文件的链接文件，链接文件名由目标文件给出。</li>
+<li><code>note</code>:可以在拷贝的同时重命名</li>
+</ul>
+<p><strong>rm [-rf] 目录</strong>: 删除目录（删）</p>
+<p>注意：rm不仅可以删除目录，也可以删除其他文件或压缩包，为了增强大家的记忆， 无论删除任何目录或文件，都直接使用rm -rf 目录/文件/压缩包<br>
+参数：</p>
+<ul>
+<li><code>-r</code>：递归删除</li>
+<li><code>-f</code>：强制删除 即没有提醒</li>
+</ul>
+<h3 id="二-文件命令">二. 文件命令</h3>
+<h4 id="1、文件操作命令">1、文件操作命令</h4>
+<p>1). <code>touch 文件名称</code>: 文件的创建（增）<br>
+创建文件 可以一次创建多个文件，以空格隔开</p>
+<p>2). <code>cat/more/less/tail</code> 文件名称: 文件的查看（查）<br>
+<strong>-n:带行号</strong></p>
+<ul>
+<li><code>cat</code>： 查看显示文件内容</li>
+<li><code>tac</code>:反向显示文件内容</li>
+<li><code>more</code>： 分页查看文件内容： 可以显示百分比，回车可以向下一行， 空格可以向下一页，q可以退出查看</li>
+</ul>
+<p><strong>操作参数：</strong><br>
+进入浏览模式后：</p>
+<ul>
+<li>f或者空格：下一页</li>
+<li>enter：一行一行往下翻</li>
+<li>q:退出</li>
+</ul>
+<p><code>less</code>： 可以使用键盘上的PgUp和PgDn向上 和向下翻页，q结束查看</p>
+<ul>
+<li><code>-l</code> 以列表形式查看</li>
+<li><code>-h</code> 以一种人性化的方式查看，也是文件的大小以合适的单位显示-</li>
+<li><code>-a</code> 查看所有文件，包括隐藏文件</li>
+<li><code>-i</code> 显示出文件的i节点号</li>
+</ul>
+<p><strong>操作参数：</strong></p>
+<ul>
+<li>空格翻页</li>
+<li>回车换行</li>
+<li>pageup：上一页</li>
+<li>pagedown：下一页</li>
+<li>上箭头：向上翻</li>
+<li>下箭头：向下翻</li>
+<li>/搜索词 n向下找</li>
+</ul>
+<p><code>head -n</code> ： 查看文件前n行。缺省-n显示前10行<br>
+<code>tail-10</code> ： 查看文件的后10行，Ctrl+C结束<br>
+注意：命令 tail -f 文件 可以动态显示文件末尾内容，对某个文件进行动态监控，例如tomcat的日志文件， 会随着程序的运行，日志会变化，可以使用tail -f catalina-2016-11-11.log 监控文件的变化</p>
+<p><code>in</code>： 链接命令<br>
+　　-s创建软连接<br>
+　　硬链接和cp -p的区别是硬链接会同步更新<br>
+　　源文件如果丢失，硬链接依然存在。<br>
+　　硬链接和源文件的i节点相同。<br>
+　　硬链接不能夸分区，软连接可以跨分区。<br>
+　　硬链接不可以链接目录，链接可以<br>
+　　软连接文件具有的权限是ugo都是rwx</p>
+<p><code>rm -rf 文件</code>： 删除文件（删）</p>
+<p>同目录删除：熟记 rm -rf 文件 即可</p>
+<h4 id="2、vim文件操作命令">2、vim文件操作命令</h4>
+<p><strong>vim编辑器是Linux中的强大组件，是vi编辑器的加强版</strong>，vim编辑器的命令和快捷方式有很多，但此处不一一阐述，大家也无需研究的很透彻，使用vim编辑修改文件的方式基本会使用就可以了。</p>
+<p><strong>在实际开发中，使用vim编辑器主要作用就是修改配置文件，下面是一般步骤：</strong></p>
+<p>vim 文件------&gt;进入文件-----&gt;命令模式------&gt;按i进入编辑模式-----&gt;编辑文件 -------&gt;按Esc进入底行模式-----&gt;输入：wq/q! （输入wq代表写入内容并退出，即保存；输入q!代表强制退出不保存。）</p>
+<p>1). <code>i,a</code>: 命令模式–&gt;编辑模式</p>
+<p>2). <code>ecs</code>: 编辑模式–&gt;命令模式(底行模式)</p>
+<p>3). 命令模式(底行模式下)：</p>
+<ul>
+<li>
+<p><code>q!</code>: 强制退出</p>
+</li>
+<li>
+<p><code>q</code>: 退出</p>
+</li>
+<li>
+<p><code>wq</code>: 保存并退出 (wq以及wq!，则不管有没有修改，都会强制更新修改时间，有时没修改的东西会让人误以为改了)</p>
+</li>
+<li>
+<p><code>wq!</code>: 保存并强制退出</p>
+</li>
+<li>
+<p><code>x</code>: 保存并退出（个人推荐使用，:x在由修改操作时会保存并退出，更新修改时间）</p>
+</li>
+</ul>
+<p>4). <code>set nu</code>: 显示行号	<code>set nonu</code>: 取消行号</p>
+<p>5). 翻页查看：</p>
+<ul>
+<li>上一页：page up</li>
+<li>下一页: page down</li>
+</ul>
+<p>6). 跳转到指定的行：</p>
+<ul>
+<li><code>gg</code>: 跳转到第一行</li>
+<li><code>G</code>: 跳转到最后一行</li>
+<li><code>100G</code>: 跳转到指定行，如100G就是第100行，nG:第n行</li>
+</ul>
+<p>7). <strong>/要查找的内容</strong>: 查找<br>
+8). <code>yy</code>: 复制当前行<br>
+9). <code>p</code>: 粘贴到当前所在行的下一行</p>
+<ul>
+<li>粘贴一次就输入一个p</li>
+<li>多次就多个p，如10p就粘贴10次</li>
+</ul>
+<p>10). 查找并替换：<br>
+<strong>方式一</strong>：<code>:开始行号,结束行号s/查找的单词/替换的单词</code><br>
+如：<code>1,3s/f/XXX</code>: 替换1到3行的f为XXX<br>
+<code>1,$s/f/YYY</code>: 替换1到所有行的f为YYY</p>
+<p>方式二：<code>gc方式</code></p>
+<p><code>%s/aaa/bbb/gc</code>	意思就是检索所有行，挨个询问替换aaa为bbb，手动判断y是替换，n是不替换，a是替换所有，q是退出。</p>
+<p><strong>参数</strong>：</p>
+<ul>
+<li><code>y - yes</code> 替换</li>
+<li><code>n - no</code> 不替换</li>
+<li><code>a - all</code> 替换所有</li>
+<li><code>q - quit</code> 退出替换</li>
+<li><code>l - last</code> 最后一个，并把光标移动到行首</li>
+<li><code>^E</code> 向下滚屏</li>
+<li>^Y 向上滚屏</li>
+</ul>
+<p>11). <code>u</code>: 撤销操作</p>
+<h2 id="Git命令行操作">Git命令行操作</h2>
+<p><strong>托管中心</strong><code>维护远程库</code></p>
+<ul>
+<li><strong>内网：可以自己搭建一个GitLab服务器</strong></li>
+<li><strong>外网：可以使用码云、Github</strong></li>
+</ul>
+<p><strong>版本控制工具</strong></p>
+<ul>
+<li><strong>集中式</strong>：CSV ,<strong>SVN</strong>,VSS</li>
+<li><strong>分布式</strong>：<strong>Git</strong>，Darcs,…</li>
+</ul>
+<p><img src="/article/f5f0db78/View.jpg" alt="img"></p>
+<h3 id="1-1本地库初始化">1.1本地库初始化</h3>
+<p><code>进入文件夹</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br><span class="line">注意：生成的 .git 目录中存放的是本地库相关文件，不要删除</span><br></pre></td></tr></table></figure>
+<h3 id="1-2设置签名">1.2设置签名</h3>
+<ul>
+<li>
+<p>项目(仓库)级别<code>仅在当前本地库有效</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config user.name tom  #设置用户名tom</span><br><span class="line">git config user.email liu@qq.com #设置用户邮箱</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>系统用户级别<code>仅在当前登录的操作系统用户有效</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name tom</span><br><span class="line">git config --global user.email liu@qq.com</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<blockquote>
+<p>仅仅加了一个 <code>--global</code></p>
+<p>优先级别：<code>项目级别</code>  &gt;  <code>系统级别</code></p>
+<p>信息保存位置：<code>~/.gitconfig 文件</code></p>
+</blockquote>
+<h3 id="1-3基本操作">1.3基本操作</h3>
+<h4 id="1-3-1-状态查看">1.3.1 状态查看</h4>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git status   #查看工作区、暂存区状态</span><br></pre></td></tr></table></figure>
+<h4 id="1-3-2-添加">1.3.2 添加</h4>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git add fileName  #指定文件</span><br><span class="line">git add . #所有</span><br><span class="line">说明：将工作区的文件添加到暂存区</span><br></pre></td></tr></table></figure>
+<h4 id="1-3-3-提交">1.3.3 提交</h4>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git commit -m &apos;commit message&apos; fileName</span><br><span class="line">说明：将暂存区内容提交到本地库</span><br></pre></td></tr></table></figure>
+<h4 id="1-3-4-查看历史记录">1.3.4 查看历史记录</h4>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">git log </span><br><span class="line">git reflog  #常用</span><br><span class="line">git log --greph #图形显示,更直观</span><br><span class="line">git log --pretty=oneline #漂亮一行显示</span><br><span class="line">git log --oneline #简洁显示，显示以前版本</span><br><span class="line">说明：HEAD@&#123;移动到当前版本需要多少步&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="1-3-5-前进后退">1.3.5 前进后退</h4>
+<ul>
+<li>
+<p>基于索引值<code>推荐</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git reset --hard 指针位置</span><br><span class="line">例子：git reset --hard a6ace91 #回到这个状态</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>使用 <strong>^</strong> 符号<code>只能后退</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git reset --hard HEAD^</span><br><span class="line">例子：git reset --hard HEAD^^</span><br><span class="line">注意：几个 ^ 表示后退几步</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>使用 <strong>~</strong> 符号<code>只能后退</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git reset --hard HEAD~n</span><br><span class="line">例子：git reset --hard HEAD~3</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="1-3-6-reset的三个参数比较">1.3.6 reset的三个参数比较</h4>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">soft: </span><br><span class="line">  - 仅本地库移动HEAD 指针</span><br><span class="line">mixed:</span><br><span class="line">  - 在本地库移动HEAD指针</span><br><span class="line">  - 重置暂存区</span><br><span class="line">hard:</span><br><span class="line">  - 在本地库移动HEAD指针</span><br><span class="line">  - 重置暂存区</span><br><span class="line">  - 重置工作区</span><br></pre></td></tr></table></figure>
+<h4 id="1-3-7-删除文件并找回">1.3.7　删除文件并找回</h4>
+<ul>
+<li><strong>相当于建立一个快照，虽然删除了，但只要添加到暂存区，就能找回</strong></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">rm text.txt #删除文件</span><br><span class="line">git reset --hard 指针位置</span><br></pre></td></tr></table></figure>
+<ul>
+<li>删除操作以及提交到本地库：指针位置指向历史记录</li>
+<li>删除操作尚未提交到本地库：指针位置使用HEAD</li>
+</ul>
+<h4 id="1-3-8-文件差异比较">1.3.8 文件差异比较</h4>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git diff 文件名 #和暂存区进行比较</span><br><span class="line">git diff 哈希值 文件名  #和本地库中的一个历史版本比较</span><br><span class="line">git diff  #不带文件名，则比较多个文件</span><br></pre></td></tr></table></figure>
+<h3 id="2-2-分支管理">2.2 分支管理</h3>
+<p><img src="/article/f5f0db78/Branchdiagram.png" alt="Branch diagram"></p>
+<p><code>hot_fix</code> <code>master</code> <code>feature_x</code> <code>feature_y</code></p>
+<h4 id="2-2-1-什么是分支管理">2.2.1 什么是分支管理</h4>
+<ul>
+<li>在版本控制中，使用多条线推进多个任务</li>
+</ul>
+<h4 id="2-2-2-分支的好处">2.2.2 分支的好处</h4>
+<ul>
+<li>同时并行推进多个功能开发，提高开发效率</li>
+<li>某一分支开发失败，不会对其它分支有任何影响，失败的分支删除重新开始即可</li>
+</ul>
+<h4 id="2-2-3-分支操作">2.2.3 分支操作</h4>
+<ul>
+<li>创建分支</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch 分支名</span><br></pre></td></tr></table></figure>
+<ul>
+<li>查看分支</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git branch</span><br><span class="line">git branch -v</span><br></pre></td></tr></table></figure>
+<ul>
+<li>切换分支</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git checkout 分支名</span><br><span class="line">git checkout -b 分支名   #创建分支并直接切换到该分支</span><br></pre></td></tr></table></figure>
+<ul>
+<li>合并分支<code>相当于把修改了的文件拉过来</code></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git merge xxx</span><br><span class="line">注意：合并分支的时候要明确谁谁合并</span><br><span class="line">	我在a分支里面修改了。要合并到master，就先切换到master，然后合并</span><br></pre></td></tr></table></figure>
+<ul>
+<li>删除分支</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch -d 分支名</span><br></pre></td></tr></table></figure>
+<h4 id="2-2-4-解决冲突">2.2.4 解决冲突</h4>
+<ul>
+<li>
+<p>冲突的表现</p>
+<p><img src="/article/f5f0db78/Branchconflict.png" alt="Branch conflict"></p>
+<ul>
+<li>两个分支同时修改一个文件合并时发生冲突</li>
+</ul>
+</li>
+<li>
+<p>冲突的解决</p>
+<ul>
+<li>第一步：编辑，删除特殊标记<code>&lt;&lt;&lt;</code> <code>===</code></li>
+<li>第二步：修改到满意位置，保存退出</li>
+<li>第三步：添加到缓存区  <code>git  add 文件名</code></li>
+<li>第四步：提交到本地库<code>git commit -m '日志信息' </code>  <code>注意：后面一定不能带文件名</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="Git-结合Github">Git 结合Github</h2>
+<p><code>别名 分支名</code></p>
+<p><img src="/article/f5f0db78/github.png" alt="github"></p>
+<h4 id="1-1-创建远程库地址别名">1.1 创建远程库地址别名</h4>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git remote -v  #查看远程地址别名</span><br><span class="line">git remote add 别名 远程地址 </span><br><span class="line">例子：git remote add origin https://xx</span><br></pre></td></tr></table></figure>
+<h4 id="1-2-推送">1.2 推送</h4>
+<p><code>开发修改完把本地库的文件推送到远程仓库</code> <code>前提是提交到了本地库才可以推送</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git push 别名 分支名</span><br><span class="line">git push -u 别名 分支名    #-u指定默认主机</span><br><span class="line">例子：git push origin master</span><br></pre></td></tr></table></figure>
+<h4 id="1-3-克隆">1.3 克隆</h4>
+<p><code>克隆下来后不要在主分支里面做开发</code>  <code>clone进行一次，从无到有的过程，更新用pull</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git clone  远程地址</span><br><span class="line">例子：git clone https://xx</span><br></pre></td></tr></table></figure>
+<ul>
+<li>完整的把远程库克隆到本地</li>
+<li>创建origin远程地址别名</li>
+<li>初始化本地库</li>
+</ul>
+<h4 id="1-4-拉取">1.4 拉取</h4>
+<p><code>本地存在clone下来的文件  就用pull更新</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">pull = fetch + merge</span><br><span class="line">	git fetch 别名 分支名</span><br><span class="line">	git merge 别名/分支名</span><br><span class="line">git pull 别名 分支名</span><br></pre></td></tr></table></figure>
+<h4 id="1-5-解决冲突">1.5 解决冲突</h4>
+<p><code>注意：解决冲突后的提交是不能带文件名的</code></p>
+<p><code>如果不是基于远程库最新版做的修改不能推送，必须先pull下来安照“分支冲突办法”解决</code></p>
+<h4 id="1-6-rebase">1.6 rebase</h4>
+<p><code>提交记录简洁不分叉</code>  <code>没学懂，感觉有点鸡肋</code> <code>混眼熟</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git rebase -i 索引号</span><br><span class="line">git rebase -i HEAD~3  #合并最近三条记录</span><br><span class="line">说明：在vim编辑里面改成s</span><br></pre></td></tr></table></figure>
+<h4 id="1-7-beyond-compare">1.7 beyond compare</h4>
+<p><code>用软件解决冲突</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">1.安装 ：</span><br><span class="line">	beyond compare </span><br><span class="line">2.配置：</span><br><span class="line">    git config --local merge.tool bc3  #合并名称</span><br><span class="line">    git config --local mergetool.path &apos;/usr/local/bin/bcomp&apos; #软件路径</span><br><span class="line">    git config --local mergetool.keepBackup false  #False不用保存备份</span><br><span class="line">3.应用：</span><br><span class="line">	git mergetool</span><br><span class="line">说明：--local指只在当前操作系统有效</span><br></pre></td></tr></table></figure>
+<h4 id="1-8-跨团队合作">1.8 跨团队合作</h4>
+<p><img src="/article/f5f0db78/githubCrossteam.png" alt="github"></p>
+<p><code>代码review之后合并</code></p>
+<ul>
+<li>
+<p><strong>适用于个人</strong></p>
+<p><strong>邀请成员</strong>:<code>Settings</code> --&gt; <code>Collaborators</code> --&gt;<code>填写用户名</code> --&gt;<code>打开链接接受邀请</code></p>
+</li>
+<li>
+<p><strong>企业</strong>   <code>创建一个组织</code> <code>方便管理</code></p>
+</li>
+<li>
+<p><strong>review</strong></p>
+<p><code>组织做review</code>  <code>通过Pull request</code></p>
+</li>
+<li>
+<p><strong>给开源社区共享代码</strong></p>
+<p><code>点击别人仓库的fork 到自己的仓库</code>   – &gt; <code>然后clone下来 修改后推送到远程库</code>  --&gt; <code>点击Pull Request请求</code> --&gt; <code>Create pull request发消息</code></p>
+</li>
+</ul>
+<h4 id="1-9-Tag标签">1.9 Tag标签</h4>
+<p><code>为了清晰的版本管理，公司一般不会直接使用commit提交</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">git tag -a v1.0 -m &apos;版本介绍&apos;   #创建本地tag信息</span><br><span class="line">git tag -d v1.0    		#删除tag</span><br><span class="line">git push origin --tags   #将本地tag信息推送到远程库</span><br><span class="line">git pull origin --tags    #拉取到本地</span><br><span class="line"></span><br><span class="line">git checkout v.10    #切换tag</span><br><span class="line">git clone -b v0.1 地址   #指定tag下载代码</span><br></pre></td></tr></table></figure>
+<h4 id="1-10-SSH-免密登录">1.10 SSH 免密登录</h4>
+<ul>
+<li>输入:<code>ssh-keygen -t rsa -C GitHub邮箱地址</code></li>
+<li>进入<code>.ssh</code>目录，复制<code>id_rsa.pub</code>文件内容</li>
+<li>登录GitHub。<code>Settings</code>  --&gt; <code>SSH and GPG keys </code> --&gt; <code>New SSH Key    </code></li>
+<li>回到git通过ssh地址创建。<code>git remote add 别名 SSH地址  </code></li>
+</ul>
+<h2 id="Git工作流">Git工作流</h2>
+<h4 id="1-1-概念">1.1 概念</h4>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">在项目开发过程中使用Git的方式</span><br></pre></td></tr></table></figure>
+<h4 id="1-2-分类">1.2 分类</h4>
+<h5 id="1-2-1-集中式工作流">1.2.1 集中式工作流</h5>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">像SVN一样，集中式工作流有一个中央仓库，所有的修改都提交到了Master分支上</span><br></pre></td></tr></table></figure>
+<h5 id="1-2-2-GitFlow工作流">1.2.2 GitFlow工作流 <code>*</code></h5>
+<p>主干分支<code>master</code>  开发分支<code>develop</code>  修复分支<code>hotfix</code>   预发布分支<code>release</code>  功能分支<code>feature</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">GitFlow 有独立的分支，让发布迭代过程更流畅。</span><br></pre></td></tr></table></figure>
+<h5 id="1-2-3-Forking-工作流">1.2.3 Forking 工作流</h5>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">在 GitFlow 基础上， 充分利用了 Git 的 Fork 和 pull request 的功能以达到代码审核的目的。 </span><br><span class="line">安全可靠地管理大团队的开发者</span><br></pre></td></tr></table></figure>
+
+      
+
+
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" target="_blank" rel="noopener" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>感谢支持!<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/proceeds.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+<!--版权声明-->
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/article/24caea6b.html" class="archive-article-date">
-  	<time datetime="2020-01-15T02:05:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/article/24caea6b.html">Hexo常用命令</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
+        <div class="declare">
+        <ul>
+          <li><strong>本文作者：</strong>
           
+            腾飞
+          
+          <br></li>
+          <li><strong>本文链接：</strong>
+          <a rel="license" href="http://zhangtengfei66.gitee.io/article/f5f0db78.html">http://zhangtengfei66.gitee.io/article/f5f0db78.html</a>
+          <br></li>
+          <li><strong>版权声明：</strong>
+          本作品采用
+          <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>
+          进行许可。转载请注明出处！
+          
+        </div>
+      </li></ul>
+<!--版权声明--> 
+         
+
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color5">Hexo</a>
+        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color4">git</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" target="_blank" rel="noopener" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" target="_blank" rel="noopener" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;" target="_blank" rel="noopener"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://zhangtengfei66.gitee.io/article/f5f0db78.html" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/article/3a5333f4.html" class="archive-article-date">
-  	<time datetime="2020-01-15T01:47:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-15</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/article/b28af766.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Oracle学习笔记0.5</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" target="_blank" rel="noopener" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+<!-- 《utteranc评论：基于github issue的评论系统 -->
+<div>
+    <section id="comments" class="comments">
+      <style>
+        .utterances{max-width: 100%;}
+      </style>
+        <script src="https://utteranc.es/client.js"
+                repo="zhangtengfei66/zhangtengfei66.github.io"
+                issue-term="title"
+                theme="github-light"
+                crossorigin="anonymous"
+                async>
+        </script>
+    </section>
+</div>
+<!-- utteranc评论》 -->
+
+<!--valine评论系统-->
+
+    <section id="comments" class="comments">
+      <style>
+        .comments{margin:30px;padding:10px;background:#fff}
+        @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
+      </style>
+      <div id="vcomment" class="comment"></div> 
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+   var notify = 'false' == true ? true : false;
+   var verify = 'false' == true ? true : false;
+    window.onload = function() {
+        new Valine({
+            el: '.comment',
+            notify: notify,
+            verify: verify,
+            app_id: "QtaKYgEltRAtkh7xqS2NpMvf-9Nh9j0Va",
+            app_key: "i84Q8UmWG0WiMyPGlUxEiREG",
+            placeholder: "ヾﾉ≧∀≦)o欢迎评论!",
+            avatar:"retro"
+        });
+    }
+</script>
+  </section>
+
+<!--valine评论系统-->
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/article/3a5333f4.html">Hexo博客使用Hexo Admin插件</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color5">Hexo</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color3">博客</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color1">Hexo_admin</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/article/23017e25.html" class="archive-article-date">
-  	<time datetime="2020-01-13T03:14:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-13</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/article/23017e25.html">Hexo博客SEO_URL持久化</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color5">Hexo</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color3">博客</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color4">SEO</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/article/3f8b11a6.html" class="archive-article-date">
-  	<time datetime="2020-01-12T09:36:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-12</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/article/3f8b11a6.html">Hexo博客主题美化</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color5">Hexo</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color3">博客</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/article/14ad2857.html" class="archive-article-date">
-  	<time datetime="2020-01-12T08:52:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-12</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/article/14ad2857.html">Hexo博客的使用方法(2)</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color5">Hexo</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color3">博客</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/article/f72ba5d8.html" class="archive-article-date">
-  	<time datetime="2020-01-12T06:58:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-12</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/article/f72ba5d8.html">hexo-yilia添加视频照片功能</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color3">博客</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/2020/page/2/">« Prev</a><a class="page-number" href="/archives/2020/">1</a><a class="page-number" href="/archives/2020/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/archives/2020/page/4/">4</a><a class="extend next" rel="next" href="/archives/2020/page/4/">Next »</a>
-    </nav>
   
 
 
@@ -508,8 +909,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
