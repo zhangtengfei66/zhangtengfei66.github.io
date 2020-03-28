@@ -21,7 +21,7 @@
 <meta property="og:image" content="http:&#x2F;&#x2F;zhangtengfei66.gitee.io&#x2F;article&#x2F;f5f0db78&#x2F;Branchconflict.png">
 <meta property="og:image" content="http:&#x2F;&#x2F;zhangtengfei66.gitee.io&#x2F;article&#x2F;f5f0db78&#x2F;github.png">
 <meta property="og:image" content="http:&#x2F;&#x2F;zhangtengfei66.gitee.io&#x2F;article&#x2F;f5f0db78&#x2F;githubCrossteam.png">
-<meta property="og:updated_time" content="2020-03-21T09:51:44.002Z">
+<meta property="og:updated_time" content="2020-03-28T08:48:32.283Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http:&#x2F;&#x2F;zhangtengfei66.gitee.io&#x2F;article&#x2F;f5f0db78&#x2F;View.jpg">
   
@@ -614,6 +614,13 @@
 <li>创建origin远程地址别名</li>
 <li>初始化本地库</li>
 </ul>
+<p><strong>常见错误</strong></p>
+<p>当我们使用git clone指令从github 上download其它优秀的代码时，如果报如下错误</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">RPC failed; curl 56 OpenSSL SSL_read: SSL_ERROR_SYSCALL, errno 10054</span><br></pre></td></tr></table></figure>
+<p>这是因为服务器的SSL证书没有经过第三方机构的签署，所以才报错。解决方案如下： 第一步，克隆远程仓库时，用env命令设置GIT_SSL_NO_VERIFY环境变量为”ture”，并同时调用正常的git clone命令。完整的命令如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">env GIT_SSL_NO_VERIFY=true git clone https://&lt;host_name/git/project.git</span><br></pre></td></tr></table></figure>
+<p>第二步，在克隆完毕的仓库中将http.sslVerify设置为”false”。完整的命令如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config http.sslVerify &quot;false&quot;</span><br></pre></td></tr></table></figure>
 <h4 id="1-4-拉取">1.4 拉取</h4>
 <p><code>本地存在clone下来的文件  就用pull更新</code></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">pull = fetch + merge</span><br><span class="line">	git fetch 别名 分支名</span><br><span class="line">	git merge 别名/分支名</span><br><span class="line">git pull 别名 分支名</span><br></pre></td></tr></table></figure>
@@ -800,6 +807,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/article/f6f3f545.html" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          MyBatis学习笔记(1)
+        
+      </div>
+    </a>
   
   
     <a href="/article/b28af766.html" id="article-nav-older" class="article-nav-link-wrap">
@@ -1004,6 +1020,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Maven</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">MyBatis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">持久层框架</a>
               </li>
              
               <li class="article-tag-list-item">
