@@ -116,8 +116,7 @@
         var data = res.list[j].arr;
         var liTmpl = "";
         for (var i = 0, len = data.link.length; i < len; i++) {
-          //https://raw.githubusercontent.com/zhangtengfei66/Blog-Back-Up/master/photos/2019-1-16_%E5%8A%A8%E6%BC%AB15.jpg
-          var minSrc = 'https://raw.githubusercontent.com/zhangtengfei66/Blog-Back-Up/master/photos/min_photos/' + data.link[i];
+          var minSrc = 'https://raw.githubusercontent.com/zhangtengfei66/Blog-Back-Up/master/min_photos/' + data.link[i];
           var src = 'https://raw.githubusercontent.com/zhangtengfei66/Blog-Back-Up/master/photos/' + data.link[i];
 
           // var minSrc = 'https://raw.githubusercontent.com/zhangtengfei66/zhangtengfei66.github.io/master/photos/photos-source/min_photos/' + data.link[i];
