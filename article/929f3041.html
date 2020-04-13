@@ -6,16 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://zhangtengfei66.gitee.io">
-  <title>Archives | (●ˇ∀ˇ●)</title>
+  <title>MyBatis学习笔记(5) | (●ˇ∀ˇ●)</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="腾飞的个人博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="(●ˇ∀ˇ●)">
-<meta property="og:url" content="http:&#x2F;&#x2F;zhangtengfei66.gitee.io&#x2F;archives&#x2F;page&#x2F;3&#x2F;index.html">
+  <meta name="description" content="MyBatis学习笔记">
+<meta name="keywords" content="MyBatis,持久层框架">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MyBatis学习笔记(5)">
+<meta property="og:url" content="http:&#x2F;&#x2F;zhangtengfei66.gitee.io&#x2F;article&#x2F;929f3041.html">
 <meta property="og:site_name" content="(●ˇ∀ˇ●)">
-<meta property="og:description" content="腾飞的个人博客">
+<meta property="og:description" content="MyBatis学习笔记">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http:&#x2F;&#x2F;zhangtengfei66.gitee.io&#x2F;article&#x2F;929f3041&#x2F;%E4%B8%80%E7%BA%A7%E7%BC%93%E5%AD%98.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;zhangtengfei66.gitee.io&#x2F;article&#x2F;929f3041&#x2F;%E4%BA%8C%E7%BA%A7%E7%BC%93%E5%AD%98.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;zhangtengfei66.gitee.io&#x2F;article&#x2F;929f3041&#x2F;text.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;zhangtengfei66.gitee.io&#x2F;article&#x2F;929f3041&#x2F;%E9%80%86%E5%90%91%E5%B7%A5%E7%A8%8B.png">
+<meta property="og:updated_time" content="2020-04-13T13:49:13.253Z">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http:&#x2F;&#x2F;zhangtengfei66.gitee.io&#x2F;article&#x2F;929f3041&#x2F;%E4%B8%80%E7%BA%A7%E7%BC%93%E5%AD%98.png">
   
     <link rel="alternative" href="/atom.xml" title="(●ˇ∀ˇ●)" type="application/atom+xml">
   
@@ -208,265 +215,379 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-MyBatis学习笔记-5" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      MyBatis学习笔记(5)
+    </h1>
+  
+
+        
+        <!--显示阅读次数-->
+        
+          <br/>
+          <a class="cloud-tie-join-count" href="javascript:void(0);" target="_blank" rel="noopener" style="color:gray;font-size:14px;">
+          <span class="icon-sort"></span>
+          <span style="color:#ef7522;font-size:14px;">
+                    <i class="icon-smile icon"></i> 阅读数: <span id="busuanzi_value_page_pv"></span>次 &nbsp;&nbsp;
+          </span>
+          </a>
+        
+        <!--显示阅读次数-->
+
+        
+        <a href="/article/929f3041.html" class="archive-article-date">
+  	<time datetime="2020-04-13T06:44:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-13</time>
+</a>
+        
+      </header>
     
+
+<!-- 添加目录内容结构 -->
+
+    <p class="show-toc-btn" id="show-toc-btn" onclick="showToc();">
+          <span class="btn-bg"></span>
+          <span class="btn-text">文章导航</span>
+          </p>
+  <div id="toc-article" class="toc-article" style="display:none">
+      <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
+    <strong class="toc-title">文章目录</strong>
+           <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#查询缓存"><span class="toc-number">1.</span> <span class="toc-text">查询缓存</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#一-一级缓存"><span class="toc-number">1.1.</span> <span class="toc-text">一. (一级缓存)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-一级缓存的范围："><span class="toc-number">1.1.1.</span> <span class="toc-text">1). 一级缓存的范围：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-一级缓存的概念"><span class="toc-number">1.1.2.</span> <span class="toc-text">2). 一级缓存的概念</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-一级缓存的图解"><span class="toc-number">1.1.3.</span> <span class="toc-text">3). 一级缓存的图解</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二-MyBatis自带二级缓存"><span class="toc-number">1.2.</span> <span class="toc-text">二. MyBatis自带二级缓存</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-二级缓存的范围"><span class="toc-number">1.2.1.</span> <span class="toc-text">1). 二级缓存的范围:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-二级缓存的概念"><span class="toc-number">1.2.2.</span> <span class="toc-text">2). 二级缓存的概念</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-二级缓存的图解"><span class="toc-number">1.2.3.</span> <span class="toc-text">3). 二级缓存的图解</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-二级缓存的使用"><span class="toc-number">1.2.4.</span> <span class="toc-text">4). 二级缓存的使用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-二级缓存总结"><span class="toc-number">1.2.5.</span> <span class="toc-text">5). 二级缓存总结</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#三-第三方二级缓存"><span class="toc-number">1.3.</span> <span class="toc-text">三. 第三方二级缓存</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-导入jar包"><span class="toc-number">1.3.1.</span> <span class="toc-text">1). 导入jar包</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-编写ehcache配置文件"><span class="toc-number">1.3.2.</span> <span class="toc-text">2). 编写ehcache配置文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-开启EhCache二级缓存"><span class="toc-number">1.3.3.</span> <span class="toc-text">3). 开启EhCache二级缓存</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二-逆向工程"><span class="toc-number">2.</span> <span class="toc-text">二.逆向工程</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-导入jar包-v2"><span class="toc-number">2.0.1.</span> <span class="toc-text">1). 导入jar包</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-逆向工程的配置文件-generator-xml"><span class="toc-number">2.0.2.</span> <span class="toc-text">2). 逆向工程的配置文件(generator.xml)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-执行"><span class="toc-number">2.0.3.</span> <span class="toc-text">3). 执行</span></a></li></ol></li></ol></li></ol>
+  </div>
+   <script type="text/javascript">
+   function showToc(){
+    var toc_article = document.getElementById("toc-article");
+    var show_toc_btn = document.getElementById("show-toc-btn");
+    toc_article.setAttribute("style","display:block");
+    show_toc_btn.setAttribute("style","display:none");
+    };
+   function showBtn(){
+    var toc_article = document.getElementById("toc-article");
+    var show_toc_btn = document.getElementById("show-toc-btn");
+    toc_article.setAttribute("style","display:none");
+    show_toc_btn.setAttribute("style","display:block");
+    };
+   </script>
+
+<!-- 添加目录内容结束 -->
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>MyBatis学习笔记</p>
+<a id="more"></a>
+<h2 id="查询缓存">查询缓存</h2>
+<h3 id="一-一级缓存">一. (一级缓存)</h3>
+<h4 id="1-一级缓存的范围：">1). 一级缓存的范围：</h4>
+<p>同一个SqlSession对象</p>
+<h4 id="2-一级缓存的概念">2). 一级缓存的概念</h4>
+<p>MyBatis默认开启一级缓存。</p>
+<p>如果用同样的SqlSession对象查询相同的数据，则只会在第一次 查询时 向数据库发送SQL语句，并将查询的结果 放入到SQLSESSION中（作为缓存在）；后续再次查询该同样的对象时，则直接从缓存中查询该对象即可（即省略了数据库的访问)。</p>
+<h4 id="3-一级缓存的图解">3). 一级缓存的图解</h4>
+<p><img src="/article/929f3041/%E4%B8%80%E7%BA%A7%E7%BC%93%E5%AD%98.png" alt="一级缓存"></p>
+<h3 id="二-MyBatis自带二级缓存">二. MyBatis自带二级缓存</h3>
+<h4 id="1-二级缓存的范围">1). 二级缓存的范围:</h4>
+<p>二级缓存的范围是同一个namespace</p>
+<h4 id="2-二级缓存的概念">2). 二级缓存的概念</h4>
+<p>MyBatis默认情况没有开启二级缓存，需要<strong>手动打开</strong>。</p>
+<p><code>namespace</code>决定了studentMapper对象的产生</p>
+<ul>
+<li>
+<p>结论：只要产生的xxxMapper对象来<strong>自于同一个namespace</strong>，则这些对象共享二级缓存。</p>
+</li>
+<li>
+<p>注意：二级缓存的范围是同一个namespace, 如果有多个xxMapper.xml的namespace值相同，则通过这些xxxMapper.xml产生的xxMapper对象 仍然共享二级缓存。</p>
+</li>
+<li>
+<p>禁用 ：select标签中<code>useCache=&quot;false&quot;</code></p>
+</li>
+<li>
+<p>清理：与清理一级缓存的方法相同<br>
+<code>commit();</code> （一般执行增删改时 会清理掉缓存；设计的原因 是为了防止脏数据）<br>
+在二级缓存中，commit()不能是查询自身的commit。</p>
+<p>commit会清理一级和二级缓存；但是清理二级缓存时，不能是查询自身的commit；</p>
+<p>也可以在select标签中 增加属性 <code>flushCache=&quot;true&quot;</code></p>
+</li>
+<li>
+<p>命中率：<br>
+第一次: 0%    0<br>
+第二次: 50%  0.5<br>
+第三次: 2/3   0.666<br>
+第四次: 3/4   0.75</p>
+</li>
+</ul>
+<h4 id="3-二级缓存的图解">3). 二级缓存的图解</h4>
+<p><img src="/article/929f3041/%E4%BA%8C%E7%BA%A7%E7%BC%93%E5%AD%98.png" alt="一级缓存"></p>
+<h4 id="4-二级缓存的使用">4). 二级缓存的使用</h4>
+<p>①全局配置文件</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">settings</span>&gt;</span></span><br><span class="line">	<span class="comment">&lt;!-- 启用二级缓存 --&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">setting</span> <span class="attr">name</span>=<span class="string">"cacheEnabled"</span> <span class="attr">value</span>=<span class="string">"true"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">settings</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>②sql映射文件</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 声明开启二级缓存，只能在查询中使用 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">cache</span> <span class="attr">readOnly</span>=<span class="string">"true"</span>/&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="5-二级缓存总结">5). 二级缓存总结</h4>
+<p>MyBatis的二级缓存是将对象放入硬盘文件中</p>
+<ul>
+<li>
+<p>序列化：内存-&gt;硬盘</p>
+</li>
+<li>
+<p>反序列化：硬盘-&gt;内存</p>
+</li>
+</ul>
+<p><strong>准备缓存的对象，必须实现了序列化接口</strong> (如果开启的缓存Namespace=“com.AAA.mapper.StudentMapper”)</p>
+<p>可知序列化对象为Student，因此需要将Student序列化 （序列化Student类，以及Student的级联属性、和父类）</p>
+<pre><code>	触发 将对象写入二级缓存 的时机：SqlSession对象的close()方法。
+</code></pre>
+<p><img src="/article/929f3041/text.png" alt="测试"></p>
+<h3 id="三-第三方二级缓存">三. 第三方二级缓存</h3>
+<p>ehcache，memcache</p>
+<p>要想整合三方提供的二级缓存 （或者自定义二级缓存），必须实现org.apache.ibatis.cache.Cache接口，该接口的<strong>默认实现类</strong>是PerpetualCache</p>
+<p>整合ehcache二级缓存：</p>
+<h4 id="1-导入jar包">1). 导入jar包</h4>
+<pre><code>	ehcache-core.jar
+	mybatis-Ehcache.jar
+	slf4j-api.jar
+</code></pre>
+<h4 id="2-编写ehcache配置文件">2). 编写ehcache配置文件</h4>
+<p><strong>Ehcache.xml</strong></p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ehcache</span> <span class="attr">xmlns:xsi</span>=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="attr">xsi:noNamespaceSchemaLocation</span>=<span class="string">"../config/ehcache.xsd"</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!--当二级缓存的对象 超过内存限制时（缓存对象的个数&gt;maxElementsInMemory），存放入的硬盘文件  --&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">diskStore</span> <span class="attr">path</span>=<span class="string">"D:\Ehcache"</span>/&gt;</span></span><br><span class="line"> <span class="comment">&lt;!-- </span></span><br><span class="line"><span class="comment"> 	maxElementsInMemory:设置 在内存中缓存 对象的个数</span></span><br><span class="line"><span class="comment">    maxElementsOnDisk：设置 在硬盘中缓存 对象的个数</span></span><br><span class="line"><span class="comment">    eternal：设置缓存是否 永远不过期</span></span><br><span class="line"><span class="comment">    overflowToDisk：当内存中缓存的对象个数 超过maxElementsInMemory的时候，是否转移到硬盘中</span></span><br><span class="line"><span class="comment">    timeToIdleSeconds：当2次访问 超过该值的时候，将缓存对象失效 </span></span><br><span class="line"><span class="comment">    timeToLiveSeconds：一个缓存对象 最多存放的时间（生命周期）</span></span><br><span class="line"><span class="comment">    diskExpiryThreadIntervalSeconds：设置每隔多长时间，通过一个线程来清理硬盘中的缓存</span></span><br><span class="line"><span class="comment">    memoryStoreEvictionPolicy：当超过缓存对象的最大值时，处理的策略；LRU，FIFO,LFU</span></span><br><span class="line"><span class="comment">  --&gt;</span>		     </span><br><span class="line"> </span><br><span class="line"> <span class="tag">&lt;<span class="name">defaultCache</span></span></span><br><span class="line"><span class="tag">  <span class="attr">maxElementsInMemory</span>=<span class="string">"1000"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">maxElementsOnDisk</span>=<span class="string">"1000000"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">eternal</span>=<span class="string">"false"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">overflowToDisk</span>=<span class="string">"false"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">timeToIdleSeconds</span>=<span class="string">"100"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">timeToLiveSeconds</span>=<span class="string">"100"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">diskExpiryThreadIntervalSeconds</span>=<span class="string">"120"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">memoryStoreEvictionPolicy</span>=<span class="string">"LRU"</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">defaultCache</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ehcache</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="3-开启EhCache二级缓存">3). 开启EhCache二级缓存</h4>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">cache</span>  <span class="attr">type</span>=<span class="string">"org.mybatis.caches.ehcache.EhcacheCache"</span>&gt;</span></span><br><span class="line">	<span class="comment">&lt;!-- 通过property覆盖Ehcache.xml中设置的值 --&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"maxElementsInMemory"</span> <span class="attr">value</span>=<span class="string">"2000"</span>/&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"maxElementsOnDisk"</span> <span class="attr">value</span>=<span class="string">"3000"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">cache</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="二-逆向工程">二.逆向工程</h2>
+<p><img src="/article/929f3041/%E9%80%86%E5%90%91%E5%B7%A5%E7%A8%8B.png" alt="一级缓存"></p>
+<p>表、类、接口、mapper.xml四者密切相关，因此 当知道一个的时候  其他三个应该可以自动生成。<br>
+$$<br>
+表-&gt;其他三个<br>
+$$<br>
+<strong>实现步骤：</strong></p>
+<h4 id="1-导入jar包-v2">1). 导入jar包</h4>
+<p>mybatis-generator-core.jar、mybatis.jar、ojdbc.jar</p>
+<h4 id="2-逆向工程的配置文件-generator-xml">2). 逆向工程的配置文件(generator.xml)</h4>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span></span><br><span class="line"><span class="meta">&lt;!DOCTYPE generatorConfiguration</span></span><br><span class="line"><span class="meta">  PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"</span></span><br><span class="line"><span class="meta">  "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd"&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">generatorConfiguration</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">context</span> <span class="attr">id</span>=<span class="string">"DB2Tables"</span> <span class="attr">targetRuntime</span>=<span class="string">"MyBatis3"</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">commentGenerator</span>&gt;</span></span><br><span class="line">   <span class="comment">&lt;!--</span></span><br><span class="line"><span class="comment">			suppressAllComments属性值：</span></span><br><span class="line"><span class="comment">				true:自动生成实体类、SQL映射文件时没有注释</span></span><br><span class="line"><span class="comment">				true:自动生成实体类、SQL映射文件，并附有注释</span></span><br><span class="line"><span class="comment">		  --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"suppressAllComments"</span> <span class="attr">value</span>=<span class="string">"true"</span> /&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">commentGenerator</span>&gt;</span></span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"> <span class="comment">&lt;!-- 数据库连接信息 --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">jdbcConnection</span> <span class="attr">driverClass</span>=<span class="string">"oracle.jdbc.OracleDriver"</span></span></span><br><span class="line"><span class="tag">   <span class="attr">connectionURL</span>=<span class="string">"jdbc:oracle:thin:@127.0.0.1:1521:BOOKSHOP"</span> </span></span><br><span class="line"><span class="tag">   <span class="attr">userId</span>=<span class="string">"scott"</span>  <span class="attr">password</span>=<span class="string">"123456"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">jdbcConnection</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- </span></span><br><span class="line"><span class="comment">			forceBigDecimals属性值： </span></span><br><span class="line"><span class="comment">				true:把数据表中的DECIMAL和NUMERIC类型，</span></span><br><span class="line"><span class="comment">解析为JAVA代码中的java.math.BigDecimal类型 </span></span><br><span class="line"><span class="comment">				false(默认):把数据表中的DECIMAL和NUMERIC类型，</span></span><br><span class="line"><span class="comment">解析为解析为JAVA代码中的Integer类型 </span></span><br><span class="line"><span class="comment">		--&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">javaTypeResolver</span>&gt;</span></span><br><span class="line">  	<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"forceBigDecimals"</span> <span class="attr">value</span>=<span class="string">"false"</span> /&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">javaTypeResolver</span>&gt;</span></span><br><span class="line"> <span class="comment">&lt;!-- </span></span><br><span class="line"><span class="comment">		targetProject属性值:实体类的生成位置  </span></span><br><span class="line"><span class="comment">		targetPackage属性值：实体类所在包的路径</span></span><br><span class="line"><span class="comment">	--&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">javaModelGenerator</span> <span class="attr">targetPackage</span>=<span class="string">"com.AAA.Text.entity"</span></span></span><br><span class="line"><span class="tag">                            <span class="attr">targetProject</span>=<span class="string">".\src"</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- trimStrings属性值：</span></span><br><span class="line"><span class="comment">			true：对数据库的查询结果进行trim操作</span></span><br><span class="line"><span class="comment">			false(默认)：不进行trim操作       </span></span><br><span class="line"><span class="comment">		  --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"trimStrings"</span> <span class="attr">value</span>=<span class="string">"true"</span> /&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">javaModelGenerator</span>&gt;</span></span><br><span class="line"> <span class="comment">&lt;!-- </span></span><br><span class="line"><span class="comment">		targetProject属性值:SQL映射文件的生成位置  </span></span><br><span class="line"><span class="comment">		targetPackage属性值：SQL映射文件所在包的路径</span></span><br><span class="line"><span class="comment">	--&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">sqlMapGenerator</span> <span class="attr">targetPackage</span>=<span class="string">"com.AAA.Text.mapper"</span> </span></span><br><span class="line"><span class="tag">			<span class="attr">targetProject</span>=<span class="string">".\src"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">sqlMapGenerator</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- 生成动态代理的接口  --&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">javaClientGenerator</span> <span class="attr">type</span>=<span class="string">"XMLMAPPER"</span> <span class="attr">targetPackage</span>=<span class="string">"com.AAA.Text.mapper"</span> <span class="attr">targetProject</span>=<span class="string">".\src"</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">javaClientGenerator</span>&gt;</span></span><br><span class="line"> </span><br><span class="line"> <span class="comment">&lt;!-- 指定数据库表  --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">table</span> <span class="attr">tableName</span>=<span class="string">"Emp"</span>&gt;</span> <span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">table</span> <span class="attr">tableName</span>=<span class="string">"Dept"</span>&gt;</span> <span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">context</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">generatorConfiguration</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="3-执行">3). 执行</h4>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> IOException, XMLParserException, InvalidConfigurationException, SQLException, InterruptedException </span>&#123;</span><br><span class="line">	</span><br><span class="line">	File file = <span class="keyword">new</span> File(<span class="string">"src/generator.xml"</span>);<span class="comment">//配置文件</span></span><br><span class="line">	List&lt;String&gt; warnings = <span class="keyword">new</span> ArrayList&lt;&gt;();<span class="comment">//存储警告信息		</span></span><br><span class="line"></span><br><span class="line">	ConfigurationParser cp = <span class="keyword">new</span> ConfigurationParser(warnings);</span><br><span class="line">	Configuration config = cp.parseConfiguration(file);</span><br><span class="line">	</span><br><span class="line">	DefaultShellCallback callBack = <span class="keyword">new</span> DefaultShellCallback(<span class="keyword">true</span>);<span class="comment">//新内容是否覆盖</span></span><br><span class="line">	</span><br><span class="line">	<span class="comment">//逆向工程的核心类</span></span><br><span class="line">	MyBatisGenerator generator = <span class="keyword">new</span> MyBatisGenerator(config,callBack,warnings);</span><br><span class="line">	generator.generate(<span class="keyword">null</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+
+
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" target="_blank" rel="noopener" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>感谢支持!<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/proceeds.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+<!--版权声明-->
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/article/e648fec4.html" class="archive-article-date">
-  	<time datetime="2020-02-05T08:50:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-05</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/article/e648fec4.html">SpringBoot学习笔记(1)</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
+        <div class="declare">
+        <ul>
+          <li><strong>本文作者：</strong>
           
+            腾飞
+          
+          <br></li>
+          <li><strong>本文链接：</strong>
+          <a rel="license" href="http://zhangtengfei66.gitee.io/article/929f3041.html">http://zhangtengfei66.gitee.io/article/929f3041.html</a>
+          <br></li>
+          <li><strong>版权声明：</strong>
+          本作品采用
+          <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>
+          进行许可。转载请注明出处！
+          
+        </div>
+      </li></ul>
+<!--版权声明--> 
+         
+
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color1">SpringBoot</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/article/e750a506.html" class="archive-article-date">
-  	<time datetime="2020-02-05T08:50:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-05</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/article/e750a506.html">SpringBoot常用注解</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color1">SpringBoot</a>
+        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color3">MyBatis</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color3">注解</a>
+        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color1">持久层框架</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" target="_blank" rel="noopener" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" target="_blank" rel="noopener" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;" target="_blank" rel="noopener"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://zhangtengfei66.gitee.io/article/929f3041.html" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/article/3600463b.html" class="archive-article-date">
-  	<time datetime="2020-02-01T03:40:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-01</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/article/8b840100.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">MyBatis学习笔记(4)</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" target="_blank" rel="noopener" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+<!-- utteranc评论：基于github issue的评论系统 -->
+
+    <section id="comments" class="comments">
+      <style>
+        .utterances{max-width: 100%;}
+      </style>
+        <script src="https://utteranc.es/client.js"
+                repo="zhangtengfei66/zhangtengfei66.github.io"
+                issue-term="title"
+                theme="github-dark"
+                crossorigin="anonymous"
+                async>
+        </script>
+  </section>
+
+<!-- utteranc评论 -->
+
+
+
+
+
+<!--valine评论系统-->
+
+    <section id="comments" class="comments">
+      <style>
+        .comments{margin:30px;padding:10px;background:#fff}
+        @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
+      </style>
+      <div id="vcomment" class="comment"></div> 
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+   var notify = 'true' == true ? true : false;
+   var verify = 'false' == true ? true : false;
+    window.onload = function() {
+        new Valine({
+            el: '.comment',
+            notify: notify,
+            verify: verify,
+            app_id: "QtaKYgEltRAtkh7xqS2NpMvf-9Nh9j0Va",
+            app_key: "i84Q8UmWG0WiMyPGlUxEiREG",
+            placeholder: "ヾﾉ≧∀≦)o欢迎评论!",
+            avatar:"monsterid"
+        });
+    }
+</script>
+  </section>
+
+<!--valine评论系统-->
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/article/3600463b.html">Java分页查询</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color5">Java</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color3">分页</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/article/db61916.html" class="archive-article-date">
-  	<time datetime="2020-01-17T02:03:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-17</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/article/db61916.html">Hexo博客的使用方法(3)</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color5">Hexo</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color3">博客</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/article/8fb1a3ba.html" class="archive-article-date">
-  	<time datetime="2020-01-15T05:36:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/article/8fb1a3ba.html">Linux查看硬件信息</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color1">Linux</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/article/24caea6b.html" class="archive-article-date">
-  	<time datetime="2020-01-15T02:05:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/article/24caea6b.html">Hexo常用命令</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color5">Hexo</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/page/2/">« Prev</a><a class="page-number" href="/archives/">1</a><a class="page-number" href="/archives/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/archives/page/4/">4</a><a class="page-number" href="/archives/page/5/">5</a><a class="extend next" rel="next" href="/archives/page/4/">Next »</a>
-    </nav>
   
 
 
@@ -496,8 +617,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

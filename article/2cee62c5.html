@@ -252,7 +252,7 @@
       <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
     <strong class="toc-title">文章目录</strong>
            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#常用函数"><span class="toc-number">1.</span> <span class="toc-text">常用函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-字符函数"><span class="toc-number">1.1.</span> <span class="toc-text">1.字符函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-数学函数"><span class="toc-number">1.2.</span> <span class="toc-text">2.数学函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-日期函数"><span class="toc-number">1.3.</span> <span class="toc-text">3.日期函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-转换函数"><span class="toc-number">1.4.</span> <span class="toc-text">4.转换函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-聚合函数"><span class="toc-number">1.5.</span> <span class="toc-text">5.聚合函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-其他函数"><span class="toc-number">1.6.</span> <span class="toc-text">6.其他函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#应用"><span class="toc-number">1.7.</span> <span class="toc-text">应用</span></a></li></ol></li></ol>
-         </div>
+  </div>
    <script type="text/javascript">
    function showToc(){
     var toc_article = document.getElementById("toc-article");
@@ -267,7 +267,7 @@
     show_toc_btn.setAttribute("style","display:block");
     };
    </script>
-      
+
 <!-- 添加目录内容结束 -->
 
     <div class="article-entry" itemprop="articleBody">
@@ -464,9 +464,8 @@
     </div>
 </aside>
 
+<!-- utteranc评论：基于github issue的评论系统 -->
 
-<!-- 《utteranc评论：基于github issue的评论系统 -->
-<div>
     <section id="comments" class="comments">
       <style>
         .utterances{max-width: 100%;}
@@ -474,13 +473,17 @@
         <script src="https://utteranc.es/client.js"
                 repo="zhangtengfei66/zhangtengfei66.github.io"
                 issue-term="title"
-                theme="github-light"
+                theme="github-dark"
                 crossorigin="anonymous"
                 async>
         </script>
-    </section>
-</div>
-<!-- utteranc评论》 -->
+  </section>
+
+<!-- utteranc评论 -->
+
+
+
+
 
 <!--valine评论系统-->
 
@@ -493,7 +496,7 @@
 <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
 <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
 <script>
-   var notify = 'false' == true ? true : false;
+   var notify = 'true' == true ? true : false;
    var verify = 'false' == true ? true : false;
     window.onload = function() {
         new Valine({
@@ -503,7 +506,7 @@
             app_id: "QtaKYgEltRAtkh7xqS2NpMvf-9Nh9j0Va",
             app_key: "i84Q8UmWG0WiMyPGlUxEiREG",
             placeholder: "ヾﾉ≧∀≦)o欢迎评论!",
-            avatar:"retro"
+            avatar:"monsterid"
         });
     }
 </script>
