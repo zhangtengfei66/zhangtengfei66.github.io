@@ -8,17 +8,17 @@
   <link rel="dns-prefetch" href="http://zhangtengfei66.gitee.io">
   <title>MyBatis学习笔记(3) | (●ˇ∀ˇ●)</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="MyBatis学习笔记 💧 💧 💧 SQL映射文件，延迟加载，日志，二级缓存… 映射文件设置 一. 标签 1). SQL 映射文件有很少的几个顶级元素（按照它们应该被定义的顺序）：  cache – 给定命名空间的缓存配置。 cache-ref – 其他命名空间缓存配置的引用。 resultMap – 是最复杂也是最强大的元素，用来描述如何从数据库结果集中来加载对象。 sql – 可被其他语">
+  <meta name="description" content="MyBatis学习笔记 💧 💧 💧 SQL映射文件，延迟加载，日志，二级缓存…">
 <meta name="keywords" content="MyBatis,持久层框架">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MyBatis学习笔记(3)">
 <meta property="og:url" content="http:&#x2F;&#x2F;zhangtengfei66.gitee.io&#x2F;article&#x2F;c4c597c7.html">
 <meta property="og:site_name" content="(●ˇ∀ˇ●)">
-<meta property="og:description" content="MyBatis学习笔记 💧 💧 💧 SQL映射文件，延迟加载，日志，二级缓存… 映射文件设置 一. 标签 1). SQL 映射文件有很少的几个顶级元素（按照它们应该被定义的顺序）：  cache – 给定命名空间的缓存配置。 cache-ref – 其他命名空间缓存配置的引用。 resultMap – 是最复杂也是最强大的元素，用来描述如何从数据库结果集中来加载对象。 sql – 可被其他语">
+<meta property="og:description" content="MyBatis学习笔记 💧 💧 💧 SQL映射文件，延迟加载，日志，二级缓存…">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http:&#x2F;&#x2F;zhangtengfei66.gitee.io&#x2F;article&#x2F;c4c597c7&#x2F;MyBatis04.png">
 <meta property="og:image" content="http:&#x2F;&#x2F;zhangtengfei66.gitee.io&#x2F;article&#x2F;c4c597c7&#x2F;MyBatis05.png">
-<meta property="og:updated_time" content="2020-04-13T07:57:20.409Z">
+<meta property="og:updated_time" content="2020-04-14T06:45:03.993Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http:&#x2F;&#x2F;zhangtengfei66.gitee.io&#x2F;article&#x2F;c4c597c7&#x2F;MyBatis04.png">
   
@@ -278,6 +278,7 @@
         <p>MyBatis学习笔记</p>
 <p>💧 💧 💧</p>
 <p>SQL映射文件，延迟加载，日志，二级缓存…</p>
+<a id="more"></a>
 <h2 id="映射文件设置">映射文件设置</h2>
 <h3 id="一-标签">一. 标签</h3>
 <p>1). SQL 映射文件有很少的几个顶级元素（按照它们应该被定义的顺序）：</p>
@@ -336,7 +337,7 @@ ${value} ，其中的标识符只能是value</p>
 <ul>
 <li><strong>id</strong> ：用于完成主键值的映射</li>
 <li><strong>result</strong> ：用于完成普通列的映射</li>
-<li>**association ** ：一个复杂的类型关联;许多结果将包成这种类型（一对一）</li>
+<li><strong>association</strong> ：一个复杂的类型关联;许多结果将包成这种类型（一对一）</li>
 <li><strong>collection</strong> ： 复杂类型的集（一对多）</li>
 </ul>
 <p><strong>多对多的本质就是一对多的变化</strong></p>
@@ -615,6 +616,9 @@ $$<br>
     </div>
 </aside>
 
+
+
+
 <!-- utteranc评论：基于github issue的评论系统 -->
 
     <section id="comments" class="comments">
@@ -631,9 +635,6 @@ $$<br>
   </section>
 
 <!-- utteranc评论 -->
-
-
-
 
 
 <!--valine评论系统-->
@@ -783,15 +784,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">Java</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">分页</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
