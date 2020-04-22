@@ -21,7 +21,7 @@
 <meta property="og:image" content="http:&#x2F;&#x2F;zhangtengfei66.gitee.io&#x2F;article&#x2F;929f3041&#x2F;text.png">
 <meta property="og:image" content="http:&#x2F;&#x2F;zhangtengfei66.gitee.io&#x2F;article&#x2F;929f3041&#x2F;%E7%BC%93%E5%AD%98.png">
 <meta property="og:image" content="http:&#x2F;&#x2F;zhangtengfei66.gitee.io&#x2F;article&#x2F;929f3041&#x2F;%E9%80%86%E5%90%91%E5%B7%A5%E7%A8%8B.png">
-<meta property="og:updated_time" content="2020-04-15T09:42:47.619Z">
+<meta property="og:updated_time" content="2020-04-20T09:33:47.756Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http:&#x2F;&#x2F;zhangtengfei66.gitee.io&#x2F;article&#x2F;929f3041&#x2F;%E4%B8%80%E7%BA%A7%E7%BC%93%E5%AD%98.png">
   
@@ -340,9 +340,8 @@
 <p>**清理：**与清理一级缓存的方法相同<br>
 <code>commit();</code> （一般执行增删改时 会清理掉缓存；设计的原因 是为了防止脏数据）<br>
 在二级缓存中，commit()不能是查询自身的commit。</p>
-<pre><code>		commit会清理一级和二级缓存；但是清理二级缓存时，不能是查询自身的commit；
-</code></pre>
-<p>​		也可以在select标签中 增加属性 <code>flushCache=&quot;true&quot;</code></p>
+<p>commit会清理一级和二级缓存；但是清理二级缓存时，不能是查询自身的commit；</p>
+<p>也可以在select标签中 增加属性 <code>flushCache=&quot;true&quot;</code></p>
 </li>
 <li>
 <p><strong>命中率：</strong><br>
@@ -574,6 +573,15 @@ $$<br>
   
 <nav id="article-nav">
   
+    <a href="/article/3ec8f35a.html" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Spring学习笔记(1)
+        
+      </div>
+    </a>
+  
   
     <a href="/article/8b840100.html" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-title">MyBatis学习笔记(4)</div>
@@ -804,6 +812,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">注解</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">Spring</a>
               </li>
              
               <li class="article-tag-list-item">
