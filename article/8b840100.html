@@ -24,7 +24,7 @@
 <meta property="og:image" content="http:&#x2F;&#x2F;zhangtengfei66.gitee.io&#x2F;article&#x2F;8b840100&#x2F;MyBatis%E5%8A%A8%E6%80%81sql06.png">
 <meta property="og:image" content="http:&#x2F;&#x2F;zhangtengfei66.gitee.io&#x2F;article&#x2F;8b840100&#x2F;MyBatis%E5%8A%A8%E6%80%81sql07.png">
 <meta property="og:image" content="http:&#x2F;&#x2F;zhangtengfei66.gitee.io&#x2F;article&#x2F;8b840100&#x2F;MyBatis%E5%8A%A8%E6%80%81sql08.png">
-<meta property="og:updated_time" content="2020-04-20T08:51:55.020Z">
+<meta property="og:updated_time" content="2020-04-26T08:50:28.945Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http:&#x2F;&#x2F;zhangtengfei66.gitee.io&#x2F;article&#x2F;8b840100&#x2F;MyBatis%E5%8A%A8%E6%80%81sql01.png">
   
@@ -291,28 +291,20 @@
 <p>2). 动态 SQL 元素和使用 JSTL 或其他类似基于 XML 的文本处理器相似</p>
 <p>3). MyBatis 采用功能强大的基于 OGNL 的表达式来简化操作</p>
 <ul>
-<li>
-<p>if</p>
-</li>
-<li>
-<p>choose (when, otherwise)</p>
-</li>
-<li>
-<p>trim (where, set)</p>
-</li>
-<li>
-<p>foreach</p>
-</li>
+<li>if</li>
+<li>choose (when, otherwise)</li>
+<li>trim (where, set)</li>
+<li>foreach</li>
 </ul>
-<p>4). OGNL（ Object Graph Navigation Language ）对象图导航语言，这是一种强大的</p>
-<p>表达式语言，通过它可以非常方便的来操作对象属性。 类似于我们的EL，SpEL等</p>
-<p>访问对象属性：<code>person.name</code></p>
-<p>调用方法：<code>person.getName()</code></p>
-<p>调用静态属性/方法：<code>@java.lang.Math@PI</code> ， <code>@java.util.UUID@randomUUID()</code></p>
-<p>调用构造方法：<code>new com.atguigu.bean.Person(‘admin’).name</code></p>
-<p>运算符：<code>+,-,*,/,%</code></p>
-<p>逻辑运算符：<code>in,not in,&gt;,&gt;=,&lt;,&lt;=,==,!=</code></p>
-<p><strong>注意：xml中特殊符号如”,&gt;,&lt;等这些都需要使用转义字符</strong></p>
+<p>4). OGNL（ Object Graph Navigation Language ）对象图导航语言，这是一种强大的表达式语<br>
+言，通过它可以非常方便的来操作对象属性。 类似于我们的EL，SpEL等.</p>
+<p>访问对象属性：<code>person.name</code><br>
+调用方法：<code>person.getName()</code><br>
+调用静态属性/方法：<code>@java.lang.Math@PI</code> ， <code>@java.util.UUID@randomUUID()</code><br>
+调用构造方法：<code>new com.atguigu.bean.Person(‘admin’).name</code><br>
+运算符：<code>+,-,*,/,%</code><br>
+逻辑运算符：<code>in,not in,&gt;,&gt;=,&lt;,&lt;=,==,!=</code><br>
+<strong>注意：xml中特殊符号如”,&gt;,&lt;等这些都需要使用转义字符</strong></p>
 <h3 id="二-if-where">二. if where</h3>
 <p>1). If用于完成<strong>简单的判断</strong>.</p>
 <p>2). Where用于解决SQL语句中where关键字以及条件中<strong>第一个</strong>and或者or的问题.</p>
@@ -792,10 +784,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Linux</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">Java</a>
               </li>
              
@@ -805,6 +793,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Maven</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
