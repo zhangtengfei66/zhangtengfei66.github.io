@@ -18,7 +18,7 @@
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http:&#x2F;&#x2F;zhangtengfei66.gitee.io&#x2F;article&#x2F;c4c597c7&#x2F;MyBatis04.png">
 <meta property="og:image" content="http:&#x2F;&#x2F;zhangtengfei66.gitee.io&#x2F;article&#x2F;c4c597c7&#x2F;MyBatis05.png">
-<meta property="og:updated_time" content="2020-04-15T06:34:37.618Z">
+<meta property="og:updated_time" content="2020-04-26T11:28:11.628Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http:&#x2F;&#x2F;zhangtengfei66.gitee.io&#x2F;article&#x2F;c4c597c7&#x2F;MyBatis04.png">
   
@@ -408,17 +408,17 @@ ${value} ，其中的标识符只能是value</p>
 <p>如果不指定也可以，Mybatis就会根据以下顺序 寻找日志<br>
 $$<br>
 SLF4J →Apache Commons Logging →Log4j 2 → Log4j →JDK logging<br>
-$$<br>
-③编写日志文件log4j.properties</p>
+$$</p>
+<p>③编写日志文件log4j.properties</p>
 <figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">log4j.rootLogger</span>=<span class="string">DEBUG, stdout</span></span><br><span class="line"><span class="meta">log4j.appender.stdout</span>=<span class="string">org.apache.log4j.ConsoleAppender</span></span><br><span class="line"><span class="meta">log4j.appender.stdout.layout</span>=<span class="string">org.apache.log4j.PatternLayout</span></span><br><span class="line"><span class="meta">log4j.appender.stdout.layout.ConversionPattern</span>=<span class="string">%5p [%t] - %m%n</span></span><br></pre></td></tr></table></figure>
-<p>日志级别：</p>
-<p>$$<br>
+<p>日志级别：<br>
+$$<br>
 DEBUG&lt;INFO&lt;WARN&lt;ERROR<br>
 $$<br>
 如果设置为info，则只显示 info及以上级别的信息；<br>
 建议：在开发时设置debug，在运行时设置为info或以上。</p>
-<p>④日志作用</p>
-<p>可以通过日志信息，相信的阅读mybatis执行情况（ 观察mybatis实际执行sql语句 以及SQL中的参数 和返回结果）</p>
+<p>④日志作用<br>
+可以通过日志信息，相信的阅读mybatis执行情况（ 观察mybatis实际执行sql语句 以及SQL中的参数 和返回结果）</p>
 <h4 id="6-二级缓存">6). 二级缓存</h4>
 <p>缓存使用原理：查询时，先从一级缓存(session)中查，一级缓存没有再找二级缓存(factory)，二级缓存没有再找数据库，然后数据库将结果返回并添加到缓存中。</p>
 <p>①全局配置文件</p>
@@ -792,11 +792,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Maven</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Linux</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Maven</a>
               </li>
              
               <li class="article-tag-list-item">
