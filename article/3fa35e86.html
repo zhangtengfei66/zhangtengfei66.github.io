@@ -21,7 +21,7 @@
 <meta property="og:image" content="http:&#x2F;&#x2F;zhangtengfei66.gitee.io&#x2F;article&#x2F;3fa35e86&#x2F;text.png">
 <meta property="og:image" content="http:&#x2F;&#x2F;zhangtengfei66.gitee.io&#x2F;article&#x2F;3fa35e86&#x2F;%E7%BC%93%E5%AD%98.png">
 <meta property="og:image" content="http:&#x2F;&#x2F;zhangtengfei66.gitee.io&#x2F;article&#x2F;3fa35e86&#x2F;%E9%80%86%E5%90%91%E5%B7%A5%E7%A8%8B.png">
-<meta property="og:updated_time" content="2020-04-22T02:49:40.019Z">
+<meta property="og:updated_time" content="2020-04-27T08:18:33.867Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http:&#x2F;&#x2F;zhangtengfei66.gitee.io&#x2F;article&#x2F;3fa35e86&#x2F;%E4%B8%80%E7%BA%A7%E7%BC%93%E5%AD%98.png">
   
@@ -329,11 +329,14 @@
 在二级缓存中，commit()不能是查询自身的commit。<br>
 commit会清理一级和二级缓存；但是清理二级缓存时，不能是查询自身的commit；<br>
 也可以在select标签中 增加属性 <code>flushCache=&quot;true&quot;</code></li>
-<li><strong>命中率</strong>：<br>
-第一次: 0%   0<br>
-​    第二次: 50% 0.5<br>
-​	第三次: 2/3   0.666<br>
-​	第四次: 3/4   0.75</li>
+<li><strong>命中率</strong>：
+<ul>
+<li>第一次: 0%   0</li>
+<li>第二次: 50% 0.5</li>
+<li>第三次: 2/3   0.666</li>
+<li>第四次: 3/4   0.75</li>
+</ul>
+</li>
 </ul>
 <h4 id="3-二级缓存的图解">3). 二级缓存的图解</h4>
 <p><img src="/article/3fa35e86/%E4%BA%8C%E7%BA%A7%E7%BC%93%E5%AD%98.png" alt="一级缓存"></p>
@@ -379,8 +382,8 @@ false：读写缓存；会返回缓存对象的拷贝（通过序列化）。这
 <p>5). <code>localCacheScope</code>：本地缓存作用域(一级缓存SESSION)；当前会话的所有数据保存在会话缓存中(STATEMENT可以禁用一级缓存)。</p>
 <p><img src="/article/3fa35e86/%E7%BC%93%E5%AD%98.png" alt="缓存"></p>
 <h3 id="四-第三方二级缓存">四. 第三方二级缓存</h3>
-<p>ehcache，memcache</p>
-<p>要想整合三方提供的二级缓存 （或者自定义二级缓存），必须实现org.apache.ibatis.cache.Cache接口，该接口的<strong>默认实现类</strong>是PerpetualCache。</p>
+<p>第三方二级缓存：ehcache，memcache。<br>
+要想整合三方提供的二级缓存 （或者自定义二级缓存），必须实现org.apache.ibatis.cache.Cache接口，该接口的<strong>默认实现类</strong>是PerpetualCache。</p>
 <p>整合ehcache二级缓存：</p>
 <h4 id="1-导入JAR包">1). 导入JAR包</h4>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ehcache-core.jar</span><br><span class="line">mybatis-Ehcache.jar</span><br><span class="line">slf4j-api.jar</span><br></pre></td></tr></table></figure>
@@ -751,11 +754,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Linux</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Maven</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Maven</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">

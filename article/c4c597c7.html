@@ -18,7 +18,7 @@
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http:&#x2F;&#x2F;zhangtengfei66.gitee.io&#x2F;article&#x2F;c4c597c7&#x2F;MyBatis04.png">
 <meta property="og:image" content="http:&#x2F;&#x2F;zhangtengfei66.gitee.io&#x2F;article&#x2F;c4c597c7&#x2F;MyBatis05.png">
-<meta property="og:updated_time" content="2020-04-26T11:28:11.628Z">
+<meta property="og:updated_time" content="2020-04-27T07:41:04.900Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http:&#x2F;&#x2F;zhangtengfei66.gitee.io&#x2F;article&#x2F;c4c597c7&#x2F;MyBatis04.png">
   
@@ -311,8 +311,8 @@
 <h4 id="1-、-的区别">1). #{}、${}的区别</h4>
 <p>①#{任意值}<br>
 ${value} ，其中的标识符只能是value</p>
-<p>②#{}自动给String类型加上’’  （自动类型转换）</p>
-<p>​	${} 原样输出，但是适合于 动态排序（动态字段）</p>
+<p>②#{}自动给String类型加上’’  （自动类型转换）<br>
+${} 原样输出，但是适合于 动态排序（动态字段）</p>
 <h4 id="2-、-的使用">2). #{}、${}的使用</h4>
 <ul>
 <li>#和$区别一个<strong>转义</strong>一个<strong>不转义</strong>,等价于jdbc的statement和preparedStatement。</li>
@@ -326,12 +326,12 @@ ${value} ，其中的标识符只能是value</p>
 <p><strong>输出参数resultType</strong><br>
 1.<strong>简单类型</strong>（8个基本+String）<br>
 2.输出参数为<strong>实体对象类型</strong><br>
-3.输出参数为<strong>实体对象类型的集合</strong> ：虽然输出类型为集合，但是resultType依然写 集合的元素类型（resyltType=“Student”）<br>
+3.输出参数为<strong>实体对象类型的集合</strong> ：虽然输出类型为集合，但是resultType依然写集合的元素类型（resyltType=“Student”）<br>
 4.输出参数类型为<strong>HashMap</strong><br>
 –HashMap本身是一个集合，可以存放多个元素，<br>
 –&gt;结论：一个HashMap 对应一个学生的多个元素(多个属性)</p>
-<p>1). <code>autoMappingBehavior</code>默认是PARTIAL，开启自动映射的功能。唯一的要求是结果集列名和javaBean属性名一致</p>
-<p>2). 如果<code>autoMappingBehavior</code>设置为null则会取消自动映射</p>
+<p>1). <code>autoMappingBehavior</code>默认是PARTIAL，开启自动映射的功能。唯一的要求是结果集列名和javaBean属性名一致。<br>
+2). 如果<code>autoMappingBehavior</code>设置为null则会取消自动映射。</p>
 <h3 id="六-resultMap自定义映射">六. resultMap自定义映射</h3>
 <p><strong>实现高级结果集映射</strong></p>
 <ul>
@@ -428,22 +428,26 @@ $$<br>
 <h3 id="七-扩展">七. 扩展</h3>
 <h4 id="1-分步查询多列值的传递">1). 分步查询多列值的传递</h4>
 <ul>
-<li>如果分步查询时，需要传递给调用的查询中多个参数，则需要将多个参数封装成</li>
+<li>
+<p>如果分步查询时，需要传递给调用的查询中多个参数，则需要将多个参数封装成<br>
+Map来进行传递，语法如下: {k1=v1, k2=v2…}</p>
+</li>
+<li>
+<p>在所调用的查询方，取值时就要参考Map的取值方式，需要严格的按照封装map<br>
+时所用的key来取值.</p>
+</li>
 </ul>
-<p>Map来进行传递，语法如下: {k1=v1, k2=v2…}</p>
-<ul>
-<li>在所调用的查询方，取值时就要参考Map的取值方式，需要严格的按照封装map</li>
-</ul>
-<p>时所用的key来取值.</p>
 <h4 id="2-association-或-collection的-fetchType属性">2). association 或 collection的 fetchType属性</h4>
 <ul>
-<li>在<association> 和<collection>标签中都可以设置fetchType，指定本次查询是否要使用延迟加</collection></association></li>
+<li>
+<p>在<association> 和<collection>标签中都可以设置fetchType，指定本次查询是否要使用延迟加<br>
+载。默认为fetchType=”lazy” ,如果本次的查询不想使用延迟加载，则可设置为fetchType=”eager”.</collection></association></p>
+</li>
+<li>
+<p>fetchType可以灵活的设置查询是否需要使用延迟加载，而不需要因为某个查询不想使用延迟加载<br>
+将全局的延迟加载设置关闭.</p>
+</li>
 </ul>
-<p>载。默认为fetchType=”lazy” ,如果本次的查询不想使用延迟加载，则可设置为fetchType=”eager”.</p>
-<ul>
-<li>fetchType可以灵活的设置查询是否需要使用延迟加载，而不需要因为某个查询不想使用延迟加载</li>
-</ul>
-<p>将全局的延迟加载设置关闭.</p>
 
       
 
@@ -792,11 +796,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Linux</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Maven</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Maven</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">

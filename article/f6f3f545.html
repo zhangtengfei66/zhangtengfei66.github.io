@@ -21,7 +21,7 @@
 <meta property="og:image" content="http:&#x2F;&#x2F;zhangtengfei66.gitee.io&#x2F;article&#x2F;f6f3f545&#x2F;MyBatis01.png">
 <meta property="og:image" content="http:&#x2F;&#x2F;zhangtengfei66.gitee.io&#x2F;article&#x2F;f6f3f545&#x2F;MyBatis04.png">
 <meta property="og:image" content="http:&#x2F;&#x2F;zhangtengfei66.gitee.io&#x2F;article&#x2F;f6f3f545&#x2F;MyBatis05.png">
-<meta property="og:updated_time" content="2020-04-06T10:14:47.764Z">
+<meta property="og:updated_time" content="2020-04-27T06:59:43.007Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http:&#x2F;&#x2F;zhangtengfei66.gitee.io&#x2F;article&#x2F;f6f3f545&#x2F;MyBatis02.png">
   
@@ -297,12 +297,8 @@
 <h3 id="四-持久化技术的对比">四. 持久化技术的对比</h3>
 <h4 id="1-JDBC">1).JDBC</h4>
 <ul>
-<li>
-<p>①   SQL夹在Java代码块里，耦合度高导致硬编码内伤</p>
-</li>
-<li>
-<p>②   维护不易且实际开发需求中sql有变化，频繁修改的情况多见</p>
-</li>
+<li>①   SQL夹在Java代码块里，耦合度高导致硬编码内伤</li>
+<li>②   维护不易且实际开发需求中sql有变化，频繁修改的情况多见</li>
 </ul>
 <h4 id="2-Hibernate和JPA">2).Hibernate和JPA</h4>
 <ul>
@@ -414,10 +410,10 @@ sql没参数：session.insert(statement);</p>
 <h3 id="六-测试">六. 测试</h3>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.AAA.Text.test;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.Date;</span><br><span class="line"><span class="keyword">import</span> java.util.List;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.AAA.Text.dao.EmpMapper;</span><br><span class="line"><span class="keyword">import</span> com.AAA.Text.dao.impl.EmpMapperImpl;</span><br><span class="line"><span class="keyword">import</span> com.AAA.Text.entity.Emp;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">		EmpMapper em = <span class="keyword">new</span> EmpMapperImpl();</span><br><span class="line">		System.out.println(<span class="string">"----------查寻所有员工信息-----------"</span>);</span><br><span class="line">		List&lt;Emp&gt; emps = em.selectEmps();</span><br><span class="line">		<span class="keyword">for</span>(Emp emp : emps)&#123;</span><br><span class="line">			System.out.println(emp);</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		System.out.println(<span class="string">"----------根据员工编号查员工信息-----------"</span>);</span><br><span class="line">		Emp emp = em.selectEmpByEmpno(<span class="number">7788</span>);</span><br><span class="line">		System.out.println(emp);</span><br><span class="line"></span><br><span class="line"><span class="comment">//		System.out.println("----------插入一个员工-----------");</span></span><br><span class="line"><span class="comment">//		emp = new Emp(8888,"张三","总统",7788,new Date(),1000.0,5.0,40);</span></span><br><span class="line"><span class="comment">//		em.add(emp);</span></span><br><span class="line"><span class="comment">//		System.out.println("添加成功！");</span></span><br><span class="line">		System.out.println(<span class="string">"----------修改一个员工-----------"</span>);</span><br><span class="line">		emp = <span class="keyword">new</span> Emp(<span class="number">8888</span>,<span class="string">"特朗普"</span>,<span class="string">"总统"</span>,<span class="number">7369</span>,<span class="keyword">new</span> Date(),<span class="number">1200.0</span>,<span class="number">15.0</span>,<span class="number">40</span>);</span><br><span class="line">		em.update(emp);</span><br><span class="line">		System.out.println(<span class="string">"修改成功！"</span>);</span><br><span class="line">		System.out.println(<span class="string">"----------根据编号删除一个员工-----------"</span>);</span><br><span class="line">		emp = <span class="keyword">new</span> Emp(<span class="number">8888</span>,<span class="string">"特朗普"</span>,<span class="string">"总统"</span>,<span class="number">7369</span>,<span class="keyword">new</span> Date(),<span class="number">1200.0</span>,<span class="number">15.0</span>,<span class="number">40</span>);</span><br><span class="line">		em.delete(emp);</span><br><span class="line">		System.out.println(<span class="string">"删除成功！"</span>);</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="Mapper动态实现CRUD">Mapper动态实现CRUD</h2>
-<p><strong>getMapper绑定</strong></p>
-<p>1). 根据 接口名 找到 mapper.xml文件（根据的是namespace=接口全类名）<br>
+<p><strong>getMapper绑定</strong><br>
+1). 根据 接口名 找到 mapper.xml文件（根据的是namespace=接口全类名）<br>
 2). 根据 接口的方法名 找到 mapper.xml文件中的SQL标签 （方法名=SQL标签Id值）</p>
-<p>**习惯：**SQL映射文件（mapper.xml） 和 接口放在同一个包中 （注意修改全局配置文件中加载mapper.xml文件的路径）</p>
+<p><strong>习惯</strong>：SQL映射文件（mapper.xml） 和 接口放在同一个包中 （注意修改全局配置文件中加载mapper.xml文件的路径）</p>
 <p><strong>约定的目标：</strong> 省略掉实现方法,即根据约定 直接可以定位出SQL语句</p>
 <p><strong>目录结构</strong><br>
 <img src="/article/f6f3f545/MyBatis05.png" alt="catalog"></p>
@@ -447,18 +443,18 @@ sql没参数：session.insert(statement);</p>
 <p><strong>1). sql映射文件</strong></p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">  <span class="tag">&lt;<span class="name">insert</span> <span class="attr">id</span>=<span class="string">"add"</span> <span class="attr">parameterType</span>=<span class="string">"com.AAA.Text.entity.Emp"</span> <span class="attr">databaseId</span>=<span class="string">"oracle"</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- </span></span><br><span class="line"><span class="comment">	keyProperty:查出的主键值封装给javaBean的哪个属性</span></span><br><span class="line"><span class="comment">	order="BEFORE":当前sql在插入sql之前运行</span></span><br><span class="line"><span class="comment">		AFTER:当前sql在插入sql之后运行</span></span><br><span class="line"><span class="comment">	resultType:查出的数据的返回值类型</span></span><br><span class="line"><span class="comment"> --&gt;</span></span><br><span class="line">  	<span class="tag">&lt;<span class="name">selectKey</span> <span class="attr">keyProperty</span>=<span class="string">"id"</span> <span class="attr">order</span>=<span class="string">"BEFORE"</span> <span class="attr">resultType</span>=<span class="string">"Integer"</span>&gt;</span></span><br><span class="line">  		select EMPLOYEES_SEQ.nextval from dual</span><br><span class="line">  	<span class="tag">&lt;/<span class="name">selectKey</span>&gt;</span>    </span><br><span class="line">  	insert into Emp values(#&#123;id&#125;,#&#123;EmpName&#125;,#&#123;email&#125;)</span><br><span class="line">  <span class="tag">&lt;/<span class="name">insert</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <h3 id="参数传递">参数传递</h3>
-<p>1). <strong>单个普通类型参数</strong></p>
-<p>可以接受基本类型，包装类型，字符串类型等。这种情况MyBatis可直接使用这个参数，不需要经过任何处理。</p>
-<p>2). <strong>多个参数</strong></p>
-<p>任意多个参数，都会被MyBatis重新包装成一个Map传入。Map的key是param1，param2，或者0，1…，值就是参数的值</p>
-<p>3). <strong>命名参数</strong></p>
-<p>为参数使用@Param起一个名字，MyBatis就会将这些参数封装进map中，key就是我们自己指定的名字</p>
-<p>4). <strong>POJO</strong></p>
-<p>当这些参数属于我们业务POJO时，我们直接传递POJO</p>
-<p>5). <strong>Map</strong></p>
-<p>我们也可以封装多个参数为map，直接传递</p>
-<p>6). <strong>Collection/Array</strong></p>
-<p>会被MyBatis封装成一个map传入, Collection对应的key是collection,Array对应的key是array. 如果确定是List集合，key还可以是list.</p>
+<p>1). <strong>单个普通类型参数</strong><br>
+可以接受基本类型，包装类型，字符串类型等。这种情况MyBatis可直接使用这个参数，不需要经过任何处理。</p>
+<p>2). <strong>多个参数</strong><br>
+任意多个参数，都会被MyBatis重新包装成一个Map传入。Map的key是param1，param2，或者0，1…，值就是参数的值</p>
+<p>3). <strong>命名参数</strong><br>
+为参数使用@Param起一个名字，MyBatis就会将这些参数封装进map中，key就是我们自己指定的名字</p>
+<p>4). <strong>POJO</strong><br>
+当这些参数属于我们业务POJO时，我们直接传递POJO</p>
+<p>5). <strong>Map</strong><br>
+我们也可以封装多个参数为map，直接传递</p>
+<p>6). <strong>Collection/Array</strong><br>
+会被MyBatis封装成一个map传入, Collection对应的key是collection,Array对应的key是array. 如果确定是List集合，key还可以是list.</p>
 
       
 
@@ -807,11 +803,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Linux</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Maven</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Maven</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">

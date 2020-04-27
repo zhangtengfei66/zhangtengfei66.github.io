@@ -19,7 +19,7 @@
 <meta property="og:image" content="http:&#x2F;&#x2F;zhangtengfei66.gitee.io&#x2F;article&#x2F;dddea686&#x2F;MyBatis01.png">
 <meta property="og:image" content="http:&#x2F;&#x2F;zhangtengfei66.gitee.io&#x2F;article&#x2F;dddea686&#x2F;MyBatis02.png">
 <meta property="og:image" content="http:&#x2F;&#x2F;zhangtengfei66.gitee.io&#x2F;article&#x2F;dddea686&#x2F;MyBatis03.png">
-<meta property="og:updated_time" content="2020-04-13T01:07:16.208Z">
+<meta property="og:updated_time" content="2020-04-27T07:12:00.132Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http:&#x2F;&#x2F;zhangtengfei66.gitee.io&#x2F;article&#x2F;dddea686&#x2F;MyBatis01.png">
   
@@ -255,7 +255,7 @@
   <div id="toc-article" class="toc-article" style="display:none">
       <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
     <strong class="toc-title">文章目录</strong>
-           <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#核心文件设置"><span class="toc-number">1.</span> <span class="toc-text">核心文件设置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#二-settings属性"><span class="toc-number">1.1.</span> <span class="toc-text">二. settings属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#三-typeAliases别名处理器"><span class="toc-number">1.2.</span> <span class="toc-text">三. typeAliases别名处理器</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-单个类起别名-typeAlias"><span class="toc-number">1.2.1.</span> <span class="toc-text">1). 单个类起别名-typeAlias</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-批量起别名-package"><span class="toc-number">1.2.2.</span> <span class="toc-text">2). 批量起别名-package</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-MyBatis已存在的别名"><span class="toc-number">1.2.3.</span> <span class="toc-text">3). MyBatis已存在的别名</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#四-typeHandlers类型处理器"><span class="toc-number">1.3.</span> <span class="toc-text">四. typeHandlers类型处理器</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#自带的类型转换器"><span class="toc-number">1.3.1.</span> <span class="toc-text">自带的类型转换器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#自定义类型处理器"><span class="toc-number">1.3.2.</span> <span class="toc-text">自定义类型处理器</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#五-plugins-插件机制"><span class="toc-number">1.4.</span> <span class="toc-text">五.  plugins 插件机制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#六-environments-环境配置"><span class="toc-number">1.5.</span> <span class="toc-text">六. environments 环境配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#七-databaseIdProvider数据库厂商标识"><span class="toc-number">1.6.</span> <span class="toc-text">七. databaseIdProvider数据库厂商标识</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#八-mappers映射器"><span class="toc-number">1.7.</span> <span class="toc-text">八. mappers映射器</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-mybatis注解"><span class="toc-number">1.7.1.</span> <span class="toc-text">1). mybatis注解</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-批量加载映射文件"><span class="toc-number">1.7.2.</span> <span class="toc-text">2). 批量加载映射文件</span></a></li></ol></li></ol></li></ol>
+           <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#核心文件设置"><span class="toc-number">1.</span> <span class="toc-text">核心文件设置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#一-properties属性"><span class="toc-number">1.1.</span> <span class="toc-text">一. properties属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二-settings属性"><span class="toc-number">1.2.</span> <span class="toc-text">二. settings属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#三-typeAliases别名处理器"><span class="toc-number">1.3.</span> <span class="toc-text">三. typeAliases别名处理器</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-单个类起别名-typeAlias"><span class="toc-number">1.3.1.</span> <span class="toc-text">1). 单个类起别名-typeAlias</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-批量起别名-package"><span class="toc-number">1.3.2.</span> <span class="toc-text">2). 批量起别名-package</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-MyBatis已存在的别名"><span class="toc-number">1.3.3.</span> <span class="toc-text">3). MyBatis已存在的别名</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#四-typeHandlers类型处理器"><span class="toc-number">1.4.</span> <span class="toc-text">四. typeHandlers类型处理器</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#自带的类型转换器"><span class="toc-number">1.4.1.</span> <span class="toc-text">自带的类型转换器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#自定义类型处理器"><span class="toc-number">1.4.2.</span> <span class="toc-text">自定义类型处理器</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#五-plugins-插件机制"><span class="toc-number">1.5.</span> <span class="toc-text">五.  plugins 插件机制</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-简介"><span class="toc-number">1.5.1.</span> <span class="toc-text">1). 简介</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-四大对象"><span class="toc-number">1.5.2.</span> <span class="toc-text">2). 四大对象</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#六-environments-环境配置"><span class="toc-number">1.6.</span> <span class="toc-text">六. environments 环境配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#七-databaseIdProvider数据库厂商标识"><span class="toc-number">1.7.</span> <span class="toc-text">七. databaseIdProvider数据库厂商标识</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#八-mappers映射器"><span class="toc-number">1.8.</span> <span class="toc-text">八. mappers映射器</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-mybatis注解"><span class="toc-number">1.8.1.</span> <span class="toc-text">1). mybatis注解</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-批量加载映射文件"><span class="toc-number">1.8.2.</span> <span class="toc-text">2). 批量加载映射文件</span></a></li></ol></li></ol></li></ol>
   </div>
    <script type="text/javascript">
    function showToc(){
@@ -284,44 +284,23 @@
 <p><strong>文件结构如下:</strong></p>
 <p>configuration 配置</p>
 <ul>
-<li>
-<p><a href="http://www.mybatis.org/mybatis-3/zh/configuration.html" target="_blank" rel="noopener">properties </a><a href="http://www.mybatis.org/mybatis-3/zh/configuration.html" target="_blank" rel="noopener">属性</a></p>
-</li>
-<li>
-<p><a href="http://www.mybatis.org/mybatis-3/zh/configuration.html" target="_blank" rel="noopener">settings </a><a href="http://www.mybatis.org/mybatis-3/zh/configuration.html" target="_blank" rel="noopener">设置</a></p>
-</li>
-<li>
-<p><a href="http://www.mybatis.org/mybatis-3/zh/configuration.html" target="_blank" rel="noopener">typeAliases</a><a href="http://www.mybatis.org/mybatis-3/zh/configuration.html" target="_blank" rel="noopener"> </a><a href="http://www.mybatis.org/mybatis-3/zh/configuration.html" target="_blank" rel="noopener">类型命名</a></p>
-</li>
-<li>
-<p><a href="http://www.mybatis.org/mybatis-3/zh/configuration.html" target="_blank" rel="noopener">typeHandlers</a><a href="http://www.mybatis.org/mybatis-3/zh/configuration.html" target="_blank" rel="noopener"> </a><a href="http://www.mybatis.org/mybatis-3/zh/configuration.html" target="_blank" rel="noopener">类型处理器</a></p>
-</li>
-<li>
-<p><a href="http://www.mybatis.org/mybatis-3/zh/configuration.html" target="_blank" rel="noopener">objectFactory</a><a href="http://www.mybatis.org/mybatis-3/zh/configuration.html" target="_blank" rel="noopener"> </a><a href="http://www.mybatis.org/mybatis-3/zh/configuration.html" target="_blank" rel="noopener">对象工厂</a></p>
-</li>
-<li>
-<p><a href="http://www.mybatis.org/mybatis-3/zh/configuration.html" target="_blank" rel="noopener">plugins </a><a href="http://www.mybatis.org/mybatis-3/zh/configuration.html" target="_blank" rel="noopener">插件</a></p>
-</li>
-<li>
-<p><a href="http://www.mybatis.org/mybatis-3/zh/configuration.html" target="_blank" rel="noopener">environments </a><a href="http://www.mybatis.org/mybatis-3/zh/configuration.html" target="_blank" rel="noopener">环境</a></p>
+<li><a href="http://www.mybatis.org/mybatis-3/zh/configuration.html" target="_blank" rel="noopener">properties </a><a href="http://www.mybatis.org/mybatis-3/zh/configuration.html" target="_blank" rel="noopener">属性</a></li>
+<li><a href="http://www.mybatis.org/mybatis-3/zh/configuration.html" target="_blank" rel="noopener">settings </a><a href="http://www.mybatis.org/mybatis-3/zh/configuration.html" target="_blank" rel="noopener">设置</a></li>
+<li><a href="http://www.mybatis.org/mybatis-3/zh/configuration.html" target="_blank" rel="noopener">typeAliases</a><a href="http://www.mybatis.org/mybatis-3/zh/configuration.html" target="_blank" rel="noopener"> </a><a href="http://www.mybatis.org/mybatis-3/zh/configuration.html" target="_blank" rel="noopener">类型命名</a></li>
+<li><a href="http://www.mybatis.org/mybatis-3/zh/configuration.html" target="_blank" rel="noopener">typeHandlers</a><a href="http://www.mybatis.org/mybatis-3/zh/configuration.html" target="_blank" rel="noopener"> </a><a href="http://www.mybatis.org/mybatis-3/zh/configuration.html" target="_blank" rel="noopener">类型处理器</a></li>
+<li><a href="http://www.mybatis.org/mybatis-3/zh/configuration.html" target="_blank" rel="noopener">objectFactory</a><a href="http://www.mybatis.org/mybatis-3/zh/configuration.html" target="_blank" rel="noopener"> </a><a href="http://www.mybatis.org/mybatis-3/zh/configuration.html" target="_blank" rel="noopener">对象工厂</a></li>
+<li><a href="http://www.mybatis.org/mybatis-3/zh/configuration.html" target="_blank" rel="noopener">plugins </a><a href="http://www.mybatis.org/mybatis-3/zh/configuration.html" target="_blank" rel="noopener">插件</a></li>
+<li><a href="http://www.mybatis.org/mybatis-3/zh/configuration.html" target="_blank" rel="noopener">environments </a><a href="http://www.mybatis.org/mybatis-3/zh/configuration.html" target="_blank" rel="noopener">环境</a>
 <ul>
-<li>
-<p>transactionManager 事务管理器</p>
-</li>
-<li>
-<p>dataSource 数据源</p>
-</li>
+<li>transactionManager 事务管理器</li>
+<li>dataSource 数据源</li>
 </ul>
 </li>
-<li>
-<p><a href="http://www.mybatis.org/mybatis-3/zh/configuration.html" target="_blank" rel="noopener">databaseIdProvider</a><a href="http://www.mybatis.org/mybatis-3/zh/configuration.html" target="_blank" rel="noopener"> </a><a href="http://www.mybatis.org/mybatis-3/zh/configuration.html" target="_blank" rel="noopener">数据库厂商标识</a></p>
-</li>
-<li>
-<p><a href="http://www.mybatis.org/mybatis-3/zh/configuration.html" target="_blank" rel="noopener">mappers </a><a href="http://www.mybatis.org/mybatis-3/zh/configuration.html" target="_blank" rel="noopener">映射器</a></p>
-</li>
+<li><a href="http://www.mybatis.org/mybatis-3/zh/configuration.html" target="_blank" rel="noopener">databaseIdProvider</a><a href="http://www.mybatis.org/mybatis-3/zh/configuration.html" target="_blank" rel="noopener"> </a><a href="http://www.mybatis.org/mybatis-3/zh/configuration.html" target="_blank" rel="noopener">数据库厂商标识</a></li>
+<li><a href="http://www.mybatis.org/mybatis-3/zh/configuration.html" target="_blank" rel="noopener">mappers </a><a href="http://www.mybatis.org/mybatis-3/zh/configuration.html" target="_blank" rel="noopener">映射器</a><br>
+<strong>——这里所有的标签顺序不能改变——</strong></li>
 </ul>
-<p><strong>——这里所有的标签顺序不能改变——</strong></p>
-<p>###一. properties属性</p>
+<h3 id="一-properties属性">一. properties属性</h3>
 <ul>
 <li>有利于文件移植</li>
 </ul>
@@ -436,13 +415,13 @@ false：女</p>
 <p>2). 配置conf.xml</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- </span></span><br><span class="line"><span class="comment">	typeHandlers自定义类型转换器</span></span><br><span class="line"><span class="comment">	handler:调用转换器</span></span><br><span class="line"><span class="comment">	javaType:java的类型</span></span><br><span class="line"><span class="comment">	jdbcType:数据库类型</span></span><br><span class="line"><span class="comment"> --&gt;</span> </span><br><span class="line"><span class="tag">&lt;<span class="name">typeHandlers</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">typeHandler</span> <span class="attr">handler</span>=<span class="string">"com.AAA.Text.converter.BooleanAndIntConverter"</span> <span class="attr">javaType</span>=<span class="string">"Boolean"</span> <span class="attr">jdbcType</span>=<span class="string">"INTEGER"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">typeHandlers</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <h3 id="五-plugins-插件机制">五.  plugins 插件机制</h3>
-<p>1). 简介</p>
+<h4 id="1-简介">1). 简介</h4>
 <p>插件是MyBatis提供的一个非常强大的机制，我们可以通过插件来修改MyBatis的一些核心行为。插件通过动态代理机制，可以介入四大对象的任何一个方法的执行</p>
-<p>2). 四大对象</p>
-<p>Executor (update, query, flushStatements, commit, rollback, getTransaction, close, isClosed)</p>
-<p>ParameterHandler (getParameterObject, setParameters)</p>
-<p>ResultSetHandler (handleResultSets, handleOutputParameters)</p>
-<p>StatementHandler (prepare, parameterize, batch, update, query)</p>
+<h4 id="2-四大对象">2). 四大对象</h4>
+<p><strong>Executor</strong> (update, query, flushStatements, commit, rollback, getTransaction, close, isClosed)<br>
+<strong>ParameterHandler</strong> (getParameterObject, setParameters)<br>
+<strong>ResultSetHandler</strong> (handleResultSets, handleOutputParameters)<br>
+<strong>StatementHandler</strong> (prepare, parameterize, batch, update, query)</p>
 <h3 id="六-environments-环境配置">六. environments 环境配置</h3>
 <ul>
 <li>
@@ -460,10 +439,8 @@ id：指定当前环境的唯一标识</p>
 </li>
 <li>
 <p>transactionManager、和dataSource都必须有</p>
-</li>
-<li>
 <ul>
-<li><strong>transactionManager</strong>:事务处理方式.</li>
+<li><strong>transactionManager</strong>:事务处理方式。</li>
 <li><strong>dataSource</strong>:数据源类型。</li>
 </ul>
 </li>
@@ -839,11 +816,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Linux</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Maven</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Maven</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
