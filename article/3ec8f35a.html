@@ -18,7 +18,7 @@
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http:&#x2F;&#x2F;zhangtengfei66.gitee.io&#x2F;article&#x2F;3ec8f35a&#x2F;Spring02.jpg">
 <meta property="og:image" content="http:&#x2F;&#x2F;zhangtengfei66.gitee.io&#x2F;article&#x2F;3ec8f35a&#x2F;Spring01.png">
-<meta property="og:updated_time" content="2020-04-24T03:36:07.800Z">
+<meta property="og:updated_time" content="2020-05-08T01:49:27.865Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http:&#x2F;&#x2F;zhangtengfei66.gitee.io&#x2F;article&#x2F;3ec8f35a&#x2F;Spring02.jpg">
   
@@ -346,10 +346,11 @@
 <p><img src="/article/3ec8f35a/Spring01.png" alt="目录结构"></p>
 <h2 id="三-IOC">三. IOC</h2>
 <h3 id="IOC控制反转">IOC控制反转</h3>
-<p>（Inversion of Control，缩写为IoC），是面向对象编程中的一种设计原则，可以用来减低计算机代码之间的<strong>耦合度</strong>。<br>
-个人理解：<strong>通过反射的方式来创建对象</strong>(这里我们通过Spring框架来帮我们实现通过反射获取对象)<strong>来实现降低耦合。</strong></p>
+<p>（Inversion of Control，缩写为IoC），是面向对象编程中的一种<strong>设计思想</strong>，把创建对象及对象之间的维护权限转交给Spring管理，可以用来减低计算机代码之间的<strong>耦合度</strong>。</p>
+<p><strong>通过反射的方式来创建对象</strong>(这里我们通过Spring框架来帮我们实现通过反射获取对象)<strong>来实现降低耦合。</strong></p>
 <ul>
 <li>关于通过反射获取对象的XML文件的编写(就是编写要获取的具体bean对象)</li>
+<li>在ioc中定义bean的前提：该bean的类 必须提供了 <strong>无参构造</strong></li>
 </ul>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--1.使用默认构造函数创建，在Spring的配置文件中(XML)使用bean标签，配以id和class属性之后，且没有其它属性和标签时，采用的就是默认构造函数创建bean对象，如果类中没用默认构造函数，则对象无法创建--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"accountService"</span> <span class="attr">class</span>=<span class="string">"live.warlock.service.impl.AccountServiceImpl"</span>&gt;</span><span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--2.使用普通工厂中的方法创建对象(使用某个类中的方法创建对象，并存入spring容器)--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"InstanceFactory"</span> <span class="attr">class</span>=<span class="string">"live.warlock.Factory.InstanceFactory"</span>&gt;</span><span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"accountService"</span> <span class="attr">factory-bean</span>=<span class="string">"InstanceFactory"</span> <span class="attr">factory-method</span>=<span class="string">"getAccountService"</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--3.使用工厂中的静态方法创建对象(使用某个类中的静态方法创建对象,并存入spring容器)--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"accountService"</span> <span class="attr">class</span>=<span class="string">"live.warlock.Factory.StaticFactory"</span> <span class="attr">factory-method</span>=<span class="string">"getAccountService"</span>&gt;</span><span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <h3 id="DI依赖注入">DI依赖注入</h3>
@@ -792,11 +793,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Maven</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Linux</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Maven</a>
               </li>
              
               <li class="article-tag-list-item">
