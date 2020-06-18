@@ -22,7 +22,7 @@
 <meta property="og:image" content="http:&#x2F;&#x2F;zhangtengfei66.gitee.io&#x2F;article&#x2F;af57c6ea&#x2F;%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86_04.png">
 <meta property="og:image" content="http:&#x2F;&#x2F;zhangtengfei66.gitee.io&#x2F;article&#x2F;af57c6ea&#x2F;%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86_05.png">
 <meta property="og:image" content="http:&#x2F;&#x2F;zhangtengfei66.gitee.io&#x2F;article&#x2F;af57c6ea&#x2F;%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86_06.png">
-<meta property="og:updated_time" content="2020-06-18T02:40:11.798Z">
+<meta property="og:updated_time" content="2020-06-18T03:22:31.623Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http:&#x2F;&#x2F;zhangtengfei66.gitee.io&#x2F;article&#x2F;af57c6ea&#x2F;%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86_01.png">
   
@@ -285,7 +285,7 @@
 <a id="more"></a>
 <h2 id="文件下载">文件下载</h2>
 <h3 id="一-HttpMessageConverter">一. HttpMessageConverter</h3>
-<p>**HttpMessageConverter&lt;T&gt;**是 Spring3.0 新添加的一个接口，<strong>负责将请求信息转换为一个对象（类型为 T），将对象（类型为 T）输出为响应信息</strong>。</p>
+<p><strong>HttpMessageConverter</strong>&lt;T&gt;是 Spring3.0 新添加的一个接口，<strong>负责将请求信息转换为一个对象（类型为 T），将对象（类型为 T）输出为响应信息</strong>。</p>
 <h3 id="二-使用HttpMessageConverter">二. 使用HttpMessageConverter</h3>
 <p><strong>使用 HttpMessageConverter 将请求信息转化并绑定到处理方法的入参中或将响应结果转为对应类型的响应信息，Spring 提供了两种途径</strong>：</p>
 <ul>
@@ -385,80 +385,41 @@
 <h2 id="SpringMVC工作流程">SpringMVC工作流程</h2>
 <p><img src="/article/af57c6ea/%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86_06.png" alt="流程图"></p>
 <h3 id="一-工作流程描述">一. 工作流程描述</h3>
-<ol>
-<li>
-<p>用户向服务器发送请求，请求被SpringMVC <strong>前端控制器 DispatcherServlet捕获</strong>；</p>
-</li>
-<li>
-<p><strong>DispatcherServlet对请求URL进行解析</strong>，得到请求资源标识符（URI）:</p>
-</li>
-</ol>
-<p><strong>判断请求URI对应的映射</strong></p>
+<p>1). 用户向服务器发送请求，请求被SpringMVC <strong>前端控制器 DispatcherServlet捕获</strong>；</p>
+<p>2). <strong>DispatcherServlet对请求URL进行解析</strong>，得到请求资源标识符（URI）:<br>
+<strong>判断请求URI对应的映射</strong></p>
 <ul>
-<li>
-<p>①    不存在：</p>
+<li>①.不存在：
 <ul>
-<li>
-<p>a)   <strong>再判断是否配置了mvc:default-servlet-handler</strong>：</p>
+<li>a)<strong>再判断是否配置了mvc:default-servlet-handler</strong>：
 <ul>
-<li>b)   如果没配置，则控制台报映射查找不到，<strong>客户端展示404错误</strong></li>
-<li>c)   如果有配置，则<strong>执行目标资源</strong>（一般为<strong>静态资源</strong>，如：JSP,HTML）</li>
+<li>b)如果没配置，则控制台报映射查找不到，<strong>客户端展示404错误</strong></li>
+<li>c)如果有配置，则<strong>执行目标资源</strong>（一般为<strong>静态资源</strong>，如：JSP,HTML）</li>
 </ul>
 </li>
 </ul>
 </li>
-<li>
-<p>②    存在：</p>
+<li>②.存在：
 <ul>
-<li>a)   执行下面流程</li>
+<li>a)执行下面流程</li>
 </ul>
 </li>
 </ul>
-<ol start="3">
-<li>
-<p>根据该URI，<strong>调用HandlerMapping获得该Handler配置的所有相关的对象</strong>（包括Handler对象以及Handler对象对应的拦截器），最后以HandlerExecutionChain对象[某个指定的请求和处理关系] 的形式返回；</p>
-</li>
-<li>
-<p><strong>DispatcherServlet 根据获得的Handler，选择一个合适的HandlerAdapter</strong>。</p>
-</li>
-<li>
-<p>如果成功获得HandlerAdapter后，此时将<strong>开始执行拦截器的preHandler</strong>(…)方法【正向】</p>
-</li>
-<li>
-<p>提取Request中的模型数据，填充Handler入参，<strong>开始执行Handler</strong>（Controller)方法，处理请求。在填充Handler的入参过程中，根据你的配置，Spring将帮你做一些额外的工作：</p>
-</li>
-</ol>
+<p>3). 根据该URI，<strong>调用HandlerMapping获得该Handler配置的所有相关的对象</strong>（包括Handler对象以及Handler对象对应的拦截器），最后以HandlerExecutionChain对象[某个指定的请求和处理关系] 的形式返回；</p>
+<p>4). DispatcherServlet 根据获得的Handler，选择一个合适的HandlerAdapter**。</p>
+<p>5). 如果成功获得HandlerAdapter后，此时将<strong>开始执行拦截器的preHandler</strong>(…)方法【正向】</p>
+<p>6). 提取Request中的模型数据，填充Handler入参，<strong>开始执行Handler</strong>（Controller)方法，处理请求。在填充Handler的入参过程中，根据你的配置，Spring将帮你做一些额外的工作：</p>
 <ul>
-<li>
-<p>①    HttpMessageConveter： <strong>将请求消息</strong>（如Json、xml等数据）<strong>转换成一个对象，将对象转换为指定的响应信息</strong></p>
-</li>
-<li>
-<p>②    <strong>数据转换</strong>：对请求消息进行数据转换。如String转换成Integer、Double等</p>
-</li>
-<li>
-<p>③    <strong>数据根式化</strong>：对请求消息进行数据格式化。 如将字符串转换成格式化数字或格式化日期等</p>
-</li>
-<li>
-<p>④    <strong>数据验证</strong>： 验证数据的有效性（长度、格式等），验证结果存储到BindingResult或Error中</p>
-</li>
+<li>①.HttpMessageConveter： <strong>将请求消息</strong>（如Json、xml等数据）<strong>转换成一个对象，将对象转换为指定的响应信息</strong></li>
+<li>②.<strong>数据转换</strong>：对请求消息进行数据转换。如String转换成Integer、Double等</li>
+<li>③.<strong>数据根式化</strong>：对请求消息进行数据格式化。 如将字符串转换成格式化数字或格式化日期等</li>
+<li>④.<strong>数据验证</strong>： 验证数据的有效性（长度、格式等），验证结果存储到BindingResult或Error中</li>
 </ul>
-<ol start="7">
-<li>
-<p><strong>Handler执行完成后，向DispatcherServlet 返回一个ModelAndView对象</strong>；</p>
-</li>
-<li>
-<p>此时将开始<strong>执行拦截器的postHandle</strong>(…)方法【逆向】</p>
-</li>
-<li>
-<p>根据返回的ModelAndView（此时会<strong>判断是否存在异常</strong>：如果<strong>存在异常，则执行HandlerExceptionResolver进行异常处理</strong>）选择一个适合的ViewResolver（必须是已经注册到Spring容器中的ViewResolver)返回给DispatcherServlet，<strong>根据Model和View，来渲染视图</strong></p>
-</li>
-<li>
-<p><strong>在返回给客户端时需要执行拦截器的AfterCompletion方法</strong>【逆向】</p>
-</li>
-<li>
-<p><strong>将渲染结果返回给客户端</strong></p>
-</li>
-</ol>
+<p>7). <strong>Handler执行完成后，向DispatcherServlet 返回一个ModelAndView对象</strong>；</p>
+<p>8). 此时将开始<strong>执行拦截器的postHandle</strong>(…)方法【逆向】</p>
+<p>9). 根据返回的ModelAndView（此时会<strong>判断是否存在异常</strong>：如果<strong>存在异常，则执行HandlerExceptionResolver进行异常处理</strong>）选择一个适合的ViewResolver（必须是已经注册到Spring容器中的ViewResolver)返回给DispatcherServlet，<strong>根据Model和View，来渲染视图</strong></p>
+<p>10). 在返回给客户端时需要执行拦截器的AfterCompletion方法**【逆向】</p>
+<p>11). <strong>将渲染结果返回给客户端</strong></p>
 
       
 
