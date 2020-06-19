@@ -22,7 +22,7 @@
 <meta property="og:image" content="http:&#x2F;&#x2F;zhangtengfei66.gitee.io&#x2F;article&#x2F;af57c6ea&#x2F;%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86_04.png">
 <meta property="og:image" content="http:&#x2F;&#x2F;zhangtengfei66.gitee.io&#x2F;article&#x2F;af57c6ea&#x2F;%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86_05.png">
 <meta property="og:image" content="http:&#x2F;&#x2F;zhangtengfei66.gitee.io&#x2F;article&#x2F;af57c6ea&#x2F;%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86_06.png">
-<meta property="og:updated_time" content="2020-06-18T03:22:31.623Z">
+<meta property="og:updated_time" content="2020-06-18T06:58:59.312Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http:&#x2F;&#x2F;zhangtengfei66.gitee.io&#x2F;article&#x2F;af57c6ea&#x2F;%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86_01.png">
   
@@ -39,8 +39,29 @@
     }
   </style>
   
+<!-- Global site tag (gtag.js) - Google Analytics -->
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-169949243-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-169949243-1');
+    </script>
+
+<!-- End Google Analytics -->
+
 
   
+<script>
+var _hmt = _hmt || [];
+(function() {
+	var hm = document.createElement("script");
+	hm.src = "https://hm.baidu.com/hm.js?6cc099e42819c3856c60d2f2d7507935";
+	var s = document.getElementsByTagName("script")[0]; 
+	s.parentNode.insertBefore(hm, s);
+})();
+</script>
 
 </head>
 
@@ -418,7 +439,7 @@
 <p>7). <strong>Handler执行完成后，向DispatcherServlet 返回一个ModelAndView对象</strong>；</p>
 <p>8). 此时将开始<strong>执行拦截器的postHandle</strong>(…)方法【逆向】</p>
 <p>9). 根据返回的ModelAndView（此时会<strong>判断是否存在异常</strong>：如果<strong>存在异常，则执行HandlerExceptionResolver进行异常处理</strong>）选择一个适合的ViewResolver（必须是已经注册到Spring容器中的ViewResolver)返回给DispatcherServlet，<strong>根据Model和View，来渲染视图</strong></p>
-<p>10). 在返回给客户端时需要执行拦截器的AfterCompletion方法**【逆向】</p>
+<p>10). 在返回给客户端时需要<strong>执行拦截器的AfterCompletion方法</strong>【逆向】</p>
 <p>11). <strong>将渲染结果返回给客户端</strong></p>
 
       
