@@ -5,26 +5,26 @@
   
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <link rel="dns-prefetch" href="http://zhangtengfei66.gitee.io">
+  <link rel="dns-prefetch" href="http://www.zhangtengfei.xyz">
   <title>Spring学习笔记(3) | (●ˇ∀ˇ●)</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="Spring学习笔记 🐭⛅☔ AOP面向切面编程，动态代理，注解实现AOP，配置实现AOP…">
 <meta name="keywords" content="Spring">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Spring学习笔记(3)">
-<meta property="og:url" content="http:&#x2F;&#x2F;zhangtengfei66.gitee.io&#x2F;article&#x2F;cfe91d8.html">
+<meta property="og:url" content="http:&#x2F;&#x2F;www.zhangtengfei.xyz&#x2F;article&#x2F;cfe91d8.html">
 <meta property="og:site_name" content="(●ˇ∀ˇ●)">
 <meta property="og:description" content="Spring学习笔记 🐭⛅☔ AOP面向切面编程，动态代理，注解实现AOP，配置实现AOP…">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http:&#x2F;&#x2F;zhangtengfei66.gitee.io&#x2F;article&#x2F;cfe91d8&#x2F;AOP02.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;zhangtengfei66.gitee.io&#x2F;article&#x2F;cfe91d8&#x2F;AOP01.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;zhangtengfei66.gitee.io&#x2F;article&#x2F;cfe91d8&#x2F;AOP04.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;zhangtengfei66.gitee.io&#x2F;article&#x2F;cfe91d8&#x2F;AOP05.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;zhangtengfei66.gitee.io&#x2F;article&#x2F;cfe91d8&#x2F;AOP06.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;zhangtengfei66.gitee.io&#x2F;article&#x2F;cfe91d8&#x2F;AOP07.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;www.zhangtengfei.xyz&#x2F;article&#x2F;cfe91d8&#x2F;AOP02.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;www.zhangtengfei.xyz&#x2F;article&#x2F;cfe91d8&#x2F;AOP01.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;www.zhangtengfei.xyz&#x2F;article&#x2F;cfe91d8&#x2F;AOP04.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;www.zhangtengfei.xyz&#x2F;article&#x2F;cfe91d8&#x2F;AOP05.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;www.zhangtengfei.xyz&#x2F;article&#x2F;cfe91d8&#x2F;AOP06.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;www.zhangtengfei.xyz&#x2F;article&#x2F;cfe91d8&#x2F;AOP07.png">
 <meta property="og:updated_time" content="2020-05-15T09:41:36.302Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http:&#x2F;&#x2F;zhangtengfei66.gitee.io&#x2F;article&#x2F;cfe91d8&#x2F;AOP02.png">
+<meta name="twitter:image" content="http:&#x2F;&#x2F;www.zhangtengfei.xyz&#x2F;article&#x2F;cfe91d8&#x2F;AOP02.png">
   
     <link rel="alternative" href="/atom.xml" title="(●ˇ∀ˇ●)" type="application/atom+xml">
   
@@ -63,6 +63,25 @@ var _hmt = _hmt || [];
 })();
 </script>
 
+  <!--百度自动推送-->
+  
+<!-- 开启百度站长平台自动推送https://ziyuan.baidu.com/linksubmit/index，
+https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
+<script>
+  (function () {
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    } else {
+      bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+  })();
+</script>
+
+</head>
 </head>
 
 <body>
@@ -458,7 +477,7 @@ var _hmt = _hmt || [];
           
           <br></li>
           <li><strong>本文链接：</strong>
-          <a rel="license" href="http://zhangtengfei66.gitee.io/article/cfe91d8.html">http://zhangtengfei66.gitee.io/article/cfe91d8.html</a>
+          <a rel="license" href="http://www.zhangtengfei.xyz/article/cfe91d8.html">http://www.zhangtengfei.xyz/article/cfe91d8.html</a>
           <br></li>
           <li><strong>版权声明：</strong>
           本作品采用
@@ -535,7 +554,7 @@ var _hmt = _hmt || [];
     <a class="close js-modal-close" href="javascript:;" target="_blank" rel="noopener"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://zhangtengfei66.gitee.io/article/cfe91d8.html" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://www.zhangtengfei.xyz/article/cfe91d8.html" alt="微信分享二维码">
     </div>
 </div>
 

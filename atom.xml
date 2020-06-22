@@ -5,9 +5,9 @@
   <subtitle>个人博客，总结一些编程知识的网站，希望可以帮到各位！</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://zhangtengfei66.gitee.io/"/>
-  <updated>2020-06-18T06:58:59.312Z</updated>
-  <id>http://zhangtengfei66.gitee.io/</id>
+  <link href="http://www.zhangtengfei.xyz/"/>
+  <updated>2020-06-22T08:04:05.997Z</updated>
+  <id>http://www.zhangtengfei.xyz/</id>
   
   <author>
     <name>腾飞</name>
@@ -17,9 +17,52 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Spring和MyBatis整合</title>
+    <link href="http://www.zhangtengfei.xyz/article/e9bfb5bb.html"/>
+    <id>http://www.zhangtengfei.xyz/article/e9bfb5bb.html</id>
+    <published>2020-06-22T08:04:05.000Z</published>
+    <updated>2020-06-22T08:04:05.997Z</updated>
+    
+    <content type="html"><![CDATA[<a id="more"></a>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>搜索引擎收录博客</title>
+    <link href="http://www.zhangtengfei.xyz/article/81a020b4.html"/>
+    <id>http://www.zhangtengfei.xyz/article/81a020b4.html</id>
+    <published>2020-06-21T02:53:13.000Z</published>
+    <updated>2020-06-21T03:30:24.185Z</updated>
+    
+    <content type="html"><![CDATA[<p>如何让搜索引擎收录自己的博客</p><p>更改域名，百度收录，谷歌收录…</p><a id="more"></a><h2 id="百度收录">百度收录</h2><h3 id="一-查看域名是否收录">一. 查看域名是否收录</h3><p>在搜索引擎中输入<code>site:&lt;域名&gt;</code>,如果如下图所示就是说明我们的网站并没有被百度收录。我们可以直接点击下面的“网址提交”来提交我们的网站 。</p><p><img src="/article/81a020b4/baidu_01.png" alt="百度搜索"></p><h3 id="二-进入百度站长提交站点">二. 进入百度站长提交站点</h3><p>登录百度站长平台：<a href="http://zhanzhang.baidu.com/" target="_blank" rel="noopener">http://zhanzhang.baidu.com</a>,只要有百度旗下的账号就可以登录，登录成功之后在站点管理中点击添加网站然后输入你的站点地址，建议输入的网站为www开头的，不要输入github.io的，因为github是不允许百度的spider爬取github上的内容的，所以如果想让你的站点被百度收录，只能使用自己购买的域名。</p><h4 id="1-添加网站">1). 添加网站</h4><p><img src="/article/81a020b4/baidu_02.png" alt="百度搜索"></p><p>登录百度搜索资源平台，然后进入站点管理页面，点击添加网站按钮添加我们的博客</p><ul><li>第一步：输入网站地址，如https://www.zhangtengfei.xyz</li><li>第二步：选择站点属性，最多可选三项，如影视动漫、信息技术等</li><li>第三步：验证网站，就是验证网站的所有权，说明该网站是我们的，这是重点，下面详细说明</li></ul><h4 id="2-选择验证方式">2). 选择验证方式</h4><p><img src="/article/81a020b4/baidu_03.png" alt="百度搜索"></p><p>在选择完网站的类型之后需要验证网站的所有权，验证网站所有权的方式有三种：</p><p>文件验证，html标签验证和cname解析验证，使用哪一种方式都可以，<strong>cname验证最为简单</strong>，只需加一条解析就好。</p><h4 id="3-使用cname验证">3).使用cname验证</h4><p><img src="/article/81a020b4/baidu_04.png" alt="百度搜索"></p><h3 id="三-进入域名管理">三. 进入域名管理</h3><h4 id="1-打开域名的操作面板">1). 打开域名的操作面板</h4><p><img src="/article/81a020b4/baidu_05.png" alt="百度搜索"></p><p>进入域名解析页面，添加一条CNAME记录。</p><h4 id="2-添加一条域名解析">2). 添加一条域名解析</h4><p>记录类型：选择 CNAME</p><p>主机记录：填写提示说明中的“<strong>79GxvSVGgV</strong>”</p><ul><li>注意79GxvSVGgV这个值是百度随机生成分配的，替换成你自己网站的值</li></ul><p>解析路线：保持默认，不用修改</p><p>记录值：填写提示说明中的“<strong><a href="http://ziyuan.baidu.com" target="_blank" rel="noopener">ziyuan.baidu.com</a></strong>”</p><p>TTL值：保持默认，不用修改</p><p><img src="/article/81a020b4/baidu_06.png" alt="百度搜索"></p><p>填写完成，点击保存</p><h4 id="3-点击“完成验证”">3). 点击“完成验证”</h4><p>回到百度站长点击完成验证即可。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;如何让搜索引擎收录自己的博客&lt;/p&gt;
+&lt;p&gt;更改域名，百度收录，谷歌收录…&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
     <title>SpringMVC学习笔记(3)</title>
-    <link href="http://zhangtengfei66.gitee.io/article/af57c6ea.html"/>
-    <id>http://zhangtengfei66.gitee.io/article/af57c6ea.html</id>
+    <link href="http://www.zhangtengfei.xyz/article/af57c6ea.html"/>
+    <id>http://www.zhangtengfei.xyz/article/af57c6ea.html</id>
     <published>2020-06-11T05:29:07.000Z</published>
     <updated>2020-06-18T06:58:59.312Z</updated>
     
@@ -35,16 +78,16 @@
     
     
     
-      <category term="SpringMVC" scheme="http://zhangtengfei66.gitee.io/tags/SpringMVC/"/>
+      <category term="SpringMVC" scheme="http://www.zhangtengfei.xyz/tags/SpringMVC/"/>
     
-      <category term="Web框架" scheme="http://zhangtengfei66.gitee.io/tags/Web%E6%A1%86%E6%9E%B6/"/>
+      <category term="Web框架" scheme="http://www.zhangtengfei.xyz/tags/Web%E6%A1%86%E6%9E%B6/"/>
     
   </entry>
   
   <entry>
     <title>SpringMVC学习笔记(2)</title>
-    <link href="http://zhangtengfei66.gitee.io/article/b64cf7ab.html"/>
-    <id>http://zhangtengfei66.gitee.io/article/b64cf7ab.html</id>
+    <link href="http://www.zhangtengfei.xyz/article/b64cf7ab.html"/>
+    <id>http://www.zhangtengfei.xyz/article/b64cf7ab.html</id>
     <published>2020-05-27T01:34:38.000Z</published>
     <updated>2020-06-18T02:59:33.734Z</updated>
     
@@ -60,16 +103,16 @@
     
     
     
-      <category term="SpringMVC" scheme="http://zhangtengfei66.gitee.io/tags/SpringMVC/"/>
+      <category term="SpringMVC" scheme="http://www.zhangtengfei.xyz/tags/SpringMVC/"/>
     
-      <category term="Web框架" scheme="http://zhangtengfei66.gitee.io/tags/Web%E6%A1%86%E6%9E%B6/"/>
+      <category term="Web框架" scheme="http://www.zhangtengfei.xyz/tags/Web%E6%A1%86%E6%9E%B6/"/>
     
   </entry>
   
   <entry>
     <title>SpringMVC学习笔记(1)</title>
-    <link href="http://zhangtengfei66.gitee.io/article/9d61a468.html"/>
-    <id>http://zhangtengfei66.gitee.io/article/9d61a468.html</id>
+    <link href="http://www.zhangtengfei.xyz/article/9d61a468.html"/>
+    <id>http://www.zhangtengfei.xyz/article/9d61a468.html</id>
     <published>2020-05-18T06:28:14.000Z</published>
     <updated>2020-06-18T02:59:33.729Z</updated>
     
@@ -85,16 +128,16 @@
     
     
     
-      <category term="SpringMVC" scheme="http://zhangtengfei66.gitee.io/tags/SpringMVC/"/>
+      <category term="SpringMVC" scheme="http://www.zhangtengfei.xyz/tags/SpringMVC/"/>
     
-      <category term="Web框架" scheme="http://zhangtengfei66.gitee.io/tags/Web%E6%A1%86%E6%9E%B6/"/>
+      <category term="Web框架" scheme="http://www.zhangtengfei.xyz/tags/Web%E6%A1%86%E6%9E%B6/"/>
     
   </entry>
   
   <entry>
     <title>Spring学习笔记(4)</title>
-    <link href="http://zhangtengfei66.gitee.io/article/43bf071f.html"/>
-    <id>http://zhangtengfei66.gitee.io/article/43bf071f.html</id>
+    <link href="http://www.zhangtengfei.xyz/article/43bf071f.html"/>
+    <id>http://www.zhangtengfei.xyz/article/43bf071f.html</id>
     <published>2020-05-05T09:12:54.000Z</published>
     <updated>2020-05-15T10:40:38.944Z</updated>
     
@@ -110,14 +153,14 @@
     
     
     
-      <category term="Spring" scheme="http://zhangtengfei66.gitee.io/tags/Spring/"/>
+      <category term="Spring" scheme="http://www.zhangtengfei.xyz/tags/Spring/"/>
     
   </entry>
   
   <entry>
     <title>Spring学习笔记(3)</title>
-    <link href="http://zhangtengfei66.gitee.io/article/cfe91d8.html"/>
-    <id>http://zhangtengfei66.gitee.io/article/cfe91d8.html</id>
+    <link href="http://www.zhangtengfei.xyz/article/cfe91d8.html"/>
+    <id>http://www.zhangtengfei.xyz/article/cfe91d8.html</id>
     <published>2020-04-27T09:04:25.000Z</published>
     <updated>2020-05-15T09:41:36.302Z</updated>
     
@@ -133,14 +176,14 @@
     
     
     
-      <category term="Spring" scheme="http://zhangtengfei66.gitee.io/tags/Spring/"/>
+      <category term="Spring" scheme="http://www.zhangtengfei.xyz/tags/Spring/"/>
     
   </entry>
   
   <entry>
     <title>Spring学习笔记(2)</title>
-    <link href="http://zhangtengfei66.gitee.io/article/15e5a099.html"/>
-    <id>http://zhangtengfei66.gitee.io/article/15e5a099.html</id>
+    <link href="http://www.zhangtengfei.xyz/article/15e5a099.html"/>
+    <id>http://www.zhangtengfei.xyz/article/15e5a099.html</id>
     <published>2020-04-20T02:13:27.000Z</published>
     <updated>2020-05-15T09:37:13.415Z</updated>
     
@@ -156,14 +199,14 @@
     
     
     
-      <category term="Spring" scheme="http://zhangtengfei66.gitee.io/tags/Spring/"/>
+      <category term="Spring" scheme="http://www.zhangtengfei.xyz/tags/Spring/"/>
     
   </entry>
   
   <entry>
     <title>Spring学习笔记(1)</title>
-    <link href="http://zhangtengfei66.gitee.io/article/3ec8f35a.html"/>
-    <id>http://zhangtengfei66.gitee.io/article/3ec8f35a.html</id>
+    <link href="http://www.zhangtengfei.xyz/article/3ec8f35a.html"/>
+    <id>http://www.zhangtengfei.xyz/article/3ec8f35a.html</id>
     <published>2020-04-17T01:46:47.000Z</published>
     <updated>2020-05-08T01:49:27.865Z</updated>
     
@@ -179,14 +222,14 @@
     
     
     
-      <category term="Spring" scheme="http://zhangtengfei66.gitee.io/tags/Spring/"/>
+      <category term="Spring" scheme="http://www.zhangtengfei.xyz/tags/Spring/"/>
     
   </entry>
   
   <entry>
     <title>MyBatis学习笔记(5)</title>
-    <link href="http://zhangtengfei66.gitee.io/article/3fa35e86.html"/>
-    <id>http://zhangtengfei66.gitee.io/article/3fa35e86.html</id>
+    <link href="http://www.zhangtengfei.xyz/article/3fa35e86.html"/>
+    <id>http://www.zhangtengfei.xyz/article/3fa35e86.html</id>
     <published>2020-04-14T04:20:19.000Z</published>
     <updated>2020-04-27T08:18:33.867Z</updated>
     
@@ -202,16 +245,16 @@
     
     
     
-      <category term="MyBatis" scheme="http://zhangtengfei66.gitee.io/tags/MyBatis/"/>
+      <category term="MyBatis" scheme="http://www.zhangtengfei.xyz/tags/MyBatis/"/>
     
-      <category term="持久层框架" scheme="http://zhangtengfei66.gitee.io/tags/%E6%8C%81%E4%B9%85%E5%B1%82%E6%A1%86%E6%9E%B6/"/>
+      <category term="持久层框架" scheme="http://www.zhangtengfei.xyz/tags/%E6%8C%81%E4%B9%85%E5%B1%82%E6%A1%86%E6%9E%B6/"/>
     
   </entry>
   
   <entry>
     <title>MyBatis学习笔记(4)</title>
-    <link href="http://zhangtengfei66.gitee.io/article/8b840100.html"/>
-    <id>http://zhangtengfei66.gitee.io/article/8b840100.html</id>
+    <link href="http://www.zhangtengfei.xyz/article/8b840100.html"/>
+    <id>http://www.zhangtengfei.xyz/article/8b840100.html</id>
     <published>2020-04-12T02:07:19.000Z</published>
     <updated>2020-04-27T07:54:01.080Z</updated>
     
@@ -227,16 +270,16 @@
     
     
     
-      <category term="MyBatis" scheme="http://zhangtengfei66.gitee.io/tags/MyBatis/"/>
+      <category term="MyBatis" scheme="http://www.zhangtengfei.xyz/tags/MyBatis/"/>
     
-      <category term="持久层框架" scheme="http://zhangtengfei66.gitee.io/tags/%E6%8C%81%E4%B9%85%E5%B1%82%E6%A1%86%E6%9E%B6/"/>
+      <category term="持久层框架" scheme="http://www.zhangtengfei.xyz/tags/%E6%8C%81%E4%B9%85%E5%B1%82%E6%A1%86%E6%9E%B6/"/>
     
   </entry>
   
   <entry>
     <title>MyBatis学习笔记(3)</title>
-    <link href="http://zhangtengfei66.gitee.io/article/c4c597c7.html"/>
-    <id>http://zhangtengfei66.gitee.io/article/c4c597c7.html</id>
+    <link href="http://www.zhangtengfei.xyz/article/c4c597c7.html"/>
+    <id>http://www.zhangtengfei.xyz/article/c4c597c7.html</id>
     <published>2020-03-31T09:36:35.000Z</published>
     <updated>2020-06-13T07:37:54.689Z</updated>
     
@@ -252,16 +295,16 @@
     
     
     
-      <category term="MyBatis" scheme="http://zhangtengfei66.gitee.io/tags/MyBatis/"/>
+      <category term="MyBatis" scheme="http://www.zhangtengfei.xyz/tags/MyBatis/"/>
     
-      <category term="持久层框架" scheme="http://zhangtengfei66.gitee.io/tags/%E6%8C%81%E4%B9%85%E5%B1%82%E6%A1%86%E6%9E%B6/"/>
+      <category term="持久层框架" scheme="http://www.zhangtengfei.xyz/tags/%E6%8C%81%E4%B9%85%E5%B1%82%E6%A1%86%E6%9E%B6/"/>
     
   </entry>
   
   <entry>
     <title>MyBatis学习笔记(2)</title>
-    <link href="http://zhangtengfei66.gitee.io/article/dddea686.html"/>
-    <id>http://zhangtengfei66.gitee.io/article/dddea686.html</id>
+    <link href="http://www.zhangtengfei.xyz/article/dddea686.html"/>
+    <id>http://www.zhangtengfei.xyz/article/dddea686.html</id>
     <published>2020-03-30T02:22:50.000Z</published>
     <updated>2020-04-27T07:12:00.132Z</updated>
     
@@ -277,16 +320,16 @@
     
     
     
-      <category term="MyBatis" scheme="http://zhangtengfei66.gitee.io/tags/MyBatis/"/>
+      <category term="MyBatis" scheme="http://www.zhangtengfei.xyz/tags/MyBatis/"/>
     
-      <category term="持久层框架" scheme="http://zhangtengfei66.gitee.io/tags/%E6%8C%81%E4%B9%85%E5%B1%82%E6%A1%86%E6%9E%B6/"/>
+      <category term="持久层框架" scheme="http://www.zhangtengfei.xyz/tags/%E6%8C%81%E4%B9%85%E5%B1%82%E6%A1%86%E6%9E%B6/"/>
     
   </entry>
   
   <entry>
     <title>MyBatis学习笔记(1)</title>
-    <link href="http://zhangtengfei66.gitee.io/article/f6f3f545.html"/>
-    <id>http://zhangtengfei66.gitee.io/article/f6f3f545.html</id>
+    <link href="http://www.zhangtengfei.xyz/article/f6f3f545.html"/>
+    <id>http://www.zhangtengfei.xyz/article/f6f3f545.html</id>
     <published>2020-03-26T01:52:45.000Z</published>
     <updated>2020-04-27T06:59:43.007Z</updated>
     
@@ -302,16 +345,16 @@
     
     
     
-      <category term="MyBatis" scheme="http://zhangtengfei66.gitee.io/tags/MyBatis/"/>
+      <category term="MyBatis" scheme="http://www.zhangtengfei.xyz/tags/MyBatis/"/>
     
-      <category term="持久层框架" scheme="http://zhangtengfei66.gitee.io/tags/%E6%8C%81%E4%B9%85%E5%B1%82%E6%A1%86%E6%9E%B6/"/>
+      <category term="持久层框架" scheme="http://www.zhangtengfei.xyz/tags/%E6%8C%81%E4%B9%85%E5%B1%82%E6%A1%86%E6%9E%B6/"/>
     
   </entry>
   
   <entry>
     <title>git学习笔记</title>
-    <link href="http://zhangtengfei66.gitee.io/article/f5f0db78.html"/>
-    <id>http://zhangtengfei66.gitee.io/article/f5f0db78.html</id>
+    <link href="http://www.zhangtengfei.xyz/article/f5f0db78.html"/>
+    <id>http://www.zhangtengfei.xyz/article/f5f0db78.html</id>
     <published>2020-03-17T03:02:00.000Z</published>
     <updated>2020-03-28T08:48:32.283Z</updated>
     
@@ -327,14 +370,14 @@
     
     
     
-      <category term="git" scheme="http://zhangtengfei66.gitee.io/tags/git/"/>
+      <category term="git" scheme="http://www.zhangtengfei.xyz/tags/git/"/>
     
   </entry>
   
   <entry>
     <title>Oracle学习笔记0.5</title>
-    <link href="http://zhangtengfei66.gitee.io/article/b28af766.html"/>
-    <id>http://zhangtengfei66.gitee.io/article/b28af766.html</id>
+    <link href="http://www.zhangtengfei.xyz/article/b28af766.html"/>
+    <id>http://www.zhangtengfei.xyz/article/b28af766.html</id>
     <published>2020-03-10T00:10:08.000Z</published>
     <updated>2020-03-23T07:11:43.022Z</updated>
     
@@ -350,16 +393,16 @@
     
     
     
-      <category term="Oracle" scheme="http://zhangtengfei66.gitee.io/tags/Oracle/"/>
+      <category term="Oracle" scheme="http://www.zhangtengfei.xyz/tags/Oracle/"/>
     
-      <category term="数据库" scheme="http://zhangtengfei66.gitee.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+      <category term="数据库" scheme="http://www.zhangtengfei.xyz/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
   </entry>
   
   <entry>
     <title>Oracle学习笔记0.4</title>
-    <link href="http://zhangtengfei66.gitee.io/article/c58dc7f0.html"/>
-    <id>http://zhangtengfei66.gitee.io/article/c58dc7f0.html</id>
+    <link href="http://www.zhangtengfei.xyz/article/c58dc7f0.html"/>
+    <id>http://www.zhangtengfei.xyz/article/c58dc7f0.html</id>
     <published>2020-03-05T00:29:51.000Z</published>
     <updated>2020-03-10T09:19:21.226Z</updated>
     
@@ -375,16 +418,16 @@
     
     
     
-      <category term="Oracle" scheme="http://zhangtengfei66.gitee.io/tags/Oracle/"/>
+      <category term="Oracle" scheme="http://www.zhangtengfei.xyz/tags/Oracle/"/>
     
-      <category term="数据库" scheme="http://zhangtengfei66.gitee.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+      <category term="数据库" scheme="http://www.zhangtengfei.xyz/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
   </entry>
   
   <entry>
     <title>Oracle学习笔记0.3</title>
-    <link href="http://zhangtengfei66.gitee.io/article/5be95253.html"/>
-    <id>http://zhangtengfei66.gitee.io/article/5be95253.html</id>
+    <link href="http://www.zhangtengfei.xyz/article/5be95253.html"/>
+    <id>http://www.zhangtengfei.xyz/article/5be95253.html</id>
     <published>2020-02-27T07:28:37.000Z</published>
     <updated>2020-03-10T11:21:47.595Z</updated>
     
@@ -400,16 +443,16 @@
     
     
     
-      <category term="Oracle" scheme="http://zhangtengfei66.gitee.io/tags/Oracle/"/>
+      <category term="Oracle" scheme="http://www.zhangtengfei.xyz/tags/Oracle/"/>
     
-      <category term="数据库" scheme="http://zhangtengfei66.gitee.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+      <category term="数据库" scheme="http://www.zhangtengfei.xyz/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
   </entry>
   
   <entry>
     <title>Oracle学习笔记0.2</title>
-    <link href="http://zhangtengfei66.gitee.io/article/2cee62c5.html"/>
-    <id>http://zhangtengfei66.gitee.io/article/2cee62c5.html</id>
+    <link href="http://www.zhangtengfei.xyz/article/2cee62c5.html"/>
+    <id>http://www.zhangtengfei.xyz/article/2cee62c5.html</id>
     <published>2020-02-24T11:45:12.000Z</published>
     <updated>2020-02-27T07:32:26.196Z</updated>
     
@@ -425,16 +468,16 @@
     
     
     
-      <category term="Oracle" scheme="http://zhangtengfei66.gitee.io/tags/Oracle/"/>
+      <category term="Oracle" scheme="http://www.zhangtengfei.xyz/tags/Oracle/"/>
     
-      <category term="数据库" scheme="http://zhangtengfei66.gitee.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+      <category term="数据库" scheme="http://www.zhangtengfei.xyz/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
   </entry>
   
   <entry>
     <title>Oracle学习笔记0.1</title>
-    <link href="http://zhangtengfei66.gitee.io/article/b5e7337f.html"/>
-    <id>http://zhangtengfei66.gitee.io/article/b5e7337f.html</id>
+    <link href="http://www.zhangtengfei.xyz/article/b5e7337f.html"/>
+    <id>http://www.zhangtengfei.xyz/article/b5e7337f.html</id>
     <published>2020-02-21T13:19:16.000Z</published>
     <updated>2020-03-18T09:16:30.112Z</updated>
     
@@ -450,54 +493,9 @@
     
     
     
-      <category term="Oracle" scheme="http://zhangtengfei66.gitee.io/tags/Oracle/"/>
+      <category term="Oracle" scheme="http://www.zhangtengfei.xyz/tags/Oracle/"/>
     
-      <category term="数据库" scheme="http://zhangtengfei66.gitee.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Maven的安装指南</title>
-    <link href="http://zhangtengfei66.gitee.io/article/34d62b77.html"/>
-    <id>http://zhangtengfei66.gitee.io/article/34d62b77.html</id>
-    <published>2020-02-06T08:51:56.000Z</published>
-    <updated>2020-03-21T10:01:00.001Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="Maven的安装与在Idea中配置">Maven的安装与在Idea中配置</h2><h3 id="🙂maven介绍">🙂<strong>maven介绍</strong></h3><p><strong>maven是apache组织开发的一款开源的可以管理JavaWeb项目jar包的构建，可以解决jar包之间的冲突；可以对项目进行管理，比如项目打包等，maven使用pom项目对象模型进行构建项目的。</strong></p><a id="more"></a><p><strong>POM介绍</strong></p><p><strong>POM(Project Object Model 项目对象模型)，是一个maven的核心配置文件（xml格式）。用于描述项目如何构建，声明项目依赖，打包运行的方式等等。它是按面向对象的思想来管理项目的（每个jar包都是一个对象，通过给对象配置不同的属性来解决jar包的使用范围、不同版本冲突等），每个maven工程中都有一个pom.xml配置文件。</strong></p><p><strong>maven的作用</strong></p><p><strong>项目jar包的构建,项目的管理（项目生命周期的管理），比如：打包，javase项目打jar，javaweb项目打成war包，还有其他功能,如分模块开发,以后有空再写分模块开发这方面的文章.</strong></p><p><strong>Maven的仓库</strong></p><p><strong>maven有两种仓库类型:</strong></p><p><strong>一种是本地仓库,一种是远程仓库,详情看下图.</strong></p><p><img src="/article/34d62b77/1.jpeg" alt="img"></p><p><strong>官方的中央仓库地址：</strong></p><p><strong>第三方阿里云仓库：</strong></p><p><strong>Maven的坐标</strong></p><h5 id="坐标的作用是可以在pom-xml配置坐标信息，坐标信息用于指向仓库里面具体jar包的位置"><strong>坐标的作用是可以在pom.xml配置坐标信息，坐标信息用于指向仓库里面具体jar包的位置</strong></h5><h5 id="坐标具体含义"><strong>坐标具体含义</strong></h5><p><img src="/article/34d62b77/2.png" alt="img"></p><table><thead><tr><th>groupId</th><th>对应仓库里面第一层目录</th></tr></thead><tbody><tr><td>artifactId</td><td>对应仓库里面第二层目录</td></tr><tr><td>version</td><td>对应仓库里面第三层目录</td></tr></tbody></table><p><strong>举个例子，引用junit的jar包使用坐标来描述,这个描述会放到pom.xml文件中</strong></p><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependencies&gt;</span><br><span class="line">  &lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;junit&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;junit&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;<span class="number">4.11</span>version&gt;</span><br><span class="line">    &lt;scope&gt;test&lt;/scope&gt;</span><br><span class="line">  &lt;/dependency&gt;</span><br><span class="line">&lt;/dependencies&gt;</span><br></pre></td></tr></table></figure><p><img src="/article/34d62b77/3.jpeg" alt="img"></p><p><strong>本地仓库的jar包位置</strong></p><p><img src="/article/34d62b77/4.png" alt="img"></p><p><strong>需要注意的是：大多数每个坐标的组成都对应的是一层目录，只有groupId特殊，如果groupid描述的信息中有“.”，就会代表多层目录结构</strong></p><p><img src="/article/34d62b77/x1.jpeg" alt="img"></p><h3 id="Maven的安装与配置"><strong>Maven的安装与配置</strong></h3><p><strong>1.下载maven</strong></p><p><img src="/article/34d62b77/5.jpeg" alt="img"></p><p><strong>2.下载完成解压到目标路径完成安装</strong></p><p><img src="/article/34d62b77/6.jpeg" alt="img"></p><p><strong>了解下maven服务器的目录结构</strong></p><p><img src="/article/34d62b77/7.jpeg" alt="img"></p><p><strong>3.解压完成需要配置maven的全局配置文件settings.xml</strong></p><p><strong>3.1绑定本地仓库</strong></p><p><img src="/article/34d62b77/10.png" alt="img"></p><p><localRepository>D:\my_maven_local_repository</localRepository></p><p><strong>3.2绑定远程仓库，阿里云</strong></p><p><img src="/article/34d62b77/11.png" alt="img"></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;mirror&gt;</span><br><span class="line">&lt;id&gt;nexusid&gt;</span><br><span class="line">&lt;mirrorOf&gt;*&lt;/mirrorOf&gt;</span><br><span class="line">&lt;url&gt;http://maven.aliyun.com/nexus/content/groups/public/&lt;/url&gt;</span><br><span class="line">&lt;/mirror&gt;</span><br></pre></td></tr></table></figure><p><strong>镜像源</strong><br>1.阿里镜像源</p><pre><code>&lt;!--    阿里仓库--&gt;&lt;mirror&gt;  &lt;id&gt;alimaven&lt;/id&gt;  &lt;name&gt;aliyun maven&lt;/name&gt;  &lt;url&gt;http://maven.aliyun.com/nexus/content/groups/public/&lt;/url&gt;  &lt;mirrorOf&gt;central&lt;/mirrorOf&gt;&lt;/mirror&gt;</code></pre><p>2.官网镜像源https://mvnrepository.com/</p><p>备注：这个镜像源解决了近期无法使用阿里镜像源下载jar包的问题，很好用，十分推荐！</p><pre><code>&lt;mirror&gt;  &lt;id&gt;mvnrepository&lt;/id&gt;  &lt;mirrorOf&gt;mvnrepository&lt;/mirrorOf&gt;  &lt;url&gt;http://mvnrepository.com/&lt;/url&gt;&lt;/mirror&gt;</code></pre><p><strong>3.3配置全局的jdk编译级别版本（如果不配置，默认编译级别是1.4，太低，idea运行的话会有警告）</strong></p><p><img src="/article/34d62b77/12.jpeg" alt="img"></p><p><strong>将上面信息配置到如下位置</strong></p><p><img src="/article/34d62b77/13.png" alt="img"></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;profile&gt;</span><br><span class="line">&lt;id&gt;development&lt;/id&gt;</span><br><span class="line">&lt;activation&gt;</span><br><span class="line">  &lt;jdk&gt;1.8&lt;/jdk&gt;</span><br><span class="line">  &lt;activeByDefault&gt;true&lt;/activeByDefault&gt;</span><br><span class="line">&lt;/activation&gt;</span><br><span class="line">&lt;properties&gt;</span><br><span class="line">  &lt;maven.compiler.source&gt;1.8&lt;/maven.compiler.source&gt;</span><br><span class="line">  &lt;maven.compiler.target&gt;1.8&lt;/maven.compiler.target&gt;</span><br><span class="line">  &lt;maven.compiler.compilerVersion&gt;1.8&lt;/maven.compiler.compilerVersion&gt;</span><br><span class="line">&lt;/properties&gt;</span><br><span class="line">&lt;/profile&gt;</span><br></pre></td></tr></table></figure><p><strong>此电脑——右键——属性——高级系统设置——环境变量——系统变量——新建——变量名和变量值</strong></p><p><img src="/article/34d62b77/Mavenb3.jpg" alt="img"></p><p><strong>在系统变量PATH中引入你配置的变量名: %MAVEN_HOME%\bin;</strong></p><p><img src="/article/34d62b77/Mavenb4.jpg" alt="img"></p><p><img src="/article/34d62b77/Mavenb5.jpg" alt="img"></p><p><strong>3.4设置环境变量，到处都可以使用maven的命令</strong></p><p><strong>3.5测试是否安装配置成功，命令行出现如下信息代表配置成功</strong></p><p><code>命令:mvn -version</code></p><p><img src="/article/34d62b77/15.png" alt="img"></p><h3 id="下面用IDEA绑定本地Maven服务器"><strong>下面用IDEA绑定本地Maven服务器</strong></h3><p><strong>绑定本地maven软件</strong></p><p><strong>首先打开IDEA 选择File——Settings</strong></p><p><img src="/article/34d62b77/Mavenb6.jpg" alt="img"></p><p>设置运行参数</p><p><strong>-DarchetypeCatalog=internal  ，用于设置任何配置信息都从本地缓存中拿。有一些模板信息maven默认从远程仓库下载获取，如果设置了这个参数第一次从远程拿，以后从本地拿（这就要求大家第一次玩maven必须联网，1~5M不等）</strong></p><p><strong>配置效果看截图</strong></p><p><img src="/article/34d62b77/Mavenb7.jpg" alt="img"></p><p>我们还可以在勾选一些其他选项</p><p><img src="/article/34d62b77/Mavenb8.jpg" alt="img"></p><p>我们可以更新一下本地仓库和远程仓库,这个样在pom.xml文件中添加依赖jia包的坐标时就可以很好的提示出来.</p><p><img src="/article/34d62b77/Mavenb9.jpg" alt="img"></p><p><strong>使用Maven骨架向导创建javaweb工程</strong></p><h3 id="使用向导骨架创建maven项目"><strong>使用向导骨架创建maven项目</strong></h3><p><img src="/article/34d62b77/18.jpeg" alt="img"></p><p><img src="/article/34d62b77/19.png" alt="img"></p><p><img src="/article/34d62b77/20.png" alt="img"></p><p><img src="/article/34d62b77/21.png" alt="img"></p><p><img src="/article/34d62b77/x2.png" alt="img"></p><p>如果IDEA中Maven依赖包下载不了，不要慌</p><p><img src="/article/34d62b77/Maven1.jpg" alt="img"></p><p>有可能是maven的版本高于idea的版本，可以在官网http://maven.apache.org/docs/history.html查看与你的idea版本匹配的maven版本进行下载</p><p><strong>生成默认的项目目录结构</strong></p><p><img src="/article/34d62b77/22.png" alt="img"></p><p><strong>maven对JavaWeb项目目录结构的要求是很规范的,需要熟记,不然真的会被大佬嘲笑</strong></p><table><thead><tr><th>main</th><th>主程序目录,会被放到打包war文件中【必须有】</th></tr></thead><tbody><tr><td>java</td><td>主程序java源文件目录</td></tr><tr><td>resources</td><td>放业务配置文件,最后会放到classes类路径下面</td></tr><tr><td>webapp</td><td>存储web资源文件，类似以前web工程中web目录</td></tr><tr><td>test</td><td>测试程序目录，不会放到war文件中【可有可无】</td></tr><tr><td>java</td><td>测试程序java源文件目录</td></tr><tr><td>resources</td><td>放测试配置文件</td></tr><tr><td>target</td><td>输出目录，部署的资源，由maven自动管理自动生成</td></tr><tr><td>pom.xml</td><td>配置jar包的配置文件【必须有】</td></tr><tr><td>src</td><td>存放项目代码的根目录</td></tr></tbody></table><p><strong>maven web模板项目结构</strong><br><img src="/article/34d62b77/new_1.jpg" alt="这里写图片描述"></p><p><img src="/article/34d62b77/new_2.jpg" alt="这里写图片描述"></p><p><img src="/article/34d62b77/new_3.jpg" alt="这里写图片描述"><br>同样在main下新建test测试文件夹,再在此文件夹下新建<a href="http://lib.csdn.net/base/javaee" target="_blank" rel="noopener">Java</a>测试源码文件夹和resource测试资源文件夹<br><img src="/article/34d62b77/new_4.jpg" alt="这里写图片描述"><br>也可以右键项目-选择Open Module Settings打开项目配置页面更改<br><img src="/article/34d62b77/new_5.jpg" alt="这里写图片描述"></p><p><strong>7.配置依赖jar包</strong><br><img src="/article/34d62b77/new_6.jpg" alt="这里写图片描述"></p><p><strong>完善当前JavaWeb项目目录结构</strong></p><p><img src="/article/34d62b77/23.png" alt="img"></p><p><img src="/article/34d62b77/24.jpeg" alt="img"></p><p><strong>注意：项目树里面的颜色变化，需要点击maven窗口里面的刷新才会有。</strong></p><p><img src="/article/34d62b77/25.png" alt="img"></p><p><strong>注意:maven不使用骨架创建JavaWeb项目,不勾选Create from archetype直接点击Next即可;</strong></p><p><img src="/article/34d62b77/26.png" alt="img"></p><p><strong>下面了解一下maven的工具栏以及生命周期:详情可百度,不做详细介绍</strong></p><p><img src="/article/34d62b77/27.jpeg" alt="img"></p><h2 id="网上下载jar包导入maven">网上下载jar包导入maven</h2><p>输入网址   <a href="http://mavenrepository.com/" target="_blank" rel="noopener">http://mavenrepository.com/</a></p><p><img src="/article/34d62b77/l1.png" alt="img"></p><p><img src="/article/34d62b77/l2.png" alt="img"></p><p><img src="/article/34d62b77/l3.png" alt="img"></p><p>添加的地方有点改变但是最终下载下来了</p><p><img src="/article/34d62b77/l4.png" alt="img"></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;Maven的安装与在Idea中配置&quot;&gt;Maven的安装与在Idea中配置&lt;/h2&gt;
-&lt;h3 id=&quot;🙂maven介绍&quot;&gt;🙂&lt;strong&gt;maven介绍&lt;/strong&gt;&lt;/h3&gt;
-&lt;p&gt;&lt;strong&gt;maven是apache组织开发的一款开源的可以管理JavaWeb项目jar包的构建，可以解决jar包之间的冲突；可以对项目进行管理，比如项目打包等，maven使用pom项目对象模型进行构建项目的。&lt;/strong&gt;&lt;/p&gt;
-    
-    </summary>
-    
-    
-    
-      <category term="Maven" scheme="http://zhangtengfei66.gitee.io/tags/Maven/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>SpringBoot学习笔记(1)</title>
-    <link href="http://zhangtengfei66.gitee.io/article/e648fec4.html"/>
-    <id>http://zhangtengfei66.gitee.io/article/e648fec4.html</id>
-    <published>2020-02-05T08:50:47.000Z</published>
-    <updated>2020-05-20T02:40:47.830Z</updated>
-    
-    <content type="html"><![CDATA[<p>SpringBoot学习笔记</p><p>SpringBoot安装指导</p><a id="more"></a><h2 id="Spring-Boot简介">Spring Boot简介</h2><h3 id="一-SpringBoot对比">一. SpringBoot对比</h3><p><strong>Spring 框架</strong></p><p>Spring框架最核心的特性就是依赖注入DI（Dependency Injecttion）和控制反转IOC（Inversion Of Control）。如果你能够合理的使用DI和IOC，可以开发出松耦合、扩展性好的的应用程序。</p><p><strong>Spring MVC</strong></p><p>Spring MVC提供了一种友好的方式来开发Web应用程序。 通过使用诸如Dispatcher Servlet，ModelAndView和View Resolver，可以轻松开发Web应用程序。</p><p><strong>Spring Boot</strong></p><p>Spring 和 Spring MVC最大的弊病在于存在大量的配置，并且这些配置在不同的项目中具有很高的相似性。从而导致重复配置，繁琐而且杂乱！</p><p>Spring Boot期望通过结合<strong>自动配置</strong>和<strong>starters</strong>来解决了这个问题，<strong>使Spring和SpringMVC用起来更加简便</strong>。 另外，Spring Boot还提供了一些功能，可以更快地构建可用于生产环境的应用程序。</p><h3 id="二-Spring-Boot优点">二. Spring Boot优点</h3><ul><li>使配置变简单</li><li>使监控变简单</li><li>使部署变简单</li><li>使开发变简单</li></ul><h3 id="三-Spring-Boot比较SpringMVC">三. Spring Boot比较SpringMVC</h3><ul><li>敏捷开发（整合框架）</li><li>内置Tomcat，java应用程序运行</li><li>减少xml配置，配置文件properties</li></ul><h3 id="四-Spring-Boot主要特性">四. Spring Boot主要特性</h3><ul><li>遵循“约定优于配置”的原则，简化配置</li><li>可以完全脱离XML配置文件,采用注解配置和java Config</li><li>内嵌Servlet容器，应用可用jar包执行：java -jar</li><li>快速完成项目搭建、整合第三方类库，方便易用</li><li>提供了starter POM, 能够非常方便的进行包管理, 简化包管理配置</li><li>与Spring cloud天然集成，spring boot是目前java体系内实现微服务最佳方案</li></ul><h3 id="五-Spring-Boot-Starter">五. Spring Boot Starter</h3><p>Spring Boot Starter是一组<strong>被依赖第三方类库的集合</strong>。</p><p>如果你要开发一个web应用程序，就通过包管理工具(如maven)引入spring-boot-starter-web就可以了，而不用分别引入许多依赖类库，spring-boot-starter-web一次性帮你引入这些常用类库。</p><h4 id="1-spring-boot-starter-parent">1). spring-boot-starter-parent</h4><p>所有的Spring Boot项目默认使用spring-boot-starter-parent作为应用程序的父项目。</p><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 设置springboot的parent --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">parent</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-parent<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">version</span>&gt;</span>1.5.6.RELEASE<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">parent</span>&gt;</span></span><br></pre></td></tr></table></figure><p><strong>继承父项目的好处</strong>： 统一java版本配置和其他的一些依赖类库的版本。父项目替你管理版本，是经过兼容性测试的。比自己随便引入一个版本兼容性更好。</p><h2 id="二-SpringBoot安装">二.SpringBoot安装</h2><p>此处使用IDEA快速搭建SpringBoot应用,首先用SpringBoot搭建WEB工程:</p><p><img src="/article/e648fec4/an0.png" alt="image"></p><p>然后点击Next,如果出现下图,是网络连接问题，可以考虑翻墙。</p><p><img src="/article/e648fec4/an0.jpg" alt="img"></p><p>成功连接后，如下图</p><p><img src="/article/e648fec4/an2.png" alt="image"></p><p><img src="/article/e648fec4/an3.png" alt></p><p>然后点击Next生成项目,首次生成可能有点慢,下次创建的时候就会快很多,生成后的目录结构如下:</p><p><img src="/article/e648fec4/an4.png" alt="image"></p><h3 id="三-运行SpringBoot项目">三.运行SpringBoot项目</h3><p>然后更改下这个启动类</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> org.springframework.boot.SpringApplication;</span><br><span class="line"><span class="keyword">import</span> org.springframework.boot.autoconfigure.SpringBootApplication;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.RequestMapping;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.RestController;</span><br><span class="line"></span><br><span class="line"><span class="meta">@SpringBootApplication</span></span><br><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SpringbootApplication</span> </span>&#123;</span><br><span class="line">    <span class="comment">//运行方法</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        SpringApplication.run(SpringbootApplication<span class="class">.<span class="keyword">class</span>, <span class="title">args</span>)</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@RequestMapping</span>(value = <span class="string">"/"</span>,produces = <span class="string">"text/plain;charset=UTF-8"</span>)</span><br><span class="line">    <span class="function">String <span class="title">index</span><span class="params">()</span></span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> <span class="string">"Hello Spring Boot!"</span>;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>然后点击右上角运行</p><p><img src="/article/e648fec4/yun5.png" alt="image"></p><p>运行成功后，在浏览器输入 <code>http://localhost:8080/</code></p><p><img src="/article/e648fec4/yun7.jpg" alt="1580895826821"></p><p>也可以创建一个类</p><p><img src="/article/e648fec4/yun6.jpg" alt="img"></p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.example.hellow;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.springframework.stereotype.Controller;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.RequestMapping;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.ResponseBody;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.HashMap;</span><br><span class="line"><span class="keyword">import</span> java.util.Map;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Controller</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">index</span> </span>&#123;</span><br><span class="line">    <span class="meta">@RequestMapping</span>(value = <span class="string">"/index"</span>)</span><br><span class="line">    <span class="meta">@ResponseBody</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Map&lt;String,Object&gt; <span class="title">index</span><span class="params">()</span></span>&#123;</span><br><span class="line">        Map&lt;String,Object&gt; map = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line"></span><br><span class="line">        map.put(<span class="string">"貂蝉"</span>,<span class="keyword">new</span> String[]&#123;<span class="string">"法师"</span>,<span class="string">"刺客"</span>&#125;);</span><br><span class="line">        map.put(<span class="string">"韩信"</span>,<span class="keyword">new</span> String[]&#123;<span class="string">"战士"</span>,<span class="string">"刺客"</span>&#125;);</span><br><span class="line">        map.put(<span class="string">"刘邦"</span>,<span class="keyword">new</span> String[]&#123;<span class="string">"法师"</span>,<span class="string">"坦克"</span>&#125;);</span><br><span class="line">        <span class="keyword">return</span> map;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>然后修改下运行方法</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.example.springboot;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.springframework.boot.SpringApplication;</span><br><span class="line"><span class="keyword">import</span> org.springframework.boot.autoconfigure.SpringBootApplication;</span><br><span class="line"><span class="keyword">import</span> org.springframework.context.annotation.ComponentScan;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.RequestMapping;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.bind.annotation.RestController;</span><br><span class="line"></span><br><span class="line"><span class="meta">@SpringBootApplication</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//查找创建的包</span></span><br><span class="line"><span class="meta">@ComponentScan</span>(basePackages = <span class="string">"com.example.hellow"</span>)</span><br><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SpringbootApplication</span> </span>&#123;</span><br><span class="line">    <span class="comment">//运行方法</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        SpringApplication.run(SpringbootApplication<span class="class">.<span class="keyword">class</span>, <span class="title">args</span>)</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@RequestMapping</span>(value = <span class="string">"/"</span>,produces = <span class="string">"text/plain;charset=UTF-8"</span>)</span><br><span class="line">    <span class="function">String <span class="title">index</span><span class="params">()</span></span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> <span class="string">"Hello Spring Boot!"</span>;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>运行如下<img src="/article/e648fec4/yun8.jpg" alt="img"></p><h3 id="四-搭建SSM">四. 搭建SSM</h3><p>在上一步的基础上我们需要添加些相关的配置来搭建SSM,如下为结构图:</p><p><img src="/article/e648fec4/yun9.png" alt="image"></p><p>UserController:</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="comment">/**自动返回的是json格式数据***/</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">UserController</span> </span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> UserService userService;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@RequestMapping</span>(<span class="string">"list"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> List&lt;User&gt; <span class="title">list</span><span class="params">()</span></span>&#123;</span><br><span class="line">         <span class="comment">//只对紧邻的下一条select语句进行分页查询，对之后的select不起作用</span></span><br><span class="line">        List&lt;User&gt; list = userService.findAllUser();</span><br><span class="line">        <span class="keyword">return</span> list;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>User:</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">User</span> <span class="keyword">implements</span> <span class="title">Serializable</span></span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * </span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">long</span> serialVersionUID = <span class="number">1L</span>;</span><br><span class="line">    <span class="keyword">private</span> Integer id; </span><br><span class="line">    <span class="keyword">private</span> String username;</span><br><span class="line">    <span class="keyword">private</span> Date birthday;</span><br><span class="line">    <span class="keyword">private</span> String sex;</span><br><span class="line">    <span class="keyword">private</span> String address;</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> Integer <span class="title">getId</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> id;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setId</span><span class="params">(Integer id)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.id = id;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> Date <span class="title">getBirthday</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> birthday;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setBirthday</span><span class="params">(Date birthday)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.birthday = birthday;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getSex</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> sex;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setSex</span><span class="params">(String sex)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.sex = sex;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getUsername</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> username;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setUsername</span><span class="params">(String username)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.username = username;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getAddress</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> address;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setAddress</span><span class="params">(String address)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.address = address;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>UserMapper:</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Mapper</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">UserMapper</span> </span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> List&lt;User&gt; <span class="title">findAll</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>UserService:</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">UserService</span> </span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 根据接口查询所用的用户</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> List&lt;User&gt; <span class="title">findAllUser</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>UserServiceImpl:</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Service</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">UserServiceImpl</span> <span class="keyword">implements</span> <span class="title">UserService</span> </span>&#123;</span><br><span class="line">        <span class="meta">@Resource</span></span><br><span class="line">    <span class="keyword">private</span> UserMapper userMapper;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> List&lt;User&gt; <span class="title">findAllUser</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        List&lt;User&gt; list = userMapper.findAll();</span><br><span class="line">        <span class="keyword">return</span> list;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>UserMapper.XML:</p><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;</span></span><br><span class="line"><span class="meta">&lt;!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" &gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">mapper</span> <span class="attr">namespace</span>=<span class="string">"com.demo.mapper.UserMapper"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">"findAll"</span> <span class="attr">resultType</span>=<span class="string">"com.demo.bean.User"</span>&gt;</span></span><br><span class="line">        select * from user</span><br><span class="line">    <span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">mapper</span>&gt;</span></span><br></pre></td></tr></table></figure><p>SqlMapperConfig:</p><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;</span></span><br><span class="line"><span class="meta">&lt;!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd"&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">settings</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- 对在此配置文件下的所有cache进行全局性开/关设置 true|false true --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">name</span>=<span class="string">"cacheEnabled"</span> <span class="attr">value</span>=<span class="string">"true"</span> /&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- 全局性设置懒加载。如果设为‘关',则所有相关联的都会被初始化加载。 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">name</span>=<span class="string">"lazyLoadingEnabled"</span> <span class="attr">value</span>=<span class="string">"true"</span> /&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- 当设置为‘开’的时候，懒加载的对象可能被任何懒属性全部加载。否则，每个属性都按需加载。 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">name</span>=<span class="string">"aggressiveLazyLoading"</span> <span class="attr">value</span>=<span class="string">"true"</span> /&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- 允许和不允许单条语句返回多个数据集（取决于驱动需求） --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">name</span>=<span class="string">"multipleResultSetsEnabled"</span> <span class="attr">value</span>=<span class="string">"true"</span> /&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- 使用列标签代替列名称。不用的驱动器有不同的作法。 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">name</span>=<span class="string">"localCacheScope"</span> <span class="attr">value</span>=<span class="string">"STATEMENT"</span> /&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- 允许JDBC生成主键。需要驱动器支持.如果设为了true，这个设置将强制使用被生成的主键， 有一些驱动器不兼容不过仍然可以执行。 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">name</span>=<span class="string">"useGeneratedKeys"</span> <span class="attr">value</span>=<span class="string">"true"</span> /&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- 指定MyBatis是否并且如何来自动映射数据表字段与对象的属性。PARTIAL将只自动映射简单的，NONE没有嵌套的结果。 FULL将自动映射所有复杂的结果。 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">name</span>=<span class="string">"autoMappingBehavior"</span> <span class="attr">value</span>=<span class="string">"PARTIAL"</span> /&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- 配置和设定执行器，SIMPLE执行器执行其它语句。REUSE执行器可能重复使用preparedstatements语句，BATCH执行器可以重复执行语句和批量更新。 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">name</span>=<span class="string">"defaultExecutorType"</span> <span class="attr">value</span>=<span class="string">"SIMPLE"</span> /&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- 设置一个时限，以决定让驱动器等待数据库回应的多长时间为超时. 正整数 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">name</span>=<span class="string">"defaultStatementTimeout"</span> <span class="attr">value</span>=<span class="string">"5000"</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">name</span>=<span class="string">"jdbcTypeForNull"</span> <span class="attr">value</span>=<span class="string">"OTHER"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">setting</span> <span class="attr">name</span>=<span class="string">"logImpl"</span> <span class="attr">value</span>=<span class="string">"LOG4J"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">settings</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br></pre></td></tr></table></figure><p>application.properties:</p><figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#server.port=80</span></span><br><span class="line"></span><br><span class="line"><span class="meta">logging.level.org.springframework</span>=<span class="string">DEBUG</span></span><br><span class="line"><span class="comment">#springboot   mybatis</span></span><br><span class="line"><span class="comment">#jiazai mybatis peizhiwenjian</span></span><br><span class="line"><span class="meta">mybatis.mapper-locations</span> = <span class="string">classpath:mapper/*Mapper.xml</span></span><br><span class="line"><span class="meta">mybatis.config-location</span> = <span class="string">classpath:mybatis/sqlMapConfig.xml</span></span><br><span class="line"><span class="comment">#mybatis.type-aliases-package = com.demo.bean</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#shujuyuan</span></span><br><span class="line"><span class="meta">spring.datasource.driver-class-name</span>= <span class="string">com.mysql.jdbc.Driver</span></span><br><span class="line"><span class="meta">spring.datasource.url</span> = <span class="string">jdbc:mysql://localhost:3306/test?useUnicode=true&amp;characterEncoding=utf-8</span></span><br><span class="line"><span class="meta">spring.datasource.username</span> = <span class="string">root</span></span><br><span class="line"><span class="meta">spring.datasource.password</span> = <span class="string">root</span></span><br></pre></td></tr></table></figure><p>Pom.XML:</p><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">project</span> <span class="attr">xmlns</span>=<span class="string">"http://maven.apache.org/POM/4.0.0"</span> <span class="attr">xmlns:xsi</span>=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span></span></span><br><span class="line"><span class="tag">         <span class="attr">xsi:schemaLocation</span>=<span class="string">"http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">modelVersion</span>&gt;</span>4.0.0<span class="tag">&lt;/<span class="name">modelVersion</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.example<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>springbootdemo<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>0.0.1-SNAPSHOT<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">packaging</span>&gt;</span>jar<span class="tag">&lt;/<span class="name">packaging</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">name</span>&gt;</span>springbootdemo<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">description</span>&gt;</span>Demo project for Spring Boot<span class="tag">&lt;/<span class="name">description</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">parent</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-parent<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.0.3.RELEASE<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">relativePath</span>/&gt;</span> <span class="comment">&lt;!-- lookup parent from repository --&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">parent</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">properties</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">project.build.sourceEncoding</span>&gt;</span>UTF-8<span class="tag">&lt;/<span class="name">project.build.sourceEncoding</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">project.reporting.outputEncoding</span>&gt;</span>UTF-8<span class="tag">&lt;/<span class="name">project.reporting.outputEncoding</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">java.version</span>&gt;</span>1.8<span class="tag">&lt;/<span class="name">java.version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">properties</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-web<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-test<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">scope</span>&gt;</span>test<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="comment">&lt;!--mybatis与mysql--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.mybatis.spring.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mybatis-spring-boot-starter<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.2.0<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>mysql<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mysql-connector-java<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--druid依赖--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.alibaba<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>druid<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.0.25<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--redis依赖--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-data-redis<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="comment">&lt;!--lombok--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.projectlombok<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>lombok<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">&lt;!--jasypt加解密--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.github.ulisesbocchio<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>jasypt-spring-boot-starter<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.14<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">&lt;!--zipkin--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.cloud<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-cloud-starter-sleuth<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.cloud<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-cloud-sleuth-zipkin<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="comment">&lt;!--eureka--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.cloud<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-cloud-starter-eureka<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-actuator<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">build</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">plugins</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">plugin</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-maven-plugin<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">plugin</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">plugins</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">build</span>&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">project</span>&gt;</span></span><br></pre></td></tr></table></figure><p>项目运行后访问http://localhost:8080/list,可以见到如下结果(这里省略sql表的设计,可以自己根据实体类来建表)<br><img src="/article/e648fec4/yun10.png" alt="image.png"></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;SpringBoot学习笔记&lt;/p&gt;
-&lt;p&gt;SpringBoot安装指导&lt;/p&gt;
-    
-    </summary>
-    
-    
-    
-      <category term="SpringBoot" scheme="http://zhangtengfei66.gitee.io/tags/SpringBoot/"/>
+      <category term="数据库" scheme="http://www.zhangtengfei.xyz/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
   </entry>
   

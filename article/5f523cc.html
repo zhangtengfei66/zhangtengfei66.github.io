@@ -5,30 +5,30 @@
   
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <link rel="dns-prefetch" href="http://zhangtengfei66.gitee.io">
+  <link rel="dns-prefetch" href="http://www.zhangtengfei.xyz">
   <title>博客中写入数学公式 | (●ˇ∀ˇ●)</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="使用LaTex添加公式到Hexo博客里">
 <meta name="keywords" content="博客">
 <meta property="og:type" content="article">
 <meta property="og:title" content="博客中写入数学公式">
-<meta property="og:url" content="http:&#x2F;&#x2F;zhangtengfei66.gitee.io&#x2F;article&#x2F;5f523cc.html">
+<meta property="og:url" content="http:&#x2F;&#x2F;www.zhangtengfei.xyz&#x2F;article&#x2F;5f523cc.html">
 <meta property="og:site_name" content="(●ˇ∀ˇ●)">
 <meta property="og:description" content="使用LaTex添加公式到Hexo博客里">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http:&#x2F;&#x2F;zhangtengfei66.gitee.io&#x2F;article&#x2F;5f523cc&#x2F;mathematical_1.jpg">
-<meta property="og:image" content="http:&#x2F;&#x2F;zhangtengfei66.gitee.io&#x2F;article&#x2F;5f523cc&#x2F;mathematical_2.jpg">
-<meta property="og:image" content="http:&#x2F;&#x2F;zhangtengfei66.gitee.io&#x2F;article&#x2F;5f523cc&#x2F;mathematical_3.jpg">
-<meta property="og:image" content="http:&#x2F;&#x2F;zhangtengfei66.gitee.io&#x2F;article&#x2F;5f523cc&#x2F;mathematical_4.jpg">
-<meta property="og:image" content="http:&#x2F;&#x2F;zhangtengfei66.gitee.io&#x2F;article&#x2F;5f523cc&#x2F;mathematical_5.jpg">
-<meta property="og:image" content="http:&#x2F;&#x2F;zhangtengfei66.gitee.io&#x2F;article&#x2F;%E5%8D%9A%E5%AE%A2%E4%B8%AD%E5%86%99%E5%85%A5%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F&#x2F;mathematical_6.jpg">
-<meta property="og:image" content="http:&#x2F;&#x2F;zhangtengfei66.gitee.io&#x2F;article&#x2F;%E5%8D%9A%E5%AE%A2%E4%B8%AD%E5%86%99%E5%85%A5%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F&#x2F;mathematical_7.jpg">
-<meta property="og:image" content="http:&#x2F;&#x2F;zhangtengfei66.gitee.io&#x2F;article&#x2F;%E5%8D%9A%E5%AE%A2%E4%B8%AD%E5%86%99%E5%85%A5%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F&#x2F;mathematical_8.jpg">
-<meta property="og:image" content="http:&#x2F;&#x2F;zhangtengfei66.gitee.io&#x2F;article&#x2F;%E5%8D%9A%E5%AE%A2%E4%B8%AD%E5%86%99%E5%85%A5%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F&#x2F;mathematical_9.jpg">
-<meta property="og:image" content="http:&#x2F;&#x2F;zhangtengfei66.gitee.io&#x2F;article&#x2F;%E5%8D%9A%E5%AE%A2%E4%B8%AD%E5%86%99%E5%85%A5%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F&#x2F;mathematical_10.jpg">
+<meta property="og:image" content="http:&#x2F;&#x2F;www.zhangtengfei.xyz&#x2F;article&#x2F;5f523cc&#x2F;mathematical_1.jpg">
+<meta property="og:image" content="http:&#x2F;&#x2F;www.zhangtengfei.xyz&#x2F;article&#x2F;5f523cc&#x2F;mathematical_2.jpg">
+<meta property="og:image" content="http:&#x2F;&#x2F;www.zhangtengfei.xyz&#x2F;article&#x2F;5f523cc&#x2F;mathematical_3.jpg">
+<meta property="og:image" content="http:&#x2F;&#x2F;www.zhangtengfei.xyz&#x2F;article&#x2F;5f523cc&#x2F;mathematical_4.jpg">
+<meta property="og:image" content="http:&#x2F;&#x2F;www.zhangtengfei.xyz&#x2F;article&#x2F;5f523cc&#x2F;mathematical_5.jpg">
+<meta property="og:image" content="http:&#x2F;&#x2F;www.zhangtengfei.xyz&#x2F;article&#x2F;%E5%8D%9A%E5%AE%A2%E4%B8%AD%E5%86%99%E5%85%A5%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F&#x2F;mathematical_6.jpg">
+<meta property="og:image" content="http:&#x2F;&#x2F;www.zhangtengfei.xyz&#x2F;article&#x2F;%E5%8D%9A%E5%AE%A2%E4%B8%AD%E5%86%99%E5%85%A5%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F&#x2F;mathematical_7.jpg">
+<meta property="og:image" content="http:&#x2F;&#x2F;www.zhangtengfei.xyz&#x2F;article&#x2F;%E5%8D%9A%E5%AE%A2%E4%B8%AD%E5%86%99%E5%85%A5%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F&#x2F;mathematical_8.jpg">
+<meta property="og:image" content="http:&#x2F;&#x2F;www.zhangtengfei.xyz&#x2F;article&#x2F;%E5%8D%9A%E5%AE%A2%E4%B8%AD%E5%86%99%E5%85%A5%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F&#x2F;mathematical_9.jpg">
+<meta property="og:image" content="http:&#x2F;&#x2F;www.zhangtengfei.xyz&#x2F;article&#x2F;%E5%8D%9A%E5%AE%A2%E4%B8%AD%E5%86%99%E5%85%A5%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F&#x2F;mathematical_10.jpg">
 <meta property="og:updated_time" content="2020-01-15T08:16:46.139Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http:&#x2F;&#x2F;zhangtengfei66.gitee.io&#x2F;article&#x2F;5f523cc&#x2F;mathematical_1.jpg">
+<meta name="twitter:image" content="http:&#x2F;&#x2F;www.zhangtengfei.xyz&#x2F;article&#x2F;5f523cc&#x2F;mathematical_1.jpg">
   
     <link rel="alternative" href="/atom.xml" title="(●ˇ∀ˇ●)" type="application/atom+xml">
   
@@ -67,6 +67,25 @@ var _hmt = _hmt || [];
 })();
 </script>
 
+  <!--百度自动推送-->
+  
+<!-- 开启百度站长平台自动推送https://ziyuan.baidu.com/linksubmit/index，
+https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
+<script>
+  (function () {
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    } else {
+      bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+  })();
+</script>
+
+</head>
 </head>
 
 <body>
@@ -394,7 +413,7 @@ var _hmt = _hmt || [];
           
           <br></li>
           <li><strong>本文链接：</strong>
-          <a rel="license" href="http://zhangtengfei66.gitee.io/article/5f523cc.html">http://zhangtengfei66.gitee.io/article/5f523cc.html</a>
+          <a rel="license" href="http://www.zhangtengfei.xyz/article/5f523cc.html">http://www.zhangtengfei.xyz/article/5f523cc.html</a>
           <br></li>
           <li><strong>版权声明：</strong>
           本作品采用
@@ -471,7 +490,7 @@ var _hmt = _hmt || [];
     <a class="close js-modal-close" href="javascript:;" target="_blank" rel="noopener"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://zhangtengfei66.gitee.io/article/5f523cc.html" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://www.zhangtengfei.xyz/article/5f523cc.html" alt="微信分享二维码">
     </div>
 </div>
 
