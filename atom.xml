@@ -5,9 +5,9 @@
   <subtitle>个人博客，总结一些编程知识的网站，希望可以帮到各位！</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://www.zhangtengfei.xyz/"/>
+  <link href="https://www.zhangtengfei.xyz/"/>
   <updated>2020-06-22T10:16:23.741Z</updated>
-  <id>http://www.zhangtengfei.xyz/</id>
+  <id>https://www.zhangtengfei.xyz/</id>
   
   <author>
     <name>腾飞</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>Spring和MyBatis整合</title>
-    <link href="http://www.zhangtengfei.xyz/article/e9bfb5bb.html"/>
-    <id>http://www.zhangtengfei.xyz/article/e9bfb5bb.html</id>
+    <link href="https://www.zhangtengfei.xyz/article/e9bfb5bb.html"/>
+    <id>https://www.zhangtengfei.xyz/article/e9bfb5bb.html</id>
     <published>2020-06-22T08:04:05.000Z</published>
     <updated>2020-06-22T10:16:23.741Z</updated>
     
@@ -41,8 +41,8 @@
   
   <entry>
     <title>搜索引擎收录博客</title>
-    <link href="http://www.zhangtengfei.xyz/article/81a020b4.html"/>
-    <id>http://www.zhangtengfei.xyz/article/81a020b4.html</id>
+    <link href="https://www.zhangtengfei.xyz/article/81a020b4.html"/>
+    <id>https://www.zhangtengfei.xyz/article/81a020b4.html</id>
     <published>2020-06-21T02:53:13.000Z</published>
     <updated>2020-06-22T10:16:23.785Z</updated>
     
@@ -61,8 +61,8 @@
   
   <entry>
     <title>SpringMVC学习笔记(3)</title>
-    <link href="http://www.zhangtengfei.xyz/article/af57c6ea.html"/>
-    <id>http://www.zhangtengfei.xyz/article/af57c6ea.html</id>
+    <link href="https://www.zhangtengfei.xyz/article/af57c6ea.html"/>
+    <id>https://www.zhangtengfei.xyz/article/af57c6ea.html</id>
     <published>2020-06-11T05:29:07.000Z</published>
     <updated>2020-06-18T06:58:59.312Z</updated>
     
@@ -78,16 +78,16 @@
     
     
     
-      <category term="SpringMVC" scheme="http://www.zhangtengfei.xyz/tags/SpringMVC/"/>
+      <category term="SpringMVC" scheme="https://www.zhangtengfei.xyz/tags/SpringMVC/"/>
     
-      <category term="Web框架" scheme="http://www.zhangtengfei.xyz/tags/Web%E6%A1%86%E6%9E%B6/"/>
+      <category term="Web框架" scheme="https://www.zhangtengfei.xyz/tags/Web%E6%A1%86%E6%9E%B6/"/>
     
   </entry>
   
   <entry>
     <title>SpringMVC学习笔记(2)</title>
-    <link href="http://www.zhangtengfei.xyz/article/b64cf7ab.html"/>
-    <id>http://www.zhangtengfei.xyz/article/b64cf7ab.html</id>
+    <link href="https://www.zhangtengfei.xyz/article/b64cf7ab.html"/>
+    <id>https://www.zhangtengfei.xyz/article/b64cf7ab.html</id>
     <published>2020-05-27T01:34:38.000Z</published>
     <updated>2020-06-18T02:59:33.734Z</updated>
     
@@ -103,16 +103,16 @@
     
     
     
-      <category term="SpringMVC" scheme="http://www.zhangtengfei.xyz/tags/SpringMVC/"/>
+      <category term="SpringMVC" scheme="https://www.zhangtengfei.xyz/tags/SpringMVC/"/>
     
-      <category term="Web框架" scheme="http://www.zhangtengfei.xyz/tags/Web%E6%A1%86%E6%9E%B6/"/>
+      <category term="Web框架" scheme="https://www.zhangtengfei.xyz/tags/Web%E6%A1%86%E6%9E%B6/"/>
     
   </entry>
   
   <entry>
     <title>SpringMVC学习笔记(1)</title>
-    <link href="http://www.zhangtengfei.xyz/article/9d61a468.html"/>
-    <id>http://www.zhangtengfei.xyz/article/9d61a468.html</id>
+    <link href="https://www.zhangtengfei.xyz/article/9d61a468.html"/>
+    <id>https://www.zhangtengfei.xyz/article/9d61a468.html</id>
     <published>2020-05-18T06:28:14.000Z</published>
     <updated>2020-06-18T02:59:33.729Z</updated>
     
@@ -128,16 +128,16 @@
     
     
     
-      <category term="SpringMVC" scheme="http://www.zhangtengfei.xyz/tags/SpringMVC/"/>
+      <category term="SpringMVC" scheme="https://www.zhangtengfei.xyz/tags/SpringMVC/"/>
     
-      <category term="Web框架" scheme="http://www.zhangtengfei.xyz/tags/Web%E6%A1%86%E6%9E%B6/"/>
+      <category term="Web框架" scheme="https://www.zhangtengfei.xyz/tags/Web%E6%A1%86%E6%9E%B6/"/>
     
   </entry>
   
   <entry>
     <title>Spring学习笔记(4)</title>
-    <link href="http://www.zhangtengfei.xyz/article/43bf071f.html"/>
-    <id>http://www.zhangtengfei.xyz/article/43bf071f.html</id>
+    <link href="https://www.zhangtengfei.xyz/article/43bf071f.html"/>
+    <id>https://www.zhangtengfei.xyz/article/43bf071f.html</id>
     <published>2020-05-05T09:12:54.000Z</published>
     <updated>2020-05-15T10:40:38.944Z</updated>
     
@@ -153,14 +153,14 @@
     
     
     
-      <category term="Spring" scheme="http://www.zhangtengfei.xyz/tags/Spring/"/>
+      <category term="Spring" scheme="https://www.zhangtengfei.xyz/tags/Spring/"/>
     
   </entry>
   
   <entry>
     <title>Spring学习笔记(3)</title>
-    <link href="http://www.zhangtengfei.xyz/article/cfe91d8.html"/>
-    <id>http://www.zhangtengfei.xyz/article/cfe91d8.html</id>
+    <link href="https://www.zhangtengfei.xyz/article/cfe91d8.html"/>
+    <id>https://www.zhangtengfei.xyz/article/cfe91d8.html</id>
     <published>2020-04-27T09:04:25.000Z</published>
     <updated>2020-05-15T09:41:36.302Z</updated>
     
@@ -176,14 +176,14 @@
     
     
     
-      <category term="Spring" scheme="http://www.zhangtengfei.xyz/tags/Spring/"/>
+      <category term="Spring" scheme="https://www.zhangtengfei.xyz/tags/Spring/"/>
     
   </entry>
   
   <entry>
     <title>Spring学习笔记(2)</title>
-    <link href="http://www.zhangtengfei.xyz/article/15e5a099.html"/>
-    <id>http://www.zhangtengfei.xyz/article/15e5a099.html</id>
+    <link href="https://www.zhangtengfei.xyz/article/15e5a099.html"/>
+    <id>https://www.zhangtengfei.xyz/article/15e5a099.html</id>
     <published>2020-04-20T02:13:27.000Z</published>
     <updated>2020-05-15T09:37:13.415Z</updated>
     
@@ -199,14 +199,14 @@
     
     
     
-      <category term="Spring" scheme="http://www.zhangtengfei.xyz/tags/Spring/"/>
+      <category term="Spring" scheme="https://www.zhangtengfei.xyz/tags/Spring/"/>
     
   </entry>
   
   <entry>
     <title>Spring学习笔记(1)</title>
-    <link href="http://www.zhangtengfei.xyz/article/3ec8f35a.html"/>
-    <id>http://www.zhangtengfei.xyz/article/3ec8f35a.html</id>
+    <link href="https://www.zhangtengfei.xyz/article/3ec8f35a.html"/>
+    <id>https://www.zhangtengfei.xyz/article/3ec8f35a.html</id>
     <published>2020-04-17T01:46:47.000Z</published>
     <updated>2020-05-08T01:49:27.865Z</updated>
     
@@ -222,14 +222,14 @@
     
     
     
-      <category term="Spring" scheme="http://www.zhangtengfei.xyz/tags/Spring/"/>
+      <category term="Spring" scheme="https://www.zhangtengfei.xyz/tags/Spring/"/>
     
   </entry>
   
   <entry>
     <title>MyBatis学习笔记(5)</title>
-    <link href="http://www.zhangtengfei.xyz/article/3fa35e86.html"/>
-    <id>http://www.zhangtengfei.xyz/article/3fa35e86.html</id>
+    <link href="https://www.zhangtengfei.xyz/article/3fa35e86.html"/>
+    <id>https://www.zhangtengfei.xyz/article/3fa35e86.html</id>
     <published>2020-04-14T04:20:19.000Z</published>
     <updated>2020-04-27T08:18:33.867Z</updated>
     
@@ -245,16 +245,16 @@
     
     
     
-      <category term="MyBatis" scheme="http://www.zhangtengfei.xyz/tags/MyBatis/"/>
+      <category term="MyBatis" scheme="https://www.zhangtengfei.xyz/tags/MyBatis/"/>
     
-      <category term="持久层框架" scheme="http://www.zhangtengfei.xyz/tags/%E6%8C%81%E4%B9%85%E5%B1%82%E6%A1%86%E6%9E%B6/"/>
+      <category term="持久层框架" scheme="https://www.zhangtengfei.xyz/tags/%E6%8C%81%E4%B9%85%E5%B1%82%E6%A1%86%E6%9E%B6/"/>
     
   </entry>
   
   <entry>
     <title>MyBatis学习笔记(4)</title>
-    <link href="http://www.zhangtengfei.xyz/article/8b840100.html"/>
-    <id>http://www.zhangtengfei.xyz/article/8b840100.html</id>
+    <link href="https://www.zhangtengfei.xyz/article/8b840100.html"/>
+    <id>https://www.zhangtengfei.xyz/article/8b840100.html</id>
     <published>2020-04-12T02:07:19.000Z</published>
     <updated>2020-04-27T07:54:01.080Z</updated>
     
@@ -270,16 +270,16 @@
     
     
     
-      <category term="MyBatis" scheme="http://www.zhangtengfei.xyz/tags/MyBatis/"/>
+      <category term="MyBatis" scheme="https://www.zhangtengfei.xyz/tags/MyBatis/"/>
     
-      <category term="持久层框架" scheme="http://www.zhangtengfei.xyz/tags/%E6%8C%81%E4%B9%85%E5%B1%82%E6%A1%86%E6%9E%B6/"/>
+      <category term="持久层框架" scheme="https://www.zhangtengfei.xyz/tags/%E6%8C%81%E4%B9%85%E5%B1%82%E6%A1%86%E6%9E%B6/"/>
     
   </entry>
   
   <entry>
     <title>MyBatis学习笔记(3)</title>
-    <link href="http://www.zhangtengfei.xyz/article/c4c597c7.html"/>
-    <id>http://www.zhangtengfei.xyz/article/c4c597c7.html</id>
+    <link href="https://www.zhangtengfei.xyz/article/c4c597c7.html"/>
+    <id>https://www.zhangtengfei.xyz/article/c4c597c7.html</id>
     <published>2020-03-31T09:36:35.000Z</published>
     <updated>2020-06-13T07:37:54.689Z</updated>
     
@@ -295,16 +295,16 @@
     
     
     
-      <category term="MyBatis" scheme="http://www.zhangtengfei.xyz/tags/MyBatis/"/>
+      <category term="MyBatis" scheme="https://www.zhangtengfei.xyz/tags/MyBatis/"/>
     
-      <category term="持久层框架" scheme="http://www.zhangtengfei.xyz/tags/%E6%8C%81%E4%B9%85%E5%B1%82%E6%A1%86%E6%9E%B6/"/>
+      <category term="持久层框架" scheme="https://www.zhangtengfei.xyz/tags/%E6%8C%81%E4%B9%85%E5%B1%82%E6%A1%86%E6%9E%B6/"/>
     
   </entry>
   
   <entry>
     <title>MyBatis学习笔记(2)</title>
-    <link href="http://www.zhangtengfei.xyz/article/dddea686.html"/>
-    <id>http://www.zhangtengfei.xyz/article/dddea686.html</id>
+    <link href="https://www.zhangtengfei.xyz/article/dddea686.html"/>
+    <id>https://www.zhangtengfei.xyz/article/dddea686.html</id>
     <published>2020-03-30T02:22:50.000Z</published>
     <updated>2020-04-27T07:12:00.132Z</updated>
     
@@ -320,16 +320,16 @@
     
     
     
-      <category term="MyBatis" scheme="http://www.zhangtengfei.xyz/tags/MyBatis/"/>
+      <category term="MyBatis" scheme="https://www.zhangtengfei.xyz/tags/MyBatis/"/>
     
-      <category term="持久层框架" scheme="http://www.zhangtengfei.xyz/tags/%E6%8C%81%E4%B9%85%E5%B1%82%E6%A1%86%E6%9E%B6/"/>
+      <category term="持久层框架" scheme="https://www.zhangtengfei.xyz/tags/%E6%8C%81%E4%B9%85%E5%B1%82%E6%A1%86%E6%9E%B6/"/>
     
   </entry>
   
   <entry>
     <title>MyBatis学习笔记(1)</title>
-    <link href="http://www.zhangtengfei.xyz/article/f6f3f545.html"/>
-    <id>http://www.zhangtengfei.xyz/article/f6f3f545.html</id>
+    <link href="https://www.zhangtengfei.xyz/article/f6f3f545.html"/>
+    <id>https://www.zhangtengfei.xyz/article/f6f3f545.html</id>
     <published>2020-03-26T01:52:45.000Z</published>
     <updated>2020-04-27T06:59:43.007Z</updated>
     
@@ -345,16 +345,16 @@
     
     
     
-      <category term="MyBatis" scheme="http://www.zhangtengfei.xyz/tags/MyBatis/"/>
+      <category term="MyBatis" scheme="https://www.zhangtengfei.xyz/tags/MyBatis/"/>
     
-      <category term="持久层框架" scheme="http://www.zhangtengfei.xyz/tags/%E6%8C%81%E4%B9%85%E5%B1%82%E6%A1%86%E6%9E%B6/"/>
+      <category term="持久层框架" scheme="https://www.zhangtengfei.xyz/tags/%E6%8C%81%E4%B9%85%E5%B1%82%E6%A1%86%E6%9E%B6/"/>
     
   </entry>
   
   <entry>
     <title>git学习笔记</title>
-    <link href="http://www.zhangtengfei.xyz/article/f5f0db78.html"/>
-    <id>http://www.zhangtengfei.xyz/article/f5f0db78.html</id>
+    <link href="https://www.zhangtengfei.xyz/article/f5f0db78.html"/>
+    <id>https://www.zhangtengfei.xyz/article/f5f0db78.html</id>
     <published>2020-03-17T03:02:00.000Z</published>
     <updated>2020-03-28T08:48:32.283Z</updated>
     
@@ -370,14 +370,14 @@
     
     
     
-      <category term="git" scheme="http://www.zhangtengfei.xyz/tags/git/"/>
+      <category term="git" scheme="https://www.zhangtengfei.xyz/tags/git/"/>
     
   </entry>
   
   <entry>
     <title>Oracle学习笔记0.5</title>
-    <link href="http://www.zhangtengfei.xyz/article/b28af766.html"/>
-    <id>http://www.zhangtengfei.xyz/article/b28af766.html</id>
+    <link href="https://www.zhangtengfei.xyz/article/b28af766.html"/>
+    <id>https://www.zhangtengfei.xyz/article/b28af766.html</id>
     <published>2020-03-10T00:10:08.000Z</published>
     <updated>2020-03-23T07:11:43.022Z</updated>
     
@@ -393,16 +393,16 @@
     
     
     
-      <category term="Oracle" scheme="http://www.zhangtengfei.xyz/tags/Oracle/"/>
+      <category term="Oracle" scheme="https://www.zhangtengfei.xyz/tags/Oracle/"/>
     
-      <category term="数据库" scheme="http://www.zhangtengfei.xyz/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+      <category term="数据库" scheme="https://www.zhangtengfei.xyz/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
   </entry>
   
   <entry>
     <title>Oracle学习笔记0.4</title>
-    <link href="http://www.zhangtengfei.xyz/article/c58dc7f0.html"/>
-    <id>http://www.zhangtengfei.xyz/article/c58dc7f0.html</id>
+    <link href="https://www.zhangtengfei.xyz/article/c58dc7f0.html"/>
+    <id>https://www.zhangtengfei.xyz/article/c58dc7f0.html</id>
     <published>2020-03-05T00:29:51.000Z</published>
     <updated>2020-03-10T09:19:21.226Z</updated>
     
@@ -418,16 +418,16 @@
     
     
     
-      <category term="Oracle" scheme="http://www.zhangtengfei.xyz/tags/Oracle/"/>
+      <category term="Oracle" scheme="https://www.zhangtengfei.xyz/tags/Oracle/"/>
     
-      <category term="数据库" scheme="http://www.zhangtengfei.xyz/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+      <category term="数据库" scheme="https://www.zhangtengfei.xyz/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
   </entry>
   
   <entry>
     <title>Oracle学习笔记0.3</title>
-    <link href="http://www.zhangtengfei.xyz/article/5be95253.html"/>
-    <id>http://www.zhangtengfei.xyz/article/5be95253.html</id>
+    <link href="https://www.zhangtengfei.xyz/article/5be95253.html"/>
+    <id>https://www.zhangtengfei.xyz/article/5be95253.html</id>
     <published>2020-02-27T07:28:37.000Z</published>
     <updated>2020-03-10T11:21:47.595Z</updated>
     
@@ -443,16 +443,16 @@
     
     
     
-      <category term="Oracle" scheme="http://www.zhangtengfei.xyz/tags/Oracle/"/>
+      <category term="Oracle" scheme="https://www.zhangtengfei.xyz/tags/Oracle/"/>
     
-      <category term="数据库" scheme="http://www.zhangtengfei.xyz/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+      <category term="数据库" scheme="https://www.zhangtengfei.xyz/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
   </entry>
   
   <entry>
     <title>Oracle学习笔记0.2</title>
-    <link href="http://www.zhangtengfei.xyz/article/2cee62c5.html"/>
-    <id>http://www.zhangtengfei.xyz/article/2cee62c5.html</id>
+    <link href="https://www.zhangtengfei.xyz/article/2cee62c5.html"/>
+    <id>https://www.zhangtengfei.xyz/article/2cee62c5.html</id>
     <published>2020-02-24T11:45:12.000Z</published>
     <updated>2020-02-27T07:32:26.196Z</updated>
     
@@ -468,16 +468,16 @@
     
     
     
-      <category term="Oracle" scheme="http://www.zhangtengfei.xyz/tags/Oracle/"/>
+      <category term="Oracle" scheme="https://www.zhangtengfei.xyz/tags/Oracle/"/>
     
-      <category term="数据库" scheme="http://www.zhangtengfei.xyz/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+      <category term="数据库" scheme="https://www.zhangtengfei.xyz/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
   </entry>
   
   <entry>
     <title>Oracle学习笔记0.1</title>
-    <link href="http://www.zhangtengfei.xyz/article/b5e7337f.html"/>
-    <id>http://www.zhangtengfei.xyz/article/b5e7337f.html</id>
+    <link href="https://www.zhangtengfei.xyz/article/b5e7337f.html"/>
+    <id>https://www.zhangtengfei.xyz/article/b5e7337f.html</id>
     <published>2020-02-21T13:19:16.000Z</published>
     <updated>2020-03-18T09:16:30.112Z</updated>
     
@@ -493,9 +493,9 @@
     
     
     
-      <category term="Oracle" scheme="http://www.zhangtengfei.xyz/tags/Oracle/"/>
+      <category term="Oracle" scheme="https://www.zhangtengfei.xyz/tags/Oracle/"/>
     
-      <category term="数据库" scheme="http://www.zhangtengfei.xyz/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+      <category term="数据库" scheme="https://www.zhangtengfei.xyz/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
   </entry>
   
