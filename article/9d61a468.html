@@ -18,7 +18,7 @@
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https:&#x2F;&#x2F;www.zhangtengfei.xyz&#x2F;article&#x2F;9d61a468&#x2F;MVC_01.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;www.zhangtengfei.xyz&#x2F;article&#x2F;9d61a468&#x2F;MVC_02.png">
-<meta property="og:updated_time" content="2020-06-18T02:59:33.729Z">
+<meta property="og:updated_time" content="2020-07-09T06:17:22.906Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;www.zhangtengfei.xyz&#x2F;article&#x2F;9d61a468&#x2F;MVC_01.png">
   
@@ -383,26 +383,12 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 <h2 id="SpringMVC运行流程">SpringMVC运行流程</h2>
 <p><img src="/article/9d61a468/MVC_02.png" alt="流程图"></p>
 <h3 id="基本步骤：">基本步骤：</h3>
-<ol>
-<li>
-<p>客户端请求提交到<strong>DispatcherServlet</strong></p>
-</li>
-<li>
-<p>由DispatcherServlet控制器查询一个或多个<strong>HandlerMapping</strong>，找到处理请求的<strong>Controller</strong></p>
-</li>
-<li>
-<p>DispatcherServlet将请求提交到Controller（也称为Handler）</p>
-</li>
-<li>
-<p>Controller调用业务逻辑处理后，返回<strong>ModelAndView</strong></p>
-</li>
-<li>
-<p>DispatcherServlet查询一个或多个<strong>ViewResoler</strong>视图解析器，找到ModelAndView指定的视图</p>
-</li>
-<li>
-<p>视图负责将结果显示到客户端</p>
-</li>
-</ol>
+<p>1). 客户端请求提交到<strong>DispatcherServlet</strong></p>
+<p>2). 由DispatcherServlet控制器查询一个或多个<strong>HandlerMapping</strong>，找到处理请求的<strong>Controller</strong></p>
+<p>3). DispatcherServlet将请求提交到Controller（也称为Handler）</p>
+<p>4). Controller调用业务逻辑处理后，返回<strong>ModelAndView</strong></p>
+<p>5). DispatcherServlet查询一个或多个<strong>ViewResoler</strong>视图解析器，找到ModelAndView指定的视图</p>
+<p>6). 视图负责将结果显示到客户端</p>
 <h2 id="REST">REST</h2>
 <h3 id="一-REST简介">一. REST简介</h3>
 <p><strong>REST</strong>：即 Representational State Transfer。<strong>（资源）表现层状态转化。是目前最流行的一种互联网软件架构</strong>。它结构清晰、符合标准、易于理解、扩展方便，所以正得到越来越多网站的采用</p>
