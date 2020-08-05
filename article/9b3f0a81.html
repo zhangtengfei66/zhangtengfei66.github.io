@@ -26,7 +26,7 @@
 <meta property="og:image" content="https:&#x2F;&#x2F;www.zhangtengfei.xyz&#x2F;article&#x2F;9b3f0a81&#x2F;%E6%A8%A1%E6%9D%BF%E5%BC%95%E6%93%8E_04.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;www.zhangtengfei.xyz&#x2F;article&#x2F;9b3f0a81&#x2F;%E6%A8%A1%E6%9D%BF%E5%BC%95%E6%93%8E_06.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;www.zhangtengfei.xyz&#x2F;article&#x2F;9b3f0a81&#x2F;%E6%A8%A1%E6%9D%BF%E5%BC%95%E6%93%8E_05.png">
-<meta property="og:updated_time" content="2020-08-04T02:01:02.520Z">
+<meta property="og:updated_time" content="2020-08-05T02:10:27.706Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;www.zhangtengfei.xyz&#x2F;article&#x2F;9b3f0a81&#x2F;%E6%97%A5%E5%BF%97_07.png">
   
@@ -339,11 +339,11 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 </ul>
 <h3 id="二-概念">二. 概念</h3>
 <p>1、SpringBoot启动会加载大量的自动配置类<br>
-2、我们看我们需要的功能有没有在SpringBoot默认写好的自动配置类当中；<br>
-3、我们再来看这个自动配置类中到底配置了哪些组件；（只要我们要用的组件存在在其中，我们就不需要再手动配置了）<br>
+2、我们需要的功能已经在SpringBoot默认写好的自动配置类当中；<br>
+3、只要自动配置类中存在的配置组件，我们就不需要再手动配置了；<br>
 4、给容器中自动配置类添加组件的时候，会从properties类中获取某些属性。我们只需要在配置文件中指定这些属性的值即可；</p>
-<p>**xxxxAutoConfigurartion：自动配置类；**给容器中添加组件</p>
-<p><strong>xxxxProperties:封装配置文件中相关属性；</strong></p>
+<p><strong>xxxxAutoConfigurartion：自动配置类</strong>，给容器中添加组件<br>
+<strong>xxxxProperties:封装配置文件中相关属性；</strong></p>
 <h3 id="三-细节">三. 细节</h3>
 <p><strong>@Conditional派生注解（Spring注解版原生的@Conditional作用）</strong></p>
 <p>作用：必须是@Conditional指定的条件成立，才给容器中添加组件，配置配里面的所有内容才生效；</p>
@@ -410,13 +410,13 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#开启springboot的调试类</span></span><br><span class="line"><span class="attr">debug:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
 <p>运行结果：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">============================</span><br><span class="line">CONDITIONS EVALUATION REPORT</span><br><span class="line">============================</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Positive matches:</span><br><span class="line">-----------------</span><br><span class="line"></span><br><span class="line">   AopAutoConfiguration matched:</span><br><span class="line">      - <span class="meta">@ConditionalOnProperty</span> (spring.aop.auto=<span class="keyword">true</span>) matched (OnPropertyCondition)</span><br><span class="line">...</span><br><span class="line">          </span><br><span class="line">          </span><br><span class="line">Negative matches:</span><br><span class="line">-----------------</span><br><span class="line"></span><br><span class="line">   ActiveMQAutoConfiguration:</span><br><span class="line">      Did not match:</span><br><span class="line">         - <span class="meta">@ConditionalOnClass</span> did not find required <span class="class"><span class="keyword">class</span> '<span class="title">javax</span>.<span class="title">jms</span>.<span class="title">ConnectionFactory</span>' (<span class="title">OnClassCondition</span>)</span></span><br><span class="line"><span class="class">...</span></span><br><span class="line"><span class="class">             </span></span><br><span class="line"><span class="class">          </span></span><br><span class="line">Exclusions:</span><br><span class="line">-----------</span><br><span class="line"></span><br><span class="line">    None</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Unconditional classes:</span><br><span class="line">----------------------</span><br><span class="line"></span><br><span class="line">    org.springframework.boot.autoconfigure.context.ConfigurationPropertiesAutoConfiguration</span><br><span class="line"></span><br><span class="line">    org.springframework.boot.autoconfigure.context.LifecycleAutoConfiguration</span><br><span class="line"></span><br><span class="line">    org.springframework.boot.autoconfigure.context.PropertyPlaceholderAutoConfiguration</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
-<p><strong>Positive matches:（自动配置类启用的：正匹配）</strong></p>
-<p><strong>Negative matches:（没有启动，没有匹配成功的自动配置类：负匹配）</strong></p>
-<p><strong>Unconditional classes: （没有条件的类）</strong></p>
+<p><strong>Positive matches:（自动配置类启用的：正匹配）</strong><br>
+<strong>Negative matches:（没有启动，没有匹配成功的自动配置类：负匹配）</strong><br>
+<strong>Unconditional classes: （没有条件的类）</strong></p>
 <h2 id="日志">日志</h2>
 <h3 id="一-日志框架">一. 日志框架</h3>
-<p><strong>市面上的日志框架；</strong></p>
-<p>JUL、JCL、Jboss-logging、logback、log4j、log4j2、slf4j…</p>
+<p><strong>市面上的日志框架；</strong><br>
+JUL、JCL、Jboss-logging、logback、log4j、log4j2、slf4j…</p>
 <table>
 <thead>
 <tr>
@@ -431,38 +431,38 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 </tr>
 </tbody>
 </table>
-<p>左边选一个门面（抽象层）、右边来选一个实现；</p>
-<p>日志门面：  SLF4J；</p>
-<p>日志实现：Logback；</p>
+<p>左边选一个门面（抽象层）、右边来选一个实现；<br>
+日志门面：  SLF4J；<br>
+日志实现：Logback；</p>
 <p>SpringBoot：底层是Spring框架，Spring框架默认是用JCL；‘</p>
 <p>​	<strong>==SpringBoot选用 SLF4j和logback；==</strong></p>
 <h3 id="二-SLF4j使用">二. SLF4j使用</h3>
 <h4 id="1、如何使用SLF4j">1、如何使用SLF4j</h4>
-<p>官网：<a href="https://www.slf4j.org" target="_blank" rel="noopener">https://www.slf4j.org</a></p>
-<p>以后开发的时候，日志记录方法的调用，不应该来直接调用日志的实现类，而是调用日志抽象层里面的方法；</p>
-<p>给系统里面导入slf4j的jar和  logback的实现jar</p>
+<p>官网：<a href="https://www.slf4j.org" target="_blank" rel="noopener">https://www.slf4j.org</a><br>
+以后开发的时候，日志记录方法的调用，不应该来直接调用日志的实现类，而是调用日志抽象层里面的方法；<br>
+给系统里面导入slf4j的jar和  logback的实现jar</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> org.slf4j.Logger;</span><br><span class="line"><span class="keyword">import</span> org.slf4j.LoggerFactory;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloWorld</span> </span>&#123;</span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    Logger logger = LoggerFactory.getLogger(HelloWorld<span class="class">.<span class="keyword">class</span>)</span>;</span><br><span class="line">    logger.info(<span class="string">"Hello World"</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>图示；</p>
 <p><img src="/article/9b3f0a81/%E6%97%A5%E5%BF%97_07.png" alt="images/concrete-bindings.png"></p>
 <p>每一个日志的实现框架都有自己的配置文件。使用slf4j以后，<strong>配置文件还是做成日志实现框架自己本身的配置文件；</strong></p>
 <h4 id="2、统一日志记录">2、统一日志记录</h4>
-<p>SpringBoot（slf4j+logback）: Spring（commons-logging）、Hibernate（jboss-logging）、MyBatis、xxxx</p>
-<p>统一日志记录，即使是别的框架和我一起统一使用slf4j进行输出</p>
+<p>SpringBoot（slf4j+logback）: Spring（commons-logging）、Hibernate（jboss-logging）、MyBatis、xxxx<br>
+统一日志记录，即使是别的框架和我一起统一使用slf4j进行输出</p>
 <p><img src="/article/9b3f0a81/%E6%97%A5%E5%BF%97_08.png" alt></p>
 <p><strong>如何让系统中所有的日志都统一到slf4j；</strong></p>
-<p>==1、将系统中其他日志框架先排除出去；==</p>
-<p>==2、用<strong>中间包</strong>来替换原有的日志框架；==</p>
-<p>==3、我们导入slf4j其他的实现==</p>
+<p>==1、将系统中其他日志框架先排除出去；==<br>
+==2、用<strong>中间包</strong>来替换原有的日志框架；==<br>
+==3、我们导入slf4j其他的实现==</p>
 <h3 id="三-SpringBoot日志关系">三. SpringBoot日志关系</h3>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>SpringBoot使用它来做日志功能；</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-logging<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>底层依赖关系</p>
 <p><img src="/article/9b3f0a81/%E6%97%A5%E5%BF%97_09.png" alt></p>
-<p>总结：</p>
-<p>​	1）、SpringBoot底层也是使用slf4j+logback的方式进行日志记录</p>
-<p>​	2）、SpringBoot也把其他的日志都替换成了slf4j；</p>
-<p>​	3）、中间替换包</p>
+<p>总结：<br>
+​	1）、SpringBoot底层也是使用slf4j+logback的方式进行日志记录<br>
+​	2）、SpringBoot也把其他的日志都替换成了slf4j；<br>
+​	3）、中间替换包</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@SuppressWarnings</span>(<span class="string">"rawtypes"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">LogFactory</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">static</span> String UNSUPPORTED_OPERATION_IN_JCL_OVER_SLF4J = <span class="string">"http://www.slf4j.org/codes.html#unsupported_operation_in_jcl_over_slf4j"</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">static</span> LogFactory logFactory = <span class="keyword">new</span> SLF4JLogFactory();</span><br></pre></td></tr></table></figure>
 <p><img src="/article/9b3f0a81/%E6%97%A5%E5%BF%97_10.png" alt></p>
 <p>​	4）、如果我们要引入其他框架，一定要把这个框架的默认日志依赖移除掉</p>
@@ -486,7 +486,7 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
     %d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{50} - %msg%n
 </code></pre>
 <p>SpringBoot修改日志的默认配置</p>
-<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">logging.level.com.atguigu</span>=<span class="string">trace</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#logging.path=</span></span><br><span class="line"><span class="comment"># 不指定路径在当前项目下生成springboot.log日志</span></span><br><span class="line"><span class="comment"># 可以指定完整的路径；</span></span><br><span class="line"><span class="comment">#logging.file=G:/springboot.log</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 在当前磁盘的根路径下创建spring文件夹和里面的log文件夹；使用 spring.log 作为默认文件</span></span><br><span class="line"><span class="meta">logging.path</span>=<span class="string">/spring/log</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#  在控制台输出的日志的格式</span></span><br><span class="line"><span class="meta">logging.pattern.console</span>=<span class="string">%d&#123;yyyy-MM-dd&#125; [%thread] %-5level %logger&#123;50&#125; - %msg%n</span></span><br><span class="line"><span class="comment"># 指定文件中日志输出的格式</span></span><br><span class="line"><span class="meta">logging.pattern.file</span>=<span class="string">%d&#123;yyyy-MM-dd&#125; === [%thread] === %-5level === %logger&#123;50&#125; ==== %msg%n</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#设置日志级别</span></span><br><span class="line"><span class="meta">logging.level.com.teng</span>=<span class="string">trace</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 不指定路径在当前项目下生成springboot.log日志</span></span><br><span class="line"><span class="meta">logging.file.name</span>=<span class="string">SpringBoot.log</span></span><br><span class="line"><span class="comment"># 可以指定完整的路径；</span></span><br><span class="line"><span class="comment">#logging.file.name=G:/SpringBoot.log</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#在当前磁盘的根路径下创建spring文件夹和里面的log文件夹，默认生成名为spring.log日志文件</span></span><br><span class="line"><span class="meta">logging.file.path</span>=<span class="string">spring/log</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#在控制台输出的日志的格式</span></span><br><span class="line"><span class="meta">logging.pattern.console</span>=<span class="string">%d&#123;yyyy-MM-dd&#125; [%thread] %-5level %logger&#123;50&#125; - %msg%n</span></span><br><span class="line"><span class="comment">#指定文件中日志输出的格式</span></span><br><span class="line"><span class="meta">logging.pattern.file</span>=<span class="string">%d&#123;yyyy-MM-dd&#125;-&gt;[%thread]-&gt;%-5level-&gt;%logger&#123;50&#125;-&gt;%msg%n</span></span><br></pre></td></tr></table></figure>
 <table>
 <thead>
 <tr>
@@ -556,13 +556,13 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">   <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-web<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">exclusions</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">exclusion</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-logging<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">exclusion</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">exclusions</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-log4j2<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <h2 id="静态资源">静态资源</h2>
 <p><strong>使用SpringBoot的步骤：</strong></p>
-<p>1、创建一个SpringBoot应用，选择我们需要的模块，SpringBoot就会默认将我们的需要的模块自动配置好</p>
-<p>2、手动在配置文件中配置部分配置项目就可以运行起来了</p>
-<p>3、专注编写业务代码，不需要考虑以前那样一大堆的配置了。</p>
+<p>1、创建一个SpringBoot应用，选择我们需要的模块，SpringBoot就会默认将我们的需要的模块自动配置好<br>
+2、手动在配置文件中配置部分配置项目就可以运行起来了<br>
+3、专注编写业务代码，不需要考虑以前那样一大堆的配置了。</p>
 <h3 id="一-静态资源映射规则">一. 静态资源映射规则</h3>
-<p>SpringBoot中，SpringMVC的web配置都在 WebMvcAutoConfiguration 这个配置类里面；</p>
-<p>我们可以去看看 WebMvcAutoConfigurationAdapter 中有很多配置方法；</p>
-<p>有一个方法：addResourceHandlers 添加资源处理</p>
+<p>SpringBoot中，SpringMVC的web配置都在 WebMvcAutoConfiguration 这个配置类里面；<br>
+我们可以去看看 WebMvcAutoConfigurationAdapter 中有很多配置方法；<br>
+有一个方法：addResourceHandlers 添加资源处理</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">addResourceHandlers</span><span class="params">(ResourceHandlerRegistry registry)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (!<span class="keyword">this</span>.resourceProperties.isAddMappings()) &#123;</span><br><span class="line">        <span class="comment">// 已禁用默认资源处理</span></span><br><span class="line">        logger.debug(<span class="string">"Default resource handling disabled"</span>);</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 缓存控制</span></span><br><span class="line">    Duration cachePeriod = <span class="keyword">this</span>.resourceProperties.getCache().getPeriod();</span><br><span class="line">    CacheControl cacheControl = <span class="keyword">this</span>.resourceProperties.getCache().getCachecontrol().toHttpCacheControl();</span><br><span class="line">    <span class="comment">// webjars 配置</span></span><br><span class="line">    <span class="keyword">if</span> (!registry.hasMappingForPattern(<span class="string">"/webjars/**"</span>)) &#123;</span><br><span class="line">        customizeResourceHandlerRegistration(registry.addResourceHandler(<span class="string">"/webjars/**"</span>)</span><br><span class="line">                                             .addResourceLocations(<span class="string">"classpath:/META-INF/resources/webjars/"</span>)</span><br><span class="line">                                             .setCachePeriod(getSeconds(cachePeriod)).setCacheControl(cacheControl));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 静态资源配置</span></span><br><span class="line">    String staticPathPattern = <span class="keyword">this</span>.mvcProperties.getStaticPathPattern();</span><br><span class="line">    <span class="keyword">if</span> (!registry.hasMappingForPattern(staticPathPattern)) &#123;</span><br><span class="line">        customizeResourceHandlerRegistration(registry.addResourceHandler(staticPathPattern)</span><br><span class="line">                                             .addResourceLocations(getResourceLocations(<span class="keyword">this</span>.resourceProperties.getStaticLocations()))</span><br><span class="line">                                             .setCachePeriod(getSeconds(cachePeriod)).setCacheControl(cacheControl));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>源码中所有的 /webjars/** ， 都需要去 classpath:/META-INF/resources/webjars/ 找对应的资源；</p>
 <h3 id="二-webjars">二. webjars</h3>
@@ -973,15 +973,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">Java</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">分页</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
