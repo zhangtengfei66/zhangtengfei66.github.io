@@ -8,20 +8,21 @@
   <link rel="dns-prefetch" href="https://www.zhangtengfei.xyz">
   <title>SpringBoot学习笔记(5) | (●ˇ∀ˇ●)</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="SpringBoot学习笔记">
+  <meta name="description" content="SpringBoot学习笔记 🌏🌏🌏 SpringBoot项目实践，国际化配置，拦截器，CRUD…">
 <meta name="keywords" content="SpringBoot">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SpringBoot学习笔记(5)">
 <meta property="og:url" content="https:&#x2F;&#x2F;www.zhangtengfei.xyz&#x2F;article&#x2F;82243bc0.html">
 <meta property="og:site_name" content="(●ˇ∀ˇ●)">
-<meta property="og:description" content="SpringBoot学习笔记">
+<meta property="og:description" content="SpringBoot学习笔记 🌏🌏🌏 SpringBoot项目实践，国际化配置，拦截器，CRUD…">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https:&#x2F;&#x2F;www.zhangtengfei.xyz&#x2F;article&#x2F;82243bc0&#x2F;SpringMvc%E8%87%AA%E5%8A%A8%E9%85%8D%E7%BD%AE_01.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;www.zhangtengfei.xyz&#x2F;article&#x2F;82243bc0&#x2F;SpringMvc%E8%87%AA%E5%8A%A8%E9%85%8D%E7%BD%AE_02.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;www.zhangtengfei.xyz&#x2F;article&#x2F;82243bc0&#x2F;SpringMvc%E8%87%AA%E5%8A%A8%E9%85%8D%E7%BD%AE_03.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;www.zhangtengfei.xyz&#x2F;article&#x2F;82243bc0&#x2F;%E5%9B%BD%E9%99%85%E5%8C%96_04.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;www.zhangtengfei.xyz&#x2F;article&#x2F;82243bc0&#x2F;%E5%9B%BD%E9%99%85%E5%8C%96_05.png">
-<meta property="og:updated_time" content="2020-08-11T10:25:29.300Z">
+<meta property="og:image" content="https:&#x2F;&#x2F;www.zhangtengfei.xyz&#x2F;article&#x2F;82243bc0&#x2F;%E5%A2%9E%E5%88%A0%E6%94%B9%E6%9F%A5.png">
+<meta property="og:updated_time" content="2020-08-25T01:31:35.924Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;www.zhangtengfei.xyz&#x2F;article&#x2F;82243bc0&#x2F;SpringMvc%E8%87%AA%E5%8A%A8%E9%85%8D%E7%BD%AE_01.png">
   
@@ -319,6 +320,8 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
     <div class="article-entry" itemprop="articleBody">
       
         <p>SpringBoot学习笔记</p>
+<p>🌏🌏🌏</p>
+<p>SpringBoot项目实践，国际化配置，拦截器，CRUD…</p>
 <a id="more"></a>
 <h2 id="MVC自动配置原理">MVC自动配置原理</h2>
 <p>查看源码，看SpringBoot对我们的SpringMVC还做了哪些配置，包括如何扩展，如何定制。</p>
@@ -473,6 +476,7 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">td</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">a</span> <span class="attr">class</span>=<span class="string">"btn btn-sm btn-primary"</span> <span class="attr">th:href</span>=<span class="string">"@&#123;/emp/&#125;+$&#123;emp.getId()&#125;"</span>&gt;</span>编辑<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">a</span> <span class="attr">class</span>=<span class="string">"btn btn-sm btn-danger"</span> <span class="attr">th:href</span>=<span class="string">"@&#123;/deleteEmp/&#125;+$&#123;emp.getId()&#125;"</span>&gt;</span>删除<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>控制层中的删除方法</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//删除操作</span></span><br><span class="line"><span class="meta">@GetMapping</span>(<span class="string">"/deleteEmp/&#123;id&#125;"</span>)</span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">deleteEmp</span><span class="params">(@PathVariable(<span class="string">"id"</span>)</span> <span class="keyword">int</span> id)</span>&#123;</span><br><span class="line">    employeeDao.delete(id);</span><br><span class="line">    <span class="keyword">return</span> <span class="string">"redirect:/emps"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="/article/82243bc0/%E5%A2%9E%E5%88%A0%E6%94%B9%E6%9F%A5.png" alt="img"></p>
 
       
 
@@ -606,6 +610,15 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 
   
 <nav id="article-nav">
+  
+    <a href="/article/a9096803.html" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          SpringBoot学习笔记(6)
+        
+      </div>
+    </a>
   
   
     <a href="/article/9b3f0a81.html" id="article-nav-older" class="article-nav-link-wrap">
@@ -832,15 +845,31 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">SpringBoot</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">Spring</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">SpringMVC</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">SpringBoot</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">JSR303校验</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">SLF4j</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">Thymeleaf</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">SpringSecurity</a>
               </li>
              
               <li class="article-tag-list-item">
