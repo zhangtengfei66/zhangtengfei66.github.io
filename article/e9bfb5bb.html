@@ -18,7 +18,7 @@
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https:&#x2F;&#x2F;www.zhangtengfei.xyz&#x2F;article&#x2F;e9bfb5bb&#x2F;integration_01.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;www.zhangtengfei.xyz&#x2F;article&#x2F;e9bfb5bb&#x2F;integration_02.png">
-<meta property="og:updated_time" content="2020-06-29T07:04:44.838Z">
+<meta property="og:updated_time" content="2020-09-10T13:57:00.048Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;www.zhangtengfei.xyz&#x2F;article&#x2F;e9bfb5bb&#x2F;integration_01.png">
   
@@ -297,7 +297,9 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 <p>实现Spring和MyBatis整合…</p>
 <a id="more"></a>
 <h2 id="思路">思路</h2>
-<p>$SqlSessionFactory -&gt; SqlSession -&gt;StudentMapper -&gt;CRUD$</p>
+<p>$$<br>
+SqlSessionFactory -&gt; SqlSession -&gt;StudentMapper -&gt;CRUD<br>
+$$</p>
 <p>可以发现 ，MyBatis最终是通过<code>SqlSessionFactory</code>来操作数据库，Spring整合MyBatis 其实就是 将MyBatis的<code>SqlSessionFactory</code> 交给Spring。</p>
 <h2 id="图书管理项目">图书管理项目</h2>
 <h3 id="一-需要的jar包">一. 需要的jar包</h3>
