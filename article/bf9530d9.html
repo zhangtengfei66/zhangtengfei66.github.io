@@ -16,11 +16,11 @@
 <meta property="og:site_name" content="(●ˇ∀ˇ●)">
 <meta property="og:description" content="Vue学习笔记">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https:&#x2F;&#x2F;www.zhangtengfei.xyz&#x2F;article&#x2F;bf9530d9&#x2F;C:%5CUsers%5C%E8%85%BE%E9%A3%9E%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200921090816577.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;www.zhangtengfei.xyz&#x2F;article&#x2F;bf9530d9&#x2F;C:%5CUsers%5C%E8%85%BE%E9%A3%9E%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200921113657169.png">
-<meta property="og:updated_time" content="2020-09-25T02:43:02.164Z">
+<meta property="og:image" content="https:&#x2F;&#x2F;www.zhangtengfei.xyz&#x2F;article&#x2F;bf9530d9&#x2F;Vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-1%5CVue_01.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;www.zhangtengfei.xyz&#x2F;article&#x2F;bf9530d9&#x2F;Vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-1%5CVue_02.png">
+<meta property="og:updated_time" content="2020-10-04T11:05:42.502Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https:&#x2F;&#x2F;www.zhangtengfei.xyz&#x2F;article&#x2F;bf9530d9&#x2F;C:%5CUsers%5C%E8%85%BE%E9%A3%9E%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200921090816577.png">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;www.zhangtengfei.xyz&#x2F;article&#x2F;bf9530d9&#x2F;Vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-1%5CVue_01.png">
   
     <link rel="alternative" href="/atom.xml" title="(●ˇ∀ˇ●)" type="application/atom+xml">
   
@@ -314,7 +314,7 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 <li>函数: function</li>
 </ul>
 <h3 id="Vue中的MVVM">Vue中的MVVM</h3>
-<p><img src="/article/bf9530d9/C:%5CUsers%5C%E8%85%BE%E9%A3%9E%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200921090816577.png" alt="image-20200921090816577"></p>
+<p><img src="/article/bf9530d9/Vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-1%5CVue_01.png" alt="image-20200921090816577"></p>
 <p>View层：</p>
 <ul>
 <li>视图层</li>
@@ -336,7 +336,7 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 </ul>
 <h3 id="Vue生命周期">Vue生命周期</h3>
 <p>生命周期: 事物从诞生到消亡的整个过程.</p>
-<p><img src="/article/bf9530d9/C:%5CUsers%5C%E8%85%BE%E9%A3%9E%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200921113657169.png" alt="image-20200921113657169"></p>
+<p><img src="/article/bf9530d9/Vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-1%5CVue_02.png" alt="image-20200921113657169"></p>
 <p>##Vue指令</p>
 <h3 id="hello测试">hello测试</h3>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;app&quot;&gt;</span><br><span class="line">    &lt;h3&gt;&#123;&#123;message&#125;&#125;&lt;/h3&gt;</span><br><span class="line">    &lt;h6&gt;署名：&#123;&#123;name&#125;&#125;&lt;/h6&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;script type=&quot;text/javascript&quot; src=&quot;js/vue.js&quot; &gt;&lt;/script&gt;</span><br><span class="line">&lt;!--编程范式：声明式编程--&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">    //			let:定义变量;const:定义常量</span><br><span class="line">    const app =  new Vue(&#123;</span><br><span class="line">        el: &apos;#app&apos;,//用于挂载要管理的数据</span><br><span class="line">        data: &#123;//定义数据</span><br><span class="line">            message: &quot;Hello World!&quot;,</span><br><span class="line">            name: &quot;张三&quot;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
@@ -535,6 +535,15 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 
   
 <nav id="article-nav">
+  
+    <a href="/article/94b8631a.html" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Vue学习笔记(2)
+        
+      </div>
+    </a>
   
   
     <a href="/article/2e9174cc.html" id="article-nav-older" class="article-nav-link-wrap">
