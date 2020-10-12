@@ -18,7 +18,7 @@
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https:&#x2F;&#x2F;www.zhangtengfei.xyz&#x2F;article&#x2F;cd65ad07&#x2F;SpringBoot%E6%BA%90%E7%A2%BC_01.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;www.zhangtengfei.xyz&#x2F;article&#x2F;cd65ad07&#x2F;SpringBoot%E6%BA%90%E7%A2%BC_02.png">
-<meta property="og:updated_time" content="2020-07-31T02:29:27.544Z">
+<meta property="og:updated_time" content="2020-10-06T06:49:53.307Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;www.zhangtengfei.xyz&#x2F;article&#x2F;cd65ad07&#x2F;SpringBoot%E6%BA%90%E7%A2%BC_01.png">
   
@@ -135,15 +135,15 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 		<nav class="header-smart-menu">
     		
     			
-    			<a q-on="click: openSlider(e, 'innerArchive')" href="javascript:void(0)" target="_blank" rel="noopener">所有文章</a>
+    			<a q-on="click: openSlider(e, 'innerArchive')" target="_blank" href="javascript:void(0)">所有文章</a>
     			
             
     			
-    			<a q-on="click: openSlider(e, 'friends')" href="javascript:void(0)" target="_blank" rel="noopener">友链</a>
+    			<a q-on="click: openSlider(e, 'friends')" target="_blank" href="javascript:void(0)">友链</a>
     			
             
     			
-    			<a q-on="click: openSlider(e, 'aboutme')" href="javascript:void(0)" target="_blank" rel="noopener">关于我</a>
+    			<a q-on="click: openSlider(e, 'aboutme')" target="_blank" href="javascript:void(0)">关于我</a>
     			
             
 		</nav>
@@ -382,7 +382,7 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 <p><img src="/article/cd65ad07/SpringBoot%E6%BA%90%E7%A2%BC_01.png" alt="img"></p>
 <p><strong>SpringBoot所有的自动配置都是在启动时的时候扫描并加载，spring.factories所有的自动配置类都在这里买呢，但不一定生效，要判断条件是否成立，只要导入了对性的start，就有对应的启动器了，然后就可以自动装配成功。</strong></p>
 <p>所以，自动配置真正实现是从classpath中搜寻所有的META-INF/spring.factories配置文件 ，并将其中对应的 org.springframework.boot.autoconfigure. 包下的配置项，通过反射实例化为对应标注了 @Configuration的JavaConfig形式的IOC容器配置类 ， 然后将这些都汇总成为一个实例并加载到IOC容器中。</p>
-<p><strong>结论：</strong></p>
+<p><strong>结论</strong>：</p>
 <ol>
 <li>SpringBoot在启动的时候从类路径下的META-INF/spring.factories中获取EnableAutoConfiguration指定的值</li>
 <li>将这些值作为自动配置类导入容器 ， 自动配置类就生效 ， 帮我们进行自动配置工作；</li>
@@ -394,7 +394,7 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 <p><strong>SpringApplication.run分析</strong></p>
 <p>分析该方法主要分两部分，一部分是SpringApplication的实例化，二是run方法的执行；</p>
 <h4 id="SpringApplication">SpringApplication</h4>
-<p><strong>这个类主要做了以下四件事情：</strong></p>
+<p><strong>这个类主要做了以下四件事情</strong>：</p>
 <p>1、推断应用的类型是普通的项目还是Web项目<br>
 2、查找并加载所有可用初始化器 ， 设置到initializers属性中<br>
 3、找出所有的应用程序监听器，设置到listeners属性中<br>

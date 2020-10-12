@@ -25,7 +25,7 @@
 <meta property="og:image" content="https:&#x2F;&#x2F;www.zhangtengfei.xyz&#x2F;article&#x2F;d47e9c46&#x2F;JSR303%E6%A0%A1%E9%AA%8C_07.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;www.zhangtengfei.xyz&#x2F;article&#x2F;d47e9c46&#x2F;yaml%E9%85%8D%E7%BD%AE_09.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;www.zhangtengfei.xyz&#x2F;article&#x2F;d47e9c46&#x2F;JSR303%E6%A0%A1%E9%AA%8C_08.png">
-<meta property="og:updated_time" content="2020-08-25T01:34:04.136Z">
+<meta property="og:updated_time" content="2020-10-06T06:49:23.991Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;www.zhangtengfei.xyz&#x2F;article&#x2F;d47e9c46&#x2F;yaml%E9%85%8D%E7%BD%AE_01.png">
   
@@ -142,15 +142,15 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 		<nav class="header-smart-menu">
     		
     			
-    			<a q-on="click: openSlider(e, 'innerArchive')" href="javascript:void(0)" target="_blank" rel="noopener">所有文章</a>
+    			<a q-on="click: openSlider(e, 'innerArchive')" target="_blank" href="javascript:void(0)">所有文章</a>
     			
             
     			
-    			<a q-on="click: openSlider(e, 'friends')" href="javascript:void(0)" target="_blank" rel="noopener">友链</a>
+    			<a q-on="click: openSlider(e, 'friends')" target="_blank" href="javascript:void(0)">友链</a>
     			
             
     			
-    			<a q-on="click: openSlider(e, 'aboutme')" href="javascript:void(0)" target="_blank" rel="noopener">关于我</a>
+    			<a q-on="click: openSlider(e, 'aboutme')" target="_blank" href="javascript:void(0)">关于我</a>
     			
             
 		</nav>
@@ -316,7 +316,7 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 </ul>
 </li>
 </ul>
-<p>**配置文件的作用 ：**修改SpringBoot自动配置的默认值，因为SpringBoot在底层都给我们自动配置好了；</p>
+<p>**配置文件的作用 **：修改SpringBoot自动配置的默认值，因为SpringBoot在底层都给我们自动配置好了；</p>
 <p>比如我们可以在配置文件中修改Tomcat 默认启动的端口号。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">server.port=8081</span><br></pre></td></tr></table></figure>
 <h3 id="1-yaml概述">1. yaml概述</h3>
@@ -371,7 +371,7 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 <p>结果：所有值全部注入成功！</p>
 <p><img src="/article/d47e9c46/yaml%E9%85%8D%E7%BD%AE_03.png" alt="img"></p>
 <h3 id="4-加载指定配置文件">4. 加载指定配置文件</h3>
-<p>**@PropertySource ：**加载指定的配置文件；</p>
+<p>**@PropertySource **：加载指定的配置文件；</p>
 <p><strong>@configurationProperties</strong>：默认从全局配置文件中获取值；</p>
 <p>1、我们去在resources目录下新建一个<strong>person.properties</strong>文件</p>
 <figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">name</span>=<span class="string">火离</span></span><br></pre></td></tr></table></figure>
@@ -393,7 +393,7 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 2、<strong>松散绑定</strong>：这个什么意思呢? 比如我的yml中写的last-name，这个和lastName是一样的， - 后面跟着的字母默认是大写的。这就是松散绑定。<br>
 3、JSR303数据校验 ， 这个就是我们可以在字段是增加一层过滤器验证 ， 可以保证数据的合法性<br>
 4、复杂类型封装，yml中可以封装对象 ， 使用value就不支持</p>
-<p><strong>结论：</strong></p>
+<p><strong>结论</strong>：</p>
 <p>配置yml和配置properties都可以获取到值 ， 强烈推荐 yml；<br>
 如果我们在某个业务中，只需要获取配置文件中的某个值，可以使用一下 @value；<br>
 如果说，我们专门编写了一个JavaBean来和配置文件进行一一映射，就直接@configurationProperties；</p>
@@ -412,7 +412,7 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 <h3 id="1-多环境切换">1. 多环境切换</h3>
 <p><strong>profile</strong>是Spring对不同环境提供不同配置功能的支持，可以通过激活不同的环境版本，实现快速切换环境;</p>
 <p>我们在主配置文件编写的时候，文件名可以是 application-{profile}.properties/yml , 用来指定多个环境版本；</p>
-<p><strong>例如：</strong></p>
+<p><strong>例如</strong>：</p>
 <ul>
 <li>application-test.properties 代表测试环境配置</li>
 <li>application-dev.properties 代表开发环境配置</li>
