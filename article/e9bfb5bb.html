@@ -676,6 +676,22 @@ $$</p>
         });
     }
 </script>
+<script type="text/javascript">
+   fetch('https://v1.hitokoto.cn/?c=i&encode=text')
+    .then(response => response.json())
+    .then(data => {
+      document.getElementById("veditor").setAttribute("placeholder",data.hitokoto+"__"+data.from);
+    })
+    .catch(console.error)
+</script>
+<style>
+.v[data-class=v] .veditor {
+    background-image: url(https://gitee.com/cungudafa/source/raw/master/img/gif/Sitich/Sitich30.gif);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right;
+}
+</style>
   </section>
 
 <!--valine评论系统-->
