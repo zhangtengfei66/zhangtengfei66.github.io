@@ -881,6 +881,39 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 
 <!--valine评论系统-->
 
+    <section id="comments" class="comments">
+      <style>
+        .comments{margin:30px;padding:10px;background:#fff}
+        @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
+      </style>
+      <div id="vcomment" class="comment"></div> 
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+   var notify = 'true' == true ? true : false;
+   var verify = 'false' == true ? true : false;
+    window.onload = function() {
+        new Valine({
+            el: '.comment',
+            notify: notify,
+            verify: verify,
+            app_id: "QtaKYgEltRAtkh7xqS2NpMvf-9Nh9j0Va",
+            app_key: "i84Q8UmWG0WiMyPGlUxEiREG",
+            placeholder: "ヾﾉ≧∀≦)o欢迎评论!",
+            avatar:"monsterid"
+        });
+    }
+</script>
+<style>
+.v[data-class=v] .veditor {
+    background-image: url(https://gitee.com/cungudafa/source/raw/master/img/gif/Sitich/Sitich30.gif);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right;
+}
+</style>
+  </section>
+
 <!--valine评论系统-->
   
   
