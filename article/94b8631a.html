@@ -5,23 +5,23 @@
   
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <link rel="dns-prefetch" href="https://www.zhangtengfei.xyz">
+  <link rel="dns-prefetch" href="https://www.tengfei.eu.org">
   <title>Vue学习笔记(2) | (●ˇ∀ˇ●)</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="Vue学习笔记 ES6，事件监听，条件判断，循环遍历，双向绑定…">
 <meta name="keywords" content="Vue">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Vue学习笔记(2)">
-<meta property="og:url" content="https:&#x2F;&#x2F;www.zhangtengfei.xyz&#x2F;article&#x2F;94b8631a.html">
+<meta property="og:url" content="https:&#x2F;&#x2F;www.tengfei.eu.org&#x2F;article&#x2F;94b8631a.html">
 <meta property="og:site_name" content="(●ˇ∀ˇ●)">
 <meta property="og:description" content="Vue学习笔记 ES6，事件监听，条件判断，循环遍历，双向绑定…">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https:&#x2F;&#x2F;www.zhangtengfei.xyz&#x2F;article&#x2F;94b8631a&#x2F;vue_01.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;www.zhangtengfei.xyz&#x2F;article&#x2F;94b8631a&#x2F;vue_02.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;www.zhangtengfei.xyz&#x2F;article&#x2F;94b8631a&#x2F;vue_03.png">
-<meta property="og:updated_time" content="2020-10-10T02:54:08.216Z">
+<meta property="og:image" content="https:&#x2F;&#x2F;www.tengfei.eu.org&#x2F;article&#x2F;94b8631a&#x2F;vue_01.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;www.tengfei.eu.org&#x2F;article&#x2F;94b8631a&#x2F;vue_02.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;www.tengfei.eu.org&#x2F;article&#x2F;94b8631a&#x2F;vue_03.png">
+<meta property="og:updated_time" content="2021-09-07T06:55:30.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https:&#x2F;&#x2F;www.zhangtengfei.xyz&#x2F;article&#x2F;94b8631a&#x2F;vue_01.png">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;www.tengfei.eu.org&#x2F;article&#x2F;94b8631a&#x2F;vue_01.png">
   
     <link rel="alternative" href="/atom.xml" title="(●ˇ∀ˇ●)" type="application/atom+xml">
   
@@ -312,7 +312,7 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 <h3 id="对象增强写法">对象增强写法</h3>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  // const obj = new Object()</span><br><span class="line"></span><br><span class="line">  // const obj = &#123;</span><br><span class="line">  //   name: &apos;why&apos;,</span><br><span class="line">  //   age: 18,</span><br><span class="line">  //   run: function () &#123;</span><br><span class="line">  //     console.log(&apos;在奔跑&apos;);</span><br><span class="line">  //   &#125;,</span><br><span class="line">  //   eat: function () &#123;</span><br><span class="line">  //     console.log(&apos;在次东西&apos;);</span><br><span class="line">  //   &#125;</span><br><span class="line">  // &#125;</span><br><span class="line"></span><br><span class="line">  // 1.属性的增强写法</span><br><span class="line">  const name = &apos;why&apos;;</span><br><span class="line">  const age = 18;</span><br><span class="line">  const height = 1.88</span><br><span class="line">  // ES5的写法</span><br><span class="line">  // const obj = &#123;</span><br><span class="line">  //   name: name,</span><br><span class="line">  //   age: age,</span><br><span class="line">  //   height: height</span><br><span class="line">  // &#125;</span><br><span class="line">   const obj = &#123;</span><br><span class="line">     name,</span><br><span class="line">     age,</span><br><span class="line">     height,</span><br><span class="line">   &#125;</span><br><span class="line">  // console.log(obj);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  // 2.函数的增强写法</span><br><span class="line">  // ES5的写法</span><br><span class="line">  // const obj = &#123;</span><br><span class="line">  //   run: function () &#123;</span><br><span class="line">  //</span><br><span class="line">  //   &#125;,</span><br><span class="line">  //   eat: function () &#123;</span><br><span class="line">  //</span><br><span class="line">  //   &#125;</span><br><span class="line">  // &#125;</span><br><span class="line">  const obj = &#123;</span><br><span class="line">    run() &#123;</span><br><span class="line"></span><br><span class="line">    &#125;,</span><br><span class="line">    eat() &#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
 <h2 id="Vue事件监听">Vue事件监听</h2>
-<p>在前端开发中，我们需要经常和用于交互，这个时候，我们就必须监听用户发生的时间，比如点击、拖拽、键盘事件等等</p>
+<p>在前端开发中，我们需要经常和用户交互，这个时候，我们就必须监听用户发生的时间，比如点击、拖拽、键盘事件等等</p>
 <p>在Vue中使用使用v-on指令来监听事件</p>
 <p><strong>v-on介绍</strong>:</p>
 <p><strong>作用</strong>：绑定事件监听器</p>
@@ -427,7 +427,7 @@ trim修饰符可以过滤内容左右两边的空格。</p>
           
           <br></li>
           <li><strong>本文链接：</strong>
-          <a rel="license" href="https://www.zhangtengfei.xyz/article/94b8631a.html">https://www.zhangtengfei.xyz/article/94b8631a.html</a>
+          <a rel="license" href="https://www.tengfei.eu.org/article/94b8631a.html">https://www.tengfei.eu.org/article/94b8631a.html</a>
           <br></li>
           <li><strong>版权声明：</strong>
           本作品采用
@@ -504,7 +504,7 @@ trim修饰符可以过滤内容左右两边的空格。</p>
     <a class="close js-modal-close" href="javascript:;" target="_blank" rel="noopener"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://www.zhangtengfei.xyz/article/94b8631a.html" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://www.tengfei.eu.org/article/94b8631a.html" alt="微信分享二维码">
     </div>
 </div>
 
@@ -682,7 +682,7 @@ trim修饰符可以过滤内容左右两边的空格。</p>
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2019~2021 腾飞 | 
+    		&copy; 2019~2022 腾飞 | 
     		<a href="https://beian.miit.gov.cn/" target="_blank">豫ICP备2021016017号</a>
     	</div>
       	<div class="footer-right">
@@ -796,10 +796,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Maven</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">MyBatis</a>
               </li>
              
@@ -808,11 +804,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">NodeJS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">命令行窗口</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Maven</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -821,6 +813,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">数据库</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">NodeJS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">命令行窗口</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -836,15 +836,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">JSR303校验</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">SLF4j</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">Thymeleaf</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">JSR303校验</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -864,11 +864,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">注解</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Web框架</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Web框架</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">注解</a>
               </li>
              
               <li class="article-tag-list-item">

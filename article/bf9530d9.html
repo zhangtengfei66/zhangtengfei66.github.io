@@ -5,22 +5,22 @@
   
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <link rel="dns-prefetch" href="https://www.zhangtengfei.xyz">
+  <link rel="dns-prefetch" href="https://www.tengfei.eu.org">
   <title>Vue学习笔记(1) | (●ˇ∀ˇ●)</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="Vue学习笔记 简介，绑定属性，计算属性…">
 <meta name="keywords" content="Vue">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Vue学习笔记(1)">
-<meta property="og:url" content="https:&#x2F;&#x2F;www.zhangtengfei.xyz&#x2F;article&#x2F;bf9530d9.html">
+<meta property="og:url" content="https:&#x2F;&#x2F;www.tengfei.eu.org&#x2F;article&#x2F;bf9530d9.html">
 <meta property="og:site_name" content="(●ˇ∀ˇ●)">
 <meta property="og:description" content="Vue学习笔记 简介，绑定属性，计算属性…">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https:&#x2F;&#x2F;www.zhangtengfei.xyz&#x2F;article&#x2F;bf9530d9&#x2F;Vue_01.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;www.zhangtengfei.xyz&#x2F;article&#x2F;bf9530d9&#x2F;Vue_02.png">
-<meta property="og:updated_time" content="2020-10-10T02:53:03.503Z">
+<meta property="og:image" content="https:&#x2F;&#x2F;www.tengfei.eu.org&#x2F;article&#x2F;bf9530d9&#x2F;Vue_01.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;www.tengfei.eu.org&#x2F;article&#x2F;bf9530d9&#x2F;Vue_02.png">
+<meta property="og:updated_time" content="2021-09-07T02:01:54.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https:&#x2F;&#x2F;www.zhangtengfei.xyz&#x2F;article&#x2F;bf9530d9&#x2F;Vue_01.png">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;www.tengfei.eu.org&#x2F;article&#x2F;bf9530d9&#x2F;Vue_01.png">
   
     <link rel="alternative" href="/atom.xml" title="(●ˇ∀ˇ●)" type="application/atom+xml">
   
@@ -270,7 +270,7 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
   <div id="toc-article" class="toc-article" style="display:none">
       <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
     <strong class="toc-title">文章目录</strong>
-           <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Vue简介"><span class="toc-number">1.</span> <span class="toc-text">Vue简介</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Vue使用"><span class="toc-number">1.1.</span> <span class="toc-text">Vue使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Vue中的MVVM"><span class="toc-number">1.2.</span> <span class="toc-text">Vue中的MVVM</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Vue生命周期"><span class="toc-number">1.3.</span> <span class="toc-text">Vue生命周期</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#hello测试"><span class="toc-number">1.4.</span> <span class="toc-text">hello测试</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#计数器"><span class="toc-number">1.5.</span> <span class="toc-text">计数器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#列表遍历"><span class="toc-number">1.6.</span> <span class="toc-text">列表遍历</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Mustache插值操作"><span class="toc-number">1.7.</span> <span class="toc-text">Mustache插值操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#v-ones指令"><span class="toc-number">1.8.</span> <span class="toc-text">v-ones指令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#v-html指令"><span class="toc-number">1.9.</span> <span class="toc-text">v-html指令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#v-text指令"><span class="toc-number">1.10.</span> <span class="toc-text">v-text指令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#v-pre指令"><span class="toc-number">1.11.</span> <span class="toc-text">v-pre指令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#v-clock指令"><span class="toc-number">1.12.</span> <span class="toc-text">v-clock指令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#v-bind绑定属性"><span class="toc-number">1.13.</span> <span class="toc-text">v-bind绑定属性</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1、绑定属性"><span class="toc-number">1.13.1.</span> <span class="toc-text">1、绑定属性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2、绑定class"><span class="toc-number">1.13.2.</span> <span class="toc-text">2、绑定class</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3、绑定style"><span class="toc-number">1.13.3.</span> <span class="toc-text">3、绑定style</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#计算属性"><span class="toc-number">1.14.</span> <span class="toc-text">计算属性</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1、基本使用"><span class="toc-number">1.14.1.</span> <span class="toc-text">1、基本使用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2、计算属性的getter和setter"><span class="toc-number">1.14.2.</span> <span class="toc-text">2、计算属性的getter和setter</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3、计算属性的缓存"><span class="toc-number">1.14.3.</span> <span class="toc-text">3、计算属性的缓存</span></a></li></ol></li></ol></li></ol>
+           <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Vue简介"><span class="toc-number">1.</span> <span class="toc-text">Vue简介</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Vue使用"><span class="toc-number">1.1.</span> <span class="toc-text">Vue使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Vue中的MVVM"><span class="toc-number">1.2.</span> <span class="toc-text">Vue中的MVVM</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Vue生命周期"><span class="toc-number">1.3.</span> <span class="toc-text">Vue生命周期</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Vue指令"><span class="toc-number">2.</span> <span class="toc-text">Vue指令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#hello测试"><span class="toc-number">2.1.</span> <span class="toc-text">hello测试</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#计数器"><span class="toc-number">2.2.</span> <span class="toc-text">计数器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#列表遍历"><span class="toc-number">2.3.</span> <span class="toc-text">列表遍历</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Mustache插值操作"><span class="toc-number">2.4.</span> <span class="toc-text">Mustache插值操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#v-ones指令"><span class="toc-number">2.5.</span> <span class="toc-text">v-ones指令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#v-html指令"><span class="toc-number">2.6.</span> <span class="toc-text">v-html指令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#v-text指令"><span class="toc-number">2.7.</span> <span class="toc-text">v-text指令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#v-pre指令"><span class="toc-number">2.8.</span> <span class="toc-text">v-pre指令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#v-clock指令"><span class="toc-number">2.9.</span> <span class="toc-text">v-clock指令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#v-bind绑定属性"><span class="toc-number">2.10.</span> <span class="toc-text">v-bind绑定属性</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1、绑定属性"><span class="toc-number">2.10.1.</span> <span class="toc-text">1、绑定属性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2、绑定class"><span class="toc-number">2.10.2.</span> <span class="toc-text">2、绑定class</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3、绑定style"><span class="toc-number">2.10.3.</span> <span class="toc-text">3、绑定style</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#计算属性"><span class="toc-number">2.11.</span> <span class="toc-text">计算属性</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1、基本使用"><span class="toc-number">2.11.1.</span> <span class="toc-text">1、基本使用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2、计算属性的getter和setter"><span class="toc-number">2.11.2.</span> <span class="toc-text">2、计算属性的getter和setter</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3、计算属性的缓存"><span class="toc-number">2.11.3.</span> <span class="toc-text">3、计算属性的缓存</span></a></li></ol></li></ol></li></ol>
   </div>
    <script type="text/javascript">
    function showToc(){
@@ -338,7 +338,7 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 <h3 id="Vue生命周期">Vue生命周期</h3>
 <p>生命周期: 事物从诞生到消亡的整个过程.</p>
 <p><img src="/article/bf9530d9/Vue_02.png" alt="image-20200921113657169"></p>
-<p>##Vue指令</p>
+<h2 id="Vue指令">Vue指令</h2>
 <h3 id="hello测试">hello测试</h3>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;app&quot;&gt;</span><br><span class="line">    &lt;h3&gt;&#123;&#123;message&#125;&#125;&lt;/h3&gt;</span><br><span class="line">    &lt;h6&gt;署名：&#123;&#123;name&#125;&#125;&lt;/h6&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;script type=&quot;text/javascript&quot; src=&quot;js/vue.js&quot; &gt;&lt;/script&gt;</span><br><span class="line">&lt;!--编程范式：声明式编程--&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">    //			let:定义变量;const:定义常量</span><br><span class="line">    const app =  new Vue(&#123;</span><br><span class="line">        el: &apos;#app&apos;,//用于挂载要管理的数据</span><br><span class="line">        data: &#123;//定义数据</span><br><span class="line">            message: &quot;Hello World!&quot;,</span><br><span class="line">            name: &quot;张三&quot;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
 <h3 id="计数器">计数器</h3>
@@ -355,13 +355,13 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 <p>该指令后面往往会跟上一个string类型;<br>
 会将string的html解析出来并且进行渲染;</p>
 <p>注意：内容按普通 HTML 插入 - 不会作为 Vue 模板进行编译<br>
-在网站上动态渲染任意 HTML 是非常危险的，因为容易导致 XSS 攻击。只在可信内容上使用 v-html，永不用在用户提交的内容上。</p>
+在网站上动态渲染任意 HTML 是非常危险的，因为容易导致 XSS 攻击。只能在可信内容上使用 v-html，不能用在用户提交的内容上。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;h3&gt;&#123;&#123;url&#125;&#125;&lt;/h3&gt;</span><br><span class="line">&lt;!--v-html使用html格式展示--&gt;</span><br><span class="line">&lt;h3 v-html=&quot;url&quot;&gt;&lt;/h3&gt;</span><br></pre></td></tr></table></figure>
 <h3 id="v-text指令">v-text指令</h3>
 <p>更新元素的 textContent。如果要更新部分的 textContent ，需要使用插值。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;h3&gt;&#123;&#123;message&#125;&#125;&lt;/h3&gt;</span><br><span class="line">&lt;!--v-text会覆盖标签中文本--&gt;</span><br><span class="line">&lt;h3 v-text=&quot;message&quot;&gt;张三&lt;/h3&gt;</span><br></pre></td></tr></table></figure>
 <h3 id="v-pre指令">v-pre指令</h3>
-<p>nv-pre用于跳过这个元素和它子元素的编译过程，用于显示原本的Mustache语法。</p>
+<p>v-pre用于跳过这个元素和它子元素的编译过程，用于显示原本的Mustache语法。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;h3&gt;&#123;&#123;message&#125;&#125;&lt;/h3&gt;</span><br><span class="line">&lt;!--v-pre显示原本语法--&gt;</span><br><span class="line">&lt;h3 v-pre&gt;&#123;&#123;message&#125;&#125;&lt;/h3&gt;</span><br></pre></td></tr></table></figure>
 <h3 id="v-clock指令">v-clock指令</h3>
 <p>在某些情况下，我们浏览器可能会直接显然出未编译的Mustache标签。</p>
@@ -446,7 +446,7 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
           
           <br></li>
           <li><strong>本文链接：</strong>
-          <a rel="license" href="https://www.zhangtengfei.xyz/article/bf9530d9.html">https://www.zhangtengfei.xyz/article/bf9530d9.html</a>
+          <a rel="license" href="https://www.tengfei.eu.org/article/bf9530d9.html">https://www.tengfei.eu.org/article/bf9530d9.html</a>
           <br></li>
           <li><strong>版权声明：</strong>
           本作品采用
@@ -523,7 +523,7 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
     <a class="close js-modal-close" href="javascript:;" target="_blank" rel="noopener"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://www.zhangtengfei.xyz/article/bf9530d9.html" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://www.tengfei.eu.org/article/bf9530d9.html" alt="微信分享二维码">
     </div>
 </div>
 
@@ -701,7 +701,7 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2019~2021 腾飞 | 
+    		&copy; 2019~2022 腾飞 | 
     		<a href="https://beian.miit.gov.cn/" target="_blank">豫ICP备2021016017号</a>
     	</div>
       	<div class="footer-right">
@@ -815,10 +815,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Maven</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">MyBatis</a>
               </li>
              
@@ -827,11 +823,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">NodeJS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">命令行窗口</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Maven</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -840,6 +832,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">数据库</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">NodeJS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">命令行窗口</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -855,15 +855,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">JSR303校验</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">SLF4j</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">Thymeleaf</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">JSR303校验</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -883,11 +883,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">注解</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Web框架</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Web框架</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">注解</a>
               </li>
              
               <li class="article-tag-list-item">

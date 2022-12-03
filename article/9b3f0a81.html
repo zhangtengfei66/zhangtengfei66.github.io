@@ -5,30 +5,30 @@
   
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <link rel="dns-prefetch" href="https://www.zhangtengfei.xyz">
+  <link rel="dns-prefetch" href="https://www.tengfei.eu.org">
   <title>SpringBoot学习笔记(4) | (●ˇ∀ˇ●)</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="SpringBoot学习笔记 ☔☔⚡ 自动转配原理，日志，静态资源，首页，模板引擎…">
 <meta name="keywords" content="SpringBoot,SLF4j,Thymeleaf">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SpringBoot学习笔记(4)">
-<meta property="og:url" content="https:&#x2F;&#x2F;www.zhangtengfei.xyz&#x2F;article&#x2F;9b3f0a81.html">
+<meta property="og:url" content="https:&#x2F;&#x2F;www.tengfei.eu.org&#x2F;article&#x2F;9b3f0a81.html">
 <meta property="og:site_name" content="(●ˇ∀ˇ●)">
 <meta property="og:description" content="SpringBoot学习笔记 ☔☔⚡ 自动转配原理，日志，静态资源，首页，模板引擎…">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https:&#x2F;&#x2F;www.zhangtengfei.xyz&#x2F;article&#x2F;9b3f0a81&#x2F;%E6%97%A5%E5%BF%97_07.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;www.zhangtengfei.xyz&#x2F;article&#x2F;9b3f0a81&#x2F;%E6%97%A5%E5%BF%97_08.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;www.zhangtengfei.xyz&#x2F;article&#x2F;9b3f0a81&#x2F;%E6%97%A5%E5%BF%97_09.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;www.zhangtengfei.xyz&#x2F;article&#x2F;9b3f0a81&#x2F;%E6%97%A5%E5%BF%97_10.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;www.zhangtengfei.xyz&#x2F;article&#x2F;9b3f0a81&#x2F;%E9%9D%99%E6%80%81%E8%B5%84%E6%BA%90_01.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;www.zhangtengfei.xyz&#x2F;article&#x2F;9b3f0a81&#x2F;%E9%9D%99%E6%80%81%E8%B5%84%E6%BA%90_02.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;www.zhangtengfei.xyz&#x2F;article&#x2F;9b3f0a81&#x2F;%E9%9D%99%E6%80%81%E8%B5%84%E6%BA%90_03.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;www.zhangtengfei.xyz&#x2F;article&#x2F;9b3f0a81&#x2F;%E6%A8%A1%E6%9D%BF%E5%BC%95%E6%93%8E_04.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;www.zhangtengfei.xyz&#x2F;article&#x2F;9b3f0a81&#x2F;%E6%A8%A1%E6%9D%BF%E5%BC%95%E6%93%8E_06.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;www.zhangtengfei.xyz&#x2F;article&#x2F;9b3f0a81&#x2F;%E6%A8%A1%E6%9D%BF%E5%BC%95%E6%93%8E_05.png">
-<meta property="og:updated_time" content="2020-08-25T01:32:55.459Z">
+<meta property="og:image" content="https:&#x2F;&#x2F;www.tengfei.eu.org&#x2F;article&#x2F;9b3f0a81&#x2F;%E6%97%A5%E5%BF%97_07.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;www.tengfei.eu.org&#x2F;article&#x2F;9b3f0a81&#x2F;%E6%97%A5%E5%BF%97_08.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;www.tengfei.eu.org&#x2F;article&#x2F;9b3f0a81&#x2F;%E6%97%A5%E5%BF%97_09.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;www.tengfei.eu.org&#x2F;article&#x2F;9b3f0a81&#x2F;%E6%97%A5%E5%BF%97_10.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;www.tengfei.eu.org&#x2F;article&#x2F;9b3f0a81&#x2F;%E9%9D%99%E6%80%81%E8%B5%84%E6%BA%90_01.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;www.tengfei.eu.org&#x2F;article&#x2F;9b3f0a81&#x2F;%E9%9D%99%E6%80%81%E8%B5%84%E6%BA%90_02.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;www.tengfei.eu.org&#x2F;article&#x2F;9b3f0a81&#x2F;%E9%9D%99%E6%80%81%E8%B5%84%E6%BA%90_03.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;www.tengfei.eu.org&#x2F;article&#x2F;9b3f0a81&#x2F;%E6%A8%A1%E6%9D%BF%E5%BC%95%E6%93%8E_04.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;www.tengfei.eu.org&#x2F;article&#x2F;9b3f0a81&#x2F;%E6%A8%A1%E6%9D%BF%E5%BC%95%E6%93%8E_06.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;www.tengfei.eu.org&#x2F;article&#x2F;9b3f0a81&#x2F;%E6%A8%A1%E6%9D%BF%E5%BC%95%E6%93%8E_05.png">
+<meta property="og:updated_time" content="2020-08-25T01:32:56.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https:&#x2F;&#x2F;www.zhangtengfei.xyz&#x2F;article&#x2F;9b3f0a81&#x2F;%E6%97%A5%E5%BF%97_07.png">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;www.tengfei.eu.org&#x2F;article&#x2F;9b3f0a81&#x2F;%E6%97%A5%E5%BF%97_07.png">
   
     <link rel="alternative" href="/atom.xml" title="(●ˇ∀ˇ●)" type="application/atom+xml">
   
@@ -656,7 +656,7 @@ JUL、JCL、Jboss-logging、logback、log4j、log4j2、slf4j…</p>
           
           <br></li>
           <li><strong>本文链接：</strong>
-          <a rel="license" href="https://www.zhangtengfei.xyz/article/9b3f0a81.html">https://www.zhangtengfei.xyz/article/9b3f0a81.html</a>
+          <a rel="license" href="https://www.tengfei.eu.org/article/9b3f0a81.html">https://www.tengfei.eu.org/article/9b3f0a81.html</a>
           <br></li>
           <li><strong>版权声明：</strong>
           本作品采用
@@ -741,7 +741,7 @@ JUL、JCL、Jboss-logging、logback、log4j、log4j2、slf4j…</p>
     <a class="close js-modal-close" href="javascript:;" target="_blank" rel="noopener"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://www.zhangtengfei.xyz/article/9b3f0a81.html" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://www.tengfei.eu.org/article/9b3f0a81.html" alt="微信分享二维码">
     </div>
 </div>
 
@@ -919,7 +919,7 @@ JUL、JCL、Jboss-logging、logback、log4j、log4j2、slf4j…</p>
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2019~2021 腾飞 | 
+    		&copy; 2019~2022 腾飞 | 
     		<a href="https://beian.miit.gov.cn/" target="_blank">豫ICP备2021016017号</a>
     	</div>
       	<div class="footer-right">
@@ -1033,10 +1033,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Maven</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">MyBatis</a>
               </li>
              
@@ -1045,11 +1041,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">NodeJS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">命令行窗口</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Maven</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1058,6 +1050,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">数据库</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">NodeJS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">命令行窗口</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1073,15 +1073,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">JSR303校验</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">SLF4j</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">Thymeleaf</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">JSR303校验</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1101,11 +1101,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">注解</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Web框架</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Web框架</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">注解</a>
               </li>
              
               <li class="article-tag-list-item">
