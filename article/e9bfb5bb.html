@@ -18,7 +18,7 @@
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https:&#x2F;&#x2F;www.tengfei.eu.org&#x2F;article&#x2F;e9bfb5bb&#x2F;integration_01.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;www.tengfei.eu.org&#x2F;article&#x2F;e9bfb5bb&#x2F;integration_02.png">
-<meta property="og:updated_time" content="2020-09-10T13:57:02.000Z">
+<meta property="og:updated_time" content="2023-01-31T13:52:43.876Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;www.tengfei.eu.org&#x2F;article&#x2F;e9bfb5bb&#x2F;integration_01.png">
   
@@ -255,7 +255,7 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 
         
         <a href="/article/e9bfb5bb.html" class="archive-article-date">
-  	<time datetime="2020-06-22T08:04:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-22</time>
+  	<time datetime="2020-06-12T08:04:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-12</time>
 </a>
         
       </header>
@@ -396,7 +396,7 @@ $$</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">EmpDao</span> </span>&#123;</span><br><span class="line">    <span class="comment">//查询所有员工</span></span><br><span class="line">    <span class="function">List&lt;Emp&gt; <span class="title">queryAllEmp</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><strong>LevelDao.java</strong></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">LevelDao</span> </span>&#123;</span><br><span class="line">    <span class="comment">//根据Id查询挡位信息</span></span><br><span class="line">    <span class="function">Level <span class="title">queryIdLevel</span><span class="params">(Integer tid)</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><strong>TypeDao.java</strong></p>
+<p>xxxxxxxxxx – 查看系统下表空间视图select distinct(tablespace_name) from dba_free_space;–去除重复–计算表空间大小select tablespace_name,sum(bytes) from dba_free_space group by tablespace_name;–数据文件select * from dba_data_files–临时文件select * from dba_temp_files-- 创建表空间create tablespace tsp_test01datafile ‘D:/a.dbf’–存放路径size 10m–文件大小autoextend no next 5m maxsize 30m–超出10m每次递增5m，最大为30m-- 创建分布式表空间(数据文件分开放)create tablespace tsp_test02datafile 'D:/b.dbf’size 10mautoextend no next 5m maxsize 30m,'D:/c.dbf’size 10mautoextend no next 5m maxsize 30m-- 临时表空间create temporary tablespace temp_test03–temporary临时tempfile ‘D:/temp_d.dbf’–tempfile临时文件size 10m-- 创建指定表空间用户create user uname identified by 123default tablespace tsp_test01–表空间Temporary tablespace temp_test03–临时表空间-- 修改表空间(表空间可以有多个文件)alter tablespace tsp_test02add datafile ‘D:\APP\TENG\ORADATA\TEST\test_02.dbf’ size 100m-- 查看默认表空间select * from database_properties where property_name like ‘%TABLESPACE%’;-- 删除表空间drop tablespace tsp_test02including contents and datafiles;–删除表空间下文件​sql</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">TypeDao</span> </span>&#123;</span><br><span class="line">    <span class="comment">//查询所有校准类型信息</span></span><br><span class="line">    <span class="function">List&lt;Type&gt; <span class="title">queryAllType</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><strong>LogDao.java</strong></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">LogDao</span> </span>&#123;</span><br><span class="line">    <span class="comment">//插入日志</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">insertLog</span><span class="params">(Log log)</span></span>;</span><br><span class="line">    <span class="comment">//根据条件查询日志</span></span><br><span class="line">    <span class="function">List&lt;Log&gt; <span class="title">queryByCondition</span><span class="params">(@Param(<span class="string">"sn"</span>)</span> String sn,@<span class="title">Param</span><span class="params">(<span class="string">"ename"</span>)</span> String ename,@<span class="title">Param</span><span class="params">(<span class="string">"tname"</span>)</span> String tname)</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -596,18 +596,18 @@ $$</p>
   
 <nav id="article-nav">
   
-    <a href="/article/cd65ad07.html" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/article/81a020b4.html" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          SpringBoot学习笔记(2)
+          搜索引擎收录博客
         
       </div>
     </a>
   
   
-    <a href="/article/81a020b4.html" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">搜索引擎收录博客</div>
+    <a href="/article/f5f0db78.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">git学习笔记</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -760,7 +760,7 @@ $$</p>
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2019~2022 腾飞 | 
+    		&copy; 2019~2023 腾飞 | 
     		<a href="https://beian.miit.gov.cn/" target="_blank">豫ICP备2021016017号</a>
     	</div>
       	<div class="footer-right">
@@ -918,19 +918,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">SpringSecurity</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">Swagger</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">SLF4j</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">Thymeleaf</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">SpringSecurity</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">Swagger</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -970,11 +970,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">Vuex</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">git</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">Vuex</a>
               </li>
              
               <li class="article-tag-list-item">
