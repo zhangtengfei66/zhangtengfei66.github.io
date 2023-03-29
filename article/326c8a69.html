@@ -271,13 +271,18 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
         <p>如何让博客指向个人域名 ?</p>
 <p>个人域名怎么样绑定到自己的GitHub Pages站点呢?</p>
  <a id="more"></a>
-<h2 id="阿里云购买域名"><a href="#阿里云购买域名" class="headerlink" title="阿里云购买域名"></a><a href="https://www.aliyun.com/" target="_blank" rel="noopener">阿里云购买域名</a></h2><p>购买域名后需要<strong>备案</strong>,备案前需要<strong>实名认证</strong>,花了几分钟就可以完成了</p>
+<h2 id="阿里云购买域名"><a href="https://www.aliyun.com/" target="_blank" rel="noopener">阿里云购买域名</a></h2>
+<p>购买域名后需要<strong>备案</strong>,备案前需要<strong>实名认证</strong>,花了几分钟就可以完成了</p>
 <p>点击自己用户名 -进入管理控制台 -域名- <img src="/article/326c8a69/personageDomain_1.png" alt="img"> <img src="/article/326c8a69/personageDomain_2.png" alt="img"></p>
 <p>完成 启用</p>
-<h2 id="在github上配置CNAME记录类型"><a href="#在github上配置CNAME记录类型" class="headerlink" title="在github上配置CNAME记录类型"></a>在github上配置CNAME记录类型</h2><h3 id="第一种方法"><a href="#第一种方法" class="headerlink" title="第一种方法 :"></a>第一种方法 :</h3><p>回到github项目create new file CNAME 写入买的域名即可不过,每次hexo d都需要重新写入</p>
-<h3 id="第二种方法"><a href="#第二种方法" class="headerlink" title="第二种方法:"></a>第二种方法:</h3><p><strong>在blog文件下,安装插件</strong> 输入命令</p>
+<h2 id="在github上配置CNAME记录类型">在github上配置CNAME记录类型</h2>
+<h3 id="第一种方法">第一种方法 :</h3>
+<p>回到github项目create new file CNAME 写入买的域名即可不过,每次hexo d都需要重新写入</p>
+<h3 id="第二种方法">第二种方法:</h3>
+<p><strong>在blog文件下,安装插件</strong> 输入命令</p>
 <p><code>npm install hexo-generator-cname --save</code></p>
-<h4 id="修改-config-yml下的url"><a href="#修改-config-yml下的url" class="headerlink" title="修改_config.yml下的url"></a>修改_config.yml下的url</h4><p><img src="/article/326c8a69/personageDomain_3.png" alt="img"></p>
+<h4 id="修改-config-yml下的url">修改_config.yml下的url</h4>
+<p><img src="/article/326c8a69/personageDomain_3.png" alt="img"></p>
 <p>重新 <code>hexo clean</code> &amp;&amp;<code>hexo g -d</code> 刷新网页</p>
 <p>就可以用域名访问个人博客啦 !</p>
 
@@ -684,15 +689,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">Java</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">分页</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -780,6 +785,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">webpack</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">Vue-cli</a>
               </li>
              
@@ -788,15 +797,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">webpack</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">Vuex</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">Vuex</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -998,22 +1003,5 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.js"></script>
   <script type="text/javascript" src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
   <script type="text/javascript" src="/js/clipboard_use.js"></script>
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<!-- <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script> -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
-
 <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/unitychan.model.json"},"display":{"position":"right","width":145,"height":315},"mobile":{"show":false,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.8},"log":false});</script></body>
 </html>
