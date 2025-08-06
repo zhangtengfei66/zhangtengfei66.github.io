@@ -83,27 +83,37 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
       
 <div class="overlay" style="background: #ff3d00">
 
-<!-- 《添加“心知天气”-->
+<!-- 《添加"心知天气"-->
 
+  <div id="tp-weather-widget"></div>
+  <script>
+    (function(a,h,g,f,e,d,c,b){b=function(){d=h.createElement(g);c=h.getElementsByTagName(g)[0];d.src=e;d.charset="utf-8";d.async=1;c.parentNode.insertBefore(d,c)};a["SeniverseWeatherWidgetObject"]=f;a[f]||(a[f]=function(){(a[f].q=a[f].q||[]).push(arguments)});a[f].l=+new Date();if(a.attachEvent){a.attachEvent("onload",b)}else{a.addEventListener("load",b,false)}}(window,document,"script","SeniverseWeatherWidget","//cdn.sencdn.com/widget2/static/js/bundle.js?t="+parseInt((new Date().getTime() / 100000000).toString(),10)));
+    window.SeniverseWeatherWidget('show', {
+      flavor: "bubble",
+      location: "WQPUYY7S4GV2",
+      geolocation: true,
+      language: "auto",
+      unit: "c",
+      theme: "auto",
+      token: "24036b9e-1394-458b-8dce-d86e364c26c7",
+      hover: "enabled",
+      container: "tp-weather-widget"
+    })
+  </script>
+  
+  <style>
+  /* 优化天气组件层级控制 */
+  #tp-weather-widget {
+    position: relative;
+    z-index: 100;
+  }
+  .profilepic img {
+    z-index: 1;
+  }
+  </style>
+  
 
-	<div id="tp-weather-widget"></div>
-	<script>
-	  (function(a,h,g,f,e,d,c,b){b=function(){d=h.createElement(g);c=h.getElementsByTagName(g)[0];d.src=e;d.charset="utf-8";d.async=1;c.parentNode.insertBefore(d,c)};a["SeniverseWeatherWidgetObject"]=f;a[f]||(a[f]=function(){(a[f].q=a[f].q||[]).push(arguments)});a[f].l=+new Date();if(a.attachEvent){a.attachEvent("onload",b)}else{a.addEventListener("load",b,false)}}(window,document,"script","SeniverseWeatherWidget","//cdn.sencdn.com/widget2/static/js/bundle.js?t="+parseInt((new Date().getTime() / 100000000).toString(),10)));
-	  window.SeniverseWeatherWidget('show', {
-	    flavor: "bubble",
-	    location: "WX4FBXXFKE4F",
-	    geolocation: true,
-	    language: "auto",
-	    unit: "c",
-	    theme: "auto",
-	    token: "5468822e-e2d6-46f8-99f8-fd53c617f352",
-	    hover: "disabled",
-	    container: "tp-weather-widget"
-	  })
-	</script>
-
-
-<!-- 添加“心知天气”》-->
+<!-- 添加"心知天气"》-->
 
 </div>
 <div class="intrude-less">
@@ -234,14 +244,14 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-Oracle学习笔记0-4" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-SpringBoot学习笔记-2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/article/c58dc7f0.html">Oracle学习笔记0.4</a>
+      <a class="article-title" href="/article/cd65ad07.html">SpringBoot学习笔记(2)</a>
     </h1>
   
 
@@ -251,8 +261,8 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
         <!--显示阅读次数-->
 
         
-        <a href="/article/c58dc7f0.html" class="archive-article-date">
-  	<time datetime="2021-08-25T00:29:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-08-25</time>
+        <a href="/article/cd65ad07.html" class="archive-article-date">
+  	<time datetime="2022-02-28T12:45:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-02-28</time>
 </a>
         
       </header>
@@ -264,9 +274,9 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 
     <div class="article-entry" itemprop="articleBody">
       
-        <p>oracle学习笔记</p>
-<p>🌕 🌕 🌕 </p>
-<p>存储过程，函数，视图 , 包…</p>
+        <p>SpringBoot学习笔记</p>
+<p>⏳🌽🌾</p>
+<p>SpringBoot的功能、运行原理…</p>
         
       
 
@@ -290,11 +300,7 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color2">Oracle</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color4">数据库</a>
+        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color1">SpringBoot</a>
         		</li>
       		
 		</ul>
@@ -304,7 +310,7 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/article/c58dc7f0.html">展开全文 >></a>
+          <a class="article-more-a" href="/article/cd65ad07.html">展开全文 >></a>
         </p>
       
 
@@ -334,14 +340,14 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 
 
   
-    <article id="post-Oracle学习笔记0-3" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-SpringBoot学习笔记-1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/article/5be95253.html">Oracle学习笔记0.3</a>
+      <a class="article-title" href="/article/e648fec4.html">SpringBoot学习笔记(1)</a>
     </h1>
   
 
@@ -351,8 +357,8 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
         <!--显示阅读次数-->
 
         
-        <a href="/article/5be95253.html" class="archive-article-date">
-  	<time datetime="2021-08-07T07:28:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-08-07</time>
+        <a href="/article/e648fec4.html" class="archive-article-date">
+  	<time datetime="2022-02-12T08:50:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-02-12</time>
 </a>
         
       </header>
@@ -364,9 +370,9 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 
     <div class="article-entry" itemprop="articleBody">
       
-        <p><strong>Oracle学习笔记</strong></p>
-<p>PL/SQL语法，四种特殊数据类型(%type,%rowtype,record,table)，流程控制(条件控制,循环控制)…</p>
-<p>☔ ☔ ☔  </p>
+        <p>SpringBoot学习笔记</p>
+<p>⌛⌛⌛</p>
+<p>SpringBoot安装指导</p>
         
       
 
@@ -390,11 +396,7 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color2">Oracle</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color4">数据库</a>
+        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color1">SpringBoot</a>
         		</li>
       		
 		</ul>
@@ -404,7 +406,7 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/article/5be95253.html">展开全文 >></a>
+          <a class="article-more-a" href="/article/e648fec4.html">展开全文 >></a>
         </p>
       
 
@@ -434,14 +436,14 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 
 
   
-    <article id="post-Oracle学习笔记0-2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-SpringBoot常用注解" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/article/2cee62c5.html">Oracle学习笔记0.2</a>
+      <a class="article-title" href="/article/e750a506.html">SpringBoot常用注解</a>
     </h1>
   
 
@@ -451,8 +453,8 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
         <!--显示阅读次数-->
 
         
-        <a href="/article/2cee62c5.html" class="archive-article-date">
-  	<time datetime="2021-07-24T11:45:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-07-24</time>
+        <a href="/article/e750a506.html" class="archive-article-date">
+  	<time datetime="2022-01-05T08:50:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-01-05</time>
 </a>
         
       </header>
@@ -464,9 +466,13 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 
     <div class="article-entry" itemprop="articleBody">
       
-        <p><strong>Oracle学习代码笔记</strong></p>
-<p>函数…</p>
-<p>⚡ ⚡ ⚡</p>
+        <h1>SpringBoot注解(可采用ctrl+F 来进行搜索哦~~~~)</h1>
+<h2 id="🙂使用注解的优势：">🙂使用注解的优势：</h2>
+<p>1.采用纯java代码，不在需要配置繁杂的xml文件</p>
+<p>2.在配置中也可享受面向对象带来的好处</p>
+<p>3.类型安全对重构可以提供良好的支持</p>
+<p>4.减少复杂配置文件的同时亦能享受到springIoC容器提供的功能</p>
+<p></p>
         
       
 
@@ -490,11 +496,11 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color2">Oracle</a>
+        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color1">SpringBoot</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color4">数据库</a>
+        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color3">注解</a>
         		</li>
       		
 		</ul>
@@ -504,7 +510,7 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/article/2cee62c5.html">展开全文 >></a>
+          <a class="article-more-a" href="/article/e750a506.html">展开全文 >></a>
         </p>
       
 
@@ -534,14 +540,14 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 
 
   
-    <article id="post-Oracle学习笔记0-1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-SSM整合项目" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/article/b5e7337f.html">Oracle学习笔记0.1</a>
+      <a class="article-title" href="/article/96d170c5.html">SSM整合项目</a>
     </h1>
   
 
@@ -551,8 +557,8 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
         <!--显示阅读次数-->
 
         
-        <a href="/article/b5e7337f.html" class="archive-article-date">
-  	<time datetime="2021-06-21T13:19:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-06-21</time>
+        <a href="/article/96d170c5.html" class="archive-article-date">
+  	<time datetime="2021-12-26T01:55:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-12-26</time>
 </a>
         
       </header>
@@ -564,109 +570,9 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 
     <div class="article-entry" itemprop="articleBody">
       
-        <p><strong>Oracle学习代码笔记</strong></p>
-<p>数据库实例操作，表空间，增上改查语句,数据类型,序列…</p>
-<p>⚡ ⚡ ⚡</p>
-        
-      
-
-
-
-      
-<!--版权声明(修改：post.declare===false 文章中为false时,不显示版权)-->
-      
-      
-        <div class="declare" hidden="hidden"></div>
-      </li></ul>
-<!--版权声明--> 
-         
-
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color2">Oracle</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color4">数据库</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/article/b5e7337f.html">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" target="_blank" rel="noopener" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-MyBatis学习笔记-5" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/article/3fa35e86.html">MyBatis学习笔记(5)</a>
-    </h1>
-  
-
-        
-        <!--显示阅读次数-->
-        
-        <!--显示阅读次数-->
-
-        
-        <a href="/article/3fa35e86.html" class="archive-article-date">
-  	<time datetime="2021-05-28T04:20:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-05-28</time>
-</a>
-        
-      </header>
-    
-
-<!-- 添加目录内容结构 -->
-
-<!-- 添加目录内容结束 -->
-
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>MyBatis学习笔记</p>
-<p>🍂🍂🍂</p>
-<p>缓存，逆向工程…</p>
+        <p>SSM整合</p>
+<p>🍑🍑🍑</p>
+<p>SSM(Spring+SpringMVC+MyBatis)的概念及整合…</p>
         
       
 
@@ -694,7 +600,11 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color1">持久层框架</a>
+        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color2">Spring</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color5">SpringMVC</a>
         		</li>
       		
 		</ul>
@@ -704,7 +614,7 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/article/3fa35e86.html">展开全文 >></a>
+          <a class="article-more-a" href="/article/96d170c5.html">展开全文 >></a>
         </p>
       
 
@@ -734,14 +644,14 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 
 
   
-    <article id="post-MyBatis学习笔记-4" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-SpringMVC学习笔记-3" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/article/8b840100.html">MyBatis学习笔记(4)</a>
+      <a class="article-title" href="/article/af57c6ea.html">SpringMVC学习笔记(3)</a>
     </h1>
   
 
@@ -751,8 +661,8 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
         <!--显示阅读次数-->
 
         
-        <a href="/article/8b840100.html" class="archive-article-date">
-  	<time datetime="2021-05-12T02:07:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-05-12</time>
+        <a href="/article/af57c6ea.html" class="archive-article-date">
+  	<time datetime="2021-12-01T05:29:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-12-01</time>
 </a>
         
       </header>
@@ -764,9 +674,9 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 
     <div class="article-entry" itemprop="articleBody">
       
-        <p>MyBatis学习笔记</p>
-<p> 🌈 🌈 🌈 </p>
-<p>动态sql…</p>
+        <p>SpringMVC学习笔记</p>
+<p>🌷🌷🌷</p>
+<p>文件上传和下载，拦截器，异常处理，运行流程…</p>
         
       
 
@@ -790,11 +700,11 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color3">MyBatis</a>
+        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color5">SpringMVC</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color1">持久层框架</a>
+        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color1">Web框架</a>
         		</li>
       		
 		</ul>
@@ -804,7 +714,107 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/article/8b840100.html">展开全文 >></a>
+          <a class="article-more-a" href="/article/af57c6ea.html">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" target="_blank" rel="noopener" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-SpringMVC学习笔记-2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/article/b64cf7ab.html">SpringMVC学习笔记(2)</a>
+    </h1>
+  
+
+        
+        <!--显示阅读次数-->
+        
+        <!--显示阅读次数-->
+
+        
+        <a href="/article/b64cf7ab.html" class="archive-article-date">
+  	<time datetime="2021-11-17T01:34:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-11-17</time>
+</a>
+        
+      </header>
+    
+
+<!-- 添加目录内容结构 -->
+
+<!-- 添加目录内容结束 -->
+
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>SpringMVC学习笔记</p>
+<p>🍀🍀🍀</p>
+<p>视图解析器，RESTRUL增删改查，静态资源，JSON处理…</p>
+        
+      
+
+
+
+      
+<!--版权声明(修改：post.declare===false 文章中为false时,不显示版权)-->
+      
+      
+        <div class="declare" hidden="hidden"></div>
+      </li></ul>
+<!--版权声明--> 
+         
+
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color5">SpringMVC</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color1">Web框架</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/article/b64cf7ab.html">展开全文 >></a>
         </p>
       
 
@@ -836,7 +846,7 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
   
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/5/">« Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/7/">Next »</a>
+      <a class="extend prev" rel="prev" href="/page/5/">« Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><span class="space">&hellip;</span><a class="page-number" href="/page/13/">13</a><a class="extend next" rel="next" href="/page/7/">Next »</a>
     </nav>
   
 
@@ -848,7 +858,7 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2019~2023 腾飞 | 
+    		&copy; 2019~2025 腾飞 | 
     		<a href="https://beian.miit.gov.cn/" target="_blank">豫ICP备2021016017号</a>
     	</div>
       	<div class="footer-right">
@@ -962,15 +972,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">分页</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Maven</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">分页</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -982,14 +992,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">Oracle</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">数据库</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">NodeJS</a>
               </li>
              
@@ -998,11 +1000,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">Spring</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">Oracle</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">SpringMVC</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">数据库</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Redis</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1010,7 +1016,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Redis</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">Spring</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">SpringMVC</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1034,19 +1044,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">注解</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Web框架</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">zookeeper</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Dubbo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">注解</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Web框架</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1058,15 +1068,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">Vue</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Cloudflare</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">图床</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">Vue</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1094,6 +1104,30 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">vue</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">插件</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">样式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">云开发</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">低代码</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">小程序</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">个人域</a>
               </li>
              
@@ -1106,15 +1140,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">NoSql</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">Flowable</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">工作流</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">NoSql</a>
               </li>
             
             <div class="clearfix"></div>
