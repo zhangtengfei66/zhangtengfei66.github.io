@@ -282,19 +282,30 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 
     <div class="article-entry" itemprop="articleBody">
       
-        <p>  Linux查看硬件信息</p>
+        <p>Linux查看硬件信息</p>
 <a id="more"></a>
-<h5 id="系统"><a href="#系统" class="headerlink" title="系统"></a>系统</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># uname -a               # 查看内核/操作系统/CPU信息</span><br><span class="line"># head -n 1 /etc/issue   # 查看操作系统版本</span><br><span class="line"># cat /proc/cpuinfo      # 查看CPU信息</span><br><span class="line"># hostname               # 查看计算机名</span><br><span class="line"># lspci -tv              # 列出所有PCI设备（yum install pciutils）</span><br><span class="line"># lsusb -tv              # 列出所有USB设备</span><br><span class="line"># lsmod                  # 列出加载的内核模块</span><br><span class="line"># env                    # 查看环境变量</span><br></pre></td></tr></table></figure>
-<h5 id="资源"><a href="#资源" class="headerlink" title="资源"></a>资源</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># free -m                # 查看内存使用量和交换区使用量</span><br><span class="line"># df -h                  # 查看各分区使用情况</span><br><span class="line"># du -sh &lt;目录名&gt;        # 查看指定目录的大小</span><br><span class="line"># grep MemTotal /proc/meminfo   # 查看内存总量</span><br><span class="line"># grep MemFree /proc/meminfo    # 查看空闲内存量</span><br><span class="line"># uptime                 # 查看系统运行时间、用户数、负载</span><br><span class="line"># cat /proc/loadavg      # 查看系统负载</span><br></pre></td></tr></table></figure>
-<h5 id="磁盘和分区"><a href="#磁盘和分区" class="headerlink" title="磁盘和分区"></a>磁盘和分区</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># mount | column -t      # 查看挂接的分区状态</span><br><span class="line"># fdisk -l               # 查看所有分区</span><br><span class="line"># swapon -s              # 查看所有交换分区</span><br><span class="line"># hdparm -i /dev/hda     # 查看磁盘参数(仅适用于IDE设备)</span><br><span class="line"># dmesg | grep IDE       # 查看启动时IDE设备检测状况</span><br></pre></td></tr></table></figure>
-<h5 id="网络"><a href="#网络" class="headerlink" title="网络"></a>网络</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># ifconfig               # 查看所有网络接口的属性</span><br><span class="line"># iptables -L            # 查看防火墙设置</span><br><span class="line"># route -n               # 查看路由表</span><br><span class="line"># netstat -lntp          # 查看所有监听端口</span><br><span class="line"># netstat -antp          # 查看所有已经建立的连接</span><br><span class="line"># netstat -s             # 查看网络统计信息</span><br></pre></td></tr></table></figure>
-<h5 id="进程"><a href="#进程" class="headerlink" title="进程"></a>进程</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># ps -ef                 # 查看所有进程</span><br><span class="line"># top                    # 实时显示进程状态</span><br></pre></td></tr></table></figure>
-<h5 id="用户"><a href="#用户" class="headerlink" title="用户"></a>用户</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># w                      # 查看活动用户</span><br><span class="line"># id &lt;用户名&gt;            # 查看指定用户信息</span><br><span class="line"># last                   # 查看用户登录日志</span><br><span class="line"># cut -d: -f1 /etc/passwd   # 查看系统所有用户</span><br><span class="line"># cut -d: -f1 /etc/group    # 查看系统所有组</span><br><span class="line"># crontab -l             # 查看当前用户的计划任务</span><br></pre></td></tr></table></figure>
-<h5 id="服务"><a href="#服务" class="headerlink" title="服务"></a>服务</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># chkconfig --list       # 列出所有系统服务</span><br><span class="line"># chkconfig --list | grep on    # 列出所有启动的系统服务</span><br></pre></td></tr></table></figure>
-<h5 id="程序"><a href="#程序" class="headerlink" title="程序"></a>程序</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># rpm -qa                # 查看所有安装的软件包</span><br></pre></td></tr></table></figure>
-<h5 id="查看网卡型号"><a href="#查看网卡型号" class="headerlink" title="查看网卡型号"></a>查看网卡型号</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># lspci | grep Ethernet</span><br></pre></td></tr></table></figure>
-<h5 id="查看内存和cpu最直接最常用的命令"><a href="#查看内存和cpu最直接最常用的命令" class="headerlink" title="查看内存和cpu最直接最常用的命令"></a>查看内存和cpu最直接最常用的命令</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># free</span><br><span class="line"># cat /proc/cpuinfo</span><br></pre></td></tr></table></figure>
-<h5 id="查看硬盘信息（查看硬盘型号和硬盘序列号）"><a href="#查看硬盘信息（查看硬盘型号和硬盘序列号）" class="headerlink" title="查看硬盘信息（查看硬盘型号和硬盘序列号）"></a>查看硬盘信息（查看硬盘型号和硬盘序列号）</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># df -h</span><br></pre></td></tr></table></figure>
+<h5 id="系统">系统</h5>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># uname -a               # 查看内核/操作系统/CPU信息</span><br><span class="line"># head -n 1 /etc/issue   # 查看操作系统版本</span><br><span class="line"># cat /proc/cpuinfo      # 查看CPU信息</span><br><span class="line"># hostname               # 查看计算机名</span><br><span class="line"># lspci -tv              # 列出所有PCI设备（yum install pciutils）</span><br><span class="line"># lsusb -tv              # 列出所有USB设备</span><br><span class="line"># lsmod                  # 列出加载的内核模块</span><br><span class="line"># env                    # 查看环境变量</span><br></pre></td></tr></table></figure>
+<h5 id="资源">资源</h5>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># free -m                # 查看内存使用量和交换区使用量</span><br><span class="line"># df -h                  # 查看各分区使用情况</span><br><span class="line"># du -sh &lt;目录名&gt;        # 查看指定目录的大小</span><br><span class="line"># grep MemTotal /proc/meminfo   # 查看内存总量</span><br><span class="line"># grep MemFree /proc/meminfo    # 查看空闲内存量</span><br><span class="line"># uptime                 # 查看系统运行时间、用户数、负载</span><br><span class="line"># cat /proc/loadavg      # 查看系统负载</span><br></pre></td></tr></table></figure>
+<h5 id="磁盘和分区">磁盘和分区</h5>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># mount | column -t      # 查看挂接的分区状态</span><br><span class="line"># fdisk -l               # 查看所有分区</span><br><span class="line"># swapon -s              # 查看所有交换分区</span><br><span class="line"># hdparm -i /dev/hda     # 查看磁盘参数(仅适用于IDE设备)</span><br><span class="line"># dmesg | grep IDE       # 查看启动时IDE设备检测状况</span><br></pre></td></tr></table></figure>
+<h5 id="网络">网络</h5>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># ifconfig               # 查看所有网络接口的属性</span><br><span class="line"># iptables -L            # 查看防火墙设置</span><br><span class="line"># route -n               # 查看路由表</span><br><span class="line"># netstat -lntp          # 查看所有监听端口</span><br><span class="line"># netstat -antp          # 查看所有已经建立的连接</span><br><span class="line"># netstat -s             # 查看网络统计信息</span><br></pre></td></tr></table></figure>
+<h5 id="进程">进程</h5>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># ps -ef                 # 查看所有进程</span><br><span class="line"># top                    # 实时显示进程状态</span><br></pre></td></tr></table></figure>
+<h5 id="用户">用户</h5>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># w                      # 查看活动用户</span><br><span class="line"># id &lt;用户名&gt;            # 查看指定用户信息</span><br><span class="line"># last                   # 查看用户登录日志</span><br><span class="line"># cut -d: -f1 /etc/passwd   # 查看系统所有用户</span><br><span class="line"># cut -d: -f1 /etc/group    # 查看系统所有组</span><br><span class="line"># crontab -l             # 查看当前用户的计划任务</span><br></pre></td></tr></table></figure>
+<h5 id="服务">服务</h5>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># chkconfig --list       # 列出所有系统服务</span><br><span class="line"># chkconfig --list | grep on    # 列出所有启动的系统服务</span><br></pre></td></tr></table></figure>
+<h5 id="程序">程序</h5>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># rpm -qa                # 查看所有安装的软件包</span><br></pre></td></tr></table></figure>
+<h5 id="查看网卡型号">查看网卡型号</h5>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># lspci | grep Ethernet</span><br></pre></td></tr></table></figure>
+<h5 id="查看内存和cpu最直接最常用的命令">查看内存和cpu最直接最常用的命令</h5>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># free</span><br><span class="line"># cat /proc/cpuinfo</span><br></pre></td></tr></table></figure>
+<h5 id="查看硬盘信息（查看硬盘型号和硬盘序列号）">查看硬盘信息（查看硬盘型号和硬盘序列号）</h5>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># df -h</span><br></pre></td></tr></table></figure>
       
 
 
@@ -690,6 +701,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">SEO</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">Java</a>
               </li>
              
@@ -698,11 +713,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">SEO</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">组件</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -710,7 +721,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Linux</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">组件</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -726,14 +737,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">NodeJS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">命令行窗口</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">Oracle</a>
               </li>
              
@@ -742,7 +745,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Redis</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">NodeJS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">命令行窗口</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -758,7 +765,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Redis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">JSR303校验</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">SpringSecurity</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -767,10 +782,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">Thymeleaf</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">SpringSecurity</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -790,11 +801,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Web框架</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">SpringCloud</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">SpringCloud</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Web框架</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -822,15 +833,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">前端路由</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">Vuex</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">前端路由</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Hexo_admin</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -846,18 +861,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">云开发</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">低代码</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">小程序</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">监控</a>
               </li>
              
@@ -870,7 +873,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Hexo_admin</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">云开发</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">低代码</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">小程序</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -894,15 +905,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">NoSql</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">Flowable</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">工作流</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">NoSql</a>
               </li>
             
             <div class="clearfix"></div>

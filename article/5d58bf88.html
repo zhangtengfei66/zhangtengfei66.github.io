@@ -8,13 +8,13 @@
   <link rel="dns-prefetch" href="https://www.tengfei.eu.org">
   <title>vue项目引入flexslider插件实现时间轴轮播 | (●ˇ∀ˇ●)</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="引言：在Vue项目中，为了提升用户体验，我们经常需要在项目中集成各种第三方库。FlexSlider是一个非常流行的轮播图插件，它可以帮助开发者轻松实现响应式的轮播效果。本文将介绍如何在Vue项目中引入并使用flexslider插件。">
+  <meta name="description" content="引言： 在Vue项目中，为了提升用户体验，我们经常需要在项目中集成各种第三方库。FlexSlider是一个非常流行的轮播图插件，它可以帮助开发者轻松实现响应式的轮播效果。本文将介绍如何在Vue项目中引入并使用flexslider插件。">
 <meta name="keywords" content="vue,插件,样式">
 <meta property="og:type" content="article">
 <meta property="og:title" content="vue项目引入flexslider插件实现时间轴轮播">
 <meta property="og:url" content="https:&#x2F;&#x2F;www.tengfei.eu.org&#x2F;article&#x2F;5d58bf88.html">
 <meta property="og:site_name" content="(●ˇ∀ˇ●)">
-<meta property="og:description" content="引言：在Vue项目中，为了提升用户体验，我们经常需要在项目中集成各种第三方库。FlexSlider是一个非常流行的轮播图插件，它可以帮助开发者轻松实现响应式的轮播效果。本文将介绍如何在Vue项目中引入并使用flexslider插件。">
+<meta property="og:description" content="引言： 在Vue项目中，为了提升用户体验，我们经常需要在项目中集成各种第三方库。FlexSlider是一个非常流行的轮播图插件，它可以帮助开发者轻松实现响应式的轮播效果。本文将介绍如何在Vue项目中引入并使用flexslider插件。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2025-07-07T10:25:31.237Z">
 <meta name="twitter:card" content="summary">
@@ -306,17 +306,23 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="引言："><a href="#引言：" class="headerlink" title="引言："></a>引言：</h2><p>在Vue项目中，为了提升用户体验，我们经常需要在项目中集成各种第三方库。FlexSlider是一个非常流行的轮播图插件，它可以帮助开发者轻松实现响应式的轮播效果。本文将介绍如何在Vue项目中引入并使用<code>flexslider</code>插件。</p>
+        <h2 id="引言：">引言：</h2>
+<p>在Vue项目中，为了提升用户体验，我们经常需要在项目中集成各种第三方库。FlexSlider是一个非常流行的轮播图插件，它可以帮助开发者轻松实现响应式的轮播效果。本文将介绍如何在Vue项目中引入并使用<code>flexslider</code>插件。</p>
 <a id="more"></a>
-<h2 id="1-安装依赖"><a href="#1-安装依赖" class="headerlink" title="1. 安装依赖"></a>1. 安装依赖</h2><p>首先，我们需要安装<code>flexslider</code>插件。在项目根目录下运行以下命令：</p>
+<h2 id="1-安装依赖">1. 安装依赖</h2>
+<p>首先，我们需要安装<code>flexslider</code>插件。在项目根目录下运行以下命令：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install flexslider --save</span><br></pre></td></tr></table></figure>
-<h2 id="2-引入插件"><a href="#2-引入插件" class="headerlink" title="2. 引入插件"></a>2. 引入插件</h2><p>在项目的<code>main.js</code>文件中引入<code>flexslider</code>插件：</p>
+<h2 id="2-引入插件">2. 引入插件</h2>
+<p>在项目的<code>main.js</code>文件中引入<code>flexslider</code>插件：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">'flexslider'</span>;</span><br></pre></td></tr></table></figure>
-<h2 id="3-创建HTML结构"><a href="#3-创建HTML结构" class="headerlink" title="3. 创建HTML结构"></a>3. 创建HTML结构</h2><p>在需要添加轮播的组件中，创建一个包含轮播图片的<code>div</code>容器：</p>
+<h2 id="3-创建HTML结构">3. 创建HTML结构</h2>
+<p>在需要添加轮播的组件中，创建一个包含轮播图片的<code>div</code>容器：</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"flexslider"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ul</span> <span class="attr">class</span>=<span class="string">"slides"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"path/to/image1.jpg"</span> <span class="attr">alt</span>=<span class="string">"Image 1"</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"path/to/image2.jpg"</span> <span class="attr">alt</span>=<span class="string">"Image 2"</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"path/to/image3.jpg"</span> <span class="attr">alt</span>=<span class="string">"Image 3"</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h2 id="4-初始化插件"><a href="#4-初始化插件" class="headerlink" title="4. 初始化插件"></a>4. 初始化插件</h2><p>在组件的<code>mounted</code>生命周期钩子中，初始化<code>flexslider</code>插件：</p>
+<h2 id="4-初始化插件">4. 初始化插件</h2>
+<p>在组件的<code>mounted</code>生命周期钩子中，初始化<code>flexslider</code>插件：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">mounted() &#123;</span><br><span class="line">  $(<span class="string">".flexslider"</span>).flexslider(&#123;</span><br><span class="line">    animation: <span class="string">"slide"</span>,</span><br><span class="line">    controlNav: <span class="literal">true</span>,</span><br><span class="line">    animationLoop: <span class="literal">false</span>,</span><br><span class="line">    slideshow: <span class="literal">false</span>,</span><br><span class="line">    itemWidth: <span class="number">1140</span>,</span><br><span class="line">    itemMargin: <span class="number">5</span>,</span><br><span class="line">    pausePlay: <span class="literal">false</span>,</span><br><span class="line">    start: <span class="function"><span class="keyword">function</span>(<span class="params">slider</span>) </span>&#123;</span><br><span class="line">      slider.find(<span class="string">".slide_description"</span>).fadeIn();</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="5-样式调整"><a href="#5-样式调整" class="headerlink" title="5. 样式调整"></a>5. 样式调整</h2><p>根据需要可以对轮播组件进行样式调整。例如，可以在组件的<code>&lt;style&gt;</code>标签中添加以下CSS样式：</p>
+<h2 id="5-样式调整">5. 样式调整</h2>
+<p>根据需要可以对轮播组件进行样式调整。例如，可以在组件的<code>&lt;style&gt;</code>标签中添加以下CSS样式：</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.flexslider</span> &#123;</span><br><span class="line">  <span class="attribute">margin</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.flexslider</span> <span class="selector-class">.slides</span> &gt; <span class="selector-tag">li</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: none;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.flexslider</span> <span class="selector-class">.slides</span> <span class="selector-tag">img</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">  <span class="attribute">display</span>: block;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>至此，我们已经成功在Vue项目中引入了<code>flexslider</code>插件，并实现了时间轴轮播效果。</p>
 
@@ -734,6 +740,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">SEO</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">Java</a>
               </li>
              
@@ -742,11 +752,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">SEO</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">组件</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -754,7 +760,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Linux</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">组件</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -770,14 +776,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">NodeJS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">命令行窗口</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">Oracle</a>
               </li>
              
@@ -786,7 +784,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Redis</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">NodeJS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">命令行窗口</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -802,7 +804,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Redis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">JSR303校验</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">SpringSecurity</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -811,10 +821,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">Thymeleaf</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">SpringSecurity</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -834,11 +840,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Web框架</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">SpringCloud</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">SpringCloud</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Web框架</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -866,15 +872,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">前端路由</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">Vuex</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">前端路由</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Hexo_admin</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -890,18 +900,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">云开发</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">低代码</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">小程序</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">监控</a>
               </li>
              
@@ -914,7 +912,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Hexo_admin</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">云开发</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">低代码</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">小程序</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -938,15 +944,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">NoSql</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">Flowable</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">工作流</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">NoSql</a>
               </li>
             
             <div class="clearfix"></div>

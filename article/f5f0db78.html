@@ -8,13 +8,13 @@
   <link rel="dns-prefetch" href="https://www.tengfei.eu.org">
   <title>git学习笔记 | (●ˇ∀ˇ●)</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="git学习笔记 🌜 🌜 🌜  linux基础命令，git操作…">
+  <meta name="description" content="git学习笔记 🌜 🌜 🌜 linux基础命令，git操作…">
 <meta name="keywords" content="git">
 <meta property="og:type" content="article">
 <meta property="og:title" content="git学习笔记">
 <meta property="og:url" content="https:&#x2F;&#x2F;www.tengfei.eu.org&#x2F;article&#x2F;f5f0db78.html">
 <meta property="og:site_name" content="(●ˇ∀ˇ●)">
-<meta property="og:description" content="git学习笔记 🌜 🌜 🌜  linux基础命令，git操作…">
+<meta property="og:description" content="git学习笔记 🌜 🌜 🌜 linux基础命令，git操作…">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https:&#x2F;&#x2F;www.tengfei.eu.org&#x2F;article&#x2F;f5f0db78&#x2F;View.jpg">
 <meta property="og:image" content="https:&#x2F;&#x2F;www.tengfei.eu.org&#x2F;article&#x2F;f5f0db78&#x2F;Branchdiagram.png">
@@ -313,10 +313,13 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
     <div class="article-entry" itemprop="articleBody">
       
         <p>git学习笔记</p>
-<p>🌜 🌜 🌜 </p>
+<p>🌜 🌜 🌜</p>
 <p>linux基础命令，git操作…</p>
 <a id="more"></a>
-<h2 id="Linux基础命令"><a href="#Linux基础命令" class="headerlink" title="Linux基础命令"></a>Linux基础命令</h2><h3 id="一-目录命令"><a href="#一-目录命令" class="headerlink" title="一. 目录命令"></a>一. 目录命令</h3><h4 id="1、目录切换命令"><a href="#1、目录切换命令" class="headerlink" title="1、目录切换命令"></a>1、目录切换命令</h4><ul>
+<h2 id="Linux基础命令">Linux基础命令</h2>
+<h3 id="一-目录命令">一. 目录命令</h3>
+<h4 id="1、目录切换命令">1、目录切换命令</h4>
+<ul>
 <li><code>cd usr</code>： 切换到该目录下usr目录</li>
 <li><code>cd ..（或cd../）</code>： 切换到上一层目录</li>
 <li><code>cd /</code>： 切换到系统根目录</li>
@@ -325,7 +328,9 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 <li><code>cd /tmp/test</code>： 使用绝对路径切换</li>
 <li><code>cd test</code>： 使用相对路径</li>
 </ul>
-<h4 id="2、目录操作命令"><a href="#2、目录操作命令" class="headerlink" title="2、目录操作命令"></a>2、目录操作命令</h4><p>1). <strong>mkdir 目录名称</strong>： 增加目录<br>示例：</p>
+<h4 id="2、目录操作命令">2、目录操作命令</h4>
+<p>1). <strong>mkdir 目录名称</strong>： 增加目录<br>
+示例：</p>
 <ul>
 <li>mkdir test</li>
 <li>mkdir-p test/a/b/c：创建多级目录（使用相对路径）</li>
@@ -344,7 +349,7 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 <p>示例：</p>
 <ul>
 <li>列出当前目录及子目录下所有文件和文件夹: <code>find .</code></li>
-<li>在<strong>/home</strong>目录下查找以.txt结尾的文件名:<code>find /home -name &quot;*.txt&quot;</code></li>
+<li>在**/home**目录下查找以.txt结尾的文件名:<code>find /home -name &quot;*.txt&quot;</code></li>
 <li>同上，但忽略大小写: <code>find /home -iname &quot;*.txt&quot;</code></li>
 <li>当前目录及子目录下查找所有以.txt和.pdf结尾的文件:<code>find . \( -name &quot;*.txt&quot; -o -name &quot;*.pdf&quot; \)或find . -name &quot;*.txt&quot; -o -name &quot;*.pdf&quot;</code></li>
 </ul>
@@ -355,7 +360,6 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 <li>-i: 若指定目录已有同名文件，则先询问是否覆盖旧文件;</li>
 <li>-f: 在mv操作要覆盖某已有的目标文件时不给任何指示;</li>
 </ul>
-<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -378,12 +382,13 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 </tr>
 </tbody>
 </table>
-</div>
 <p>将info目录放入logs目录中。注意，如果logs目录不存在，则该命令将info改名为logs。</p>
-<p><code>mv info/ logs</code><br>再如将/usr/student下的所有文件和目录移到当前目录下，命令行为：</p>
+<p><code>mv info/ logs</code><br>
+再如将/usr/student下的所有文件和目录移到当前目录下，命令行为：</p>
 <p><code>$ mv /usr/student/*  .</code></p>
 <p>7). <strong>cp -r 目录名称 目录拷贝的目标位置</strong>： 拷贝目录（改），-r代表递归拷贝</p>
-<p>注意：cp命令不仅可以拷贝目录还可以拷贝文件，压缩包等，拷贝文件和压缩包时不 用写-r递归<br>参数：</p>
+<p>注意：cp命令不仅可以拷贝目录还可以拷贝文件，压缩包等，拷贝文件和压缩包时不 用写-r递归<br>
+参数：</p>
 <ul>
 <li><code>-a</code> =-pdr</li>
 <li><code>-p</code> 同时复制文件属性，比如修改日期</li>
@@ -393,19 +398,25 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 <li><code>note</code>:可以在拷贝的同时重命名</li>
 </ul>
 <p><strong>rm [-rf] 目录</strong>: 删除目录（删）</p>
-<p>注意：rm不仅可以删除目录，也可以删除其他文件或压缩包，为了增强大家的记忆， 无论删除任何目录或文件，都直接使用rm -rf 目录/文件/压缩包<br>参数：</p>
+<p>注意：rm不仅可以删除目录，也可以删除其他文件或压缩包，为了增强大家的记忆， 无论删除任何目录或文件，都直接使用rm -rf 目录/文件/压缩包<br>
+参数：</p>
 <ul>
 <li><code>-r</code>：递归删除</li>
 <li><code>-f</code>：强制删除 即没有提醒</li>
 </ul>
-<h3 id="二-文件命令"><a href="#二-文件命令" class="headerlink" title="二. 文件命令"></a>二. 文件命令</h3><h4 id="1、文件操作命令"><a href="#1、文件操作命令" class="headerlink" title="1、文件操作命令"></a>1、文件操作命令</h4><p>1). <code>touch 文件名称</code>: 文件的创建（增）<br>创建文件 可以一次创建多个文件，以空格隔开</p>
-<p>2). <code>cat/more/less/tail</code> 文件名称: 文件的查看（查）<br><strong>-n:带行号</strong></p>
+<h3 id="二-文件命令">二. 文件命令</h3>
+<h4 id="1、文件操作命令">1、文件操作命令</h4>
+<p>1). <code>touch 文件名称</code>: 文件的创建（增）<br>
+创建文件 可以一次创建多个文件，以空格隔开</p>
+<p>2). <code>cat/more/less/tail</code> 文件名称: 文件的查看（查）<br>
+<strong>-n:带行号</strong></p>
 <ul>
 <li><code>cat</code>： 查看显示文件内容</li>
 <li><code>tac</code>:反向显示文件内容</li>
 <li><code>more</code>： 分页查看文件内容： 可以显示百分比，回车可以向下一行， 空格可以向下一页，q可以退出查看</li>
 </ul>
-<p><strong>操作参数：</strong><br>进入浏览模式后：</p>
+<p><strong>操作参数：</strong><br>
+进入浏览模式后：</p>
 <ul>
 <li>f或者空格：下一页</li>
 <li>enter：一行一行往下翻</li>
@@ -414,7 +425,7 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 <p><code>less</code>： 可以使用键盘上的PgUp和PgDn向上 和向下翻页，q结束查看</p>
 <ul>
 <li><code>-l</code> 以列表形式查看</li>
-<li><code>-h</code> 以一种人性化的方式查看，也是文件的大小以合适的单位显示- </li>
+<li><code>-h</code> 以一种人性化的方式查看，也是文件的大小以合适的单位显示-</li>
 <li><code>-a</code> 查看所有文件，包括隐藏文件</li>
 <li><code>-i</code> 显示出文件的i节点号</li>
 </ul>
@@ -428,29 +439,44 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 <li>下箭头：向下翻</li>
 <li>/搜索词 n向下找</li>
 </ul>
-<p><code>head -n</code> ： 查看文件前n行。缺省-n显示前10行<br><code>tail-10</code> ： 查看文件的后10行，Ctrl+C结束<br>注意：命令 tail -f 文件 可以动态显示文件末尾内容，对某个文件进行动态监控，例如tomcat的日志文件， 会随着程序的运行，日志会变化，可以使用tail -f catalina-2016-11-11.log 监控文件的变化</p>
-<p><code>in</code>： 链接命令<br>　　-s创建软连接<br>　　硬链接和cp -p的区别是硬链接会同步更新<br>　　源文件如果丢失，硬链接依然存在。<br>　　硬链接和源文件的i节点相同。<br>　　硬链接不能夸分区，软连接可以跨分区。<br>　　硬链接不可以链接目录，链接可以<br>　　软连接文件具有的权限是ugo都是rwx</p>
+<p><code>head -n</code> ： 查看文件前n行。缺省-n显示前10行<br>
+<code>tail-10</code> ： 查看文件的后10行，Ctrl+C结束<br>
+注意：命令 tail -f 文件 可以动态显示文件末尾内容，对某个文件进行动态监控，例如tomcat的日志文件， 会随着程序的运行，日志会变化，可以使用tail -f catalina-2016-11-11.log 监控文件的变化</p>
+<p><code>in</code>： 链接命令<br>
+　　-s创建软连接<br>
+　　硬链接和cp -p的区别是硬链接会同步更新<br>
+　　源文件如果丢失，硬链接依然存在。<br>
+　　硬链接和源文件的i节点相同。<br>
+　　硬链接不能夸分区，软连接可以跨分区。<br>
+　　硬链接不可以链接目录，链接可以<br>
+　　软连接文件具有的权限是ugo都是rwx</p>
 <p><code>rm -rf 文件</code>： 删除文件（删）</p>
 <p>同目录删除：熟记 rm -rf 文件 即可</p>
-<h4 id="2、vim文件操作命令"><a href="#2、vim文件操作命令" class="headerlink" title="2、vim文件操作命令"></a>2、vim文件操作命令</h4><p><strong>vim编辑器是Linux中的强大组件，是vi编辑器的加强版</strong>，vim编辑器的命令和快捷方式有很多，但此处不一一阐述，大家也无需研究的很透彻，使用vim编辑修改文件的方式基本会使用就可以了。</p>
+<h4 id="2、vim文件操作命令">2、vim文件操作命令</h4>
+<p><strong>vim编辑器是Linux中的强大组件，是vi编辑器的加强版</strong>，vim编辑器的命令和快捷方式有很多，但此处不一一阐述，大家也无需研究的很透彻，使用vim编辑修改文件的方式基本会使用就可以了。</p>
 <p><strong>在实际开发中，使用vim编辑器主要作用就是修改配置文件，下面是一般步骤：</strong></p>
-<p>vim 文件———&gt;进入文件——-&gt;命令模式———&gt;按i进入编辑模式——-&gt;编辑文件 ———-&gt;按Esc进入底行模式——-&gt;输入：wq/q! （输入wq代表写入内容并退出，即保存；输入q!代表强制退出不保存。）</p>
+<p>vim 文件------&gt;进入文件-----&gt;命令模式------&gt;按i进入编辑模式-----&gt;编辑文件 -------&gt;按Esc进入底行模式-----&gt;输入：wq/q! （输入wq代表写入内容并退出，即保存；输入q!代表强制退出不保存。）</p>
 <p>1). <code>i,a</code>: 命令模式–&gt;编辑模式</p>
 <p>2). <code>ecs</code>: 编辑模式–&gt;命令模式(底行模式)</p>
 <p>3). 命令模式(底行模式下)：</p>
 <ul>
-<li><p><code>q!</code>: 强制退出</p>
+<li>
+<p><code>q!</code>: 强制退出</p>
 </li>
-<li><p><code>q</code>: 退出</p>
+<li>
+<p><code>q</code>: 退出</p>
 </li>
-<li><p><code>wq</code>: 保存并退出 (wq以及wq!，则不管有没有修改，都会强制更新修改时间，有时没修改的东西会让人误以为改了)</p>
+<li>
+<p><code>wq</code>: 保存并退出 (wq以及wq!，则不管有没有修改，都会强制更新修改时间，有时没修改的东西会让人误以为改了)</p>
 </li>
-<li><p><code>wq!</code>: 保存并强制退出</p>
+<li>
+<p><code>wq!</code>: 保存并强制退出</p>
 </li>
-<li><p><code>x</code>: 保存并退出（个人推荐使用，:x在由修改操作时会保存并退出，更新修改时间）</p>
+<li>
+<p><code>x</code>: 保存并退出（个人推荐使用，:x在由修改操作时会保存并退出，更新修改时间）</p>
 </li>
 </ul>
-<p>4). <code>set nu</code>: 显示行号    <code>set nonu</code>: 取消行号</p>
+<p>4). <code>set nu</code>: 显示行号	<code>set nonu</code>: 取消行号</p>
 <p>5). 翻页查看：</p>
 <ul>
 <li>上一页：page up</li>
@@ -462,26 +488,32 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 <li><code>G</code>: 跳转到最后一行</li>
 <li><code>100G</code>: 跳转到指定行，如100G就是第100行，nG:第n行</li>
 </ul>
-<p>7). <strong>/要查找的内容</strong>: 查找<br>8). <code>yy</code>: 复制当前行<br>9). <code>p</code>: 粘贴到当前所在行的下一行</p>
+<p>7). <strong>/要查找的内容</strong>: 查找<br>
+8). <code>yy</code>: 复制当前行<br>
+9). <code>p</code>: 粘贴到当前所在行的下一行</p>
 <ul>
 <li>粘贴一次就输入一个p</li>
 <li>多次就多个p，如10p就粘贴10次</li>
 </ul>
-<p>10). 查找并替换：<br><strong>方式一</strong>：<code>:开始行号,结束行号s/查找的单词/替换的单词</code><br>如：<code>1,3s/f/XXX</code>: 替换1到3行的f为XXX<br><code>1,$s/f/YYY</code>: 替换1到所有行的f为YYY</p>
-<p>方式二：<code>gc方式</code> </p>
-<p><code>%s/aaa/bbb/gc</code>    意思就是检索所有行，挨个询问替换aaa为bbb，手动判断y是替换，n是不替换，a是替换所有，q是退出。</p>
+<p>10). 查找并替换：<br>
+<strong>方式一</strong>：<code>:开始行号,结束行号s/查找的单词/替换的单词</code><br>
+如：<code>1,3s/f/XXX</code>: 替换1到3行的f为XXX<br>
+<code>1,$s/f/YYY</code>: 替换1到所有行的f为YYY</p>
+<p>方式二：<code>gc方式</code></p>
+<p><code>%s/aaa/bbb/gc</code>	意思就是检索所有行，挨个询问替换aaa为bbb，手动判断y是替换，n是不替换，a是替换所有，q是退出。</p>
 <p><strong>参数</strong>：</p>
 <ul>
-<li><code>y - yes</code> 替换 </li>
-<li><code>n - no</code> 不替换 </li>
-<li><code>a - all</code> 替换所有 </li>
-<li><code>q - quit</code> 退出替换 </li>
-<li><code>l - last</code> 最后一个，并把光标移动到行首 </li>
-<li><code>^E</code> 向下滚屏 </li>
-<li>^Y 向上滚屏 </li>
+<li><code>y - yes</code> 替换</li>
+<li><code>n - no</code> 不替换</li>
+<li><code>a - all</code> 替换所有</li>
+<li><code>q - quit</code> 退出替换</li>
+<li><code>l - last</code> 最后一个，并把光标移动到行首</li>
+<li><code>^E</code> 向下滚屏</li>
+<li>^Y 向上滚屏</li>
 </ul>
-<p>11). <code>u</code>: 撤销操作 </p>
-<h2 id="Git命令行操作"><a href="#Git命令行操作" class="headerlink" title="Git命令行操作"></a>Git命令行操作</h2><p><strong>托管中心</strong><code>维护远程库</code></p>
+<p>11). <code>u</code>: 撤销操作</p>
+<h2 id="Git命令行操作">Git命令行操作</h2>
+<p><strong>托管中心</strong><code>维护远程库</code></p>
 <ul>
 <li><strong>内网：可以自己搭建一个GitLab服务器</strong></li>
 <li><strong>外网：可以使用码云、Github</strong></li>
@@ -492,56 +524,76 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 <li><strong>分布式</strong>：<strong>Git</strong>，Darcs,…</li>
 </ul>
 <p><img src="/article/f5f0db78/View.jpg" alt="img"></p>
-<h3 id="1-1本地库初始化"><a href="#1-1本地库初始化" class="headerlink" title="1.1本地库初始化"></a>1.1本地库初始化</h3><p><code>进入文件夹</code></p>
+<h3 id="1-1本地库初始化">1.1本地库初始化</h3>
+<p><code>进入文件夹</code></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br><span class="line">注意：生成的 .git 目录中存放的是本地库相关文件，不要删除</span><br></pre></td></tr></table></figure>
-<h3 id="1-2设置签名"><a href="#1-2设置签名" class="headerlink" title="1.2设置签名"></a>1.2设置签名</h3><ul>
-<li><p>项目(仓库)级别<code>仅在当前本地库有效</code></p>
+<h3 id="1-2设置签名">1.2设置签名</h3>
+<ul>
+<li>
+<p>项目(仓库)级别<code>仅在当前本地库有效</code></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config user.name tom  #设置用户名tom</span><br><span class="line">git config user.email liu@qq.com #设置用户邮箱</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>系统用户级别<code>仅在当前登录的操作系统用户有效</code></p>
+<li>
+<p>系统用户级别<code>仅在当前登录的操作系统用户有效</code></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name tom</span><br><span class="line">git config --global user.email liu@qq.com</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <blockquote>
 <p>仅仅加了一个 <code>--global</code></p>
 <p>优先级别：<code>项目级别</code>  &gt;  <code>系统级别</code></p>
-<p>信息保存位置：<code>~/.gitconfig 文件</code>   </p>
+<p>信息保存位置：<code>~/.gitconfig 文件</code></p>
 </blockquote>
-<h3 id="1-3基本操作"><a href="#1-3基本操作" class="headerlink" title="1.3基本操作"></a>1.3基本操作</h3><h4 id="1-3-1-状态查看"><a href="#1-3-1-状态查看" class="headerlink" title="1.3.1 状态查看"></a>1.3.1 状态查看</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git status   #查看工作区、暂存区状态</span><br></pre></td></tr></table></figure>
-<h4 id="1-3-2-添加"><a href="#1-3-2-添加" class="headerlink" title="1.3.2 添加"></a>1.3.2 添加</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git add fileName  #指定文件</span><br><span class="line">git add . #所有</span><br><span class="line">说明：将工作区的文件添加到暂存区</span><br></pre></td></tr></table></figure>
-<h4 id="1-3-3-提交"><a href="#1-3-3-提交" class="headerlink" title="1.3.3 提交"></a>1.3.3 提交</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git commit -m &apos;commit message&apos; fileName</span><br><span class="line">说明：将暂存区内容提交到本地库</span><br></pre></td></tr></table></figure>
-<h4 id="1-3-4-查看历史记录"><a href="#1-3-4-查看历史记录" class="headerlink" title="1.3.4 查看历史记录"></a>1.3.4 查看历史记录</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">git log </span><br><span class="line">git reflog  #常用</span><br><span class="line">git log --greph #图形显示,更直观</span><br><span class="line">git log --pretty=oneline #漂亮一行显示</span><br><span class="line">git log --oneline #简洁显示，显示以前版本</span><br><span class="line">说明：HEAD@&#123;移动到当前版本需要多少步&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="1-3-5-前进后退"><a href="#1-3-5-前进后退" class="headerlink" title="1.3.5 前进后退"></a>1.3.5 前进后退</h4><ul>
-<li><p>基于索引值<code>推荐</code></p>
+<h3 id="1-3基本操作">1.3基本操作</h3>
+<h4 id="1-3-1-状态查看">1.3.1 状态查看</h4>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git status   #查看工作区、暂存区状态</span><br></pre></td></tr></table></figure>
+<h4 id="1-3-2-添加">1.3.2 添加</h4>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git add fileName  #指定文件</span><br><span class="line">git add . #所有</span><br><span class="line">说明：将工作区的文件添加到暂存区</span><br></pre></td></tr></table></figure>
+<h4 id="1-3-3-提交">1.3.3 提交</h4>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git commit -m &apos;commit message&apos; fileName</span><br><span class="line">说明：将暂存区内容提交到本地库</span><br></pre></td></tr></table></figure>
+<h4 id="1-3-4-查看历史记录">1.3.4 查看历史记录</h4>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">git log </span><br><span class="line">git reflog  #常用</span><br><span class="line">git log --greph #图形显示,更直观</span><br><span class="line">git log --pretty=oneline #漂亮一行显示</span><br><span class="line">git log --oneline #简洁显示，显示以前版本</span><br><span class="line">说明：HEAD@&#123;移动到当前版本需要多少步&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="1-3-5-前进后退">1.3.5 前进后退</h4>
+<ul>
+<li>
+<p>基于索引值<code>推荐</code></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git reset --hard 指针位置</span><br><span class="line">例子：git reset --hard a6ace91 #回到这个状态</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>使用 <strong>^</strong> 符号<code>只能后退</code></p>
+<li>
+<p>使用 <strong>^</strong> 符号<code>只能后退</code></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git reset --hard HEAD^</span><br><span class="line">例子：git reset --hard HEAD^^</span><br><span class="line">注意：几个 ^ 表示后退几步</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>使用 <strong>~</strong> 符号<code>只能后退</code></p>
+<li>
+<p>使用 <strong>~</strong> 符号<code>只能后退</code></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git reset --hard HEAD~n</span><br><span class="line">例子：git reset --hard HEAD~3</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<h4 id="1-3-6-reset的三个参数比较"><a href="#1-3-6-reset的三个参数比较" class="headerlink" title="1.3.6 reset的三个参数比较"></a>1.3.6 reset的三个参数比较</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">soft: </span><br><span class="line">  - 仅本地库移动HEAD 指针</span><br><span class="line">mixed:</span><br><span class="line">  - 在本地库移动HEAD指针</span><br><span class="line">  - 重置暂存区</span><br><span class="line">hard:</span><br><span class="line">  - 在本地库移动HEAD指针</span><br><span class="line">  - 重置暂存区</span><br><span class="line">  - 重置工作区</span><br></pre></td></tr></table></figure>
-<h4 id="1-3-7-删除文件并找回"><a href="#1-3-7-删除文件并找回" class="headerlink" title="1.3.7　删除文件并找回"></a>1.3.7　删除文件并找回</h4><ul>
+<h4 id="1-3-6-reset的三个参数比较">1.3.6 reset的三个参数比较</h4>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">soft: </span><br><span class="line">  - 仅本地库移动HEAD 指针</span><br><span class="line">mixed:</span><br><span class="line">  - 在本地库移动HEAD指针</span><br><span class="line">  - 重置暂存区</span><br><span class="line">hard:</span><br><span class="line">  - 在本地库移动HEAD指针</span><br><span class="line">  - 重置暂存区</span><br><span class="line">  - 重置工作区</span><br></pre></td></tr></table></figure>
+<h4 id="1-3-7-删除文件并找回">1.3.7　删除文件并找回</h4>
+<ul>
 <li><strong>相当于建立一个快照，虽然删除了，但只要添加到暂存区，就能找回</strong></li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">rm text.txt #删除文件</span><br><span class="line">git reset --hard 指针位置</span><br></pre></td></tr></table></figure>
 <ul>
 <li>删除操作以及提交到本地库：指针位置指向历史记录</li>
-<li>删除操作尚未提交到本地库：指针位置使用HEAD<h4 id="1-3-8-文件差异比较"><a href="#1-3-8-文件差异比较" class="headerlink" title="1.3.8 文件差异比较"></a>1.3.8 文件差异比较</h4></li>
+<li>删除操作尚未提交到本地库：指针位置使用HEAD</li>
 </ul>
+<h4 id="1-3-8-文件差异比较">1.3.8 文件差异比较</h4>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git diff 文件名 #和暂存区进行比较</span><br><span class="line">git diff 哈希值 文件名  #和本地库中的一个历史版本比较</span><br><span class="line">git diff  #不带文件名，则比较多个文件</span><br></pre></td></tr></table></figure>
-<h3 id="2-2-分支管理"><a href="#2-2-分支管理" class="headerlink" title="2.2 分支管理"></a>2.2 分支管理</h3><p><img src="/article/f5f0db78/Branchdiagram.png" alt="Branch diagram"></p>
+<h3 id="2-2-分支管理">2.2 分支管理</h3>
+<p><img src="/article/f5f0db78/Branchdiagram.png" alt="Branch diagram"></p>
 <p><code>hot_fix</code> <code>master</code> <code>feature_x</code> <code>feature_y</code></p>
-<h4 id="2-2-1-什么是分支管理"><a href="#2-2-1-什么是分支管理" class="headerlink" title="2.2.1 什么是分支管理"></a>2.2.1 什么是分支管理</h4><ul>
+<h4 id="2-2-1-什么是分支管理">2.2.1 什么是分支管理</h4>
+<ul>
 <li>在版本控制中，使用多条线推进多个任务</li>
 </ul>
-<h4 id="2-2-2-分支的好处"><a href="#2-2-2-分支的好处" class="headerlink" title="2.2.2 分支的好处"></a>2.2.2 分支的好处</h4><ul>
+<h4 id="2-2-2-分支的好处">2.2.2 分支的好处</h4>
+<ul>
 <li>同时并行推进多个功能开发，提高开发效率</li>
 <li>某一分支开发失败，不会对其它分支有任何影响，失败的分支删除重新开始即可</li>
 </ul>
-<h4 id="2-2-3-分支操作"><a href="#2-2-3-分支操作" class="headerlink" title="2.2.3 分支操作"></a>2.2.3 分支操作</h4><ul>
+<h4 id="2-2-3-分支操作">2.2.3 分支操作</h4>
+<ul>
 <li>创建分支</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch 分支名</span><br></pre></td></tr></table></figure>
@@ -561,28 +613,35 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 <li>删除分支</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch -d 分支名</span><br></pre></td></tr></table></figure>
-<h4 id="2-2-4-解决冲突"><a href="#2-2-4-解决冲突" class="headerlink" title="2.2.4 解决冲突"></a>2.2.4 解决冲突</h4><ul>
-<li><p>冲突的表现</p>
+<h4 id="2-2-4-解决冲突">2.2.4 解决冲突</h4>
+<ul>
+<li>
+<p>冲突的表现</p>
 <p><img src="/article/f5f0db78/Branchconflict.png" alt="Branch conflict"></p>
 <ul>
 <li>两个分支同时修改一个文件合并时发生冲突</li>
 </ul>
 </li>
-<li><p>冲突的解决</p>
+<li>
+<p>冲突的解决</p>
 <ul>
 <li>第一步：编辑，删除特殊标记<code>&lt;&lt;&lt;</code> <code>===</code></li>
 <li>第二步：修改到满意位置，保存退出</li>
 <li>第三步：添加到缓存区  <code>git  add 文件名</code></li>
-<li>第四步：提交到本地库<code>git commit -m &#39;日志信息&#39;</code>  <code>注意：后面一定不能带文件名</code></li>
+<li>第四步：提交到本地库<code>git commit -m '日志信息' </code>  <code>注意：后面一定不能带文件名</code></li>
 </ul>
 </li>
 </ul>
-<h2 id="Git-结合Github"><a href="#Git-结合Github" class="headerlink" title="Git 结合Github"></a>Git 结合Github</h2><p> <code>别名 分支名</code></p>
+<h2 id="Git-结合Github">Git 结合Github</h2>
+<p><code>别名 分支名</code></p>
 <p><img src="/article/f5f0db78/github.png" alt="github"></p>
-<h4 id="1-1-创建远程库地址别名"><a href="#1-1-创建远程库地址别名" class="headerlink" title="1.1 创建远程库地址别名"></a>1.1 创建远程库地址别名</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git remote -v  #查看远程地址别名</span><br><span class="line">git remote add 别名 远程地址 </span><br><span class="line">例子：git remote add origin https://xx</span><br></pre></td></tr></table></figure>
-<h4 id="1-2-推送"><a href="#1-2-推送" class="headerlink" title="1.2 推送"></a>1.2 推送</h4><p><code>开发修改完把本地库的文件推送到远程仓库</code> <code>前提是提交到了本地库才可以推送</code></p>
+<h4 id="1-1-创建远程库地址别名">1.1 创建远程库地址别名</h4>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git remote -v  #查看远程地址别名</span><br><span class="line">git remote add 别名 远程地址 </span><br><span class="line">例子：git remote add origin https://xx</span><br></pre></td></tr></table></figure>
+<h4 id="1-2-推送">1.2 推送</h4>
+<p><code>开发修改完把本地库的文件推送到远程仓库</code> <code>前提是提交到了本地库才可以推送</code></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git push 别名 分支名</span><br><span class="line">git push -u 别名 分支名    #-u指定默认主机</span><br><span class="line">例子：git push origin master</span><br></pre></td></tr></table></figure>
-<h4 id="1-3-克隆"><a href="#1-3-克隆" class="headerlink" title="1.3 克隆"></a>1.3 克隆</h4><p> <code>克隆下来后不要在主分支里面做开发</code>  <code>clone进行一次，从无到有的过程，更新用pull</code></p>
+<h4 id="1-3-克隆">1.3 克隆</h4>
+<p><code>克隆下来后不要在主分支里面做开发</code>  <code>clone进行一次，从无到有的过程，更新用pull</code></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git clone  远程地址</span><br><span class="line">例子：git clone https://xx</span><br></pre></td></tr></table></figure>
 <ul>
 <li>完整的把远程库克隆到本地</li>
@@ -590,48 +649,65 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 <li>初始化本地库</li>
 </ul>
 <p><strong>常见错误</strong></p>
-<p>当我们使用git clone指令从github 上download其它优秀的代码时，如果报如下错误 </p>
+<p>当我们使用git clone指令从github 上download其它优秀的代码时，如果报如下错误</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">RPC failed; curl 56 OpenSSL SSL_read: SSL_ERROR_SYSCALL, errno 10054</span><br></pre></td></tr></table></figure>
-<p>这是因为服务器的SSL证书没有经过第三方机构的签署，所以才报错。解决方案如下： 第一步，克隆远程仓库时，用env命令设置GIT_SSL_NO_VERIFY环境变量为”ture”，并同时调用正常的git clone命令。完整的命令如下： </p>
+<p>这是因为服务器的SSL证书没有经过第三方机构的签署，所以才报错。解决方案如下： 第一步，克隆远程仓库时，用env命令设置GIT_SSL_NO_VERIFY环境变量为”ture”，并同时调用正常的git clone命令。完整的命令如下：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">env GIT_SSL_NO_VERIFY=true git clone https://&lt;host_name/git/project.git</span><br></pre></td></tr></table></figure>
-<p>第二步，在克隆完毕的仓库中将http.sslVerify设置为”false”。完整的命令如下： </p>
+<p>第二步，在克隆完毕的仓库中将http.sslVerify设置为”false”。完整的命令如下：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config http.sslVerify &quot;false&quot;</span><br></pre></td></tr></table></figure>
-<h4 id="1-4-拉取"><a href="#1-4-拉取" class="headerlink" title="1.4 拉取"></a>1.4 拉取</h4><p>  <code>本地存在clone下来的文件  就用pull更新</code>  </p>
+<h4 id="1-4-拉取">1.4 拉取</h4>
+<p><code>本地存在clone下来的文件  就用pull更新</code></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">pull = fetch + merge</span><br><span class="line">	git fetch 别名 分支名</span><br><span class="line">	git merge 别名/分支名</span><br><span class="line">git pull 别名 分支名</span><br></pre></td></tr></table></figure>
-<h4 id="1-5-解决冲突"><a href="#1-5-解决冲突" class="headerlink" title="1.5 解决冲突"></a>1.5 解决冲突</h4><p><code>注意：解决冲突后的提交是不能带文件名的</code></p>
+<h4 id="1-5-解决冲突">1.5 解决冲突</h4>
+<p><code>注意：解决冲突后的提交是不能带文件名的</code></p>
 <p><code>如果不是基于远程库最新版做的修改不能推送，必须先pull下来安照“分支冲突办法”解决</code></p>
-<h4 id="1-6-rebase"><a href="#1-6-rebase" class="headerlink" title="1.6 rebase"></a>1.6 rebase</h4><p><code>提交记录简洁不分叉</code>  <code>没学懂，感觉有点鸡肋</code> <code>混眼熟</code></p>
+<h4 id="1-6-rebase">1.6 rebase</h4>
+<p><code>提交记录简洁不分叉</code>  <code>没学懂，感觉有点鸡肋</code> <code>混眼熟</code></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git rebase -i 索引号</span><br><span class="line">git rebase -i HEAD~3  #合并最近三条记录</span><br><span class="line">说明：在vim编辑里面改成s</span><br></pre></td></tr></table></figure>
-<h4 id="1-7-beyond-compare"><a href="#1-7-beyond-compare" class="headerlink" title="1.7 beyond compare"></a>1.7 beyond compare</h4><p><code>用软件解决冲突</code> </p>
+<h4 id="1-7-beyond-compare">1.7 beyond compare</h4>
+<p><code>用软件解决冲突</code></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">1.安装 ：</span><br><span class="line">	beyond compare </span><br><span class="line">2.配置：</span><br><span class="line">    git config --local merge.tool bc3  #合并名称</span><br><span class="line">    git config --local mergetool.path &apos;/usr/local/bin/bcomp&apos; #软件路径</span><br><span class="line">    git config --local mergetool.keepBackup false  #False不用保存备份</span><br><span class="line">3.应用：</span><br><span class="line">	git mergetool</span><br><span class="line">说明：--local指只在当前操作系统有效</span><br></pre></td></tr></table></figure>
-<h4 id="1-8-跨团队合作"><a href="#1-8-跨团队合作" class="headerlink" title="1.8 跨团队合作"></a>1.8 跨团队合作</h4><p><img src="/article/f5f0db78/githubCrossteam.png" alt="github"></p>
+<h4 id="1-8-跨团队合作">1.8 跨团队合作</h4>
+<p><img src="/article/f5f0db78/githubCrossteam.png" alt="github"></p>
 <p><code>代码review之后合并</code></p>
 <ul>
-<li><p><strong>适用于个人</strong></p>
-<p><strong>邀请成员</strong>:<code>Settings</code> —&gt; <code>Collaborators</code> —&gt;<code>填写用户名</code> —&gt;<code>打开链接接受邀请</code></p>
+<li>
+<p><strong>适用于个人</strong></p>
+<p><strong>邀请成员</strong>:<code>Settings</code> --&gt; <code>Collaborators</code> --&gt;<code>填写用户名</code> --&gt;<code>打开链接接受邀请</code></p>
 </li>
-<li><p><strong>企业</strong>   <code>创建一个组织</code> <code>方便管理</code></p>
+<li>
+<p><strong>企业</strong>   <code>创建一个组织</code> <code>方便管理</code></p>
 </li>
-<li><p><strong>review</strong></p>
+<li>
+<p><strong>review</strong></p>
 <p><code>组织做review</code>  <code>通过Pull request</code></p>
 </li>
-<li><p><strong>给开源社区共享代码</strong></p>
-<p><code>点击别人仓库的fork 到自己的仓库</code>   — &gt; <code>然后clone下来 修改后推送到远程库</code>  —&gt; <code>点击Pull Request请求</code> —&gt; <code>Create pull request发消息</code></p>
+<li>
+<p><strong>给开源社区共享代码</strong></p>
+<p><code>点击别人仓库的fork 到自己的仓库</code>   – &gt; <code>然后clone下来 修改后推送到远程库</code>  --&gt; <code>点击Pull Request请求</code> --&gt; <code>Create pull request发消息</code></p>
 </li>
 </ul>
-<h4 id="1-9-Tag标签"><a href="#1-9-Tag标签" class="headerlink" title="1.9 Tag标签"></a>1.9 Tag标签</h4><p><code>为了清晰的版本管理，公司一般不会直接使用commit提交</code></p>
+<h4 id="1-9-Tag标签">1.9 Tag标签</h4>
+<p><code>为了清晰的版本管理，公司一般不会直接使用commit提交</code></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">git tag -a v1.0 -m &apos;版本介绍&apos;   #创建本地tag信息</span><br><span class="line">git tag -d v1.0    		#删除tag</span><br><span class="line">git push origin --tags   #将本地tag信息推送到远程库</span><br><span class="line">git pull origin --tags    #拉取到本地</span><br><span class="line"></span><br><span class="line">git checkout v.10    #切换tag</span><br><span class="line">git clone -b v0.1 地址   #指定tag下载代码</span><br></pre></td></tr></table></figure>
-<h4 id="1-10-SSH-免密登录"><a href="#1-10-SSH-免密登录" class="headerlink" title="1.10 SSH 免密登录"></a>1.10 SSH 免密登录</h4><ul>
-<li>输入:<code>ssh-keygen -t rsa -C GitHub邮箱地址</code>  </li>
+<h4 id="1-10-SSH-免密登录">1.10 SSH 免密登录</h4>
+<ul>
+<li>输入:<code>ssh-keygen -t rsa -C GitHub邮箱地址</code></li>
 <li>进入<code>.ssh</code>目录，复制<code>id_rsa.pub</code>文件内容</li>
-<li>登录GitHub。<code>Settings</code>  —&gt; <code>SSH and GPG keys</code> —&gt; <code>New SSH Key</code></li>
-<li>回到git通过ssh地址创建。<code>git remote add 别名 SSH地址</code></li>
+<li>登录GitHub。<code>Settings</code>  --&gt; <code>SSH and GPG keys </code> --&gt; <code>New SSH Key    </code></li>
+<li>回到git通过ssh地址创建。<code>git remote add 别名 SSH地址  </code></li>
 </ul>
-<h2 id="Git工作流"><a href="#Git工作流" class="headerlink" title="Git工作流"></a>Git工作流</h2><h4 id="1-1-概念"><a href="#1-1-概念" class="headerlink" title="1.1 概念"></a>1.1 概念</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">在项目开发过程中使用Git的方式</span><br></pre></td></tr></table></figure>
-<h4 id="1-2-分类"><a href="#1-2-分类" class="headerlink" title="1.2 分类"></a>1.2 分类</h4><h5 id="1-2-1-集中式工作流"><a href="#1-2-1-集中式工作流" class="headerlink" title="1.2.1 集中式工作流"></a>1.2.1 集中式工作流</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">像SVN一样，集中式工作流有一个中央仓库，所有的修改都提交到了Master分支上</span><br></pre></td></tr></table></figure>
-<h5 id="1-2-2-GitFlow工作流"><a href="#1-2-2-GitFlow工作流" class="headerlink" title="1.2.2 GitFlow工作流 *"></a>1.2.2 GitFlow工作流 <code>*</code></h5><p>主干分支<code>master</code>  开发分支<code>develop</code>  修复分支<code>hotfix</code>   预发布分支<code>release</code>  功能分支<code>feature</code></p>
+<h2 id="Git工作流">Git工作流</h2>
+<h4 id="1-1-概念">1.1 概念</h4>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">在项目开发过程中使用Git的方式</span><br></pre></td></tr></table></figure>
+<h4 id="1-2-分类">1.2 分类</h4>
+<h5 id="1-2-1-集中式工作流">1.2.1 集中式工作流</h5>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">像SVN一样，集中式工作流有一个中央仓库，所有的修改都提交到了Master分支上</span><br></pre></td></tr></table></figure>
+<h5 id="1-2-2-GitFlow工作流">1.2.2 GitFlow工作流 <code>*</code></h5>
+<p>主干分支<code>master</code>  开发分支<code>develop</code>  修复分支<code>hotfix</code>   预发布分支<code>release</code>  功能分支<code>feature</code></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">GitFlow 有独立的分支，让发布迭代过程更流畅。</span><br></pre></td></tr></table></figure>
-<h5 id="1-2-3-Forking-工作流"><a href="#1-2-3-Forking-工作流" class="headerlink" title="1.2.3 Forking 工作流"></a>1.2.3 Forking 工作流</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">在 GitFlow 基础上， 充分利用了 Git 的 Fork 和 pull request 的功能以达到代码审核的目的。 </span><br><span class="line">安全可靠地管理大团队的开发者</span><br></pre></td></tr></table></figure>
+<h5 id="1-2-3-Forking-工作流">1.2.3 Forking 工作流</h5>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">在 GitFlow 基础上， 充分利用了 Git 的 Fork 和 pull request 的功能以达到代码审核的目的。 </span><br><span class="line">安全可靠地管理大团队的开发者</span><br></pre></td></tr></table></figure>
 
       
 
@@ -1028,6 +1104,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">SEO</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">Java</a>
               </li>
              
@@ -1036,11 +1116,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">SEO</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">组件</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1048,7 +1124,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Linux</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">组件</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1064,14 +1140,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">NodeJS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">命令行窗口</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">Oracle</a>
               </li>
              
@@ -1080,7 +1148,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Redis</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">NodeJS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">命令行窗口</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1096,7 +1168,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Redis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">JSR303校验</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">SpringSecurity</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1105,10 +1185,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">Thymeleaf</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">SpringSecurity</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1128,11 +1204,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Web框架</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">SpringCloud</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">SpringCloud</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Web框架</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1160,15 +1236,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">前端路由</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">Vuex</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">前端路由</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Hexo_admin</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1184,18 +1264,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">云开发</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">低代码</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">小程序</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">监控</a>
               </li>
              
@@ -1208,7 +1276,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Hexo_admin</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">云开发</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">低代码</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">小程序</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1232,15 +1308,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">NoSql</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">Flowable</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">工作流</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">NoSql</a>
               </li>
             
             <div class="clearfix"></div>

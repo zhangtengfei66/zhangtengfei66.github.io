@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="https://www.tengfei.eu.org">
   <title>微信云开发如何共享使用云环境 | (●ˇ∀ˇ●)</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="引言在数字化时代，云计算已成为软件开发的重要工具。微信云开发作为腾讯云的一种服务，为开发者提供了便捷的云端开发环境。本文将详细介绍如何在个人博客中共享使用微信云环境。">
+  <meta name="description" content="引言 在数字化时代，云计算已成为软件开发的重要工具。微信云开发作为腾讯云的一种服务，为开发者提供了便捷的云端开发环境。本文将详细介绍如何在个人博客中共享使用微信云环境。">
 <meta name="keywords" content="云开发,低代码,小程序">
 <meta property="og:type" content="article">
 <meta property="og:title" content="微信云开发如何共享使用云环境">
 <meta property="og:url" content="https:&#x2F;&#x2F;www.tengfei.eu.org&#x2F;article&#x2F;409cf66f.html">
 <meta property="og:site_name" content="(●ˇ∀ˇ●)">
-<meta property="og:description" content="引言在数字化时代，云计算已成为软件开发的重要工具。微信云开发作为腾讯云的一种服务，为开发者提供了便捷的云端开发环境。本文将详细介绍如何在个人博客中共享使用微信云环境。">
+<meta property="og:description" content="引言 在数字化时代，云计算已成为软件开发的重要工具。微信云开发作为腾讯云的一种服务，为开发者提供了便捷的云端开发环境。本文将详细介绍如何在个人博客中共享使用微信云环境。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https:&#x2F;&#x2F;www.tengfei.eu.org&#x2F;article&#x2F;409cf66f&#x2F;image-20240314094850119.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;www.tengfei.eu.org&#x2F;article&#x2F;409cf66f&#x2F;%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%85%B1%E4%BA%AB%E4%BD%BF%E7%94%A8%E4%BA%91%E7%8E%AF%E5%A2%83%5Cimage-20240314094850119.png">
 <meta property="og:updated_time" content="2025-07-08T01:55:39.523Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https:&#x2F;&#x2F;www.tengfei.eu.org&#x2F;article&#x2F;409cf66f&#x2F;image-20240314094850119.png">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;www.tengfei.eu.org&#x2F;article&#x2F;409cf66f&#x2F;%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%85%B1%E4%BA%AB%E4%BD%BF%E7%94%A8%E4%BA%91%E7%8E%AF%E5%A2%83%5Cimage-20240314094850119.png">
   
     <link rel="alternative" href="/atom.xml" title="(●ˇ∀ˇ●)" type="application/atom+xml">
   
@@ -308,31 +308,49 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><p>在数字化时代，云计算已成为软件开发的重要工具。微信云开发作为腾讯云的一种服务，为开发者提供了便捷的云端开发环境。本文将详细介绍如何在个人博客中共享使用微信云环境。</p>
+        <h2 id="引言">引言</h2>
+<p>在数字化时代，云计算已成为软件开发的重要工具。微信云开发作为腾讯云的一种服务，为开发者提供了便捷的云端开发环境。本文将详细介绍如何在个人博客中共享使用微信云环境。</p>
 <a id="more"></a>
-<h2 id="使用前提"><a href="#使用前提" class="headerlink" title="使用前提"></a>使用前提</h2><p><strong>需小程序公共库 2.13.0 或以上）（需 wx-server-sdk 版本大于或等于 2.3.0）</strong></p>
+<h2 id="使用前提">使用前提</h2>
+<p><strong>需小程序公共库 2.13.0 或以上）（需 wx-server-sdk 版本大于或等于 2.3.0）</strong></p>
 <ul>
-<li><p>被共享方无法进行函数更新只能调用，只有共享方可以进行云函数更新上传；</p>
+<li>
+<p>被共享方无法进行函数更新只能调用，只有共享方可以进行云函数更新上传；</p>
 </li>
-<li><p>云开发后台的管理权限是可以操作新建/删除函数的；</p>
+<li>
+<p>云开发后台的管理权限是可以操作新建/删除函数的；</p>
 </li>
-<li>确保要共享资源的两个小程序在<strong>同个主体</strong>下面；</li>
+<li>
+<p>确保要共享资源的两个小程序在<strong>同个主体</strong>下面；</p>
+</li>
 </ul>
-<h2 id="相关文档"><a href="#相关文档" class="headerlink" title="相关文档"></a>相关文档</h2><blockquote>
-<p><a href="https://developers.weixin.qq.com/miniprogram/dev/wxcloud/guide/resource-sharing/#%E4%BB%A3%E7%A0%81%E4%BD%BF%E7%94%A8" target="_blank" rel="noopener">共享代码要参考文档进行cloud的初始化和调用</a> </p>
+<h2 id="相关文档">相关文档</h2>
+<blockquote>
+<p><a href="https://developers.weixin.qq.com/miniprogram/dev/wxcloud/guide/resource-sharing/#%E4%BB%A3%E7%A0%81%E4%BD%BF%E7%94%A8" target="_blank" rel="noopener">共享代码要参考文档进行cloud的初始化和调用</a></p>
 </blockquote>
-<h2 id="操作步骤"><a href="#操作步骤" class="headerlink" title="操作步骤"></a>操作步骤</h2><h3 id="一、开通资源共享"><a href="#一、开通资源共享" class="headerlink" title="一、开通资源共享"></a>一、开通资源共享</h3><p><img src="/article/409cf66f/image-20240314094850119.png" alt="image-20240314094850119"></p>
-<h3 id="二、共享方添加cloudbase-auth-云函数，用于鉴权调用方的身份并制定相关权限。"><a href="#二、共享方添加cloudbase-auth-云函数，用于鉴权调用方的身份并制定相关权限。" class="headerlink" title="二、共享方添加cloudbase_auth 云函数，用于鉴权调用方的身份并制定相关权限。"></a>二、共享方添加<code>cloudbase_auth</code> 云函数，用于鉴权调用方的身份并制定相关权限。</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> cloud = <span class="built_in">require</span>(<span class="string">'wx-server-sdk'</span>)</span><br><span class="line">cloud.init(&#123;</span><br><span class="line">  env: cloud.DYNAMIC_CURRENT_ENV</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 云函数入口函数</span></span><br><span class="line">exports.main = <span class="keyword">async</span> (event, context) =&gt; &#123;</span><br><span class="line">  <span class="keyword">const</span> wxContext = cloud.getWXContext()</span><br><span class="line"></span><br><span class="line">  <span class="built_in">console</span>.log(event)</span><br><span class="line">  <span class="built_in">console</span>.log(wxContext)</span><br><span class="line">  <span class="comment">// 跨账号调用时，由此拿到来源方小程序/公众号 AppID</span></span><br><span class="line">  <span class="built_in">console</span>.log(wxContext.FROM_APPID)</span><br><span class="line">  <span class="comment">// 跨账号调用时，由此拿到来源方小程序/公众号的用户 OpenID</span></span><br><span class="line">  <span class="built_in">console</span>.log(wxContext.FROM_OPENID)</span><br><span class="line">  <span class="comment">// 跨账号调用、且满足 unionid 获取条件时，由此拿到同主体下的用户 UnionID</span></span><br><span class="line">  <span class="built_in">console</span>.log(wxContext.FROM_UNIONID)</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    errCode: <span class="number">0</span>,</span><br><span class="line">    errMsg: <span class="string">''</span>,</span><br><span class="line">    auth: <span class="built_in">JSON</span>.stringify(&#123;</span><br><span class="line">      <span class="comment">// 自定义安全规则</span></span><br><span class="line">      <span class="comment">// 在前端访问资源方数据库、云函数等资源时，资源方可以通过</span></span><br><span class="line">      <span class="comment">// 安全规则的 `auth.custom` 字段获取此对象的内容做校验，</span></span><br><span class="line">      <span class="comment">// 像这个示例就是资源方可以在安全规则中通过 `auth.custom.x` 获取</span></span><br><span class="line">      x: <span class="number">1</span>,</span><br><span class="line">    &#125;),</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="三、被共享方调用操作"><a href="#三、被共享方调用操作" class="headerlink" title="三、被共享方调用操作"></a>三、被共享方调用操作</h3><p><strong>被共享方小程序端调用共享方云函数：</strong></p>
+<h2 id="操作步骤">操作步骤</h2>
+<h3 id="一、开通资源共享">一、开通资源共享</h3>
+<p><img src="/article/409cf66f/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%85%B1%E4%BA%AB%E4%BD%BF%E7%94%A8%E4%BA%91%E7%8E%AF%E5%A2%83%5Cimage-20240314094850119.png" alt="image-20240314094850119"></p>
+<h3 id="二、共享方添加cloudbase-auth-云函数，用于鉴权调用方的身份并制定相关权限。">二、共享方添加<code>cloudbase_auth</code> 云函数，用于鉴权调用方的身份并制定相关权限。</h3>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> cloud = <span class="built_in">require</span>(<span class="string">'wx-server-sdk'</span>)</span><br><span class="line">cloud.init(&#123;</span><br><span class="line">  env: cloud.DYNAMIC_CURRENT_ENV</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 云函数入口函数</span></span><br><span class="line">exports.main = <span class="keyword">async</span> (event, context) =&gt; &#123;</span><br><span class="line">  <span class="keyword">const</span> wxContext = cloud.getWXContext()</span><br><span class="line"></span><br><span class="line">  <span class="built_in">console</span>.log(event)</span><br><span class="line">  <span class="built_in">console</span>.log(wxContext)</span><br><span class="line">  <span class="comment">// 跨账号调用时，由此拿到来源方小程序/公众号 AppID</span></span><br><span class="line">  <span class="built_in">console</span>.log(wxContext.FROM_APPID)</span><br><span class="line">  <span class="comment">// 跨账号调用时，由此拿到来源方小程序/公众号的用户 OpenID</span></span><br><span class="line">  <span class="built_in">console</span>.log(wxContext.FROM_OPENID)</span><br><span class="line">  <span class="comment">// 跨账号调用、且满足 unionid 获取条件时，由此拿到同主体下的用户 UnionID</span></span><br><span class="line">  <span class="built_in">console</span>.log(wxContext.FROM_UNIONID)</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    errCode: <span class="number">0</span>,</span><br><span class="line">    errMsg: <span class="string">''</span>,</span><br><span class="line">    auth: <span class="built_in">JSON</span>.stringify(&#123;</span><br><span class="line">      <span class="comment">// 自定义安全规则</span></span><br><span class="line">      <span class="comment">// 在前端访问资源方数据库、云函数等资源时，资源方可以通过</span></span><br><span class="line">      <span class="comment">// 安全规则的 `auth.custom` 字段获取此对象的内容做校验，</span></span><br><span class="line">      <span class="comment">// 像这个示例就是资源方可以在安全规则中通过 `auth.custom.x` 获取</span></span><br><span class="line">      x: <span class="number">1</span>,</span><br><span class="line">    &#125;),</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="三、被共享方调用操作">三、被共享方调用操作</h3>
+<p><strong>被共享方小程序端调用共享方云函数：</strong></p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 声明新的 cloud 实例</span></span><br><span class="line"><span class="keyword">var</span> c1 = <span class="keyword">new</span> wx.cloud.Cloud(&#123;</span><br><span class="line">  <span class="comment">// 资源方 AppID</span></span><br><span class="line">  resourceAppid: <span class="string">'wxe0e2656d74f0bff3'</span>,</span><br><span class="line">  <span class="comment">// 资源方环境 ID</span></span><br><span class="line">  resourceEnv: <span class="string">'test-f96b31'</span>,</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 跨账号调用，必须等待 init 完成</span></span><br><span class="line"><span class="comment">// init 过程中，资源方小程序对应环境下的 cloudbase_auth 函数会被调用，并需返回协议字段（见下）来确认允许访问、并可自定义安全规则</span></span><br><span class="line"><span class="keyword">await</span> c1.init()</span><br><span class="line"></span><br><span class="line"><span class="comment">// 完成后正常使用资源方的已授权的云资源</span></span><br><span class="line"><span class="keyword">await</span> c1.callFunction(&#123;</span><br><span class="line">  name: <span class="string">'函数名'</span>,</span><br><span class="line">  data: &#123;&#125;,</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 <p><strong>被共享方云函数端调用共享方云函数：（共享方有云开发环境的情况下）</strong></p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> cloud = <span class="built_in">require</span>(<span class="string">'wx-server-sdk'</span>)</span><br><span class="line"></span><br><span class="line">exports.main = <span class="keyword">async</span> (event) =&gt; &#123;</span><br><span class="line">  <span class="comment">// 声明新的 cloud 实例</span></span><br><span class="line">  <span class="keyword">var</span> c1 = <span class="keyword">new</span> cloud.Cloud(&#123;</span><br><span class="line">    <span class="comment">// 资源方 AppID</span></span><br><span class="line">    resourceAppid: <span class="string">'wxe0e2656d74f0bff3'</span>,</span><br><span class="line">    <span class="comment">// 资源方环境 ID</span></span><br><span class="line">    resourceEnv: <span class="string">'test-f96b31'</span>,</span><br><span class="line">  &#125;)</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 跨账号调用，必须等待 init 完成</span></span><br><span class="line">  <span class="comment">// init 过程中，资源方小程序对应环境下的 cloudbase_auth 函数会被调用，并需返回协议字段（见下）来确认允许访问、并可自定义安全规则</span></span><br><span class="line">  <span class="keyword">await</span> c1.init()</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 完成后正常使用资源方的已授权的云资源</span></span><br><span class="line">  <span class="keyword">return</span> c1.callFunction(&#123;</span><br><span class="line">    name: <span class="string">'函数名'</span>,</span><br><span class="line">    data: &#123;&#125;,</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><ul>
-<li>确保cloud 实例创建成功；</li>
-<li>c1.init()方法必须使用<strong>异步执行</strong>，确保该方法执行完以后再进行其他操作；</li>
-<li><p>所有调用cloud的方法，都需要改为c1的方法；</p>
+<h2 id="注意事项">注意事项</h2>
+<ul>
+<li>
+<p>确保cloud 实例创建成功；</p>
 </li>
-<li><p>图片资源暂时不支持被共享方直接调用cloud://的path。因此需要转成https格式；</p>
+<li>
+<p>c1.init()方法必须使用<strong>异步执行</strong>，确保该方法执行完以后再进行其他操作；</p>
+</li>
+<li>
+<p>所有调用cloud的方法，都需要改为c1的方法；</p>
+</li>
+<li>
+<p>图片资源暂时不支持被共享方直接调用cloud://的path。因此需要转成https格式；</p>
 </li>
 </ul>
 
@@ -750,6 +768,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">SEO</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">Java</a>
               </li>
              
@@ -758,11 +780,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">SEO</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">组件</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -770,7 +788,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Linux</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">组件</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -786,14 +804,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">NodeJS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">命令行窗口</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">Oracle</a>
               </li>
              
@@ -802,7 +812,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Redis</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">NodeJS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">命令行窗口</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -818,7 +832,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Redis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">JSR303校验</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">SpringSecurity</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -827,10 +849,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">Thymeleaf</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">SpringSecurity</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -850,11 +868,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Web框架</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">SpringCloud</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">SpringCloud</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Web框架</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -882,15 +900,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">前端路由</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">Vuex</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">前端路由</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Hexo_admin</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -906,18 +928,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">云开发</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">低代码</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">小程序</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">监控</a>
               </li>
              
@@ -930,7 +940,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Hexo_admin</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">云开发</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">低代码</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">小程序</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -954,15 +972,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">NoSql</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">Flowable</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">工作流</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">NoSql</a>
               </li>
             
             <div class="clearfix"></div>

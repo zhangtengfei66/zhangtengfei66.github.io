@@ -16,12 +16,12 @@
 <meta property="og:site_name" content="(●ˇ∀ˇ●)">
 <meta property="og:description" content="文章插入图片的问题">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https:&#x2F;&#x2F;www.tengfei.eu.org&#x2F;article&#x2F;50b8e0b4&#x2F;图片名.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;www.tengfei.eu.org&#x2F;article&#x2F;50b8e0b4&#x2F;%E5%9B%BE%E7%89%87%E5%90%8D.jpg">
 <meta property="og:image" content="https:&#x2F;&#x2F;www.tengfei.eu.org&#x2F;article&#x2F;50b8e0b4&#x2F;1.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;www.tengfei.eu.org&#x2F;article&#x2F;50b8e0b4&#x2F;2.png">
 <meta property="og:updated_time" content="2020-02-01T05:32:38.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https:&#x2F;&#x2F;www.tengfei.eu.org&#x2F;article&#x2F;50b8e0b4&#x2F;图片名.jpg">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;www.tengfei.eu.org&#x2F;article&#x2F;50b8e0b4&#x2F;%E5%9B%BE%E7%89%87%E5%90%8D.jpg">
   
     <link rel="alternative" href="/atom.xml" title="(●ˇ∀ˇ●)" type="application/atom+xml">
   
@@ -288,26 +288,32 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
       
         <p>文章插入图片的问题</p>
 <a id="more"></a>
-<p>​    配置文件_config.yml 里的post_asset_folder:这个选项设置为true</p>
-<p>​    下载安装一个可以上传本地图片的插件</p>
-<p>​    <code>npm install hexo-asset-image –save</code>或</p>
-<p>​    <code>npm install https://github.com/CodeFalling/hexo-asset-image --save</code> </p>
-<h4 id="但是这个插件的内容需要修改【不然可能会出Bug】"><a href="#但是这个插件的内容需要修改【不然可能会出Bug】" class="headerlink" title="但是这个插件的内容需要修改【不然可能会出Bug】"></a>但是这个插件的内容需要修改【不然可能会出Bug】</h4><p>打开/node_modules/hexo-asset-image/index.js，将内容更换为下面的代码</p>
+<p>​	配置文件_config.yml 里的post_asset_folder:这个选项设置为true</p>
+<p>​	下载安装一个可以上传本地图片的插件</p>
+<p>​	<code>npm install hexo-asset-image –save</code>或</p>
+<p>​	<code>npm install https://github.com/CodeFalling/hexo-asset-image --save</code></p>
+<h4 id="但是这个插件的内容需要修改【不然可能会出Bug】">但是这个插件的内容需要修改【不然可能会出Bug】</h4>
+<p>打开/node_modules/hexo-asset-image/index.js，将内容更换为下面的代码</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br></pre></td><td class="code"><pre><span class="line">&apos;use strict&apos;;</span><br><span class="line"></span><br><span class="line">var cheerio = require(&apos;cheerio&apos;);</span><br><span class="line"></span><br><span class="line">// http://stackoverflow.com/questions/14480345/how-to-get-the-nth-occurrence-in-a-string</span><br><span class="line"></span><br><span class="line">function getPosition(str, m, i) &#123;</span><br><span class="line"></span><br><span class="line">  return str.split(m, i).join(m).length;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var version = String(hexo.version).split(&apos;.&apos;);</span><br><span class="line"></span><br><span class="line">hexo.extend.filter.register(&apos;after_post_render&apos;, function(data)&#123;</span><br><span class="line"></span><br><span class="line">  var config = hexo.config;</span><br><span class="line"></span><br><span class="line">  if(config.post_asset_folder)&#123;</span><br><span class="line"></span><br><span class="line">    	var link = data.permalink;</span><br><span class="line"></span><br><span class="line">	if(version.length &gt; 0 &amp;&amp; Number(version[0]) == 3)</span><br><span class="line"></span><br><span class="line">	   var beginPos = getPosition(link, &apos;/&apos;, 1) + 1;</span><br><span class="line"></span><br><span class="line">	else</span><br><span class="line"></span><br><span class="line">	   var beginPos = getPosition(link, &apos;/&apos;, 3) + 1;</span><br><span class="line"></span><br><span class="line">	// In hexo 3.1.1, the permalink of &quot;about&quot; page is like &quot;.../about/index.html&quot;.</span><br><span class="line"></span><br><span class="line">	var endPos = link.lastIndexOf(&apos;/&apos;) + 1;</span><br><span class="line"></span><br><span class="line">    link = link.substring(beginPos, endPos);</span><br><span class="line"></span><br><span class="line">    var toprocess = [&apos;excerpt&apos;, &apos;more&apos;, &apos;content&apos;];</span><br><span class="line">    for(var i = 0; i &lt; toprocess.length; i++)&#123;</span><br><span class="line">      var key = toprocess[i];</span><br><span class="line">     </span><br><span class="line">      var $ = cheerio.load(data[key], &#123;</span><br><span class="line">        ignoreWhitespace: false,</span><br><span class="line">        xmlMode: false,</span><br><span class="line">        lowerCaseTags: false,</span><br><span class="line">        decodeEntities: false</span><br><span class="line">      &#125;);</span><br><span class="line">    </span><br><span class="line">      $(&apos;img&apos;).each(function()&#123;</span><br><span class="line">    	if ($(this).attr(&apos;src&apos;))&#123;</span><br><span class="line">    		// For windows style path, we replace &apos;\&apos; to &apos;/&apos;.</span><br><span class="line">    		var src = $(this).attr(&apos;src&apos;).replace(&apos;\\&apos;, &apos;/&apos;);</span><br><span class="line">    		if(!/http[s]*.*|\/\/.*/.test(src) &amp;&amp;</span><br><span class="line">    		   !/^\s*\//.test(src)) &#123;</span><br><span class="line">    		  // For &quot;about&quot; page, the first part of &quot;src&quot; can&apos;t be removed.</span><br><span class="line">    		  // In addition, to support multi-level local directory.</span><br><span class="line">    		  var linkArray = link.split(&apos;/&apos;).filter(function(elem)&#123;</span><br><span class="line">    			return elem != &apos;&apos;;</span><br><span class="line">    		  &#125;);</span><br><span class="line">    		  var srcArray = src.split(&apos;/&apos;).filter(function(elem)&#123;</span><br><span class="line">    			return elem != &apos;&apos; &amp;&amp; elem != &apos;.&apos;;</span><br><span class="line">    		  &#125;);</span><br><span class="line">    		  if(srcArray.length &gt; 1)</span><br><span class="line">    			srcArray.shift();</span><br><span class="line">    		  src = srcArray.join(&apos;/&apos;);</span><br><span class="line">    		  $(this).attr(&apos;src&apos;, config.root + link + src);</span><br><span class="line">    		  console.info&amp;&amp;console.info(&quot;update link as:--&gt;&quot;+config.root + link + src);</span><br><span class="line">    		&#125;</span><br><span class="line">    	&#125;else&#123;</span><br><span class="line">    		console.info&amp;&amp;console.info(&quot;no src attr, skipped...&quot;);</span><br><span class="line">    		console.info&amp;&amp;console.info($(this));</span><br><span class="line">    	&#125;</span><br><span class="line">      &#125;);</span><br><span class="line">      data[key] = $.html();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<p>然后 <code>hexo clean</code> &amp;&amp; <code>hexo g</code>    </p>
+<p>然后 <code>hexo clean</code> &amp;&amp; <code>hexo g</code></p>
 <p>新建文章同名文件夹 ,存图片 (xxxx/图片名.jpg)</p>
-<p>​    如：//<img src="/article/50b8e0b4/图片名.jpg" alt="你想输入的替代文字"></p>
+<p>​	如：//<img src="/article/50b8e0b4/%E5%9B%BE%E7%89%87%E5%90%8D.jpg" alt="你想输入的替代文字"></p>
 <p><code>hexo d</code> 上传后就能看到图片了</p>
-<h3 id="问题推测"><a href="#问题推测" class="headerlink" title="问题推测"></a>问题推测</h3><h4 id="一）本地图片没有有效上传至github仓库中，导致引用无效"><a href="#一）本地图片没有有效上传至github仓库中，导致引用无效" class="headerlink" title="(一）本地图片没有有效上传至github仓库中，导致引用无效"></a>(一）本地图片没有有效上传至github仓库中，导致引用无效</h4><p>解决方案：安装插件（回看前文）</p>
-<h4 id="二）本地图片没有存放在同名文件夹中"><a href="#二）本地图片没有存放在同名文件夹中" class="headerlink" title="(二）本地图片没有存放在同名文件夹中"></a>(二）本地图片没有存放在同名文件夹中</h4><p>解决方案：将需要引用的本地图片存放在与文章名相同的文件夹中</p>
-<h4 id="三）图片路径出错"><a href="#三）图片路径出错" class="headerlink" title="(三）图片路径出错"></a>(三）图片路径出错</h4><p>这也是我出现的问题。</p>
+<h3 id="问题推测">问题推测</h3>
+<h4 id="一）本地图片没有有效上传至github仓库中，导致引用无效">(一）本地图片没有有效上传至github仓库中，导致引用无效</h4>
+<p>解决方案：安装插件（回看前文）</p>
+<h4 id="二）本地图片没有存放在同名文件夹中">(二）本地图片没有存放在同名文件夹中</h4>
+<p>解决方案：将需要引用的本地图片存放在与文章名相同的文件夹中</p>
+<h4 id="三）图片路径出错">(三）图片路径出错</h4>
+<p>这也是我出现的问题。</p>
 <p>打开F12，发现下图问题。</p>
 <p><img src="/article/50b8e0b4/1.png" alt></p>
-<p>因为我在github中关于Hexo的仓库名为850552586.github.io，并不是Ericam.com，所以导致了访问无效。</p>
+<p><a href="http://xn--githubHexo850552586-bx83avhla14qp6b3y9a63pk4rw0b427h34ve38l.github.io" target="_blank" rel="noopener">因为我在github中关于Hexo的仓库名为850552586.github.io</a>，<a href="http://xn--Ericam-vp7ih43ioso.com" target="_blank" rel="noopener">并不是Ericam.com</a>，所以导致了访问无效。</p>
 <p>【这个问题可能是因为我更换电脑后重新配置Hexo忽略的地方】</p>
 <p>解决方案：打开_config.yml修改下述内容</p>
 <p><img src="/article/50b8e0b4/2.png" alt></p>
-<h4 id="四）相对路径引用的标签插件"><a href="#四）相对路径引用的标签插件" class="headerlink" title="(四）相对路径引用的标签插件"></a>(四）相对路径引用的标签插件</h4><p>通过常规的 markdown 语法和相对路径来引用图片和其它资源可能会导致它们在存档页或者主页上显示不正确。在Hexo 2时代，社区创建了很多插件来解决这个问题。但是，随着Hexo 3 的发布，许多新的标签插件被加入到了核心代码中。这使得你可以更简单地在文章中引用你的资源。</p>
+<h4 id="四）相对路径引用的标签插件">(四）相对路径引用的标签插件</h4>
+<p>通过常规的 markdown 语法和相对路径来引用图片和其它资源可能会导致它们在存档页或者主页上显示不正确。在Hexo 2时代，社区创建了很多插件来解决这个问题。但是，随着Hexo 3 的发布，许多新的标签插件被加入到了核心代码中。这使得你可以更简单地在文章中引用你的资源。</p>
 <p>也就是说在存档页和主页不能使用和文章内容中的常规语法来引用图片。</p>
 <p>比如说：当你打开文章资源文件夹功能后，你把一个 example.jpg 图片放在了你的资源文件夹中，如果通过使用相对路径的常规 markdown 语法 <code>![](/example.jpg)</code> ，它将 不会 出现在首页上。（但是它会在文章中按你期待的方式工作）</p>
 <p>正确的引用图片方式是使用下列的标签插件而不是 markdown ：</p>
@@ -712,6 +718,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">SEO</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">Java</a>
               </li>
              
@@ -720,11 +730,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">SEO</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">组件</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -732,7 +738,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Linux</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">组件</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -748,14 +754,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">NodeJS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">命令行窗口</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">Oracle</a>
               </li>
              
@@ -764,7 +762,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Redis</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">NodeJS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">命令行窗口</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -780,7 +782,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Redis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">JSR303校验</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">SpringSecurity</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -789,10 +799,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">Thymeleaf</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">SpringSecurity</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -812,11 +818,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Web框架</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">SpringCloud</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">SpringCloud</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Web框架</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -844,15 +850,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">前端路由</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">Vuex</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">前端路由</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Hexo_admin</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -868,18 +878,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">云开发</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">低代码</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">小程序</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">监控</a>
               </li>
              
@@ -892,7 +890,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Hexo_admin</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">云开发</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">低代码</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">小程序</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -916,15 +922,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">NoSql</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">Flowable</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">工作流</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">NoSql</a>
               </li>
             
             <div class="clearfix"></div>

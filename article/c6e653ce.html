@@ -16,10 +16,10 @@
 <meta property="og:site_name" content="(●ˇ∀ˇ●)">
 <meta property="og:description" content="🔔 💬 📣">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https:&#x2F;&#x2F;www.tengfei.eu.org&#x2F;article&#x2F;c6e653ce&#x2F;image-20240322145621524.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;www.tengfei.eu.org&#x2F;article&#x2F;c6e653ce&#x2F;%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E4%BD%BF%E7%94%A8%E8%AE%A2%E9%98%85%E6%B6%88%E6%81%AF%5Cimage-20240322145621524.png">
 <meta property="og:updated_time" content="2025-07-08T01:55:07.085Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https:&#x2F;&#x2F;www.tengfei.eu.org&#x2F;article&#x2F;c6e653ce&#x2F;image-20240322145621524.png">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;www.tengfei.eu.org&#x2F;article&#x2F;c6e653ce&#x2F;%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E4%BD%BF%E7%94%A8%E8%AE%A2%E9%98%85%E6%B6%88%E6%81%AF%5Cimage-20240322145621524.png">
   
     <link rel="alternative" href="/atom.xml" title="(●ˇ∀ˇ●)" type="application/atom+xml">
   
@@ -308,25 +308,33 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 
     <div class="article-entry" itemprop="articleBody">
       
-        <p>🔔 💬 📣<br><a id="more"></a></p>
-<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>微信小程序提供了订阅消息功能，允许用户在特定的场景下收到小程序主动发送的消息。它可以帮助开发者与用户进行实时的交互和沟通。通过使用微信小程序的消息推送功能，开发者可以向用户发送通知、提醒或者重要的信息。这对于提高用户体验和增强用户粘性非常有帮助。下面将介绍如何在微信小程序中实现订阅消息功能。</p>
-<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><p>要使用订阅消息功能，需要先在微信公众平台开通模板消息功能，并获取到appid和模板消息的ID。</p>
+        <p>🔔 💬 📣</p>
+<a id="more"></a>
+<h2 id="简介">简介</h2>
+<p>微信小程序提供了订阅消息功能，允许用户在特定的场景下收到小程序主动发送的消息。它可以帮助开发者与用户进行实时的交互和沟通。通过使用微信小程序的消息推送功能，开发者可以向用户发送通知、提醒或者重要的信息。这对于提高用户体验和增强用户粘性非常有帮助。下面将介绍如何在微信小程序中实现订阅消息功能。</p>
+<h2 id="准备工作">准备工作</h2>
+<p>要使用订阅消息功能，需要先在微信公众平台开通模板消息功能，并获取到appid和模板消息的ID。</p>
 <ul>
 <li><strong>微信小程序的公共模板库内容主要是根据小程序的服务类目来分配的</strong>。</li>
 <li><a href="https://developers.weixin.qq.com/miniprogram/dev/OpenApiDoc/mp-message-management/subscribe-message/sendMessage.html" target="_blank" rel="noopener">订阅消息 相关文档</a></li>
 </ul>
-<p><img src="/article/c6e653ce/image-20240322145621524.png" alt="image-20240322145621524"></p>
-<h3 id="长期订阅模版和一次性订阅模版区别："><a href="#长期订阅模版和一次性订阅模版区别：" class="headerlink" title="长期订阅模版和一次性订阅模版区别："></a>长期订阅模版和一次性订阅模版区别：</h3><p>在微信小程序中，长期订阅和一次性订阅模板是微信为满足不同服务场景需求而设立的两种消息推送机制。具体区别如下：</p>
+<p><img src="/article/c6e653ce/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E4%BD%BF%E7%94%A8%E8%AE%A2%E9%98%85%E6%B6%88%E6%81%AF%5Cimage-20240322145621524.png" alt="image-20240322145621524"></p>
+<h3 id="长期订阅模版和一次性订阅模版区别：">长期订阅模版和一次性订阅模版区别：</h3>
+<p>在微信小程序中，长期订阅和一次性订阅模板是微信为满足不同服务场景需求而设立的两种消息推送机制。具体区别如下：</p>
 <ul>
 <li><strong>一次性订阅</strong>：指用户对小程序进行一次订阅后，开发者可以对该用户的OpenId推送一条模板消息，且无法再次对该用户推送消息，除非用户重新进行订阅操作。一次性订阅适用于那些只需要单次通知或交易的场景。</li>
 <li><strong>长期订阅</strong>：允许开发者对已订阅的用户多次推送模板消息。长期订阅通常面向提供持续性服务的小程序，如政务民生、医疗、交通、金融、教育等线下公共服务类别，这些服务需要多次与用户互动或提供状态更新。</li>
 </ul>
 <p>总的来说，一次性订阅更适用于那些不需要持续跟踪用户状态的小程序，而长期订阅则适合需要与用户保持频繁联系的服务类小程序。开发者在选择使用哪种订阅方式时，应考虑自身的业务需求和用户的体验感受。</p>
-<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><h3 id="1-获取用户授权"><a href="#1-获取用户授权" class="headerlink" title="1. 获取用户授权"></a>1. 获取用户授权</h3><p>在使用订阅消息之前，需要先获取用户的授权。可以通过以下代码实现：</p>
+<h2 id="步骤">步骤</h2>
+<h3 id="1-获取用户授权">1. 获取用户授权</h3>
+<p>在使用订阅消息之前，需要先获取用户的授权。可以通过以下代码实现：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">wx.requestSubscribeMessage(&#123;</span><br><span class="line">  tmplIds: [<span class="string">'template_id'</span>], <span class="comment">// 替换为实际的模板消息ID</span></span><br><span class="line">  success(res) &#123;</span><br><span class="line">    <span class="keyword">if</span> (res.errMsg === <span class="string">'requestSubscribeMessage:ok'</span>) &#123;</span><br><span class="line">      <span class="comment">// 用户同意订阅消息</span></span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="comment">// 用户拒绝订阅消息</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  fail(err) &#123;</span><br><span class="line">    <span class="built_in">console</span>.error(<span class="string">'请求订阅消息失败'</span>, err);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<h3 id="2-发送订阅消息"><a href="#2-发送订阅消息" class="headerlink" title="2. 发送订阅消息"></a>2. 发送订阅消息</h3><p>获取到订阅消息的token后，就可以向指定的用户发送订阅消息了。可以使用以下代码：</p>
+<h3 id="2-发送订阅消息">2. 发送订阅消息</h3>
+<p>获取到订阅消息的token后，就可以向指定的用户发送订阅消息了。可以使用以下代码：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> cloud = <span class="built_in">require</span>(<span class="string">'wx-server-sdk'</span>)</span><br><span class="line">cloud.init(&#123;</span><br><span class="line">  env: cloud.DYNAMIC_CURRENT_ENV,</span><br><span class="line">&#125;)</span><br><span class="line">exports.main = <span class="keyword">async</span> (event, context) =&gt; &#123;</span><br><span class="line">  <span class="keyword">try</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> result = <span class="keyword">await</span> cloud.openapi.subscribeMessage.send(&#123;</span><br><span class="line">        <span class="string">"touser"</span>: <span class="string">'OPENID'</span>, <span class="comment">// 替换为实际的用户openid</span></span><br><span class="line">        <span class="string">"page"</span>: <span class="string">'pages/index/index'</span>,<span class="comment">// 替换为实际的页面路径</span></span><br><span class="line">        <span class="string">"lang"</span>: <span class="string">'zh_CN'</span>,</span><br><span class="line">        <span class="string">"data"</span>: &#123;</span><br><span class="line">          <span class="string">"number01"</span>: &#123;</span><br><span class="line">            <span class="string">"value"</span>: <span class="string">'339208499'</span></span><br><span class="line">          &#125;,</span><br><span class="line">          <span class="string">"date01"</span>: &#123;</span><br><span class="line">            <span class="string">"value"</span>: <span class="string">'2015年01月05日'</span></span><br><span class="line">          &#125;,</span><br><span class="line">          <span class="string">"site01"</span>: &#123;</span><br><span class="line">            <span class="string">"value"</span>: <span class="string">'TIT创意园'</span></span><br><span class="line">          &#125;,</span><br><span class="line">          <span class="string">"site02"</span>: &#123;</span><br><span class="line">            <span class="string">"value"</span>: <span class="string">'广州市新港中路397号'</span></span><br><span class="line">          &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="string">"templateId"</span>: <span class="string">'TEMPLATE_ID'</span>,<span class="comment">// 替换为实际的模板消息ID</span></span><br><span class="line">        <span class="string">"miniprogramState"</span>: <span class="string">'developer'</span><span class="comment">//developer为开发版；trial为体验版；formal为正式版；默认为正式版</span></span><br><span class="line">      &#125;)</span><br><span class="line">    <span class="keyword">return</span> result</span><br><span class="line">  &#125; <span class="keyword">catch</span> (err) &#123;</span><br><span class="line">    <span class="keyword">return</span> err</span><br><span class="line">  &#125;	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>以上是关于如何在微信小程序中使用订阅消息功能的简单介绍。通过获取用户授权、获取订阅消息的templateId以及发送订阅消息等步骤，可以实现小程序主动向用户推送消息的功能。希望对你有所帮助！</p>
+<h2 id="总结">总结</h2>
+<p>以上是关于如何在微信小程序中使用订阅消息功能的简单介绍。通过获取用户授权、获取订阅消息的templateId以及发送订阅消息等步骤，可以实现小程序主动向用户推送消息的功能。希望对你有所帮助！</p>
 
       
 
@@ -742,6 +750,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">SEO</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">Java</a>
               </li>
              
@@ -750,11 +762,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">SEO</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">组件</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -762,7 +770,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Linux</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">组件</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -778,14 +786,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">NodeJS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">命令行窗口</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">Oracle</a>
               </li>
              
@@ -794,7 +794,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Redis</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">NodeJS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">命令行窗口</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -810,7 +814,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Redis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">JSR303校验</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">SpringSecurity</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -819,10 +831,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">Thymeleaf</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">SpringSecurity</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -842,11 +850,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Web框架</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">SpringCloud</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">SpringCloud</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Web框架</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -874,15 +882,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">前端路由</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">Vuex</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">前端路由</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Hexo_admin</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -898,18 +910,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">云开发</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">低代码</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">小程序</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">监控</a>
               </li>
              
@@ -922,7 +922,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Hexo_admin</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">云开发</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">低代码</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">小程序</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -946,15 +954,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">NoSql</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">Flowable</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">工作流</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">NoSql</a>
               </li>
             
             <div class="clearfix"></div>

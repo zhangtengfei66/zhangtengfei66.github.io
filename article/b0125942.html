@@ -296,7 +296,8 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 <p>Swagger</p>
 <a id="more"></a>
 <blockquote>
-<h3 id="一-Swagger简介"><a href="#一-Swagger简介" class="headerlink" title="一. Swagger简介"></a>一. Swagger简介</h3></blockquote>
+<h3 id="一-Swagger简介">一. Swagger简介</h3>
+</blockquote>
 <p><strong>前后端分离</strong></p>
 <ul>
 <li>前端 -&gt; 前端控制层、视图层</li>
@@ -321,7 +322,8 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 <li>官网：<a href="https://swagger.io/" target="_blank" rel="noopener">https://swagger.io/</a></li>
 </ul>
 <blockquote>
-<h3 id="二-SpringBoot集成Swagger"><a href="#二-SpringBoot集成Swagger" class="headerlink" title="二. SpringBoot集成Swagger"></a>二. SpringBoot集成Swagger</h3></blockquote>
+<h3 id="二-SpringBoot集成Swagger">二. SpringBoot集成Swagger</h3>
+</blockquote>
 <p><strong>SpringBoot集成Swagger</strong> =&gt; <strong>springfox</strong>，两个jar包</p>
 <ul>
 <li><strong>Springfox-swagger2</strong></li>
@@ -339,7 +341,8 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 <p>5、访问测试 ：<a href="http://localhost:8080/swagger-ui.html" target="_blank" rel="noopener">http://localhost:8080/swagger-ui.html</a> ，可以看到swagger的界面；</p>
 <p><img src="/article/b0125942/Swagger_01.png" alt="img"></p>
 <blockquote>
-<h3 id="三-配置Swagger"><a href="#三-配置Swagger" class="headerlink" title="三. 配置Swagger"></a>三. 配置Swagger</h3></blockquote>
+<h3 id="三-配置Swagger">三. 配置Swagger</h3>
+</blockquote>
 <p>1、Swagger实例Bean是Docket，所以通过配置Docket实例来配置Swaggger。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Bean</span> <span class="comment">//配置docket以配置Swagger具体参数</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> Docket <span class="title">docket</span><span class="params">()</span> </span>&#123;</span><br><span class="line">   <span class="keyword">return</span> <span class="keyword">new</span> Docket(DocumentationType.SWAGGER_2);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>2、可以通过apiInfo()属性配置文档信息</p>
@@ -348,7 +351,8 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Bean</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> Docket <span class="title">docket</span><span class="params">()</span> </span>&#123;</span><br><span class="line">   <span class="keyword">return</span> <span class="keyword">new</span> Docket(DocumentationType.SWAGGER_2).apiInfo(apiInfo());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>4、重启项目，访问测试 <a href="http://localhost:8080/swagger-ui.html" target="_blank" rel="noopener">http://localhost:8080/swagger-ui.html</a>  看下效果；</p>
 <blockquote>
-<h3 id="四-配置扫描接口"><a href="#四-配置扫描接口" class="headerlink" title="四. 配置扫描接口"></a>四. 配置扫描接口</h3></blockquote>
+<h3 id="四-配置扫描接口">四. 配置扫描接口</h3>
+</blockquote>
 <p>1、构建Docket时通过select()方法配置怎么扫描接口。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Bean</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> Docket <span class="title">docket</span><span class="params">()</span> </span>&#123;</span><br><span class="line">   <span class="keyword">return</span> <span class="keyword">new</span> Docket(DocumentationType.SWAGGER_2)</span><br><span class="line">      .apiInfo(apiInfo())</span><br><span class="line">      .select()<span class="comment">// 通过.select()方法，去配置扫描接口,RequestHandlerSelectors配置如何扫描接口</span></span><br><span class="line">      .apis(RequestHandlerSelectors.basePackage(<span class="string">"com.teng.demo.controller"</span>))</span><br><span class="line">      .build();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>2、重启项目测试，由于我们配置根据包的路径扫描接口，所以我们只能看到一个类</p>
@@ -359,7 +363,8 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 <p>5、这里的可选值还有</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">any() <span class="comment">// 任何请求都扫描</span></span><br><span class="line">none() <span class="comment">// 任何请求都不扫描</span></span><br><span class="line">regex(<span class="keyword">final</span> String pathRegex) <span class="comment">// 通过正则表达式控制</span></span><br><span class="line">ant(<span class="keyword">final</span> String antPattern) <span class="comment">// 通过ant()控制</span></span><br></pre></td></tr></table></figure>
 <blockquote>
-<h3 id="五-配置Swagger开关"><a href="#五-配置Swagger开关" class="headerlink" title="五. 配置Swagger开关"></a>五. 配置Swagger开关</h3></blockquote>
+<h3 id="五-配置Swagger开关">五. 配置Swagger开关</h3>
+</blockquote>
 <p>1、通过enable()方法配置是否启用swagger，如果是false，swagger将不能在浏览器中访问了</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Bean</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> Docket <span class="title">docket</span><span class="params">()</span> </span>&#123;</span><br><span class="line">   <span class="keyword">return</span> <span class="keyword">new</span> Docket(DocumentationType.SWAGGER_2)</span><br><span class="line">      .apiInfo(apiInfo())</span><br><span class="line">      .enable(<span class="keyword">false</span>) <span class="comment">//配置是否启用Swagger，如果是false，在浏览器将无法访问</span></span><br><span class="line">      .select()<span class="comment">// 通过.select()方法，去配置扫描接口,RequestHandlerSelectors配置如何扫描接口</span></span><br><span class="line">      .apis(RequestHandlerSelectors.basePackage(<span class="string">"com.teng.demo.controller"</span>))</span><br><span class="line">       <span class="comment">// 配置如何通过path过滤,即这里只扫描请求以/teng开头的接口</span></span><br><span class="line">      .paths(PathSelectors.ant(<span class="string">"/teng/**"</span>))</span><br><span class="line">      .build();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>2、如何动态配置当项目处于test、dev环境时显示swagger，处于prod时不显示？</p>
@@ -367,11 +372,13 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 <p>3、可以在项目中增加一个dev的配置文件查看效果！</p>
 <p><img src="/article/b0125942/Swagger_02.png" alt="img"></p>
 <blockquote>
-<h3 id="六-设置环境使用"><a href="#六-设置环境使用" class="headerlink" title="六. 设置环境使用"></a>六. 设置环境使用</h3></blockquote>
+<h3 id="六-设置环境使用">六. 设置环境使用</h3>
+</blockquote>
 <p>1、判断是不是生产环境</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//配置Swaggger的bean实例</span></span><br><span class="line"><span class="meta">@Bean</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> Docket <span class="title">docket</span><span class="params">(Environment environment)</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//设置要显示Swagger的开发环境</span></span><br><span class="line">    Profiles profiles = Profiles.of(<span class="string">"dev"</span>, <span class="string">"test"</span>);</span><br><span class="line">    <span class="comment">//通过environment.acceptsProfiles判断是否处于设定的环境当中</span></span><br><span class="line">    <span class="keyword">boolean</span> flag = environment.acceptsProfiles(profiles);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> Docket(DocumentationType.SWAGGER_2).apiInfo(apiInfo())</span><br><span class="line">            .enable(flag) <span class="comment">//配置是否启用Swagger，如果是false，在浏览器将无法访问</span></span><br><span class="line"></span><br><span class="line">            .select()<span class="comment">// 通过.select()方法，去配置扫描接口,RequestHandlerSelectors配置如何扫描接口</span></span><br><span class="line">            .apis(RequestHandlerSelectors.basePackage(<span class="string">"com.teng.demo.controller"</span>))</span><br><span class="line">            <span class="comment">// 配置如何通过path过滤,即这里只扫描请求以/kuang开头的接口</span></span><br><span class="line">            .paths(PathSelectors.ant(<span class="string">"/teng/**"</span>))</span><br><span class="line">            .build();</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <blockquote>
-<h3 id="七-配置API分组"><a href="#七-配置API分组" class="headerlink" title="七. 配置API分组"></a>七. 配置API分组</h3></blockquote>
+<h3 id="七-配置API分组">七. 配置API分组</h3>
+</blockquote>
 <p><img src="/article/b0125942/Swagger_03.png" alt="img"></p>
 <p>1、如果没有配置分组，默认是default。通过groupName()方法即可配置分组：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Bean</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> Docket <span class="title">docket</span><span class="params">(Environment environment)</span> </span>&#123;</span><br><span class="line">   <span class="keyword">return</span> <span class="keyword">new</span> Docket(DocumentationType.SWAGGER_2).apiInfo(apiInfo())</span><br><span class="line">      .groupName(<span class="string">"hello"</span>) <span class="comment">// 配置分组</span></span><br><span class="line">       <span class="comment">// 省略配置....</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -380,7 +387,8 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Bean</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> Docket <span class="title">docket1</span><span class="params">()</span></span>&#123;</span><br><span class="line">   <span class="keyword">return</span> <span class="keyword">new</span> Docket(DocumentationType.SWAGGER_2).groupName(<span class="string">"group1"</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="meta">@Bean</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> Docket <span class="title">docket2</span><span class="params">()</span></span>&#123;</span><br><span class="line">   <span class="keyword">return</span> <span class="keyword">new</span> Docket(DocumentationType.SWAGGER_2).groupName(<span class="string">"group2"</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="meta">@Bean</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> Docket <span class="title">docket3</span><span class="params">()</span></span>&#123;</span><br><span class="line">   <span class="keyword">return</span> <span class="keyword">new</span> Docket(DocumentationType.SWAGGER_2).groupName(<span class="string">"group3"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>4、重启项目查看即可</p>
 <blockquote>
-<h3 id="八-实体配置"><a href="#八-实体配置" class="headerlink" title="八. 实体配置"></a>八. 实体配置</h3></blockquote>
+<h3 id="八-实体配置">八. 实体配置</h3>
+</blockquote>
 <p>1、新建一个实体类</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@ApiModel</span>(<span class="string">"用户实体"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">User</span> </span>&#123;</span><br><span class="line">   <span class="meta">@ApiModelProperty</span>(<span class="string">"用户名"</span>)</span><br><span class="line">   <span class="keyword">public</span> String username;</span><br><span class="line">   <span class="meta">@ApiModelProperty</span>(<span class="string">"密码"</span>)</span><br><span class="line">   <span class="keyword">public</span> String password;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>2、只要这个实体在<strong>请求接口</strong>的返回值上（即使是泛型），都能映射到实体项中：</p>
@@ -391,10 +399,10 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 <p>@ApiModel为类添加注释</p>
 <p>@ApiModelProperty为类属性添加注释</p>
 <blockquote>
-<h3 id="九-常用注解"><a href="#九-常用注解" class="headerlink" title="九. 常用注解"></a>九. 常用注解</h3></blockquote>
+<h3 id="九-常用注解">九. 常用注解</h3>
+</blockquote>
 <p>Swagger的所有注解定义在io.swagger.annotations包下</p>
 <p>下面列一些经常用到的，未列举出来的可以另行查阅说明：</p>
-<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -425,14 +433,14 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 </tr>
 </tbody>
 </table>
-</div>
 <p>我们也可以给请求的接口配置一些注释</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@ApiOperation</span>(<span class="string">"注解..."</span>)</span><br><span class="line"><span class="meta">@PostMapping</span>(<span class="string">"/teng"</span>)</span><br><span class="line"><span class="meta">@ResponseBody</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">teng</span><span class="params">(@ApiParam(<span class="string">"这个名字会被返回"</span>)</span>String username)</span>&#123;</span><br><span class="line">   <span class="keyword">return</span> username;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>这样的话，可以给一些比较难理解的属性或者接口，增加一些配置信息，让人更容易阅读！</p>
 <p>相较于传统的Postman或Curl方式测试接口，使用swagger简直就是傻瓜式操作，不需要额外说明文档(写得好本身就是文档)而且更不容易出错，只需要录入数据然后点击Execute，如果再配合自动化框架，可以说基本就不需要人为操作了。</p>
 <p>Swagger是个优秀的工具，现在国内已经有很多的中小型互联网公司都在使用它，相较于传统的要先出Word接口文档再测试的方式，显然这样也更符合现在的快速迭代开发行情。当然了，提醒下大家在正式环境要记得关闭Swagger，一来出于安全考虑二来也可以节省运行时内存。</p>
 <blockquote>
-<h3 id="十-拓展：其他皮肤"><a href="#十-拓展：其他皮肤" class="headerlink" title="十.  拓展：其他皮肤"></a>十.  拓展：其他皮肤</h3></blockquote>
+<h3 id="十-拓展：其他皮肤">十.  拓展：其他皮肤</h3>
+</blockquote>
 <p>我们可以导入不同的包实现不同的皮肤定义：</p>
 <p>1、默认的  <strong>访问 <a href="http://localhost:8080/swagger-ui.html" target="_blank" rel="noopener">http://localhost:8080/swagger-ui.html</a></strong></p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>io.springfox<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>springfox-swagger-ui<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.9.2<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
@@ -846,6 +854,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">SEO</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">Java</a>
               </li>
              
@@ -854,11 +866,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">SEO</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">组件</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -866,7 +874,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Linux</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">组件</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -882,14 +890,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">NodeJS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">命令行窗口</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">Oracle</a>
               </li>
              
@@ -898,7 +898,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Redis</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">NodeJS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">命令行窗口</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -914,7 +918,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Redis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">JSR303校验</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">SpringSecurity</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -923,10 +935,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">Thymeleaf</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">SpringSecurity</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -946,11 +954,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Web框架</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">SpringCloud</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">SpringCloud</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Web框架</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -978,15 +986,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">前端路由</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">Vuex</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">前端路由</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Hexo_admin</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1002,18 +1014,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">云开发</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">低代码</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">小程序</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">监控</a>
               </li>
              
@@ -1026,7 +1026,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Hexo_admin</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">云开发</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">低代码</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">小程序</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1050,15 +1058,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">NoSql</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">Flowable</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">工作流</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">NoSql</a>
               </li>
             
             <div class="clearfix"></div>
