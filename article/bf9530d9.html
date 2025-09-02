@@ -312,28 +312,19 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
         <p>Vue学习笔记</p>
 <p>简介，绑定属性，计算属性…</p>
 <a id="more"></a>
-<h2 id="Vue简介">Vue简介</h2>
-<ul>
+<h2 id="Vue简介"><a href="#Vue简介" class="headerlink" title="Vue简介"></a>Vue简介</h2><ul>
 <li>本质就是自定义属性</li>
 <li>Vue中指定都是以 v- 开头</li>
 </ul>
-<h3 id="Vue使用">Vue使用</h3>
-<p><strong>el:</strong><br>
-类型：string | HTMLElement<br>
-作用：决定之后Vue实例会管理哪一个DOM。</p>
-<p><strong>data:</strong><br>
-类型：Object | Function （组件当中data必须是一个函数）<br>
-作用：Vue实例对应的数据对象。</p>
-<p><strong>methods:</strong><br>
-类型：{ [key: string]: Function }<br>
-作用：定义属于Vue的一些方法，可以在其他地方调用，也可以在指令中使用。</p>
+<h3 id="Vue使用"><a href="#Vue使用" class="headerlink" title="Vue使用"></a>Vue使用</h3><p><strong>el:</strong><br>类型：string | HTMLElement<br>作用：决定之后Vue实例会管理哪一个DOM。</p>
+<p><strong>data:</strong><br>类型：Object | Function （组件当中data必须是一个函数）<br>作用：Vue实例对应的数据对象。</p>
+<p><strong>methods:</strong><br>类型：{ [key: string]: Function }<br>作用：定义属于Vue的一些方法，可以在其他地方调用，也可以在指令中使用。</p>
 <p>在实例对象中的称为方法；在类外面的称为函数</p>
 <ul>
 <li>方法: method</li>
 <li>函数: function</li>
 </ul>
-<h3 id="Vue中的MVVM">Vue中的MVVM</h3>
-<p><img src="/article/bf9530d9/Vue_01.png" alt="image-20200921090816577"></p>
+<h3 id="Vue中的MVVM"><a href="#Vue中的MVVM" class="headerlink" title="Vue中的MVVM"></a>Vue中的MVVM</h3><p><img src="/article/bf9530d9/Vue_01.png" alt="image-20200921090816577"></p>
 <p>View层：</p>
 <ul>
 <li>视图层</li>
@@ -353,61 +344,42 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 <li>一方面它实现了Data Binding，也就是数据绑定，将Model的改变实时的反应到View中</li>
 <li>另一方面它实现了DOM Listener，也就是DOM监听，当DOM发生一些事件(点击、滚动、touch等)时，可以监听到，并在需要的情况下改变对应的Data。</li>
 </ul>
-<h3 id="Vue生命周期">Vue生命周期</h3>
-<p>生命周期: 事物从诞生到消亡的整个过程.</p>
+<h3 id="Vue生命周期"><a href="#Vue生命周期" class="headerlink" title="Vue生命周期"></a>Vue生命周期</h3><p>生命周期: 事物从诞生到消亡的整个过程.</p>
 <p><img src="/article/bf9530d9/Vue_02.png" alt="image-20200921113657169"></p>
-<h2 id="Vue指令">Vue指令</h2>
-<h3 id="hello测试">hello测试</h3>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;app&quot;&gt;</span><br><span class="line">    &lt;h3&gt;&#123;&#123;message&#125;&#125;&lt;/h3&gt;</span><br><span class="line">    &lt;h6&gt;署名：&#123;&#123;name&#125;&#125;&lt;/h6&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;script type=&quot;text/javascript&quot; src=&quot;js/vue.js&quot; &gt;&lt;/script&gt;</span><br><span class="line">&lt;!--编程范式：声明式编程--&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">    //			let:定义变量;const:定义常量</span><br><span class="line">    const app =  new Vue(&#123;</span><br><span class="line">        el: &apos;#app&apos;,//用于挂载要管理的数据</span><br><span class="line">        data: &#123;//定义数据</span><br><span class="line">            message: &quot;Hello World!&quot;,</span><br><span class="line">            name: &quot;张三&quot;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="计数器">计数器</h3>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;app&quot;&gt;</span><br><span class="line">    &lt;h2&gt;当前计数&#123;&#123;counter&#125;&#125;&lt;/h2&gt;</span><br><span class="line">    &lt;!--			&lt;button v-on:click=&quot;counter++&quot;&gt;+&lt;/button&gt;--&gt;</span><br><span class="line">    &lt;!--			&lt;button v-on:click=&quot;counter--&quot;&gt;-&lt;/button&gt;--&gt;</span><br><span class="line">    &lt;button v-on:click=&quot;add&quot;&gt;+&lt;/button&gt;</span><br><span class="line">    &lt;button v-on:click=&quot;sub&quot;&gt;-&lt;/button&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;script type=&quot;text/javascript&quot; src=&quot;js/vue.js&quot; &gt;&lt;/script&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">    //			简写</span><br><span class="line">    const obj = &#123;</span><br><span class="line">        counter: 0,</span><br><span class="line">        message: &quot;调用这个函数&quot;</span><br><span class="line">    &#125;</span><br><span class="line">    const app = new Vue(&#123;</span><br><span class="line">        el: &apos;#app&apos;,</span><br><span class="line">        data: obj,</span><br><span class="line">        methods: &#123;</span><br><span class="line">            add: function()&#123;</span><br><span class="line">                console.log(&quot;add执行成功&quot;);</span><br><span class="line">                this.counter++;</span><br><span class="line">            &#125;,</span><br><span class="line">            sub: function()&#123;</span><br><span class="line">                console.log(&quot;sub执行成功&quot;);</span><br><span class="line">                this.counter--;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">        //				生命周期函数</span><br><span class="line">        created: function()&#123;</span><br><span class="line">            console.log(&quot;执行created&quot;);</span><br><span class="line">        &#125;,</span><br><span class="line">        mounted: function()&#123;</span><br><span class="line">            console.log(&quot;执行mounted&quot;);					</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="列表遍历">列表遍历</h3>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;app&quot;&gt;</span><br><span class="line">    &lt;ul&gt;</span><br><span class="line">        &lt;li v-for=&quot;item in movies&quot;&gt;&#123;&#123;item&#125;&#125;&lt;/li&gt;</span><br><span class="line">    &lt;/ul&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;script type=&quot;text/javascript&quot; src=&quot;js/vue.js&quot; &gt;&lt;/script&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">    const app = new Vue(&#123;</span><br><span class="line">        el: &apos;#app&apos;,</span><br><span class="line">        data: &#123;</span><br><span class="line">            message: &apos;列表&apos;,</span><br><span class="line">            movies: [&quot;三国演义&quot;,&quot;红楼梦&quot;,&quot;水浒传&quot;,&quot;西游记&quot;]</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="Mustache插值操作"><strong>Mustache</strong>插值操作</h3>
-<p>通过Mustache语法(双大括号)。</p>
+<h2 id="Vue指令"><a href="#Vue指令" class="headerlink" title="Vue指令"></a>Vue指令</h2><h3 id="hello测试"><a href="#hello测试" class="headerlink" title="hello测试"></a>hello测试</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;app&quot;&gt;</span><br><span class="line">    &lt;h3&gt;&#123;&#123;message&#125;&#125;&lt;/h3&gt;</span><br><span class="line">    &lt;h6&gt;署名：&#123;&#123;name&#125;&#125;&lt;/h6&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;script type=&quot;text/javascript&quot; src=&quot;js/vue.js&quot; &gt;&lt;/script&gt;</span><br><span class="line">&lt;!--编程范式：声明式编程--&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">    //			let:定义变量;const:定义常量</span><br><span class="line">    const app =  new Vue(&#123;</span><br><span class="line">        el: &apos;#app&apos;,//用于挂载要管理的数据</span><br><span class="line">        data: &#123;//定义数据</span><br><span class="line">            message: &quot;Hello World!&quot;,</span><br><span class="line">            name: &quot;张三&quot;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="计数器"><a href="#计数器" class="headerlink" title="计数器"></a>计数器</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;app&quot;&gt;</span><br><span class="line">    &lt;h2&gt;当前计数&#123;&#123;counter&#125;&#125;&lt;/h2&gt;</span><br><span class="line">    &lt;!--			&lt;button v-on:click=&quot;counter++&quot;&gt;+&lt;/button&gt;--&gt;</span><br><span class="line">    &lt;!--			&lt;button v-on:click=&quot;counter--&quot;&gt;-&lt;/button&gt;--&gt;</span><br><span class="line">    &lt;button v-on:click=&quot;add&quot;&gt;+&lt;/button&gt;</span><br><span class="line">    &lt;button v-on:click=&quot;sub&quot;&gt;-&lt;/button&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;script type=&quot;text/javascript&quot; src=&quot;js/vue.js&quot; &gt;&lt;/script&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">    //			简写</span><br><span class="line">    const obj = &#123;</span><br><span class="line">        counter: 0,</span><br><span class="line">        message: &quot;调用这个函数&quot;</span><br><span class="line">    &#125;</span><br><span class="line">    const app = new Vue(&#123;</span><br><span class="line">        el: &apos;#app&apos;,</span><br><span class="line">        data: obj,</span><br><span class="line">        methods: &#123;</span><br><span class="line">            add: function()&#123;</span><br><span class="line">                console.log(&quot;add执行成功&quot;);</span><br><span class="line">                this.counter++;</span><br><span class="line">            &#125;,</span><br><span class="line">            sub: function()&#123;</span><br><span class="line">                console.log(&quot;sub执行成功&quot;);</span><br><span class="line">                this.counter--;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">        //				生命周期函数</span><br><span class="line">        created: function()&#123;</span><br><span class="line">            console.log(&quot;执行created&quot;);</span><br><span class="line">        &#125;,</span><br><span class="line">        mounted: function()&#123;</span><br><span class="line">            console.log(&quot;执行mounted&quot;);					</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="列表遍历"><a href="#列表遍历" class="headerlink" title="列表遍历"></a>列表遍历</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;app&quot;&gt;</span><br><span class="line">    &lt;ul&gt;</span><br><span class="line">        &lt;li v-for=&quot;item in movies&quot;&gt;&#123;&#123;item&#125;&#125;&lt;/li&gt;</span><br><span class="line">    &lt;/ul&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;script type=&quot;text/javascript&quot; src=&quot;js/vue.js&quot; &gt;&lt;/script&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">    const app = new Vue(&#123;</span><br><span class="line">        el: &apos;#app&apos;,</span><br><span class="line">        data: &#123;</span><br><span class="line">            message: &apos;列表&apos;,</span><br><span class="line">            movies: [&quot;三国演义&quot;,&quot;红楼梦&quot;,&quot;水浒传&quot;,&quot;西游记&quot;]</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="Mustache插值操作"><a href="#Mustache插值操作" class="headerlink" title="Mustache插值操作"></a><strong>Mustache</strong>插值操作</h3><p>通过Mustache语法(双大括号)。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;app&quot;&gt;</span><br><span class="line">    &lt;h3&gt;&#123;&#123;message&#125;&#125;&lt;/h3&gt;</span><br><span class="line">    &lt;h5&gt;&#123;&#123;firstName + &apos; &apos; + lastName&#125;&#125;&lt;/h5&gt;</span><br><span class="line">    &lt;h5&gt;&#123;&#123;firstName &#125;&#125; &#123;&#123;lastName&#125;&#125;&lt;/h5&gt;</span><br><span class="line">    &lt;h5&gt;&#123;&#123;counter * 2&#125;&#125;&lt;/h5&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;script type=&quot;text/javascript&quot; src=&quot;js/vue.js&quot; &gt;&lt;/script&gt;</span><br><span class="line">&lt;!--编程范式：声明式编程--&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">    //			let:定义变量;const:定义常量</span><br><span class="line">    const app =  new Vue(&#123;</span><br><span class="line">        el: &apos;#app&apos;,//用于挂载要管理的数据</span><br><span class="line">        data: &#123;//定义数据</span><br><span class="line">            message: &quot;你好啊!&quot;,</span><br><span class="line">            firstName: &quot;上官&quot;,</span><br><span class="line">            lastName: &quot;婉儿&quot;,</span><br><span class="line">            counter: 100</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="v-ones指令">v-ones指令</h3>
-<p>该指令表示元素和组件只渲染一次，不会随着数据的改变而改变, 只触发一次回调。</p>
+<h3 id="v-ones指令"><a href="#v-ones指令" class="headerlink" title="v-ones指令"></a>v-ones指令</h3><p>该指令表示元素和组件只渲染一次，不会随着数据的改变而改变, 只触发一次回调。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--v-ones不会发生改变--&gt;</span><br><span class="line">&lt;h3 v-ones&gt;&#123;&#123;message&#125;&#125;&lt;/h3&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="v-html指令">v-html指令</h3>
-<p>该指令后面往往会跟上一个string类型;<br>
-会将string的html解析出来并且进行渲染;</p>
-<p>注意：内容按普通 HTML 插入 - 不会作为 Vue 模板进行编译<br>
-在网站上动态渲染任意 HTML 是非常危险的，因为容易导致 XSS 攻击。只能在可信内容上使用 v-html，不能用在用户提交的内容上。</p>
+<h3 id="v-html指令"><a href="#v-html指令" class="headerlink" title="v-html指令"></a>v-html指令</h3><p>该指令后面往往会跟上一个string类型;<br>会将string的html解析出来并且进行渲染;</p>
+<p>注意：内容按普通 HTML 插入 - 不会作为 Vue 模板进行编译<br>在网站上动态渲染任意 HTML 是非常危险的，因为容易导致 XSS 攻击。只能在可信内容上使用 v-html，不能用在用户提交的内容上。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;h3&gt;&#123;&#123;url&#125;&#125;&lt;/h3&gt;</span><br><span class="line">&lt;!--v-html使用html格式展示--&gt;</span><br><span class="line">&lt;h3 v-html=&quot;url&quot;&gt;&lt;/h3&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="v-text指令">v-text指令</h3>
-<p>更新元素的 textContent。如果要更新部分的 textContent ，需要使用插值。</p>
+<h3 id="v-text指令"><a href="#v-text指令" class="headerlink" title="v-text指令"></a>v-text指令</h3><p>更新元素的 textContent。如果要更新部分的 textContent ，需要使用插值。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;h3&gt;&#123;&#123;message&#125;&#125;&lt;/h3&gt;</span><br><span class="line">&lt;!--v-text会覆盖标签中文本--&gt;</span><br><span class="line">&lt;h3 v-text=&quot;message&quot;&gt;张三&lt;/h3&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="v-pre指令">v-pre指令</h3>
-<p>v-pre用于跳过这个元素和它子元素的编译过程，用于显示原本的Mustache语法。</p>
+<h3 id="v-pre指令"><a href="#v-pre指令" class="headerlink" title="v-pre指令"></a>v-pre指令</h3><p>v-pre用于跳过这个元素和它子元素的编译过程，用于显示原本的Mustache语法。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;h3&gt;&#123;&#123;message&#125;&#125;&lt;/h3&gt;</span><br><span class="line">&lt;!--v-pre显示原本语法--&gt;</span><br><span class="line">&lt;h3 v-pre&gt;&#123;&#123;message&#125;&#125;&lt;/h3&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="v-clock指令">v-clock指令</h3>
-<p>在某些情况下，我们浏览器可能会直接显然出未编译的Mustache标签。</p>
+<h3 id="v-clock指令"><a href="#v-clock指令" class="headerlink" title="v-clock指令"></a>v-clock指令</h3><p>在某些情况下，我们浏览器可能会直接显然出未编译的Mustache标签。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;&lt;/title&gt;</span><br><span class="line">    &lt;style&gt;</span><br><span class="line">        [v-cloak] &#123;</span><br><span class="line">            display: none;</span><br><span class="line">        &#125;</span><br><span class="line">    &lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;div id=&quot;app&quot;&gt;</span><br><span class="line">        &lt;h3 v-cloak&gt;&#123;&#123;message&#125;&#125;&lt;/h3&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line"></span><br><span class="line">    &lt;script type=&quot;text/javascript&quot; src=&quot;js/vue.js&quot; &gt;&lt;/script&gt;</span><br><span class="line">    &lt;script&gt;</span><br><span class="line">        setTimeout(function()&#123;</span><br><span class="line">            const app =  new Vue(&#123;</span><br><span class="line">                el: &apos;#app&apos;,</span><br><span class="line">                data: &#123;</span><br><span class="line">                    message: &quot;你好啊!&quot;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;)</span><br><span class="line">            &#125;,1000);</span><br><span class="line">    &lt;/script&gt;		</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="v-bind绑定属性">v-bind绑定属性</h3>
-<p><strong>作用</strong>：动态绑定属性</p>
-<h4 id="1、绑定属性">1、绑定属性</h4>
-<p>动态的来切换class。</p>
+<h3 id="v-bind绑定属性"><a href="#v-bind绑定属性" class="headerlink" title="v-bind绑定属性"></a>v-bind绑定属性</h3><p><strong>作用</strong>：动态绑定属性</p>
+<h4 id="1、绑定属性"><a href="#1、绑定属性" class="headerlink" title="1、绑定属性"></a>1、绑定属性</h4><p>动态的来切换class。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;app&quot;&gt;</span><br><span class="line">    &lt;!--错误的写法，这里不可以使用mustache语法--&gt;</span><br><span class="line">    &lt;!--&lt;img src=&quot;&#123;&#123;imgURL&#125;&#125;&quot; alt=&quot;&quot; /&gt;--&gt; </span><br><span class="line">    &lt;img v-bind:src=&quot;imgURL&quot;/&gt;</span><br><span class="line">    &lt;a v-bind:href=&quot;baidu&quot;&gt;百度一下&lt;/a&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &lt;!--简写模式(:)--&gt;</span><br><span class="line">    &lt;img :src=&quot;imgURL&quot;/&gt;</span><br><span class="line">    &lt;a :href=&quot;baidu&quot;&gt;百度一下&lt;/a&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;script type=&quot;text/javascript&quot; src=&quot;js/vue.js&quot; &gt;&lt;/script&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">    const app =  new Vue(&#123;</span><br><span class="line">        el: &apos;#app&apos;,</span><br><span class="line">        data: &#123;</span><br><span class="line">            imgURL: &quot;https://gitee.com//yafine66/blogimage/raw/master/img/loading3.gif&quot;,</span><br><span class="line">            baidu: &quot;http://www.baidu.com&quot;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-<h4 id="2、绑定class">2、绑定class</h4>
-<p>对象语法的含义是:class后面跟的是一个对象。</p>
+<h4 id="2、绑定class"><a href="#2、绑定class" class="headerlink" title="2、绑定class"></a>2、绑定class</h4><p>对象语法的含义是:class后面跟的是一个对象。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">    .active&#123;</span><br><span class="line">        color: red;</span><br><span class="line">    &#125;</span><br><span class="line">    .line&#123;</span><br><span class="line">        font-size: 30px;</span><br><span class="line">        font-family: &quot;bookshelf symbol 7&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line"></span><br><span class="line">&lt;div id=&quot;app&quot;&gt;</span><br><span class="line">    &lt;h3 class=&quot;active&quot;&gt;&#123;&#123;message&#125;&#125;&lt;/h3&gt;</span><br><span class="line">    &lt;!--&lt;h3 :class=&quot;&#123;类名1:boolean1,类名2:boolean2&#125;&quot;&gt;&lt;/h3&gt;--&gt;</span><br><span class="line">    &lt;!--大括号里是多个对象</span><br><span class="line">v-bind:class中的对象是可有可无的</span><br><span class="line">class中的类是一定有的</span><br><span class="line">--&gt;</span><br><span class="line">    &lt;h3 class=&quot;title&quot; v-bind:class=&quot;&#123;active: isActive, line: isLine&#125;&quot;&gt;&#123;&#123;message&#125;&#125;&lt;/h3&gt;</span><br><span class="line">    &lt;button v-on:click=&quot;btnClick&quot;&gt;按钮&lt;/button&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;script type=&quot;text/javascript&quot; src=&quot;js/vue.js&quot; &gt;&lt;/script&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">    const app =  new Vue(&#123;</span><br><span class="line">        el: &apos;#app&apos;,</span><br><span class="line">        data: &#123;</span><br><span class="line">            message: &quot;你好啊！&quot;,</span><br><span class="line">            isActive: true,</span><br><span class="line">            isLine: true</span><br><span class="line">        &#125;,</span><br><span class="line">        methods:&#123;</span><br><span class="line">            btnClick: function()&#123;</span><br><span class="line">                this.isActive = !this.isActive;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
 <p>数组语法的含义是:class后面跟的是一个数组。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;app&quot;&gt;</span><br><span class="line">    &lt;h2 class=&quot;title&quot; :class=&quot;[active,line]&quot;&gt;&#123;&#123;message&#125;&#125;&lt;/h2&gt;</span><br><span class="line">    &lt;h2 class=&quot;title&quot; :class=&quot;getClasses()&quot;&gt;&#123;&#123;message&#125;&#125;&lt;/h2&gt;			</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;script type=&quot;text/javascript&quot; src=&quot;js/vue.js&quot; &gt;&lt;/script&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">    const app = new Vue(&#123;</span><br><span class="line">        el: &quot;#app&quot;,</span><br><span class="line">        data: &#123;</span><br><span class="line">            message: &apos;你好啊！&apos;,</span><br><span class="line">            active: &apos;aaa&apos;,</span><br><span class="line">            line: &apos;bbb&apos;</span><br><span class="line">        &#125;,</span><br><span class="line">        methods: &#123;</span><br><span class="line">            getClasses: function()&#123;</span><br><span class="line">                return [this.active,this.line];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-<h4 id="3、绑定style">3、绑定style</h4>
-<p>利用v-bind:style来绑定一些CSS内联样式。</p>
+<h4 id="3、绑定style"><a href="#3、绑定style" class="headerlink" title="3、绑定style"></a>3、绑定style</h4><p>利用v-bind:style来绑定一些CSS内联样式。</p>
 <ul>
-<li>我们可以使用驼峰式 (camelCase) fontSize</li>
+<li>我们可以使用驼峰式 (camelCase) fontSize </li>
 <li>或短横线分隔 (kebab-case，<strong>需要单引号括起来</strong>) ‘font-size’</li>
 </ul>
 <p>对象语法</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;app&quot;&gt;</span><br><span class="line">    &lt;!--&lt;h2 :style=&quot;&#123;&apos;key(属性名)&apos;: value(属性值)&#125;&quot;&gt;&#123;&#123;message&#125;&#125;&lt;/h2&gt;--&gt;	</span><br><span class="line"></span><br><span class="line">    &lt;!--50px必须加&apos;&apos;号--&gt;</span><br><span class="line">    &lt;h2 :style=&quot;&#123;fontSize: &apos;50px&apos;&#125;&quot;&gt;&#123;&#123;message&#125;&#125;&lt;/h2&gt;						</span><br><span class="line"></span><br><span class="line">    &lt;!--finalSize当成变量使用--&gt;</span><br><span class="line">    &lt;h2 :style=&quot;&#123;fontSize: finalSize + &apos;px&apos;, color: finalColor&#125;&quot;&gt;&#123;&#123;message&#125;&#125;&lt;/h2&gt;</span><br><span class="line"></span><br><span class="line">    &lt;h2 :style=&quot;getStyles()&quot;&gt;&#123;&#123;message&#125;&#125;&lt;/h2&gt;			</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;script type=&quot;text/javascript&quot; src=&quot;js/vue.js&quot; &gt;&lt;/script&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">    const app = new Vue(&#123;</span><br><span class="line">        el: &quot;#app&quot;,</span><br><span class="line">        data: &#123;</span><br><span class="line">            message: &apos;你好啊！&apos;,</span><br><span class="line">            finalSize: 100,</span><br><span class="line">            finalColor: &apos;red&apos;,</span><br><span class="line">        &#125;,</span><br><span class="line">        methods: &#123;</span><br><span class="line">            getStyles: function()&#123;</span><br><span class="line">                return &#123;fontSize: this.finalSize + &apos;px&apos;, color: this.finalColor&#125;;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
 <p>数组语法</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;app&quot;&gt;</span><br><span class="line">    &lt;h2 :style=&quot;[baseStyle,baseStyle1]&quot;&gt;&#123;&#123;message&#125;&#125;&lt;/h2&gt;			</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;script type=&quot;text/javascript&quot; src=&quot;js/vue.js&quot; &gt;&lt;/script&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">    const app = new Vue(&#123;</span><br><span class="line">        el: &quot;#app&quot;,</span><br><span class="line">        data: &#123;</span><br><span class="line">            message: &apos;你好啊！&apos;,</span><br><span class="line">            baseStyle: &#123;backgroundColor:&apos;red&apos;&#125;,</span><br><span class="line">            baseStyle1: &#123;fontSize:&apos;50px&apos;&#125;,</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="计算属性">计算属性</h3>
-<p>有时候需要对数据进行一些转化后再显示，或者需要将多个数据结合起来进行显示。</p>
-<h4 id="1、基本使用">1、基本使用</h4>
-<ul>
+<h3 id="计算属性"><a href="#计算属性" class="headerlink" title="计算属性"></a>计算属性</h3><p>有时候需要对数据进行一些转化后再显示，或者需要将多个数据结合起来进行显示。</p>
+<h4 id="1、基本使用"><a href="#1、基本使用" class="headerlink" title="1、基本使用"></a>1、基本使用</h4><ul>
 <li>字符串拼接</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;app&quot;&gt;</span><br><span class="line">    &lt;h2&gt;&#123;&#123;firstName&#125;&#125; &#123;&#123;lastName&#125;&#125;&lt;/h2&gt;</span><br><span class="line">    &lt;h2&gt;&#123;&#123;getfullName&amp;#40;&amp;#41;&#125;&#125;&lt;/h2&gt;			</span><br><span class="line">    &lt;h2&gt;&#123;&#123;fullName&#125;&#125;&lt;/h2&gt;					    </span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;script type=&quot;text/javascript&quot; src=&quot;js/vue.js&quot; &gt;&lt;/script&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">    const app = new Vue(&#123;</span><br><span class="line">        el: &quot;#app&quot;,</span><br><span class="line">        data: &#123;</span><br><span class="line">            firstName: &apos;西门&apos;,</span><br><span class="line">            lastName: &apos;吹雪&apos;</span><br><span class="line">        &#125;,		        </span><br><span class="line">        //计算属性 computed()</span><br><span class="line">        computed: &#123;</span><br><span class="line">            fullName: function()&#123;</span><br><span class="line">                return this.firstName + &apos; &apos; + this.lastName</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">        methods: &#123;</span><br><span class="line">            getfullName: function() &#123;</span><br><span class="line">                return this.firstName + &apos; &apos; + this.lastName</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
@@ -415,11 +387,9 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 <li>计算总价</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;app&quot;&gt;</span><br><span class="line">    &lt;h2&gt;总金额：&#123;&#123;totalprice&#125;&#125;&lt;/h2&gt;			</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;script type=&quot;text/javascript&quot; src=&quot;js/vue.js&quot; &gt;&lt;/script&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">    const app = new Vue(&#123;</span><br><span class="line">        el: &quot;#app&quot;,</span><br><span class="line">        data: &#123;</span><br><span class="line">            books:[</span><br><span class="line">                &#123;id:1, bname:&apos;《疑似》&apos;, price:15.20&#125;,</span><br><span class="line">                &#123;id:2, bname:&apos;《渐欲》&apos;, price:30.59&#125;,</span><br><span class="line">                &#123;id:3, bname:&apos;《落花》&apos;, price:25.32&#125;,</span><br><span class="line">                &#123;id:4, bname:&apos;《灵雨》&apos;, price:104.50&#125;,</span><br><span class="line">            ]</span><br><span class="line">        &#125;,</span><br><span class="line">        computed: &#123;</span><br><span class="line">            totalprice: function()&#123;</span><br><span class="line">                let result = 0;</span><br><span class="line">                //		        		for(let i=0; i&lt;this.books.length; i++)&#123;</span><br><span class="line">                //		        			result += this.books[i].price;</span><br><span class="line">                //		        		&#125;</span><br><span class="line">                //		        		return result;</span><br><span class="line"></span><br><span class="line">                for(let book of this.books)&#123;</span><br><span class="line">                    result += book.price;</span><br><span class="line">                &#125;</span><br><span class="line">                return result;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-<h4 id="2、计算属性的getter和setter">2、计算属性的getter和setter</h4>
-<p>每个计算属性都包含一个getter和一个setter</p>
+<h4 id="2、计算属性的getter和setter"><a href="#2、计算属性的getter和setter" class="headerlink" title="2、计算属性的getter和setter"></a>2、计算属性的getter和setter</h4><p>每个计算属性都包含一个getter和一个setter</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;app&quot;&gt;</span><br><span class="line">    &lt;h2&gt;&#123;&#123;fullName&#125;&#125;&lt;/h2&gt;			</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;script type=&quot;text/javascript&quot; src=&quot;js/vue.js&quot; &gt;&lt;/script&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">    const app = new Vue(&#123;</span><br><span class="line">        el: &quot;#app&quot;,</span><br><span class="line">        data: &#123;</span><br><span class="line">            firstName: &quot;诸葛&quot;,</span><br><span class="line">            lastName: &quot;孔明&quot;</span><br><span class="line">        &#125;,</span><br><span class="line">        computed: &#123;</span><br><span class="line">            fullName: &#123;</span><br><span class="line">                //计算属性一般没有set方法，只读属性</span><br><span class="line">                set: function(newValue)&#123;</span><br><span class="line">                    const names = newValue.split(&quot; &quot;);</span><br><span class="line">                    this.firstName = names[0];</span><br><span class="line">                    this.lastName = names[1];</span><br><span class="line">                &#125;,</span><br><span class="line">                get: function()&#123;</span><br><span class="line">                    return this.firstName +&quot; &quot;+ this.lastName</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-<h4 id="3、计算属性的缓存">3、计算属性的缓存</h4>
-<p>计算属性会进行缓存，如果多次使用时，计算属性只会调用一次。</p>
+<h4 id="3、计算属性的缓存"><a href="#3、计算属性的缓存" class="headerlink" title="3、计算属性的缓存"></a>3、计算属性的缓存</h4><p>计算属性会进行缓存，如果多次使用时，计算属性只会调用一次。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;app&quot;&gt;</span><br><span class="line">    &lt;!-- 1.直接拼接 --&gt;</span><br><span class="line">    &lt;h2&gt;&#123;&#123;firstName&#125;&#125; &#123;&#123;lastName&#125;&#125;&lt;/h2&gt;</span><br><span class="line">    &lt;!-- 2.定义methods</span><br><span class="line">重复加载，浪费资源</span><br><span class="line">--&gt;</span><br><span class="line">    &lt;h2&gt;&#123;&#123;getFullName&amp;#40;&amp;#41;&#125;&#125;&lt;/h2&gt;</span><br><span class="line">    &lt;!-- 3.通过computed</span><br><span class="line">重复内容，只加载一次</span><br><span class="line">--&gt;</span><br><span class="line">    &lt;h2&gt;&#123;&#123;fullName&#125;&#125;&lt;/h2&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;script type=&quot;text/javascript&quot; src=&quot;js/vue.js&quot; &gt;&lt;/script&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">    const app = new Vue(&#123;</span><br><span class="line">        el: &quot;#app&quot;,</span><br><span class="line">        data: &#123;</span><br><span class="line">            firstName: &quot;诸葛&quot;,</span><br><span class="line">            lastName: &quot;孔明&quot;</span><br><span class="line"></span><br><span class="line">        &#125;,</span><br><span class="line">        methods:&#123;</span><br><span class="line">            getFullName: function()&#123;</span><br><span class="line">                console.log(&quot;methods&quot;);</span><br><span class="line">                return this.firstName +&quot; &quot;+ this.lastName;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">        computed: &#123;</span><br><span class="line">            fullName: function()&#123;</span><br><span class="line">                console.log(&quot;computed&quot;);</span><br><span class="line">                return this.firstName +&quot; &quot;+ this.lastName;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
 
       
@@ -817,19 +787,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">Java</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">工具类</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">Hexo</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">博客</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">Java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">工具类</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -841,15 +811,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">分页</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Linux</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Maven</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">分页</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -861,11 +827,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">NodeJS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">命令行窗口</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -874,6 +836,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">数据库</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">NodeJS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">命令行窗口</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -893,15 +863,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Redis</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">SpringBoot</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">JSR303校验</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Redis</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -913,11 +883,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">SpringSecurity</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">Swagger</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">Swagger</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">SpringSecurity</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -929,15 +899,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">注解</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">SpringCloud</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Web框架</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">注解</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -969,15 +939,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">Vuex</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Hexo_admin</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">Vuex</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -998,6 +964,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">Zabbix</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Hexo_admin</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1033,15 +1003,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">NoSql</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">ERP系统</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">文档</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">NoSql</a>
               </li>
             
             <div class="clearfix"></div>

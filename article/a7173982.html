@@ -306,102 +306,78 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="Java-POI组件">Java-POI组件</h2>
-<a id="more"></a>
-<h3 id="一、简介">一、简介</h3>
-<blockquote>
-<p>1.poi属于<a href="https://so.csdn.net/so/search?q=Apache&amp;spm=1001.2101.3001.7020" target="_blank" rel="noopener">Apache</a>产品，具体使用请参考官网地址：<a href="http://poi.apache.org/%E3%80%82" target="_blank" rel="noopener">http://poi.apache.org/。</a></p>
+        <h2 id="Java-POI组件"><a href="#Java-POI组件" class="headerlink" title="Java-POI组件"></a>Java-POI组件</h2><a id="more"></a>
+<h3 id="一、简介"><a href="#一、简介" class="headerlink" title="一、简介"></a>一、简介</h3><blockquote>
+<p>1.poi属于<a href="https://so.csdn.net/so/search?q=Apache&amp;spm=1001.2101.3001.7020" target="_blank" rel="noopener">Apache</a>产品，具体使用请参考官网地址：<a href="http://poi.apache.org/。" target="_blank" rel="noopener">http://poi.apache.org/。</a></p>
 <p>2.Apache poi 是java编写、免费开源、跨平台java api。</p>
 <p>3.poi英文全拼Poor Obfuscation Implementation，翻译为“可怜的模糊实现”。</p>
 <p>4.Apache poi 提供api给java对Microsoft Office格式文档读写的功能。</p>
 </blockquote>
-<h3 id="二、Excel文件处理">二、Excel文件处理</h3>
-<p>Java的组件POI是轻量级的自动化处理Microsoft Office格式文件的组件。</p>
+<h3 id="二、Excel文件处理"><a href="#二、Excel文件处理" class="headerlink" title="二、Excel文件处理"></a>二、Excel文件处理</h3><p>Java的组件POI是轻量级的自动化处理Microsoft Office格式文件的组件。</p>
 <p>POI中对Excel操作常用的两个类分别是</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">HSSFWorkbook Hw = <span class="keyword">new</span> HSSFWorkbook();</span><br><span class="line">XSSFWorkbook Xw = <span class="keyword">new</span> XSSFWorkbook();</span><br></pre></td></tr></table></figure>
-<p>以上两个对象的区别就是随着Excel的发展来划分的，众所周知Excel有代表性的版本分别是03版本和07版本，这两个版本最显著的区别就是03版本所容纳的数据行只有<strong>65536</strong>行，而07版本则是可以容纳无限数据的。</p>
-<p>以上各两个对象也是为了<strong>兼容新版和旧版Excel来</strong>划分的，<strong>HSSFWorkbook</strong>适用于旧版，<strong>XSSFWorkbook</strong>适用于新版。在使用过程中没有区别，只是对象名称不同。</p>
-<h3 id="Maven中的POI依赖">Maven中的POI依赖</h3>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--    03版本的POI依赖--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.poi<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>poi<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">version</span>&gt;</span>3.9<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!--    07版本的POI依赖--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.poi<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>poi-ooxml<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">version</span>&gt;</span>3.9<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!--    非常好用的时间格式化依赖--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>joda-time<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>joda-time<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.10.1<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h3 id="POI写操作">POI写操作</h3>
-<p>这个操作过程可以使用流水账来形容，顺滑的逻辑思想，下面来简单的过一遍吧</p>
+<p> 以上两个对象的区别就是随着Excel的发展来划分的，众所周知Excel有代表性的版本分别是03版本和07版本，这两个版本最显著的区别就是03版本所容纳的数据行只有<strong>65536</strong>行，而07版本则是可以容纳无限数据的。</p>
+<p> 以上各两个对象也是为了<strong>兼容新版和旧版Excel来</strong>划分的，<strong>HSSFWorkbook</strong>适用于旧版，<strong>XSSFWorkbook</strong>适用于新版。在使用过程中没有区别，只是对象名称不同。</p>
+<h3 id="Maven中的POI依赖"><a href="#Maven中的POI依赖" class="headerlink" title="Maven中的POI依赖"></a>Maven中的POI依赖</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--    03版本的POI依赖--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.poi<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>poi<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">version</span>&gt;</span>3.9<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!--    07版本的POI依赖--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.poi<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>poi-ooxml<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">version</span>&gt;</span>3.9<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!--    非常好用的时间格式化依赖--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>joda-time<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>joda-time<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.10.1<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="POI写操作"><a href="#POI写操作" class="headerlink" title="POI写操作"></a>POI写操作</h3><p> 这个操作过程可以使用流水账来形容，顺滑的逻辑思想，下面来简单的过一遍吧</p>
 <ul>
-<li>
-<p><strong>创建对Excel的操作对象，工作簿</strong></p>
+<li><p><strong>创建对Excel的操作对象，工作簿</strong></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Workbook Work = <span class="keyword">new</span> XSSFWorkbook();  <span class="comment">//面向接口编程，对象变了，接口不变</span></span><br></pre></td></tr></table></figure>
 </li>
-<li>
-<p><strong>创建工作表</strong></p>
+<li><p><strong>创建工作表</strong></p>
 <p>有了工作簿之后，使用工作簿对象创建工作表</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Sheet sheet = Work.createSheet();</span><br></pre></td></tr></table></figure>
 </li>
-<li>
-<p><strong>创建第一行数据</strong></p>
+<li><p><strong>创建第一行数据</strong></p>
 <p>使用上面的工作表对象，调用创建数据行方法</p>
 <p>方法内的<strong>参数</strong>就是Excel中的行数，<strong>索引为0</strong>，表示常规工作表中的第一行</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Row row = sheet.createRow(<span class="number">0</span>);</span><br></pre></td></tr></table></figure>
 </li>
-<li>
-<p><strong>创建第一列数据</strong></p>
+<li><p><strong>创建第一列数据</strong></p>
 <p>使用上面的第一行对象，调用创建<strong>第一列</strong>数据的方法</p>
 <p>方法内的参数为0，就表示创建了<strong>第一行中的第一列</strong>的数据</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Cell cell = row.createCell(<span class="number">0</span>);</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
 <p>执行完上述操作之后，就相当于选中了一个工作表中的第一行中的第一列数据，接下来就可以往当前选中的单元格填充数据了！</p>
-<ul>
-<li>
-<p><strong>填充字符串格式的数据</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cell.setCellValue(<span class="string">"卡特琳娜"</span>)</span><br></pre></td></tr></table></figure>
 </li>
-</ul>
+<li><p><strong>填充字符串格式的数据</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cell.setCellValue(<span class="string">"卡特琳娜"</span>)</span><br></pre></td></tr></table></figure>
 <p>之后就可将，创建的Excel表输出到本地来查看我们的执行结果啦</p>
-<ul>
-<li>
-<p><strong>输出Excel文档</strong></p>
+</li>
+<li><p><strong>输出Excel文档</strong></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//FileOutputStream中参数就是当前本地输出的地址</span></span><br><span class="line">FileOutputStream fileOutputStream = <span class="keyword">new</span> FileOutputStream(PATH+<span class="string">"mmd.xlsx"</span>);</span><br><span class="line"><span class="comment">//调用work工作簿对象，就可以将文件输出到本地</span></span><br><span class="line">Work.write(fileOutputStream);</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<h3 id="POI读操作">POI读操作</h3>
-<p>既然要读取本地的Excel文件，那么就要存在本地文件并且创建文件的输入流</p>
+<h3 id="POI读操作"><a href="#POI读操作" class="headerlink" title="POI读操作"></a>POI读操作</h3><p> 既然要读取本地的Excel文件，那么就要存在本地文件并且创建文件的输入流</p>
 <ul>
-<li>
-<p><strong>创建本地文件输入流，并转交给工作簿操作对象</strong></p>
+<li><p><strong>创建本地文件输入流，并转交给工作簿操作对象</strong></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//创建文件的数据流</span></span><br><span class="line">FileInputStream file = <span class="keyword">new</span> FileInputStream(PATH + <span class="string">"07.xlsx"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//将文件流引入POI操作对象</span></span><br><span class="line">Workbook Work = <span class="keyword">new</span> XSSFWorkbook(file);</span><br></pre></td></tr></table></figure>
 </li>
-<li>
-<p><strong>获取工作表</strong></p>
+<li><p><strong>获取工作表</strong></p>
 <p>现在已经有了工作簿的操作对象，现在我们就要选择工作簿中具体的工作表来进行下一步操作，这里介绍两种方法。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Sheet sheet1 = Work.getSheetAt(<span class="number">0</span>);		<span class="comment">//根据索引选择第一张工作表</span></span><br><span class="line">Sheet sheet2 = Work.getSheet(<span class="string">"one"</span>);	<span class="comment">//根据工作表的名称选择工作表</span></span><br></pre></td></tr></table></figure>
 </li>
-<li>
-<p><strong>获取第一行</strong></p>
+<li><p><strong>获取第一行</strong></p>
 <p>将指针定位到第一行</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Row row = sheet1.getRow(<span class="number">0</span>);		<span class="comment">//获取第一行</span></span><br></pre></td></tr></table></figure>
 </li>
-<li>
-<p><strong>获取具体的单元格</strong></p>
+<li><p><strong>获取具体的单元格</strong></p>
 <p>使用定位到上一行的对象，定位具体的第N列数据</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Cell cell = row.getCell(<span class="number">0</span>);		<span class="comment">//获取第一行中第一列的数据</span></span><br></pre></td></tr></table></figure>
 </li>
-<li>
-<p><strong>获取单元格数据</strong></p>
+<li><p><strong>获取单元格数据</strong></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cell.getStringCellValue()		<span class="comment">//获取String的值</span></span><br></pre></td></tr></table></figure>
 </li>
-<li>
-<p><strong>以工作表对象为基点，获取工作表中有效行的总行数(自动化读取数据的时候使用)</strong></p>
+<li><p><strong>以工作表对象为基点，获取工作表中有效行的总行数(自动化读取数据的时候使用)</strong></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//获取工作表中可用的数据总行数，说白了就是有多少有效数据行，就返回多大的数字</span></span><br><span class="line"><span class="keyword">int</span> Lines = sheet.getPhysicalNumberOfRows();</span><br></pre></td></tr></table></figure>
 </li>
-<li>
-<p><strong>以行对象为基点，获取行单位下有效列的总列数</strong></p>
+<li><p><strong>以行对象为基点，获取行单位下有效列的总列数</strong></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//这个跟上面内个方法没啥大区别，这个是获取当前选中行中有效的数据列数</span></span><br><span class="line"><span class="keyword">int</span> Cells = line.getPhysicalNumberOfCells();</span><br></pre></td></tr></table></figure>
+<p>到这里其实已经掌握了怎样从Excel中读数据和写数据，其实向Excel中写数据好说，读数据这里有一个很显著的坑，那就是你永远不知道你选择的单元格中的数据类型是啥，所以上面演示的读数据是读出来的String类型的数据。</p>
 </li>
 </ul>
-<p>到这里其实已经掌握了怎样从Excel中读数据和写数据，其实向Excel中写数据好说，读数据这里有一个很显著的坑，那就是你永远不知道你选择的单元格中的数据类型是啥，所以上面演示的读数据是读出来的String类型的数据。</p>
 <p>接下来就补充一下在读数据的时候，为了应对各种情况进行的安全性判断吧。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">            int CELL_TYPE_NUMERIC = 0;      数字类型(普通数字，日期)</span></span><br><span class="line"><span class="comment">            int CELL_TYPE_STRING = 1;       字符串类型</span></span><br><span class="line"><span class="comment">            int CELL_TYPE_FORMULA = 2;      公式类型</span></span><br><span class="line"><span class="comment">            int CELL_TYPE_BLANK = 3;        空白类型</span></span><br><span class="line"><span class="comment">            int CELL_TYPE_BOOLEAN = 4;      Boolean类型</span></span><br><span class="line"><span class="comment">            int CELL_TYPE_ERROR = 5;        错误类型</span></span><br><span class="line"><span class="comment">             */</span></span><br></pre></td></tr></table></figure>
-<h3 id="实例演示">实例演示</h3>
-<p>个人演示的实例，贴在这里，需要者自取，已经封装为工具类，可以直接使用！！！</p>
+<h3 id="实例演示"><a href="#实例演示" class="headerlink" title="实例演示"></a>实例演示</h3><p>个人演示的实例，贴在这里，需要者自取，已经封装为工具类，可以直接使用！！！</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 该方法为自动适配单元格中的各种类型，进行读取Excel中的数据并显示在控制台中</span></span><br><span class="line"><span class="comment">     * 可以进一步进化，封装为工具类使用</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@throws</span> Exception</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">AutoRead07</span><span class="params">()</span> <span class="keyword">throws</span> Exception</span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//创建文件的数据流(本地实际存在的文件)</span></span><br><span class="line">        FileInputStream file = <span class="keyword">new</span> FileInputStream(PATH + <span class="string">"07.xlsx"</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//将文件流引入POI操作对象</span></span><br><span class="line">        Workbook Work = <span class="keyword">new</span> XSSFWorkbook(file);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//跟上边一样都是先获取位于工作簿中的第一个工作表</span></span><br><span class="line">        Sheet sheet = Work.getSheetAt(<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//获取工作表中可用的数据总行数，说白了就是有多少有效数据行，就返回多大的数字</span></span><br><span class="line">        <span class="keyword">int</span> Lines = sheet.getPhysicalNumberOfRows();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; Lines; i++) &#123;</span><br><span class="line">            <span class="comment">//选中第 N 行</span></span><br><span class="line">            Row line = sheet.getRow(i);</span><br><span class="line"></span><br><span class="line">            <span class="comment">//这个跟上面内个方法没啥大区别，这个是获取当前选中行中有效的数据列数</span></span><br><span class="line">            <span class="keyword">int</span> Cells = line.getPhysicalNumberOfCells();</span><br><span class="line"></span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; Cells; j++) &#123;</span><br><span class="line">                <span class="comment">//获取具体的列</span></span><br><span class="line">                Cell cell = line.getCell(j);</span><br><span class="line">                <span class="comment">//接下来就是打印了，首先经过我们以上的操作，已经定位到了具体单元格，就差获取单元格中的数据了，但是我们并不知道单元格中的数据类型，所以我们不能直接获取</span></span><br><span class="line">                <span class="comment">//不同类型返回不同的值</span></span><br><span class="line">                <span class="keyword">if</span>(cell != <span class="keyword">null</span>)&#123;</span><br><span class="line">                    <span class="keyword">int</span> cellType = cell.getCellType();</span><br><span class="line"></span><br><span class="line">                <span class="comment">/*</span></span><br><span class="line"><span class="comment">                int CELL_TYPE_NUMERIC = 0;      数字类型(普通数字，日期)</span></span><br><span class="line"><span class="comment">                int CELL_TYPE_STRING = 1;       字符串类型</span></span><br><span class="line"><span class="comment">                int CELL_TYPE_FORMULA = 2;      公式类型</span></span><br><span class="line"><span class="comment">                int CELL_TYPE_BLANK = 3;        空白类型</span></span><br><span class="line"><span class="comment">                int CELL_TYPE_BOOLEAN = 4;      Boolean类型</span></span><br><span class="line"><span class="comment">                int CELL_TYPE_ERROR = 5;        错误类型</span></span><br><span class="line"><span class="comment">                 */</span></span><br><span class="line"></span><br><span class="line">                    String Cellvalue = <span class="string">""</span>;</span><br><span class="line">                    <span class="keyword">switch</span> (cellType)&#123;</span><br><span class="line">                        <span class="keyword">case</span> Cell.CELL_TYPE_NUMERIC:    <span class="comment">//数字类型(普通数字，日期)</span></span><br><span class="line">                            <span class="comment">//HSSFDateUtil.isCellDateFormatted为判断当前数字是否为日期</span></span><br><span class="line">                            <span class="keyword">if</span>(HSSFDateUtil.isCellDateFormatted(cell))&#123;</span><br><span class="line">                                Date dateCellValue = cell.getDateCellValue();</span><br><span class="line">                                Cellvalue = <span class="keyword">new</span> DateTime(dateCellValue).toString(<span class="string">"YYYY-MM-dd"</span>);</span><br><span class="line">                            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                                Cellvalue = String.valueOf(cell.getNumericCellValue());</span><br><span class="line">                            &#125;</span><br><span class="line">                            <span class="keyword">break</span>;</span><br><span class="line">                        <span class="keyword">case</span> Cell.CELL_TYPE_STRING:</span><br><span class="line">                            Cellvalue = cell.getStringCellValue();</span><br><span class="line">                            <span class="keyword">break</span>;</span><br><span class="line">                        <span class="keyword">case</span> Cell.CELL_TYPE_FORMULA:</span><br><span class="line">                            Cellvalue = cell.getCellFormula();</span><br><span class="line">                            <span class="keyword">break</span>;</span><br><span class="line">                        <span class="keyword">case</span> Cell.CELL_TYPE_BOOLEAN:</span><br><span class="line">                            Cellvalue = String.valueOf(cell.getBooleanCellValue());</span><br><span class="line">                            <span class="keyword">break</span>;</span><br><span class="line">                        <span class="keyword">case</span> Cell.CELL_TYPE_ERROR:</span><br><span class="line">                            Cellvalue = String.valueOf(cell.getErrorCellValue());</span><br><span class="line">                            <span class="keyword">break</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                    System.out.print(Cellvalue+<span class="string">"  |  "</span>);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">//显示完一行之后自动回车一下</span></span><br><span class="line">            System.out.println();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 
       
@@ -803,19 +779,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">Java</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">工具类</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">Hexo</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">博客</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">Java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">工具类</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -827,15 +803,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">分页</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Linux</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Maven</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">分页</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -847,11 +819,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">NodeJS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">命令行窗口</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -860,6 +828,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">数据库</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">NodeJS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">命令行窗口</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -879,15 +855,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Redis</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">SpringBoot</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">JSR303校验</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Redis</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -899,11 +875,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">SpringSecurity</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">Swagger</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">Swagger</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">SpringSecurity</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -915,15 +891,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">注解</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">SpringCloud</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Web框架</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">注解</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -955,15 +931,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">Vuex</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Hexo_admin</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">Vuex</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -984,6 +956,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">Zabbix</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Hexo_admin</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1019,15 +995,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">NoSql</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">ERP系统</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">文档</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">NoSql</a>
               </li>
             
             <div class="clearfix"></div>

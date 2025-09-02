@@ -8,13 +8,13 @@
   <link rel="dns-prefetch" href="https://www.tengfei.eu.org">
   <title>Hexo博客的使用方法(3) | (●ˇ∀ˇ●)</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="添加“心知天气” 添加&amp;quot;helper-live2d动态模型 &amp;quot;">
+  <meta name="description" content="添加“心知天气” 添加”helper-live2d动态模型 “">
 <meta name="keywords" content="Hexo,博客">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo博客的使用方法(3)">
 <meta property="og:url" content="https:&#x2F;&#x2F;www.tengfei.eu.org&#x2F;article&#x2F;db61916.html">
 <meta property="og:site_name" content="(●ˇ∀ˇ●)">
-<meta property="og:description" content="添加“心知天气” 添加&amp;quot;helper-live2d动态模型 &amp;quot;">
+<meta property="og:description" content="添加“心知天气” 添加”helper-live2d动态模型 “">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https:&#x2F;&#x2F;www.tengfei.eu.org&#x2F;article&#x2F;db61916&#x2F;image-1573378054017.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;www.tengfei.eu.org&#x2F;article&#x2F;db61916&#x2F;image-1573481774183.png">
@@ -289,29 +289,23 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
     <div class="article-entry" itemprop="articleBody">
       
         <p>添加“心知天气”</p>
-<p>添加&quot;helper-live2d动态模型 &quot;</p>
+<p>添加”helper-live2d动态模型 “</p>
 <a id="more"></a>
-<h2 id="知心天气">知心天气</h2>
-<p><img src="/article/db61916/image-1573378054017.png" alt="file"></p>
+<h2 id="知心天气"><a href="#知心天气" class="headerlink" title="知心天气"></a>知心天气</h2><p><img src="/article/db61916/image-1573378054017.png" alt="file"></p>
 <p>參考：<a href="https://letmequadrakill.github.io/post/843b0170.html#more" target="_blank" rel="noopener">https://letmequadrakill.github.io/post/843b0170.html#more</a></p>
-<h3 id="1-注册账号，设置天气样式：">1.注册账号，设置天气样式：</h3>
-<p>官网：<a href="https://www.seniverse.com/widgetv3" target="_blank" rel="noopener">https://www.seniverse.com/widgetv3</a>，需要先注册账号，然后选择样式，如下：</p>
+<h3 id="1-注册账号，设置天气样式："><a href="#1-注册账号，设置天气样式：" class="headerlink" title="1.注册账号，设置天气样式："></a>1.注册账号，设置天气样式：</h3><p>官网：<a href="https://www.seniverse.com/widgetv3" target="_blank" rel="noopener">https://www.seniverse.com/widgetv3</a>，需要先注册账号，然后选择样式，如下：</p>
 <p><img src="/article/db61916/image-1573481774183.png" alt="file"></p>
 <p>生成js代码，复制代码，如下（我的免费版的代码）:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;tp-weather-widget&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">    (function(a, h, g, f, e, d, c, b) &#123;</span><br><span class="line">        b = function() &#123;</span><br><span class="line">            d = h.createElement(g);</span><br><span class="line">            c = h.getElementsByTagName(g)[0];</span><br><span class="line">            d.src = e;</span><br><span class="line">            d.charset = &quot;utf-8&quot;;</span><br><span class="line">            d.async = 1;</span><br><span class="line">            c.parentNode.insertBefore(d, c)</span><br><span class="line">        &#125;;</span><br><span class="line">        a[&quot;SeniverseWeatherWidgetObject&quot;] = f;</span><br><span class="line">        a[f] || (a[f] = function() &#123;</span><br><span class="line">            (a[f].q = a[f].q || []).push(arguments)</span><br><span class="line">        &#125;);</span><br><span class="line">        a[f].l = +new Date();</span><br><span class="line">        if (a.attachEvent) &#123;</span><br><span class="line">            a.attachEvent(&quot;onload&quot;, b)</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            a.addEventListener(&quot;load&quot;, b, false)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;(window, document, &quot;script&quot;, &quot;SeniverseWeatherWidget&quot;, &quot;//cdn.sencdn.com/widget2/static/js/bundle.js&quot;));</span><br><span class="line">    window.SeniverseWeatherWidget(&apos;show&apos;, &#123;</span><br><span class="line">        flavor: &quot;slim&quot;,</span><br><span class="line">        location: &quot;WS06YNEMPP18&quot;,</span><br><span class="line">        geolocation: true,</span><br><span class="line">        language: &quot;zh-Hans&quot;,</span><br><span class="line">        unit: &quot;c&quot;,</span><br><span class="line">        theme: &quot;auto&quot;,</span><br><span class="line">        token: &quot;a579c7ea-507d-41d7-b578-3537882d20c2&quot;,</span><br><span class="line">        hover: &quot;enabled&quot;,</span><br><span class="line">        container: &quot;tp-weather-widget&quot;</span><br><span class="line">    &#125;)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
 <p>以下是复制的另一个人的代码，可能是升级版的(感觉效果很不错，就用了这个，可能会出现问题，因为应该是用他的秘钥，要是他修改你就会变)：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 《添加“心知天气”--&gt;</span><br><span class="line">&lt;div id=&quot;tp-weather-widget&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">        (function(T, h, i, n, k, P, a, g, e) &#123;</span><br><span class="line">            g = function() &#123;</span><br><span class="line">                P = h.createElement(i);</span><br><span class="line">                a = h.getElementsByTagName(i)[0];</span><br><span class="line">                P.src = k;</span><br><span class="line">                P.charset = &quot;utf-8&quot;;</span><br><span class="line">                P.async = 1;</span><br><span class="line">                a.parentNode.insertBefore(P, a)</span><br><span class="line">            &#125;;</span><br><span class="line">            T[&quot;ThinkPageWeatherWidgetObject&quot;] = n;</span><br><span class="line">            T[n] || (T[n] = function() &#123;</span><br><span class="line">                (T[n].q = T[n].q || []).push(arguments)</span><br><span class="line">            &#125;);</span><br><span class="line">            T[n].l = +new Date();</span><br><span class="line">            if (T.attachEvent) &#123;</span><br><span class="line">                T.attachEvent(&quot;onload&quot;, g)</span><br><span class="line">            &#125; else &#123;</span><br><span class="line">                T.addEventListener(&quot;load&quot;, g, false)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;(window, document, &quot;script&quot;, &quot;tpwidget&quot;, &quot;//widget.thinkpage.cn/widget/chameleon.js&quot;))</span><br><span class="line">    &lt;/script&gt;</span><br><span class="line">    &lt;script&gt;</span><br><span class="line">        tpwidget(&quot;init&quot;, &#123;</span><br><span class="line">            &quot;flavor&quot;: &quot;slim&quot;,</span><br><span class="line">            &quot;location&quot;: &quot;WM6N2PM3WY2K&quot;,</span><br><span class="line">            &quot;geolocation&quot;: &quot;enabled&quot;,</span><br><span class="line">            &quot;language&quot;: &quot;zh-chs&quot;,</span><br><span class="line">            &quot;unit&quot;: &quot;c&quot;,</span><br><span class="line">            &quot;theme&quot;: &quot;chameleon&quot;,</span><br><span class="line">            &quot;container&quot;: &quot;tp-weather-widget&quot;,</span><br><span class="line">            &quot;bubble&quot;: &quot;enabled&quot;,</span><br><span class="line">            &quot;alarmType&quot;: &quot;badge&quot;,</span><br><span class="line">            &quot;color&quot;: &quot;#FFFFFF&quot;,</span><br><span class="line">            &quot;uid&quot;: &quot;U88B4B2797&quot;,</span><br><span class="line">            &quot;hash&quot;: &quot;c9d7cb43b80ffece52c9a1ebbfbca65f&quot;</span><br><span class="line">        &#125;);</span><br><span class="line">        tpwidget(&quot;show&quot;);</span><br><span class="line">    &lt;/script&gt;</span><br><span class="line">&lt;!-- 添加“心知天气”》--&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="2-添加到左侧边栏">2.添加到左侧边栏</h3>
-<p>修改<code>themes/yilia/layout/_partial/left-col.ejs</code>，将上面的js代码添加到指定位置，位置如下：</p>
+<h3 id="2-添加到左侧边栏"><a href="#2-添加到左侧边栏" class="headerlink" title="2.添加到左侧边栏"></a>2.添加到左侧边栏</h3><p>修改<code>themes/yilia/layout/_partial/left-col.ejs</code>，将上面的js代码添加到指定位置，位置如下：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;overlay&quot; style=&quot;background: &lt;%= theme.style &amp;&amp; theme.style.header ? theme.style.header : defaultBg %&gt;&quot;&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- 添加“心知天气”--&gt;</span><br><span class="line"></span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;div class=&quot;intrude-less&quot;&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="3-设置成方便开启和关闭的形式">3.设置成方便开启和关闭的形式</h3>
-<p>如果主题中开启了这个设置，才开启这个功能：</p>
+<h3 id="3-设置成方便开启和关闭的形式"><a href="#3-设置成方便开启和关闭的形式" class="headerlink" title="3.设置成方便开启和关闭的形式"></a>3.设置成方便开启和关闭的形式</h3><p>如果主题中开启了这个设置，才开启这个功能：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 《添加“心知天气”--&gt;</span><br><span class="line">&lt;% if(theme.xinzhi_weather)&#123; %&gt;</span><br><span class="line">&lt;div id=&quot;tp-weather-widget&quot;&gt;&lt;/div&gt;</span><br><span class="line">……</span><br><span class="line">        tpwidget(&quot;show&quot;);</span><br><span class="line">    &lt;/script&gt;</span><br><span class="line">&lt;% &#125; %&gt;</span><br><span class="line">&lt;!-- 添加“心知天气”》--&gt;</span><br></pre></td></tr></table></figure>
 <p><code>themes/yilia/_config.yml</code>中添加如下配置：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 心知天气(如果不用为false):https://www.seniverse.com</span><br><span class="line">xinzhi_weather: true</span><br></pre></td></tr></table></figure>
-<h2 id="helper-live2d动态模型">helper-live2d动态模型</h2>
-<h5 id="Tips-前导必备">Tips:前导必备</h5>
-<ul>
+<h2 id="helper-live2d动态模型"><a href="#helper-live2d动态模型" class="headerlink" title="helper-live2d动态模型"></a>helper-live2d动态模型</h2><h5 id="Tips-前导必备"><a href="#Tips-前导必备" class="headerlink" title="Tips:前导必备"></a>Tips:前导必备</h5><ul>
 <li><a href="https://zhousiwei.gitee.io/" target="_blank" rel="noopener">博主博客地址</a></li>
 <li>博主使用的是<strong>hexo-theme-yilia-plus</strong>主题</li>
 <li>插件的github地址<a href="https://github.com/EYHN/hexo-helper-live2d" target="_blank" rel="noopener">hexo-helper-live2d</a></li>
@@ -319,13 +313,10 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 <li>必须有Node环境 ➡️ <a href="https://www.jianshu.com/p/f8b0a4f7a822" target="_blank" rel="noopener">Linux下安装node和npm</a></li>
 </ul>
 <hr>
-<h5 id="1、安装模块">1、安装模块</h5>
-<p>​    <strong>在hexo根目录执行命令</strong></p>
+<h5 id="1、安装模块"><a href="#1、安装模块" class="headerlink" title="1、安装模块"></a>1、安装模块</h5><p>​    <strong>在hexo根目录执行命令</strong></p>
 <p>hexo博客根目录选择<code>cmd</code>命令窗口或者<code>git bash</code> 输入以下代码，安装插件</p>
-<h3 id="操作：">操作：</h3>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save hexo-helper-live2d</span><br></pre></td></tr></table></figure>
-<h5 id="2、下载模型">2、下载模型</h5>
-<p>​    作者各种模型包展示 ➡️ <a href="https://huaji8.top/post/live2d-plugin-2.0/" target="_blank" rel="noopener">hexo live2d插件 2.0 !</a></p>
+<h3 id="操作："><a href="#操作：" class="headerlink" title="操作："></a>操作：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save hexo-helper-live2d</span><br></pre></td></tr></table></figure>
+<h5 id="2、下载模型"><a href="#2、下载模型" class="headerlink" title="2、下载模型"></a>2、下载模型</h5><p>​    作者各种模型包展示 ➡️ <a href="https://huaji8.top/post/live2d-plugin-2.0/" target="_blank" rel="noopener">hexo live2d插件 2.0 !</a></p>
 <blockquote>
 <p><a href="https://github.com/xiazeyu/live2d-widget-models" target="_blank" rel="noopener">live2d模型仓库</a></p>
 </blockquote>
@@ -354,30 +345,23 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 <li><code>live2d-widget-model-z16</code></li>
 </ul>
 <p>使用<code>npm install {packagename}</code>安装模型</p>
-<p>命令为:<code>npm install live2d-widget-model-模型名</code>，模型为可参考上面的预览内容。</p>
+<p>命令为:<code>npm install live2d-widget-model-模型名</code>，模型为可参考上面的预览内容。 </p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">---博主使用的模型</span><br><span class="line"># npm install live2d-widget-model-unitychan</span><br></pre></td></tr></table></figure>
-<h5 id="3、详细配置">3、详细配置</h5>
-<p>在Hexo的 <code>_config.yml</code> 文件或主题的 <code>_config.yml</code> 文件中添加配置.<br>
-参阅 <a href="https://l2dwidget.js.org/docs/class/src/index.js~L2Dwidget.html#instance-method-init" target="_blank" rel="noopener">live2d-widget.js API</a></p>
+<h5 id="3、详细配置"><a href="#3、详细配置" class="headerlink" title="3、详细配置"></a>3、详细配置</h5><p>在Hexo的 <code>_config.yml</code> 文件或主题的 <code>_config.yml</code> 文件中添加配置.<br>参阅 <a href="https://l2dwidget.js.org/docs/class/src/index.js~L2Dwidget.html#instance-method-init" target="_blank" rel="noopener">live2d-widget.js API</a></p>
 <ul>
-<li>
-<p>博主配置文件示例</p>
+<li><p>博主配置文件示例</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">#模型</span><br><span class="line"># Live2D</span><br><span class="line">## https://github.com/EYHN/hexo-helper-live2d</span><br><span class="line">## https://l2dwidget.js.org/docs/class/src/index.js~L2Dwidget.html#instance-method-init</span><br><span class="line">live2d:</span><br><span class="line">  enable: true</span><br><span class="line">  #enable: false</span><br><span class="line">  scriptFrom: local # 默认</span><br><span class="line">  pluginRootPath: live2dw/ # 插件在站点上的根目录(相对路径)</span><br><span class="line">  pluginJsPath: lib/ # 脚本文件相对与插件根目录路径</span><br><span class="line">  pluginModelPath: assets/ # 模型文件相对与插件根目录路径</span><br><span class="line">  # scriptFrom: jsdelivr # jsdelivr CDN</span><br><span class="line">  # scriptFrom: unpkg # unpkg CDN</span><br><span class="line">  # scriptFrom: https://cdn.jsdelivr.net/npm/live2d-widget@3.x/lib/L2Dwidget.min.js # 你的自定义 url</span><br><span class="line">  tagMode: false # 标签模式, 是否仅替换 live2d tag标签而非插入到所有页面中</span><br><span class="line">  debug: false # 调试, 是否在控制台输出日志</span><br><span class="line">  model:</span><br><span class="line">    use: live2d-widget-model-unitychan</span><br><span class="line">    # use: live2d-widget-model-wanko # npm-module package name</span><br><span class="line">    # use: wanko # 博客根目录/live2d_models/ 下的目录名</span><br><span class="line">    # use: ./wives/wanko # 相对于博客根目录的路径</span><br><span class="line">    # use: https://cdn.jsdelivr.net/npm/live2d-widget-model-wanko@1.0.5/assets/wanko.model.json # 你的自定义 url</span><br><span class="line">  display:</span><br><span class="line">    position: right</span><br><span class="line">    width: 145</span><br><span class="line">    height: 315</span><br><span class="line">  mobile:</span><br><span class="line">    show: true # 是否在移动设备上显示</span><br><span class="line">    scale: 0.5 # 移动设备上的缩放       </span><br><span class="line">  react:</span><br><span class="line">    opacityDefault: 0.7</span><br><span class="line">    opacityOnHover: 0.8</span><br></pre></td></tr></table></figure>
-<p>注意这里的<code>use</code>参数是上面安装的那个模型全名。</p>
+<p>注意这里的<code>use</code>参数是上面安装的那个模型全名。 </p>
 </li>
 </ul>
-<h2 id="取消看板娘">取消看板娘</h2>
-<h3 id="暂时不用">暂时不用</h3>
-<p>将配置中的<code>enable</code>设置成false即可。</p>
-<h3 id="卸载插件">卸载插件</h3>
-<p>运行命令下载插件，删除配置信息：</p>
+<h2 id="取消看板娘"><a href="#取消看板娘" class="headerlink" title="取消看板娘"></a>取消看板娘</h2><h3 id="暂时不用"><a href="#暂时不用" class="headerlink" title="暂时不用"></a>暂时不用</h3><p>将配置中的<code>enable</code>设置成false即可。</p>
+<h3 id="卸载插件"><a href="#卸载插件" class="headerlink" title="卸载插件"></a>卸载插件</h3><p>运行命令下载插件，删除配置信息：</p>
 <ol>
 <li>卸载模型：<code>npm install live2d-widget-model-模型名</code></li>
 <li>卸载live2d插件：<code>npm uninstall hexo-helper-live2d</code></li>
 <li>去掉站点<code>_config.yml</code>下的配置信息即可。</li>
 </ol>
-<h1>中级版</h1>
-<p>比起简易版<strong>添加了对话框</strong>功能。</p>
+<h1 id="中级版"><a href="#中级版" class="headerlink" title="中级版"></a>中级版</h1><p>比起简易版<strong>添加了对话框</strong>功能。</p>
 <p>长这样（↓）</p>
 <p><img src="/article/db61916/live2d_3.jpg" alt="img"></p>
 <p>1.jpg</p>
@@ -386,11 +370,10 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;link rel=&quot;stylesheet&quot; href=&quot;/live2d/css/live2d.css&quot; /&gt;</span><br><span class="line">&lt;div id=&quot;landlord&quot;&gt;</span><br><span class="line">    &lt;div class=&quot;message&quot; style=&quot;opacity:0&quot;&gt;&lt;/div&gt;</span><br><span class="line">    &lt;canvas id=&quot;live2d&quot; width=&quot;280&quot; height=&quot;250&quot; class=&quot;live2d&quot;&gt;&lt;/canvas&gt;</span><br><span class="line">    &lt;div class=&quot;hide-button&quot;&gt;隐藏&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">    var message_Path = &apos;/live2d/&apos;</span><br><span class="line">    var home_Path = &apos;https://soyawww.github.io/&apos;  //此处修改为你的域名</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;script type=&quot;text/javascript&quot; src=&quot;/live2d/js/live2d.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;script type=&quot;text/javascript&quot; src=&quot;/live2d/js/message.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">    loadlive2d(&quot;live2d&quot;, &quot;/live2d/model/tia/model.json&quot;);  //此处为你是用的模型文件，可以修改</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
 <p>如要修改模型，修改上面代码的loadlive2d路径即可。</p>
 <p>如要修改点击时看板娘或者鼠标放在某个元素上的对话，打开live2d文件中的<strong>message.json</strong>进行修改。</p>
-<h1>高级版</h1>
-<p><img src="/article/db61916/live2d_2.jpg" alt="img"></p>
+<h1 id="高级版"><a href="#高级版" class="headerlink" title="高级版"></a>高级版</h1><p><img src="/article/db61916/live2d_2.jpg" alt="img"></p>
 <p>1.gif</p>
 <p>拥有换装、换人、飞机大战小游戏等功能的看板娘（也就是我现在正在用的。）</p>
-<p>首先下载大佬的<a href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fstevenjoezhang%2Flive2d-widget" target="_blank" rel="noopener">github文件</a>，修改好名字放置于**\themes\next\source**下（当然你也可以选择直接fork仓库，如果你不想下载文件的话就直接跳过这一段吧）。</p>
+<p>首先下载大佬的<a href="https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fstevenjoezhang%2Flive2d-widget" target="_blank" rel="noopener">github文件</a>，修改好名字放置于<strong>\themes\next\source</strong>下（当然你也可以选择直接fork仓库，如果你不想下载文件的话就直接跳过这一段吧）。</p>
 <p>打开_layout.swig文件，先在<strong>head</strong>标签下添加依赖，否则无法正常显示：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=&quot;https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css&quot;&gt;</span><br></pre></td></tr></table></figure>
 <p>然后再在<strong>footer</strong>标签下添加：</p>
@@ -402,8 +385,7 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 <p><img src="/article/db61916/live2d_1.jpg" alt="img"></p>
 <p>screenshot.1.jpg</p>
 <p>总之，更多的内容就自己摸索吧！</p>
-<h2 id="关于fork仓库和api">~关于fork仓库和api</h2>
-<p>其实不用下下来文件也可以直接用，用法是添加在添加依赖后直接添加一行代码在<strong>footer</strong>标签。</p>
+<h2 id="关于fork仓库和api"><a href="#关于fork仓库和api" class="headerlink" title="~关于fork仓库和api"></a>~关于fork仓库和api</h2><p>其实不用下下来文件也可以直接用，用法是添加在添加依赖后直接添加一行代码在<strong>footer</strong>标签。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=&quot;https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget/autoload.js&quot;&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
 <p>这个是直接用的大佬的仓库，你可以选择把仓库fork下来，然后自行修改（如下，修改username为你的github名称）。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=&quot;https://cdn.jsdelivr.net/gh/username/live2d-widget/autoload.js&quot;&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
@@ -808,19 +790,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">Java</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">工具类</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">Hexo</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">博客</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">Java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">工具类</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -832,15 +814,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">分页</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Linux</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Maven</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">分页</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -852,11 +830,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">NodeJS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">命令行窗口</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -865,6 +839,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">数据库</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">NodeJS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">命令行窗口</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -884,15 +866,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Redis</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">SpringBoot</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">JSR303校验</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Redis</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -904,11 +886,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">SpringSecurity</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">Swagger</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">Swagger</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">SpringSecurity</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -920,15 +902,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">注解</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">SpringCloud</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Web框架</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">注解</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -960,15 +942,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">Vuex</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Hexo_admin</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">Vuex</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -989,6 +967,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">Zabbix</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Hexo_admin</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1024,15 +1006,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">NoSql</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">ERP系统</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">文档</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">NoSql</a>
               </li>
             
             <div class="clearfix"></div>

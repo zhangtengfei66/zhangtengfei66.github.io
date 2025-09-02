@@ -308,39 +308,31 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
       
         <p>🔔 💬 👩‍💼</p>
 <a id="more"></a>
-<h2 id="引言">引言</h2>
-<p>在电商、服务预订等类型的微信小程序中，客服功能是连接用户与商家的重要桥梁。它不仅能够提升用户体验，还能有效提高转化率和客户满意度。本文将详细解析如何在微信小程序中实现客服功能，并探讨其优势和使用方法。</p>
-<h2 id="小程序客服功能概述">小程序客服功能概述</h2>
-<p>微信小程序提供了便捷的客服接口，允许开发者为小程序接入客服系统。通过这个功能，用户可以在小程序内直接与客服人员进行沟通，解决问题或提供咨询服务。</p>
-<h2 id="接入客服功能">接入客服功能</h2>
-<p>要使用小程序的客服功能，首先需要在微信公众平台进行配置。</p>
-<h3 id="1-开通客服功能">1. 开通客服功能</h3>
-<p>登录微信公众平台，进入“小程序管理后台”，在“功能”中找到“客服”，启用“客服消息”和“小程序客服消息”接口，按照指引开通客服功能并设置接待人员。</p>
-<h3 id="2-小程序客服">2. 小程序客服</h3>
-<blockquote>
+<h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><p>在电商、服务预订等类型的微信小程序中，客服功能是连接用户与商家的重要桥梁。它不仅能够提升用户体验，还能有效提高转化率和客户满意度。本文将详细解析如何在微信小程序中实现客服功能，并探讨其优势和使用方法。</p>
+<h2 id="小程序客服功能概述"><a href="#小程序客服功能概述" class="headerlink" title="小程序客服功能概述"></a>小程序客服功能概述</h2><p>微信小程序提供了便捷的客服接口，允许开发者为小程序接入客服系统。通过这个功能，用户可以在小程序内直接与客服人员进行沟通，解决问题或提供咨询服务。</p>
+<h2 id="接入客服功能"><a href="#接入客服功能" class="headerlink" title="接入客服功能"></a>接入客服功能</h2><p>要使用小程序的客服功能，首先需要在微信公众平台进行配置。</p>
+<h3 id="1-开通客服功能"><a href="#1-开通客服功能" class="headerlink" title="1. 开通客服功能"></a>1. 开通客服功能</h3><p>登录微信公众平台，进入“小程序管理后台”，在“功能”中找到“客服”，启用“客服消息”和“小程序客服消息”接口，按照指引开通客服功能并设置接待人员。</p>
+<h3 id="2-小程序客服"><a href="#2-小程序客服" class="headerlink" title="2. 小程序客服"></a>2. 小程序客服</h3><blockquote>
 <p><a href="https://mpkf.weixin.qq.com/" target="_blank" rel="noopener">小程序客服功能控制台</a></p>
 </blockquote>
 <p>在小程序页面中，你可以直接使用官方提供的 <code>open-type=&quot;contact&quot;</code> 组件来快速实现一个客服入口。</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">open-type</span>=<span class="string">"contact"</span> <span class="attr">bindcontact</span>=<span class="string">"handleContact"</span> <span class="attr">session-from</span>=<span class="string">"sessionFrom"</span>&gt;</span><span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h3 id="3-微信客服">3. 微信客服</h3>
-<blockquote>
-<p>[微信客服接口手册](<a href="https://developers.weixin.qq.com/miniprogram/dev/api/open-api/service-chat/wx.openCustomerServiceChat.html" target="_blank" rel="noopener">开放接口 / 微信客服 / wx.openCustomerServiceChat (qq.com)</a>)</p>
+<h3 id="3-微信客服"><a href="#3-微信客服" class="headerlink" title="3. 微信客服"></a>3. 微信客服</h3><blockquote>
+<p><a href="[开放接口 / 微信客服 / wx.openCustomerServiceChat (qq.com">微信客服接口手册</a>](<a href="https://developers.weixin.qq.com/miniprogram/dev/api/open-api/service-chat/wx.openCustomerServiceChat.html" target="_blank" rel="noopener">https://developers.weixin.qq.com/miniprogram/dev/api/open-api/service-chat/wx.openCustomerServiceChat.html</a>))</p>
 </blockquote>
 <p>如果你希望有更个性化的客服入口，可以自定义按钮样式，并通过编写代码触发客服会话。</p>
 <ul>
 <li>可关联企业微信使用客服功能；</li>
 </ul>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//客服服务</span></span><br><span class="line">bindCustomerServiceChat: <span class="keyword">async</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="comment">// console.log('联系企业微信客服');</span></span><br><span class="line">  wx.openCustomerServiceChat(&#123;</span><br><span class="line">    extInfo: &#123;</span><br><span class="line">      url: <span class="string">''</span>,<span class="comment">//客服链接</span></span><br><span class="line">  &#125;,</span><br><span class="line">    corpId: <span class="string">''</span>,<span class="comment">//企业号</span></span><br><span class="line">    showMessageCard: <span class="literal">true</span>,</span><br><span class="line">    sendMessageTitle: <span class="string">'每日签到获取积分'</span>,</span><br><span class="line">    sendMessagePath: <span class="string">'projects/house/pages/my/points/my_points.html'</span>,</span><br><span class="line">    sendMessageImg: <span class="string">'projects/house/images/my/get_points.png'</span>,</span><br><span class="line">    success(res) &#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">'成功打开客服聊天界面'</span>);</span><br><span class="line">    &#125;,</span><br><span class="line">    fail(err) &#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">'打开客服聊天界面失败'</span>, err);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="优化客服体验">优化客服体验</h2>
-<p>为了提升用户的咨询体验，你可以采取以下措施：</p>
+<h2 id="优化客服体验"><a href="#优化客服体验" class="headerlink" title="优化客服体验"></a>优化客服体验</h2><p>为了提升用户的咨询体验，你可以采取以下措施：</p>
 <ul>
 <li><strong>快速响应</strong>：确保客服人员能够及时回复用户的消息。</li>
 <li><strong>自动回复</strong>：设置常见问题的自动回复，提高回复效率。</li>
 <li><strong>消息通知</strong>：合理设置接收消息通知，避免错过用户咨询。</li>
 <li><strong>数据统计</strong>：利用客服接口提供的数据统计功能，分析用户咨询情况，不断优化服务。</li>
 </ul>
-<h2 id="结语">结语</h2>
-<p>微信小程序的客服功能为商家和用户之间的沟通提供了便捷的方式。通过上述步骤，你可以在小程序中轻松实现专业的客服服务。记得定期评估和优化客服流程，确保用户能够得到满意的服务体验。</p>
+<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>微信小程序的客服功能为商家和用户之间的沟通提供了便捷的方式。通过上述步骤，你可以在小程序中轻松实现专业的客服服务。记得定期评估和优化客服流程，确保用户能够得到满意的服务体验。</p>
 
       
 
@@ -756,19 +748,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">Java</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">工具类</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">Hexo</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">博客</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">Java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">工具类</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -780,15 +772,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">分页</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Linux</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Maven</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">分页</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -800,11 +788,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">NodeJS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">命令行窗口</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -813,6 +797,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">数据库</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">NodeJS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">命令行窗口</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -832,15 +824,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Redis</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">SpringBoot</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">JSR303校验</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Redis</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -852,11 +844,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">SpringSecurity</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">Swagger</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">Swagger</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">SpringSecurity</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -868,15 +860,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">注解</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">SpringCloud</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Web框架</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">注解</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -908,15 +900,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">Vuex</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Hexo_admin</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">Vuex</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -937,6 +925,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">Zabbix</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Hexo_admin</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -972,15 +964,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">NoSql</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">ERP系统</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">文档</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">NoSql</a>
               </li>
             
             <div class="clearfix"></div>

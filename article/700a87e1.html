@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="https://www.tengfei.eu.org">
   <title>小程序位置接口功能 | (●ˇ∀ˇ●)</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="引言 在微信小程序的开发过程中，位置信息是一个常用的功能模块。它允许用户与现实世界的地理位置进行交互，无论是展示地图、查找周边服务还是实现定位功能，位置接口都扮演着至关重要的角色。本文将详细介绍如何在微信小程序中使用位置相关接口。">
+  <meta name="description" content="引言在微信小程序的开发过程中，位置信息是一个常用的功能模块。它允许用户与现实世界的地理位置进行交互，无论是展示地图、查找周边服务还是实现定位功能，位置接口都扮演着至关重要的角色。本文将详细介绍如何在微信小程序中使用位置相关接口。">
 <meta name="keywords" content="云开发,低代码,小程序">
 <meta property="og:type" content="article">
 <meta property="og:title" content="小程序位置接口功能">
 <meta property="og:url" content="https:&#x2F;&#x2F;www.tengfei.eu.org&#x2F;article&#x2F;700a87e1.html">
 <meta property="og:site_name" content="(●ˇ∀ˇ●)">
-<meta property="og:description" content="引言 在微信小程序的开发过程中，位置信息是一个常用的功能模块。它允许用户与现实世界的地理位置进行交互，无论是展示地图、查找周边服务还是实现定位功能，位置接口都扮演着至关重要的角色。本文将详细介绍如何在微信小程序中使用位置相关接口。">
+<meta property="og:description" content="引言在微信小程序的开发过程中，位置信息是一个常用的功能模块。它允许用户与现实世界的地理位置进行交互，无论是展示地图、查找周边服务还是实现定位功能，位置接口都扮演着至关重要的角色。本文将详细介绍如何在微信小程序中使用位置相关接口。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https:&#x2F;&#x2F;www.tengfei.eu.org&#x2F;article&#x2F;700a87e1&#x2F;C:%5CUsers%5CAdministrator%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240216105746576.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;www.tengfei.eu.org&#x2F;article&#x2F;700a87e1&#x2F;Users&#x2F;Administrator&#x2F;AppData&#x2F;Roaming&#x2F;Typora&#x2F;typora-user-images&#x2F;image-20240216105746576.png">
 <meta property="og:updated_time" content="2025-07-07T10:27:15.425Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https:&#x2F;&#x2F;www.tengfei.eu.org&#x2F;article&#x2F;700a87e1&#x2F;C:%5CUsers%5CAdministrator%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240216105746576.png">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;www.tengfei.eu.org&#x2F;article&#x2F;700a87e1&#x2F;Users&#x2F;Administrator&#x2F;AppData&#x2F;Roaming&#x2F;Typora&#x2F;typora-user-images&#x2F;image-20240216105746576.png">
   
     <link rel="alternative" href="/atom.xml" title="(●ˇ∀ˇ●)" type="application/atom+xml">
   
@@ -287,7 +287,7 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
   <div id="toc-article" class="toc-article" style="display:none">
       <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
     <strong class="toc-title">文章目录</strong>
-           <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#引言"><span class="toc-number">1.</span> <span class="toc-text">引言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#一、官方文档"><span class="toc-number">2.</span> <span class="toc-text">一、官方文档</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、接口调用"><span class="toc-number">3.</span> <span class="toc-text">二、接口调用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-获取位置信息"><span class="toc-number">3.1.</span> <span class="toc-text">1. 获取位置信息</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#wx-getLocation"><span class="toc-number">3.1.1.</span> <span class="toc-text">wx.getLocation</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#注意事项"><span class="toc-number">3.1.2.</span> <span class="toc-text">注意事项</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-展示地图"><span class="toc-number">3.2.</span> <span class="toc-text">2. 展示地图</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#使用-map-组件"><span class="toc-number">3.2.1.</span> <span class="toc-text">使用&lt;map&gt;组件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#属性说明"><span class="toc-number">3.2.2.</span> <span class="toc-text">属性说明</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#示例代码"><span class="toc-number">3.2.3.</span> <span class="toc-text">示例代码</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-地理编码与反地理编码"><span class="toc-number">3.3.</span> <span class="toc-text">3. 地理编码与反地理编码</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#wx-chooseLocation"><span class="toc-number">3.3.1.</span> <span class="toc-text">wx.chooseLocation</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#wx-geocoder"><span class="toc-number">3.3.2.</span> <span class="toc-text">wx.geocoder</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#wx-geocoder-translate"><span class="toc-number">3.3.3.</span> <span class="toc-text">wx.geocoder.translate</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-用户签到，判断当前位置距离活动地点距离"><span class="toc-number">3.4.</span> <span class="toc-text">4. 用户签到，判断当前位置距离活动地点距离</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#使用getLocation接口获取用户当前位置"><span class="toc-number">3.4.1.</span> <span class="toc-text">使用getLocation接口获取用户当前位置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#计算用户当前位置和活动位置距离"><span class="toc-number">3.4.2.</span> <span class="toc-text">计算用户当前位置和活动位置距离</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#判断位置距离是否超过活动范围"><span class="toc-number">3.4.3.</span> <span class="toc-text">判断位置距离是否超过活动范围</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-用户授权"><span class="toc-number">3.5.</span> <span class="toc-text">5. 用户授权</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#结语"><span class="toc-number">4.</span> <span class="toc-text">结语</span></a></li></ol>
+           <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#引言"><span class="toc-number">1.</span> <span class="toc-text">引言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#一、官方文档"><span class="toc-number">2.</span> <span class="toc-text">一、官方文档</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、接口调用"><span class="toc-number">3.</span> <span class="toc-text">二、接口调用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-获取位置信息"><span class="toc-number">3.1.</span> <span class="toc-text">1. 获取位置信息</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#wx-getLocation"><span class="toc-number">3.1.1.</span> <span class="toc-text">wx.getLocation</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#注意事项"><span class="toc-number">3.1.2.</span> <span class="toc-text">注意事项</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-展示地图"><span class="toc-number">3.2.</span> <span class="toc-text">2. 展示地图</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#使用-lt-map-gt-组件"><span class="toc-number">3.2.1.</span> <span class="toc-text">使用&lt;map&gt;组件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#属性说明"><span class="toc-number">3.2.2.</span> <span class="toc-text">属性说明</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#示例代码"><span class="toc-number">3.2.3.</span> <span class="toc-text">示例代码</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-地理编码与反地理编码"><span class="toc-number">3.3.</span> <span class="toc-text">3. 地理编码与反地理编码</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#wx-chooseLocation"><span class="toc-number">3.3.1.</span> <span class="toc-text">wx.chooseLocation</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#wx-geocoder"><span class="toc-number">3.3.2.</span> <span class="toc-text">wx.geocoder</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#wx-geocoder-translate"><span class="toc-number">3.3.3.</span> <span class="toc-text">wx.geocoder.translate</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-用户签到，判断当前位置距离活动地点距离"><span class="toc-number">3.4.</span> <span class="toc-text">4. 用户签到，判断当前位置距离活动地点距离</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#使用getLocation接口获取用户当前位置"><span class="toc-number">3.4.1.</span> <span class="toc-text">使用getLocation接口获取用户当前位置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#计算用户当前位置和活动位置距离"><span class="toc-number">3.4.2.</span> <span class="toc-text">计算用户当前位置和活动位置距离</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#判断位置距离是否超过活动范围"><span class="toc-number">3.4.3.</span> <span class="toc-text">判断位置距离是否超过活动范围</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-用户授权"><span class="toc-number">3.5.</span> <span class="toc-text">5. 用户授权</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#结语"><span class="toc-number">4.</span> <span class="toc-text">结语</span></a></li></ol>
   </div>
    <script type="text/javascript">
    function showToc(){
@@ -308,67 +308,49 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="引言">引言</h2>
-<p>在微信小程序的开发过程中，位置信息是一个常用的功能模块。它允许用户与现实世界的地理位置进行交互，无论是展示地图、查找周边服务还是实现定位功能，位置接口都扮演着至关重要的角色。本文将详细介绍如何在微信小程序中使用位置相关接口。</p>
+        <h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><p>在微信小程序的开发过程中，位置信息是一个常用的功能模块。它允许用户与现实世界的地理位置进行交互，无论是展示地图、查找周边服务还是实现定位功能，位置接口都扮演着至关重要的角色。本文将详细介绍如何在微信小程序中使用位置相关接口。</p>
 <a id="more"></a>
-<h2 id="一、官方文档">一、官方文档</h2>
-<blockquote></blockquote>
-<h2 id="二、接口调用">二、接口调用</h2>
-<ol>
+<h2 id="一、官方文档"><a href="#一、官方文档" class="headerlink" title="一、官方文档"></a>一、官方文档</h2><blockquote>
+<p>[微信小程序位置接口]: <a href="https://developers.weixin.qq.com/miniprogram/dev/api/location/wx.getFuzzyLocation.html" target="_blank" rel="noopener">https://developers.weixin.qq.com/miniprogram/dev/api/location/wx.getFuzzyLocation.html</a></p>
+</blockquote>
+<h2 id="二、接口调用"><a href="#二、接口调用" class="headerlink" title="二、接口调用"></a>二、接口调用</h2><ol>
 <li>接口调用之前需要在公众平台提交申请，申请的接口审核通过后，才可以使用。</li>
 </ol>
-<p><img src="/article/700a87e1/C:%5CUsers%5CAdministrator%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20240216105746576.png" alt="image-20240216105746576"></p>
-<h3 id="1-获取位置信息">1. 获取位置信息</h3>
-<p>微信提供了丰富的 API 来获取用户的位置信息，最常用的是 <code>wx.getLocation</code> 方法和<code>wx.getFuzzyLocation</code>方法。</p>
-<h4 id="wx-getLocation">wx.getLocation</h4>
-<p>使用 <code>wx.getLocation</code> 可以获取用户的当前地理位置信息。该方法返回一个包含经度、纬度等详细信息的对象。</p>
+<p><img src="/article/700a87e1/Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240216105746576.png" alt="image-20240216105746576"></p>
+<h3 id="1-获取位置信息"><a href="#1-获取位置信息" class="headerlink" title="1. 获取位置信息"></a>1. 获取位置信息</h3><p>微信提供了丰富的 API 来获取用户的位置信息，最常用的是 <code>wx.getLocation</code> 方法和<code>wx.getFuzzyLocation</code>方法。</p>
+<h4 id="wx-getLocation"><a href="#wx-getLocation" class="headerlink" title="wx.getLocation"></a>wx.getLocation</h4><p>使用 <code>wx.getLocation</code> 可以获取用户的当前地理位置信息。该方法返回一个包含经度、纬度等详细信息的对象。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">wx.getLocation(&#123;</span><br><span class="line">  type: <span class="string">'gcj02'</span>, <span class="comment">// 坐标类型，默认为 wgs84</span></span><br><span class="line">  success: <span class="function"><span class="keyword">function</span>(<span class="params">res</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> latitude = res.latitude</span><br><span class="line">    <span class="keyword">var</span> longitude = res.longitude</span><br><span class="line">    <span class="keyword">var</span> speed = res.speed</span><br><span class="line">    <span class="keyword">var</span> accuracy = res.accuracy</span><br><span class="line">    <span class="comment">// 处理位置信息</span></span><br><span class="line">  &#125;,</span><br><span class="line">  fail: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 处理错误情况</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<h4 id="注意事项">注意事项</h4>
-<ul>
+<h4 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h4><ul>
 <li>确保用户已授权小程序获取位置信息。</li>
 <li><code>wx.getLocation</code> 需要在页面加载时调用，且不能在后台调用。</li>
-<li>参数 <code>type</code> 可指定返回的坐标类型，‘gcj02’ 为可以用于wx.openLocation使用的坐标类型。</li>
+<li>参数 <code>type</code> 可指定返回的坐标类型，’gcj02’ 为可以用于wx.openLocation使用的坐标类型。</li>
 </ul>
-<h3 id="2-展示地图">2. 展示地图</h3>
-<p>要展示地图，你可以使用微信小程序提供的地图组件 <code>&lt;map&gt;</code>。</p>
-<h4 id="使用-map-组件">使用<code>&lt;map&gt;</code>组件</h4>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">map</span> <span class="attr">longitude</span>=<span class="string">"113.264700"</span> <span class="attr">latitude</span>=<span class="string">"23.099900"</span> <span class="attr">scale</span>=<span class="string">"14"</span>&gt;</span><span class="tag">&lt;/<span class="name">map</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h4 id="属性说明">属性说明</h4>
-<ul>
+<h3 id="2-展示地图"><a href="#2-展示地图" class="headerlink" title="2. 展示地图"></a>2. 展示地图</h3><p>要展示地图，你可以使用微信小程序提供的地图组件 <code>&lt;map&gt;</code>。</p>
+<h4 id="使用-lt-map-gt-组件"><a href="#使用-lt-map-gt-组件" class="headerlink" title="使用&lt;map&gt;组件"></a>使用<code>&lt;map&gt;</code>组件</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">map</span> <span class="attr">longitude</span>=<span class="string">"113.264700"</span> <span class="attr">latitude</span>=<span class="string">"23.099900"</span> <span class="attr">scale</span>=<span class="string">"14"</span>&gt;</span><span class="tag">&lt;/<span class="name">map</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="属性说明"><a href="#属性说明" class="headerlink" title="属性说明"></a>属性说明</h4><ul>
 <li><code>longitude</code>：中心点的经度。</li>
 <li><code>latitude</code>：中心点的纬度。</li>
 <li><code>scale</code>：缩放级别，数值为5～18。</li>
 <li>其他属性还包括 <code>markers</code>（标记点）、<code>style</code>（样式）等。</li>
 </ul>
-<h4 id="示例代码">示例代码</h4>
-<p>在页面 WXML 文件中加入 <code>&lt;map&gt;</code> 组件，并绑定事件和设置属性。</p>
+<h4 id="示例代码"><a href="#示例代码" class="headerlink" title="示例代码"></a>示例代码</h4><p>在页面 WXML 文件中加入 <code>&lt;map&gt;</code> 组件，并绑定事件和设置属性。</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">map</span> <span class="attr">id</span>=<span class="string">"myMap"</span> <span class="attr">longitude</span>=<span class="string">"113.264700"</span> <span class="attr">latitude</span>=<span class="string">"23.099900"</span> <span class="attr">scale</span>=<span class="string">"14"</span> <span class="attr">bindmarkertap</span>=<span class="string">"markerTap"</span>&gt;</span><span class="tag">&lt;/<span class="name">map</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>对应的 JavaScript 文件：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Page(&#123;</span><br><span class="line">  markerTap: <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(e.markerId)</span><br><span class="line">    <span class="built_in">console</span>.log(e.latLng)</span><br><span class="line">    <span class="comment">// 处理点击事件</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<h3 id="3-地理编码与反地理编码">3. 地理编码与反地理编码</h3>
-<p>有时我们可能需要将经纬度与具体的地址信息相互转换，这时就需要用到地理编码和反地理编码接口。</p>
-<h4 id="wx-chooseLocation">wx.chooseLocation</h4>
-<p>用于让用户选择地点，返回具体地址信息。</p>
+<h3 id="3-地理编码与反地理编码"><a href="#3-地理编码与反地理编码" class="headerlink" title="3. 地理编码与反地理编码"></a>3. 地理编码与反地理编码</h3><p>有时我们可能需要将经纬度与具体的地址信息相互转换，这时就需要用到地理编码和反地理编码接口。</p>
+<h4 id="wx-chooseLocation"><a href="#wx-chooseLocation" class="headerlink" title="wx.chooseLocation"></a>wx.chooseLocation</h4><p>用于让用户选择地点，返回具体地址信息。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">wx.chooseLocation(&#123;</span><br><span class="line">  success: <span class="function"><span class="keyword">function</span>(<span class="params">res</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> address = res.name <span class="comment">// 街道名字</span></span><br><span class="line">    <span class="keyword">var</span> latitude = res.latitude</span><br><span class="line">    <span class="keyword">var</span> longitude = res.longitude</span><br><span class="line">    <span class="comment">// 处理选择的位置信息</span></span><br><span class="line">  &#125;,</span><br><span class="line">  fail: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 处理错误情况</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<h4 id="wx-geocoder">wx.geocoder</h4>
-<p>用于将经纬度转换为地址描述。</p>
+<h4 id="wx-geocoder"><a href="#wx-geocoder" class="headerlink" title="wx.geocoder"></a>wx.geocoder</h4><p>用于将经纬度转换为地址描述。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">wx.geocoder(&#123;</span><br><span class="line">  type: <span class="string">'wgs84'</span>,</span><br><span class="line">  location: &#123;</span><br><span class="line">    latitude: <span class="number">23.099900</span>,</span><br><span class="line">    longitude: <span class="number">113.264700</span></span><br><span class="line">  &#125;,</span><br><span class="line">  success: <span class="function"><span class="keyword">function</span>(<span class="params">res</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> country = res.country</span><br><span class="line">    <span class="keyword">var</span> province = res.provinceName</span><br><span class="line">    <span class="keyword">var</span> city = res.cityName</span><br><span class="line">    <span class="keyword">var</span> district = res.districtName</span><br><span class="line">    <span class="keyword">var</span> street = res.streetName</span><br><span class="line">    <span class="keyword">var</span> building = res.buildingName</span><br><span class="line">    <span class="comment">// 处理地址信息</span></span><br><span class="line">  &#125;,</span><br><span class="line">  fail: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 处理错误情况</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<h4 id="wx-geocoder-translate">wx.geocoder.translate</h4>
-<p>用于将地址描述转换为经纬度。</p>
+<h4 id="wx-geocoder-translate"><a href="#wx-geocoder-translate" class="headerlink" title="wx.geocoder.translate"></a>wx.geocoder.translate</h4><p>用于将地址描述转换为经纬度。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">wx.geocoder.translate(&#123;</span><br><span class="line">  type: <span class="string">'wgs84'</span>,</span><br><span class="line">  location: <span class="string">'广东省深圳市南山区科技园南区高新南一道1000号'</span>,</span><br><span class="line">  success: <span class="function"><span class="keyword">function</span>(<span class="params">res</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> latitude = res.latitude</span><br><span class="line">    <span class="keyword">var</span> longitude = res.longitude</span><br><span class="line">    <span class="comment">// 处理经纬度信息</span></span><br><span class="line">  &#125;,</span><br><span class="line">  fail: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 处理错误情况</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<h3 id="4-用户签到，判断当前位置距离活动地点距离">4. 用户签到，判断当前位置距离活动地点距离</h3>
-<h4 id="使用getLocation接口获取用户当前位置">使用getLocation接口获取用户当前位置</h4>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">wx.getLocation(&#123;</span><br><span class="line">  type: <span class="string">'gcj02'</span>, <span class="comment">// 坐标类型，默认为 wgs84</span></span><br><span class="line">  success: <span class="function"><span class="keyword">function</span>(<span class="params">res</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> userLatitude = res.latitude</span><br><span class="line">    <span class="keyword">var</span> userLongitude = res.longitude</span><br><span class="line">    <span class="keyword">var</span> speed = res.speed</span><br><span class="line">    <span class="keyword">var</span> accuracy = res.accuracy</span><br><span class="line">    <span class="comment">// 处理位置信息</span></span><br><span class="line">  &#125;,</span><br><span class="line">  fail: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 处理错误情况</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<h4 id="计算用户当前位置和活动位置距离">计算用户当前位置和活动位置距离</h4>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 计算两个经纬度之间的距离（单位：米）</span></span><br><span class="line"><span class="keyword">static</span> getDistance(lat1, lon1, lat2, lon2) &#123;</span><br><span class="line">  <span class="keyword">const</span> R = <span class="number">6371e3</span>; <span class="comment">// 地球半径（单位：米）</span></span><br><span class="line">  <span class="keyword">const</span> radLat1 = (lat1 * <span class="built_in">Math</span>.PI) / <span class="number">180</span>;</span><br><span class="line">  <span class="keyword">const</span> radLat2 = (lat2 * <span class="built_in">Math</span>.PI) / <span class="number">180</span>;</span><br><span class="line">  <span class="keyword">const</span> a = radLat1 - radLat2;</span><br><span class="line">  <span class="keyword">const</span> b = ((lon1 * <span class="built_in">Math</span>.PI) / <span class="number">180</span>) - ((lon2 * <span class="built_in">Math</span>.PI) / <span class="number">180</span>);</span><br><span class="line">  <span class="keyword">const</span> distance =</span><br><span class="line">    <span class="number">2</span> *</span><br><span class="line">    R *</span><br><span class="line">    <span class="built_in">Math</span>.asin(</span><br><span class="line">      <span class="built_in">Math</span>.sqrt(<span class="built_in">Math</span>.pow(<span class="built_in">Math</span>.sin(a / <span class="number">2</span>), <span class="number">2</span>) + <span class="built_in">Math</span>.cos(radLat1) * <span class="built_in">Math</span>.cos(radLat2) * <span class="built_in">Math</span>.pow(<span class="built_in">Math</span>.sin(b / <span class="number">2</span>), <span class="number">2</span>))</span><br><span class="line">    );</span><br><span class="line">  <span class="keyword">return</span> distance;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="判断位置距离是否超过活动范围">判断位置距离是否超过活动范围</h4>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (distance &lt;= <span class="keyword">this</span>.data.radius) &#123;</span><br><span class="line">  <span class="comment">// 在范围内，打开地图并显示活动地点</span></span><br><span class="line">  pageHelper.showSuccToast(<span class="string">'签到成功！'</span>,<span class="number">2500</span>,callback);</span><br><span class="line">&#125;<span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="comment">// 不在范围内，提示用户距离过远</span></span><br><span class="line">  <span class="keyword">let</span> callback = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    wx.reLaunch(&#123;</span><br><span class="line">      url: <span class="string">'../../default/index/default_index'</span></span><br><span class="line">    &#125;)</span><br><span class="line">    wx.openLocation(&#123;</span><br><span class="line">      latitude: activityLatitude,</span><br><span class="line">      longitude: activityLongitude,</span><br><span class="line">      name: <span class="string">'活动地点'</span>,</span><br><span class="line">      scale: <span class="number">15</span>,</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line">  pageHelper.showNoneToast(<span class="string">'您距离活动地点较远，请前往活动附近区域！'</span>, <span class="number">2500</span>, callback);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="5-用户授权">5. 用户授权</h3>
-<p>在app.json中添加，声明小程序需要获取的权限，这些权限需要在用户授权后才能使用。</p>
+<h3 id="4-用户签到，判断当前位置距离活动地点距离"><a href="#4-用户签到，判断当前位置距离活动地点距离" class="headerlink" title="4. 用户签到，判断当前位置距离活动地点距离"></a>4. 用户签到，判断当前位置距离活动地点距离</h3><h4 id="使用getLocation接口获取用户当前位置"><a href="#使用getLocation接口获取用户当前位置" class="headerlink" title="使用getLocation接口获取用户当前位置"></a>使用getLocation接口获取用户当前位置</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">wx.getLocation(&#123;</span><br><span class="line">  type: <span class="string">'gcj02'</span>, <span class="comment">// 坐标类型，默认为 wgs84</span></span><br><span class="line">  success: <span class="function"><span class="keyword">function</span>(<span class="params">res</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> userLatitude = res.latitude</span><br><span class="line">    <span class="keyword">var</span> userLongitude = res.longitude</span><br><span class="line">    <span class="keyword">var</span> speed = res.speed</span><br><span class="line">    <span class="keyword">var</span> accuracy = res.accuracy</span><br><span class="line">    <span class="comment">// 处理位置信息</span></span><br><span class="line">  &#125;,</span><br><span class="line">  fail: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 处理错误情况</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h4 id="计算用户当前位置和活动位置距离"><a href="#计算用户当前位置和活动位置距离" class="headerlink" title="计算用户当前位置和活动位置距离"></a>计算用户当前位置和活动位置距离</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 计算两个经纬度之间的距离（单位：米）</span></span><br><span class="line"><span class="keyword">static</span> getDistance(lat1, lon1, lat2, lon2) &#123;</span><br><span class="line">  <span class="keyword">const</span> R = <span class="number">6371e3</span>; <span class="comment">// 地球半径（单位：米）</span></span><br><span class="line">  <span class="keyword">const</span> radLat1 = (lat1 * <span class="built_in">Math</span>.PI) / <span class="number">180</span>;</span><br><span class="line">  <span class="keyword">const</span> radLat2 = (lat2 * <span class="built_in">Math</span>.PI) / <span class="number">180</span>;</span><br><span class="line">  <span class="keyword">const</span> a = radLat1 - radLat2;</span><br><span class="line">  <span class="keyword">const</span> b = ((lon1 * <span class="built_in">Math</span>.PI) / <span class="number">180</span>) - ((lon2 * <span class="built_in">Math</span>.PI) / <span class="number">180</span>);</span><br><span class="line">  <span class="keyword">const</span> distance =</span><br><span class="line">    <span class="number">2</span> *</span><br><span class="line">    R *</span><br><span class="line">    <span class="built_in">Math</span>.asin(</span><br><span class="line">      <span class="built_in">Math</span>.sqrt(<span class="built_in">Math</span>.pow(<span class="built_in">Math</span>.sin(a / <span class="number">2</span>), <span class="number">2</span>) + <span class="built_in">Math</span>.cos(radLat1) * <span class="built_in">Math</span>.cos(radLat2) * <span class="built_in">Math</span>.pow(<span class="built_in">Math</span>.sin(b / <span class="number">2</span>), <span class="number">2</span>))</span><br><span class="line">    );</span><br><span class="line">  <span class="keyword">return</span> distance;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="判断位置距离是否超过活动范围"><a href="#判断位置距离是否超过活动范围" class="headerlink" title="判断位置距离是否超过活动范围"></a>判断位置距离是否超过活动范围</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (distance &lt;= <span class="keyword">this</span>.data.radius) &#123;</span><br><span class="line">  <span class="comment">// 在范围内，打开地图并显示活动地点</span></span><br><span class="line">  pageHelper.showSuccToast(<span class="string">'签到成功！'</span>,<span class="number">2500</span>,callback);</span><br><span class="line">&#125;<span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="comment">// 不在范围内，提示用户距离过远</span></span><br><span class="line">  <span class="keyword">let</span> callback = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    wx.reLaunch(&#123;</span><br><span class="line">      url: <span class="string">'../../default/index/default_index'</span></span><br><span class="line">    &#125;)</span><br><span class="line">    wx.openLocation(&#123;</span><br><span class="line">      latitude: activityLatitude,</span><br><span class="line">      longitude: activityLongitude,</span><br><span class="line">      name: <span class="string">'活动地点'</span>,</span><br><span class="line">      scale: <span class="number">15</span>,</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line">  pageHelper.showNoneToast(<span class="string">'您距离活动地点较远，请前往活动附近区域！'</span>, <span class="number">2500</span>, callback);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="5-用户授权"><a href="#5-用户授权" class="headerlink" title="5. 用户授权"></a>5. 用户授权</h3><p>在app.json中添加，声明小程序需要获取的权限，这些权限需要在用户授权后才能使用。</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">"permission": &#123;</span><br><span class="line">	"scope.userLocation": &#123;</span><br><span class="line">		"desc": "获取您当前位置信息用于小程序位置接口的效果展示"</span><br><span class="line">       &#125;,</span><br><span class="line">       "scope.userFuzzyLocation":&#123;</span><br><span class="line">         "desc":"获取您当前位置信息用于小程序位置接口的效果展示"</span><br><span class="line">       &#125;</span><br><span class="line">&#125;,</span><br><span class="line"> "requiredPrivateInfos": ["chooseLocation","getLocation"],</span><br></pre></td></tr></table></figure>
-<h2 id="结语">结语</h2>
-<p>微信小程序提供了一系列强大的位置接口，使得开发者可以轻松地实现位置相关的功能。从获取用户当前位置到展示地图，再到复杂的地理编码转换，这些接口都是构建位置感知应用不可或缺的工具。记得在开发时遵守用户隐私和相关法律法规，合理使用这些位置数据。</p>
-<p>​</p>
+<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>微信小程序提供了一系列强大的位置接口，使得开发者可以轻松地实现位置相关的功能。从获取用户当前位置到展示地图，再到复杂的地理编码转换，这些接口都是构建位置感知应用不可或缺的工具。记得在开发时遵守用户隐私和相关法律法规，合理使用这些位置数据。</p>
+<p>​    </p>
 
       
 
@@ -784,19 +766,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">Java</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">工具类</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">Hexo</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">博客</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">Java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">工具类</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -808,15 +790,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">分页</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Linux</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Maven</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">分页</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -828,11 +806,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">NodeJS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">命令行窗口</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -841,6 +815,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">数据库</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">NodeJS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">命令行窗口</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -860,15 +842,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Redis</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">SpringBoot</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">JSR303校验</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Redis</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -880,11 +862,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">SpringSecurity</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">Swagger</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">Swagger</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">SpringSecurity</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -896,15 +878,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">注解</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">SpringCloud</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Web框架</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">注解</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -936,15 +918,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">Vuex</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Hexo_admin</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">Vuex</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -965,6 +943,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">Zabbix</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Hexo_admin</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1000,15 +982,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">NoSql</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">ERP系统</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">文档</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">NoSql</a>
               </li>
             
             <div class="clearfix"></div>

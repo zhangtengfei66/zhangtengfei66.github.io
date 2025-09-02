@@ -16,19 +16,19 @@
 <meta property="og:site_name" content="(●ˇ∀ˇ●)">
 <meta property="og:description" content="SpringBoot学习笔记 ☔☔⚡ 自动转配原理，日志，静态资源，首页，模板引擎…">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https:&#x2F;&#x2F;www.tengfei.eu.org&#x2F;article&#x2F;9b3f0a81&#x2F;%E6%97%A5%E5%BF%97_07.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;www.tengfei.eu.org&#x2F;article&#x2F;9b3f0a81&#x2F;%E6%97%A5%E5%BF%97_08.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;www.tengfei.eu.org&#x2F;article&#x2F;9b3f0a81&#x2F;%E6%97%A5%E5%BF%97_09.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;www.tengfei.eu.org&#x2F;article&#x2F;9b3f0a81&#x2F;%E6%97%A5%E5%BF%97_10.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;www.tengfei.eu.org&#x2F;article&#x2F;9b3f0a81&#x2F;%E9%9D%99%E6%80%81%E8%B5%84%E6%BA%90_01.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;www.tengfei.eu.org&#x2F;article&#x2F;9b3f0a81&#x2F;%E9%9D%99%E6%80%81%E8%B5%84%E6%BA%90_02.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;www.tengfei.eu.org&#x2F;article&#x2F;9b3f0a81&#x2F;%E9%9D%99%E6%80%81%E8%B5%84%E6%BA%90_03.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;www.tengfei.eu.org&#x2F;article&#x2F;9b3f0a81&#x2F;%E6%A8%A1%E6%9D%BF%E5%BC%95%E6%93%8E_04.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;www.tengfei.eu.org&#x2F;article&#x2F;9b3f0a81&#x2F;%E6%A8%A1%E6%9D%BF%E5%BC%95%E6%93%8E_06.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;www.tengfei.eu.org&#x2F;article&#x2F;9b3f0a81&#x2F;%E6%A8%A1%E6%9D%BF%E5%BC%95%E6%93%8E_05.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;www.tengfei.eu.org&#x2F;article&#x2F;9b3f0a81&#x2F;日志_07.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;www.tengfei.eu.org&#x2F;article&#x2F;9b3f0a81&#x2F;日志_08.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;www.tengfei.eu.org&#x2F;article&#x2F;9b3f0a81&#x2F;日志_09.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;www.tengfei.eu.org&#x2F;article&#x2F;9b3f0a81&#x2F;日志_10.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;www.tengfei.eu.org&#x2F;article&#x2F;9b3f0a81&#x2F;静态资源_01.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;www.tengfei.eu.org&#x2F;article&#x2F;9b3f0a81&#x2F;静态资源_02.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;www.tengfei.eu.org&#x2F;article&#x2F;9b3f0a81&#x2F;静态资源_03.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;www.tengfei.eu.org&#x2F;article&#x2F;9b3f0a81&#x2F;模板引擎_04.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;www.tengfei.eu.org&#x2F;article&#x2F;9b3f0a81&#x2F;模板引擎_06.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;www.tengfei.eu.org&#x2F;article&#x2F;9b3f0a81&#x2F;模板引擎_05.png">
 <meta property="og:updated_time" content="2023-01-31T13:23:33.702Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https:&#x2F;&#x2F;www.tengfei.eu.org&#x2F;article&#x2F;9b3f0a81&#x2F;%E6%97%A5%E5%BF%97_07.png">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;www.tengfei.eu.org&#x2F;article&#x2F;9b3f0a81&#x2F;日志_07.png">
   
     <link rel="alternative" href="/atom.xml" title="(●ˇ∀ˇ●)" type="application/atom+xml">
   
@@ -321,26 +321,19 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 <p>☔☔⚡</p>
 <p>自动转配原理，日志，静态资源，首页，模板引擎…</p>
 <a id="more"></a>
-<h2 id="自动配置原理">自动配置原理</h2>
-<p><a href="https://docs.spring.io/spring-boot/docs/1.5.9.RELEASE/reference/htmlsingle/#common-application-properties" target="_blank" rel="noopener">配置文件能配置的属性参照</a></p>
-<h3 id="一-总结">一. 总结</h3>
-<p><strong>根据当前不同的条件判断，决定这个配置类是否生效！</strong></p>
+<h2 id="自动配置原理"><a href="#自动配置原理" class="headerlink" title="自动配置原理"></a>自动配置原理</h2><p><a href="https://docs.spring.io/spring-boot/docs/1.5.9.RELEASE/reference/htmlsingle/#common-application-properties" target="_blank" rel="noopener">配置文件能配置的属性参照</a></p>
+<h3 id="一-总结"><a href="#一-总结" class="headerlink" title="一. 总结"></a>一. 总结</h3><p><strong>根据当前不同的条件判断，决定这个配置类是否生效！</strong></p>
 <ul>
 <li>一但这个配置类生效；这个配置类就会给容器中添加各种组件；</li>
 <li>这些组件的属性是从对应的properties类中获取的，这些类里面的每一个属性又是和配置文件绑定的；</li>
 <li>所有在配置文件中能配置的属性都是在xxxxProperties类中封装着；</li>
 <li>配置文件能配置什么就可以参照某个功能对应的这个属性类</li>
 </ul>
-<h3 id="二-概念">二. 概念</h3>
-<p>1、SpringBoot启动会加载大量的自动配置类<br>
-2、我们需要的功能已经在SpringBoot默认写好的自动配置类当中；<br>
-3、只要自动配置类中存在的配置组件，我们就不需要再手动配置了；<br>
-4、给容器中自动配置类添加组件的时候，会从properties类中获取某些属性。我们只需要在配置文件中指定这些属性的值即可；</p>
-<p><strong>xxxxAutoConfigurartion：自动配置类</strong>，给容器中添加组件<br>
-<strong>xxxxProperties:封装配置文件中相关属性；</strong></p>
-<h3 id="三-细节">三. 细节</h3>
-<p><strong>@Conditional派生注解（Spring注解版原生的@Conditional作用）</strong></p>
+<h3 id="二-概念"><a href="#二-概念" class="headerlink" title="二. 概念"></a>二. 概念</h3><p>1、SpringBoot启动会加载大量的自动配置类<br>2、我们需要的功能已经在SpringBoot默认写好的自动配置类当中；<br>3、只要自动配置类中存在的配置组件，我们就不需要再手动配置了；<br>4、给容器中自动配置类添加组件的时候，会从properties类中获取某些属性。我们只需要在配置文件中指定这些属性的值即可；</p>
+<p><strong>xxxxAutoConfigurartion：自动配置类</strong>，给容器中添加组件<br><strong>xxxxProperties:封装配置文件中相关属性；</strong></p>
+<h3 id="三-细节"><a href="#三-细节" class="headerlink" title="三. 细节"></a>三. 细节</h3><p><strong>@Conditional派生注解（Spring注解版原生的@Conditional作用）</strong></p>
 <p>作用：必须是@Conditional指定的条件成立，才给容器中添加组件，配置配里面的所有内容才生效；</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -399,18 +392,15 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 </tr>
 </tbody>
 </table>
+</div>
 <p><strong>自动配置类必须在一定的条件下才能生效；</strong></p>
 <p><strong>==我们可以通过启用  debug=true属性；来让控制台打印自动配置报告==</strong>，这样我们就可以很方便的知道哪些自动配置类生效；</p>
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#开启springboot的调试类</span></span><br><span class="line"><span class="attr">debug:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
 <p>运行结果：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">============================</span><br><span class="line">CONDITIONS EVALUATION REPORT</span><br><span class="line">============================</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Positive matches:</span><br><span class="line">-----------------</span><br><span class="line"></span><br><span class="line">   AopAutoConfiguration matched:</span><br><span class="line">      - <span class="meta">@ConditionalOnProperty</span> (spring.aop.auto=<span class="keyword">true</span>) matched (OnPropertyCondition)</span><br><span class="line">...</span><br><span class="line">          </span><br><span class="line">          </span><br><span class="line">Negative matches:</span><br><span class="line">-----------------</span><br><span class="line"></span><br><span class="line">   ActiveMQAutoConfiguration:</span><br><span class="line">      Did not match:</span><br><span class="line">         - <span class="meta">@ConditionalOnClass</span> did not find required <span class="class"><span class="keyword">class</span> '<span class="title">javax</span>.<span class="title">jms</span>.<span class="title">ConnectionFactory</span>' (<span class="title">OnClassCondition</span>)</span></span><br><span class="line"><span class="class">...</span></span><br><span class="line"><span class="class">             </span></span><br><span class="line"><span class="class">          </span></span><br><span class="line">Exclusions:</span><br><span class="line">-----------</span><br><span class="line"></span><br><span class="line">    None</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Unconditional classes:</span><br><span class="line">----------------------</span><br><span class="line"></span><br><span class="line">    org.springframework.boot.autoconfigure.context.ConfigurationPropertiesAutoConfiguration</span><br><span class="line"></span><br><span class="line">    org.springframework.boot.autoconfigure.context.LifecycleAutoConfiguration</span><br><span class="line"></span><br><span class="line">    org.springframework.boot.autoconfigure.context.PropertyPlaceholderAutoConfiguration</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
-<p><strong>Positive matches:（自动配置类启用的：正匹配）</strong><br>
-<strong>Negative matches:（没有启动，没有匹配成功的自动配置类：负匹配）</strong><br>
-<strong>Unconditional classes: （没有条件的类）</strong></p>
-<h2 id="日志">日志</h2>
-<h3 id="一-日志框架">一. 日志框架</h3>
-<p><strong>市面上的日志框架；</strong><br>
-JUL、JCL、Jboss-logging、logback、log4j、log4j2、slf4j…</p>
+<p><strong>Positive matches:（自动配置类启用的：正匹配）</strong><br><strong>Negative matches:（没有启动，没有匹配成功的自动配置类：负匹配）</strong><br><strong>Unconditional classes: （没有条件的类）</strong></p>
+<h2 id="日志"><a href="#日志" class="headerlink" title="日志"></a>日志</h2><h3 id="一-日志框架"><a href="#一-日志框架" class="headerlink" title="一. 日志框架"></a>一. 日志框架</h3><p><strong>市面上的日志框架；</strong><br>JUL、JCL、Jboss-logging、logback、log4j、log4j2、slf4j….</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -420,67 +410,52 @@ JUL、JCL、Jboss-logging、logback、log4j、log4j2、slf4j…</p>
 </thead>
 <tbody>
 <tr>
-<td><s>JCL（Jakarta  Commons Logging）</s>    SLF4j（Simple  Logging Facade for Java）    <strong><s>jboss-logging</s></strong></td>
+<td><del>JCL（Jakarta  Commons Logging）</del>    SLF4j（Simple  Logging Facade for Java）    <strong><del>jboss-logging</del></strong></td>
 <td>Log4j  JUL（java.util.logging）  Log4j2  <strong>Logback</strong></td>
 </tr>
 </tbody>
 </table>
-<p>左边选一个门面（抽象层）、右边来选一个实现；<br>
-日志门面：  SLF4J；<br>
-日志实现：Logback；</p>
+</div>
+<p>左边选一个门面（抽象层）、右边来选一个实现；<br>日志门面：  SLF4J；<br>日志实现：Logback；</p>
 <p>SpringBoot：底层是Spring框架，Spring框架默认是用JCL；‘</p>
-<p>​	<strong>==SpringBoot选用 SLF4j和logback；==</strong></p>
-<h3 id="二-SLF4j使用">二. SLF4j使用</h3>
-<h4 id="1、如何使用SLF4j">1、如何使用SLF4j</h4>
-<p>官网：<a href="https://www.slf4j.org" target="_blank" rel="noopener">https://www.slf4j.org</a><br>
-以后开发的时候，日志记录方法的调用，不应该来直接调用日志的实现类，而是调用日志抽象层里面的方法；<br>
-给系统里面导入slf4j的jar和  logback的实现jar</p>
+<p>​    <strong>==SpringBoot选用 SLF4j和logback；==</strong></p>
+<h3 id="二-SLF4j使用"><a href="#二-SLF4j使用" class="headerlink" title="二. SLF4j使用"></a>二. SLF4j使用</h3><h4 id="1、如何使用SLF4j"><a href="#1、如何使用SLF4j" class="headerlink" title="1、如何使用SLF4j"></a>1、如何使用SLF4j</h4><p>官网：<a href="https://www.slf4j.org" target="_blank" rel="noopener">https://www.slf4j.org</a><br>以后开发的时候，日志记录方法的调用，不应该来直接调用日志的实现类，而是调用日志抽象层里面的方法；<br>给系统里面导入slf4j的jar和  logback的实现jar</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> org.slf4j.Logger;</span><br><span class="line"><span class="keyword">import</span> org.slf4j.LoggerFactory;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloWorld</span> </span>&#123;</span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    Logger logger = LoggerFactory.getLogger(HelloWorld<span class="class">.<span class="keyword">class</span>)</span>;</span><br><span class="line">    logger.info(<span class="string">"Hello World"</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>图示；</p>
-<p><img src="/article/9b3f0a81/%E6%97%A5%E5%BF%97_07.png" alt="images/concrete-bindings.png"></p>
+<p><img src="/article/9b3f0a81/日志_07.png" alt="images/concrete-bindings.png"></p>
 <p>每一个日志的实现框架都有自己的配置文件。使用slf4j以后，<strong>配置文件还是做成日志实现框架自己本身的配置文件；</strong></p>
-<h4 id="2、统一日志记录">2、统一日志记录</h4>
-<p>SpringBoot（slf4j+logback）: Spring（commons-logging）、Hibernate（jboss-logging）、MyBatis、xxxx<br>
-统一日志记录，即使是别的框架和我一起统一使用slf4j进行输出</p>
-<p><img src="/article/9b3f0a81/%E6%97%A5%E5%BF%97_08.png" alt></p>
+<h4 id="2、统一日志记录"><a href="#2、统一日志记录" class="headerlink" title="2、统一日志记录"></a>2、统一日志记录</h4><p>SpringBoot（slf4j+logback）: Spring（commons-logging）、Hibernate（jboss-logging）、MyBatis、xxxx<br>统一日志记录，即使是别的框架和我一起统一使用slf4j进行输出</p>
+<p><img src="/article/9b3f0a81/日志_08.png" alt></p>
 <p><strong>如何让系统中所有的日志都统一到slf4j；</strong></p>
-<p>==1、将系统中其他日志框架先排除出去；==<br>
-==2、用<strong>中间包</strong>来替换原有的日志框架；==<br>
-==3、我们导入slf4j其他的实现==</p>
-<h3 id="三-SpringBoot日志关系">三. SpringBoot日志关系</h3>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>==1、将系统中其他日志框架先排除出去；==<br>==2、用<strong>中间包</strong>来替换原有的日志框架；==<br>==3、我们导入slf4j其他的实现==</p>
+<h3 id="三-SpringBoot日志关系"><a href="#三-SpringBoot日志关系" class="headerlink" title="三. SpringBoot日志关系"></a>三. SpringBoot日志关系</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>SpringBoot使用它来做日志功能；</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-logging<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>底层依赖关系</p>
-<p><img src="/article/9b3f0a81/%E6%97%A5%E5%BF%97_09.png" alt></p>
-<p>总结：<br>
-​	1）、SpringBoot底层也是使用slf4j+logback的方式进行日志记录<br>
-​	2）、SpringBoot也把其他的日志都替换成了slf4j；<br>
-​	3）、中间替换包</p>
+<p><img src="/article/9b3f0a81/日志_09.png" alt></p>
+<p>总结：<br>​    1）、SpringBoot底层也是使用slf4j+logback的方式进行日志记录<br>​    2）、SpringBoot也把其他的日志都替换成了slf4j；<br>​    3）、中间替换包</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@SuppressWarnings</span>(<span class="string">"rawtypes"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">LogFactory</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">static</span> String UNSUPPORTED_OPERATION_IN_JCL_OVER_SLF4J = <span class="string">"http://www.slf4j.org/codes.html#unsupported_operation_in_jcl_over_slf4j"</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">static</span> LogFactory logFactory = <span class="keyword">new</span> SLF4JLogFactory();</span><br></pre></td></tr></table></figure>
-<p><img src="/article/9b3f0a81/%E6%97%A5%E5%BF%97_10.png" alt></p>
-<p>​	4）、如果我们要引入其他框架，一定要把这个框架的默认日志依赖移除掉</p>
+<p><img src="/article/9b3f0a81/日志_10.png" alt></p>
+<p>​    4）、如果我们要引入其他框架，一定要把这个框架的默认日志依赖移除掉</p>
 <ul>
 <li>SpringBoot排除掉了Spring框架用的commons-logging；</li>
 </ul>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-core<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">exclusions</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">exclusion</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>commons-logging<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>commons-logging<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">exclusion</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">exclusions</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p><strong>==SpringBoot能自动适配所有的日志，而且底层使用slf4j+logback的方式记录日志，引入其他框架的时候，只需要把这个框架依赖的日志框架排除掉即可；==</strong></p>
-<h3 id="四-日志使用；">四. 日志使用；</h3>
-<h4 id="1、默认配置">1、默认配置</h4>
-<p>SpringBoot默认帮我们配置好了日志；</p>
+<h3 id="四-日志使用；"><a href="#四-日志使用；" class="headerlink" title="四. 日志使用；"></a>四. 日志使用；</h3><h4 id="1、默认配置"><a href="#1、默认配置" class="headerlink" title="1、默认配置"></a>1、默认配置</h4><p>SpringBoot默认帮我们配置好了日志；</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//记录器</span></span><br><span class="line">Logger logger = LoggerFactory.getLogger(getClass());</span><br><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">contextLoads</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="comment">//System.out.println();</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">//日志的级别；</span></span><br><span class="line">	<span class="comment">//由低到高   trace&lt;debug&lt;info&lt;warn&lt;error</span></span><br><span class="line">	<span class="comment">//可以调整输出的日志级别；日志就只会在这个级别以以后的高级别生效</span></span><br><span class="line">	logger.trace(<span class="string">"这是trace日志..."</span>);</span><br><span class="line">	logger.debug(<span class="string">"这是debug日志..."</span>);</span><br><span class="line">	<span class="comment">//SpringBoot默认给我们使用的是info级别的，没有指定级别的就用SpringBoot默认规定的级别；root级别</span></span><br><span class="line">	logger.info(<span class="string">"这是info日志..."</span>);</span><br><span class="line">	logger.warn(<span class="string">"这是warn日志..."</span>);</span><br><span class="line">	logger.error(<span class="string">"这是error日志..."</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <pre><code>    日志输出格式：
-		%d表示日期时间，
-		%thread表示线程名，
-		%-5level：级别从左显示5个字符宽度
-		%logger{50} 表示logger名字最长50个字符，否则按照句点分割。 
-		%msg：日志消息，
-		%n是换行符
+        %d表示日期时间，
+        %thread表示线程名，
+        %-5level：级别从左显示5个字符宽度
+        %logger{50} 表示logger名字最长50个字符，否则按照句点分割。 
+        %msg：日志消息，
+        %n是换行符
     --&gt;
     %d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{50} - %msg%n
-</code></pre>
-<p>SpringBoot修改日志的默认配置</p>
+</code></pre><p>SpringBoot修改日志的默认配置</p>
 <figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#设置日志级别</span></span><br><span class="line"><span class="meta">logging.level.com.teng</span>=<span class="string">trace</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 不指定路径在当前项目下生成springboot.log日志</span></span><br><span class="line"><span class="meta">logging.file.name</span>=<span class="string">SpringBoot.log</span></span><br><span class="line"><span class="comment"># 可以指定完整的路径；</span></span><br><span class="line"><span class="comment">#logging.file.name=G:/SpringBoot.log</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#在当前磁盘的根路径下创建spring文件夹和里面的log文件夹，默认生成名为spring.log日志文件</span></span><br><span class="line"><span class="meta">logging.file.path</span>=<span class="string">spring/log</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#在控制台输出的日志的格式</span></span><br><span class="line"><span class="meta">logging.pattern.console</span>=<span class="string">%d&#123;yyyy-MM-dd&#125; [%thread] %-5level %logger&#123;50&#125; - %msg%n</span></span><br><span class="line"><span class="comment">#指定文件中日志输出的格式</span></span><br><span class="line"><span class="meta">logging.pattern.file</span>=<span class="string">%d&#123;yyyy-MM-dd&#125;-&gt;[%thread]-&gt;%-5level-&gt;%logger&#123;50&#125;-&gt;%msg%n</span></span><br></pre></td></tr></table></figure>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -511,8 +486,9 @@ JUL、JCL、Jboss-logging、logback、log4j、log4j2、slf4j…</p>
 </tr>
 </tbody>
 </table>
-<h4 id="2、指定配置">2、指定配置</h4>
-<p>给类路径下放上每个日志框架自己的配置文件即可；SpringBoot就不使用他默认配置的了</p>
+</div>
+<h4 id="2、指定配置"><a href="#2、指定配置" class="headerlink" title="2、指定配置"></a>2、指定配置</h4><p>给类路径下放上每个日志框架自己的配置文件即可；SpringBoot就不使用他默认配置的了</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -535,99 +511,81 @@ JUL、JCL、Jboss-logging、logback、log4j、log4j2、slf4j…</p>
 </tr>
 </tbody>
 </table>
+</div>
 <p>logback.xml：直接就被日志框架识别了；</p>
 <p><strong>logback-spring.xml</strong>：日志框架就不直接加载日志的配置项，由SpringBoot解析日志配置，可以使用SpringBoot的高级Profile功能</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">springProfile</span> <span class="attr">name</span>=<span class="string">"staging"</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- configuration to be enabled when the "staging" profile is active --&gt;</span></span><br><span class="line">  	可以指定某段配置只在某个环境下生效</span><br><span class="line"><span class="tag">&lt;/<span class="name">springProfile</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>如：</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">appender</span> <span class="attr">name</span>=<span class="string">"stdout"</span> <span class="attr">class</span>=<span class="string">"ch.qos.logback.core.ConsoleAppender"</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!--</span></span><br><span class="line"><span class="comment">        日志输出格式：</span></span><br><span class="line"><span class="comment">			%d表示日期时间，</span></span><br><span class="line"><span class="comment">			%thread表示线程名，</span></span><br><span class="line"><span class="comment">			%-5level：级别从左显示5个字符宽度</span></span><br><span class="line"><span class="comment">			%logger&#123;50&#125; 表示logger名字最长50个字符，否则按照句点分割。 </span></span><br><span class="line"><span class="comment">			%msg：日志消息，</span></span><br><span class="line"><span class="comment">			%n是换行符</span></span><br><span class="line"><span class="comment">        --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">layout</span> <span class="attr">class</span>=<span class="string">"ch.qos.logback.classic.PatternLayout"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">springProfile</span> <span class="attr">name</span>=<span class="string">"dev"</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">pattern</span>&gt;</span>%d&#123;yyyy-MM-dd HH:mm:ss.SSS&#125; ----&gt; [%thread] ---&gt; %-5level %logger&#123;50&#125; - %msg%n<span class="tag">&lt;/<span class="name">pattern</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">springProfile</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">springProfile</span> <span class="attr">name</span>=<span class="string">"!dev"</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">pattern</span>&gt;</span>%d&#123;yyyy-MM-dd HH:mm:ss.SSS&#125; ==== [%thread] ==== %-5level %logger&#123;50&#125; - %msg%n<span class="tag">&lt;/<span class="name">pattern</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">springProfile</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">layout</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">appender</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>如果使用logback.xml作为日志配置文件，还要使用profile功能，会有以下错误</p>
-<p><code>no applicable action for [springProfile]</code></p>
-<h3 id="五-切换日志框架">五. 切换日志框架</h3>
-<p>可以按照slf4j的日志适配图，进行相关的切换；</p>
+<p> <code>no applicable action for [springProfile]</code></p>
+<h3 id="五-切换日志框架"><a href="#五-切换日志框架" class="headerlink" title="五. 切换日志框架"></a>五. 切换日志框架</h3><p>可以按照slf4j的日志适配图，进行相关的切换；</p>
 <p>slf4j+log4j的方式；</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-web<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">exclusions</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">exclusion</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>logback-classic<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>ch.qos.logback<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">exclusion</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">exclusion</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>log4j-over-slf4j<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.slf4j<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">exclusion</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">exclusions</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.slf4j<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>slf4j-log4j12<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>切换为log4j2</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">   <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-web<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">exclusions</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">exclusion</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-logging<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">exclusion</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">exclusions</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-log4j2<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h2 id="静态资源">静态资源</h2>
-<p><strong>使用SpringBoot的步骤：</strong></p>
-<p>1、创建一个SpringBoot应用，选择我们需要的模块，SpringBoot就会默认将我们的需要的模块自动配置好<br>
-2、手动在配置文件中配置部分配置项目就可以运行起来了<br>
-3、专注编写业务代码，不需要考虑以前那样一大堆的配置了。</p>
-<h3 id="一-静态资源映射规则">一. 静态资源映射规则</h3>
-<p>SpringBoot中，SpringMVC的web配置都在 WebMvcAutoConfiguration 这个配置类里面；<br>
-我们可以去看看 WebMvcAutoConfigurationAdapter 中有很多配置方法；<br>
-有一个方法：addResourceHandlers 添加资源处理</p>
+<h2 id="静态资源"><a href="#静态资源" class="headerlink" title="静态资源"></a>静态资源</h2><p><strong>使用SpringBoot的步骤：</strong></p>
+<p>1、创建一个SpringBoot应用，选择我们需要的模块，SpringBoot就会默认将我们的需要的模块自动配置好<br>2、手动在配置文件中配置部分配置项目就可以运行起来了<br>3、专注编写业务代码，不需要考虑以前那样一大堆的配置了。</p>
+<h3 id="一-静态资源映射规则"><a href="#一-静态资源映射规则" class="headerlink" title="一. 静态资源映射规则"></a>一. 静态资源映射规则</h3><p>SpringBoot中，SpringMVC的web配置都在 WebMvcAutoConfiguration 这个配置类里面；<br>我们可以去看看 WebMvcAutoConfigurationAdapter 中有很多配置方法；<br>有一个方法：addResourceHandlers 添加资源处理</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">addResourceHandlers</span><span class="params">(ResourceHandlerRegistry registry)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (!<span class="keyword">this</span>.resourceProperties.isAddMappings()) &#123;</span><br><span class="line">        <span class="comment">// 已禁用默认资源处理</span></span><br><span class="line">        logger.debug(<span class="string">"Default resource handling disabled"</span>);</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 缓存控制</span></span><br><span class="line">    Duration cachePeriod = <span class="keyword">this</span>.resourceProperties.getCache().getPeriod();</span><br><span class="line">    CacheControl cacheControl = <span class="keyword">this</span>.resourceProperties.getCache().getCachecontrol().toHttpCacheControl();</span><br><span class="line">    <span class="comment">// webjars 配置</span></span><br><span class="line">    <span class="keyword">if</span> (!registry.hasMappingForPattern(<span class="string">"/webjars/**"</span>)) &#123;</span><br><span class="line">        customizeResourceHandlerRegistration(registry.addResourceHandler(<span class="string">"/webjars/**"</span>)</span><br><span class="line">                                             .addResourceLocations(<span class="string">"classpath:/META-INF/resources/webjars/"</span>)</span><br><span class="line">                                             .setCachePeriod(getSeconds(cachePeriod)).setCacheControl(cacheControl));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 静态资源配置</span></span><br><span class="line">    String staticPathPattern = <span class="keyword">this</span>.mvcProperties.getStaticPathPattern();</span><br><span class="line">    <span class="keyword">if</span> (!registry.hasMappingForPattern(staticPathPattern)) &#123;</span><br><span class="line">        customizeResourceHandlerRegistration(registry.addResourceHandler(staticPathPattern)</span><br><span class="line">                                             .addResourceLocations(getResourceLocations(<span class="keyword">this</span>.resourceProperties.getStaticLocations()))</span><br><span class="line">                                             .setCachePeriod(getSeconds(cachePeriod)).setCacheControl(cacheControl));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>源码中所有的 /webjars/** ， 都需要去 classpath:/META-INF/resources/webjars/ 找对应的资源；</p>
-<h3 id="二-webjars">二. webjars</h3>
-<p>Webjars本质就是以jar包的方式引入我们的静态资源 ， 我们以前要导入一个静态资源文件，直接导入即可。</p>
+<h3 id="二-webjars"><a href="#二-webjars" class="headerlink" title="二. webjars"></a>二. webjars</h3><p>Webjars本质就是以jar包的方式引入我们的静态资源 ， 我们以前要导入一个静态资源文件，直接导入即可。</p>
 <p>使用SpringBoot需要使用Webjars，我们可以去搜索一下：</p>
-<p>网站：<a href="https://www.webjars.org" target="_blank" rel="noopener">https://www.webjars.org</a></p>
+<p>网站：<a href="https://www.webjars.org" target="_blank" rel="noopener">https://www.webjars.org</a> </p>
 <p>要使用jQuery，我们只要要引入jQuery对应版本的pom依赖即可！</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span>    </span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.webjars<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span>    </span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>jquery<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span>    </span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>3.3.1<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p><img src="/article/9b3f0a81/%E9%9D%99%E6%80%81%E8%B5%84%E6%BA%90_01.png" alt="img"></p>
-<h3 id="三-静态资源文件夹">三. 静态资源文件夹</h3>
-<p>那我们项目中要是使用自己的静态资源该怎么导入呢？我们看下一行代码；</p>
+<p><img src="/article/9b3f0a81/静态资源_01.png" alt="img"></p>
+<h3 id="三-静态资源文件夹"><a href="#三-静态资源文件夹" class="headerlink" title="三. 静态资源文件夹"></a>三. 静态资源文件夹</h3><p>那我们项目中要是使用自己的静态资源该怎么导入呢？我们看下一行代码；</p>
 <p>我们去找staticPathPattern发现第二种映射规则 ：/** , 访问当前的项目任意资源，它会去找 resourceProperties 这个类，我们可以点进去看一下分析：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 进入方法</span></span><br><span class="line"><span class="keyword">public</span> String[] getStaticLocations() &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.staticLocations;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 找到对应的值</span></span><br><span class="line"><span class="keyword">private</span> String[] staticLocations = CLASSPATH_RESOURCE_LOCATIONS;</span><br><span class="line"><span class="comment">// 找到路径</span></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> String[] CLASSPATH_RESOURCE_LOCATIONS = &#123; </span><br><span class="line">    <span class="string">"classpath:/META-INF/resources/"</span>,</span><br><span class="line">  <span class="string">"classpath:/resources/"</span>, </span><br><span class="line">    <span class="string">"classpath:/static/"</span>, </span><br><span class="line">    <span class="string">"classpath:/public/"</span> </span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <p>ResourceProperties 可以设置和我们静态资源有关的参数；这里面指向了它会去寻找资源的文件夹，即上面数组的内容。</p>
 <p>所以得出结论，以下四个目录存放的静态资源可以被我们识别(<strong>优先级从高到低</strong>)：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&quot;classpath:/META-INF/resources/&quot;</span><br><span class="line">&quot;classpath:/resources/&quot;</span><br><span class="line">&quot;classpath:/static/&quot;</span><br><span class="line">&quot;classpath:/public/&quot;</span><br></pre></td></tr></table></figure>
 <p>我们可以在resources根目录下新建对应的文件夹，都可以存放我们的静态文件；</p>
-<p><img src="/article/9b3f0a81/%E9%9D%99%E6%80%81%E8%B5%84%E6%BA%90_02.png" alt="img"></p>
+<p><img src="/article/9b3f0a81/静态资源_02.png" alt="img"></p>
 <p>访问 <a href="http://localhost:8080/hello.js" target="_blank" rel="noopener">http://localhost:8080/hello.js</a> , 他就会去这些文件夹中寻找对应的静态资源文件；</p>
-<h3 id="四-自定义静态资源路径">四. 自定义静态资源路径</h3>
-<p>我们也可以自己通过配置文件来指定一下，哪些文件夹是需要我们放静态资源文件的，在application.properties中配置；</p>
+<h3 id="四-自定义静态资源路径"><a href="#四-自定义静态资源路径" class="headerlink" title="四. 自定义静态资源路径"></a>四. 自定义静态资源路径</h3><p>我们也可以自己通过配置文件来指定一下，哪些文件夹是需要我们放静态资源文件的，在application.properties中配置；</p>
 <figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">spring.resources.static-locations</span>=<span class="string">classpath:/coding/,classpath:/kuang/</span></span><br></pre></td></tr></table></figure>
 <p><strong>一旦自己定义了静态文件夹的路径，原来的自动配置就都会失效了！</strong></p>
-<h2 id="首页处理">首页处理</h2>
-<p>在源码中可以看到首页的映射</p>
+<h2 id="首页处理"><a href="#首页处理" class="headerlink" title="首页处理"></a>首页处理</h2><p>在源码中可以看到首页的映射</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Bean</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> WelcomePageHandlerMapping <span class="title">welcomePageHandlerMapping</span><span class="params">(ApplicationContext applicationContext,</span></span></span><br><span class="line"><span class="function"><span class="params">                                                           FormattingConversionService mvcConversionService,</span></span></span><br><span class="line"><span class="function"><span class="params">                                                           ResourceUrlProvider mvcResourceUrlProvider)</span> </span>&#123;</span><br><span class="line">    WelcomePageHandlerMapping welcomePageHandlerMapping = <span class="keyword">new</span> WelcomePageHandlerMapping(</span><br><span class="line">        <span class="keyword">new</span> TemplateAvailabilityProviders(applicationContext), applicationContext, getWelcomePage(), <span class="comment">// getWelcomePage 获得欢迎页</span></span><br><span class="line">        <span class="keyword">this</span>.mvcProperties.getStaticPathPattern());</span><br><span class="line">    welcomePageHandlerMapping.setInterceptors(getInterceptors(mvcConversionService, mvcResourceUrlProvider));</span><br><span class="line">    <span class="keyword">return</span> welcomePageHandlerMapping;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>点进去可以看到</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> Optional&lt;Resource&gt; <span class="title">getWelcomePage</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    String[] locations = getResourceLocations(<span class="keyword">this</span>.resourceProperties.getStaticLocations());</span><br><span class="line">    <span class="comment">// ::是java8 中新引入的运算符</span></span><br><span class="line">    <span class="comment">// Class::function的时候function是属于Class的，应该是静态方法。</span></span><br><span class="line">    <span class="comment">// this::function的funtion是属于这个对象的。</span></span><br><span class="line">    <span class="comment">// 简而言之，就是一种语法糖而已，是一种简写</span></span><br><span class="line">    <span class="keyword">return</span> Arrays.stream(locations).map(<span class="keyword">this</span>::getIndexHtml).filter(<span class="keyword">this</span>::isReadable).findFirst();</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 欢迎页就是一个location下的的 index.html 而已</span></span><br><span class="line"><span class="function"><span class="keyword">private</span> Resource <span class="title">getIndexHtml</span><span class="params">(String location)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.resourceLoader.getResource(location + <span class="string">"index.html"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>静态资源文件夹下的所有 index.html 页面；被 /** 映射。</p>
-<p><img src="/article/9b3f0a81/%E9%9D%99%E6%80%81%E8%B5%84%E6%BA%90_03.png" alt="img"></p>
-<h2 id="模板引擎">模板引擎</h2>
-<h3 id="一-简介">一. 简介</h3>
-<p>前端交给我们的页面，是html页面。如果是我们以前开发，我们需要把他们转成jsp页面，jsp好处就是当我们查出一些数据转发到JSP页面以后，我们可以用jsp轻松实现数据的显示，及交互等。</p>
+<p><img src="/article/9b3f0a81/静态资源_03.png" alt="img"></p>
+<h2 id="模板引擎"><a href="#模板引擎" class="headerlink" title="模板引擎"></a>模板引擎</h2><h3 id="一-简介"><a href="#一-简介" class="headerlink" title="一. 简介"></a>一. 简介</h3><p>前端交给我们的页面，是html页面。如果是我们以前开发，我们需要把他们转成jsp页面，jsp好处就是当我们查出一些数据转发到JSP页面以后，我们可以用jsp轻松实现数据的显示，及交互等。</p>
 <p>jsp支持非常强大的功能，包括能写Java代码，但是呢，我们现在的这种情况，SpringBoot这个项目首先是以jar的方式，不是war，像第二，我们用的还是嵌入式的Tomcat，所以呢，<strong>他现在默认是不支持jsp的</strong>。</p>
 <p>那不支持jsp，如果我们直接用纯静态页面的方式，那给我们开发会带来非常大的麻烦，那怎么办呢？</p>
 <p><strong>SpringBoot推荐你可以来使用模板引擎：</strong></p>
 <p>模板引擎，我们其实大家听到很多，其实jsp就是一个模板引擎，还有用的比较多的freemarker，包括SpringBoot给我们推荐的Thymeleaf，模板引擎有非常多，但再多的模板引擎，他们的思想都是一样的，什么样一个思想呢我们来看一下这张图：</p>
-<p><img src="/article/9b3f0a81/%E6%A8%A1%E6%9D%BF%E5%BC%95%E6%93%8E_04.png" alt="img"></p>
+<p><img src="/article/9b3f0a81/模板引擎_04.png" alt="img"></p>
 <p>模板引擎的作用就是我们来写一个页面模板，比如有些值呢，是动态的，我们写一些表达式。而这些值，从哪来呢，就是我们在后台封装一些数据。然后把这个模板和这个数据交给我们模板引擎，模板引擎按照我们这个数据帮你把这表达式解析、填充到我们指定的位置，然后把这个数据最终生成一个我们想要的内容给我们写出去，这就是我们这个模板引擎，不管是jsp还是其他模板引擎，都是这个思想。只不过呢，就是说不同模板引擎之间，他们可能这个语法有点不一样。其他的我就不介绍了，我主要来介绍一下SpringBoot给我们推荐的Thymeleaf模板引擎，这模板引擎呢，是一个高级语言的模板引擎，他的这个语法更简单。而且呢，功能更强大。</p>
-<h3 id="二-引入Thymeleaf">二. 引入Thymeleaf</h3>
-<p>怎么引入呢，对于springboot来说，什么事情不都是一个start的事情嘛，我们去在项目中引入一下。给大家三个网址：</p>
+<h3 id="二-引入Thymeleaf"><a href="#二-引入Thymeleaf" class="headerlink" title="二. 引入Thymeleaf"></a>二. 引入Thymeleaf</h3><p>怎么引入呢，对于springboot来说，什么事情不都是一个start的事情嘛，我们去在项目中引入一下。给大家三个网址：</p>
 <p>Thymeleaf 官网：<a href="https://www.thymeleaf.org/" target="_blank" rel="noopener">https://www.thymeleaf.org/</a></p>
 <p>Thymeleaf 在Github 的主页：<a href="https://github.com/thymeleaf/thymeleaf" target="_blank" rel="noopener">https://github.com/thymeleaf/thymeleaf</a></p>
 <p>Spring官方文档：找到我们对应的版本</p>
-<p><a href="https://docs.spring.io/spring-boot/docs/2.2.5.RELEASE/reference/htmlsingle/#using-boot-starter" target="_blank" rel="noopener">https://docs.spring.io/spring-boot/docs/2.2.5.RELEASE/reference/htmlsingle/#using-boot-starter</a></p>
+<p><a href="https://docs.spring.io/spring-boot/docs/2.2.5.RELEASE/reference/htmlsingle/#using-boot-starter" target="_blank" rel="noopener">https://docs.spring.io/spring-boot/docs/2.2.5.RELEASE/reference/htmlsingle/#using-boot-starter</a> </p>
 <p>1、导入Thymeleaf对应的pom依赖</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--thymeleaf--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-thymeleaf<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h3 id="三-Thymeleaf分析">三. Thymeleaf分析</h3>
-<p>我们先看一下我们这个Thymeleaf的自动配置规则，在按照那个规则，我们进行使用。</p>
+<h3 id="三-Thymeleaf分析"><a href="#三-Thymeleaf分析" class="headerlink" title="三. Thymeleaf分析"></a>三. Thymeleaf分析</h3><p>我们先看一下我们这个Thymeleaf的自动配置规则，在按照那个规则，我们进行使用。</p>
 <p>我们去找一下Thymeleaf的自动配置类：ThymeleafProperties</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@ConfigurationProperties</span>(</span><br><span class="line">    prefix = <span class="string">"spring.thymeleaf"</span></span><br><span class="line">)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ThymeleafProperties</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> Charset DEFAULT_ENCODING;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String DEFAULT_PREFIX = <span class="string">"classpath:/templates/"</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String DEFAULT_SUFFIX = <span class="string">".html"</span>;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">boolean</span> checkTemplate = <span class="keyword">true</span>;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">boolean</span> checkTemplateLocation = <span class="keyword">true</span>;</span><br><span class="line">    <span class="keyword">private</span> String prefix = <span class="string">"classpath:/templates/"</span>;</span><br><span class="line">    <span class="keyword">private</span> String suffix = <span class="string">".html"</span>;</span><br><span class="line">    <span class="keyword">private</span> String mode = <span class="string">"HTML"</span>;</span><br><span class="line">    <span class="keyword">private</span> Charset encoding;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>我们可以在其中看到默认的前缀<code>&quot;classpath:/templates/&quot;</code>和后缀<code>&quot;.html&quot;</code>！</p>
 <p>我们只需要把我们的html页面放在类路径下的templates下，thymeleaf就可以帮我们自动渲染了。</p>
-<p><img src="/article/9b3f0a81/%E6%A8%A1%E6%9D%BF%E5%BC%95%E6%93%8E_06.png" alt="img"></p>
-<h3 id="四-Thymeleaf语法">四. Thymeleaf语法</h3>
-<p>要学习语法，还是参考官网文档最为准确，我们找到对应的版本看一下；</p>
+<p><img src="/article/9b3f0a81/模板引擎_06.png" alt="img"></p>
+<h3 id="四-Thymeleaf语法"><a href="#四-Thymeleaf语法" class="headerlink" title="四. Thymeleaf语法"></a>四. Thymeleaf语法</h3><p>要学习语法，还是参考官网文档最为准确，我们找到对应的版本看一下；</p>
 <p>Thymeleaf 官网：<a href="https://www.thymeleaf.org/" target="_blank" rel="noopener">https://www.thymeleaf.org/</a> ， 简单看一下官网！我们去下载Thymeleaf的官方文档！</p>
-<h4 id="1-页面查询数据">1). 页面查询数据</h4>
-<ul>
+<h4 id="1-页面查询数据"><a href="#1-页面查询数据" class="headerlink" title="1). 页面查询数据"></a>1). 页面查询数据</h4><ul>
 <li>我们要使用thymeleaf，需要在html文件中导入命名空间的约束;</li>
 </ul>
 <p>test.html</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"> <span class="comment">&lt;!--引入http://www.thymeleaf.org命名空间--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span> <span class="attr">xmlns:th</span>=<span class="string">"http://www.thymeleaf.org"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>模板引擎<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h2</span>&gt;</span>Test<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--所有的heml元素都可以被thymeleaf替换接管;--&gt;</span></span><br><span class="line">    提取参数：<span class="tag">&lt;<span class="name">span</span> <span class="attr">th:text</span>=<span class="string">"$&#123;msg&#125;"</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>控制文件</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//在templates目录下的所有页面，只能通过controller来跳转</span></span><br><span class="line"><span class="comment">//这个需要模板引擎的支持（thymeleaf）</span></span><br><span class="line"><span class="meta">@Controller</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">IndexController</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@RequestMapping</span>(<span class="string">"/test"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">test</span><span class="params">(Model model)</span></span>&#123;</span><br><span class="line">        model.addAttribute(<span class="string">"msg"</span>,<span class="string">"hello,我是第一个参数!"</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"test"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="2-其他语法">2). 其他语法</h4>
-<p><strong>我们可以使用任意的 th:attr 来替换Html中原生属性的值！</strong></p>
-<p><img src="/article/9b3f0a81/%E6%A8%A1%E6%9D%BF%E5%BC%95%E6%93%8E_05.png" alt="img"></p>
+<h4 id="2-其他语法"><a href="#2-其他语法" class="headerlink" title="2). 其他语法"></a>2). 其他语法</h4><p><strong>我们可以使用任意的 th:attr 来替换Html中原生属性的值！</strong></p>
+<p><img src="/article/9b3f0a81/模板引擎_05.png" alt="img"></p>
 <figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">Simple</span> <span class="string">expressions:（表达式语法）</span></span><br><span class="line"><span class="attr">Variable</span> <span class="string">Expressions: $&#123;...&#125;：获取变量值；OGNL；</span></span><br><span class="line">    <span class="attr">1）、获取对象的属性、调用方法</span></span><br><span class="line">    <span class="attr">2）、使用内置的基本对象：#18</span></span><br><span class="line"><span class="comment">         #ctx : the context object.</span></span><br><span class="line"><span class="comment">         #vars: the context variables.</span></span><br><span class="line"><span class="comment">         #locale : the context locale.</span></span><br><span class="line"><span class="comment">         #request : (only in Web Contexts) the HttpServletRequest object.</span></span><br><span class="line"><span class="comment">         #response : (only in Web Contexts) the HttpServletResponse object.</span></span><br><span class="line"><span class="comment">         #session : (only in Web Contexts) the HttpSession object.</span></span><br><span class="line"><span class="comment">         #servletContext : (only in Web Contexts) the ServletContext object.</span></span><br><span class="line"></span><br><span class="line">    <span class="attr">3）、内置的一些工具对象：</span></span><br><span class="line"><span class="comment">　　　　　　#execInfo : information about the template being processed.</span></span><br><span class="line"><span class="comment">　　　　　　#uris : methods for escaping parts of URLs/URIs</span></span><br><span class="line"><span class="comment">　　　　　　#conversions : methods for executing the configured conversion service (if any).</span></span><br><span class="line"><span class="comment">　　　　　　#dates : methods for java.util.Date objects: formatting, component extraction, etc.</span></span><br><span class="line"><span class="comment">　　　　　　#calendars : analogous to #dates , but for java.util.Calendar objects.</span></span><br><span class="line"><span class="comment">　　　　　　#numbers : methods for formatting numeric objects.</span></span><br><span class="line"><span class="comment">　　　　　　#strings : methods for String objects: contains, startsWith, prepending/appending, etc.</span></span><br><span class="line"><span class="comment">　　　　　　#objects : methods for objects in general.</span></span><br><span class="line"><span class="comment">　　　　　　#bools : methods for boolean evaluation.</span></span><br><span class="line"><span class="comment">　　　　　　#arrays : methods for arrays.</span></span><br><span class="line"><span class="comment">　　　　　　#lists : methods for lists.</span></span><br><span class="line"><span class="comment">　　　　　　#sets : methods for sets.</span></span><br><span class="line"><span class="comment">　　　　　　#maps : methods for maps.</span></span><br><span class="line"><span class="comment">　　　　　　#aggregates : methods for creating aggregates on arrays or collections.</span></span><br><span class="line">==================================================================================</span><br><span class="line"></span><br><span class="line">  <span class="attr">Selection</span> <span class="string">Variable Expressions: *&#123;...&#125;：选择表达式：和$&#123;&#125;在功能上是一样；</span></span><br><span class="line">  <span class="attr">Message</span> <span class="string">Expressions: #&#123;...&#125;：获取国际化内容</span></span><br><span class="line">  <span class="attr">Link</span> <span class="string">URL Expressions: @&#123;...&#125;：定义URL；</span></span><br><span class="line">  <span class="attr">Fragment</span> <span class="string">Expressions: ~&#123;...&#125;：片段引用表达式</span></span><br><span class="line"></span><br><span class="line"><span class="attr">Literals（字面量）</span></span><br><span class="line">      <span class="attr">Text</span> <span class="string">literals: 'one text' , 'Another one!' ,…</span></span><br><span class="line">      <span class="attr">Number</span> <span class="string">literals: 0 , 34 , 3.0 , 12.3 ,…</span></span><br><span class="line">      <span class="attr">Boolean</span> <span class="string">literals: true , false</span></span><br><span class="line">      <span class="attr">Null</span> <span class="string">literal: null</span></span><br><span class="line">      <span class="attr">Literal</span> <span class="string">tokens: one , sometext , main ,…</span></span><br><span class="line">      </span><br><span class="line"><span class="attr">Text</span> <span class="string">operations:（文本操作）</span></span><br><span class="line">    <span class="attr">String</span> <span class="string">concatenation: +</span></span><br><span class="line">    <span class="attr">Literal</span> <span class="string">substitutions: |The name is $&#123;name&#125;|</span></span><br><span class="line">    </span><br><span class="line"><span class="attr">Arithmetic</span> <span class="string">operations:（数学运算）</span></span><br><span class="line">    <span class="attr">Binary</span> <span class="string">operators: + , - , * , / , %</span></span><br><span class="line">    <span class="attr">Minus</span> <span class="string">sign (unary operator): -</span></span><br><span class="line">    </span><br><span class="line"><span class="attr">Boolean</span> <span class="string">operations:（布尔运算）</span></span><br><span class="line">    <span class="attr">Binary</span> <span class="string">operators: and , or</span></span><br><span class="line">    <span class="attr">Boolean</span> <span class="string">negation (unary operator): ! , not</span></span><br><span class="line">    </span><br><span class="line"><span class="attr">Comparisons</span> <span class="string">and equality:（比较运算）</span></span><br><span class="line">    <span class="attr">Comparators</span>: <span class="string">&gt; , &lt; , &gt;= , &lt;= ( gt , lt , ge , le )</span></span><br><span class="line">    <span class="attr">Equality</span> <span class="string">operators: == , != ( eq , ne )</span></span><br><span class="line">    </span><br><span class="line"><span class="attr">Conditional</span> <span class="string">operators:条件运算（三元运算符）</span></span><br><span class="line">    <span class="meta">If-then</span>: <span class="string">(if) ? (then)</span></span><br><span class="line">    <span class="meta">If-then-else</span>: <span class="string">(if) ? (then) : (else)</span></span><br><span class="line">    <span class="attr">Default</span>: <span class="string">(value) ?: (defaultvalue)</span></span><br><span class="line">    </span><br><span class="line"><span class="attr">Special</span> <span class="string">tokens:</span></span><br><span class="line">    <span class="meta">No-Operation</span>: <span class="string">_</span></span><br></pre></td></tr></table></figure>
-<h4 id="3-测试">3). 测试</h4>
-<p>test.html</p>
+<h4 id="3-测试"><a href="#3-测试" class="headerlink" title="3). 测试"></a>3). 测试</h4><p>test.html</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"> <span class="comment">&lt;!--引入http://www.thymeleaf.org命名空间--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span> <span class="attr">xmlns:th</span>=<span class="string">"http://www.thymeleaf.org"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>模板引擎<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--所有的heml元素都可以被thymeleaf替换接管;--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h2</span>&gt;</span>Test<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--th:text就是将div中的内容设置为它指定的值--&gt;</span></span><br><span class="line">    提取参数：<span class="tag">&lt;<span class="name">span</span> <span class="attr">th:text</span>=<span class="string">"$&#123;msg&#125;"</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--th:utext不会将内容转义--&gt;</span></span><br><span class="line">    字符转义：<span class="tag">&lt;<span class="name">span</span> <span class="attr">th:utext</span>=<span class="string">"$&#123;msg1&#125;"</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--th:each集合遍历--&gt;</span></span><br><span class="line">    集合参数：<span class="tag">&lt;<span class="name">span</span> <span class="attr">th:each</span>=<span class="string">"user:$&#123;users&#125;"</span> <span class="attr">th:text</span>=<span class="string">"$&#123;user&#125;"</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--行内写法--&gt;</span></span><br><span class="line">    转义：<span class="tag">&lt;<span class="name">h4</span> <span class="attr">th:each</span>=<span class="string">"user:$&#123;users&#125;"</span>&gt;</span>[[ $&#123;user&#125; ]]<span class="tag">&lt;/<span class="name">h4</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>控制层</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//在templates目录下的所有页面，只能通过controller来跳转</span></span><br><span class="line"><span class="comment">//这个需要模板引擎的支持（thymeleaf）</span></span><br><span class="line"><span class="meta">@Controller</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">IndexController</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@RequestMapping</span>(<span class="string">"/test"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">test</span><span class="params">(Model model)</span></span>&#123;</span><br><span class="line">        model.addAttribute(<span class="string">"msg"</span>,<span class="string">"hello,我是第一个参数!"</span>);</span><br><span class="line">        model.addAttribute(<span class="string">"msg1"</span>,<span class="string">"&lt;h4&gt;hello,特殊字符不被转义!&lt;/h4&gt;"</span>);</span><br><span class="line">        model.addAttribute(<span class="string">"users"</span>, Arrays.asList(<span class="string">"赵云"</span>,<span class="string">"马超"</span>));</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"test"</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -1035,19 +993,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">Java</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">工具类</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">Hexo</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">博客</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">Java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">工具类</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1059,15 +1017,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">分页</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Linux</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Maven</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">分页</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1079,11 +1033,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">NodeJS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">命令行窗口</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1092,6 +1042,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">数据库</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">NodeJS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">命令行窗口</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1111,15 +1069,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Redis</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">SpringBoot</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">JSR303校验</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Redis</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1131,11 +1089,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">SpringSecurity</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">Swagger</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">Swagger</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">SpringSecurity</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1147,15 +1105,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">注解</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">SpringCloud</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Web框架</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">注解</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1187,15 +1145,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">Vuex</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Hexo_admin</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">Vuex</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1216,6 +1170,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">Zabbix</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Hexo_admin</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1251,15 +1209,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">NoSql</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">ERP系统</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">文档</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">NoSql</a>
               </li>
             
             <div class="clearfix"></div>

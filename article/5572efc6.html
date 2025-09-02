@@ -16,8 +16,11 @@
 <meta property="og:site_name" content="(●ˇ∀ˇ●)">
 <meta property="og:description" content="📱💬🖥️">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https:&#x2F;&#x2F;www.tengfei.eu.org&#x2F;article&#x2F;5572efc6&#x2F;image-20240219090349614.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;www.tengfei.eu.org&#x2F;article&#x2F;5572efc6&#x2F;image-20240219090207689.png">
 <meta property="og:updated_time" content="2025-07-08T01:52:38.006Z">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;www.tengfei.eu.org&#x2F;article&#x2F;5572efc6&#x2F;image-20240219090349614.png">
   
     <link rel="alternative" href="/atom.xml" title="(●ˇ∀ˇ●)" type="application/atom+xml">
   
@@ -308,48 +311,37 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
       
         <p>📱💬🖥️</p>
 <a id="more"></a>
-<h2 id="引言">引言</h2>
-<p><strong>什么是微信小程序？</strong></p>
+<h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><p><strong>什么是微信小程序？</strong></p>
 <p>微信小程序是一种不需要下载安装即可使用的应用，它实现了应用“触手可及”的梦想，用户扫一扫或搜一下即可打开应用。同时，它也具备了传统APP的功能，如消息通知、离线缓存等。</p>
 <p><strong>为什么需要从H5跳转到微信小程序？</strong></p>
 <p>在移动互联网时代，小程序的使用场景越来越广泛，而H5页面作为传统的网页形式，其功能和体验相较于小程序有所不足。因此，从H5页面跳转到微信小程序，可以为用户提供更好的服务和体验。</p>
-<h2 id="一、静态H5网站跳转到微信小程序">一、静态H5网站跳转到微信小程序</h2>
-<h3 id="H5跳转到微信小程序">H5跳转到微信小程序</h3>
-<ol>
+<h2 id="一、静态H5网站跳转到微信小程序"><a href="#一、静态H5网站跳转到微信小程序" class="headerlink" title="一、静态H5网站跳转到微信小程序"></a>一、静态H5网站跳转到微信小程序</h2><h3 id="H5跳转到微信小程序"><a href="#H5跳转到微信小程序" class="headerlink" title="H5跳转到微信小程序"></a>H5跳转到微信小程序</h3><ol>
 <li>首先，我们需要在H5页面中添加一个跳转按钮，当用户点击该按钮时，触发跳转事件。</li>
 </ol>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">"jumpToMiniProgram"</span>&gt;</span>跳转到微信小程序<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<ol start="2">
+<ol>
 <li>接下来，我们需要编写JavaScript代码，监听按钮的点击事件，并在点击事件中实现跳转逻辑。</li>
 </ol>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.getElementById(<span class="string">'jumpToMiniProgram'</span>).addEventListener(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 跳转到微信小程序的逻辑</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<ol start="3">
+<ol>
 <li>在跳转逻辑中，我们需要使用微信小程序的scheme协议来实现跳转。具体实现如下：</li>
 </ol>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">jumpToMiniProgram</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> appId = <span class="string">'wx1234567890abcdef'</span>; <span class="comment">// 替换为你的小程序appId</span></span><br><span class="line">  <span class="keyword">var</span> path = <span class="string">'pages/index/index'</span>; <span class="comment">// 替换为你的小程序页面路径</span></span><br><span class="line">  <span class="keyword">var</span> extraData = &#123;</span><br><span class="line">    foo: <span class="string">'bar'</span> <span class="comment">// 携带的参数</span></span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="keyword">var</span> envVersion = <span class="string">'release'</span>; <span class="comment">// 可选值：develop（开发版）、trial（体验版）、release（正式版）</span></span><br><span class="line">  <span class="keyword">var</span> href = <span class="string">`weixin://dl/<span class="subst">$&#123;appId&#125;</span>?type=view&amp;env_version=<span class="subst">$&#123;envVersion&#125;</span>&amp;page=<span class="subst">$&#123;path&#125;</span>&amp;extra_data=<span class="subst">$&#123;<span class="built_in">JSON</span>.stringify(extraData)&#125;</span>`</span>;</span><br><span class="line">  <span class="built_in">window</span>.location.href = href;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ol start="4">
+<ol>
 <li>最后，将上述代码添加到H5页面中，即可实现从H5页面跳转到微信小程序并携带参数的功能。</li>
 </ol>
 <p>总结：通过以上步骤，我们可以实现从静态H5网站跳转到微信小程序并携带参数的功能。这不仅可以提高用户体验，还可以为用户提供更便捷的服务。希望本文对您有所帮助！</p>
-<h2 id="二、静态H5网站调用微信云函数">二、静态H5网站调用微信云函数</h2>
-<p>在现代Web开发中，云函数已经成为了一种非常流行的服务，它允许开发者在云端运行代码，而无需关心底层基础设施。微信云函数是腾讯云提供的一种云函数服务，它允许开发者在微信环境中运行代码。本文将介绍如何在静态H5网站上调用微信云函数。</p>
-<h3 id="准备工作">准备工作</h3>
-<p>首先，你需要有一个微信公众号，并开通微信云开发环境。然后，你需要安装微信开发者工具，用于创建使用你的云函数。</p>
-<h3 id="创建云函数">创建云函数</h3>
-<p>在微信开发者工具中，选择“云开发”选项卡，然后点击“新建云函数”。输入函数名，例如“helloWorld”，并选择运行环境（如Node.js）。接下来，编写一个简单的云函数，如下所示：</p>
+<h2 id="二、静态H5网站调用微信云函数"><a href="#二、静态H5网站调用微信云函数" class="headerlink" title="二、静态H5网站调用微信云函数"></a>二、静态H5网站调用微信云函数</h2><p>在现代Web开发中，云函数已经成为了一种非常流行的服务，它允许开发者在云端运行代码，而无需关心底层基础设施。微信云函数是腾讯云提供的一种云函数服务，它允许开发者在微信环境中运行代码。本文将介绍如何在静态H5网站上调用微信云函数。</p>
+<h3 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h3><p>首先，你需要有一个微信公众号，并开通微信云开发环境。然后，你需要安装微信开发者工具，用于创建使用你的云函数。</p>
+<h3 id="创建云函数"><a href="#创建云函数" class="headerlink" title="创建云函数"></a>创建云函数</h3><p>在微信开发者工具中，选择“云开发”选项卡，然后点击“新建云函数”。输入函数名，例如“helloWorld”，并选择运行环境（如Node.js）。接下来，编写一个简单的云函数，如下所示：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 云函数入口文件</span></span><br><span class="line"><span class="keyword">const</span> cloud = <span class="built_in">require</span>(<span class="string">'wx-server-sdk'</span>);</span><br><span class="line"></span><br><span class="line">cloud.init(&#123; <span class="attr">env</span>: <span class="string">''</span> &#125;); <span class="comment">// 使用当前云环境</span></span><br><span class="line"><span class="comment">//初始化云函数</span></span><br><span class="line"><span class="keyword">const</span> db = cloud.database();</span><br><span class="line"></span><br><span class="line"><span class="comment">// 云函数入口函数</span></span><br><span class="line">exports.main = <span class="keyword">async</span> (event, context) =&gt; &#123;</span><br><span class="line">  <span class="keyword">const</span> wxContext = cloud.getWXContext();</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    message: <span class="string">'Hello World'</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="部署云函数">部署云函数</h3>
-<p>保存云函数后，点击“上传并部署”按钮，等待部署完成。</p>
-<h3 id="在H5网站中调用云函数">在H5网站中调用云函数</h3>
-<p>在你的H5网站中，你可以使用wx.cloud.callFunction方法来调用云函数。首先，确保你已经引入了微信JS-SDK。然后，编写如下代码：</p>
+<h3 id="部署云函数"><a href="#部署云函数" class="headerlink" title="部署云函数"></a>部署云函数</h3><p>保存云函数后，点击“上传并部署”按钮，等待部署完成。</p>
+<h3 id="在H5网站中调用云函数"><a href="#在H5网站中调用云函数" class="headerlink" title="在H5网站中调用云函数"></a>在H5网站中调用云函数</h3><p>在你的H5网站中，你可以使用wx.cloud.callFunction方法来调用云函数。首先，确保你已经引入了微信JS-SDK。然后，编写如下代码：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=<span class="string">"https://web-9gikcbug35bad3a8-1304825656.tcloudbaseapp.com/sdk/1.3.0/cloud.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 声明新的 cloud 实例</span></span><br><span class="line"><span class="keyword">var</span> c1 = <span class="keyword">new</span> <span class="keyword">this</span>.cloud.Cloud(&#123;</span><br><span class="line">    <span class="comment">// 必填，表示是未登录模式</span></span><br><span class="line">    identityless: <span class="literal">true</span>,</span><br><span class="line">    <span class="comment">// 资源方 AppID</span></span><br><span class="line">    resourceAppid: <span class="string">''</span>,</span><br><span class="line">    <span class="comment">// 资源方环境 ID</span></span><br><span class="line">    resourceEnv: <span class="string">''</span>,</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">//初始化</span></span><br><span class="line"><span class="keyword">await</span> c1.init();</span><br><span class="line"><span class="comment">// 初始化执行完再调用</span></span><br><span class="line"><span class="comment">// 完成后正常使用资源方的已授权的云资源</span></span><br><span class="line">c1.callFunction(&#123;</span><br><span class="line">    name: <span class="string">'helloWorld'</span>,</span><br><span class="line">    success: <span class="function"><span class="params">res</span> =&gt;</span> &#123;</span><br><span class="line">		<span class="built_in">console</span>.log(<span class="string">'云函数调用成功'</span>, res)</span><br><span class="line">    &#125;,</span><br><span class="line">    fail: <span class="function"><span class="params">err</span> =&gt;</span> &#123;</span><br><span class="line">    	<span class="built_in">console</span>.error(<span class="string">'云函数调用失败'</span>, err)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<h3 id="开通云函数和数据库权限">开通云函数和数据库权限</h3>
-<p>![image-20240219090349614](静态网站 H5 跳小程序\image-20240219090349614.png)</p>
-<p>![image-20240219090207689](静态网站 H5 跳小程序\image-20240219090207689.png)</p>
-<h3 id="测试">测试</h3>
-<p>现在，你可以在你的H5网站获取云函数信息了。</p>
-<h3 id="总结">总结</h3>
-<p>通过以上步骤，你可以在静态H5网站上调用微信云函数。这种方法可以让你在不修改服务器端代码的情况下，实现一些复杂的业务逻辑。希望本文能帮助你更好地理解和使用微信云函数。</p>
+<h3 id="开通云函数和数据库权限"><a href="#开通云函数和数据库权限" class="headerlink" title="开通云函数和数据库权限"></a>开通云函数和数据库权限</h3><p><img src="/article/5572efc6/image-20240219090349614.png" alt="image-20240219090349614"></p>
+<p><img src="/article/5572efc6/image-20240219090207689.png" alt="image-20240219090207689"></p>
+<h3 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h3><p>现在，你可以在你的H5网站获取云函数信息了。</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>通过以上步骤，你可以在静态H5网站上调用微信云函数。这种方法可以让你在不修改服务器端代码的情况下，实现一些复杂的业务逻辑。希望本文能帮助你更好地理解和使用微信云函数。</p>
 
       
 
@@ -765,19 +757,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">Java</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">工具类</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">Hexo</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">博客</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">Java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">工具类</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -789,15 +781,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">分页</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Linux</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Maven</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">分页</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -809,11 +797,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">NodeJS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">命令行窗口</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -822,6 +806,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">数据库</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">NodeJS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">命令行窗口</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -841,15 +833,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Redis</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">SpringBoot</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">JSR303校验</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Redis</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -861,11 +853,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">SpringSecurity</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">Swagger</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">Swagger</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">SpringSecurity</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -877,15 +869,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">注解</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">SpringCloud</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Web框架</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">注解</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -917,15 +909,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">Vuex</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Hexo_admin</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">Vuex</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -946,6 +934,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">Zabbix</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Hexo_admin</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -981,15 +973,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">NoSql</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">ERP系统</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">文档</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">NoSql</a>
               </li>
             
             <div class="clearfix"></div>

@@ -8,25 +8,25 @@
   <link rel="dns-prefetch" href="https://www.tengfei.eu.org">
   <title>MyBatis学习笔记(4) | (●ˇ∀ˇ●)</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="MyBatis学习笔记 🌈 🌈 🌈 动态sql…">
+  <meta name="description" content="MyBatis学习笔记  🌈 🌈 🌈  动态sql…">
 <meta name="keywords" content="MyBatis,持久层框架">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MyBatis学习笔记(4)">
 <meta property="og:url" content="https:&#x2F;&#x2F;www.tengfei.eu.org&#x2F;article&#x2F;8b840100.html">
 <meta property="og:site_name" content="(●ˇ∀ˇ●)">
-<meta property="og:description" content="MyBatis学习笔记 🌈 🌈 🌈 动态sql…">
+<meta property="og:description" content="MyBatis学习笔记  🌈 🌈 🌈  动态sql…">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https:&#x2F;&#x2F;www.tengfei.eu.org&#x2F;article&#x2F;8b840100&#x2F;MyBatis%E5%8A%A8%E6%80%81sql01.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;www.tengfei.eu.org&#x2F;article&#x2F;8b840100&#x2F;MyBatis%E5%8A%A8%E6%80%81sql02.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;www.tengfei.eu.org&#x2F;article&#x2F;8b840100&#x2F;MyBatis%E5%8A%A8%E6%80%81sql04.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;www.tengfei.eu.org&#x2F;article&#x2F;8b840100&#x2F;MyBatis%E5%8A%A8%E6%80%81sql03.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;www.tengfei.eu.org&#x2F;article&#x2F;8b840100&#x2F;MyBatis%E5%8A%A8%E6%80%81sql05.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;www.tengfei.eu.org&#x2F;article&#x2F;8b840100&#x2F;MyBatis%E5%8A%A8%E6%80%81sql06.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;www.tengfei.eu.org&#x2F;article&#x2F;8b840100&#x2F;MyBatis%E5%8A%A8%E6%80%81sql07.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;www.tengfei.eu.org&#x2F;article&#x2F;8b840100&#x2F;MyBatis%E5%8A%A8%E6%80%81sql08.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;www.tengfei.eu.org&#x2F;article&#x2F;8b840100&#x2F;MyBatis动态sql01.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;www.tengfei.eu.org&#x2F;article&#x2F;8b840100&#x2F;MyBatis动态sql02.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;www.tengfei.eu.org&#x2F;article&#x2F;8b840100&#x2F;MyBatis动态sql04.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;www.tengfei.eu.org&#x2F;article&#x2F;8b840100&#x2F;MyBatis动态sql03.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;www.tengfei.eu.org&#x2F;article&#x2F;8b840100&#x2F;MyBatis动态sql05.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;www.tengfei.eu.org&#x2F;article&#x2F;8b840100&#x2F;MyBatis动态sql06.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;www.tengfei.eu.org&#x2F;article&#x2F;8b840100&#x2F;MyBatis动态sql07.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;www.tengfei.eu.org&#x2F;article&#x2F;8b840100&#x2F;MyBatis动态sql08.png">
 <meta property="og:updated_time" content="2023-01-31T13:51:47.523Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https:&#x2F;&#x2F;www.tengfei.eu.org&#x2F;article&#x2F;8b840100&#x2F;MyBatis%E5%8A%A8%E6%80%81sql01.png">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;www.tengfei.eu.org&#x2F;article&#x2F;8b840100&#x2F;MyBatis动态sql01.png">
   
     <link rel="alternative" href="/atom.xml" title="(●ˇ∀ˇ●)" type="application/atom+xml">
   
@@ -316,12 +316,10 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
     <div class="article-entry" itemprop="articleBody">
       
         <p>MyBatis学习笔记</p>
-<p>🌈 🌈 🌈</p>
+<p> 🌈 🌈 🌈 </p>
 <p>动态sql…</p>
 <a id="more"></a>
-<h2 id="MyBatis-动态SQL">MyBatis 动态SQL</h2>
-<h3 id="一-MyBatis-动态SQL简介">一. MyBatis 动态SQL简介</h3>
-<p>1). 动态 SQL是MyBatis强大特性之一。极大的简化我们拼装SQL的操作</p>
+<h2 id="MyBatis-动态SQL"><a href="#MyBatis-动态SQL" class="headerlink" title="MyBatis 动态SQL"></a>MyBatis 动态SQL</h2><h3 id="一-MyBatis-动态SQL简介"><a href="#一-MyBatis-动态SQL简介" class="headerlink" title="一. MyBatis 动态SQL简介"></a>一. MyBatis 动态SQL简介</h3><p>1). 动态 SQL是MyBatis强大特性之一。极大的简化我们拼装SQL的操作</p>
 <p>2). 动态 SQL 元素和使用 JSTL 或其他类似基于 XML 的文本处理器相似</p>
 <p>3). MyBatis 采用功能强大的基于 OGNL 的表达式来简化操作</p>
 <ul>
@@ -330,18 +328,9 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 <li>trim (where, set)</li>
 <li>foreach</li>
 </ul>
-<p>4). OGNL（ Object Graph Navigation Language ）对象图导航语言，这是一种强大的表达式语<br>
-言，通过它可以非常方便的来操作对象属性。 类似于我们的EL，SpEL等.</p>
-<p>访问对象属性：<code>person.name</code><br>
-调用方法：<code>person.getName()</code><br>
-调用静态属性/方法：<code>@java.lang.Math@PI</code> ， <code>@java.util.UUID@randomUUID()</code><br>
-调用构造方法：<code>new com.atguigu.bean.Person(‘admin’).name</code><br>
-运算符：<code>+,-,*,/,%</code><br>
-逻辑运算符：<code>in,not in,&gt;,&gt;=,&lt;,&lt;=,==,!=</code><br>
-<strong>注意：xml中特殊符号如”,&gt;,&lt;等这些都需要使用转义字符</strong></p>
-<h3 id="二-if-where">二. if where</h3>
-<p>1). If用于完成<strong>简单的判断</strong>.<br>
-2). Where用于解决SQL语句中where关键字以及条件中<strong>第一个</strong>and或者or的问题.</p>
+<p>4). OGNL（ Object Graph Navigation Language ）对象图导航语言，这是一种强大的表达式语<br>言，通过它可以非常方便的来操作对象属性。 类似于我们的EL，SpEL等.</p>
+<p>访问对象属性：<code>person.name</code><br>调用方法：<code>person.getName()</code><br>调用静态属性/方法：<code>@java.lang.Math@PI</code> ， <code>@java.util.UUID@randomUUID()</code><br>调用构造方法：<code>new com.atguigu.bean.Person(‘admin’).name</code><br>运算符：<code>+,-,*,/,%</code><br>逻辑运算符：<code>in,not in,&gt;,&gt;=,&lt;,&lt;=,==,!=</code><br><strong>注意：xml中特殊符号如”,&gt;,&lt;等这些都需要使用转义字符</strong></p>
+<h3 id="二-if-where"><a href="#二-if-where" class="headerlink" title="二. if where"></a>二. if where</h3><p>1). If用于完成<strong>简单的判断</strong>.<br>2). Where用于解决SQL语句中where关键字以及条件中<strong>第一个</strong>and或者or的问题.</p>
 <ul>
 <li>sql映射文件</li>
 </ul>
@@ -353,9 +342,8 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 <ul>
 <li>测试结果</li>
 </ul>
-<p><img src="/article/8b840100/MyBatis%E5%8A%A8%E6%80%81sql01.png" alt="result"></p>
-<h3 id="三-trim">三. trim</h3>
-<p>1). Trim 可以在条件判断完的SQL语句前后 <strong>添加或者去掉指定的字符</strong>。</p>
+<p><img src="/article/8b840100/MyBatis动态sql01.png" alt="result"></p>
+<h3 id="三-trim"><a href="#三-trim" class="headerlink" title="三. trim"></a>三. trim</h3><p>1). Trim 可以在条件判断完的SQL语句前后 <strong>添加或者去掉指定的字符</strong>。</p>
 <ul>
 <li><code>prefix</code>: 添加前缀</li>
 <li><code>prefixOverrides</code>: 去掉前缀</li>
@@ -374,9 +362,8 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 <ul>
 <li>测试结果</li>
 </ul>
-<p><img src="/article/8b840100/MyBatis%E5%8A%A8%E6%80%81sql02.png" alt="result"></p>
-<h3 id="四-set">四. set</h3>
-<p>1). set 主要是用于解决<strong>修改操作</strong>中SQL语句中可能多出逗号的问题</p>
+<p><img src="/article/8b840100/MyBatis动态sql02.png" alt="result"></p>
+<h3 id="四-set"><a href="#四-set" class="headerlink" title="四. set"></a>四. set</h3><p>1). set 主要是用于解决<strong>修改操作</strong>中SQL语句中可能多出逗号的问题</p>
 <ul>
 <li>sql映射文件</li>
 </ul>
@@ -388,9 +375,8 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 <ul>
 <li>测试结果</li>
 </ul>
-<p><img src="/article/8b840100/MyBatis%E5%8A%A8%E6%80%81sql04.png" alt="result"></p>
-<h3 id="五-choose-when、otherwise">五. choose(when、otherwise)</h3>
-<p>1). choose 主要是用于<strong>分支判断</strong>，类似于java中的switch case,只会满足所有分支中的一个</p>
+<p><img src="/article/8b840100/MyBatis动态sql04.png" alt="result"></p>
+<h3 id="五-choose-when、otherwise"><a href="#五-choose-when、otherwise" class="headerlink" title="五. choose(when、otherwise)"></a>五. choose(when、otherwise)</h3><p>1). choose 主要是用于<strong>分支判断</strong>，类似于java中的switch case,只会满足所有分支中的一个</p>
 <ul>
 <li>sql映射文件</li>
 </ul>
@@ -402,24 +388,21 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 <ul>
 <li>测试结果</li>
 </ul>
-<p><img src="/article/8b840100/MyBatis%E5%8A%A8%E6%80%81sql03.png" alt="result"></p>
-<h3 id="六-foreach">六. foreach</h3>
-<p><strong>foreach 主要用于循环迭代</strong></p>
+<p><img src="/article/8b840100/MyBatis动态sql03.png" alt="result"></p>
+<h3 id="六-foreach"><a href="#六-foreach" class="headerlink" title="六. foreach"></a>六. foreach</h3><p><strong>foreach 主要用于循环迭代</strong></p>
 <ul>
 <li><code>collection</code>: 要迭代的集合</li>
 <li><code>item</code>: 当前从集合中迭代出的元素</li>
 <li><code>open</code>: 开始字符</li>
 <li><code>close</code>:结束字符</li>
 <li><code>separator</code>: 元素与元素之间的分隔符</li>
-<li><code>index</code>:
-<ul>
+<li><code>index</code>:<ul>
 <li>迭代的是List集合: index表示的当前元素的下标</li>
-<li>迭代的Map集合: index表示的当前元素的key</li>
+<li>迭代的Map集合: index表示的当前元素的key </li>
 </ul>
 </li>
 </ul>
-<h4 id="1-批量查询">1). 批量查询</h4>
-<ul>
+<h4 id="1-批量查询"><a href="#1-批量查询" class="headerlink" title="1). 批量查询"></a>1). 批量查询</h4><ul>
 <li>sql映射文件</li>
 </ul>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--public List&lt;Emp&gt; getEmpsByConditonForeach(@Param("list")List&lt;Integer&gt; empnos);--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">"getEmpsByConditonForeach"</span> <span class="attr">resultType</span>=<span class="string">"Emp"</span>&gt;</span></span><br><span class="line">	select * from emp where empno in</span><br><span class="line">	<span class="comment">&lt;!-- </span></span><br><span class="line"><span class="comment">		collection：指定要遍历的集合</span></span><br><span class="line"><span class="comment">			list类型的参数会特殊处理封装在map中，map的key就叫list</span></span><br><span class="line"><span class="comment">		item：将遍历出的元素赋值给指定的变量</span></span><br><span class="line"><span class="comment">		separator：每个元素之间的分隔符</span></span><br><span class="line"><span class="comment">		open：遍历出所有结果拼接一个开始的字符</span></span><br><span class="line"><span class="comment">		close：遍历出所有结果拼接一个结束的字符</span></span><br><span class="line"><span class="comment">		index：索引，遍历list的时候是索引，item就是当前值</span></span><br><span class="line"><span class="comment">				       遍历map的时候index表示的就是map的key，item就是map的值</span></span><br><span class="line"><span class="comment">		#&#123;变量名&#125;就能取出变量的值也就是当前遍历的元素</span></span><br><span class="line"><span class="comment">	 --&gt;</span></span><br><span class="line">	 <span class="tag">&lt;<span class="name">foreach</span> <span class="attr">collection</span>=<span class="string">"list"</span> <span class="attr">item</span>=<span class="string">"item_empno"</span> <span class="attr">separator</span>=<span class="string">","</span> <span class="attr">open</span>=<span class="string">"("</span> <span class="attr">close</span>=<span class="string">")"</span> &gt;</span></span><br><span class="line">	 	#&#123;item_empno&#125;</span><br><span class="line">	 <span class="tag">&lt;/<span class="name">foreach</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!--public List&lt;Emp&gt; getEmpsByArrayForeach(int[] empnos);--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">"getEmpsByArrayForeach"</span> <span class="attr">resultType</span>=<span class="string">"Emp"</span>&gt;</span></span><br><span class="line">	select * from emp where empno in</span><br><span class="line">	 <span class="tag">&lt;<span class="name">foreach</span> <span class="attr">collection</span>=<span class="string">"array"</span> <span class="attr">item</span>=<span class="string">"item_empno"</span> <span class="attr">separator</span>=<span class="string">","</span> <span class="attr">open</span>=<span class="string">"("</span> <span class="attr">close</span>=<span class="string">")"</span> &gt;</span></span><br><span class="line">	 	#&#123;item_empno&#125;</span><br><span class="line">	 <span class="tag">&lt;/<span class="name">foreach</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!--public List&lt;Emp&gt; getEmpsByObjectArrayForeach(Emp[] emp);--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">"getEmpsByObjectArrayForeach"</span> <span class="attr">parameterType</span>=<span class="string">"Object[]"</span> <span class="attr">resultType</span>=<span class="string">"Emp"</span>&gt;</span></span><br><span class="line">	select * from emp where empno in</span><br><span class="line">	 <span class="tag">&lt;<span class="name">foreach</span> <span class="attr">collection</span>=<span class="string">"array"</span> <span class="attr">item</span>=<span class="string">"item_emp"</span> <span class="attr">separator</span>=<span class="string">","</span> <span class="attr">open</span>=<span class="string">"("</span> <span class="attr">close</span>=<span class="string">")"</span> &gt;</span></span><br><span class="line">	 	#&#123;item_emp.empno&#125;</span><br><span class="line">	 <span class="tag">&lt;/<span class="name">foreach</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- public List&lt;Emp&gt; getEmpsBySetForeach(@Param("set")Set&lt;Integer&gt; empnos); --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">"getEmpsBySetForeach"</span> <span class="attr">resultType</span>=<span class="string">"Emp"</span>&gt;</span></span><br><span class="line">	select * from emp where empno in</span><br><span class="line">	 <span class="tag">&lt;<span class="name">foreach</span> <span class="attr">collection</span>=<span class="string">"set"</span> <span class="attr">item</span>=<span class="string">"item_empno"</span> <span class="attr">separator</span>=<span class="string">","</span> <span class="attr">open</span>=<span class="string">"("</span> <span class="attr">close</span>=<span class="string">")"</span> &gt;</span></span><br><span class="line">	 	#&#123;item_empno&#125;</span><br><span class="line">	 <span class="tag">&lt;/<span class="name">foreach</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- public List&lt;Emp&gt; getEmpsByMapForeach(@Param("map")Map&lt;Integer,Integer&gt; map); --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">"getEmpsByMapForeach"</span> <span class="attr">resultType</span>=<span class="string">"Emp"</span>&gt;</span></span><br><span class="line">	select * from emp where empno in</span><br><span class="line">	 <span class="tag">&lt;<span class="name">foreach</span> <span class="attr">collection</span>=<span class="string">"map.keys"</span> <span class="attr">item</span>=<span class="string">"item_empno"</span> <span class="attr">separator</span>=<span class="string">","</span> <span class="attr">open</span>=<span class="string">"("</span> <span class="attr">close</span>=<span class="string">")"</span> &gt;</span></span><br><span class="line">	 	#&#123;item_empno&#125;</span><br><span class="line">	 <span class="tag">&lt;/<span class="name">foreach</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br></pre></td></tr></table></figure>
@@ -430,9 +413,8 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 <ul>
 <li>测试结果</li>
 </ul>
-<p><img src="/article/8b840100/MyBatis%E5%8A%A8%E6%80%81sql05.png" alt="result"></p>
-<h4 id="2-批量保存">2). 批量保存</h4>
-<ul>
+<p><img src="/article/8b840100/MyBatis动态sql05.png" alt="result"></p>
+<h4 id="2-批量保存"><a href="#2-批量保存" class="headerlink" title="2). 批量保存"></a>2). 批量保存</h4><ul>
 <li>sql映射文件</li>
 </ul>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 批量保存 --&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- public void addEmps(@Param("emps")List&lt;Emp&gt; emps); --&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- MySQL下批量保存，可以foreach遍历 mysql支持values(),(),()语法 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">insert</span> <span class="attr">id</span>=<span class="string">"addEmps"</span> &gt;</span> </span><br><span class="line">	<span class="tag">&lt;<span class="name">foreach</span> <span class="attr">collection</span>=<span class="string">"emps"</span> <span class="attr">item</span>=<span class="string">"emp"</span> <span class="attr">open</span>=<span class="string">"begin"</span> <span class="attr">close</span>=<span class="string">"end;"</span>&gt;</span></span><br><span class="line">    	insert into Emp values</span><br><span class="line">    	(#&#123;emp.empno&#125;,#&#123;emp.ename&#125;,#&#123;emp.job&#125;,#&#123;emp.mgr&#125;,#&#123;emp.hiredate&#125;,#&#123;emp.sal&#125;,#&#123;emp.comm&#125;,#&#123;emp.deptno&#125;);</span><br><span class="line">   	<span class="tag">&lt;/<span class="name">foreach</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">insert</span>&gt;</span></span><br></pre></td></tr></table></figure>
@@ -443,9 +425,8 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 <ul>
 <li>测试结果</li>
 </ul>
-<p><img src="/article/8b840100/MyBatis%E5%8A%A8%E6%80%81sql06.png" alt="result"></p>
-<h3 id="七-内置参数-parameter-databaseId">七. 内置参数(_parameter,_databaseId)</h3>
-<ul>
+<p><img src="/article/8b840100/MyBatis动态sql06.png" alt="result"></p>
+<h3 id="七-内置参数-parameter-databaseId"><a href="#七-内置参数-parameter-databaseId" class="headerlink" title="七. 内置参数(_parameter,_databaseId)"></a>七. 内置参数(_parameter,_databaseId)</h3><ul>
 <li>sql映射文件</li>
 </ul>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 两个内置参数</span></span><br><span class="line"><span class="comment">不只是方法传递过来的参数可以被用来判断，取值...</span></span><br><span class="line"><span class="comment">mybatis默认还有两个内置参数：</span></span><br><span class="line"><span class="comment">_parameter:代表整个参数</span></span><br><span class="line"><span class="comment">	单个参数：_parameter就是这个参数</span></span><br><span class="line"><span class="comment">	多个参数：参数会被封装为一个map；_parameter就是代表这个map</span></span><br><span class="line"><span class="comment">_databaseId:如果配置了DateabaseIdProvider标签。</span></span><br><span class="line"><span class="comment">	_databaseId就是代表当前数据库的别名oracle</span></span><br><span class="line"><span class="comment"> --&gt;</span></span><br><span class="line"> </span><br><span class="line"> <span class="comment">&lt;!-- public List&lt;Emp&gt; getEmpsTestInnerParameter(Emp emp); --&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">"getEmpsTestInnerParameter"</span> <span class="attr">resultType</span>=<span class="string">"Emp"</span>&gt;</span></span><br><span class="line"> 	<span class="tag">&lt;<span class="name">if</span> <span class="attr">test</span>=<span class="string">"_databaseId=='oracle'"</span>&gt;</span></span><br><span class="line"> 		select * from emp</span><br><span class="line"> 		<span class="tag">&lt;<span class="name">if</span> <span class="attr">test</span>=<span class="string">"_parameter!=null"</span>&gt;</span></span><br><span class="line"> 			where ename=#&#123;ename&#125;</span><br><span class="line"> 		<span class="tag">&lt;/<span class="name">if</span>&gt;</span></span><br><span class="line"> 	<span class="tag">&lt;/<span class="name">if</span>&gt;</span></span><br><span class="line"> 	<span class="tag">&lt;<span class="name">if</span> <span class="attr">test</span>=<span class="string">"_databaseId=='mysql'"</span>&gt;</span></span><br><span class="line"> 		select * from student</span><br><span class="line"> 	<span class="tag">&lt;/<span class="name">if</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br></pre></td></tr></table></figure>
@@ -456,9 +437,8 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 <ul>
 <li>测试结果</li>
 </ul>
-<p><img src="/article/8b840100/MyBatis%E5%8A%A8%E6%80%81sql07.png" alt="result"></p>
-<h3 id="八-bind">八. bind</h3>
-<ul>
+<p><img src="/article/8b840100/MyBatis动态sql07.png" alt="result"></p>
+<h3 id="八-bind"><a href="#八-bind" class="headerlink" title="八. bind"></a>八. bind</h3><ul>
 <li>sql映射文件</li>
 </ul>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- bind:可以将OGNL表达式的值绑定到一个变量中，方便后来引用这个变量的值 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">"getEmpsTestInnerBind"</span> <span class="attr">resultType</span>=<span class="string">"Emp"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">bind</span> <span class="attr">name</span>=<span class="string">"_ename"</span> <span class="attr">value</span>=<span class="string">"'%'+ename+'%'"</span>/&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">if</span> <span class="attr">test</span>=<span class="string">"_databaseId=='oracle'"</span>&gt;</span></span><br><span class="line">		select * from emp</span><br><span class="line">		<span class="tag">&lt;<span class="name">if</span> <span class="attr">test</span>=<span class="string">"_parameter!=null"</span>&gt;</span></span><br><span class="line">			where ename like #&#123;_ename&#125;</span><br><span class="line">		<span class="tag">&lt;/<span class="name">if</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">if</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">if</span> <span class="attr">test</span>=<span class="string">"_databaseId=='mysql'"</span>&gt;</span></span><br><span class="line">		select * from student</span><br><span class="line">	<span class="tag">&lt;/<span class="name">if</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br></pre></td></tr></table></figure>
@@ -469,9 +449,8 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 <ul>
 <li>测试结果</li>
 </ul>
-<p><img src="/article/8b840100/MyBatis%E5%8A%A8%E6%80%81sql08.png" alt="result"></p>
-<h3 id="九-sql">九. sql</h3>
-<ul>
+<p><img src="/article/8b840100/MyBatis动态sql08.png" alt="result"></p>
+<h3 id="九-sql"><a href="#九-sql" class="headerlink" title="九. sql"></a>九. sql</h3><ul>
 <li>sql映射文件</li>
 </ul>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"> <span class="comment">&lt;!-- 抽取可重用的sql片段。方便后面引用</span></span><br><span class="line"><span class="comment"> 	1.sql抽取：经常要查询的列名，或者插入用的列名抽取出来方便引用</span></span><br><span class="line"><span class="comment"> 	2.include来引用已经抽取的sql；</span></span><br><span class="line"><span class="comment"> 	3.include还可以自定义一些property，sql标签内就能使用的属性</span></span><br><span class="line"><span class="comment"> 		取值的方式：$&#123;prop&#125;</span></span><br><span class="line"><span class="comment">  --&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">sql</span> <span class="attr">id</span>=<span class="string">"insertColumn"</span>&gt;</span></span><br><span class="line"> 	 <span class="tag">&lt;<span class="name">if</span> <span class="attr">test</span>=<span class="string">"_databaseId=='oracle'"</span>&gt;</span></span><br><span class="line">    	(#&#123;emp.empno&#125;,#&#123;emp.ename&#125;,#&#123;emp.job&#125;,#&#123;emp.mgr&#125;,#&#123;emp.hiredate&#125;,#&#123;emp.sal&#125;,#&#123;emp.comm&#125;,#&#123;emp.deptno&#125;);</span><br><span class="line"> 	<span class="tag">&lt;/<span class="name">if</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">if</span> <span class="attr">test</span>=<span class="string">"_databaseId=='mysql'"</span>&gt;</span></span><br><span class="line">    	(#&#123;emp.empno&#125;,#&#123;emp.ename&#125;,#&#123;emp.job&#125;,#&#123;emp.mgr&#125;,#&#123;emp.hiredate&#125;,#&#123;emp.sal&#125;,#&#123;emp.comm&#125;,#&#123;emp.deptno&#125;);</span><br><span class="line">	<span class="tag">&lt;/<span class="name">if</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">sql</span>&gt;</span>	 </span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">insert</span> <span class="attr">id</span>=<span class="string">"addEmps"</span> &gt;</span> </span><br><span class="line">	<span class="tag">&lt;<span class="name">foreach</span> <span class="attr">collection</span>=<span class="string">"emps"</span> <span class="attr">item</span>=<span class="string">"emp"</span> <span class="attr">open</span>=<span class="string">"begin"</span> <span class="attr">close</span>=<span class="string">"end;"</span>&gt;</span></span><br><span class="line">    	insert into Emp values</span><br><span class="line">		<span class="tag">&lt;<span class="name">include</span> <span class="attr">refid</span>=<span class="string">"insertColumn"</span></span></span><br><span class="line">           	&lt;property name="ename" value="码云"&gt;&lt;/property&gt; </span><br><span class="line">           <span class="tag">&lt;<span class="name">include</span>/&gt;</span></span><br><span class="line">       <span class="tag">&lt;/<span class="name">foreach</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">insert</span>&gt;</span></span><br></pre></td></tr></table></figure>
@@ -875,19 +854,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">Java</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">工具类</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">Hexo</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">博客</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">Java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">工具类</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -899,15 +878,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">分页</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Linux</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Maven</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">分页</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -919,11 +894,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">NodeJS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">命令行窗口</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -932,6 +903,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">数据库</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">NodeJS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">命令行窗口</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -951,15 +930,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Redis</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">SpringBoot</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">JSR303校验</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Redis</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -971,11 +950,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">SpringSecurity</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">Swagger</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">Swagger</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">SpringSecurity</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -987,15 +966,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">注解</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">SpringCloud</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Web框架</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">注解</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1027,15 +1006,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">Vuex</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Hexo_admin</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">Vuex</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1056,6 +1031,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">Zabbix</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Hexo_admin</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1091,15 +1070,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">NoSql</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">ERP系统</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">文档</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">NoSql</a>
               </li>
             
             <div class="clearfix"></div>
