@@ -310,15 +310,13 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 <p>在现代软件开发中，CI/CD（持续集成与持续部署）已成为提升交付效率与质量的重要实践。本文将介绍 CI/CD 的核心概念、主流工具，并通过 GitHub Actions 示例展示如何搭建一条自动化流水线。</p>
 </blockquote>
 <a id="more"></a>
-<h2 id="一、什么是-CI-CD">一、什么是 CI/CD</h2>
-<ul>
+<h2 id="一、什么是-CI-CD"><a href="#一、什么是-CI-CD" class="headerlink" title="一、什么是 CI/CD"></a>一、什么是 CI/CD</h2><ul>
 <li><strong>持续集成（Continuous Integration, CI）</strong>：开发者频繁地将代码合并到主干，每次提交都自动触发构建与测试，尽早发现问题。</li>
 <li><strong>持续交付（Continuous Delivery, CD）</strong>：在 CI 的基础上，自动将可发布的产物交付到类生产环境，随时可一键发布。</li>
 <li><strong>持续部署（Continuous Deployment, CD）</strong>：更进一步，代码通过测试后自动部署到生产环境，无需人工干预。</li>
 </ul>
 <p>三者层层递进，共同目标是「让代码更快、更安全地交付」。</p>
-<h2 id="二、核心流程">二、核心流程</h2>
-<p>一个典型的 CI/CD 流水线包含以下阶段：</p>
+<h2 id="二、核心流程"><a href="#二、核心流程" class="headerlink" title="二、核心流程"></a>二、核心流程</h2><p>一个典型的 CI/CD 流水线包含以下阶段：</p>
 <ol>
 <li><strong>触发</strong>：代码 push、PR、定时任务或手动触发。</li>
 <li><strong>拉取代码</strong>：从仓库检出最新代码。</li>
@@ -328,7 +326,7 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 <li><strong>部署</strong>：发布到测试、预发或生产环境。</li>
 <li><strong>通知</strong>：通过邮件、消息推送流水线结果。</li>
 </ol>
-<h2 id="三、主流工具">三、主流工具</h2>
+<h2 id="三、主流工具"><a href="#三、主流工具" class="headerlink" title="三、主流工具"></a>三、主流工具</h2><div class="table-container">
 <table>
 <thead>
 <tr>
@@ -360,29 +358,25 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 </tr>
 </tbody>
 </table>
-<h2 id="四、GitHub-Actions-示例">四、GitHub Actions 示例</h2>
-<p>在仓库 <code>.github/workflows/ci.yml</code> 中定义流水线：</p>
+</div>
+<h2 id="四、GitHub-Actions-示例"><a href="#四、GitHub-Actions-示例" class="headerlink" title="四、GitHub Actions 示例"></a>四、GitHub Actions 示例</h2><p>在仓库 <code>.github/workflows/ci.yml</code> 中定义流水线：</p>
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">name:</span> <span class="string">CI</span></span><br><span class="line"></span><br><span class="line"><span class="attr">on:</span></span><br><span class="line">  <span class="attr">push:</span></span><br><span class="line">    <span class="attr">branches:</span> <span class="string">[</span> <span class="string">main</span> <span class="string">]</span></span><br><span class="line">  <span class="attr">pull_request:</span></span><br><span class="line">    <span class="attr">branches:</span> <span class="string">[</span> <span class="string">main</span> <span class="string">]</span></span><br><span class="line"></span><br><span class="line"><span class="attr">jobs:</span></span><br><span class="line">  <span class="attr">build:</span></span><br><span class="line">    <span class="attr">runs-on:</span> <span class="string">ubuntu-latest</span></span><br><span class="line">    <span class="attr">steps:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">检出代码</span></span><br><span class="line">        <span class="attr">uses:</span> <span class="string">actions/checkout@v4</span></span><br><span class="line"></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">安装</span> <span class="string">JDK</span></span><br><span class="line">        <span class="attr">uses:</span> <span class="string">actions/setup-java@v4</span></span><br><span class="line">        <span class="attr">with:</span></span><br><span class="line">          <span class="attr">distribution:</span> <span class="string">'temurin'</span></span><br><span class="line">          <span class="attr">java-version:</span> <span class="string">'17'</span></span><br><span class="line"></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">构建</span></span><br><span class="line">        <span class="attr">run:</span> <span class="string">mvn</span> <span class="string">clean</span> <span class="string">package</span></span><br><span class="line"></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">运行测试</span></span><br><span class="line">        <span class="attr">run:</span> <span class="string">mvn</span> <span class="string">test</span></span><br><span class="line"></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">上传产物</span></span><br><span class="line">        <span class="attr">uses:</span> <span class="string">actions/upload-artifact@v4</span></span><br><span class="line">        <span class="attr">with:</span></span><br><span class="line">          <span class="attr">name:</span> <span class="string">jar</span></span><br><span class="line">          <span class="attr">path:</span> <span class="string">target/*.jar</span></span><br></pre></td></tr></table></figure>
-<h3 id="关键概念">关键概念</h3>
-<ul>
+<h3 id="关键概念"><a href="#关键概念" class="headerlink" title="关键概念"></a>关键概念</h3><ul>
 <li><strong>Workflow</strong>：一次完整的自动化流程，由 <code>.yml</code> 文件定义。</li>
 <li><strong>Job</strong>：一个工作流中的一组步骤，可并行或串行执行。</li>
 <li><strong>Step</strong>：Job 中的单个步骤，可以是命令或复用 Action。</li>
 <li><strong>Action</strong>：可复用的独立单元，如 <code>actions/checkout</code>。</li>
 </ul>
-<h2 id="五、常见实践建议">五、常见实践建议</h2>
-<ol>
+<h2 id="五、常见实践建议"><a href="#五、常见实践建议" class="headerlink" title="五、常见实践建议"></a>五、常见实践建议</h2><ol>
 <li><strong>保持流水线快速反馈</strong>：单元测试尽量控制在分钟级。</li>
 <li><strong>版本化配置</strong>：将流水线配置纳入代码库，与代码一起版本管理。</li>
 <li><strong>尽早失败</strong>：把最可能失败、成本最低的检查放在前面。</li>
 <li><strong>产物可追溯</strong>：对构建产物做版本标记，便于回滚与定位。</li>
 <li><strong>环境隔离</strong>：测试、预发、生产环境严格隔离，部署权限分离。</li>
 </ol>
-<h2 id="六、与容器化结合">六、与容器化结合</h2>
-<p>CI/CD 与 Docker 结合，可进一步实现「构建镜像 -&gt; 推送镜像仓库 -&gt; 拉取部署」的标准化流程：</p>
+<h2 id="六、与容器化结合"><a href="#六、与容器化结合" class="headerlink" title="六、与容器化结合"></a>六、与容器化结合</h2><p>CI/CD 与 Docker 结合，可进一步实现「构建镜像 -&gt; 推送镜像仓库 -&gt; 拉取部署」的标准化流程：</p>
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">-</span> <span class="attr">name:</span> <span class="string">构建并推送镜像</span></span><br><span class="line">  <span class="attr">run:</span> <span class="string">|</span></span><br><span class="line">    <span class="string">docker</span> <span class="string">build</span> <span class="string">-t</span> <span class="string">my-app:$&#123;&#123;</span> <span class="string">github.sha</span> <span class="string">&#125;&#125;</span> <span class="string">.</span></span><br><span class="line">    <span class="string">docker</span> <span class="string">push</span> <span class="string">my-registry/my-app:$&#123;&#123;</span> <span class="string">github.sha</span> <span class="string">&#125;&#125;</span></span><br></pre></td></tr></table></figure>
-<h2 id="总结">总结</h2>
-<p>CI/CD 通过自动化的构建、测试与部署流水线，大幅缩短了从代码提交到上线的周期，同时降低了人工操作带来的风险。掌握一门 CI/CD 工具并沉淀标准化的流水线，是现代开发者与团队提效的关键一步。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>CI/CD 通过自动化的构建、测试与部署流水线，大幅缩短了从代码提交到上线的周期，同时降低了人工操作带来的风险。掌握一门 CI/CD 工具并沉淀标准化的流水线，是现代开发者与团队提效的关键一步。</p>
 
       
 
@@ -775,27 +769,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">CSS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">前端</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">Java</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">工具类</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">DevOps</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">CI/CD</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">CSS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">前端</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -811,15 +797,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">Java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">工具类</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">工厂系统</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">Docker</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">运维</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">工厂系统</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -839,19 +833,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Linux</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">分页</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">MES</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Maven</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -863,19 +849,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">MES</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Maven</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">MySQL</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">数据库</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Nginx</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">Oracle</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -887,6 +873,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">Oracle</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Nginx</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">消息队列</a>
               </li>
              
@@ -895,15 +889,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Redis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">RPA</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">工具</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Redis</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -923,15 +917,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">JSR303校验</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">SLF4j</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">Thymeleaf</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">JSR303校验</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -951,11 +945,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">注解</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">SpringCloud</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">SpringCloud</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">注解</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -991,11 +985,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">前端路由</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">git</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">前端路由</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1004,6 +998,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Hexo_admin</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">监控</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">Zabbix</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1031,14 +1033,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">监控</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">Zabbix</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">企业微信</a>
               </li>
              
@@ -1047,11 +1041,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">定时任务</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">个人域</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">个人域</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">定时任务</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1071,6 +1065,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">NoSql</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">Flowable</a>
               </li>
              
@@ -1084,10 +1082,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">文档</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">NoSql</a>
               </li>
             
             <div class="clearfix"></div>

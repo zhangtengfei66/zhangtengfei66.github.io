@@ -310,16 +310,15 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 <p>消息队列是构建高并发、可解耦、异步化系统的关键组件。RabbitMQ 作为最流行的开源消息中间件之一，功能完善、生态成熟。本文将梳理 RabbitMQ 的核心概念、交换器类型与常见应用场景。</p>
 </blockquote>
 <a id="more"></a>
-<h2 id="一、为什么需要消息队列">一、为什么需要消息队列</h2>
-<p>消息队列在系统之间充当「缓冲与中转」的角色，主要解决以下问题：</p>
+<h2 id="一、为什么需要消息队列"><a href="#一、为什么需要消息队列" class="headerlink" title="一、为什么需要消息队列"></a>一、为什么需要消息队列</h2><p>消息队列在系统之间充当「缓冲与中转」的角色，主要解决以下问题：</p>
 <ul>
 <li><strong>解耦</strong>：生产者与消费者互不依赖，新增下游无需改动上游。</li>
 <li><strong>异步</strong>：耗时操作（如发短信、写日志）异步化，提升响应速度。</li>
 <li><strong>削峰填谷</strong>：高峰期请求先入队，由消费者按自身能力匀速消费，保护后端服务。</li>
 <li><strong>可靠投递</strong>：配合消息确认与持久化，保证消息不丢失。</li>
 </ul>
-<h2 id="二、核心概念">二、核心概念</h2>
-<p>RabbitMQ 基于 AMQP 协议，核心概念如下：</p>
+<h2 id="二、核心概念"><a href="#二、核心概念" class="headerlink" title="二、核心概念"></a>二、核心概念</h2><p>RabbitMQ 基于 AMQP 协议，核心概念如下：</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -358,42 +357,34 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 </tr>
 </tbody>
 </table>
+</div>
 <p>消息流转过程：<code>Producer -&gt; Exchange -&gt; (Routing Key + Binding) -&gt; Queue -&gt; Consumer</code>。</p>
-<h2 id="三、交换器类型">三、交换器类型</h2>
-<p>Exchange 决定了消息如何路由到队列，主要有四种类型：</p>
-<h3 id="1-direct（直连）">1. direct（直连）</h3>
-<p>根据 Routing Key 与 Binding Key 完全匹配来路由。</p>
+<h2 id="三、交换器类型"><a href="#三、交换器类型" class="headerlink" title="三、交换器类型"></a>三、交换器类型</h2><p>Exchange 决定了消息如何路由到队列，主要有四种类型：</p>
+<h3 id="1-direct（直连）"><a href="#1-direct（直连）" class="headerlink" title="1. direct（直连）"></a>1. direct（直连）</h3><p>根据 Routing Key 与 Binding Key 完全匹配来路由。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 将队列绑定到 direct 交换器，绑定键为 "error"</span></span><br><span class="line">channel.queueBind(queueName, EXCHANGE_NAME, <span class="string">"error"</span>);</span><br><span class="line"><span class="comment">// 只有 routing key 为 "error" 的消息才会进入该队列</span></span><br><span class="line">channel.basicPublish(EXCHANGE_NAME, <span class="string">"error"</span>, <span class="keyword">null</span>, message.getBytes());</span><br></pre></td></tr></table></figure>
-<h3 id="2-fanout（广播）">2. fanout（广播）</h3>
-<p>忽略 Routing Key，将消息广播到所有绑定的队列，适合群发通知、日志广播等场景。</p>
-<h3 id="3-topic（主题）">3. topic（主题）</h3>
-<p>Routing Key 与 Binding Key 按「.」分隔的单词进行模式匹配，支持通配符：</p>
+<h3 id="2-fanout（广播）"><a href="#2-fanout（广播）" class="headerlink" title="2. fanout（广播）"></a>2. fanout（广播）</h3><p>忽略 Routing Key，将消息广播到所有绑定的队列，适合群发通知、日志广播等场景。</p>
+<h3 id="3-topic（主题）"><a href="#3-topic（主题）" class="headerlink" title="3. topic（主题）"></a>3. topic（主题）</h3><p>Routing Key 与 Binding Key 按「.」分隔的单词进行模式匹配，支持通配符：</p>
 <ul>
 <li><code>*</code> 匹配一个单词</li>
 <li><code>#</code> 匹配零个或多个单词</li>
 </ul>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">channel.queueBind(queueName, EXCHANGE_NAME, <span class="string">"order.*"</span>);   <span class="comment">// 匹配 order.create、order.pay</span></span><br><span class="line">channel.queueBind(queueName, EXCHANGE_NAME, <span class="string">"log.#"</span>);     <span class="comment">// 匹配 log.error、log.a.b.c</span></span><br></pre></td></tr></table></figure>
-<h3 id="4-headers（头）">4. headers（头）</h3>
-<p>根据消息头（Headers）属性匹配，不使用 Routing Key，实际使用较少。</p>
-<h2 id="四、消息确认机制">四、消息确认机制</h2>
-<p>为保证消息可靠投递，RabbitMQ 提供多种确认机制：</p>
+<h3 id="4-headers（头）"><a href="#4-headers（头）" class="headerlink" title="4. headers（头）"></a>4. headers（头）</h3><p>根据消息头（Headers）属性匹配，不使用 Routing Key，实际使用较少。</p>
+<h2 id="四、消息确认机制"><a href="#四、消息确认机制" class="headerlink" title="四、消息确认机制"></a>四、消息确认机制</h2><p>为保证消息可靠投递，RabbitMQ 提供多种确认机制：</p>
 <ul>
 <li><strong>生产者确认（Publisher Confirm）</strong>：生产者发送后等待 Broker 的确认回执，确认消息已正确投递。</li>
 <li><strong>消费者确认（Consumer Ack）</strong>：消费者处理完成后手动发送 ACK，Broker 才会删除消息。</li>
 <li><strong>持久化</strong>：将 Exchange、Queue、Message 都设为持久化，防止 RabbitMQ 重启后消息丢失。</li>
 </ul>
-<h2 id="五、常见应用场景">五、常见应用场景</h2>
-<ol>
+<h2 id="五、常见应用场景"><a href="#五、常见应用场景" class="headerlink" title="五、常见应用场景"></a>五、常见应用场景</h2><ol>
 <li><strong>异步处理</strong>：用户注册后异步发送邮件、初始化积分等。</li>
 <li><strong>流量削峰</strong>：秒杀、抢购场景将请求先入队，再逐批处理。</li>
 <li><strong>日志收集</strong>：各服务将日志投递到消息队列，由统一消费者处理。</li>
 <li><strong>系统解耦</strong>：订单系统与库存、物流、通知系统通过队列解耦。</li>
 <li><strong>延迟队列</strong>：配合 TTL 与死信队列实现延迟任务。</li>
 </ol>
-<h2 id="六、使用示例（Java）">六、使用示例（Java）</h2>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 建立连接</span></span><br><span class="line">ConnectionFactory factory = <span class="keyword">new</span> ConnectionFactory();</span><br><span class="line">factory.setHost(<span class="string">"localhost"</span>);</span><br><span class="line">Connection connection = factory.newConnection();</span><br><span class="line">Channel channel = connection.createChannel();</span><br><span class="line"></span><br><span class="line"><span class="comment">// 声明队列</span></span><br><span class="line">channel.queueDeclare(<span class="string">"hello"</span>, <span class="keyword">true</span>, <span class="keyword">false</span>, <span class="keyword">false</span>, <span class="keyword">null</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 发送消息</span></span><br><span class="line">String message = <span class="string">"Hello RabbitMQ!"</span>;</span><br><span class="line">channel.basicPublish(<span class="string">""</span>, <span class="string">"hello"</span>, <span class="keyword">null</span>, message.getBytes());</span><br><span class="line"></span><br><span class="line"><span class="comment">// 消费消息</span></span><br><span class="line">channel.basicConsume(<span class="string">"hello"</span>, <span class="keyword">true</span>, (consumerTag, delivery) -&gt; &#123;</span><br><span class="line">    String body = <span class="keyword">new</span> String(delivery.getBody());</span><br><span class="line">    System.out.println(<span class="string">"收到："</span> + body);</span><br><span class="line">&#125;, consumerTag -&gt; &#123;&#125;);</span><br></pre></td></tr></table></figure>
-<h2 id="总结">总结</h2>
-<p>RabbitMQ 通过 Exchange、Queue、Binding 的灵活组合，能够支撑多样化的消息路由需求。理解其核心概念与确认机制，是保证消息系统稳定可靠的关键。实际使用中，还需结合幂等消费、死信队列、消息重试等策略，构建健壮的消息架构。</p>
+<h2 id="六、使用示例（Java）"><a href="#六、使用示例（Java）" class="headerlink" title="六、使用示例（Java）"></a>六、使用示例（Java）</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 建立连接</span></span><br><span class="line">ConnectionFactory factory = <span class="keyword">new</span> ConnectionFactory();</span><br><span class="line">factory.setHost(<span class="string">"localhost"</span>);</span><br><span class="line">Connection connection = factory.newConnection();</span><br><span class="line">Channel channel = connection.createChannel();</span><br><span class="line"></span><br><span class="line"><span class="comment">// 声明队列</span></span><br><span class="line">channel.queueDeclare(<span class="string">"hello"</span>, <span class="keyword">true</span>, <span class="keyword">false</span>, <span class="keyword">false</span>, <span class="keyword">null</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 发送消息</span></span><br><span class="line">String message = <span class="string">"Hello RabbitMQ!"</span>;</span><br><span class="line">channel.basicPublish(<span class="string">""</span>, <span class="string">"hello"</span>, <span class="keyword">null</span>, message.getBytes());</span><br><span class="line"></span><br><span class="line"><span class="comment">// 消费消息</span></span><br><span class="line">channel.basicConsume(<span class="string">"hello"</span>, <span class="keyword">true</span>, (consumerTag, delivery) -&gt; &#123;</span><br><span class="line">    String body = <span class="keyword">new</span> String(delivery.getBody());</span><br><span class="line">    System.out.println(<span class="string">"收到："</span> + body);</span><br><span class="line">&#125;, consumerTag -&gt; &#123;&#125;);</span><br></pre></td></tr></table></figure>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>RabbitMQ 通过 Exchange、Queue、Binding 的灵活组合，能够支撑多样化的消息路由需求。理解其核心概念与确认机制，是保证消息系统稳定可靠的关键。实际使用中，还需结合幂等消费、死信队列、消息重试等策略，构建健壮的消息架构。</p>
 
       
 
@@ -786,27 +777,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">CSS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">前端</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">Java</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">工具类</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">DevOps</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">CI/CD</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">CSS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">前端</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -822,15 +805,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">Java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">工具类</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">工厂系统</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">Docker</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">运维</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">工厂系统</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -850,19 +841,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Linux</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">分页</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">MES</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Maven</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -874,19 +857,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">MES</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Maven</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">MySQL</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">数据库</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Nginx</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">Oracle</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -898,6 +881,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">Oracle</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Nginx</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">消息队列</a>
               </li>
              
@@ -906,15 +897,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Redis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">RPA</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">工具</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Redis</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -934,15 +925,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">JSR303校验</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">SLF4j</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">Thymeleaf</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">JSR303校验</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -962,11 +953,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">注解</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">SpringCloud</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">SpringCloud</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">注解</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1002,11 +993,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">前端路由</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">git</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">前端路由</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1015,6 +1006,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Hexo_admin</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">监控</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">Zabbix</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1042,14 +1041,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">监控</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">Zabbix</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">企业微信</a>
               </li>
              
@@ -1058,11 +1049,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">定时任务</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">个人域</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">个人域</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">定时任务</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1082,6 +1073,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">NoSql</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">Flowable</a>
               </li>
              
@@ -1095,10 +1090,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">文档</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">NoSql</a>
               </li>
             
             <div class="clearfix"></div>

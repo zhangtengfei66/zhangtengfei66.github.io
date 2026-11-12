@@ -310,8 +310,8 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 <p>备份是运维最后的底线，但「有备份」不等于「能恢复」。本文梳理 MySQL 常见备份方式、时间点恢复流程与恢复演练要点，以及日常需要遵守的数据安全规范。</p>
 </blockquote>
 <a id="more"></a>
-<h2 id="一、先明确两个指标">一、先明确两个指标</h2>
-<p>设计备份策略前，要先和业务确认两个指标：</p>
+<h2 id="一、先明确两个指标"><a href="#一、先明确两个指标" class="headerlink" title="一、先明确两个指标"></a>一、先明确两个指标</h2><p>设计备份策略前，要先和业务确认两个指标：</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -333,9 +333,9 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 </tr>
 </tbody>
 </table>
+</div>
 <p>例如：允许丢 5 分钟数据、要求 1 小时内恢复，就需要「每日全备 + binlog 持续归档」，并提前准备好恢复脚本。</p>
-<h2 id="二、逻辑备份：mysqldump">二、逻辑备份：mysqldump</h2>
-<p>适合数据量不大、需要单表恢复或跨版本迁移的场景。</p>
+<h2 id="二、逻辑备份：mysqldump"><a href="#二、逻辑备份：mysqldump" class="headerlink" title="二、逻辑备份：mysqldump"></a>二、逻辑备份：mysqldump</h2><p>适合数据量不大、需要单表恢复或跨版本迁移的场景。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 全库备份（含存储过程、触发器）</span></span><br><span class="line">mysqldump -uroot -p \</span><br><span class="line">  --single-transaction \</span><br><span class="line">  --routines --triggers --events \</span><br><span class="line">  --<span class="built_in">set</span>-gtid-purged=OFF \</span><br><span class="line">  --databases erp oa &gt; /backup/full_$(date +%F).sql</span><br><span class="line"></span><br><span class="line"><span class="comment"># 压缩存储</span></span><br><span class="line">mysqldump -uroot -p --single-transaction --databases erp | gzip &gt; /backup/erp_$(date +%F).sql.gz</span><br></pre></td></tr></table></figure>
 <p>关键参数说明：</p>
 <ul>
@@ -346,12 +346,10 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 <p>恢复：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql -uroot -p &lt; /backup/full_2026-11-05.sql</span><br></pre></td></tr></table></figure>
 <p>注意：逻辑备份恢复是逐条执行 SQL，数据量大时速度很慢，不适合 TB 级库。</p>
-<h2 id="三、物理备份：XtraBackup">三、物理备份：XtraBackup</h2>
-<p>适合数据量大、要求快速恢复的场景，支持在线热备与增量备份。</p>
+<h2 id="三、物理备份：XtraBackup"><a href="#三、物理备份：XtraBackup" class="headerlink" title="三、物理备份：XtraBackup"></a>三、物理备份：XtraBackup</h2><p>适合数据量大、要求快速恢复的场景，支持在线热备与增量备份。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 全量备份</span></span><br><span class="line">xtrabackup --backup --target-dir=/backup/base --user=root --password=xxx</span><br><span class="line"></span><br><span class="line"><span class="comment"># 增量备份（基于上一次备份）</span></span><br><span class="line">xtrabackup --backup --target-dir=/backup/inc1 \</span><br><span class="line">  --incremental-basedir=/backup/base --user=root --password=xxx</span><br><span class="line"></span><br><span class="line"><span class="comment"># 恢复前准备</span></span><br><span class="line">xtrabackup --prepare --apply-log-only --target-dir=/backup/base</span><br><span class="line">xtrabackup --prepare --target-dir=/backup/base</span><br></pre></td></tr></table></figure>
 <p>物理备份恢复时需要停库或至少将实例下线，操作前务必确认影响范围。</p>
-<h2 id="四、binlog-与时间点恢复">四、binlog 与时间点恢复</h2>
-<p>开启 binlog 是做到「分钟级 RPO」的前提。</p>
+<h2 id="四、binlog-与时间点恢复"><a href="#四、binlog-与时间点恢复" class="headerlink" title="四、binlog 与时间点恢复"></a>四、binlog 与时间点恢复</h2><p>开启 binlog 是做到「分钟级 RPO」的前提。</p>
 <figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">[mysqld]</span></span><br><span class="line"><span class="attr">log-bin</span> = /var/lib/mysql/mysql-bin</span><br><span class="line"><span class="attr">binlog_format</span> = ROW</span><br><span class="line"><span class="attr">expire_logs_days</span> = <span class="number">7</span></span><br></pre></td></tr></table></figure>
 <p>典型误删数据恢复流程：</p>
 <ol>
@@ -362,14 +360,14 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 </ol>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mysqlbinlog --start-datetime=<span class="string">"2026-11-05 09:00:00"</span> \</span><br><span class="line">            --stop-datetime=<span class="string">"2026-11-05 09:40:00"</span> \</span><br><span class="line">            /var/lib/mysql/mysql-bin.000123 | mysql -uroot -p</span><br></pre></td></tr></table></figure>
 <p>关键点：<strong>恢复要恢复到临时实例验证</strong>，不要直接在生产库上试。</p>
-<h2 id="五、备份也要做恢复演练">五、备份也要做恢复演练</h2>
-<p>只备份不演练，等于没有备份。建议定期做三件事：</p>
+<h2 id="五、备份也要做恢复演练"><a href="#五、备份也要做恢复演练" class="headerlink" title="五、备份也要做恢复演练"></a>五、备份也要做恢复演练</h2><p>只备份不演练，等于没有备份。建议定期做三件事：</p>
 <ol>
 <li><strong>抽样恢复</strong>：随机挑一张表恢复到测试库，验证备份文件可用。</li>
 <li><strong>记录耗时</strong>：真实测量恢复时间，判断是否满足 RTO。</li>
 <li><strong>检查完整性</strong>：对比备份前后表行数、关键业务数据总额。</li>
 </ol>
 <p>常见的「备份失效」原因：</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -396,8 +394,8 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 </tr>
 </tbody>
 </table>
-<h2 id="六、数据安全规范">六、数据安全规范</h2>
-<ol>
+</div>
+<h2 id="六、数据安全规范"><a href="#六、数据安全规范" class="headerlink" title="六、数据安全规范"></a>六、数据安全规范</h2><ol>
 <li><strong>最小权限</strong>：应用账号只授予业务所需的库表权限，禁止使用 root 连接应用。</li>
 <li><strong>账号分离</strong>：备份账号、运维账号、应用账号分开，便于审计。</li>
 <li><strong>备份加密与异地</strong>：备份文件加密存储，至少保留一份异地或对象存储副本。</li>
@@ -405,15 +403,13 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 <li><strong>变更留痕</strong>：记录变更内容、执行人、回滚方案。</li>
 </ol>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 批量更新前先确认影响行数</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">COUNT</span>(*) <span class="keyword">FROM</span> erp_expense <span class="keyword">WHERE</span> <span class="keyword">status</span> = <span class="string">'DRAFT'</span>;</span><br><span class="line"><span class="comment">-- 建议先用 SELECT 验证条件，再执行 UPDATE</span></span><br></pre></td></tr></table></figure>
-<h2 id="七、日常运维清单">七、日常运维清单</h2>
-<ul>
+<h2 id="七、日常运维清单"><a href="#七、日常运维清单" class="headerlink" title="七、日常运维清单"></a>七、日常运维清单</h2><ul>
 <li>每日检查备份任务执行结果与文件大小是否正常。</li>
 <li>每周抽查一次备份文件可恢复性。</li>
 <li>每月核对磁盘容量与 binlog 保留策略。</li>
 <li>每次大版本迭代前做一次完整备份并留存。</li>
 </ul>
-<h2 id="总结">总结</h2>
-<p>备份的核心不是「备份成功」，而是「需要时能恢复、恢复得快、恢复得对」。把 RPO/RTO 想清楚，选对备份方式，坚持做恢复演练，再配合最小权限与变更规范，数据安全才算真正落地。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>备份的核心不是「备份成功」，而是「需要时能恢复、恢复得快、恢复得对」。把 RPO/RTO 想清楚，选对备份方式，坚持做恢复演练，再配合最小权限与变更规范，数据安全才算真正落地。</p>
 
       
 
@@ -801,27 +797,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">CSS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">前端</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">Java</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">工具类</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">DevOps</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">CI/CD</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">CSS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">前端</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -837,15 +825,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">Java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">工具类</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">工厂系统</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">Docker</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">运维</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">工厂系统</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -865,19 +861,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Linux</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">分页</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">MES</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Maven</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -889,19 +877,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">MES</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Maven</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">MySQL</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">数据库</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Nginx</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">Oracle</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -913,6 +901,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">Oracle</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Nginx</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">消息队列</a>
               </li>
              
@@ -921,15 +917,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Redis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">RPA</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">工具</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Redis</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -949,15 +945,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">JSR303校验</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">SLF4j</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">Thymeleaf</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">JSR303校验</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -977,11 +973,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">注解</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">SpringCloud</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">SpringCloud</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">注解</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1017,11 +1013,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">前端路由</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">git</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">前端路由</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1030,6 +1026,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Hexo_admin</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">监控</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">Zabbix</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1057,14 +1061,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">监控</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">Zabbix</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">企业微信</a>
               </li>
              
@@ -1073,11 +1069,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">定时任务</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">个人域</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">个人域</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">定时任务</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1097,6 +1093,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">NoSql</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">Flowable</a>
               </li>
              
@@ -1110,10 +1110,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">文档</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">NoSql</a>
               </li>
             
             <div class="clearfix"></div>

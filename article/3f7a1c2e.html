@@ -310,44 +310,31 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 <p>Java 8 引入的 Stream API 让我们可以用声明式的方式处理集合数据，代码更简洁、可读性更强。本文将系统梳理 Stream 的创建、中间操作、终端操作以及常见使用陷阱。</p>
 </blockquote>
 <a id="more"></a>
-<h2 id="一、什么是-Stream">一、什么是 Stream</h2>
-<p>Stream（流）不是集合，而是一个支持串行/并行聚合操作的元素序列，它不存储数据，只对数据源（集合、数组、I/O 等）进行计算。它的特点是：</p>
+<h2 id="一、什么是-Stream"><a href="#一、什么是-Stream" class="headerlink" title="一、什么是 Stream"></a>一、什么是 Stream</h2><p>Stream（流）不是集合，而是一个支持串行/并行聚合操作的元素序列，它不存储数据，只对数据源（集合、数组、I/O 等）进行计算。它的特点是：</p>
 <ul>
 <li><strong>惰性求值</strong>：中间操作不会立即执行，只有遇到终端操作才会触发。</li>
 <li><strong>不可复用</strong>：一个流只能被消费一次，消费后即关闭。</li>
 <li><strong>不修改数据源</strong>：流的操作会产生新的结果，不会改变原始集合。</li>
 </ul>
-<h2 id="二、创建-Stream">二、创建 Stream</h2>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1. 从集合创建</span></span><br><span class="line">List&lt;String&gt; list = Arrays.asList(<span class="string">"a"</span>, <span class="string">"b"</span>, <span class="string">"c"</span>);</span><br><span class="line">Stream&lt;String&gt; s1 = list.stream();</span><br><span class="line">Stream&lt;String&gt; s2 = list.parallelStream(); <span class="comment">// 并行流</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 2. 从数组创建</span></span><br><span class="line">Stream&lt;Integer&gt; s3 = Arrays.stream(<span class="keyword">new</span> Integer[]&#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>&#125;);</span><br><span class="line">Stream&lt;Integer&gt; s4 = Stream.of(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 3. 无限流</span></span><br><span class="line">Stream&lt;Integer&gt; s5 = Stream.iterate(<span class="number">0</span>, n -&gt; n + <span class="number">2</span>).limit(<span class="number">10</span>);</span><br><span class="line">Stream&lt;Double&gt; s6 = Stream.generate(Math::random).limit(<span class="number">10</span>);</span><br></pre></td></tr></table></figure>
-<h2 id="三、中间操作">三、中间操作</h2>
-<p>中间操作返回一个新的 Stream，可链式调用。</p>
-<h3 id="filter：过滤">filter：过滤</h3>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">list.stream().filter(x -&gt; x.length() &gt; <span class="number">2</span>).collect(Collectors.toList());</span><br></pre></td></tr></table></figure>
-<h3 id="map-flatMap：映射">map / flatMap：映射</h3>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// map：一对一映射</span></span><br><span class="line">List&lt;Integer&gt; lengths = list.stream().map(String::length).collect(Collectors.toList());</span><br><span class="line"></span><br><span class="line"><span class="comment">// flatMap：一对多映射并扁平化</span></span><br><span class="line">List&lt;String&gt; words = Arrays.asList(<span class="string">"Hello World"</span>, <span class="string">"Java Stream"</span>);</span><br><span class="line">List&lt;String&gt; flat = words.stream()</span><br><span class="line">    .flatMap(w -&gt; Arrays.stream(w.split(<span class="string">" "</span>)))</span><br><span class="line">    .collect(Collectors.toList()); <span class="comment">// [Hello, World, Java, Stream]</span></span><br></pre></td></tr></table></figure>
-<h3 id="distinct-sorted-limit-skip">distinct / sorted / limit / skip</h3>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">stream.distinct();            <span class="comment">// 去重</span></span><br><span class="line">stream.sorted();              <span class="comment">// 自然排序</span></span><br><span class="line">stream.sorted(Comparator.comparing(User::getAge)); <span class="comment">// 自定义排序</span></span><br><span class="line">stream.limit(<span class="number">5</span>);              <span class="comment">// 截取前 n 个</span></span><br><span class="line">stream.skip(<span class="number">2</span>);               <span class="comment">// 跳过前 n 个</span></span><br></pre></td></tr></table></figure>
-<h2 id="四、终端操作">四、终端操作</h2>
-<p>终端操作触发流执行并产出结果。</p>
-<h3 id="collect：收集">collect：收集</h3>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">List&lt;String&gt; l = stream.collect(Collectors.toList());</span><br><span class="line">Set&lt;String&gt; set = stream.collect(Collectors.toSet());</span><br><span class="line">Map&lt;String, User&gt; map = stream.collect(Collectors.toMap(User::getName, u -&gt; u));</span><br><span class="line"><span class="comment">// 分组</span></span><br><span class="line">Map&lt;String, List&lt;User&gt;&gt; group = users.stream().collect(Collectors.groupingBy(User::getDept));</span><br><span class="line"><span class="comment">// 拼接</span></span><br><span class="line">String joined = list.stream().collect(Collectors.joining(<span class="string">", "</span>));</span><br></pre></td></tr></table></figure>
-<h3 id="reduce：归约">reduce：归约</h3>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Optional&lt;Integer&gt; sum = Stream.of(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>).reduce((a, b) -&gt; a + b); <span class="comment">// 10</span></span><br><span class="line">Integer sum2 = Stream.of(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>).reduce(<span class="number">0</span>, Integer::sum);          <span class="comment">// 10</span></span><br></pre></td></tr></table></figure>
-<h3 id="其他终端操作">其他终端操作</h3>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">stream.forEach(System.out::println); <span class="comment">// 遍历</span></span><br><span class="line">stream.count();                       <span class="comment">// 计数</span></span><br><span class="line">stream.anyMatch(x -&gt; x &gt; <span class="number">10</span>);         <span class="comment">// 任一匹配</span></span><br><span class="line">stream.allMatch(x -&gt; x &gt; <span class="number">0</span>);          <span class="comment">// 全部匹配</span></span><br><span class="line">stream.noneMatch(x -&gt; x &lt; <span class="number">0</span>);         <span class="comment">// 全部不匹配</span></span><br><span class="line">stream.findFirst();                   <span class="comment">// 第一个元素</span></span><br><span class="line">stream.findAny();                     <span class="comment">// 任意元素（并行流更高效）</span></span><br></pre></td></tr></table></figure>
-<h2 id="五、并行流">五、并行流</h2>
-<p>并行流底层使用 ForkJoinPool 并行处理，适合数据量大、无状态、无共享可变数据的场景。</p>
+<h2 id="二、创建-Stream"><a href="#二、创建-Stream" class="headerlink" title="二、创建 Stream"></a>二、创建 Stream</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1. 从集合创建</span></span><br><span class="line">List&lt;String&gt; list = Arrays.asList(<span class="string">"a"</span>, <span class="string">"b"</span>, <span class="string">"c"</span>);</span><br><span class="line">Stream&lt;String&gt; s1 = list.stream();</span><br><span class="line">Stream&lt;String&gt; s2 = list.parallelStream(); <span class="comment">// 并行流</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 2. 从数组创建</span></span><br><span class="line">Stream&lt;Integer&gt; s3 = Arrays.stream(<span class="keyword">new</span> Integer[]&#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>&#125;);</span><br><span class="line">Stream&lt;Integer&gt; s4 = Stream.of(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 3. 无限流</span></span><br><span class="line">Stream&lt;Integer&gt; s5 = Stream.iterate(<span class="number">0</span>, n -&gt; n + <span class="number">2</span>).limit(<span class="number">10</span>);</span><br><span class="line">Stream&lt;Double&gt; s6 = Stream.generate(Math::random).limit(<span class="number">10</span>);</span><br></pre></td></tr></table></figure>
+<h2 id="三、中间操作"><a href="#三、中间操作" class="headerlink" title="三、中间操作"></a>三、中间操作</h2><p>中间操作返回一个新的 Stream，可链式调用。</p>
+<h3 id="filter：过滤"><a href="#filter：过滤" class="headerlink" title="filter：过滤"></a>filter：过滤</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">list.stream().filter(x -&gt; x.length() &gt; <span class="number">2</span>).collect(Collectors.toList());</span><br></pre></td></tr></table></figure>
+<h3 id="map-flatMap：映射"><a href="#map-flatMap：映射" class="headerlink" title="map / flatMap：映射"></a>map / flatMap：映射</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// map：一对一映射</span></span><br><span class="line">List&lt;Integer&gt; lengths = list.stream().map(String::length).collect(Collectors.toList());</span><br><span class="line"></span><br><span class="line"><span class="comment">// flatMap：一对多映射并扁平化</span></span><br><span class="line">List&lt;String&gt; words = Arrays.asList(<span class="string">"Hello World"</span>, <span class="string">"Java Stream"</span>);</span><br><span class="line">List&lt;String&gt; flat = words.stream()</span><br><span class="line">    .flatMap(w -&gt; Arrays.stream(w.split(<span class="string">" "</span>)))</span><br><span class="line">    .collect(Collectors.toList()); <span class="comment">// [Hello, World, Java, Stream]</span></span><br></pre></td></tr></table></figure>
+<h3 id="distinct-sorted-limit-skip"><a href="#distinct-sorted-limit-skip" class="headerlink" title="distinct / sorted / limit / skip"></a>distinct / sorted / limit / skip</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">stream.distinct();            <span class="comment">// 去重</span></span><br><span class="line">stream.sorted();              <span class="comment">// 自然排序</span></span><br><span class="line">stream.sorted(Comparator.comparing(User::getAge)); <span class="comment">// 自定义排序</span></span><br><span class="line">stream.limit(<span class="number">5</span>);              <span class="comment">// 截取前 n 个</span></span><br><span class="line">stream.skip(<span class="number">2</span>);               <span class="comment">// 跳过前 n 个</span></span><br></pre></td></tr></table></figure>
+<h2 id="四、终端操作"><a href="#四、终端操作" class="headerlink" title="四、终端操作"></a>四、终端操作</h2><p>终端操作触发流执行并产出结果。</p>
+<h3 id="collect：收集"><a href="#collect：收集" class="headerlink" title="collect：收集"></a>collect：收集</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">List&lt;String&gt; l = stream.collect(Collectors.toList());</span><br><span class="line">Set&lt;String&gt; set = stream.collect(Collectors.toSet());</span><br><span class="line">Map&lt;String, User&gt; map = stream.collect(Collectors.toMap(User::getName, u -&gt; u));</span><br><span class="line"><span class="comment">// 分组</span></span><br><span class="line">Map&lt;String, List&lt;User&gt;&gt; group = users.stream().collect(Collectors.groupingBy(User::getDept));</span><br><span class="line"><span class="comment">// 拼接</span></span><br><span class="line">String joined = list.stream().collect(Collectors.joining(<span class="string">", "</span>));</span><br></pre></td></tr></table></figure>
+<h3 id="reduce：归约"><a href="#reduce：归约" class="headerlink" title="reduce：归约"></a>reduce：归约</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Optional&lt;Integer&gt; sum = Stream.of(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>).reduce((a, b) -&gt; a + b); <span class="comment">// 10</span></span><br><span class="line">Integer sum2 = Stream.of(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>).reduce(<span class="number">0</span>, Integer::sum);          <span class="comment">// 10</span></span><br></pre></td></tr></table></figure>
+<h3 id="其他终端操作"><a href="#其他终端操作" class="headerlink" title="其他终端操作"></a>其他终端操作</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">stream.forEach(System.out::println); <span class="comment">// 遍历</span></span><br><span class="line">stream.count();                       <span class="comment">// 计数</span></span><br><span class="line">stream.anyMatch(x -&gt; x &gt; <span class="number">10</span>);         <span class="comment">// 任一匹配</span></span><br><span class="line">stream.allMatch(x -&gt; x &gt; <span class="number">0</span>);          <span class="comment">// 全部匹配</span></span><br><span class="line">stream.noneMatch(x -&gt; x &lt; <span class="number">0</span>);         <span class="comment">// 全部不匹配</span></span><br><span class="line">stream.findFirst();                   <span class="comment">// 第一个元素</span></span><br><span class="line">stream.findAny();                     <span class="comment">// 任意元素（并行流更高效）</span></span><br></pre></td></tr></table></figure>
+<h2 id="五、并行流"><a href="#五、并行流" class="headerlink" title="五、并行流"></a>五、并行流</h2><p>并行流底层使用 ForkJoinPool 并行处理，适合数据量大、无状态、无共享可变数据的场景。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">long</span> count = list.parallelStream().filter(x -&gt; x.length() &gt; <span class="number">3</span>).count();</span><br></pre></td></tr></table></figure>
 <p>注意：并行流并非总是更快，对于小数据量或包含阻塞操作时，串行流可能更合适。</p>
-<h2 id="六、常见陷阱">六、常见陷阱</h2>
-<ol>
+<h2 id="六、常见陷阱"><a href="#六、常见陷阱" class="headerlink" title="六、常见陷阱"></a>六、常见陷阱</h2><ol>
 <li><strong>流不可复用</strong>：同一个 Stream 实例只能消费一次，再次消费会抛出 <code>IllegalStateException</code>。</li>
 <li><strong>惰性求值</strong>：中间操作在终端操作前不会执行，若忘记调用终端操作，整个链不会生效。</li>
 <li><strong>副作用</strong>：尽量在 <code>forEach</code> 等操作中避免修改外部状态，保持操作的无状态性，否则在并行流下会出现不可预期的结果。</li>
 <li><strong>null 处理</strong>：<code>Stream.of(null)</code> 会抛出 NPE，应使用 <code>Stream.ofNullable(obj)</code>。</li>
 </ol>
-<h2 id="总结">总结</h2>
-<p>Stream API 通过「数据源 + 中间操作 + 终端操作」三段式结构，把复杂的数据处理逻辑转化为清晰的方法链，显著提升代码的可读性和维护性。掌握其惰性求值与不可复用的特性，能帮助我们写出更健壮的代码。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>Stream API 通过「数据源 + 中间操作 + 终端操作」三段式结构，把复杂的数据处理逻辑转化为清晰的方法链，显著提升代码的可读性和维护性。掌握其惰性求值与不可复用的特性，能帮助我们写出更健壮的代码。</p>
 
       
 
@@ -736,27 +723,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">CSS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">前端</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">Java</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">工具类</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">DevOps</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">CI/CD</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">CSS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">前端</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -772,15 +751,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">Java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">工具类</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">工厂系统</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">Docker</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">运维</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">工厂系统</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -800,19 +787,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Linux</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">分页</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">MES</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Maven</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -824,19 +803,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">MES</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Maven</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">MySQL</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">数据库</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Nginx</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">Oracle</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -848,6 +827,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">Oracle</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Nginx</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">消息队列</a>
               </li>
              
@@ -856,15 +843,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Redis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">RPA</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">工具</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Redis</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -884,15 +871,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">JSR303校验</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">SLF4j</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">Thymeleaf</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">JSR303校验</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -912,11 +899,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">注解</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">SpringCloud</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">SpringCloud</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">注解</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -952,11 +939,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">前端路由</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">git</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">前端路由</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -965,6 +952,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Hexo_admin</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">监控</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">Zabbix</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -992,14 +987,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">监控</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">Zabbix</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">企业微信</a>
               </li>
              
@@ -1008,11 +995,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">定时任务</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">个人域</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">个人域</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">定时任务</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1032,6 +1019,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">NoSql</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">Flowable</a>
               </li>
              
@@ -1045,10 +1036,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">文档</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">NoSql</a>
               </li>
             
             <div class="clearfix"></div>

@@ -310,11 +310,10 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 <p>在制造业数字化转型中，MES（Manufacturing Execution System，制造执行系统）是连接上层计划与车间现场的关键系统。本文将介绍 MES 的定义、在 ISA-95 中的定位、核心功能模块以及实施要点。</p>
 </blockquote>
 <a id="more"></a>
-<h2 id="一、什么是-MES">一、什么是 MES</h2>
-<p>MES 是面向车间执行层的生产信息化管理系统，负责对从订单下达到产品完成的整个生产过程进行优化管理与实时监控。它向上接收 ERP 下达的生产计划，向下连接设备与自动化系统，实现对「人、机、料、法、环、测」的精细化管理。</p>
+<h2 id="一、什么是-MES"><a href="#一、什么是-MES" class="headerlink" title="一、什么是 MES"></a>一、什么是 MES</h2><p>MES 是面向车间执行层的生产信息化管理系统，负责对从订单下达到产品完成的整个生产过程进行优化管理与实时监控。它向上接收 ERP 下达的生产计划，向下连接设备与自动化系统，实现对「人、机、料、法、环、测」的精细化管理。</p>
 <p>简单理解：<strong>ERP 管「生产什么、生产多少」，MES 管「怎么生产、生产得怎么样」。</strong></p>
-<h2 id="二、ISA-95-模型与-MES-定位">二、ISA-95 模型与 MES 定位</h2>
-<p>ISA-95 是国际通用的企业系统集成标准，将制造企业划分为多个层次：</p>
+<h2 id="二、ISA-95-模型与-MES-定位"><a href="#二、ISA-95-模型与-MES-定位" class="headerlink" title="二、ISA-95 模型与 MES 定位"></a>二、ISA-95 模型与 MES 定位</h2><p>ISA-95 是国际通用的企业系统集成标准，将制造企业划分为多个层次：</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -351,60 +350,51 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 </tr>
 </tbody>
 </table>
+</div>
 <p>MES 处于 Level 3，是承接上层 ERP 计划与下层设备控制的核心枢纽，解决了计划与执行之间的信息断层问题。</p>
-<h2 id="三、MES-的核心功能模块">三、MES 的核心功能模块</h2>
-<p>依据 MESA 定义的 11 大功能，常用的核心模块包括：</p>
-<h3 id="1-生产计划与排程">1. 生产计划与排程</h3>
-<ul>
+<h2 id="三、MES-的核心功能模块"><a href="#三、MES-的核心功能模块" class="headerlink" title="三、MES 的核心功能模块"></a>三、MES 的核心功能模块</h2><p>依据 MESA 定义的 11 大功能，常用的核心模块包括：</p>
+<h3 id="1-生产计划与排程"><a href="#1-生产计划与排程" class="headerlink" title="1. 生产计划与排程"></a>1. 生产计划与排程</h3><ul>
 <li>接收 ERP 生产订单（工单），将其拆解为可执行的车间任务。</li>
 <li>结合设备、人员、物料等约束进行有限产能排程。</li>
 <li>根据现场实际情况动态调整排产。</li>
 </ul>
-<h3 id="2-生产过程管理">2. 生产过程管理</h3>
-<ul>
+<h3 id="2-生产过程管理"><a href="#2-生产过程管理" class="headerlink" title="2. 生产过程管理"></a>2. 生产过程管理</h3><ul>
 <li>管理工单从开工、工序流转到完工的全过程。</li>
 <li>记录各工序的开始/结束时间、操作人员、设备与工艺参数。</li>
 <li>支持返工、报废、暂停等异常处理。</li>
 </ul>
-<h3 id="3-数据采集与监控">3. 数据采集与监控</h3>
-<ul>
+<h3 id="3-数据采集与监控"><a href="#3-数据采集与监控" class="headerlink" title="3. 数据采集与监控"></a>3. 数据采集与监控</h3><ul>
 <li>通过与设备 PLC、扫码枪、传感器等对接，自动采集生产数据。</li>
 <li>实时展示设备状态、产量、节拍、OEE 等关键指标。</li>
 <li>减少人工录入，保证数据真实、及时。</li>
 </ul>
-<h3 id="4-质量管理">4. 质量管理</h3>
-<ul>
+<h3 id="4-质量管理"><a href="#4-质量管理" class="headerlink" title="4. 质量管理"></a>4. 质量管理</h3><ul>
 <li>管理检验标准、检验计划与检验记录。</li>
 <li>支持首检、巡检、完工检等检验方式。</li>
 <li>记录不良品与缺陷，支撑质量追溯与统计过程控制（SPC）。</li>
 </ul>
-<h3 id="5-设备管理">5. 设备管理</h3>
-<ul>
+<h3 id="5-设备管理"><a href="#5-设备管理" class="headerlink" title="5. 设备管理"></a>5. 设备管理</h3><ul>
 <li>管理设备台账、点检、保养与维修。</li>
 <li>监控设备运行状态与利用率。</li>
 <li>计算设备综合效率（OEE），发现瓶颈。</li>
 </ul>
-<h3 id="6-物料与库存管理">6. 物料与库存管理</h3>
-<ul>
+<h3 id="6-物料与库存管理"><a href="#6-物料与库存管理" class="headerlink" title="6. 物料与库存管理"></a>6. 物料与库存管理</h3><ul>
 <li>管理车间在制品（WIP）与线边库存。</li>
 <li>支持物料上料校验，防止错料、漏料。</li>
 <li>记录批次与序列号，实现正向与反向追溯。</li>
 </ul>
-<h3 id="7-产品追溯">7. 产品追溯</h3>
-<ul>
+<h3 id="7-产品追溯"><a href="#7-产品追溯" class="headerlink" title="7. 产品追溯"></a>7. 产品追溯</h3><ul>
 <li>通过条码/RFID 关联批次与序列号，记录每道工序的投入与产出。</li>
 <li>支持「从成品追溯到原料」的反向追溯与「从原料追溯到成品」的正向追溯。</li>
 </ul>
-<h2 id="四、MES-与工厂其他系统的关系">四、MES 与工厂其他系统的关系</h2>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">     ERP（计划/订单/财务）</span><br><span class="line">           ↑↓</span><br><span class="line">     MES（执行/采集/追溯）</span><br><span class="line">           ↑↓</span><br><span class="line">SCADA / PLC / 设备（控制层）</span><br></pre></td></tr></table></figure>
+<h2 id="四、MES-与工厂其他系统的关系"><a href="#四、MES-与工厂其他系统的关系" class="headerlink" title="四、MES 与工厂其他系统的关系"></a>四、MES 与工厂其他系统的关系</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">     ERP（计划/订单/财务）</span><br><span class="line">           ↑↓</span><br><span class="line">     MES（执行/采集/追溯）</span><br><span class="line">           ↑↓</span><br><span class="line">SCADA / PLC / 设备（控制层）</span><br></pre></td></tr></table></figure>
 <ul>
 <li><strong>MES 与 ERP</strong>：ERP 下达工单与 BOM，MES 回传完工数量、物料消耗、质量数据。</li>
 <li><strong>MES 与 WMS</strong>：MES 触发物料配送需求，WMS 负责仓储作业并反馈出入库结果。</li>
 <li><strong>MES 与 SCADA/PLC</strong>：MES 下发工艺参数，SCADA/PLC 回传实时生产数据。</li>
 <li><strong>MES 与 QMS</strong>：MES 采集质量数据，QMS 进行质量分析与改善。</li>
 </ul>
-<h2 id="五、实施要点与选型建议">五、实施要点与选型建议</h2>
-<ol>
+<h2 id="五、实施要点与选型建议"><a href="#五、实施要点与选型建议" class="headerlink" title="五、实施要点与选型建议"></a>五、实施要点与选型建议</h2><ol>
 <li><strong>明确需求与边界</strong>：先梳理业务流程与痛点，避免功能大而全却用不起来。</li>
 <li><strong>数据采集是基础</strong>：设备联网与自动采集能力直接决定 MES 的应用效果。</li>
 <li><strong>与现有系统集成</strong>：提前规划与 ERP、WMS 等的接口与主数据规范。</li>
@@ -412,8 +402,7 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 <li><strong>重视现场人员培训</strong>：MES 的成功离不开一线操作人员的配合与使用习惯。</li>
 </ol>
 <p>选型时可从行业匹配度、系统开放性、实施团队能力、扩展性与总拥有成本等方面综合评估。</p>
-<h2 id="总结">总结</h2>
-<p>MES 是制造企业实现数字化、智能化的核心系统，它打通了计划层与控制层之间的信息壁垒。理解 MES 的定位与核心功能，是进入智能制造领域、参与工厂信息化建设的重要基础。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>MES 是制造企业实现数字化、智能化的核心系统，它打通了计划层与控制层之间的信息壁垒。理解 MES 的定位与核心功能，是进入智能制造领域、参与工厂信息化建设的重要基础。</p>
 
       
 
@@ -806,27 +795,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">CSS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">前端</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">Java</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">工具类</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">DevOps</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">CI/CD</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">CSS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">前端</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -842,15 +823,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">Java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">工具类</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">工厂系统</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">Docker</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">运维</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">工厂系统</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -870,19 +859,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Linux</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">分页</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">MES</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Maven</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -894,19 +875,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">MES</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Maven</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">MySQL</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">数据库</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Nginx</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">Oracle</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -918,6 +899,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">Oracle</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Nginx</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">消息队列</a>
               </li>
              
@@ -926,15 +915,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Redis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">RPA</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">工具</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Redis</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -954,15 +943,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">JSR303校验</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">SLF4j</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">Thymeleaf</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">JSR303校验</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -982,11 +971,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">注解</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">SpringCloud</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">SpringCloud</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">注解</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1022,11 +1011,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">前端路由</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">git</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">前端路由</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1035,6 +1024,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Hexo_admin</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">监控</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">Zabbix</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1062,14 +1059,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">监控</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">Zabbix</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">企业微信</a>
               </li>
              
@@ -1078,11 +1067,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">定时任务</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">个人域</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">个人域</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">定时任务</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1102,6 +1091,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">NoSql</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">Flowable</a>
               </li>
              
@@ -1115,10 +1108,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">文档</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">NoSql</a>
               </li>
             
             <div class="clearfix"></div>
