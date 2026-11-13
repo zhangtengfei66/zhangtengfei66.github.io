@@ -267,7 +267,7 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
         <!--显示阅读次数-->
         
           <br/>
-          <a class="cloud-tie-join-count" href="javascript:void(0);" target="_blank" rel="noopener" style="color:gray;font-size:14px;">
+          <a class="cloud-tie-join-count" href="javascript:void(0);" style="color:gray;font-size:14px;">
           <span class="icon-sort"></span>
           <span style="color:#ef7522;font-size:14px;">
                     <i class="icon-smile icon"></i> 阅读数: <span id="busuanzi_value_page_pv"></span>次 &nbsp;&nbsp;
@@ -292,81 +292,57 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
       
         <p>hexo+yilia添加相册视屏功能</p>
 <a id="more"></a>
-<p>效果图：<br>
-<img src="/article/f72ba5d8/picture_1.jpg" alt="mV0P56.jpg"></p>
-<h2 id="一、增加相册功能">一、增加相册功能</h2>
-<h3 id="1-原理">1. 原理</h3>
-<p>两个github仓库，一个存放图片，一个存放hexo博客（当然你一个仓库两个分支也可以，我就是这样）。<br>
-<img src="/article/f72ba5d8/picture_3.jpg" alt="mV0Yrj.jpg"></p>
-<h3 id="2-修改代码">2.修改代码</h3>
-<p>源代码到github去下：<a href="https://github.com/lawlite19/Blog-Back-Up" target="_blank" rel="noopener">https://github.com/lawlite19/Blog-Back-Up</a></p>
-<h4 id="2-1-新建博客的photos页面">2.1 新建博客的photos页面</h4>
-<ul>
-<li>
-<p>在<strong>博客</strong>的<code>source</code>文件夹下建立一个<code>photos</code>文件夹</p>
+<p>效果图：<br><img src="/article/f72ba5d8/picture_1.jpg" alt="mV0P56.jpg"></p>
+<h2 id="一、增加相册功能"><a href="#一、增加相册功能" class="headerlink" title="一、增加相册功能"></a>一、增加相册功能</h2><h3 id="1-原理"><a href="#1-原理" class="headerlink" title="1. 原理"></a>1. 原理</h3><p>两个github仓库，一个存放图片，一个存放hexo博客（当然你一个仓库两个分支也可以，我就是这样）。<br><img src="/article/f72ba5d8/picture_3.jpg" alt="mV0Yrj.jpg"></p>
+<h3 id="2-修改代码"><a href="#2-修改代码" class="headerlink" title="2.修改代码"></a>2.修改代码</h3><p>源代码到github去下：<a href="https://github.com/lawlite19/Blog-Back-Up">https://github.com/lawlite19/Blog-Back-Up</a></p>
+<h4 id="2-1-新建博客的photos页面"><a href="#2-1-新建博客的photos页面" class="headerlink" title="2.1 新建博客的photos页面"></a>2.1 新建博客的photos页面</h4><ul>
+<li><p>在<strong>博客</strong>的<code>source</code>文件夹下建立一个<code>photos</code>文件夹</p>
 </li>
-<li>
-<p>将样式文件放到<code>photos</code>文件夹下，样式文件我都放到了<code>github</code>上：<a href="https://github.com/lawlite19/Blog-Back-Up/tree/master/blog_photos_copy" target="_blank" rel="noopener">https://github.com/lawlite19/Blog-Back-Up/tree/master/blog_photos_copy</a></p>
+<li><p>将样式文件放到<code>photos</code>文件夹下，样式文件我都放到了<code>github</code>上：<a href="https://github.com/lawlite19/Blog-Back-Up/tree/master/blog_photos_copy">https://github.com/lawlite19/Blog-Back-Up/tree/master/blog_photos_copy</a></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">├─blog_photos_copy</span><br><span class="line">│      data.json</span><br><span class="line">│      index.ejs</span><br><span class="line">│      ins.css</span><br><span class="line">│      ins.js</span><br><span class="line">│      lazyload.min.js</span><br></pre></td></tr></table></figure>
 </li>
-<li>
-<p>修改<code>ins.js</code>文件，主要是里面的<code>render</code>函数</p>
+<li><p>修改<code>ins.js</code>文件，主要是里面的<code>render</code>函数</p>
 </li>
-<li>
-<p>其中的<code>url</code>对应到你的<code>github</code>放图片的地址</p>
+<li><p>其中的<code>url</code>对应到你的<code>github</code>放图片的地址</p>
 </li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var minSrc = &apos;https://raw.githubusercontent.com/lawlite19/blog-back-up/master/min_photos/&apos; + data.link[i];</span><br><span class="line">var src = &apos;https://raw.githubusercontent.com/lawlite19/blog-back-up/master/photos/&apos; + data.link[i];</span><br></pre></td></tr></table></figure>
-<p>**注意：**本路径是不是你github保存路径，而是下载路径</p>
+<p><strong>注意：</strong>本路径是不是你github保存路径，而是下载路径</p>
 <blockquote>
 <p>进入你github放图片的目录下点击Download</p>
 </blockquote>
 <p><img src="/article/f72ba5d8/picture_2.png" alt></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">被红色框框住的地址</span><br></pre></td></tr></table></figure>
-<p><img src="/article/f72ba5d8/picture_4.png" alt></p>
-<h4 id="2-2-新建本地图片库">2.2 新建本地图片库</h4>
-<p>在photos中新建一个文件夹存放图片，我的是<code>photos-source</code>，再新建目录<code>photos</code>，<code>min_photos</code>，同时把<code>ImageProcess.py</code>,<code>ImageProcess.pyc</code>， <code>tool.py</code> 这三个文件放到该目录下。</p>
+<p> <img src="/article/f72ba5d8/picture_4.png" alt></p>
+<h4 id="2-2-新建本地图片库"><a href="#2-2-新建本地图片库" class="headerlink" title="2.2 新建本地图片库"></a>2.2 新建本地图片库</h4><p>在photos中新建一个文件夹存放图片，我的是<code>photos-source</code>，再新建目录<code>photos</code>，<code>min_photos</code>，同时把<code>ImageProcess.py</code>,<code>ImageProcess.pyc</code>， <code>tool.py</code> 这三个文件放到该目录下。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">H:</span><br><span class="line">.photos</span><br><span class="line">│	data.json</span><br><span class="line">│   index.ejs</span><br><span class="line">│   ins.css</span><br><span class="line">│   ins.js</span><br><span class="line">│   lazyload.min.js</span><br><span class="line">│</span><br><span class="line">|---photos-source</span><br><span class="line">│		ImageProcess.py</span><br><span class="line">│		ImageProcess.pyc</span><br><span class="line">│		tool.py</span><br><span class="line">│</span><br><span class="line">├		─min_photos</span><br><span class="line">│      		2014-11-16_鞠婧祎1.jpg</span><br><span class="line">│</span><br><span class="line">├		─photos</span><br><span class="line">│      		2014-11-16_鞠婧祎1.jpg</span><br><span class="line">│      		data.json</span><br><span class="line">│</span><br><span class="line">└		─__pycache__</span><br><span class="line">        	ImageProcess.cpython-37.pyc</span><br></pre></td></tr></table></figure>
-<h4 id="2-3-修改tool-py中的路径">2.3 修改<code>tool.py</code>中的路径</h4>
-<p>修改这里的下面代码块的路径：</p>
+<h4 id="2-3-修改tool-py中的路径"><a href="#2-3-修改tool-py中的路径" class="headerlink" title="2.3 修改tool.py中的路径"></a>2.3 修改<code>tool.py</code>中的路径</h4><p>修改这里的下面代码块的路径：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#路径换成自己的博客的图片文件夹的路径:H:\Hexo\source\photos</span><br><span class="line">    with open(&quot;H:\\Hexo\\source\\photos\\data.json&quot;,&quot;w&quot;) as fp:</span><br><span class="line">        json.dump(final_dict, fp)</span><br></pre></td></tr></table></figure>
 <p>注意：如果不是用两个仓库，可以注释git部署的方法，然后需要自己先将图片上传到github上，要不然显示不了。</p>
-<h4 id="2-4-每次上传照片都需要运行python脚本">2.4 每次上传照片都需要运行python脚本</h4>
-<p>需要安装python环境，在命令行运行<code>py tool.py</code>命令。</p>
-<h4 id="2-5-开启相册功能">2.5 开启相册功能</h4>
-<p><code>H:\Hexo\themes\yilia\_config.yml</code>取消注册相册行。</p>
+<h4 id="2-4-每次上传照片都需要运行python脚本"><a href="#2-4-每次上传照片都需要运行python脚本" class="headerlink" title="2.4 每次上传照片都需要运行python脚本"></a>2.4 每次上传照片都需要运行python脚本</h4><p>需要安装python环境，在命令行运行<code>py tool.py</code>命令。</p>
+<h4 id="2-5-开启相册功能"><a href="#2-5-开启相册功能" class="headerlink" title="2.5 开启相册功能"></a>2.5 开启相册功能</h4><p><code>H:\Hexo\themes\yilia\_config.yml</code>取消注册相册行。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">menu:</span><br><span class="line">  主页: /</span><br><span class="line">  #随笔: /tags/随笔/</span><br><span class="line">  #分类: /categories</span><br><span class="line">  归档: /archives</span><br><span class="line">  相册: /photos</span><br><span class="line">  #标签: /tags</span><br></pre></td></tr></table></figure>
-<h3 id="3-存在问题">3.存在问题</h3>
-<p>如果你上面操作都没有问题，那么你就会发现点开图片可以显示，缩略图不显示。</p>
-<p>首先，去下载“empty.png” 这里这里<br>
-直接右键另存，保存为“empty.png”。名字也要一样。<br>
-在你博客的本地仓库source下新建一个文件夹命名为assets,再在assets下新建一个文件夹命名为img。最后把empty.png放到img里面。我的结果如下：</p>
+<h3 id="3-存在问题"><a href="#3-存在问题" class="headerlink" title="3.存在问题"></a>3.存在问题</h3><p>如果你上面操作都没有问题，那么你就会发现点开图片可以显示，缩略图不显示。</p>
+<p>首先，去下载“empty.png” 这里这里<br>直接右键另存，保存为“empty.png”。名字也要一样。<br>在你博客的本地仓库source下新建一个文件夹命名为assets,再在assets下新建一个文件夹命名为img。最后把empty.png放到img里面。我的结果如下：</p>
 <p><img src="/article/f72ba5d8/picture_5.jpg" alt></p>
-<h3 id="4-如果缩略图还是出不来">4.如果缩略图还是出不来</h3>
-<p>网页显示以下错误</p>
+<h3 id="4-如果缩略图还是出不来"><a href="#4-如果缩略图还是出不来" class="headerlink" title="4.如果缩略图还是出不来"></a>4.如果缩略图还是出不来</h3><p>网页显示以下错误</p>
 <p><img src="/article/f72ba5d8/203458.jpg" alt="img"></p>
-<h3 id="那你可以试试这个方法">那你可以试试这个方法</h3>
-<h3 id="⬇-⬇-⬇-⬇-⬇-⬇-⬇-⬇-⬇-⬇-⬇-⬇">⬇ ⬇ ⬇ ⬇ ⬇ ⬇ ⬇ ⬇ ⬇ ⬇ ⬇ ⬇</h3>
-<p>打开你的ins.js,找到这段代码</p>
+<h3 id="那你可以试试这个方法"><a href="#那你可以试试这个方法" class="headerlink" title="那你可以试试这个方法"></a>那你可以试试这个方法</h3><h3 id="⬇-⬇-⬇-⬇-⬇-⬇-⬇-⬇-⬇-⬇-⬇-⬇"><a href="#⬇-⬇-⬇-⬇-⬇-⬇-⬇-⬇-⬇-⬇-⬇-⬇" class="headerlink" title="⬇ ⬇ ⬇ ⬇ ⬇ ⬇ ⬇ ⬇ ⬇ ⬇ ⬇ ⬇"></a>⬇ ⬇ ⬇ ⬇ ⬇ ⬇ ⬇ ⬇ ⬇ ⬇ ⬇ ⬇</h3><p>打开你的ins.js,找到这段代码</p>
 <p><img src="/article/f72ba5d8/210611.jpg" alt="img"></p>
 <p>根据选中路径来保存<code>empty.png</code>图片。</p>
-<h2 id="二、添加（相册页的）视频功能">二、添加（相册页的）视频功能</h2>
-<p>视频功能基于相册功能，相当于在其旁边添加一个导航栏，导航到相册页。</p>
-<h3 id="1、添加视频样式css">1、添加视频样式css</h3>
-<ul>
+<h2 id="二、添加（相册页的）视频功能"><a href="#二、添加（相册页的）视频功能" class="headerlink" title="二、添加（相册页的）视频功能"></a>二、添加（相册页的）视频功能</h2><p>视频功能基于相册功能，相当于在其旁边添加一个导航栏，导航到相册页。</p>
+<h3 id="1、添加视频样式css"><a href="#1、添加视频样式css" class="headerlink" title="1、添加视频样式css"></a>1、添加视频样式css</h3><ul>
 <li>打开<strong>当前博客</strong><code>source\photos</code>文件夹下的<code>ins.css</code>文件</li>
 <li>加入如下内容</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">/* ====== video ===== */</span><br><span class="line"> .video-container &#123;</span><br><span class="line">    z-index: 1;</span><br><span class="line">    position: relative;</span><br><span class="line">    padding-bottom: 56.25%;</span><br><span class="line">    margin: 0 auto;</span><br><span class="line">&#125;</span><br><span class="line">.video-container iframe, .video-container object, .video-container embed &#123;</span><br><span class="line">    z-index: 1;</span><br><span class="line">    position: absolute;</span><br><span class="line">    top: 0;</span><br><span class="line">    left: 7%;</span><br><span class="line">    width: 85%;</span><br><span class="line">    height: 85%;</span><br><span class="line">    box-shadow: 0px 0px 20px 2px #888888;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="2、添加视频">2、添加视频</h3>
-<ul>
+<h3 id="2、添加视频"><a href="#2、添加视频" class="headerlink" title="2、添加视频"></a>2、添加视频</h3><ul>
 <li>我这里添加的是<strong>优酷</strong>上面的视频</li>
 <li>在<strong>当前博客</strong><code>source\photos</code>文件夹下建立<code>videos.ejs</code>文件</li>
 <li>内容如下：</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">layout: post</span><br><span class="line">slug: &quot;photos&quot;</span><br><span class="line">title: &quot;相册&quot;</span><br><span class="line">noDate: &quot;true&quot;</span><br><span class="line">comments: &quot;true&quot;</span><br><span class="line">reward: &quot;true&quot;</span><br><span class="line">open_in_new: false</span><br><span class="line">---</span><br><span class="line">&lt;link rel=&quot;stylesheet&quot; href=&quot;./ins.css&quot;&gt;</span><br><span class="line">&lt;div class=&quot;photos-btn-wrap&quot;&gt;	&lt;a class=&quot;photos-btn&quot; href=&quot;/photos&quot;&gt;Photos&lt;/a&gt;</span><br><span class="line">	&lt;a class=&quot;photos-btn active&quot; href=&quot;/photos/videos.html&quot;&gt;Videos&lt;/a&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;center&gt;</span><br><span class="line">    &lt;h1&gt;指弹_女儿情&lt;/h1&gt;</span><br><span class="line">&lt;/center&gt;</span><br><span class="line">&lt;hr/&gt;</span><br><span class="line">&lt;center&gt;</span><br><span class="line">    &lt;div class=&quot;video-container&quot;&gt;</span><br><span class="line">        &lt;iframe height=&quot;80%&quot; width=&quot;80%&quot; src=&quot;http://player.youku.com/embed/XMjUzMzY4OTM3Ng==&quot; frameborder=0 allowfullscreen&gt;&lt;/iframe&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/center&gt;</span><br><span class="line">&lt;hr/&gt;</span><br><span class="line">&lt;center&gt;</span><br><span class="line">    &lt;h1&gt;指弹_友谊地久天长&lt;/h1&gt;</span><br><span class="line">&lt;/center&gt;</span><br><span class="line">&lt;hr/&gt;</span><br><span class="line">&lt;center&gt;</span><br><span class="line">    &lt;div class=&quot;video-container&quot;&gt;</span><br><span class="line">        &lt;iframe height=&quot;80%&quot; width=&quot;80%&quot; src=&quot;http://player.youku.com/embed/XMjQ5MDExOTY2MA==&quot; frameborder=0 allowfullscreen&gt;&lt;/iframe&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/center&gt;</span><br><span class="line">&lt;hr/&gt;</span><br><span class="line">&lt;center&gt;</span><br><span class="line">    &lt;h1&gt;指弹_Always with me&lt;/h1&gt;</span><br><span class="line">&lt;/center&gt;</span><br><span class="line">&lt;hr/&gt;</span><br><span class="line">&lt;center&gt;</span><br><span class="line">    &lt;div class=&quot;video-container&quot;&gt;</span><br><span class="line">        &lt;iframe height=&quot;80%&quot; width=&quot;80%&quot; src=&quot;http://player.youku.com/embed/XMjQ4MDQyNTQ0MA==&quot; frameborder=0 allowfullscreen&gt;&lt;/iframe&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/center&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="3、修改-Hexo-source-photos-index-ejs的相册的超链接">3、修改<code>\Hexo\source\photos\index.ejs</code>的相册的超链接</h3>
-<p>原来是<code>&lt;a class=&quot;photos-btn&quot; href=&quot;#&quot;&gt;Videos&lt;/a&gt;</code>，不修改是访问不了的。</p>
+<h3 id="3、修改-Hexo-source-photos-index-ejs的相册的超链接"><a href="#3、修改-Hexo-source-photos-index-ejs的相册的超链接" class="headerlink" title="3、修改\Hexo\source\photos\index.ejs的相册的超链接"></a>3、修改<code>\Hexo\source\photos\index.ejs</code>的相册的超链接</h3><p>原来是<code>&lt;a class=&quot;photos-btn&quot; href=&quot;#&quot;&gt;Videos&lt;/a&gt;</code>，不修改是访问不了的。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">layout: post</span><br><span class="line">slug: &quot;photos&quot;</span><br><span class="line">title: &quot;相册&quot;</span><br><span class="line">noDate: &quot;true&quot;</span><br><span class="line">comments: &quot;false&quot;</span><br><span class="line">---</span><br><span class="line">&lt;link rel=&quot;stylesheet&quot; href=&quot;./ins.css&quot;&gt;</span><br><span class="line">&lt;div class=&quot;photos-btn-wrap&quot;&gt;</span><br><span class="line">	&lt;a class=&quot;photos-btn active&quot; href=&quot;javascript:void(0)&quot;&gt;Photos&lt;/a&gt;</span><br><span class="line">    &lt;a class=&quot;photos-btn&quot; href=&quot;/photos/videos.html&quot;&gt;Videos&lt;/a&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
       
 
@@ -374,7 +350,7 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 
       
         <div class="page-reward">
-          <a href="javascript:;" target="_blank" rel="noopener" class="page-reward-btn tooltip-top">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
             <div class="tooltip tooltip-east">
             <span class="tooltip-item">
               赏
@@ -414,7 +390,7 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
           <br></li>
           <li><strong>版权声明：</strong>
           本作品采用
-          <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>
+          <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>
           进行许可。转载请注明出处！
           
         </div>
@@ -431,7 +407,7 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color3">博客</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">博客</a>
         		</li>
       		
 		</ul>
@@ -446,35 +422,35 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 <div class="share-btn share-icons tooltip-left">
   <div class="tooltip tooltip-east">
     <span class="tooltip-item">
-      <a href="javascript:;" target="_blank" rel="noopener" class="share-sns share-outer">
+      <a href="javascript:;" class="share-sns share-outer">
         <i class="icon icon-share"></i>
       </a>
     </span>
     <span class="tooltip-content">
       <div class="share-wrap">
         <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="weibo">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
             <i class="icon icon-weibo"></i>
           </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" target="_blank" rel="noopener" data-type="weixin">
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
             <i class="icon icon-weixin"></i>
           </a>
-          <a class="qq share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="qq">
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
             <i class="icon icon-qq"></i>
           </a>
-          <a class="douban share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="douban">
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
             <i class="icon icon-douban"></i>
           </a>
-          <a class="qzone share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="qzone">
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
             <i class="icon icon-qzone"></i>
           </a>
-          <a class="facebook share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="facebook">
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
             <i class="icon icon-facebook"></i>
           </a>
-          <a class="twitter share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="twitter">
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
             <i class="icon icon-twitter"></i>
           </a>
-          <a class="google share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="google">
+          <a class="google share-sns" href="javascript:;" data-type="google">
             <i class="icon icon-google"></i>
           </a>
         </div>
@@ -484,7 +460,7 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 </div>
 
 <div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;" target="_blank" rel="noopener"><i class="icon icon-close"></i></a>
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
       <img src="//pan.baidu.com/share/qrcode?url=https://www.tengfei.eu.org/article/f72ba5d8.html" alt="微信分享二维码">
@@ -523,7 +499,7 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
     <div class="mod-side-operation">
         
         <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" target="_blank" rel="noopener" class="mod-side-operation__jump-to-top">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
                 <i class="icon-font icon-back"></i>
             </a>
             <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
@@ -726,15 +702,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
     
       
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" target="_blank" rel="noopener" q-class="active:innerArchive">所有文章</a></li>
+      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
       
         
       
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'friends')"><a href="javascript:void(0)" target="_blank" rel="noopener" q-class="active:friends">友链</a></li>
+      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'friends')"><a href="javascript:void(0)" q-class="active:friends">友链</a></li>
       
         
       
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" target="_blank" rel="noopener" q-class="active:aboutme">关于我</a></li>
+      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
       
         
     </ul>
@@ -755,319 +731,319 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">DevOps</a>
+                <a href="javascript:void(0)" class="js-tag color5">Java</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">CI/CD</a>
+                <a href="javascript:void(0)" class="js-tag color4">工具类</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">Java</a>
+                <a href="javascript:void(0)" class="js-tag color2">DevOps</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">工具类</a>
+                <a href="javascript:void(0)" class="js-tag color1">CI/CD</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">CSS</a>
+                <a href="javascript:void(0)" class="js-tag color4">ERP</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">前端</a>
+                <a href="javascript:void(0)" class="js-tag color3">接口</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">ERP</a>
+                <a href="javascript:void(0)" class="js-tag color5">财务系统</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">接口</a>
+                <a href="javascript:void(0)" class="js-tag color5">工厂系统</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">财务系统</a>
+                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">工厂系统</a>
+                <a href="javascript:void(0)" class="js-tag color3">前端</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">Docker</a>
+                <a href="javascript:void(0)" class="js-tag color2">Docker</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">运维</a>
+                <a href="javascript:void(0)" class="js-tag color3">运维</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">Hexo</a>
+                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">博客</a>
+                <a href="javascript:void(0)" class="js-tag color3">博客</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">SEO</a>
+                <a href="javascript:void(0)" class="js-tag color4">SEO</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Linux</a>
+                <a href="javascript:void(0)" class="js-tag color3">分页</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">分页</a>
+                <a href="javascript:void(0)" class="js-tag color3">组件</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">组件</a>
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">MES</a>
+                <a href="javascript:void(0)" class="js-tag color4">MES</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Maven</a>
+                <a href="javascript:void(0)" class="js-tag color1">Maven</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">MyBatis</a>
+                <a href="javascript:void(0)" class="js-tag color3">MyBatis</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">持久层框架</a>
+                <a href="javascript:void(0)" class="js-tag color1">持久层框架</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">MySQL</a>
+                <a href="javascript:void(0)" class="js-tag color1">Nginx</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">数据库</a>
+                <a href="javascript:void(0)" class="js-tag color1">MySQL</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Nginx</a>
+                <a href="javascript:void(0)" class="js-tag color4">数据库</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">NodeJS</a>
+                <a href="javascript:void(0)" class="js-tag color2">NodeJS</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">命令行窗口</a>
+                <a href="javascript:void(0)" class="js-tag color1">命令行窗口</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">Oracle</a>
+                <a href="javascript:void(0)" class="js-tag color2">Oracle</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">消息队列</a>
+                <a href="javascript:void(0)" class="js-tag color4">RPA</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">RabbitMQ</a>
+                <a href="javascript:void(0)" class="js-tag color3">工具</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">RPA</a>
+                <a href="javascript:void(0)" class="js-tag color5">消息队列</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">工具</a>
+                <a href="javascript:void(0)" class="js-tag color4">RabbitMQ</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">SQL</a>
+                <a href="javascript:void(0)" class="js-tag color4">SQL</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Redis</a>
+                <a href="javascript:void(0)" class="js-tag color1">Redis</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">Spring</a>
+                <a href="javascript:void(0)" class="js-tag color1">SpringBoot</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">SpringMVC</a>
+                <a href="javascript:void(0)" class="js-tag color2">Spring</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">SpringBoot</a>
+                <a href="javascript:void(0)" class="js-tag color5">SpringMVC</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">JSR303校验</a>
+                <a href="javascript:void(0)" class="js-tag color4">JSR303校验</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">SpringSecurity</a>
+                <a href="javascript:void(0)" class="js-tag color1">SLF4j</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">SLF4j</a>
+                <a href="javascript:void(0)" class="js-tag color5">Thymeleaf</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">Thymeleaf</a>
+                <a href="javascript:void(0)" class="js-tag color5">SpringSecurity</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">Swagger</a>
+                <a href="javascript:void(0)" class="js-tag color3">Swagger</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">zookeeper</a>
+                <a href="javascript:void(0)" class="js-tag color5">zookeeper</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Dubbo</a>
+                <a href="javascript:void(0)" class="js-tag color1">Dubbo</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">SpringCloud</a>
+                <a href="javascript:void(0)" class="js-tag color3">注解</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">注解</a>
+                <a href="javascript:void(0)" class="js-tag color1">Web框架</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Web框架</a>
+                <a href="javascript:void(0)" class="js-tag color2">SpringCloud</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">JWT</a>
+                <a href="javascript:void(0)" class="js-tag color4">JWT</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Cloudflare</a>
+                <a href="javascript:void(0)" class="js-tag color4">Vue</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">图床</a>
+                <a href="javascript:void(0)" class="js-tag color1">Cloudflare</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">Vue</a>
+                <a href="javascript:void(0)" class="js-tag color3">图床</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">webpack</a>
+                <a href="javascript:void(0)" class="js-tag color3">webpack</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">Vue-cli</a>
+                <a href="javascript:void(0)" class="js-tag color3">Vue-cli</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">前端路由</a>
+                <a href="javascript:void(0)" class="js-tag color5">Vuex</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">Vuex</a>
+                <a href="javascript:void(0)" class="js-tag color4">WMS</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">WMS</a>
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">git</a>
+                <a href="javascript:void(0)" class="js-tag color5">前端路由</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Hexo_admin</a>
+                <a href="javascript:void(0)" class="js-tag color1">Hexo_admin</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">vue</a>
+                <a href="javascript:void(0)" class="js-tag color4">vue</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">插件</a>
+                <a href="javascript:void(0)" class="js-tag color3">插件</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">样式</a>
+                <a href="javascript:void(0)" class="js-tag color3">样式</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">云开发</a>
+                <a href="javascript:void(0)" class="js-tag color4">云开发</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">低代码</a>
+                <a href="javascript:void(0)" class="js-tag color4">低代码</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">小程序</a>
+                <a href="javascript:void(0)" class="js-tag color4">小程序</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">监控</a>
+                <a href="javascript:void(0)" class="js-tag color5">企业微信</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">Zabbix</a>
+                <a href="javascript:void(0)" class="js-tag color5">权限管理</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">企业微信</a>
+                <a href="javascript:void(0)" class="js-tag color4">个人域</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">权限管理</a>
+                <a href="javascript:void(0)" class="js-tag color3">监控</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">个人域</a>
+                <a href="javascript:void(0)" class="js-tag color2">Zabbix</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">定时任务</a>
+                <a href="javascript:void(0)" class="js-tag color5">定时任务</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">设计模式</a>
+                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">感慨</a>
+                <a href="javascript:void(0)" class="js-tag color3">感慨</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">随笔</a>
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">正则表达式</a>
+                <a href="javascript:void(0)" class="js-tag color1">正则表达式</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">NoSql</a>
+                <a href="javascript:void(0)" class="js-tag color1">ERP系统</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">Flowable</a>
+                <a href="javascript:void(0)" class="js-tag color3">文档</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">工作流</a>
+                <a href="javascript:void(0)" class="js-tag color4">Flowable</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">ERP系统</a>
+                <a href="javascript:void(0)" class="js-tag color4">工作流</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">文档</a>
+                <a href="javascript:void(0)" class="js-tag color1">NoSql</a>
               </li>
             
             <div class="clearfix"></div>
@@ -1221,7 +1197,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
 </div>
   </div>
   <!-- 右上角书签 -->
-<a href="https://github.com/zhangtengfei66" target="_blank" rel="noopener" class="github-corner" aria-label="View source on GitHub" title="Hello, this is me！" aria-label="Hello, this is me！"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#FF0000; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+<a href="https://github.com/zhangtengfei66" class="github-corner" aria-label="View source on GitHub" title="Hello, this is me！" aria-label="Hello, this is me！"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#FF0000; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
   <!-- 右上角书签 -->
   <!-- 标题栏动态变化表情 -->
   <script type="text/javascript" src="/js/crash_cheat.js"></script>

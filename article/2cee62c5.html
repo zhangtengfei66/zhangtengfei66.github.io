@@ -259,7 +259,7 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
         <!--显示阅读次数-->
         
           <br/>
-          <a class="cloud-tie-join-count" href="javascript:void(0);" target="_blank" rel="noopener" style="color:gray;font-size:14px;">
+          <a class="cloud-tie-join-count" href="javascript:void(0);" style="color:gray;font-size:14px;">
           <span class="icon-sort"></span>
           <span style="color:#ef7522;font-size:14px;">
                     <i class="icon-smile icon"></i> 阅读数: <span id="busuanzi_value_page_pv"></span>次 &nbsp;&nbsp;
@@ -310,22 +310,14 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 <p>函数…</p>
 <p>⚡ ⚡ ⚡</p>
 <a id="more"></a>
-<h2 id="常用函数">常用函数</h2>
-<h3 id="1-字符函数">1.字符函数</h3>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--拼接字符串</span></span><br><span class="line"><span class="keyword">select</span> <span class="string">'a'</span> || <span class="string">'b'</span> <span class="keyword">from</span> dual;<span class="comment">--||拼接</span></span><br><span class="line"><span class="comment">--拼接表中两列</span></span><br><span class="line"><span class="keyword">select</span> job||<span class="string">'-'</span>||ename <span class="keyword">from</span> emp;</span><br><span class="line"><span class="keyword">select</span> <span class="keyword">concat</span>(<span class="string">'a'</span>,<span class="string">'b'</span>) <span class="keyword">from</span> dual;<span class="comment">--concat拼接</span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">concat</span>(<span class="keyword">concat</span>(job,<span class="string">'-'</span>),ename) <span class="keyword">from</span> emp;</span><br><span class="line"></span><br><span class="line"><span class="comment">--首字母大写 initcap</span></span><br><span class="line"><span class="keyword">select</span> initcap(<span class="string">'my name is Teng'</span>) <span class="keyword">from</span> dual;</span><br><span class="line"><span class="keyword">select</span> initcap(ename) <span class="keyword">from</span> emp;</span><br><span class="line"><span class="comment">--转大写 upper</span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">upper</span>(<span class="string">'my name is Teng'</span>) <span class="keyword">from</span> dual;</span><br><span class="line"><span class="comment">--转小写 lower</span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">lower</span>(<span class="string">'MY NAME IS TENG'</span>) <span class="keyword">from</span> dual;</span><br><span class="line"></span><br><span class="line"><span class="comment">--截取字符串 substr('要截取字符串',从第几位开始(从1开始),截取长度[不写截取到最后])</span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">substr</span>(<span class="string">'my name is teng'</span>,<span class="number">7</span>,<span class="number">4</span>) <span class="keyword">from</span> dual;</span><br><span class="line"></span><br><span class="line"><span class="comment">--替换字符串 replace('要替换字符串','需要替换掉的字符串','替换后的字符串'[不写表示删除])</span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">replace</span>(<span class="string">'my name is Teng'</span>,<span class="string">'Teng'</span>) <span class="keyword">from</span> dual;</span><br><span class="line"><span class="comment">--去除左侧固定的字符('要操作的字符串','需要去除的内容'[不写代表空格])</span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">ltrim</span>(<span class="string">'       Teng        '</span>) <span class="keyword">from</span> dual;</span><br><span class="line"><span class="comment">--去除右侧固定的字符('要操作的字符串','需要去除的内容'[不写代表空格])</span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">rtrim</span>(<span class="string">'       Teng********'</span>,<span class="string">'*'</span>) <span class="keyword">from</span> dual;</span><br><span class="line"><span class="comment">--去除左右侧固定的字符，中间无法去除</span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">trim</span>(<span class="string">'       Teng        '</span>) <span class="keyword">from</span> dual;</span><br><span class="line"><span class="keyword">select</span> <span class="keyword">trim</span>(<span class="keyword">both</span><span class="string">'*'</span> <span class="keyword">from</span> <span class="string">'       Te n*g********'</span>) <span class="keyword">from</span> dual;</span><br><span class="line"><span class="comment">--用trim 去除左侧</span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">trim</span>(<span class="keyword">leading</span><span class="string">'*'</span> <span class="keyword">from</span> <span class="string">'********Te n*g********'</span>) <span class="keyword">from</span> dual;</span><br><span class="line"><span class="comment">--用trim 去除右侧</span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">trim</span>(trailing<span class="string">'*'</span> <span class="keyword">from</span> <span class="string">'********Te n*g********'</span>) <span class="keyword">from</span> dual;</span><br><span class="line"></span><br><span class="line"><span class="comment">--补全字符串 lpad('需要补全的原来字符串',补几位,'补什么')</span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">lpad</span>(<span class="string">'10'</span>,<span class="number">5</span>,<span class="string">'0'</span>) <span class="keyword">from</span> dual;<span class="comment">--左补全</span></span><br><span class="line"><span class="keyword">select</span> rpad(<span class="string">'10'</span>,<span class="number">5</span>,<span class="string">'0'</span>) <span class="keyword">from</span> dual;<span class="comment">--右补全</span></span><br><span class="line"></span><br><span class="line"><span class="comment">--计算年龄</span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">substr</span>(<span class="string">'41030619991007444X'</span>,<span class="number">7</span>,<span class="number">4</span>) <span class="keyword">from</span> dual;</span><br><span class="line"><span class="comment">--1.计算相差月份，月份/12</span></span><br><span class="line"><span class="keyword">select</span> months_between(<span class="keyword">sysdate</span>,<span class="keyword">to_date</span>(<span class="keyword">substr</span>(<span class="string">'41030619991007444X'</span>,<span class="number">7</span>,<span class="number">8</span>),<span class="string">'yyyy-MM-dd'</span>))/<span class="number">12</span> <span class="keyword">from</span> dual;</span><br><span class="line"><span class="comment">--2.两个字符串相减</span></span><br><span class="line"><span class="keyword">select</span> to_char(<span class="keyword">sysdate</span>,<span class="string">'yyyy'</span>)-<span class="keyword">substr</span>(<span class="string">'41030619991007444X'</span>,<span class="number">7</span>,<span class="number">4</span>) <span class="keyword">from</span> dual;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 级联表</span></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> city(</span><br><span class="line">  <span class="keyword">id</span> <span class="built_in">number</span>,</span><br><span class="line">  <span class="keyword">name</span> <span class="built_in">varchar</span>(<span class="number">10</span>),</span><br><span class="line">  parentid umber</span><br><span class="line">)</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> city <span class="keyword">values</span>(<span class="number">0</span>,<span class="string">'中国'</span>,<span class="literal">null</span>);</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> city <span class="keyword">values</span>(<span class="number">1</span>,<span class="string">'河南省'</span>,<span class="number">0</span>);</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> city <span class="keyword">values</span>(<span class="number">2</span>,<span class="string">'郑州市'</span>,<span class="number">1</span>);</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> city <span class="keyword">values</span>(<span class="number">3</span>,<span class="string">'二七区'</span>,<span class="number">2</span>);</span><br><span class="line"><span class="comment">-- 把单列多行数据拼接一行显示</span></span><br><span class="line"><span class="keyword">select</span> wm_concat(<span class="keyword">name</span>) <span class="keyword">from</span> city <span class="keyword">where</span> <span class="keyword">id</span> <span class="keyword">in</span>(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>);</span><br><span class="line"><span class="comment">-- 字符串替换</span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">replace</span>(wm_concat(<span class="keyword">name</span>),<span class="string">','</span>,<span class="string">'--'</span>) <span class="keyword">from</span> city <span class="keyword">where</span> <span class="keyword">id</span> <span class="keyword">in</span>(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>);</span><br></pre></td></tr></table></figure>
-<h3 id="2-数学函数">2.数学函数</h3>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--向上取整 ceil</span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">ceil</span>(<span class="number">4.1</span>)<span class="keyword">from</span> dual;</span><br><span class="line"><span class="comment">--向下取整 floor</span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">floor</span>(<span class="number">4.9</span>)<span class="keyword">from</span> dual;</span><br><span class="line"><span class="comment">--按照一定的精度截取数字 trunc(不会四舍五入)</span></span><br><span class="line"><span class="keyword">select</span> trunc(<span class="number">3.1415926</span>,<span class="number">4</span>) <span class="keyword">from</span> dual;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 计算性别</span></span><br><span class="line"><span class="comment">-- 取余 mod()</span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">mod</span>(<span class="keyword">substr</span>(<span class="string">'41030619991007444X'</span>,<span class="number">17</span>,<span class="number">1</span>),<span class="number">2</span>) <span class="keyword">from</span> dual;</span><br><span class="line"><span class="keyword">select</span> <span class="keyword">decode</span>(<span class="keyword">mod</span>(<span class="keyword">substr</span>(<span class="string">'41030619991007444X'</span>,<span class="number">17</span>,<span class="number">1</span>),<span class="number">2</span>),<span class="string">'0'</span>,<span class="string">'女'</span>,<span class="string">'1'</span>,<span class="string">'男'</span>) <span class="keyword">from</span> dual;</span><br></pre></td></tr></table></figure>
-<h3 id="3-日期函数">3.日期函数</h3>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--获取系统当前时间 sysdate</span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">sysdate</span> <span class="keyword">from</span> dual;</span><br><span class="line"><span class="comment">--next_day() 获取指定日期之后的下一个星期几</span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">sysdate</span>,next_day(<span class="keyword">sysdate</span>,<span class="number">2</span>) <span class="keyword">from</span> dual;</span><br><span class="line"><span class="comment">--本月最后一天</span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">last_day</span>(<span class="keyword">sysdate</span>) <span class="keyword">from</span> dual;</span><br><span class="line"><span class="comment">--add_months() 添加指定月份后的日期</span></span><br><span class="line"><span class="keyword">select</span> add_months(<span class="keyword">sysdate</span>,<span class="number">1</span>) <span class="keyword">from</span> dual;</span><br><span class="line"><span class="comment">--时间差(天数) to_date(字符串转换日期)</span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">to_date</span>(<span class="string">'2020-05-13'</span>,<span class="string">'yyyy-MM-dd'</span>)-<span class="keyword">sysdate</span> <span class="keyword">from</span> dual;</span><br><span class="line"><span class="comment">--月数时间差 months_between</span></span><br><span class="line"><span class="keyword">select</span> months_between(<span class="keyword">to_date</span>(<span class="string">'2020-05-13'</span>,<span class="string">'yyyy-MM-dd'</span>),<span class="keyword">sysdate</span>) <span class="keyword">from</span> dual;</span><br><span class="line"></span><br><span class="line"><span class="comment">--trunc(截取日期,不显示时分秒)</span></span><br><span class="line"><span class="keyword">select</span> trunc(<span class="keyword">sysdate</span>) <span class="keyword">from</span> dual;</span><br><span class="line"><span class="keyword">select</span> <span class="keyword">to_date</span>(<span class="string">'2020-05-13'</span>,<span class="string">'yyyy-MM-dd'</span>)-trunc(<span class="keyword">sysdate</span>) <span class="keyword">from</span> dual;</span><br><span class="line"><span class="comment">--本月初日期</span></span><br><span class="line"><span class="keyword">select</span> trunc(<span class="keyword">sysdate</span>,<span class="string">'month'</span>) <span class="keyword">from</span> dual;</span><br><span class="line"><span class="comment">--本年初日期</span></span><br><span class="line"><span class="keyword">select</span> trunc(<span class="keyword">sysdate</span>,<span class="string">'year'</span>) <span class="keyword">from</span> dual;</span><br><span class="line"></span><br><span class="line"><span class="comment">--添加月 add_months()</span></span><br><span class="line"><span class="keyword">select</span> add_months(<span class="keyword">sysdate</span>,<span class="number">2</span>) <span class="keyword">from</span> dual;</span><br><span class="line"><span class="keyword">select</span> add_months(<span class="keyword">sysdate</span>,<span class="number">-2</span>) <span class="keyword">from</span> dual;<span class="comment">--负数为减</span></span><br></pre></td></tr></table></figure>
-<h3 id="4-转换函数">4.转换函数</h3>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--to_char</span></span><br><span class="line"><span class="comment">--把数字转换成字符串(如果不够,自动补空格)</span></span><br><span class="line"><span class="keyword">select</span> to_char(<span class="number">11223344</span>,<span class="string">'999,999,999'</span>) <span class="keyword">from</span> dual;</span><br><span class="line"><span class="comment">--把日期转换成字符串</span></span><br><span class="line"><span class="keyword">select</span> to_char(<span class="keyword">sysdate</span>,<span class="string">'yyyy'</span>) <span class="keyword">from</span> dual;<span class="comment">--当前年份</span></span><br><span class="line"><span class="keyword">select</span> to_char(<span class="keyword">sysdate</span>,<span class="string">'MM'</span>) <span class="keyword">from</span> dual;<span class="comment">--当前年份</span></span><br><span class="line"><span class="keyword">select</span> to_char(<span class="keyword">sysdate</span>,<span class="string">'yyyy-MM-dd hh24:mi:ss'</span>) <span class="keyword">from</span> dual;<span class="comment">--当前时间</span></span><br><span class="line"></span><br><span class="line"><span class="comment">--to_date 将字符串转换为时间</span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">to_date</span>(<span class="string">'2020-02-24 10:54:30'</span>,<span class="string">'yyyy-MM-dd hh:mi:ss'</span>) <span class="keyword">from</span> dual;</span><br><span class="line"></span><br><span class="line"><span class="comment">--to_number 将字符串转换为数字(统计,对非数字)</span></span><br><span class="line"><span class="keyword">select</span> to_number(<span class="string">'2020'</span>)<span class="number">-1</span> <span class="keyword">from</span> dual;</span><br></pre></td></tr></table></figure>
-<h3 id="5-聚合函数">5.聚合函数</h3>
-<p><strong>sum(求和)，avg(平均)，max(最大)，min(最小)，count(计数)</strong></p>
+<h2 id="常用函数"><a href="#常用函数" class="headerlink" title="常用函数"></a>常用函数</h2><h3 id="1-字符函数"><a href="#1-字符函数" class="headerlink" title="1.字符函数"></a>1.字符函数</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--拼接字符串</span></span><br><span class="line"><span class="keyword">select</span> <span class="string">'a'</span> || <span class="string">'b'</span> <span class="keyword">from</span> dual;<span class="comment">--||拼接</span></span><br><span class="line"><span class="comment">--拼接表中两列</span></span><br><span class="line"><span class="keyword">select</span> job||<span class="string">'-'</span>||ename <span class="keyword">from</span> emp;</span><br><span class="line"><span class="keyword">select</span> <span class="keyword">concat</span>(<span class="string">'a'</span>,<span class="string">'b'</span>) <span class="keyword">from</span> dual;<span class="comment">--concat拼接</span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">concat</span>(<span class="keyword">concat</span>(job,<span class="string">'-'</span>),ename) <span class="keyword">from</span> emp;</span><br><span class="line"></span><br><span class="line"><span class="comment">--首字母大写 initcap</span></span><br><span class="line"><span class="keyword">select</span> initcap(<span class="string">'my name is Teng'</span>) <span class="keyword">from</span> dual;</span><br><span class="line"><span class="keyword">select</span> initcap(ename) <span class="keyword">from</span> emp;</span><br><span class="line"><span class="comment">--转大写 upper</span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">upper</span>(<span class="string">'my name is Teng'</span>) <span class="keyword">from</span> dual;</span><br><span class="line"><span class="comment">--转小写 lower</span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">lower</span>(<span class="string">'MY NAME IS TENG'</span>) <span class="keyword">from</span> dual;</span><br><span class="line"></span><br><span class="line"><span class="comment">--截取字符串 substr('要截取字符串',从第几位开始(从1开始),截取长度[不写截取到最后])</span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">substr</span>(<span class="string">'my name is teng'</span>,<span class="number">7</span>,<span class="number">4</span>) <span class="keyword">from</span> dual;</span><br><span class="line"></span><br><span class="line"><span class="comment">--替换字符串 replace('要替换字符串','需要替换掉的字符串','替换后的字符串'[不写表示删除])</span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">replace</span>(<span class="string">'my name is Teng'</span>,<span class="string">'Teng'</span>) <span class="keyword">from</span> dual;</span><br><span class="line"><span class="comment">--去除左侧固定的字符('要操作的字符串','需要去除的内容'[不写代表空格])</span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">ltrim</span>(<span class="string">'       Teng        '</span>) <span class="keyword">from</span> dual;</span><br><span class="line"><span class="comment">--去除右侧固定的字符('要操作的字符串','需要去除的内容'[不写代表空格])</span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">rtrim</span>(<span class="string">'       Teng********'</span>,<span class="string">'*'</span>) <span class="keyword">from</span> dual;</span><br><span class="line"><span class="comment">--去除左右侧固定的字符，中间无法去除</span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">trim</span>(<span class="string">'       Teng        '</span>) <span class="keyword">from</span> dual;</span><br><span class="line"><span class="keyword">select</span> <span class="keyword">trim</span>(<span class="keyword">both</span><span class="string">'*'</span> <span class="keyword">from</span> <span class="string">'       Te n*g********'</span>) <span class="keyword">from</span> dual;</span><br><span class="line"><span class="comment">--用trim 去除左侧</span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">trim</span>(<span class="keyword">leading</span><span class="string">'*'</span> <span class="keyword">from</span> <span class="string">'********Te n*g********'</span>) <span class="keyword">from</span> dual;</span><br><span class="line"><span class="comment">--用trim 去除右侧</span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">trim</span>(trailing<span class="string">'*'</span> <span class="keyword">from</span> <span class="string">'********Te n*g********'</span>) <span class="keyword">from</span> dual;</span><br><span class="line"></span><br><span class="line"><span class="comment">--补全字符串 lpad('需要补全的原来字符串',补几位,'补什么')</span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">lpad</span>(<span class="string">'10'</span>,<span class="number">5</span>,<span class="string">'0'</span>) <span class="keyword">from</span> dual;<span class="comment">--左补全</span></span><br><span class="line"><span class="keyword">select</span> rpad(<span class="string">'10'</span>,<span class="number">5</span>,<span class="string">'0'</span>) <span class="keyword">from</span> dual;<span class="comment">--右补全</span></span><br><span class="line"></span><br><span class="line"><span class="comment">--计算年龄</span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">substr</span>(<span class="string">'41030619991007444X'</span>,<span class="number">7</span>,<span class="number">4</span>) <span class="keyword">from</span> dual;</span><br><span class="line"><span class="comment">--1.计算相差月份，月份/12</span></span><br><span class="line"><span class="keyword">select</span> months_between(<span class="keyword">sysdate</span>,<span class="keyword">to_date</span>(<span class="keyword">substr</span>(<span class="string">'41030619991007444X'</span>,<span class="number">7</span>,<span class="number">8</span>),<span class="string">'yyyy-MM-dd'</span>))/<span class="number">12</span> <span class="keyword">from</span> dual;</span><br><span class="line"><span class="comment">--2.两个字符串相减</span></span><br><span class="line"><span class="keyword">select</span> to_char(<span class="keyword">sysdate</span>,<span class="string">'yyyy'</span>)-<span class="keyword">substr</span>(<span class="string">'41030619991007444X'</span>,<span class="number">7</span>,<span class="number">4</span>) <span class="keyword">from</span> dual;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 级联表</span></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> city(</span><br><span class="line">  <span class="keyword">id</span> <span class="built_in">number</span>,</span><br><span class="line">  <span class="keyword">name</span> <span class="built_in">varchar</span>(<span class="number">10</span>),</span><br><span class="line">  parentid umber</span><br><span class="line">)</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> city <span class="keyword">values</span>(<span class="number">0</span>,<span class="string">'中国'</span>,<span class="literal">null</span>);</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> city <span class="keyword">values</span>(<span class="number">1</span>,<span class="string">'河南省'</span>,<span class="number">0</span>);</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> city <span class="keyword">values</span>(<span class="number">2</span>,<span class="string">'郑州市'</span>,<span class="number">1</span>);</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> city <span class="keyword">values</span>(<span class="number">3</span>,<span class="string">'二七区'</span>,<span class="number">2</span>);</span><br><span class="line"><span class="comment">-- 把单列多行数据拼接一行显示</span></span><br><span class="line"><span class="keyword">select</span> wm_concat(<span class="keyword">name</span>) <span class="keyword">from</span> city <span class="keyword">where</span> <span class="keyword">id</span> <span class="keyword">in</span>(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>);</span><br><span class="line"><span class="comment">-- 字符串替换</span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">replace</span>(wm_concat(<span class="keyword">name</span>),<span class="string">','</span>,<span class="string">'--'</span>) <span class="keyword">from</span> city <span class="keyword">where</span> <span class="keyword">id</span> <span class="keyword">in</span>(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>);</span><br></pre></td></tr></table></figure>
+<h3 id="2-数学函数"><a href="#2-数学函数" class="headerlink" title="2.数学函数"></a>2.数学函数</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--向上取整 ceil</span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">ceil</span>(<span class="number">4.1</span>)<span class="keyword">from</span> dual;</span><br><span class="line"><span class="comment">--向下取整 floor</span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">floor</span>(<span class="number">4.9</span>)<span class="keyword">from</span> dual;</span><br><span class="line"><span class="comment">--按照一定的精度截取数字 trunc(不会四舍五入)</span></span><br><span class="line"><span class="keyword">select</span> trunc(<span class="number">3.1415926</span>,<span class="number">4</span>) <span class="keyword">from</span> dual;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 计算性别</span></span><br><span class="line"><span class="comment">-- 取余 mod()</span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">mod</span>(<span class="keyword">substr</span>(<span class="string">'41030619991007444X'</span>,<span class="number">17</span>,<span class="number">1</span>),<span class="number">2</span>) <span class="keyword">from</span> dual;</span><br><span class="line"><span class="keyword">select</span> <span class="keyword">decode</span>(<span class="keyword">mod</span>(<span class="keyword">substr</span>(<span class="string">'41030619991007444X'</span>,<span class="number">17</span>,<span class="number">1</span>),<span class="number">2</span>),<span class="string">'0'</span>,<span class="string">'女'</span>,<span class="string">'1'</span>,<span class="string">'男'</span>) <span class="keyword">from</span> dual;</span><br></pre></td></tr></table></figure>
+<h3 id="3-日期函数"><a href="#3-日期函数" class="headerlink" title="3.日期函数"></a>3.日期函数</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--获取系统当前时间 sysdate</span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">sysdate</span> <span class="keyword">from</span> dual;</span><br><span class="line"><span class="comment">--next_day() 获取指定日期之后的下一个星期几</span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">sysdate</span>,next_day(<span class="keyword">sysdate</span>,<span class="number">2</span>) <span class="keyword">from</span> dual;</span><br><span class="line"><span class="comment">--本月最后一天</span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">last_day</span>(<span class="keyword">sysdate</span>) <span class="keyword">from</span> dual;</span><br><span class="line"><span class="comment">--add_months() 添加指定月份后的日期</span></span><br><span class="line"><span class="keyword">select</span> add_months(<span class="keyword">sysdate</span>,<span class="number">1</span>) <span class="keyword">from</span> dual;</span><br><span class="line"><span class="comment">--时间差(天数) to_date(字符串转换日期)</span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">to_date</span>(<span class="string">'2020-05-13'</span>,<span class="string">'yyyy-MM-dd'</span>)-<span class="keyword">sysdate</span> <span class="keyword">from</span> dual;</span><br><span class="line"><span class="comment">--月数时间差 months_between</span></span><br><span class="line"><span class="keyword">select</span> months_between(<span class="keyword">to_date</span>(<span class="string">'2020-05-13'</span>,<span class="string">'yyyy-MM-dd'</span>),<span class="keyword">sysdate</span>) <span class="keyword">from</span> dual;</span><br><span class="line"></span><br><span class="line"><span class="comment">--trunc(截取日期,不显示时分秒)</span></span><br><span class="line"><span class="keyword">select</span> trunc(<span class="keyword">sysdate</span>) <span class="keyword">from</span> dual;</span><br><span class="line"><span class="keyword">select</span> <span class="keyword">to_date</span>(<span class="string">'2020-05-13'</span>,<span class="string">'yyyy-MM-dd'</span>)-trunc(<span class="keyword">sysdate</span>) <span class="keyword">from</span> dual;</span><br><span class="line"><span class="comment">--本月初日期</span></span><br><span class="line"><span class="keyword">select</span> trunc(<span class="keyword">sysdate</span>,<span class="string">'month'</span>) <span class="keyword">from</span> dual;</span><br><span class="line"><span class="comment">--本年初日期</span></span><br><span class="line"><span class="keyword">select</span> trunc(<span class="keyword">sysdate</span>,<span class="string">'year'</span>) <span class="keyword">from</span> dual;</span><br><span class="line"></span><br><span class="line"><span class="comment">--添加月 add_months()</span></span><br><span class="line"><span class="keyword">select</span> add_months(<span class="keyword">sysdate</span>,<span class="number">2</span>) <span class="keyword">from</span> dual;</span><br><span class="line"><span class="keyword">select</span> add_months(<span class="keyword">sysdate</span>,<span class="number">-2</span>) <span class="keyword">from</span> dual;<span class="comment">--负数为减</span></span><br></pre></td></tr></table></figure>
+<h3 id="4-转换函数"><a href="#4-转换函数" class="headerlink" title="4.转换函数"></a>4.转换函数</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--to_char</span></span><br><span class="line"><span class="comment">--把数字转换成字符串(如果不够,自动补空格)</span></span><br><span class="line"><span class="keyword">select</span> to_char(<span class="number">11223344</span>,<span class="string">'999,999,999'</span>) <span class="keyword">from</span> dual;</span><br><span class="line"><span class="comment">--把日期转换成字符串</span></span><br><span class="line"><span class="keyword">select</span> to_char(<span class="keyword">sysdate</span>,<span class="string">'yyyy'</span>) <span class="keyword">from</span> dual;<span class="comment">--当前年份</span></span><br><span class="line"><span class="keyword">select</span> to_char(<span class="keyword">sysdate</span>,<span class="string">'MM'</span>) <span class="keyword">from</span> dual;<span class="comment">--当前年份</span></span><br><span class="line"><span class="keyword">select</span> to_char(<span class="keyword">sysdate</span>,<span class="string">'yyyy-MM-dd hh24:mi:ss'</span>) <span class="keyword">from</span> dual;<span class="comment">--当前时间</span></span><br><span class="line"></span><br><span class="line"><span class="comment">--to_date 将字符串转换为时间</span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">to_date</span>(<span class="string">'2020-02-24 10:54:30'</span>,<span class="string">'yyyy-MM-dd hh:mi:ss'</span>) <span class="keyword">from</span> dual;</span><br><span class="line"></span><br><span class="line"><span class="comment">--to_number 将字符串转换为数字(统计,对非数字)</span></span><br><span class="line"><span class="keyword">select</span> to_number(<span class="string">'2020'</span>)<span class="number">-1</span> <span class="keyword">from</span> dual;</span><br></pre></td></tr></table></figure>
+<h3 id="5-聚合函数"><a href="#5-聚合函数" class="headerlink" title="5.聚合函数"></a>5.聚合函数</h3><p><strong>sum(求和)，avg(平均)，max(最大)，min(最小)，count(计数)</strong></p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">count</span>(*),<span class="keyword">sum</span>(sal),<span class="keyword">max</span>(sal),<span class="keyword">min</span>(sal),<span class="keyword">avg</span>(sal) <span class="keyword">from</span> emp;</span><br></pre></td></tr></table></figure>
-<h3 id="6-其他函数">6.其他函数</h3>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--sys_guid 生成32位随机数</span></span><br><span class="line"><span class="keyword">select</span> sys_guid() <span class="keyword">from</span> dual;</span><br><span class="line"><span class="comment">--nullif 判断两个值是否一致，一致返回null，否则输出第一个值</span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">nullif</span>(sal,<span class="number">3000</span>) <span class="keyword">from</span> emp;</span><br><span class="line"><span class="comment">--decode(列名,'值1',输出1,'值2',输出2...,否则输出)</span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">decode</span>(deptno,<span class="number">20</span>,<span class="string">'河南'</span>,<span class="number">30</span>,<span class="string">'河北'</span>,<span class="string">'北京'</span>),e.* <span class="keyword">from</span> emp e;</span><br><span class="line"><span class="comment">--nvl(不为空显示,为空显示) 判断是否为null</span></span><br><span class="line"><span class="keyword">select</span> nvl(comm,<span class="number">0</span>)+sal <span class="keyword">from</span> emp;</span><br></pre></td></tr></table></figure>
-<h3 id="应用">应用</h3>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--成绩表</span></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> stuno(</span><br><span class="line">  stuno <span class="built_in">varchar2</span>(<span class="number">20</span>),</span><br><span class="line">  cid <span class="built_in">number</span>(<span class="number">1</span>),</span><br><span class="line">  score <span class="built_in">number</span>(<span class="number">3</span>),</span><br><span class="line">  uptime <span class="built_in">date</span></span><br><span class="line">)</span><br><span class="line"><span class="comment">--查询修改表</span></span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> stuno <span class="keyword">for</span> <span class="keyword">update</span>;</span><br><span class="line"><span class="comment">--新建表复制内容</span></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> score <span class="keyword">as</span>(<span class="keyword">select</span> * <span class="keyword">from</span> stuno);</span><br><span class="line"><span class="keyword">drop</span> <span class="keyword">table</span> stuno;</span><br><span class="line"><span class="comment">-- 三期考试成绩分数排名</span></span><br><span class="line"><span class="comment">--断号排序(内层查询可以引用外层查询)</span></span><br><span class="line"><span class="keyword">select</span> s1.*,(<span class="keyword">select</span> <span class="keyword">count</span>(*)+<span class="number">1</span> <span class="keyword">from</span> score s2 <span class="keyword">where</span> s2.cid=<span class="number">3</span> <span class="keyword">and</span> s2.stuno!=s1.stuno <span class="keyword">and</span> s2.score&gt;s1.score)</span><br><span class="line"><span class="keyword">from</span> score s1 <span class="keyword">where</span> s1.cid=<span class="number">3</span>;</span><br><span class="line"><span class="comment">--连号排序</span></span><br><span class="line"><span class="keyword">select</span> s1.*,(<span class="keyword">select</span> <span class="keyword">count</span>(<span class="keyword">distinct</span>(score))+<span class="number">1</span> <span class="keyword">from</span> score s2 <span class="keyword">where</span> s2.cid=<span class="number">3</span> <span class="keyword">and</span> s2.stuno!=s1.stuno <span class="keyword">and</span> s2.score&gt;s1.score) </span><br><span class="line"><span class="keyword">from</span> score s1 <span class="keyword">where</span> s1.cid=<span class="number">3</span>;</span><br><span class="line"><span class="comment">-- 求三期考试成绩分数最高的三个学生</span></span><br><span class="line"><span class="keyword">select</span> sc.* <span class="keyword">from</span>(</span><br><span class="line">  <span class="keyword">select</span> s.*,(</span><br><span class="line">    <span class="keyword">select</span> <span class="keyword">count</span>(*)+<span class="number">1</span> <span class="keyword">from</span> score s2 </span><br><span class="line">    <span class="keyword">where</span> s2.cid=s.cid <span class="comment">--学期相等</span></span><br><span class="line">    <span class="keyword">and</span> s2.stuno=s.stuno <span class="comment">--学号相等</span></span><br><span class="line">    <span class="keyword">and</span> s2.uptime&lt;s.uptime<span class="comment">--考试时间</span></span><br><span class="line">  ) 第N次考试</span><br><span class="line">  <span class="keyword">from</span> score s <span class="keyword">where</span> s.cid =<span class="number">1</span></span><br><span class="line">)sc <span class="keyword">where</span> sc.第N次考试=<span class="number">1</span></span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span> score <span class="keyword">desc</span></span><br><span class="line"><span class="comment">-- with t</span></span><br><span class="line"><span class="keyword">with</span> t <span class="keyword">as</span>(</span><br><span class="line">  <span class="keyword">select</span> sc.* <span class="keyword">from</span>(</span><br><span class="line">    <span class="keyword">select</span> s.*,(</span><br><span class="line">      <span class="keyword">select</span> <span class="keyword">count</span>(*)+<span class="number">1</span> <span class="keyword">from</span> score s2 </span><br><span class="line">      <span class="keyword">where</span> s2.cid=s.cid <span class="comment">--学期相等</span></span><br><span class="line">      <span class="keyword">and</span> s2.stuno=s.stuno <span class="comment">--学号相等</span></span><br><span class="line">      <span class="keyword">and</span> s2.uptime&lt;s.uptime<span class="comment">--考试时间</span></span><br><span class="line">    ) 第N次考试</span><br><span class="line">    <span class="keyword">from</span> score s <span class="keyword">where</span> s.cid =<span class="number">1</span></span><br><span class="line">  )sc <span class="keyword">where</span> sc.第N次考试=<span class="number">1</span></span><br><span class="line">  <span class="keyword">order</span> <span class="keyword">by</span> score <span class="keyword">desc</span>)</span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> t <span class="keyword">where</span> <span class="keyword">rownum</span>&lt;=<span class="number">3</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 行转列</span></span><br><span class="line"><span class="comment">--decode</span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">MAX</span>(<span class="keyword">decode</span>(c.cid,<span class="number">1</span>,c,cname)) c1,<span class="keyword">MAX</span>(<span class="keyword">decode</span>(c.cid,<span class="number">2</span>,cname)) c2,<span class="keyword">MAX</span>(<span class="keyword">decode</span>(c.cid,<span class="number">3</span>,c.came)) c3,</span><br><span class="line"><span class="keyword">MAX</span>(<span class="keyword">decode</span>(c.cid,<span class="number">4</span>,c.came)) c4,<span class="keyword">MAX</span>(<span class="keyword">decode</span>(c.cid,<span class="number">5</span>,c.came)) c5,<span class="keyword">MAX</span>(<span class="keyword">decode</span>(c.cid,<span class="number">6</span>,c.came)) c6</span><br><span class="line"><span class="keyword">from</span> course c;</span><br><span class="line"><span class="comment">--case when then</span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">MAX</span>(<span class="keyword">case</span> c.cid <span class="keyword">when</span> <span class="number">1</span> <span class="keyword">then</span> c.cname <span class="keyword">end</span>) c1,</span><br><span class="line"><span class="keyword">MAX</span>(<span class="keyword">case</span> c.cid <span class="keyword">when</span> <span class="number">2</span> <span class="keyword">then</span> c.cname <span class="keyword">end</span>) c2,</span><br><span class="line"><span class="keyword">MAX</span>(<span class="keyword">case</span> c.cid <span class="keyword">when</span> <span class="number">3</span> <span class="keyword">then</span> c.cname <span class="keyword">end</span>) c3,</span><br><span class="line"><span class="keyword">MAX</span>(<span class="keyword">case</span> c.cid <span class="keyword">when</span> <span class="number">4</span> <span class="keyword">then</span> c.cname <span class="keyword">end</span>) c4,</span><br><span class="line"><span class="keyword">MAX</span>(<span class="keyword">case</span> c.cid <span class="keyword">when</span> <span class="number">5</span> <span class="keyword">then</span> c.cname <span class="keyword">end</span>) c5,</span><br><span class="line"><span class="keyword">MAX</span>(<span class="keyword">case</span> c.cid <span class="keyword">when</span> <span class="number">6</span> <span class="keyword">then</span> c.cname <span class="keyword">end</span>) c6</span><br><span class="line"><span class="keyword">from</span> course c;</span><br><span class="line"><span class="comment">--pivot(不灵活，不能有多的列)</span></span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> course <span class="keyword">pivot</span>(<span class="keyword">MAX</span>(cname) <span class="keyword">for</span> cid <span class="keyword">in</span> (<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>))</span><br><span class="line"><span class="comment">--学生三个学期成绩行转列</span></span><br><span class="line"><span class="comment">--pivot需要去除表中多余的列</span></span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> (<span class="keyword">select</span> cid,score <span class="keyword">from</span> score <span class="keyword">where</span> stuno=<span class="string">'S006'</span>) s</span><br><span class="line"><span class="keyword">pivot</span>(<span class="keyword">MAX</span>(score) <span class="keyword">for</span> cid <span class="keyword">in</span> (<span class="number">1</span> 一期,<span class="number">2</span> 二期,<span class="number">3</span> 三期))</span><br><span class="line"><span class="comment">--decode和case when then不需要</span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">MAX</span>(<span class="keyword">case</span> c.cid <span class="keyword">when</span> <span class="number">1</span> <span class="keyword">then</span> c.score <span class="keyword">end</span>) 一期,</span><br><span class="line"><span class="keyword">MAX</span>(<span class="keyword">case</span> c.cid <span class="keyword">when</span> <span class="number">2</span> <span class="keyword">then</span> c.score <span class="keyword">end</span>) 二期,</span><br><span class="line"><span class="keyword">MAX</span>(<span class="keyword">case</span> c.cid <span class="keyword">when</span> <span class="number">3</span> <span class="keyword">then</span> c.score <span class="keyword">end</span>) 三期,</span><br><span class="line"><span class="keyword">MAX</span>(<span class="keyword">case</span> c.cid <span class="keyword">when</span> <span class="number">4</span> <span class="keyword">then</span> c.score <span class="keyword">end</span>) 毕业</span><br><span class="line"><span class="keyword">from</span> score c <span class="keyword">where</span> stuno=<span class="string">'S006'</span>;</span><br></pre></td></tr></table></figure>
+<h3 id="6-其他函数"><a href="#6-其他函数" class="headerlink" title="6.其他函数"></a>6.其他函数</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--sys_guid 生成32位随机数</span></span><br><span class="line"><span class="keyword">select</span> sys_guid() <span class="keyword">from</span> dual;</span><br><span class="line"><span class="comment">--nullif 判断两个值是否一致，一致返回null，否则输出第一个值</span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">nullif</span>(sal,<span class="number">3000</span>) <span class="keyword">from</span> emp;</span><br><span class="line"><span class="comment">--decode(列名,'值1',输出1,'值2',输出2...,否则输出)</span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">decode</span>(deptno,<span class="number">20</span>,<span class="string">'河南'</span>,<span class="number">30</span>,<span class="string">'河北'</span>,<span class="string">'北京'</span>),e.* <span class="keyword">from</span> emp e;</span><br><span class="line"><span class="comment">--nvl(不为空显示,为空显示) 判断是否为null</span></span><br><span class="line"><span class="keyword">select</span> nvl(comm,<span class="number">0</span>)+sal <span class="keyword">from</span> emp;</span><br></pre></td></tr></table></figure>
+<h3 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--成绩表</span></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> stuno(</span><br><span class="line">  stuno <span class="built_in">varchar2</span>(<span class="number">20</span>),</span><br><span class="line">  cid <span class="built_in">number</span>(<span class="number">1</span>),</span><br><span class="line">  score <span class="built_in">number</span>(<span class="number">3</span>),</span><br><span class="line">  uptime <span class="built_in">date</span></span><br><span class="line">)</span><br><span class="line"><span class="comment">--查询修改表</span></span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> stuno <span class="keyword">for</span> <span class="keyword">update</span>;</span><br><span class="line"><span class="comment">--新建表复制内容</span></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> score <span class="keyword">as</span>(<span class="keyword">select</span> * <span class="keyword">from</span> stuno);</span><br><span class="line"><span class="keyword">drop</span> <span class="keyword">table</span> stuno;</span><br><span class="line"><span class="comment">-- 三期考试成绩分数排名</span></span><br><span class="line"><span class="comment">--断号排序(内层查询可以引用外层查询)</span></span><br><span class="line"><span class="keyword">select</span> s1.*,(<span class="keyword">select</span> <span class="keyword">count</span>(*)+<span class="number">1</span> <span class="keyword">from</span> score s2 <span class="keyword">where</span> s2.cid=<span class="number">3</span> <span class="keyword">and</span> s2.stuno!=s1.stuno <span class="keyword">and</span> s2.score&gt;s1.score)</span><br><span class="line"><span class="keyword">from</span> score s1 <span class="keyword">where</span> s1.cid=<span class="number">3</span>;</span><br><span class="line"><span class="comment">--连号排序</span></span><br><span class="line"><span class="keyword">select</span> s1.*,(<span class="keyword">select</span> <span class="keyword">count</span>(<span class="keyword">distinct</span>(score))+<span class="number">1</span> <span class="keyword">from</span> score s2 <span class="keyword">where</span> s2.cid=<span class="number">3</span> <span class="keyword">and</span> s2.stuno!=s1.stuno <span class="keyword">and</span> s2.score&gt;s1.score) </span><br><span class="line"><span class="keyword">from</span> score s1 <span class="keyword">where</span> s1.cid=<span class="number">3</span>;</span><br><span class="line"><span class="comment">-- 求三期考试成绩分数最高的三个学生</span></span><br><span class="line"><span class="keyword">select</span> sc.* <span class="keyword">from</span>(</span><br><span class="line">  <span class="keyword">select</span> s.*,(</span><br><span class="line">    <span class="keyword">select</span> <span class="keyword">count</span>(*)+<span class="number">1</span> <span class="keyword">from</span> score s2 </span><br><span class="line">    <span class="keyword">where</span> s2.cid=s.cid <span class="comment">--学期相等</span></span><br><span class="line">    <span class="keyword">and</span> s2.stuno=s.stuno <span class="comment">--学号相等</span></span><br><span class="line">    <span class="keyword">and</span> s2.uptime&lt;s.uptime<span class="comment">--考试时间</span></span><br><span class="line">  ) 第N次考试</span><br><span class="line">  <span class="keyword">from</span> score s <span class="keyword">where</span> s.cid =<span class="number">1</span></span><br><span class="line">)sc <span class="keyword">where</span> sc.第N次考试=<span class="number">1</span></span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span> score <span class="keyword">desc</span></span><br><span class="line"><span class="comment">-- with t</span></span><br><span class="line"><span class="keyword">with</span> t <span class="keyword">as</span>(</span><br><span class="line">  <span class="keyword">select</span> sc.* <span class="keyword">from</span>(</span><br><span class="line">    <span class="keyword">select</span> s.*,(</span><br><span class="line">      <span class="keyword">select</span> <span class="keyword">count</span>(*)+<span class="number">1</span> <span class="keyword">from</span> score s2 </span><br><span class="line">      <span class="keyword">where</span> s2.cid=s.cid <span class="comment">--学期相等</span></span><br><span class="line">      <span class="keyword">and</span> s2.stuno=s.stuno <span class="comment">--学号相等</span></span><br><span class="line">      <span class="keyword">and</span> s2.uptime&lt;s.uptime<span class="comment">--考试时间</span></span><br><span class="line">    ) 第N次考试</span><br><span class="line">    <span class="keyword">from</span> score s <span class="keyword">where</span> s.cid =<span class="number">1</span></span><br><span class="line">  )sc <span class="keyword">where</span> sc.第N次考试=<span class="number">1</span></span><br><span class="line">  <span class="keyword">order</span> <span class="keyword">by</span> score <span class="keyword">desc</span>)</span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> t <span class="keyword">where</span> <span class="keyword">rownum</span>&lt;=<span class="number">3</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 行转列</span></span><br><span class="line"><span class="comment">--decode</span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">MAX</span>(<span class="keyword">decode</span>(c.cid,<span class="number">1</span>,c,cname)) c1,<span class="keyword">MAX</span>(<span class="keyword">decode</span>(c.cid,<span class="number">2</span>,cname)) c2,<span class="keyword">MAX</span>(<span class="keyword">decode</span>(c.cid,<span class="number">3</span>,c.came)) c3,</span><br><span class="line"><span class="keyword">MAX</span>(<span class="keyword">decode</span>(c.cid,<span class="number">4</span>,c.came)) c4,<span class="keyword">MAX</span>(<span class="keyword">decode</span>(c.cid,<span class="number">5</span>,c.came)) c5,<span class="keyword">MAX</span>(<span class="keyword">decode</span>(c.cid,<span class="number">6</span>,c.came)) c6</span><br><span class="line"><span class="keyword">from</span> course c;</span><br><span class="line"><span class="comment">--case when then</span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">MAX</span>(<span class="keyword">case</span> c.cid <span class="keyword">when</span> <span class="number">1</span> <span class="keyword">then</span> c.cname <span class="keyword">end</span>) c1,</span><br><span class="line"><span class="keyword">MAX</span>(<span class="keyword">case</span> c.cid <span class="keyword">when</span> <span class="number">2</span> <span class="keyword">then</span> c.cname <span class="keyword">end</span>) c2,</span><br><span class="line"><span class="keyword">MAX</span>(<span class="keyword">case</span> c.cid <span class="keyword">when</span> <span class="number">3</span> <span class="keyword">then</span> c.cname <span class="keyword">end</span>) c3,</span><br><span class="line"><span class="keyword">MAX</span>(<span class="keyword">case</span> c.cid <span class="keyword">when</span> <span class="number">4</span> <span class="keyword">then</span> c.cname <span class="keyword">end</span>) c4,</span><br><span class="line"><span class="keyword">MAX</span>(<span class="keyword">case</span> c.cid <span class="keyword">when</span> <span class="number">5</span> <span class="keyword">then</span> c.cname <span class="keyword">end</span>) c5,</span><br><span class="line"><span class="keyword">MAX</span>(<span class="keyword">case</span> c.cid <span class="keyword">when</span> <span class="number">6</span> <span class="keyword">then</span> c.cname <span class="keyword">end</span>) c6</span><br><span class="line"><span class="keyword">from</span> course c;</span><br><span class="line"><span class="comment">--pivot(不灵活，不能有多的列)</span></span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> course <span class="keyword">pivot</span>(<span class="keyword">MAX</span>(cname) <span class="keyword">for</span> cid <span class="keyword">in</span> (<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>))</span><br><span class="line"><span class="comment">--学生三个学期成绩行转列</span></span><br><span class="line"><span class="comment">--pivot需要去除表中多余的列</span></span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> (<span class="keyword">select</span> cid,score <span class="keyword">from</span> score <span class="keyword">where</span> stuno=<span class="string">'S006'</span>) s</span><br><span class="line"><span class="keyword">pivot</span>(<span class="keyword">MAX</span>(score) <span class="keyword">for</span> cid <span class="keyword">in</span> (<span class="number">1</span> 一期,<span class="number">2</span> 二期,<span class="number">3</span> 三期))</span><br><span class="line"><span class="comment">--decode和case when then不需要</span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">MAX</span>(<span class="keyword">case</span> c.cid <span class="keyword">when</span> <span class="number">1</span> <span class="keyword">then</span> c.score <span class="keyword">end</span>) 一期,</span><br><span class="line"><span class="keyword">MAX</span>(<span class="keyword">case</span> c.cid <span class="keyword">when</span> <span class="number">2</span> <span class="keyword">then</span> c.score <span class="keyword">end</span>) 二期,</span><br><span class="line"><span class="keyword">MAX</span>(<span class="keyword">case</span> c.cid <span class="keyword">when</span> <span class="number">3</span> <span class="keyword">then</span> c.score <span class="keyword">end</span>) 三期,</span><br><span class="line"><span class="keyword">MAX</span>(<span class="keyword">case</span> c.cid <span class="keyword">when</span> <span class="number">4</span> <span class="keyword">then</span> c.score <span class="keyword">end</span>) 毕业</span><br><span class="line"><span class="keyword">from</span> score c <span class="keyword">where</span> stuno=<span class="string">'S006'</span>;</span><br></pre></td></tr></table></figure>
 
       
 
@@ -333,7 +325,7 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 
       
         <div class="page-reward">
-          <a href="javascript:;" target="_blank" rel="noopener" class="page-reward-btn tooltip-top">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
             <div class="tooltip tooltip-east">
             <span class="tooltip-item">
               赏
@@ -373,7 +365,7 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
           <br></li>
           <li><strong>版权声明：</strong>
           本作品采用
-          <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>
+          <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>
           进行许可。转载请注明出处！
           
         </div>
@@ -390,11 +382,11 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color4">数据库</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">数据库</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color2">Oracle</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Oracle</a>
         		</li>
       		
 		</ul>
@@ -409,35 +401,35 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 <div class="share-btn share-icons tooltip-left">
   <div class="tooltip tooltip-east">
     <span class="tooltip-item">
-      <a href="javascript:;" target="_blank" rel="noopener" class="share-sns share-outer">
+      <a href="javascript:;" class="share-sns share-outer">
         <i class="icon icon-share"></i>
       </a>
     </span>
     <span class="tooltip-content">
       <div class="share-wrap">
         <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="weibo">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
             <i class="icon icon-weibo"></i>
           </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" target="_blank" rel="noopener" data-type="weixin">
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
             <i class="icon icon-weixin"></i>
           </a>
-          <a class="qq share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="qq">
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
             <i class="icon icon-qq"></i>
           </a>
-          <a class="douban share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="douban">
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
             <i class="icon icon-douban"></i>
           </a>
-          <a class="qzone share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="qzone">
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
             <i class="icon icon-qzone"></i>
           </a>
-          <a class="facebook share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="facebook">
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
             <i class="icon icon-facebook"></i>
           </a>
-          <a class="twitter share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="twitter">
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
             <i class="icon icon-twitter"></i>
           </a>
-          <a class="google share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="google">
+          <a class="google share-sns" href="javascript:;" data-type="google">
             <i class="icon icon-google"></i>
           </a>
         </div>
@@ -447,7 +439,7 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 </div>
 
 <div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;" target="_blank" rel="noopener"><i class="icon icon-close"></i></a>
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
       <img src="//pan.baidu.com/share/qrcode?url=https://www.tengfei.eu.org/article/2cee62c5.html" alt="微信分享二维码">
@@ -486,7 +478,7 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
     <div class="mod-side-operation">
         
         <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" target="_blank" rel="noopener" class="mod-side-operation__jump-to-top">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
                 <i class="icon-font icon-back"></i>
             </a>
             <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
@@ -689,15 +681,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
     
       
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" target="_blank" rel="noopener" q-class="active:innerArchive">所有文章</a></li>
+      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
       
         
       
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'friends')"><a href="javascript:void(0)" target="_blank" rel="noopener" q-class="active:friends">友链</a></li>
+      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'friends')"><a href="javascript:void(0)" q-class="active:friends">友链</a></li>
       
         
       
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" target="_blank" rel="noopener" q-class="active:aboutme">关于我</a></li>
+      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
       
         
     </ul>
@@ -718,319 +710,319 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">DevOps</a>
+                <a href="javascript:void(0)" class="js-tag color5">Java</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">CI/CD</a>
+                <a href="javascript:void(0)" class="js-tag color4">工具类</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">Java</a>
+                <a href="javascript:void(0)" class="js-tag color2">DevOps</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">工具类</a>
+                <a href="javascript:void(0)" class="js-tag color1">CI/CD</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">CSS</a>
+                <a href="javascript:void(0)" class="js-tag color4">ERP</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">前端</a>
+                <a href="javascript:void(0)" class="js-tag color3">接口</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">ERP</a>
+                <a href="javascript:void(0)" class="js-tag color5">财务系统</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">接口</a>
+                <a href="javascript:void(0)" class="js-tag color5">工厂系统</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">财务系统</a>
+                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">工厂系统</a>
+                <a href="javascript:void(0)" class="js-tag color3">前端</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">Docker</a>
+                <a href="javascript:void(0)" class="js-tag color2">Docker</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">运维</a>
+                <a href="javascript:void(0)" class="js-tag color3">运维</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">Hexo</a>
+                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">博客</a>
+                <a href="javascript:void(0)" class="js-tag color3">博客</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">SEO</a>
+                <a href="javascript:void(0)" class="js-tag color4">SEO</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Linux</a>
+                <a href="javascript:void(0)" class="js-tag color3">分页</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">分页</a>
+                <a href="javascript:void(0)" class="js-tag color3">组件</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">组件</a>
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">MES</a>
+                <a href="javascript:void(0)" class="js-tag color4">MES</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Maven</a>
+                <a href="javascript:void(0)" class="js-tag color1">Maven</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">MyBatis</a>
+                <a href="javascript:void(0)" class="js-tag color3">MyBatis</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">持久层框架</a>
+                <a href="javascript:void(0)" class="js-tag color1">持久层框架</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">MySQL</a>
+                <a href="javascript:void(0)" class="js-tag color1">Nginx</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">数据库</a>
+                <a href="javascript:void(0)" class="js-tag color1">MySQL</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Nginx</a>
+                <a href="javascript:void(0)" class="js-tag color4">数据库</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">NodeJS</a>
+                <a href="javascript:void(0)" class="js-tag color2">NodeJS</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">命令行窗口</a>
+                <a href="javascript:void(0)" class="js-tag color1">命令行窗口</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">Oracle</a>
+                <a href="javascript:void(0)" class="js-tag color2">Oracle</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">消息队列</a>
+                <a href="javascript:void(0)" class="js-tag color4">RPA</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">RabbitMQ</a>
+                <a href="javascript:void(0)" class="js-tag color3">工具</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">RPA</a>
+                <a href="javascript:void(0)" class="js-tag color5">消息队列</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">工具</a>
+                <a href="javascript:void(0)" class="js-tag color4">RabbitMQ</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">SQL</a>
+                <a href="javascript:void(0)" class="js-tag color4">SQL</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Redis</a>
+                <a href="javascript:void(0)" class="js-tag color1">Redis</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">Spring</a>
+                <a href="javascript:void(0)" class="js-tag color1">SpringBoot</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">SpringMVC</a>
+                <a href="javascript:void(0)" class="js-tag color2">Spring</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">SpringBoot</a>
+                <a href="javascript:void(0)" class="js-tag color5">SpringMVC</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">JSR303校验</a>
+                <a href="javascript:void(0)" class="js-tag color4">JSR303校验</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">SpringSecurity</a>
+                <a href="javascript:void(0)" class="js-tag color1">SLF4j</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">SLF4j</a>
+                <a href="javascript:void(0)" class="js-tag color5">Thymeleaf</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">Thymeleaf</a>
+                <a href="javascript:void(0)" class="js-tag color5">SpringSecurity</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">Swagger</a>
+                <a href="javascript:void(0)" class="js-tag color3">Swagger</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">zookeeper</a>
+                <a href="javascript:void(0)" class="js-tag color5">zookeeper</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Dubbo</a>
+                <a href="javascript:void(0)" class="js-tag color1">Dubbo</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">SpringCloud</a>
+                <a href="javascript:void(0)" class="js-tag color3">注解</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">注解</a>
+                <a href="javascript:void(0)" class="js-tag color1">Web框架</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Web框架</a>
+                <a href="javascript:void(0)" class="js-tag color2">SpringCloud</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">JWT</a>
+                <a href="javascript:void(0)" class="js-tag color4">JWT</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Cloudflare</a>
+                <a href="javascript:void(0)" class="js-tag color4">Vue</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">图床</a>
+                <a href="javascript:void(0)" class="js-tag color1">Cloudflare</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">Vue</a>
+                <a href="javascript:void(0)" class="js-tag color3">图床</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">webpack</a>
+                <a href="javascript:void(0)" class="js-tag color3">webpack</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">Vue-cli</a>
+                <a href="javascript:void(0)" class="js-tag color3">Vue-cli</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">前端路由</a>
+                <a href="javascript:void(0)" class="js-tag color5">Vuex</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">Vuex</a>
+                <a href="javascript:void(0)" class="js-tag color4">WMS</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">WMS</a>
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">git</a>
+                <a href="javascript:void(0)" class="js-tag color5">前端路由</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Hexo_admin</a>
+                <a href="javascript:void(0)" class="js-tag color1">Hexo_admin</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">vue</a>
+                <a href="javascript:void(0)" class="js-tag color4">vue</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">插件</a>
+                <a href="javascript:void(0)" class="js-tag color3">插件</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">样式</a>
+                <a href="javascript:void(0)" class="js-tag color3">样式</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">云开发</a>
+                <a href="javascript:void(0)" class="js-tag color4">云开发</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">低代码</a>
+                <a href="javascript:void(0)" class="js-tag color4">低代码</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">小程序</a>
+                <a href="javascript:void(0)" class="js-tag color4">小程序</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">监控</a>
+                <a href="javascript:void(0)" class="js-tag color5">企业微信</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">Zabbix</a>
+                <a href="javascript:void(0)" class="js-tag color5">权限管理</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">企业微信</a>
+                <a href="javascript:void(0)" class="js-tag color4">个人域</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">权限管理</a>
+                <a href="javascript:void(0)" class="js-tag color3">监控</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">个人域</a>
+                <a href="javascript:void(0)" class="js-tag color2">Zabbix</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">定时任务</a>
+                <a href="javascript:void(0)" class="js-tag color5">定时任务</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">设计模式</a>
+                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">感慨</a>
+                <a href="javascript:void(0)" class="js-tag color3">感慨</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">随笔</a>
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">正则表达式</a>
+                <a href="javascript:void(0)" class="js-tag color1">正则表达式</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">NoSql</a>
+                <a href="javascript:void(0)" class="js-tag color1">ERP系统</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">Flowable</a>
+                <a href="javascript:void(0)" class="js-tag color3">文档</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">工作流</a>
+                <a href="javascript:void(0)" class="js-tag color4">Flowable</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">ERP系统</a>
+                <a href="javascript:void(0)" class="js-tag color4">工作流</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">文档</a>
+                <a href="javascript:void(0)" class="js-tag color1">NoSql</a>
               </li>
             
             <div class="clearfix"></div>
@@ -1184,7 +1176,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
 </div>
   </div>
   <!-- 右上角书签 -->
-<a href="https://github.com/zhangtengfei66" target="_blank" rel="noopener" class="github-corner" aria-label="View source on GitHub" title="Hello, this is me！" aria-label="Hello, this is me！"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#FF0000; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+<a href="https://github.com/zhangtengfei66" class="github-corner" aria-label="View source on GitHub" title="Hello, this is me！" aria-label="Hello, this is me！"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#FF0000; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
   <!-- 右上角书签 -->
   <!-- 标题栏动态变化表情 -->
   <script type="text/javascript" src="/js/crash_cheat.js"></script>
