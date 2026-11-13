@@ -310,33 +310,47 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 <p>设计模式是前人在长期实践中沉淀下来的可复用解决方案。本文总结开发中最常见的三类设计模式——单例模式、工厂模式与代理模式，并结合 Java 代码说明其实现方式与适用场景。</p>
 </blockquote>
 <a id="more"></a>
-<h2 id="一、单例模式"><a href="#一、单例模式" class="headerlink" title="一、单例模式"></a>一、单例模式</h2><p>单例模式保证一个类只有一个实例，并提供一个全局访问点，常用于配置管理、连接池、日志对象等。</p>
-<h3 id="1-饿汉式"><a href="#1-饿汉式" class="headerlink" title="1. 饿汉式"></a>1. 饿汉式</h3><p>类加载时就创建实例，线程安全，但可能造成资源浪费。</p>
+<h2 id="一、单例模式">一、单例模式</h2>
+<p>单例模式保证一个类只有一个实例，并提供一个全局访问点，常用于配置管理、连接池、日志对象等。</p>
+<h3 id="1-饿汉式">1. 饿汉式</h3>
+<p>类加载时就创建实例，线程安全，但可能造成资源浪费。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Singleton</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> Singleton INSTANCE = <span class="keyword">new</span> Singleton();</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">Singleton</span><span class="params">()</span> </span>&#123;&#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Singleton <span class="title">getInstance</span><span class="params">()</span> </span>&#123; <span class="keyword">return</span> INSTANCE; &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="2-懒汉式（双重校验锁）"><a href="#2-懒汉式（双重校验锁）" class="headerlink" title="2. 懒汉式（双重校验锁）"></a>2. 懒汉式（双重校验锁）</h3><p>延迟创建，需要时再实例化，配合 volatile 保证线程安全。</p>
+<h3 id="2-懒汉式（双重校验锁）">2. 懒汉式（双重校验锁）</h3>
+<p>延迟创建，需要时再实例化，配合 volatile 保证线程安全。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Singleton</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">volatile</span> Singleton instance;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">Singleton</span><span class="params">()</span> </span>&#123;&#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Singleton <span class="title">getInstance</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (instance == <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">synchronized</span> (Singleton<span class="class">.<span class="keyword">class</span>) </span>&#123;</span><br><span class="line">                <span class="keyword">if</span> (instance == <span class="keyword">null</span>) &#123;</span><br><span class="line">                    instance = <span class="keyword">new</span> Singleton();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> instance;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="3-枚举实现"><a href="#3-枚举实现" class="headerlink" title="3. 枚举实现"></a>3. 枚举实现</h3><p>《Effective Java》推荐的方式，天然线程安全且能防止反射和序列化破坏单例。</p>
+<h3 id="3-枚举实现">3. 枚举实现</h3>
+<p>《Effective Java》推荐的方式，天然线程安全且能防止反射和序列化破坏单例。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">enum</span> Singleton &#123;</span><br><span class="line">    INSTANCE;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doSomething</span><span class="params">()</span> </span>&#123;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="二、工厂模式"><a href="#二、工厂模式" class="headerlink" title="二、工厂模式"></a>二、工厂模式</h2><p>工厂模式将对象的创建与使用解耦，客户端无需关心具体实现类的创建细节。</p>
-<h3 id="1-简单工厂"><a href="#1-简单工厂" class="headerlink" title="1. 简单工厂"></a>1. 简单工厂</h3><p>通过一个工厂类根据参数返回不同类型的产品。</p>
+<h2 id="二、工厂模式">二、工厂模式</h2>
+<p>工厂模式将对象的创建与使用解耦，客户端无需关心具体实现类的创建细节。</p>
+<h3 id="1-简单工厂">1. 简单工厂</h3>
+<p>通过一个工厂类根据参数返回不同类型的产品。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ShapeFactory</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Shape <span class="title">create</span><span class="params">(String type)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">switch</span> (type) &#123;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">"circle"</span>: <span class="keyword">return</span> <span class="keyword">new</span> Circle();</span><br><span class="line">            <span class="keyword">case</span> <span class="string">"square"</span>: <span class="keyword">return</span> <span class="keyword">new</span> Square();</span><br><span class="line">            <span class="keyword">default</span>: <span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="string">"unknown type"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="2-工厂方法"><a href="#2-工厂方法" class="headerlink" title="2. 工厂方法"></a>2. 工厂方法</h3><p>定义一个创建对象的接口，由子类决定实例化哪一个类，符合开闭原则。</p>
+<h3 id="2-工厂方法">2. 工厂方法</h3>
+<p>定义一个创建对象的接口，由子类决定实例化哪一个类，符合开闭原则。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">ShapeFactory</span> </span>&#123; <span class="function">Shape <span class="title">create</span><span class="params">()</span></span>; &#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CircleFactory</span> <span class="keyword">implements</span> <span class="title">ShapeFactory</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> Shape <span class="title">create</span><span class="params">()</span> </span>&#123; <span class="keyword">return</span> <span class="keyword">new</span> Circle(); &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="3-抽象工厂"><a href="#3-抽象工厂" class="headerlink" title="3. 抽象工厂"></a>3. 抽象工厂</h3><p>创建一系列相关或相互依赖的对象族，如一个品牌下的多个产品。</p>
+<h3 id="3-抽象工厂">3. 抽象工厂</h3>
+<p>创建一系列相关或相互依赖的对象族，如一个品牌下的多个产品。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">UIFactory</span> </span>&#123;</span><br><span class="line">    <span class="function">Button <span class="title">createButton</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function">TextField <span class="title">createTextField</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">WindowsUIFactory</span> <span class="keyword">implements</span> <span class="title">UIFactory</span> </span>&#123; ... &#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MacUIFactory</span> <span class="keyword">implements</span> <span class="title">UIFactory</span> </span>&#123; ... &#125;</span><br></pre></td></tr></table></figure>
-<h2 id="三、代理模式"><a href="#三、代理模式" class="headerlink" title="三、代理模式"></a>三、代理模式</h2><p>代理模式为对象提供一个替身，以控制对原对象的访问，常用于日志、权限校验、事务、远程调用等场景。</p>
-<h3 id="1-静态代理"><a href="#1-静态代理" class="headerlink" title="1. 静态代理"></a>1. 静态代理</h3><p>代理类与被代理类实现同一接口，在代理类中调用目标方法并附加增强逻辑。</p>
+<h2 id="三、代理模式">三、代理模式</h2>
+<p>代理模式为对象提供一个替身，以控制对原对象的访问，常用于日志、权限校验、事务、远程调用等场景。</p>
+<h3 id="1-静态代理">1. 静态代理</h3>
+<p>代理类与被代理类实现同一接口，在代理类中调用目标方法并附加增强逻辑。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">UserService</span> </span>&#123; <span class="function"><span class="keyword">void</span> <span class="title">save</span><span class="params">()</span></span>; &#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">UserServiceImpl</span> <span class="keyword">implements</span> <span class="title">UserService</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">save</span><span class="params">()</span> </span>&#123; System.out.println(<span class="string">"save user"</span>); &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">UserServiceProxy</span> <span class="keyword">implements</span> <span class="title">UserService</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> UserService target = <span class="keyword">new</span> UserServiceImpl();</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">save</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"before..."</span>);</span><br><span class="line">        target.save();</span><br><span class="line">        System.out.println(<span class="string">"after..."</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="2-JDK-动态代理"><a href="#2-JDK-动态代理" class="headerlink" title="2. JDK 动态代理"></a>2. JDK 动态代理</h3><p>基于接口，通过 <code>Proxy</code> 和 <code>InvocationHandler</code> 在运行时生成代理类。</p>
+<h3 id="2-JDK-动态代理">2. JDK 动态代理</h3>
+<p>基于接口，通过 <code>Proxy</code> 和 <code>InvocationHandler</code> 在运行时生成代理类。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">UserService proxy = (UserService) Proxy.newProxyInstance(</span><br><span class="line">    target.getClass().getClassLoader(),</span><br><span class="line">    target.getClass().getInterfaces(),</span><br><span class="line">    (obj, method, args) -&gt; &#123;</span><br><span class="line">        System.out.println(<span class="string">"before..."</span>);</span><br><span class="line">        Object result = method.invoke(target, args);</span><br><span class="line">        System.out.println(<span class="string">"after..."</span>);</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;);</span><br></pre></td></tr></table></figure>
-<h3 id="3-CGLIB-代理"><a href="#3-CGLIB-代理" class="headerlink" title="3. CGLIB 代理"></a>3. CGLIB 代理</h3><p>基于继承，可代理没有实现接口的类，Spring AOP 中当目标类没有接口时默认使用 CGLIB。</p>
+<h3 id="3-CGLIB-代理">3. CGLIB 代理</h3>
+<p>基于继承，可代理没有实现接口的类，Spring AOP 中当目标类没有接口时默认使用 CGLIB。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Enhancer enhancer = <span class="keyword">new</span> Enhancer();</span><br><span class="line">enhancer.setSuperclass(Target<span class="class">.<span class="keyword">class</span>)</span>;</span><br><span class="line">enhancer.setCallback((MethodInterceptor) (obj, method, args, proxy) -&gt; &#123;</span><br><span class="line">    System.out.println(<span class="string">"before..."</span>);</span><br><span class="line">    Object result = proxy.invokeSuper(obj, args);</span><br><span class="line">    System.out.println(<span class="string">"after..."</span>);</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">&#125;);</span><br><span class="line">Target proxy = (Target) enhancer.create();</span><br></pre></td></tr></table></figure>
-<h2 id="四、如何选择"><a href="#四、如何选择" class="headerlink" title="四、如何选择"></a>四、如何选择</h2><ul>
+<h2 id="四、如何选择">四、如何选择</h2>
+<ul>
 <li><strong>单例</strong>：全局唯一对象时使用，注意线程安全与序列化问题。</li>
 <li><strong>工厂</strong>：创建逻辑复杂或希望统一管理对象创建时使用，避免到处 <code>new</code>。</li>
 <li><strong>代理</strong>：需要在不修改原代码的前提下增强功能时使用，Spring AOP 是其典型应用。</li>
 </ul>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>这三种模式是实际项目中出现频率最高的设计模式。理解其核心思想与实现差异，能帮助我们在合适的场景做出恰当选择，写出结构清晰、易于扩展的代码。</p>
+<h2 id="总结">总结</h2>
+<p>这三种模式是实际项目中出现频率最高的设计模式。理解其核心思想与实现差异，能帮助我们在合适的场景做出恰当选择，写出结构清晰、易于扩展的代码。</p>
 
       
 
@@ -729,6 +743,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">DevOps</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">CI/CD</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">Java</a>
               </li>
              
@@ -737,11 +759,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">DevOps</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">CSS</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">CI/CD</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">前端</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -757,11 +779,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">CSS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">前端</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">工厂系统</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -770,10 +788,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">运维</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">工厂系统</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -789,15 +803,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">组件</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">分页</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">组件</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -817,15 +831,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Nginx</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">MySQL</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">数据库</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Nginx</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -841,6 +855,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">消息队列</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">RabbitMQ</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">RPA</a>
               </li>
              
@@ -850,14 +872,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">SQL</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">消息队列</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">RabbitMQ</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -881,6 +895,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">SpringSecurity</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">SLF4j</a>
               </li>
              
@@ -889,7 +907,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">SpringSecurity</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">Swagger</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -901,15 +919,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">Swagger</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">SpringCloud</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">注解</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">SpringCloud</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -973,14 +987,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">监控</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">Zabbix</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">云开发</a>
               </li>
              
@@ -990,6 +996,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">小程序</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">监控</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">Zabbix</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1025,14 +1039,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">ERP系统</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">文档</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">NoSql</a>
               </li>
              
@@ -1042,6 +1048,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">工作流</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">ERP系统</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">文档</a>
               </li>
             
             <div class="clearfix"></div>
@@ -1215,8 +1229,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     <script src="/js/slide.js" type="text/javascript"></script>
   
 
-  <!-- 代码块复制功能 -->
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.js"></script>
+  <!-- 代码块复制功能
+       jsdelivr 在国内访问不稳定，优先走 bootcdn（360），失败再回退 jsdelivr。-->
+  <script>window.__clipboard_cdn = 'https://cdn.bootcdn.net/ajax/libs/clipboard.js/2.0.4/clipboard.min.js';</script>
+  <script src="https://cdn.bootcdn.net/ajax/libs/clipboard.js/2.0.4/clipboard.min.js"
+          onerror="this.onerror=null;this.src='https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.js'"></script>
   <script type="text/javascript" src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
   <script type="text/javascript" src="/js/clipboard_use.js"></script>
 <script type="text/x-mathjax-config">

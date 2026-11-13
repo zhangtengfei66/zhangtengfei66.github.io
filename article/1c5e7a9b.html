@@ -310,12 +310,16 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 <p>Java 8 是一次里程碑式的版本更新，其中 Lambda 表达式、函数式接口与 Optional 极大地改变了我们的编码方式。本文将聚焦这三个特性，梳理其语法与最佳实践。</p>
 </blockquote>
 <a id="more"></a>
-<h2 id="一、Lambda-表达式"><a href="#一、Lambda-表达式" class="headerlink" title="一、Lambda 表达式"></a>一、Lambda 表达式</h2><p>Lambda 让我们可以把函数作为参数传递，替代臃肿的匿名内部类。</p>
-<h3 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(参数列表) -&gt; &#123; 方法体 &#125;</span><br></pre></td></tr></table></figure>
-<h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 传统匿名内部类</span></span><br><span class="line">Runnable r1 = <span class="keyword">new</span> Runnable() &#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123; System.out.println(<span class="string">"hello"</span>); &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Lambda 写法</span></span><br><span class="line">Runnable r2 = () -&gt; System.out.println(<span class="string">"hello"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 带参数</span></span><br><span class="line">Comparator&lt;Integer&gt; c = (a, b) -&gt; a - b;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 带参数类型</span></span><br><span class="line">Function&lt;String, Integer&gt; f = (String s) -&gt; s.length();</span><br></pre></td></tr></table></figure>
+<h2 id="一、Lambda-表达式">一、Lambda 表达式</h2>
+<p>Lambda 让我们可以把函数作为参数传递，替代臃肿的匿名内部类。</p>
+<h3 id="基本语法">基本语法</h3>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(参数列表) -&gt; &#123; 方法体 &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="示例">示例</h3>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 传统匿名内部类</span></span><br><span class="line">Runnable r1 = <span class="keyword">new</span> Runnable() &#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123; System.out.println(<span class="string">"hello"</span>); &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Lambda 写法</span></span><br><span class="line">Runnable r2 = () -&gt; System.out.println(<span class="string">"hello"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 带参数</span></span><br><span class="line">Comparator&lt;Integer&gt; c = (a, b) -&gt; a - b;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 带参数类型</span></span><br><span class="line">Function&lt;String, Integer&gt; f = (String s) -&gt; s.length();</span><br></pre></td></tr></table></figure>
 <p>当方法体只有一条语句时可省略 <code>{}</code> 和 <code>return</code>；只有一个参数时可省略小括号。</p>
-<h2 id="二、函数式接口"><a href="#二、函数式接口" class="headerlink" title="二、函数式接口"></a>二、函数式接口</h2><p>函数式接口是只包含一个抽象方法的接口，可用 <code>@FunctionalInterface</code> 标注。Lambda 表达式本质上是函数式接口的实例。</p>
-<h3 id="常见的函数式接口"><a href="#常见的函数式接口" class="headerlink" title="常见的函数式接口"></a>常见的函数式接口</h3><div class="table-container">
+<h2 id="二、函数式接口">二、函数式接口</h2>
+<p>函数式接口是只包含一个抽象方法的接口，可用 <code>@FunctionalInterface</code> 标注。Lambda 表达式本质上是函数式接口的实例。</p>
+<h3 id="常见的函数式接口">常见的函数式接口</h3>
 <table>
 <thead>
 <tr>
@@ -326,7 +330,7 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 </thead>
 <tbody>
 <tr>
-<td>Function<T,R></T,R></td>
+<td>Function&lt;T,R&gt;</td>
 <td>R apply(T t)</td>
 <td>有入参有返回</td>
 </tr>
@@ -347,19 +351,24 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 </tr>
 </tbody>
 </table>
-</div>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Function&lt;Integer, String&gt; f = i -&gt; <span class="string">"数字："</span> + i;</span><br><span class="line">Predicate&lt;String&gt; p = s -&gt; s.length() &gt; <span class="number">3</span>;</span><br><span class="line">Consumer&lt;String&gt; c = System.out::println;</span><br><span class="line">Supplier&lt;Double&gt; s = Math::random;</span><br></pre></td></tr></table></figure>
-<h3 id="方法引用"><a href="#方法引用" class="headerlink" title="方法引用"></a>方法引用</h3><p>当 Lambda 体只是调用已有方法时，可用方法引用简化。</p>
+<h3 id="方法引用">方法引用</h3>
+<p>当 Lambda 体只是调用已有方法时，可用方法引用简化。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 静态方法引用</span></span><br><span class="line">Function&lt;String, Integer&gt; f1 = Integer::parseInt;</span><br><span class="line"><span class="comment">// 实例方法引用</span></span><br><span class="line">Consumer&lt;String&gt; c1 = System.out::println;</span><br><span class="line"><span class="comment">// 构造器引用</span></span><br><span class="line">Supplier&lt;ArrayList&lt;String&gt;&gt; s1 = ArrayList::<span class="keyword">new</span>;</span><br></pre></td></tr></table></figure>
-<h2 id="三、Optional-优雅处理-null"><a href="#三、Optional-优雅处理-null" class="headerlink" title="三、Optional 优雅处理 null"></a>三、Optional 优雅处理 null</h2><p>Optional 是一个容器对象，用于显式表达「值可能为空」，避免 <code>NullPointerException</code>。</p>
-<h3 id="创建"><a href="#创建" class="headerlink" title="创建"></a>创建</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Optional&lt;String&gt; o1 = Optional.of(<span class="string">"value"</span>);       <span class="comment">// 值不能为 null</span></span><br><span class="line">Optional&lt;String&gt; o2 = Optional.ofNullable(<span class="keyword">null</span>);  <span class="comment">// 值可为 null</span></span><br><span class="line">Optional&lt;String&gt; o3 = Optional.empty();           <span class="comment">// 空 Optional</span></span><br></pre></td></tr></table></figure>
-<h3 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法"></a>常用方法</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 存在才执行</span></span><br><span class="line">o1.ifPresent(System.out::println);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 提供默认值</span></span><br><span class="line">String v1 = o2.orElse(<span class="string">"default"</span>);</span><br><span class="line">String v2 = o2.orElseGet(() -&gt; <span class="string">"default"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 为空时抛异常</span></span><br><span class="line">String v3 = o2.orElseThrow(() -&gt; <span class="keyword">new</span> RuntimeException(<span class="string">"值不存在"</span>));</span><br><span class="line"></span><br><span class="line"><span class="comment">// 映射</span></span><br><span class="line">Optional&lt;Integer&gt; len = o1.map(String::length);</span><br><span class="line"><span class="comment">// 过滤</span></span><br><span class="line">Optional&lt;String&gt; filtered = o1.filter(s -&gt; s.length() &gt; <span class="number">3</span>);</span><br></pre></td></tr></table></figure>
-<h3 id="最佳实践"><a href="#最佳实践" class="headerlink" title="最佳实践"></a>最佳实践</h3><ul>
+<h2 id="三、Optional-优雅处理-null">三、Optional 优雅处理 null</h2>
+<p>Optional 是一个容器对象，用于显式表达「值可能为空」，避免 <code>NullPointerException</code>。</p>
+<h3 id="创建">创建</h3>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Optional&lt;String&gt; o1 = Optional.of(<span class="string">"value"</span>);       <span class="comment">// 值不能为 null</span></span><br><span class="line">Optional&lt;String&gt; o2 = Optional.ofNullable(<span class="keyword">null</span>);  <span class="comment">// 值可为 null</span></span><br><span class="line">Optional&lt;String&gt; o3 = Optional.empty();           <span class="comment">// 空 Optional</span></span><br></pre></td></tr></table></figure>
+<h3 id="常用方法">常用方法</h3>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 存在才执行</span></span><br><span class="line">o1.ifPresent(System.out::println);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 提供默认值</span></span><br><span class="line">String v1 = o2.orElse(<span class="string">"default"</span>);</span><br><span class="line">String v2 = o2.orElseGet(() -&gt; <span class="string">"default"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 为空时抛异常</span></span><br><span class="line">String v3 = o2.orElseThrow(() -&gt; <span class="keyword">new</span> RuntimeException(<span class="string">"值不存在"</span>));</span><br><span class="line"></span><br><span class="line"><span class="comment">// 映射</span></span><br><span class="line">Optional&lt;Integer&gt; len = o1.map(String::length);</span><br><span class="line"><span class="comment">// 过滤</span></span><br><span class="line">Optional&lt;String&gt; filtered = o1.filter(s -&gt; s.length() &gt; <span class="number">3</span>);</span><br></pre></td></tr></table></figure>
+<h3 id="最佳实践">最佳实践</h3>
+<ul>
 <li>方法返回值使用 <code>Optional</code> 表达可能缺失的值，而不是返回 <code>null</code>。</li>
 <li>不要用 <code>Optional</code> 作为字段类型或方法参数，它设计用于返回值。</li>
 <li>不要调用 <code>get()</code> 而不先判断，优先使用 <code>orElse</code>/<code>orElseGet</code>。</li>
 </ul>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>Lambda 与函数式接口让代码更加简洁、易于并行化，Optional 则提供了更安全的 null 处理方式。熟练运用这三个特性，是写出地道的现代 Java 代码的基础。</p>
+<h2 id="总结">总结</h2>
+<p>Lambda 与函数式接口让代码更加简洁、易于并行化，Optional 则提供了更安全的 null 处理方式。熟练运用这三个特性，是写出地道的现代 Java 代码的基础。</p>
 
       
 
@@ -748,6 +757,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">DevOps</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">CI/CD</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">Java</a>
               </li>
              
@@ -756,11 +773,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">DevOps</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">CSS</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">CI/CD</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">前端</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -776,11 +793,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">CSS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">前端</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">工厂系统</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -789,10 +802,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">运维</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">工厂系统</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -808,15 +817,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">组件</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">分页</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">组件</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -836,15 +845,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Nginx</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">MySQL</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">数据库</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Nginx</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -860,6 +869,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">消息队列</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">RabbitMQ</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">RPA</a>
               </li>
              
@@ -869,14 +886,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">SQL</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">消息队列</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">RabbitMQ</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -900,6 +909,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">SpringSecurity</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">SLF4j</a>
               </li>
              
@@ -908,7 +921,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">SpringSecurity</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">Swagger</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -920,15 +933,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">Swagger</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">SpringCloud</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">注解</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">SpringCloud</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -992,14 +1001,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">监控</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">Zabbix</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">云开发</a>
               </li>
              
@@ -1009,6 +1010,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">小程序</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">监控</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">Zabbix</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1044,14 +1053,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">ERP系统</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">文档</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">NoSql</a>
               </li>
              
@@ -1061,6 +1062,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">工作流</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">ERP系统</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">文档</a>
               </li>
             
             <div class="clearfix"></div>
@@ -1234,8 +1243,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     <script src="/js/slide.js" type="text/javascript"></script>
   
 
-  <!-- 代码块复制功能 -->
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.js"></script>
+  <!-- 代码块复制功能
+       jsdelivr 在国内访问不稳定，优先走 bootcdn（360），失败再回退 jsdelivr。-->
+  <script>window.__clipboard_cdn = 'https://cdn.bootcdn.net/ajax/libs/clipboard.js/2.0.4/clipboard.min.js';</script>
+  <script src="https://cdn.bootcdn.net/ajax/libs/clipboard.js/2.0.4/clipboard.min.js"
+          onerror="this.onerror=null;this.src='https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.js'"></script>
   <script type="text/javascript" src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
   <script type="text/javascript" src="/js/clipboard_use.js"></script>
 <script type="text/x-mathjax-config">

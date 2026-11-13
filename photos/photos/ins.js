@@ -116,13 +116,18 @@
         var data = res.list[j].arr;
         var liTmpl = "";
         for (var i = 0, len = data.link.length; i < len; i++) {
-          var minSrc = 'https://raw.githubusercontent.com/zhangtengfei66/Blog-Back-Up/master/min_photos/' + data.link[i];
-          var src = 'https://raw.githubusercontent.com/zhangtengfei66/Blog-Back-Up/master/photos/' + data.link[i];
+          // 优先使用本地相对路径（图片随站点一起部署，国内访问最快最稳）
+          // 页面：/photos/photos/index.html → ../photos-source/min_photos/xxx.jpg
+          var minSrc = '../photos-source/min_photos/' + data.link[i];
+          var src = '../photos-source/photos/' + data.link[i];
 
-          // var minSrc = 'https://raw.githubusercontent.com/zhangtengfei66/zhangtengfei66.github.io/master/photos/photos-source/min_photos/' + data.link[i];
-          // var src = 'https://raw.githubusercontent.com/zhangtengfei66/zhangtengfei66.github.io/master/photos/photos-source/photos/' + data.link[i];
+          // 若后续改为 CDN 托管，可切换为 jsdelivr（国内可用）：
+          // var minSrc = 'https://cdn.jsdelivr.net/gh/zhangtengfei66/Blog-Back-Up@master/min_photos/' + data.link[i];
+          // var src = 'https://cdn.jsdelivr.net/gh/zhangtengfei66/Blog-Back-Up@master/photos/' + data.link[i];
           var type = data.type[i];
-          var target = src + (type === 'video' ? '.mp4' : '.jpg');
+          // 根据文件名本身判断扩展名，不再硬编码 .jpg（data.json 中存在 .png 图片）
+          var linkName = data.link[i];
+          var target = type === 'video' ? src.replace(/\.[^.]+$/, '') + '.mp4' : src;
           src += '';
 
           liTmpl += '<figure class="thumb" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">\

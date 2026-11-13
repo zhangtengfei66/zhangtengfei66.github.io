@@ -310,7 +310,8 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 <p>业务系统卡顿、接口超时、服务莫名退出，很多时候根因都在服务器资源层面。本文梳理 Linux 下 CPU、内存、磁盘 IO 的常用排查命令与判断思路，形成一套可复用的性能排查流程。</p>
 </blockquote>
 <a id="more"></a>
-<h2 id="一、先看整体负载"><a href="#一、先看整体负载" class="headerlink" title="一、先看整体负载"></a>一、先看整体负载</h2><p>排查性能问题，第一步不是直接上 <code>top</code>，而是先判断「到底是哪一类资源吃紧」。</p>
+<h2 id="一、先看整体负载">一、先看整体负载</h2>
+<p>排查性能问题，第一步不是直接上 <code>top</code>，而是先判断「到底是哪一类资源吃紧」。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">uptime</span><br><span class="line"><span class="comment"># 20:15:32 up 62 days,  3:12,  2 users,  load average: 0.85, 1.20, 1.96</span></span><br></pre></td></tr></table></figure>
 <p><code>load average</code> 三个值分别是 1 分钟、5 分钟、15 分钟的平均负载。判断标准是<strong>与 CPU 核心数比较</strong>：</p>
 <ul>
@@ -320,9 +321,10 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 </ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">nproc          <span class="comment"># 查看 CPU 核心数</span></span><br><span class="line">vmstat 1 5     <span class="comment"># 每秒采样，观察 r（运行队列）、b（阻塞进程）、si/so（swap）</span></span><br></pre></td></tr></table></figure>
 <p><code>r</code> 长期大于核心数说明 CPU 排队严重，<code>b</code> 大于 0 说明有进程阻塞在 IO 上。</p>
-<h2 id="二、CPU-排查"><a href="#二、CPU-排查" class="headerlink" title="二、CPU 排查"></a>二、CPU 排查</h2><h3 id="定位高-CPU-进程"><a href="#定位高-CPU-进程" class="headerlink" title="定位高 CPU 进程"></a>定位高 CPU 进程</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">top            <span class="comment"># 按 P 键按 CPU 排序</span></span><br><span class="line">top -Hp 12345  <span class="comment"># 查看指定进程内的线程</span></span><br></pre></td></tr></table></figure>
+<h2 id="二、CPU-排查">二、CPU 排查</h2>
+<h3 id="定位高-CPU-进程">定位高 CPU 进程</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">top            <span class="comment"># 按 P 键按 CPU 排序</span></span><br><span class="line">top -Hp 12345  <span class="comment"># 查看指定进程内的线程</span></span><br></pre></td></tr></table></figure>
 <p><code>top</code> 中需要重点关注的指标：</p>
-<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -354,14 +356,15 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 </tr>
 </tbody>
 </table>
-</div>
-<h3 id="进一步确认"><a href="#进一步确认" class="headerlink" title="进一步确认"></a>进一步确认</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pidstat -u -p 12345 1     <span class="comment"># 按进程/线程看 CPU 使用</span></span><br><span class="line">vmstat 1                  <span class="comment"># cs 上下文切换次数、in 中断次数</span></span><br></pre></td></tr></table></figure>
+<h3 id="进一步确认">进一步确认</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pidstat -u -p 12345 1     <span class="comment"># 按进程/线程看 CPU 使用</span></span><br><span class="line">vmstat 1                  <span class="comment"># cs 上下文切换次数、in 中断次数</span></span><br></pre></td></tr></table></figure>
 <ul>
 <li><code>us</code> 高：结合 <code>jstack</code> 抓线程栈，查找死循环或频繁 Full GC。</li>
 <li><code>sy</code> 高：检查是否有大量短连接、频繁系统调用。</li>
 <li><code>cs</code> 异常高：线程数过多，检查连接池与线程池配置。</li>
 </ul>
-<h2 id="三、内存排查"><a href="#三、内存排查" class="headerlink" title="三、内存排查"></a>三、内存排查</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">free -h</span><br><span class="line"><span class="comment">#               total        used        free      shared  buff/cache   available</span></span><br><span class="line"><span class="comment"># Mem:           15Gi        9.2Gi       1.1Gi       320Mi        5.1Gi        5.6Gi</span></span><br><span class="line"><span class="comment"># Swap:         4.0Gi       512Mi       3.5Gi</span></span><br></pre></td></tr></table></figure>
+<h2 id="三、内存排查">三、内存排查</h2>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">free -h</span><br><span class="line"><span class="comment">#               total        used        free      shared  buff/cache   available</span></span><br><span class="line"><span class="comment"># Mem:           15Gi        9.2Gi       1.1Gi       320Mi        5.1Gi        5.6Gi</span></span><br><span class="line"><span class="comment"># Swap:         4.0Gi       512Mi       3.5Gi</span></span><br></pre></td></tr></table></figure>
 <p>重点关注 <code>available</code> 而不是 <code>free</code>——<code>buff/cache</code> 是可回收的，不能算作已用内存。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">vmstat 1 5      <span class="comment"># si/so 持续非 0 表示在用 swap，性能会明显下降</span></span><br><span class="line">ps aux --sort=-%mem | head -10   <span class="comment"># 内存占用 TOP 进程</span></span><br></pre></td></tr></table></figure>
 <p>常见问题：</p>
@@ -370,11 +373,13 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 <li><strong>OOM Killer 杀掉进程</strong>：<code>dmesg -T | grep -i &quot;out of memory&quot;</code> 可以看到被杀进程记录。</li>
 <li><strong>swap 被大量使用</strong>：优先扩容内存或调整应用缓存策略，而不是一味调小 <code>swappiness</code>。</li>
 </ol>
-<h2 id="四、磁盘与-IO-排查"><a href="#四、磁盘与-IO-排查" class="headerlink" title="四、磁盘与 IO 排查"></a>四、磁盘与 IO 排查</h2><h3 id="容量是否写满"><a href="#容量是否写满" class="headerlink" title="容量是否写满"></a>容量是否写满</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">df -h                 <span class="comment"># 查看各分区使用率</span></span><br><span class="line">du -sh /var/<span class="built_in">log</span>/*     <span class="comment"># 逐层定位大目录</span></span><br><span class="line">lsof | grep deleted   <span class="comment"># 查找已删除但仍被占用的文件</span></span><br></pre></td></tr></table></figure>
+<h2 id="四、磁盘与-IO-排查">四、磁盘与 IO 排查</h2>
+<h3 id="容量是否写满">容量是否写满</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">df -h                 <span class="comment"># 查看各分区使用率</span></span><br><span class="line">du -sh /var/<span class="built_in">log</span>/*     <span class="comment"># 逐层定位大目录</span></span><br><span class="line">lsof | grep deleted   <span class="comment"># 查找已删除但仍被占用的文件</span></span><br></pre></td></tr></table></figure>
 <p>磁盘写满是最常见也最容易被忽略的问题：日志未切割、备份文件未清理、临时文件堆积都会导致服务异常。</p>
-<h3 id="IO-是否成为瓶颈"><a href="#IO-是否成为瓶颈" class="headerlink" title="IO 是否成为瓶颈"></a>IO 是否成为瓶颈</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">iostat -x 1 5</span><br></pre></td></tr></table></figure>
+<h3 id="IO-是否成为瓶颈">IO 是否成为瓶颈</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">iostat -x 1 5</span><br></pre></td></tr></table></figure>
 <p>重点字段：</p>
-<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -401,19 +406,21 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 </tr>
 </tbody>
 </table>
-</div>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">iotop -o     <span class="comment"># 只显示真正产生 IO 的进程</span></span><br><span class="line">pidstat -d 1 <span class="comment"># 按进程统计读写</span></span><br></pre></td></tr></table></figure>
-<h2 id="五、网络与连接"><a href="#五、网络与连接" class="headerlink" title="五、网络与连接"></a>五、网络与连接</h2><p>服务「响应慢」不一定都是资源问题，也可能是连接层面的异常：</p>
+<h2 id="五、网络与连接">五、网络与连接</h2>
+<p>服务「响应慢」不一定都是资源问题，也可能是连接层面的异常：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ss -s                     <span class="comment"># 连接数汇总</span></span><br><span class="line">ss -antp | grep ESTAB     <span class="comment"># 查看已建立连接</span></span><br><span class="line">netstat -anp | awk <span class="string">'&#123;print $6&#125;'</span> | sort | uniq -c   <span class="comment"># 各状态连接数</span></span><br></pre></td></tr></table></figure>
 <p><code>TIME_WAIT</code> 过多说明短连接频繁，<code>CLOSE_WAIT</code> 堆积通常意味着应用没有正确关闭连接。</p>
-<h2 id="六、一套固定的排查顺序"><a href="#六、一套固定的排查顺序" class="headerlink" title="六、一套固定的排查顺序"></a>六、一套固定的排查顺序</h2><ol>
+<h2 id="六、一套固定的排查顺序">六、一套固定的排查顺序</h2>
+<ol>
 <li><code>uptime</code> + <code>vmstat</code> 判断资源类型（CPU / 内存 / IO）。</li>
 <li><code>top</code> / <code>pidstat</code> 定位具体进程与线程。</li>
 <li><code>iostat</code> / <code>iotop</code> 确认磁盘瓶颈，<code>free</code> 确认内存压力。</li>
 <li>查看 <code>/var/log/messages</code>、应用日志、<code>dmesg -T</code>，确认是否有服务被系统杀掉。</li>
 <li>记录现象与处理结果，沉淀到运维台账，便于同类问题快速复现处理。</li>
 </ol>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>性能排查的关键是先分类、再定位，避免一开始就凭经验猜测。掌握 <code>uptime</code>、<code>top</code>、<code>vmstat</code>、<code>iostat</code>、<code>free</code> 这几个基础命令，配合日志，足以覆盖日常运维中绝大多数 CPU 高负载、内存不足、磁盘 IO 打满的问题。</p>
+<h2 id="总结">总结</h2>
+<p>性能排查的关键是先分类、再定位，避免一开始就凭经验猜测。掌握 <code>uptime</code>、<code>top</code>、<code>vmstat</code>、<code>iostat</code>、<code>free</code> 这几个基础命令，配合日志，足以覆盖日常运维中绝大多数 CPU 高负载、内存不足、磁盘 IO 打满的问题。</p>
 
       
 
@@ -806,6 +813,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">DevOps</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">CI/CD</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">Java</a>
               </li>
              
@@ -814,11 +829,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">DevOps</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">CSS</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">CI/CD</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">前端</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -834,11 +849,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">CSS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">前端</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">工厂系统</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -847,10 +858,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">运维</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">工厂系统</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -866,15 +873,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">组件</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">分页</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">组件</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -894,15 +901,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Nginx</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">MySQL</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">数据库</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Nginx</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -918,6 +925,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">消息队列</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">RabbitMQ</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">RPA</a>
               </li>
              
@@ -927,14 +942,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">SQL</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">消息队列</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">RabbitMQ</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -958,6 +965,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">SpringSecurity</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">SLF4j</a>
               </li>
              
@@ -966,7 +977,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">SpringSecurity</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">Swagger</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -978,15 +989,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">Swagger</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">SpringCloud</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">注解</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">SpringCloud</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1050,14 +1057,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">监控</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">Zabbix</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">云开发</a>
               </li>
              
@@ -1067,6 +1066,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">小程序</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">监控</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">Zabbix</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1102,14 +1109,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">ERP系统</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">文档</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">NoSql</a>
               </li>
              
@@ -1119,6 +1118,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">工作流</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">ERP系统</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">文档</a>
               </li>
             
             <div class="clearfix"></div>
@@ -1292,8 +1299,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     <script src="/js/slide.js" type="text/javascript"></script>
   
 
-  <!-- 代码块复制功能 -->
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.js"></script>
+  <!-- 代码块复制功能
+       jsdelivr 在国内访问不稳定，优先走 bootcdn（360），失败再回退 jsdelivr。-->
+  <script>window.__clipboard_cdn = 'https://cdn.bootcdn.net/ajax/libs/clipboard.js/2.0.4/clipboard.min.js';</script>
+  <script src="https://cdn.bootcdn.net/ajax/libs/clipboard.js/2.0.4/clipboard.min.js"
+          onerror="this.onerror=null;this.src='https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.js'"></script>
   <script type="text/javascript" src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
   <script type="text/javascript" src="/js/clipboard_use.js"></script>
 <script type="text/x-mathjax-config">

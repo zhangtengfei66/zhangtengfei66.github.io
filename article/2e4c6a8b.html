@@ -310,7 +310,8 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 <p>正则表达式是处理字符串的强大工具，广泛应用于表单校验、文本提取、日志分析与数据清洗。本文梳理正则的基础语法、常用模式以及在 Java 和 JavaScript 中的实战用法。</p>
 </blockquote>
 <a id="more"></a>
-<h2 id="一、基础语法"><a href="#一、基础语法" class="headerlink" title="一、基础语法"></a>一、基础语法</h2><h3 id="元字符"><a href="#元字符" class="headerlink" title="元字符"></a>元字符</h3><div class="table-container">
+<h2 id="一、基础语法">一、基础语法</h2>
+<h3 id="元字符">元字符</h3>
 <table>
 <thead>
 <tr>
@@ -343,11 +344,11 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 <tr>
 <td><code>\D</code> <code>\W</code> <code>\S</code></td>
 <td>对应小写的取反</td>
+<td></td>
 </tr>
 </tbody>
 </table>
-</div>
-<h3 id="量词"><a href="#量词" class="headerlink" title="量词"></a>量词</h3><div class="table-container">
+<h3 id="量词">量词</h3>
 <table>
 <thead>
 <tr>
@@ -382,13 +383,16 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 </tr>
 </tbody>
 </table>
-</div>
-<h3 id="字符类与锚点"><a href="#字符类与锚点" class="headerlink" title="字符类与锚点"></a>字符类与锚点</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[abc]      # 匹配 a、b、c 中任意一个</span><br><span class="line">[a-z]      # 匹配小写字母</span><br><span class="line">[^0-9]     # 匹配非数字</span><br><span class="line">^abc       # 匹配以 abc 开头</span><br><span class="line">abc$       # 匹配以 abc 结尾</span><br></pre></td></tr></table></figure>
-<h2 id="二、分组与断言"><a href="#二、分组与断言" class="headerlink" title="二、分组与断言"></a>二、分组与断言</h2><h3 id="捕获分组"><a href="#捕获分组" class="headerlink" title="捕获分组"></a>捕获分组</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(\d&#123;3&#125;)-(\d&#123;8&#125;)</span><br></pre></td></tr></table></figure>
+<h3 id="字符类与锚点">字符类与锚点</h3>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[abc]      # 匹配 a、b、c 中任意一个</span><br><span class="line">[a-z]      # 匹配小写字母</span><br><span class="line">[^0-9]     # 匹配非数字</span><br><span class="line">^abc       # 匹配以 abc 开头</span><br><span class="line">abc$       # 匹配以 abc 结尾</span><br></pre></td></tr></table></figure>
+<h2 id="二、分组与断言">二、分组与断言</h2>
+<h3 id="捕获分组">捕获分组</h3>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(\d&#123;3&#125;)-(\d&#123;8&#125;)</span><br></pre></td></tr></table></figure>
 <p>用小括号分组，匹配后可通过 <code>$1</code>、<code>$2</code> 引用分组内容。</p>
-<h3 id="非捕获分组"><a href="#非捕获分组" class="headerlink" title="非捕获分组"></a>非捕获分组</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(?:\d&#123;3&#125;)-\d&#123;8&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="非捕获分组">非捕获分组</h3>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(?:\d&#123;3&#125;)-\d&#123;8&#125;</span><br></pre></td></tr></table></figure>
 <p><code>?:</code> 表示该分组不参与捕获，仅用于分组逻辑。</p>
-<h3 id="前瞻与后顾"><a href="#前瞻与后顾" class="headerlink" title="前瞻与后顾"></a>前瞻与后顾</h3><div class="table-container">
+<h3 id="前瞻与后顾">前瞻与后顾</h3>
 <table>
 <thead>
 <tr>
@@ -415,18 +419,22 @@ https://ziyuan.baidu.com/college/courseinfo?id=267&page=2#h2_article_title19-->
 </tr>
 </tbody>
 </table>
-</div>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">\w+(?=@)   # 匹配 @ 前面的部分（提取邮箱用户名）</span><br></pre></td></tr></table></figure>
-<h2 id="三、常用正则实战"><a href="#三、常用正则实战" class="headerlink" title="三、常用正则实战"></a>三、常用正则实战</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">// 邮箱</span><br><span class="line">^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]&#123;2,&#125;$</span><br><span class="line"></span><br><span class="line">// 手机号（中国大陆，简化）</span><br><span class="line">^1[3-9]\d&#123;9&#125;$</span><br><span class="line"></span><br><span class="line">// 身份证号（18 位）</span><br><span class="line">^\d&#123;17&#125;[\dXx]$</span><br><span class="line"></span><br><span class="line">// URL</span><br><span class="line">^https?://[^\s]+$</span><br><span class="line"></span><br><span class="line">// IP 地址</span><br><span class="line">^((25[0-5]|2[0-4]\d|1\d&#123;2&#125;|[1-9]?\d)\.)&#123;3&#125;(25[0-5]|2[0-4]\d|1\d&#123;2&#125;|[1-9]?\d)$</span><br></pre></td></tr></table></figure>
-<h2 id="四、Java-中使用正则"><a href="#四、Java-中使用正则" class="headerlink" title="四、Java 中使用正则"></a>四、Java 中使用正则</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.regex.*;</span><br><span class="line"></span><br><span class="line">String text = <span class="string">"我的手机号是 13812345678，邮箱是 test@example.com"</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 匹配</span></span><br><span class="line">Pattern p = Pattern.compile(<span class="string">"1[3-9]\\d&#123;9&#125;"</span>);</span><br><span class="line">Matcher m = p.matcher(text);</span><br><span class="line"><span class="keyword">while</span> (m.find()) &#123;</span><br><span class="line">    System.out.println(<span class="string">"找到手机号："</span> + m.group());</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 替换</span></span><br><span class="line">String masked = text.replaceAll(<span class="string">"(\\d&#123;3&#125;)\\d&#123;4&#125;(\\d&#123;4&#125;)"</span>, <span class="string">"$1****$2"</span>);</span><br><span class="line">System.out.println(masked); <span class="comment">// 138****5678</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 判断是否完全匹配</span></span><br><span class="line"><span class="keyword">boolean</span> isValid = text.matches(<span class="string">"^1[3-9]\\d&#123;9&#125;$"</span>);</span><br></pre></td></tr></table></figure>
-<h2 id="五、JavaScript-中使用正则"><a href="#五、JavaScript-中使用正则" class="headerlink" title="五、JavaScript 中使用正则"></a>五、JavaScript 中使用正则</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> text = <span class="string">"订单号：A12345，B67890"</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 匹配并提取</span></span><br><span class="line"><span class="keyword">const</span> nums = text.match(<span class="regexp">/[A-Z]\d&#123;5&#125;/g</span>); <span class="comment">// ["A12345", "B67890"]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 校验</span></span><br><span class="line"><span class="keyword">const</span> email = <span class="string">"test@example.com"</span>;</span><br><span class="line"><span class="keyword">const</span> emailRe = <span class="regexp">/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]&#123;2,&#125;$/</span>;</span><br><span class="line"><span class="built_in">console</span>.log(emailRe.test(email)); <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 替换</span></span><br><span class="line"><span class="keyword">const</span> masked = text.replace(<span class="regexp">/(\d&#123;3&#125;)\d&#123;4&#125;(\d&#123;4&#125;)/</span>, <span class="string">"$1****$2"</span>);</span><br></pre></td></tr></table></figure>
-<h2 id="六、注意事项"><a href="#六、注意事项" class="headerlink" title="六、注意事项"></a>六、注意事项</h2><ol>
+<h2 id="三、常用正则实战">三、常用正则实战</h2>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">// 邮箱</span><br><span class="line">^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]&#123;2,&#125;$</span><br><span class="line"></span><br><span class="line">// 手机号（中国大陆，简化）</span><br><span class="line">^1[3-9]\d&#123;9&#125;$</span><br><span class="line"></span><br><span class="line">// 身份证号（18 位）</span><br><span class="line">^\d&#123;17&#125;[\dXx]$</span><br><span class="line"></span><br><span class="line">// URL</span><br><span class="line">^https?://[^\s]+$</span><br><span class="line"></span><br><span class="line">// IP 地址</span><br><span class="line">^((25[0-5]|2[0-4]\d|1\d&#123;2&#125;|[1-9]?\d)\.)&#123;3&#125;(25[0-5]|2[0-4]\d|1\d&#123;2&#125;|[1-9]?\d)$</span><br></pre></td></tr></table></figure>
+<h2 id="四、Java-中使用正则">四、Java 中使用正则</h2>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.regex.*;</span><br><span class="line"></span><br><span class="line">String text = <span class="string">"我的手机号是 13812345678，邮箱是 test@example.com"</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 匹配</span></span><br><span class="line">Pattern p = Pattern.compile(<span class="string">"1[3-9]\\d&#123;9&#125;"</span>);</span><br><span class="line">Matcher m = p.matcher(text);</span><br><span class="line"><span class="keyword">while</span> (m.find()) &#123;</span><br><span class="line">    System.out.println(<span class="string">"找到手机号："</span> + m.group());</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 替换</span></span><br><span class="line">String masked = text.replaceAll(<span class="string">"(\\d&#123;3&#125;)\\d&#123;4&#125;(\\d&#123;4&#125;)"</span>, <span class="string">"$1****$2"</span>);</span><br><span class="line">System.out.println(masked); <span class="comment">// 138****5678</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 判断是否完全匹配</span></span><br><span class="line"><span class="keyword">boolean</span> isValid = text.matches(<span class="string">"^1[3-9]\\d&#123;9&#125;$"</span>);</span><br></pre></td></tr></table></figure>
+<h2 id="五、JavaScript-中使用正则">五、JavaScript 中使用正则</h2>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> text = <span class="string">"订单号：A12345，B67890"</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 匹配并提取</span></span><br><span class="line"><span class="keyword">const</span> nums = text.match(<span class="regexp">/[A-Z]\d&#123;5&#125;/g</span>); <span class="comment">// ["A12345", "B67890"]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 校验</span></span><br><span class="line"><span class="keyword">const</span> email = <span class="string">"test@example.com"</span>;</span><br><span class="line"><span class="keyword">const</span> emailRe = <span class="regexp">/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]&#123;2,&#125;$/</span>;</span><br><span class="line"><span class="built_in">console</span>.log(emailRe.test(email)); <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 替换</span></span><br><span class="line"><span class="keyword">const</span> masked = text.replace(<span class="regexp">/(\d&#123;3&#125;)\d&#123;4&#125;(\d&#123;4&#125;)/</span>, <span class="string">"$1****$2"</span>);</span><br></pre></td></tr></table></figure>
+<h2 id="六、注意事项">六、注意事项</h2>
+<ol>
 <li><strong>贪婪与懒惰</strong>：默认是贪婪匹配（尽可能多），加 <code>?</code> 变为懒惰匹配（尽可能少）。例如 <code>a.*b</code> 与 <code>a.*?b</code>。</li>
 <li><strong>转义</strong>：匹配 <code>.</code>、<code>*</code>、<code>?</code> 等元字符时需加 <code>\</code> 转义。</li>
 <li><strong>性能</strong>：避免使用回溯过多的表达式，防止正则灾难性回溯导致卡死。</li>
 <li><strong>可读性</strong>：复杂正则建议拆解并加注释，便于后续维护。</li>
 </ol>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>正则表达式「一学就会、一用就忘」，关键在于理解元字符、量词与分组断言的组合方式。多积累常用模式，配合 <code>match</code>、<code>replace</code>、<code>test</code> 等方法，能显著提升字符串处理效率。</p>
+<h2 id="总结">总结</h2>
+<p>正则表达式「一学就会、一用就忘」，关键在于理解元字符、量词与分组断言的组合方式。多积累常用模式，配合 <code>match</code>、<code>replace</code>、<code>test</code> 等方法，能显著提升字符串处理效率。</p>
 
       
 
@@ -819,6 +827,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">DevOps</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">CI/CD</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">Java</a>
               </li>
              
@@ -827,11 +843,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">DevOps</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">CSS</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">CI/CD</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">前端</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -847,11 +863,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">CSS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">前端</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">工厂系统</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -860,10 +872,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">运维</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">工厂系统</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -879,15 +887,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">组件</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">分页</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">组件</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -907,15 +915,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Nginx</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">MySQL</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">数据库</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">Nginx</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -931,6 +939,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">消息队列</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">RabbitMQ</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">RPA</a>
               </li>
              
@@ -940,14 +956,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">SQL</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">消息队列</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">RabbitMQ</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -971,6 +979,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">SpringSecurity</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">SLF4j</a>
               </li>
              
@@ -979,7 +991,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color5">SpringSecurity</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">Swagger</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -991,15 +1003,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">Swagger</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">SpringCloud</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">注解</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">SpringCloud</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1063,14 +1071,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">监控</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">Zabbix</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">云开发</a>
               </li>
              
@@ -1080,6 +1080,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">小程序</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">监控</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">Zabbix</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1115,14 +1123,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">ERP系统</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">文档</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">NoSql</a>
               </li>
              
@@ -1132,6 +1132,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">工作流</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color1">ERP系统</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">文档</a>
               </li>
             
             <div class="clearfix"></div>
@@ -1305,8 +1313,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     <script src="/js/slide.js" type="text/javascript"></script>
   
 
-  <!-- 代码块复制功能 -->
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.js"></script>
+  <!-- 代码块复制功能
+       jsdelivr 在国内访问不稳定，优先走 bootcdn（360），失败再回退 jsdelivr。-->
+  <script>window.__clipboard_cdn = 'https://cdn.bootcdn.net/ajax/libs/clipboard.js/2.0.4/clipboard.min.js';</script>
+  <script src="https://cdn.bootcdn.net/ajax/libs/clipboard.js/2.0.4/clipboard.min.js"
+          onerror="this.onerror=null;this.src='https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.js'"></script>
   <script type="text/javascript" src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
   <script type="text/javascript" src="/js/clipboard_use.js"></script>
 <script type="text/x-mathjax-config">
